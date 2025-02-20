@@ -10,25 +10,10 @@
             margin: 0;
             padding: 20px;
             text-align: center;
-            display: flex;
-            justify-content: center;
         }
         .container {
             max-width: 1200px;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            width: 100%;
-        }
-        .content {
-            flex: 3;
-        }
-        .sidebar {
-            flex: 1;
-            padding: 20px;
-            background-color: #f4f4f4;
-            text-align: center;
-            margin-left: 20px;
+            margin: auto;
         }
         h1 {
             color: #333;
@@ -55,7 +40,8 @@
             margin-top: 20px;
         }
         .product {
-            width: 400px;
+            width: 90%;
+            max-width: 600px;
             border: 1px solid #ddd;
             border-radius: 10px;
             padding: 20px;
@@ -93,23 +79,69 @@
 </head>
 <body>
     <div class="container">
-        <div class="content">
-            <h1>Top 10: Las Mejores Freidoras de Aire</h1>
-            <p>Las <span class="highlight">freidoras de aire</span> son una excelente opción para <span class="highlight">cocinar de manera más saludable</span>, ya que permiten preparar alimentos con <span class="highlight">mucho menos aceite</span>. Son ideales para quienes desean disfrutar de comidas crujientes sin exceso de grasa. Además, ayudan a <span class="highlight">reducir el consumo de calorías</span> y a mantener un <span class="highlight">estilo de vida equilibrado</span>. En este listado hemos seleccionado las <span class="highlight">mejores opciones del mercado</span>, basándonos en calidad, valoraciones y popularidad. ¡Invierte en tu salud con una <span class="highlight">freidora de aire</span>!</p>
-            <div class="product-list">
-                {% for i in range(1, 11) %}
-                <div class="product">
-                    <img src="/mnt/data/freidora{{i}}.jpg" alt="Freidora {{i}}">
-                    <p>⭐⭐⭐⭐⭐ ({{ 5000 - (i * 300) }}+ vendidas)</p>
-                    <span class="amazon-badge">Disponible en Amazon</span>
-                    <a href="https://amzn.to/{{ i }}" target="_blank">{{ i }}ª - Ver en Amazon</a>
-                </div>
-                {% endfor %}
+        <h1>Top 10: Las Mejores Freidoras de Aire</h1>
+        <p>Las <span class="highlight">freidoras de aire</span> son una excelente opción para <span class="highlight">cocinar de manera más saludable</span>, ya que permiten preparar alimentos con <span class="highlight">mucho menos aceite</span>. Son ideales para quienes desean disfrutar de comidas crujientes sin exceso de grasa. Además, ayudan a <span class="highlight">reducir el consumo de calorías</span> y a mantener un <span class="highlight">estilo de vida equilibrado</span>. En este listado hemos seleccionado las <span class="highlight">mejores opciones del mercado</span>, basándonos en calidad, valoraciones y popularidad. ¡Invierte en tu salud con una <span class="highlight">freidora de aire</span>!</p>
+        <div class="product-list">
+            <div class="product">
+                <img src="/mnt/data/freidora1.jpg" alt="Freidora 1">
+                <p>⭐⭐⭐⭐⭐ (5000+ vendidas)</p>
+                <span class="amazon-badge">Disponible en Amazon</span>
+                <a href="https://amzn.to/3Qp9Ef9" target="_blank">1ª - Ver en Amazon</a>
             </div>
-        </div>
-        <div class="sidebar">
-            <h3>Anuncios Patrocinados</h3>
-            <p>Espacio reservado para publicidad.</p>
+            <div class="product">
+                <img src="/mnt/data/freidora2.jpg" alt="Freidora 2">
+                <p>⭐⭐⭐⭐⭐ (4200+ vendidas)</p>
+                <span class="amazon-badge">Disponible en Amazon</span>
+                <a href="https://amzn.to/4335EbL" target="_blank">2ª - Ver en Amazon</a>
+            </div>
+            <div class="product">
+                <img src="/mnt/data/freidora3.jpg" alt="Freidora 3">
+                <p>⭐⭐⭐⭐⭐ (3800+ vendidas)</p>
+                <span class="amazon-badge">Disponible en Amazon</span>
+                <a href="https://amzn.to/3X7S9UG" target="_blank">3ª - Ver en Amazon</a>
+            </div>
+            <div class="product">
+                <img src="/mnt/data/freidora4.jpg" alt="Freidora 4">
+                <p>⭐⭐⭐⭐⭐ (3600+ vendidas)</p>
+                <span class="amazon-badge">Disponible en Amazon</span>
+                <a href="https://amzn.to/4gSb4JU" target="_blank">4ª - Ver en Amazon</a>
+            </div>
+            <div class="product">
+                <img src="/mnt/data/freidora5.jpg" alt="Freidora 5">
+                <p>⭐⭐⭐⭐ (3400+ vendidas)</p>
+                <span class="amazon-badge">Disponible en Amazon</span>
+                <a href="https://amzn.to/3X9hNbt" target="_blank">5ª - Ver en Amazon</a>
+            </div>
+            <div class="product">
+                <img src="/mnt/data/freidora6.jpg" alt="Freidora 6">
+                <p>⭐⭐⭐⭐⭐ (3100+ vendidas)</p>
+                <span class="amazon-badge">Disponible en Amazon</span>
+                <a href="https://amzn.to/415R8xx" target="_blank">6ª - Ver en Amazon</a>
+            </div>
+            <div class="product">
+                <img src="/mnt/data/freidora7.jpg" alt="Freidora 7">
+                <p>⭐⭐⭐⭐⭐ (2900+ vendidas)</p>
+                <span class="amazon-badge">Disponible en Amazon</span>
+                <a href="https://amzn.to/3ENVNwE" target="_blank">7ª - Ver en Amazon</a>
+            </div>
+            <div class="product">
+                <img src="/mnt/data/freidora8.jpg" alt="Freidora 8">
+                <p>⭐⭐⭐⭐⭐ (2700+ vendidas)</p>
+                <span class="amazon-badge">Disponible en Amazon</span>
+                <a href="https://amzn.to/4b7zoWW" target="_blank">8ª - Ver en Amazon</a>
+            </div>
+            <div class="product">
+                <img src="/mnt/data/freidora9.jpg" alt="Freidora 9">
+                <p>⭐⭐⭐⭐⭐ (2500+ vendidas)</p>
+                <span class="amazon-badge">Disponible en Amazon</span>
+                <a href="https://amzn.to/3EImG4V" target="_blank">9ª - Ver en Amazon</a>
+            </div>
+            <div class="product">
+                <img src="/mnt/data/freidora10.jpg" alt="Freidora 10">
+                <p>⭐⭐⭐⭐⭐ (2300+ vendidas)</p>
+                <span class="amazon-badge">Disponible en Amazon</span>
+                <a href="https://amzn.to/4hIu7HL" target="_blank">10ª - Ver en Amazon</a>
+            </div>
         </div>
     </div>
 </body>
