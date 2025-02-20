@@ -97,10 +97,9 @@
             <h1>Top 10: Las Mejores Freidoras de Aire</h1>
             <p>Las <span class="highlight">freidoras de aire</span> son una excelente opción para <span class="highlight">cocinar de manera más saludable</span>, ya que permiten preparar alimentos con <span class="highlight">mucho menos aceite</span>. Son ideales para quienes desean disfrutar de comidas crujientes sin exceso de grasa. Además, ayudan a <span class="highlight">reducir el consumo de calorías</span> y a mantener un <span class="highlight">estilo de vida equilibrado</span>. En este listado hemos seleccionado las <span class="highlight">mejores opciones del mercado</span>, basándonos en calidad, valoraciones y popularidad. ¡Invierte en tu salud con una <span class="highlight">freidora de aire</span>!</p>
             <div class="product-list">
-                <!-- Sección de productos actualizada con 10 freidoras -->
                 {% for i in range(1, 11) %}
                 <div class="product">
-                    <img src="https://via.placeholder.com/400" alt="Freidora {{ i }}">
+                    <img src="/mnt/data/freidora{{i}}.jpg" alt="Freidora {{i}}">
                     <p>⭐⭐⭐⭐⭐ ({{ 5000 - (i * 300) }}+ vendidas)</p>
                     <span class="amazon-badge">Disponible en Amazon</span>
                     <a href="https://amzn.to/{{ i }}" target="_blank">{{ i }}ª - Ver en Amazon</a>
