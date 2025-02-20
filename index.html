@@ -55,20 +55,26 @@
         }
         .product {
             width: 90%;
-            max-width: 600px;
+            max-width: 800px;
             border: 1px solid #ddd;
             border-radius: 10px;
             padding: 20px;
-            text-align: center;
+            text-align: left;
             box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
             background-color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 20px;
         }
         .product img {
-            max-width: 100%;
+            width: 300px;
             border-radius: 5px;
         }
+        .product-details {
+            flex: 1;
+        }
         .product a {
-            display: block;
+            display: inline-block;
             margin-top: 10px;
             padding: 10px;
             background-color: #ff9900;
@@ -103,63 +109,103 @@
             <div class="product-list">
                 <div class="product">
                     <img src="https://m.media-amazon.com/images/I/81-ZznpD8FL._AC_SX466_.jpg" alt="Freidora 1">
-                    <p>⭐⭐⭐⭐⭐ (5000+ vendidas)</p>
-                    <span class="amazon-badge">Disponible en Amazon</span>
-                    <a href="https://amzn.to/3Qp9Ef9" target="_blank">1ª - Ver en Amazon</a>
+                    <div class="product-details">
+                        <h2>1. Freidora 1</h2>
+                        <p>⭐⭐⭐⭐⭐ (5000+ vendidas)</p>
+                        <span class="amazon-badge">Disponible en Amazon</span>
+                        <br>
+                        <a href="https://amzn.to/3Qp9Ef9" target="_blank">Ver en Amazon</a>
+                    </div>
                 </div>
                 <div class="product">
                     <img src="https://m.media-amazon.com/images/I/71asfFTI3eL._AC_SX466_.jpg" alt="Freidora 2">
-                    <p>⭐⭐⭐⭐⭐ (4200+ vendidas)</p>
-                    <span class="amazon-badge">Disponible en Amazon</span>
-                    <a href="https://amzn.to/4335EbL" target="_blank">2ª - Ver en Amazon</a>
+                    <div class="product-details">
+                        <h2>2. Freidora 2</h2>
+                        <p>⭐⭐⭐⭐⭐ (4200+ vendidas)</p>
+                        <span class="amazon-badge">Disponible en Amazon</span>
+                        <br>
+                        <a href="https://amzn.to/4335EbL" target="_blank">Ver en Amazon</a>
+                    </div>
                 </div>
                 <div class="product">
-                    <img src="https://m.media-amazon.com/images/I/81NZpN3vFrL._AC_SX466_.jpg" alt="Freidora 3">
-                    <p>⭐⭐⭐⭐ (4000+ vendidas)</p>
-                    <span class="amazon-badge">Disponible en Amazon</span>
-                    <a href="https://amzn.to/3X7S9UG" target="_blank">3ª - Ver en Amazon</a>
+                    <img src="https://m.media-amazon.com/images/I/81NZpN3vFrL._AC_SX466_.jpg" alt="Freidora de aire 3">
+                    <div class="product-details">
+                        <h2>3. Freidora de aire</h2>
+                        <p>⭐⭐⭐⭐ (4000+ vendidas)</p>
+                        <span class="amazon-badge">Disponible en Amazon</span>
+                        <br>
+                        <a href="https://amzn.to/3X7S9UG" target="_blank">Ver en Amazon</a>
+                    </div>
                 </div>
                 <div class="product">
-                    <img src="https://m.media-amazon.com/images/I/71B1FZKFmUL._AC_SX466_.jpg" alt="Freidora 4">
-                    <p>⭐⭐⭐⭐⭐ (3900+ vendidas)</p>
-                    <span class="amazon-badge">Disponible en Amazon</span>
-                    <a href="https://amzn.to/4gSb4JU" target="_blank">4ª - Ver en Amazon</a>
+                    <img src="https://m.media-amazon.com/images/I/71B1FZKFmUL._AC_SX466_.jpg" alt="Freidora de aire 4">
+                    <div class="product-details">
+                        <h2>4. Freidora de aire</h2>
+                        <p>⭐⭐⭐⭐⭐ (3900+ vendidas)</p>
+                        <span class="amazon-badge">Disponible en Amazon</span>
+                        <br>
+                        <a href="https://amzn.to/4gSb4JU" target="_blank">Ver en Amazon</a>
+                    </div>
                 </div>
                 <div class="product">
-                    <img src="https://m.media-amazon.com/images/I/71C4FJp5EzL._AC_SX466_.jpg" alt="Freidora 5">
-                    <p>⭐⭐⭐⭐ (3800+ vendidas)</p>
-                    <span class="amazon-badge">Disponible en Amazon</span>
-                    <a href="https://amzn.to/3X9hNbt" target="_blank">5ª - Ver en Amazon</a>
+                    <img src="https://m.media-amazon.com/images/I/71C4FJp5EzL._AC_SX466_.jpg" alt="Freidora de aire 5">
+                    <div class="product-details">
+                        <h2>5. Freidora de aire</h2>
+                        <p>⭐⭐⭐⭐ (3800+ vendidas)</p>
+                        <span class="amazon-badge">Disponible en Amazon</span>
+                        <br>
+                        <a href="https://amzn.to/3X9hNbt" target="_blank">Ver en Amazon</a>
+                    </div>
                 </div>
                 <div class="product">
-                    <img src="https://m.media-amazon.com/images/I/81XJYFJm6zL._AC_SX466_.jpg" alt="Freidora 6">
-                    <p>⭐⭐⭐⭐⭐ (3700+ vendidas)</p>
-                    <span class="amazon-badge">Disponible en Amazon</span>
-                    <a href="https://amzn.to/415R8xx" target="_blank">6ª - Ver en Amazon</a>
+                    <img src="https://m.media-amazon.com/images/I/81XJYFJm6zL._AC_SX466_.jpg" alt="Freidora de aire 6">
+                    <div class="product-details">
+                        <h2>6. Freidora de aire</h2>
+                        <p>⭐⭐⭐⭐⭐ (3700+ vendidas)</p>
+                        <span class="amazon-badge">Disponible en Amazon</span>
+                        <br>
+                        <a href="https://amzn.to/415R8xx" target="_blank">Ver en Amazon</a>
+                    </div>
                 </div>
                 <div class="product">
-                    <img src="https://m.media-amazon.com/images/I/81wLTZ7rNRL._AC_SX466_.jpg" alt="Freidora 7">
-                    <p>⭐⭐⭐⭐ (3600+ vendidas)</p>
-                    <span class="amazon-badge">Disponible en Amazon</span>
-                    <a href="https://amzn.to/3ENVNwE" target="_blank">7ª - Ver en Amazon</a>
+                    <img src="https://m.media-amazon.com/images/I/81wLTZ7rNRL._AC_SX466_.jpg" alt="Freidora de aire 7">
+                    <div class="product-details">
+                        <h2>7. Freidora de aire</h2>
+                        <p>⭐⭐⭐⭐ (3600+ vendidas)</p>
+                        <span class="amazon-badge">Disponible en Amazon</span>
+                        <br>
+                        <a href="https://amzn.to/3ENVNwE" target="_blank">Ver en Amazon</a>
+                    </div>
                 </div>
                 <div class="product">
-                    <img src="https://m.media-amazon.com/images/I/71Z7ZZtF4pL._AC_SX466_.jpg" alt="Freidora 8">
-                    <p>⭐⭐⭐⭐⭐ (3500+ vendidas)</p>
-                    <span class="amazon-badge">Disponible en Amazon</span>
-                    <a href="https://amzn.to/4b7zoWW" target="_blank">8ª - Ver en Amazon</a>
+                    <img src="https://m.media-amazon.com/images/I/71Z7ZZtF4pL._AC_SX466_.jpg" alt="Freidora de aire 8">
+                    <div class="product-details">
+                        <h2>8. Freidora de aire</h2>
+                        <p>⭐⭐⭐⭐⭐ (3500+ vendidas)</p>
+                        <span class="amazon-badge">Disponible en Amazon</span>
+                        <br>
+                        <a href="https://amzn.to/4b7zoWW" target="_blank">Ver en Amazon</a>
+                    </div>
                 </div>
                 <div class="product">
-                    <img src="https://m.media-amazon.com/images/I/81QjVtJ7GdL._AC_SX466_.jpg" alt="Freidora 9">
-                    <p>⭐⭐⭐⭐ (3400+ vendidas)</p>
-                    <span class="amazon-badge">Disponible en Amazon</span>
-                    <a href="https://amzn.to/3EImG4V" target="_blank">9ª - Ver en Amazon</a>
+                    <img src="https://m.media-amazon.com/images/I/81QjVtJ7GdL._AC_SX466_.jpg" alt="Freidora de aire 9">
+                    <div class="product-details">
+                        <h2>9. Freidora de aire</h2>
+                        <p>⭐⭐⭐⭐ (3400+ vendidas)</p>
+                        <span class="amazon-badge">Disponible en Amazon</span>
+                        <br>
+                        <a href="https://amzn.to/3EImG4V" target="_blank">Ver en Amazon</a>
+                    </div>
                 </div>
                 <div class="product">
-                    <img src="https://m.media-amazon.com/images/I/81F0HTTzM8L._AC_SX466_.jpg" alt="Freidora 10">
-                    <p>⭐⭐⭐⭐⭐ (3300+ vendidas)</p>
-                    <span class="amazon-badge">Disponible en Amazon</span>
-                    <a href="https://amzn.to/4hIu7HL" target="_blank">10ª - Ver en Amazon</a>
+                    <img src="https://m.media-amazon.com/images/I/81F0HTTzM8L._AC_SX466_.jpg" alt="Freidora de aire 10">
+                    <div class="product-details">
+                        <h2>10. Freidora de aire</h2>
+                        <p>⭐⭐⭐⭐⭐ (3300+ vendidas)</p>
+                        <span class="amazon-badge">Disponible en Amazon</span>
+                        <br>
+                        <a href="https://amzn.to/4hIu7HL" target="_blank">Ver en Amazon</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -170,4 +216,3 @@
     </div>
 </body>
 </html>
-
