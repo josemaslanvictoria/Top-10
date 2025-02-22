@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3702060621408236" crossorigin="anonymous"></script>
+
+    <!-- Google Consent Mode -->
     <script async src="https://fundingchoicesmessages.google.com/i/pub-3702060621408236?ers=1" nonce="xyz"></script>
     <script>
         window.googlefc = window.googlefc || {};
@@ -12,20 +15,58 @@
             });
         });
     </script>
-    
-     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11335901809"></script>
+
+    <!-- Google Consent Mode personalizado -->
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'AW-11335901809');
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+
+        // Configurar el Modo de Consentimiento con valores predeterminados (sin consentimiento)
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'analytics_storage': 'denied'
+        });
+
+        gtag('js', new Date());
+        gtag('config', 'AW-11335901809');
+
+        // Si el usuario acepta las cookies
+        function aceptarCookies() {
+            gtag('consent', 'update', {
+                'ad_storage': 'granted',
+                'analytics_storage': 'granted'
+            });
+            document.getElementById('cookie-banner').style.display = 'none';
+        }
+
+        // Si el usuario rechaza las cookies
+        function rechazarCookies() {
+            gtag('consent', 'update', {
+                'ad_storage': 'denied',
+                'analytics_storage': 'denied'
+            });
+            document.getElementById('cookie-banner').style.display = 'none';
+        }
     </script>
-    
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11335901809"></script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Top 10: Las Mejores Freidoras de Aire</title>
-    <style>
+</head>
+<body>
+
+    <!-- Banner de cookies -->
+    <div id="cookie-banner" style="position: fixed; bottom: 0; background: #222; color: white; padding: 15px; width: 100%; text-align: center;">
+        Este sitio usa cookies para mejorar la experiencia. ¿Aceptas?
+        <button onclick="aceptarCookies()">Aceptar</button>
+        <button onclick="rechazarCookies()">Rechazar</button>
+    </div>
+
+</body>
+</html>
+
         body {
             font-family: Arial, sans-serif;
             margin: 0;
