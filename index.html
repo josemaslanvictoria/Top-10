@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consentimiento de Cookies</title>
+
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3702060621408236" crossorigin="anonymous"></script>
 
@@ -37,6 +41,7 @@
                 'analytics_storage': 'granted'
             });
             document.getElementById('cookie-banner').style.display = 'none';
+            localStorage.setItem('cookiesAccepted', 'true');
         }
 
         // Si el usuario rechaza las cookies
@@ -46,22 +51,118 @@
                 'analytics_storage': 'denied'
             });
             document.getElementById('cookie-banner').style.display = 'none';
+            localStorage.setItem('cookiesAccepted', 'false');
         }
+
+        // Comprobar si el usuario ya aceptó/rechazó las cookies antes
+        window.onload = function() {
+            if (localStorage.getItem('cookiesAccepted') === 'true' || localStorage.getItem('cookiesAccepted') === 'false') {
+                document.getElementById('cookie-banner').style.display = 'none';
+            }
+        };
     </script>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11335901809"></script>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 32px;
+            text-decoration: underline;
+        }
+
+        p {
+            font-size: 20px;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto 20px;
+            text-align: justify;
+        }
+
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #222;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .cookie-banner p {
+            margin: 0;
+            padding: 10px;
+        }
+
+        .cookie-buttons {
+            margin-top: 10px;
+        }
+
+        .cookie-buttons button {
+            margin: 5px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            color: white;
+        }
+
+        .accept-btn {
+            background-color: #4CAF50;
+        }
+
+        .reject-btn {
+            background-color: #D9534F;
+        }
+
+        .accept-btn:hover {
+            background-color: #45A049;
+        }
+
+        .reject-btn:hover {
+            background-color: #C9302C;
+        }
+    </style>
 </head>
 <body>
 
+    <div class="container">
+        <h1>Bienvenido a nuestra página</h1>
+        <p>Este sitio usa cookies para mejorar la experiencia del usuario. Selecciona una opción para continuar.</p>
+    </div>
+
     <!-- Banner de cookies -->
-    <div id="cookie-banner" style="position: fixed; bottom: 0; background: #222; color: white; padding: 15px; width: 100%; text-align: center;">
-        Este sitio usa cookies para mejorar la experiencia. ¿Aceptas?
-        <button onclick="aceptarCookies()">Aceptar</button>
-        <button onclick="rechazarCookies()">Rechazar</button>
+    <div id="cookie-banner" class="cookie-banner">
+        <p>Este sitio usa cookies para mejorar la experiencia. ¿Aceptas?</p>
+        <div class="cookie-buttons">
+            <button class="accept-btn" onclick="aceptarCookies()">Aceptar</button>
+            <button class="reject-btn" onclick="rechazarCookies()">Rechazar</button>
+        </div>
     </div>
 
 </body>
