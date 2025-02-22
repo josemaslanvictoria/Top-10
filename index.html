@@ -5,9 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consentimiento de Cookies</title>
 
-    <!-- Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3702060621408236" crossorigin="anonymous"></script>
-
     <!-- Google Consent Mode -->
     <script async src="https://fundingchoicesmessages.google.com/i/pub-3702060621408236?ers=1" nonce="xyz"></script>
     <script>
@@ -69,14 +66,30 @@
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 20px;
+            padding: 0;
             text-align: center;
+            display: flex;
+            justify-content: center;
         }
 
         .container {
             max-width: 1200px;
-            margin: auto;
+            margin: 0 auto;
             padding: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .content {
+            flex: 3;
+            text-align: left;
+        }
+
+        .sidebar {
+            flex: 1;
+            padding: 20px;
+            background-color: #f4f4f4;
+            text-align: center;
         }
 
         .cookie-banner {
@@ -89,7 +102,9 @@
             padding: 15px;
             text-align: center;
             display: flex;
-            justify-content: c
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
         }
 
         .cookie-buttons {
@@ -127,10 +142,12 @@
 
     <div class="container">
         <div class="content">
+            <h1>Top 10: Las mejores...</h1>
+            <p>Aquí va tu contenido principal sin anuncios arriba.</p>
         </div>
         <div class="sidebar">
-            <h2>Publicidad</h2>
-            <p>Espacio para anuncios o información adicional.</p>
+            <h2>Anuncios Patrocinados</h2>
+            <p>Aquí pueden ir los anuncios laterales.</p>
         </div>
     </div>
 
