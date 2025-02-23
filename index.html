@@ -1,64 +1,72 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3702060621408236" crossorigin="anonymous"></script>
+    <script async src="https://fundingchoicesmessages.google.com/i/pub-3702060621408236?ers=1" nonce="xyz"></script>
+    <script>
+        window.googlefc = window.googlefc || {};
+        window.googlefc.callbackQueue = window.googlefc.callbackQueue || [];
+        window.googlefc.callbackQueue.push(function() {
+            window.googlefc.setConsentConfig({
+                'consentMode': 'advanced'
+            });
+        });
+    </script>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11335901809"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+
+      // Configurar el Modo de Consentimiento con valores predeterminados (sin consentimiento)
+      gtag('consent', 'default', {
+        'ad_storage': 'denied',
+        'analytics_storage': 'denied'
+      });
+
+      gtag('js', new Date());
+      gtag('config', 'AW-11335901809');
+
+      // Si el usuario acepta las cookies
+      function aceptarCookies() {
+        gtag('consent', 'update', {
+          'ad_storage': 'granted',
+          'analytics_storage': 'granted'
+        });
+      }
+
+      // Si el usuario rechaza las cookies
+      function rechazarCookies() {
+        gtag('consent', 'update', {
+          'ad_storage': 'denied',
+          'analytics_storage': 'denied'
+        });
+      }
+    </script>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Top 10 Tecnología</title>
-    <link rel="stylesheet" href="/assets/styles.css"> <!-- Enlace a estilos globales -->
+    <title>Top 10: Las Mejores Freidoras de Aire</title>
     <style>
-        h1 {
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
             text-align: center;
-            font-size: 42px;
-            font-weight: bold;
-            text-decoration: underline;
-        }
-        .description {
-            text-align: center;
-            font-size: 18px;
-            max-width: 800px;
-            margin: 20px auto;
-            line-height: 1.5;
-        }
-        .category-grid {
             display: flex;
             justify-content: center;
-            gap: 40px;
-            margin-top: 30px;
-        }
-        .category-box {
-            width: 450px;
-            height: 400px;
-            background-color: #ffffff;
-            color: black;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-between;
-            font-size: 28px;
-            font-weight: bold;
-            text-decoration: none;
-            border: 3px solid black;
-            border-radius: 10px;
-            overflow: hidden;
-            text-align: center;
-            padding-bottom: 15px;
-        }
-        .category-box img {
-            width: 100%;
-            height: 75%;
-            object-fit: contain;
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
-        }
-        .category-box:hover {
-            background-color: #f0f0f0;
         }
         .container {
+            max-width: 1200px;
             display: flex;
             justify-content: space-between;
+            width: 100%;
+            gap: 40px;
         }
         .content {
             flex: 3;
+            position: relative;
         }
         .sidebar {
             flex: 1;
@@ -67,54 +75,291 @@
             text-align: center;
             margin-left: 20px;
         }
-        #cookie-banner {
-            position: fixed;
-            bottom: 0;
+        h1 {
+            color: #333;
+            font-size: 32px;
+            text-decoration: underline;
+        }
+        p {
+            font-size: 20px;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto 20px;
+            text-align: justify;
+        }
+        .highlight {
+            font-weight: bold;
+            text-decoration: underline;
+            color: black;
+        }
+        .product-list {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+            margin-top: 20px;
+        }
+        .product {
             width: 100%;
-            background: #222;
+            max-width: 900px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: left;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            position: relative; /* Para que los elementos absolutos se posicionen respecto a este contenedor */
+        }
+        .product img {
+            width: 250px;
+            height: auto;
+            border-radius: 5px;
+        }
+        .product-details {
+            flex: 1;
+        }
+        .product a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 25px;
+            background-color: #ff9900;
             color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 24px;
+        }
+        .product a:hover {
+            background-color: #e68a00;
+        }
+        .amazon-badge {
+            background-color: #ff9900;
+            color: white;
+            padding: 5px 8px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 13px;
+            font-size: 10px;
+        }
+        /* Estilos para el logo de valoración en la esquina superior derecha */
+        .rating-logo {
+            position: absolute;
+            top: 10px;
+            right: 10px;
             text-align: center;
-            padding: 15px;
+        }
+        .rating-score {
+            width: 50px;
+            height: 50px;
+            border: 5px solid red; /* Borde rojo grueso */
+            border-radius: 50%;
+            line-height: 50px;
+            font-size: 22px;
+            color: black; /* Números en negro */
+            font-weight: bold;
+            margin: 0 auto;
+            background-color: white; /* Fondo blanco para resaltar el aro */
+        }
+        .rating-label {
+            font-size: 12px;
+            color: #333;
+            margin-top: 5px;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Top 10 Tecnología</h1>
-        <p class="description">Bienvenido a **Top 10 Tecnología**, el sitio líder en análisis y comparativas de los mejores dispositivos del mercado. Descubre nuestras selecciones **más recomendadas** en tecnología para el hogar, como **freidoras de aire y auriculares**, con guías detalladas y enlaces directos a las mejores ofertas. Optimizamos cada recomendación con estudios **SEO avanzados**, asegurando que siempre encuentres lo mejor del mercado. ¡Explora y elige con confianza!</p>
-    </header>
-    
     <div class="container">
-        <div class="content">
-            <div class="category-grid">
-                <a href="/freidoras/" class="category-box">
-                    <img src="https://m.media-amazon.com/images/I/81YlVdZBmaL.__AC_SX300_SY300_QL70_FMwebp_.jpg" alt="Freidoras">
-                    <span>Freidoras</span>
-                </a>
-                <a href="/auriculares/" class="category-box">
-                    <img src="https://m.media-amazon.com/images/I/61iBtxCUabL._AC_SX679_.jpg" alt="Auriculares">
-                    <span>Auriculares</span>
-                </a>
-            </div>
-        </div>
-        
-        <aside class="sidebar">
-            <h3>Anuncios</h3>
-            <p>Espacio reservado para publicidad</p>
+        <div class="sidebar">
             <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3702060621408236" data-ad-slot="9876543210" data-ad-format="auto"></ins>
             <script>
                 (adsbygoogle = window.adsbygoogle || []).push({});
             </script>
-        </aside>
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3702060621408236" data-ad-slot="1234567890" data-ad-format="auto"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            <h3>Anuncios Patrocinados</h3>
+            <!-- Código de AdSense u otro anuncio aquí -->
+        </div>
+        <div class="content">
+            <h1>Top 10: Las Mejores Freidoras de Aire</h1>
+            <p>Las <span class="highlight">freidoras de aire</span> son una excelente opción para <span class="highlight">cocinar de manera más saludable</span>, ya que permiten preparar alimentos con <span class="highlight">mucho menos aceite</span>. Son ideales para quienes desean disfrutar de comidas crujientes sin exceso de grasa. Además, ayudan a <span class="highlight">reducir el consumo de calorías</span> y a mantener un <span class="highlight">estilo de vida equilibrado</span>. En este listado hemos seleccionado las <span class="highlight">mejores opciones del mercado</span>, basándonos en calidad, valoraciones y popularidad. ¡Invierte en tu salud con una <span class="highlight">freidora de aire</span>!</p>
+            <p class="amazon-notice">Compra este producto en Amazon a través de este enlace</p>
+            
+            <div class="product-list">
+                <!-- Producto 1 -->
+                <div class="product">
+                    <img src="https://m.media-amazon.com/images/I/71-bVzbgWTL._AC_SX679_.jpg" alt="COSORI Pro LE" style="float: left; margin-right: 20px;">
+                    <!-- Logo de valoración en la esquina superior derecha -->
+                    <div class="rating-logo">
+                        <div class="rating-score">9.7</div>
+                        <p class="rating-label">Valoración</p>
+                    </div>
+                    <div class="product-details">
+                        <h2>1. COSORI Pro LE</h2>
+                        <p>⭐⭐⭐⭐⭐ (5000+ vendidas)</p>
+                        <span class="amazon-badge">Disponible en Amazon</span>
+                        <br>
+                        <a href="https://amzn.to/3Qp9Ef9" target="_blank">Ver oferta</a>
+                        <p style="font-size: 24px; color: #FF0000; font-weight: bold;">Envío gratis</p>
+                    </div>
+                </div>
+                <!-- Producto 2 -->
+                <div class="product">
+                    <img src="https://m.media-amazon.com/images/I/519AN1zQmbL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="Cecotec Cecofry" style="float: left; margin-right: 20px;">
+                    <div class="rating-logo">
+                        <div class="rating-score">9.5</div>
+                        <p class="rating-label">Valoración</p>
+                    </div>
+                    <div class="product-details">
+                        <h2>2. Cecotec Cecofry</h2>
+                        <p>⭐⭐⭐⭐⭐ (4200+ vendidas)</p>
+                        <span class="amazon-badge">Disponible en Amazon</span>
+                        <br>
+                        <a href="https://amzn.to/4335EbL" target="_blank">Ver oferta</a>
+                        <p style="font-size: 24px; color: #FF0000; font-weight: bold;">Envío gratis</p>
+                    </div>
+                </div>
+                <!-- Producto 3 -->
+                <div class="product">
+                    <img src="https://m.media-amazon.com/images/I/710hgSJ9WSL.__AC_SY300_SX300_QL70_ML2_.jpg" alt="COSORI Dual Blaze" style="float: left; margin-right: 20px;">
+                    <div class="rating-logo">
+                        <div class="rating-score">9.2</div>
+                        <p class="rating-label">Valoración</p>
+                    </div>
+                    <div class="product-details">
+                        <h2>3. COSORI Dual Blaze</h2>
+                        <p>⭐⭐⭐⭐ (4000+ vendidas)</p>
+                        <span class="amazon-badge">Disponible en Amazon</span>
+                        <br>
+                        <a href="https://amzn.to/3X7S9UG" target="_blank">Ver oferta</a>
+                        <p style="font-size: 24px; color: #FF0000; font-weight: bold;">Envío gratis</p>
+                    </div>
+                </div>
+                <!-- Producto 4 -->
+                <div class="product">
+                    <img src="https://m.media-amazon.com/images/I/81OJ5uCzWSL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="COSORI Premium" style="float: left; margin-right: 20px;">
+                    <div class="rating-logo">
+                        <div class="rating-score">9.0</div>
+                        <p class="rating-label">Valoración</p>
+                    </div>
+                    <div class="product-details">
+                        <h2>4. COSORI Premium</h2>
+                        <p>⭐⭐⭐⭐⭐ (3900+ vendidas)</p>
+                        <span class="amazon-badge">Disponible en Amazon</span>
+                        <br>
+                        <a href="https://amzn.to/4gSb4JU" target="_blank">Ver oferta</a>
+                        <p style="font-size: 24px; color: #FF0000; font-weight: bold;">Envío gratis</p>
+                    </div>
+                </div>
+                <!-- Producto 5 -->
+                <div class="product">
+                    <img src="https://m.media-amazon.com/images/I/51C9-QpMYHL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="Cecotec Cecofry Full Inox" style="float: left; margin-right: 20px;">
+                    <div class="rating-logo">
+                        <div class="rating-score">8.7</div>
+                        <p class="rating-label">Valoración</p>
+                    </div>
+                    <div class="product-details">
+                        <h2>5. Cecotec Cecofry Full Inox</h2>
+                        <p>⭐⭐⭐⭐ (3800+ vendidas)</p>
+                        <span class="amazon-badge">Disponible en Amazon</span>
+                        <br>
+                        <a href="https://amzn.to/3X9hNbt" target="_blank">Ver oferta</a>
+                        <p style="font-size: 24px; color: #FF0000; font-weight: bold;">Envío gratis</p>
+                    </div>
+                </div>
+                <!-- Producto 6 -->
+                <div class="product">
+                    <img src="https://m.media-amazon.com/images/I/615EbHeTgmL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="COSORI Turbo Blaze" style="float: left; margin-right: 20px;">
+                    <div class="rating-logo">
+                        <div class="rating-score">8.6</div>
+                        <p class="rating-label">Valoración</p>
+                    </div>
+                    <div class="product-details">
+                        <h2>6. COSORI Turbo Blaze</h2>
+                        <p>⭐⭐⭐⭐⭐ (3700+ vendidas)</p>
+                        <span class="amazon-badge">Disponible en Amazon</span>
+                        <br>
+                        <a href="https://amzn.to/415R8xx" target="_blank">Ver oferta</a>
+                        <p style="font-size: 24px; color: #FF0000; font-weight: bold;">Envío gratis</p>
+                    </div>
+                </div>
+                <!-- Producto 7 -->
+                <div class="product">
+                    <img src="https://m.media-amazon.com/images/I/713fuTqP6fL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="Cecotec Turbo Cecofry" style="float: left; margin-right: 20px;">
+                    <div class="rating-logo">
+                        <div class="rating-score">8.3</div>
+                        <p class="rating-label">Valoración</p>
+                    </div>
+                    <div class="product-details">
+                        <h2>7. Cecotec Turbo Cecofry</h2>
+                        <p>⭐⭐⭐⭐ (3600+ vendidas)</p>
+                        <span class="amazon-badge">Disponible en Amazon</span>
+                        <br>
+                        <a href="https://amzn.to/3ENVNwE" target="_blank">Ver oferta</a>
+                        <p style="font-size: 24px; color: #FF0000; font-weight: bold;">Envío gratis</p>
+                    </div>
+                </div>
+                <!-- Producto 8 -->
+                <div class="product">
+                    <img src="https://m.media-amazon.com/images/I/813mgKJcarL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="Proscenic T21" style="float: left; margin-right: 20px;">
+                    <div class="rating-logo">
+                        <div class="rating-score">8.1</div>
+                        <p class="rating-label">Valoración</p>
+                    </div>
+                    <div class="product-details">
+                        <h2>8. Proscenic T21</h2>
+                        <p>⭐⭐⭐⭐⭐ (3500+ vendidas)</p>
+                        <span class="amazon-badge">Disponible en Amazon</span>
+                        <br>
+                        <a href="https://amzn.to/4b7zoWW" target="_blank">Ver oferta</a>
+                        <p style="font-size: 24px; color: #FF0000; font-weight: bold;">Envío gratis</p>
+                    </div>
+                </div>
+                <!-- Producto 9 -->
+                <div class="product">
+                    <img src="https://m.media-amazon.com/images/I/51jlaaR8MxL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="Innsky Air Fryer" style="float: left; margin-right: 20px;">
+                    <div class="rating-logo">
+                        <div class="rating-score">7.8</div>
+                        <p class="rating-label">Valoración</p>
+                    </div>
+                    <div class="product-details">
+                        <h2>9. Innsky Air Fryer</h2>
+                        <p>⭐⭐⭐⭐ (3400+ vendidas)</p>
+                        <span class="amazon-badge">Disponible en Amazon</span>
+                        <br>
+                        <a href="https://amzn.to/3EImG4V" target="_blank">Ver oferta</a>
+                        <p style="font-size: 24px; color: #FF0000; font-weight: bold;">Envío gratis</p>
+                    </div>
+                </div>
+                <!-- Producto 10 -->
+                <div class="product">
+                    <img src="https://m.media-amazon.com/images/I/91wVC-1fPlL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="Tefal Actifry Genius" style="float: left; margin-right: 20px;">
+                    <div class="rating-logo">
+                        <div class="rating-score">7.5</div>
+                        <p class="rating-label">Valoración</p>
+                    </div>
+                    <div class="product-details">
+                        <h2>10. Tefal Actifry Genius</h2>
+                        <p>⭐⭐⭐⭐⭐ (3300+ vendidas)</p>
+                        <span class="amazon-badge">Disponible en Amazon</span>
+                        <br>
+                        <a href="https://amzn.to/4hIu7HL" target="_blank">Ver oferta</a>
+                        <p style="font-size: 24px; color: #FF0000; font-weight: bold;">Envío gratis</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    
     <!-- Banner de cookies -->
-    <div id="cookie-banner">
-        Este sitio usa cookies para mejorar la experiencia. ¿Aceptas?
-        <button onclick="aceptarCookies(); document.getElementById('cookie-banner').style.display='none';">Aceptar</button>
-        <button onclick="rechazarCookies(); document.getElementById('cookie-banner').style.display='none';">Rechazar</button>
+    <div id="cookie-banner" style="position: fixed; bottom: 0; background: #222; color: white; padding: 15px; width: 100%; text-align: center;">
+      Este sitio usa cookies para mejorar la experiencia. ¿Aceptas?
+      <button onclick="aceptarCookies(); document.getElementById('cookie-banner').style.display='none';">Aceptar</button>
+      <button onclick="rechazarCookies(); document.getElementById('cookie-banner').style.display='none';">Rechazar</button>
     </div>
 </body>
 </html>
-
-
