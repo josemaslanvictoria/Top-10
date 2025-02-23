@@ -13,7 +13,7 @@
             text-decoration: underline;
         }
         .description {
-            text-align: center;
+            text-align: left;
             font-size: 18px;
             max-width: 800px;
             margin: 20px auto;
@@ -21,34 +21,24 @@
         }
         .category-grid {
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             gap: 30px;
             margin-top: 20px;
         }
         .category-box {
-            width: 300px;
-            height: 250px;
-            background-color: #ff9900;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            text-align: center;
             font-size: 22px;
             font-weight: bold;
             text-decoration: none;
-            border-radius: 10px;
-            overflow: hidden;
+            color: black;
         }
         .category-box img {
-            width: 100%;
-            height: 70%;
+            width: 200px;
+            height: auto;
             object-fit: cover;
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
-        }
-        .category-box:hover {
-            background-color: #e68a00;
+            display: block;
+            margin: 0 auto;
+            border-radius: 10px;
         }
         .container {
             display: flex;
@@ -57,12 +47,12 @@
         .content {
             flex: 3;
         }
-        .sidebar {
+        .sidebar, .left-sidebar {
             flex: 1;
             padding: 20px;
             background-color: #f4f4f4;
             text-align: center;
-            margin-left: 20px;
+            margin: 0 20px;
         }
         #cookie-banner {
             position: fixed;
@@ -78,19 +68,142 @@
 <body>
     <header>
         <h1>Top 10 Tecnología</h1>
-        <p class="description">Bienvenido a **Top 10 Tecnología**, el sitio líder en análisis y comparativas de los mejores dispositivos del mercado. Descubre nuestras selecciones **más recomendadas** en tecnología para el hogar, como **freidoras de aire y auriculares**, con guías detalladas y enlaces directos a las mejores ofertas. Optimizamos cada recomendación con estudios **SEO avanzados**, asegurando que siempre encuentres lo mejor del mercado. ¡Explora y elige con confianza!</p>
+        <p class="description">Bienvenido a <strong>Top 10 Tecnología</strong>, el sitio líder en análisis y comparativas de los mejores dispositivos del mercado. Descubre nuestras selecciones <strong>más recomendadas</strong> en tecnología para el hogar, como <strong><u>Freidoras de aire</u></strong> y <strong><u>Auriculares</u></strong>, con guías detalladas y enlaces directos a las mejores ofertas. Optimizamos cada recomendación con estudios <strong>SEO avanzados</strong>, asegurando que siempre encuentres lo mejor del mercado. ¡Explora y elige con confianza!</p>
     </header>
     
     <div class="container">
+        <aside class="left-sidebar">
+            <h3>Anuncios</h3>
+            <p>Espacio reservado para publicidad</p>
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3702060621408236" data-ad-slot="1234567890" data-ad-format="auto"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </aside>
+
         <div class="content">
             <div class="category-grid">
                 <a href="/freidoras/" class="category-box">
                     <img src="https://m.media-amazon.com/images/I/81YlVdZBmaL.__AC_SX300_SY300_QL70_FMwebp_.jpg" alt="Freidoras">
-                    Freidoras
+                    <div>Freidoras</div>
                 </a>
                 <a href="/auriculares/" class="category-box">
                     <img src="https://m.media-amazon.com/images/I/61iBtxCUabL._AC_SX679_.jpg" alt="Auriculares">
-                    Auriculares
+                    <div>Auriculares</div>
+                </a>
+            </div>
+        </div>
+        
+        <aside class="sidebar">
+            <h3>Anuncios</h3>
+            <p>Espacio reservado para publicidad</p>
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3702060621408236" data-ad-slot="9876543210" data-ad-format="auto"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </aside>
+    </div>
+    
+    <!-- Banner de cookies -->
+    <div id="cookie-banner">
+        Este sitio usa cookies para mejorar la experiencia. ¿Aceptas?
+        <button onclick="aceptarCookies(); document.getElementById('cookie-banner').style.display='none';">Aceptar</button>
+        <button onclick="rechazarCookies(); document.getElementById('cookie-banner').style.display='none';">Rechazar</button>
+    </div>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 10 Tecnología</title>
+    <link rel="stylesheet" href="/assets/styles.css"> <!-- Enlace a estilos globales -->
+    <style>
+        h1 {
+            text-align: center;
+            font-size: 36px;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+        .description {
+            text-align: left;
+            font-size: 18px;
+            max-width: 800px;
+            margin: 20px auto;
+            line-height: 1.5;
+        }
+        .category-grid {
+            display: flex;
+            justify-content: flex-start;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        .category-box {
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+            text-decoration: none;
+            color: black;
+        }
+        .category-box img {
+            width: 200px;
+            height: auto;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto;
+            border-radius: 10px;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+        }
+        .content {
+            flex: 3;
+        }
+        .sidebar, .left-sidebar {
+            flex: 1;
+            padding: 20px;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin: 0 20px;
+        }
+        #cookie-banner {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Top 10 Tecnología</h1>
+        <p class="description">Bienvenido a <strong>Top 10 Tecnología</strong>, el sitio líder en análisis y comparativas de los mejores dispositivos del mercado. Descubre nuestras selecciones <strong>más recomendadas</strong> en tecnología para el hogar, como <strong><u>Freidoras de aire</u></strong> y <strong><u>Auriculares</u></strong>, con guías detalladas y enlaces directos a las mejores ofertas. Optimizamos cada recomendación con estudios <strong>SEO avanzados</strong>, asegurando que siempre encuentres lo mejor del mercado. ¡Explora y elige con confianza!</p>
+    </header>
+    
+    <div class="container">
+        <aside class="left-sidebar">
+            <h3>Anuncios</h3>
+            <p>Espacio reservado para publicidad</p>
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3702060621408236" data-ad-slot="1234567890" data-ad-format="auto"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </aside>
+
+        <div class="content">
+            <div class="category-grid">
+                <a href="/freidoras/" class="category-box">
+                    <img src="https://m.media-amazon.com/images/I/81YlVdZBmaL.__AC_SX300_SY300_QL70_FMwebp_.jpg" alt="Freidoras">
+                    <div>Freidoras</div>
+                </a>
+                <a href="/auriculares/" class="category-box">
+                    <img src="https://m.media-amazon.com/images/I/61iBtxCUabL._AC_SX679_.jpg" alt="Auriculares">
+                    <div>Auriculares</div>
                 </a>
             </div>
         </div>
