@@ -111,7 +111,7 @@
             display: flex;
             align-items: center;
             gap: 30px;
-            position: relative; /* Para posicionar elementos absolutos dentro */
+            position: relative; /* Para que los elementos absolutos se posicionen respecto a este contenedor */
         }
         .product img {
             width: 250px;
@@ -145,45 +145,28 @@
             margin-top: 13px;
             font-size: 10px;
         }
-        /* Logo de valoración */
+        /* Estilos para el logo de valoración en la esquina superior derecha */
         .rating-logo {
+            position: absolute;
+            top: 10px;
+            right: 10px;
             text-align: center;
-            display: inline-block;
-            margin: 10px 0;
         }
         .rating-score {
-            width: 60px;
-            height: 60px;
-            background: #FF9900; /* Color del logo, puedes cambiarlo */
+            width: 50px;
+            height: 50px;
+            background: #FF9900;
             border-radius: 50%;
-            line-height: 60px;
-            font-size: 24px;
+            line-height: 50px;
+            font-size: 18px;
             color: #fff;
             font-weight: bold;
             margin: 0 auto;
         }
         .rating-label {
-            font-size: 14px;
+            font-size: 12px;
             color: #333;
             margin-top: 5px;
-        }
-        .rating-box {
-            position: absolute;
-            right: 20px;
-            top: 20px;
-            width: 100px;
-            height: 50px;
-            background-color: #FF0000;
-            color: #FFFFFF;
-            font-size: 16px;
-            font-weight: bold;
-            text-align: center;
-            padding: 5px;
-        }
-        .rating-box p {
-            font-size: 12px;
-            color: #FFFFFF;
-            margin: 0;
         }
     </style>
 </head>
@@ -210,13 +193,13 @@
                 <!-- Producto 1 -->
                 <div class="product">
                     <img src="https://m.media-amazon.com/images/I/71-bVzbgWTL._AC_SX679_.jpg" alt="COSORI Pro LE" style="float: left; margin-right: 20px;">
+                    <!-- Logo de valoración en la esquina superior derecha -->
+                    <div class="rating-logo">
+                        <div class="rating-score">9.2</div>
+                        <p class="rating-label">Valoración</p>
+                    </div>
                     <div class="product-details">
                         <h2>1. COSORI Pro LE</h2>
-                        <!-- Logo de valoración -->
-                        <div class="rating-logo">
-                          <div class="rating-score">9.2</div>
-                          <p class="rating-label">Valoración</p>
-                        </div>
                         <p>⭐⭐⭐⭐⭐ (5000+ vendidas)</p>
                         <span class="amazon-badge">Disponible en Amazon</span>
                         <br>
@@ -227,13 +210,12 @@
                 <!-- Producto 2 -->
                 <div class="product">
                     <img src="https://m.media-amazon.com/images/I/519AN1zQmbL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="Cecotec Cecofry" style="float: left; margin-right: 20px;">
+                    <div class="rating-logo">
+                        <div class="rating-score">8.8</div>
+                        <p class="rating-label">Valoración</p>
+                    </div>
                     <div class="product-details">
                         <h2>2. Cecotec Cecofry</h2>
-                        <!-- Logo de valoración -->
-                        <div class="rating-logo">
-                          <div class="rating-score">8.8</div>
-                          <p class="rating-label">Valoración</p>
-                        </div>
                         <p>⭐⭐⭐⭐⭐ (4200+ vendidas)</p>
                         <span class="amazon-badge">Disponible en Amazon</span>
                         <br>
@@ -244,13 +226,12 @@
                 <!-- Producto 3 -->
                 <div class="product">
                     <img src="https://m.media-amazon.com/images/I/710hgSJ9WSL.__AC_SY300_SX300_QL70_ML2_.jpg" alt="COSORI Dual Blaze" style="float: left; margin-right: 20px;">
+                    <div class="rating-logo">
+                        <div class="rating-score">8.5</div>
+                        <p class="rating-label">Valoración</p>
+                    </div>
                     <div class="product-details">
                         <h2>3. COSORI Dual Blaze</h2>
-                        <!-- Logo de valoración -->
-                        <div class="rating-logo">
-                          <div class="rating-score">8.5</div>
-                          <p class="rating-label">Valoración</p>
-                        </div>
                         <p>⭐⭐⭐⭐ (4000+ vendidas)</p>
                         <span class="amazon-badge">Disponible en Amazon</span>
                         <br>
@@ -261,13 +242,12 @@
                 <!-- Producto 4 -->
                 <div class="product">
                     <img src="https://m.media-amazon.com/images/I/81OJ5uCzWSL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="COSORI Premium" style="float: left; margin-right: 20px;">
+                    <div class="rating-logo">
+                        <div class="rating-score">9.0</div>
+                        <p class="rating-label">Valoración</p>
+                    </div>
                     <div class="product-details">
                         <h2>4. COSORI Premium</h2>
-                        <!-- Logo de valoración -->
-                        <div class="rating-logo">
-                          <div class="rating-score">9.0</div>
-                          <p class="rating-label">Valoración</p>
-                        </div>
                         <p>⭐⭐⭐⭐⭐ (3900+ vendidas)</p>
                         <span class="amazon-badge">Disponible en Amazon</span>
                         <br>
@@ -278,13 +258,12 @@
                 <!-- Producto 5 -->
                 <div class="product">
                     <img src="https://m.media-amazon.com/images/I/51C9-QpMYHL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="Cecotec Cecofry Full Inox" style="float: left; margin-right: 20px;">
+                    <div class="rating-logo">
+                        <div class="rating-score">8.7</div>
+                        <p class="rating-label">Valoración</p>
+                    </div>
                     <div class="product-details">
                         <h2>5. Cecotec Cecofry Full Inox</h2>
-                        <!-- Logo de valoración -->
-                        <div class="rating-logo">
-                          <div class="rating-score">8.7</div>
-                          <p class="rating-label">Valoración</p>
-                        </div>
                         <p>⭐⭐⭐⭐ (3800+ vendidas)</p>
                         <span class="amazon-badge">Disponible en Amazon</span>
                         <br>
@@ -295,13 +274,12 @@
                 <!-- Producto 6 -->
                 <div class="product">
                     <img src="https://m.media-amazon.com/images/I/615EbHeTgmL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="COSORI Turbo Blaze" style="float: left; margin-right: 20px;">
+                    <div class="rating-logo">
+                        <div class="rating-score">9.1</div>
+                        <p class="rating-label">Valoración</p>
+                    </div>
                     <div class="product-details">
                         <h2>6. COSORI Turbo Blaze</h2>
-                        <!-- Logo de valoración -->
-                        <div class="rating-logo">
-                          <div class="rating-score">9.1</div>
-                          <p class="rating-label">Valoración</p>
-                        </div>
                         <p>⭐⭐⭐⭐⭐ (3700+ vendidas)</p>
                         <span class="amazon-badge">Disponible en Amazon</span>
                         <br>
@@ -312,13 +290,12 @@
                 <!-- Producto 7 -->
                 <div class="product">
                     <img src="https://m.media-amazon.com/images/I/713fuTqP6fL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="Cecotec Turbo Cecofry" style="float: left; margin-right: 20px;">
+                    <div class="rating-logo">
+                        <div class="rating-score">8.3</div>
+                        <p class="rating-label">Valoración</p>
+                    </div>
                     <div class="product-details">
                         <h2>7. Cecotec Turbo Cecofry</h2>
-                        <!-- Logo de valoración -->
-                        <div class="rating-logo">
-                          <div class="rating-score">8.3</div>
-                          <p class="rating-label">Valoración</p>
-                        </div>
                         <p>⭐⭐⭐⭐ (3600+ vendidas)</p>
                         <span class="amazon-badge">Disponible en Amazon</span>
                         <br>
@@ -329,13 +306,12 @@
                 <!-- Producto 8 -->
                 <div class="product">
                     <img src="https://m.media-amazon.com/images/I/813mgKJcarL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="Proscenic T21" style="float: left; margin-right: 20px;">
+                    <div class="rating-logo">
+                        <div class="rating-score">9.0</div>
+                        <p class="rating-label">Valoración</p>
+                    </div>
                     <div class="product-details">
                         <h2>8. Proscenic T21</h2>
-                        <!-- Logo de valoración -->
-                        <div class="rating-logo">
-                          <div class="rating-score">9.0</div>
-                          <p class="rating-label">Valoración</p>
-                        </div>
                         <p>⭐⭐⭐⭐⭐ (3500+ vendidas)</p>
                         <span class="amazon-badge">Disponible en Amazon</span>
                         <br>
@@ -346,13 +322,12 @@
                 <!-- Producto 9 -->
                 <div class="product">
                     <img src="https://m.media-amazon.com/images/I/51jlaaR8MxL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="Innsky Air Fryer" style="float: left; margin-right: 20px;">
+                    <div class="rating-logo">
+                        <div class="rating-score">8.2</div>
+                        <p class="rating-label">Valoración</p>
+                    </div>
                     <div class="product-details">
                         <h2>9. Innsky Air Fryer</h2>
-                        <!-- Logo de valoración -->
-                        <div class="rating-logo">
-                          <div class="rating-score">8.2</div>
-                          <p class="rating-label">Valoración</p>
-                        </div>
                         <p>⭐⭐⭐⭐ (3400+ vendidas)</p>
                         <span class="amazon-badge">Disponible en Amazon</span>
                         <br>
@@ -363,13 +338,12 @@
                 <!-- Producto 10 -->
                 <div class="product">
                     <img src="https://m.media-amazon.com/images/I/91wVC-1fPlL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="Tefal Actifry Genius" style="float: left; margin-right: 20px;">
+                    <div class="rating-logo">
+                        <div class="rating-score">8.5</div>
+                        <p class="rating-label">Valoración</p>
+                    </div>
                     <div class="product-details">
                         <h2>10. Tefal Actifry Genius</h2>
-                        <!-- Logo de valoración -->
-                        <div class="rating-logo">
-                          <div class="rating-score">8.5</div>
-                          <p class="rating-label">Valoración</p>
-                        </div>
                         <p>⭐⭐⭐⭐⭐ (3300+ vendidas)</p>
                         <span class="amazon-badge">Disponible en Amazon</span>
                         <br>
@@ -388,4 +362,3 @@
     </div>
 </body>
 </html>
-
