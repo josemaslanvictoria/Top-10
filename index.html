@@ -4,7 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Top 10 Tecnología</title>
-    <link rel="stylesheet" href="/assets/styles.css"> <!-- Enlace a estilos globales -->
+    <link rel="stylesheet" href="/assets/styles.css">
+    
+    <!-- Google reCAPTCHA -->
+    <script src="https://www.google.com/recaptcha/api.js?render=6LfK-OAqAAAAABuT-xDLlP4tYZzxfg3dB9XSYeF5"></script>
+    <script>
+        grecaptcha.ready(function() {
+            grecaptcha.execute('6LfK-OAqAAAAABuT-xDLlP4tYZzxfg3dB9XSYeF5', {action: 'homepage'}).then(function(token) {
+                document.getElementById("recaptchaResponse").value = token;
+            });
+        });
+    </script>
+    
     <style>
         h1 {
             text-align: center;
@@ -68,17 +79,13 @@
 <body>
     <header>
         <h1>Top 10 Tecnología</h1>
-        <p class="description">Bienvenido a <strong>Top 10 Tecnología</strong>, el sitio líder en análisis y comparativas de los mejores dispositivos del mercado. Descubre nuestras selecciones <strong>más recomendadas</strong> en tecnología para el hogar, como <strong><u>Freidoras de aire</u></strong> y <strong><u>Auriculares</u></strong>, con guías detalladas y enlaces directos a las mejores ofertas. Optimizamos cada recomendación con estudios <strong>SEO avanzados</strong>, asegurando que siempre encuentres lo mejor del mercado. ¡Explora y elige con confianza!</p>
+        <p class="description">Bienvenido a <strong>Top 10 Tecnología</strong>, el sitio líder en análisis y comparativas de los mejores dispositivos del mercado.</p>
     </header>
     
     <div class="container">
         <aside class="left-sidebar">
             <h3>Anuncios</h3>
-            <p>Espacio reservado para publicidad</p>
             <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3702060621408236" data-ad-slot="1234567890" data-ad-format="auto"></ins>
-            <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
         </aside>
 
         <div class="content">
@@ -96,11 +103,7 @@
         
         <aside class="sidebar">
             <h3>Anuncios</h3>
-            <p>Espacio reservado para publicidad</p>
             <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3702060621408236" data-ad-slot="9876543210" data-ad-format="auto"></ins>
-            <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
         </aside>
     </div>
     
@@ -110,5 +113,8 @@
         <button onclick="aceptarCookies(); document.getElementById('cookie-banner').style.display='none';">Aceptar</button>
         <button onclick="rechazarCookies(); document.getElementById('cookie-banner').style.display='none';">Rechazar</button>
     </div>
+    
+    <input type="hidden" id="recaptchaResponse" name="recaptchaResponse">
 </body>
 </html>
+
