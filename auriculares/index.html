@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="es">
 <head>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3702060621408236" crossorigin="anonymous"></script>
@@ -115,7 +115,7 @@
             display: flex;
             align-items: center;
             gap: 30px;
-            position: relative; /* Para que los elementos absolutos se posicionen respecto a este contenedor */
+            position: relative;
         }
         .product img {
             width: 200px;
@@ -129,7 +129,7 @@
             display: inline-block;
             margin-top: 10px;
             padding: 25px;
-            background-color: #00FF00; /* Botón verde */
+            background-color: #00CC00; /* Botón verde más oscuro */
             color: white;
             text-decoration: none;
             border-radius: 5px;
@@ -137,7 +137,7 @@
             font-size: 24px;
         }
         .product a:hover {
-            background-color: #008000; /* Verde más oscuro al pasar el cursor */
+            background-color: #008000; /* Verde aún más oscuro al pasar el cursor */
         }
         .amazon-badge {
             background-color: #ff9900;
@@ -149,7 +149,7 @@
             margin-top: 13px;
             font-size: 10px;
         }
-        /* Estilos para el logo de valoración en la esquina superior derecha */
+        /* Estilos para el logo de valoración */
         .rating-logo {
             position: absolute;
             top: 10px;
@@ -159,19 +159,52 @@
         .rating-score {
             width: 50px;
             height: 50px;
-            border: 5px solid red; /* Borde rojo grueso */
+            border: 5px solid red;
             border-radius: 50%;
             line-height: 50px;
             font-size: 22px;
-            color: black; /* Números en negro */
+            color: black;
             font-weight: bold;
             margin: 0 auto;
-            background-color: white; /* Fondo blanco para resaltar el aro */
+            background-color: white;
         }
         .rating-label {
             font-size: 12px;
             color: #333;
             margin-top: 5px;
+        }
+        /* Contenedor para envío gratis y botón desplegable */
+        .shipping-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+        }
+        .shipping-text {
+            font-size: 24px;
+            color: #FF0000;
+            font-weight: bold;
+            margin: 0;
+        }
+        .toggle-info {
+            background-color: #ddd;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .toggle-info:hover {
+            background-color: #ccc;
+        }
+        .more-info {
+            margin-top: 10px;
+            background-color: #f9f9f9;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            text-align: left;
         }
     </style>
 </head>
@@ -198,18 +231,23 @@
                 <!-- Producto 1 -->
                 <div class="product">
                     <img src="https://m.media-amazon.com/images/I/710Lppy-fzL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="COSORI Pro LE" style="float: left; margin-right: 20px;">
-                    <!-- Logo de valoración en la esquina superior derecha -->
                     <div class="rating-logo">
                         <div class="rating-score">9.9</div>
                         <p class="rating-label">Valoración</p>
                     </div>
                     <div class="product-details">
-                        <h2>1. Auriculares Inalámbricos Bluetooth, Auriculares Bluetooth 5.3, 4 Mic </h2>
+                        <h2>1. Auriculares Inalámbricos Bluetooth, Auriculares Bluetooth 5.3, 4 Mic</h2>
                         <p class="reviews">⭐⭐⭐⭐⭐ (16000+ opiniones)</p>
                         <span class="amazon-badge">Disponible en Amazon</span>
                         <br>
                         <a href="https://amzn.to/4bc9qBO" target="_blank">Ver precio</a>
-                        <p style="font-size: 24px; color: #FF0000; font-weight: bold;">Envío gratis</p>
+                        <div class="shipping-container">
+                            <p class="shipping-text">Envío gratis</p>
+                            <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
+                        </div>
+                        <div class="more-info" style="display: none;">
+                            <p>Información adicional sobre el envío gratis y garantía.</p>
+                        </div>
                     </div>
                 </div>
                 <!-- Producto 2 -->
@@ -220,12 +258,18 @@
                         <p class="rating-label">Valoración</p>
                     </div>
                     <div class="product-details">
-                        <h2>2. Auriculares Inalambricos Bluetooth, Cascos lnalámbricos Bluetooth 5.3</h2>
+                        <h2>2. Auriculares Inalámbricos Bluetooth, Cascos Inalámbricos Bluetooth 5.3</h2>
                         <p class="reviews">⭐⭐⭐⭐⭐ (14200+ opiniones)</p>
                         <span class="amazon-badge">Disponible en Amazon</span>
                         <br>
                         <a href="https://amzn.to/4gVbMGc" target="_blank">Ver precio</a>
-                        <p style="font-size: 24px; color: #FF0000; font-weight: bold;">Envío gratis</p>
+                        <div class="shipping-container">
+                            <p class="shipping-text">Envío gratis</p>
+                            <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
+                        </div>
+                        <div class="more-info" style="display: none;">
+                            <p>Información adicional sobre el envío gratis y garantía.</p>
+                        </div>
                     </div>
                 </div>
                 <!-- Producto 3 -->
@@ -236,12 +280,18 @@
                         <p class="rating-label">Valoración</p>
                     </div>
                     <div class="product-details">
-                        <h2>3. Auriculares Inalambricos, Auriculares Bluetooth 5.4 HiFi Estéreo,</h2>
+                        <h2>3. Auriculares Inalámbricos, Auriculares Bluetooth 5.4 HiFi Estéreo</h2>
                         <p class="reviews">⭐⭐⭐⭐ (14000+ opiniones)</p>
                         <span class="amazon-badge">Disponible en Amazon</span>
                         <br>
                         <a href="https://amzn.to/4idf09a" target="_blank">Ver precio</a>
-                        <p style="font-size: 24px; color: #FF0000; font-weight: bold;">Envío gratis</p>
+                        <div class="shipping-container">
+                            <p class="shipping-text">Envío gratis</p>
+                            <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
+                        </div>
+                        <div class="more-info" style="display: none;">
+                            <p>Información adicional sobre el envío gratis y garantía.</p>
+                        </div>
                     </div>
                 </div>
                 <!-- Producto 4 -->
@@ -252,12 +302,18 @@
                         <p class="rating-label">Valoración</p>
                     </div>
                     <div class="product-details">
-                        <h2>4.KVIDIO Auriculares Supraaurales</h2>
+                        <h2>4. KVIDIO Auriculares Supraaurales</h2>
                         <p class="reviews">⭐⭐⭐⭐⭐ (23900+ opiniones)</p>
                         <span class="amazon-badge">Disponible en Amazon</span>
                         <br>
                         <a href="https://amzn.to/4bbv5tG" target="_blank">Ver precio</a>
-                        <p style="font-size: 24px; color: #FF0000; font-weight: bold;">Envío gratis</p>
+                        <div class="shipping-container">
+                            <p class="shipping-text">Envío gratis</p>
+                            <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
+                        </div>
+                        <div class="more-info" style="display: none;">
+                            <p>Información adicional sobre el envío gratis y garantía.</p>
+                        </div>
                     </div>
                 </div>
                 <!-- Producto 5 -->
@@ -273,7 +329,13 @@
                         <span class="amazon-badge">Disponible en Amazon</span>
                         <br>
                         <a href="https://amzn.to/3DgeTuF" target="_blank">Ver precio</a>
-                        <p style="font-size: 24px; color: #FF0000; font-weight: bold;">Envío gratis</p>
+                        <div class="shipping-container">
+                            <p class="shipping-text">Envío gratis</p>
+                            <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
+                        </div>
+                        <div class="more-info" style="display: none;">
+                            <p>Información adicional sobre el envío gratis y garantía.</p>
+                        </div>
                     </div>
                 </div>
                 <!-- Producto 6 -->
@@ -289,7 +351,13 @@
                         <span class="amazon-badge">Disponible en Amazon</span>
                         <br>
                         <a href="https://amzn.to/4ibp56z" target="_blank">Ver precio</a>
-                        <p style="font-size: 24px; color: #FF0000; font-weight: bold;">Envío gratis</p>
+                        <div class="shipping-container">
+                            <p class="shipping-text">Envío gratis</p>
+                            <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
+                        </div>
+                        <div class="more-info" style="display: none;">
+                            <p>Información adicional sobre el envío gratis y garantía.</p>
+                        </div>
                     </div>
                 </div>
                 <!-- Producto 7 -->
@@ -305,7 +373,13 @@
                         <span class="amazon-badge">Disponible en Amazon</span>
                         <br>
                         <a href="https://amzn.to/4i9l6HK" target="_blank">Ver precio</a>
-                        <p style="font-size: 24px; color: #FF0000; font-weight: bold;">Envío gratis</p>
+                        <div class="shipping-container">
+                            <p class="shipping-text">Envío gratis</p>
+                            <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
+                        </div>
+                        <div class="more-info" style="display: none;">
+                            <p>Información adicional sobre el envío gratis y garantía.</p>
+                        </div>
                     </div>
                 </div>
                 <!-- Producto 8 -->
@@ -321,7 +395,13 @@
                         <span class="amazon-badge">Disponible en Amazon</span>
                         <br>
                         <a href="https://amzn.to/436bJnN" target="_blank">Ver precio</a>
-                        <p style="font-size: 24px; color: #FF0000; font-weight: bold;">Envío gratis</p>
+                        <div class="shipping-container">
+                            <p class="shipping-text">Envío gratis</p>
+                            <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
+                        </div>
+                        <div class="more-info" style="display: none;">
+                            <p>Información adicional sobre el envío gratis y garantía.</p>
+                        </div>
                     </div>
                 </div>
                 <!-- Producto 9 -->
@@ -332,12 +412,18 @@
                         <p class="rating-label">Valoración</p>
                     </div>
                     <div class="product-details">
-                        <h2>9.OneOdio Pro10 Auriculares DJ con Cable, Estéreo de Mezcla y Monitor de Estudio</h2>
+                        <h2>9. OneOdio Pro10 Auriculares DJ con Cable, Estéreo de Mezcla y Monitor de Estudio</h2>
                         <p class="reviews">⭐⭐⭐⭐ (17400+ opiniones)</p>
                         <span class="amazon-badge">Disponible en Amazon</span>
                         <br>
                         <a href="https://amzn.to/41dTc6n" target="_blank">Ver precio</a>
-                        <p style="font-size: 24px; color: #FF0000; font-weight: bold;">Envío gratis</p>
+                        <div class="shipping-container">
+                            <p class="shipping-text">Envío gratis</p>
+                            <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
+                        </div>
+                        <div class="more-info" style="display: none;">
+                            <p>Información adicional sobre el envío gratis y garantía.</p>
+                        </div>
                     </div>
                 </div>
                 <!-- Producto 10 -->
@@ -353,7 +439,13 @@
                         <span class="amazon-badge">Disponible en Amazon</span>
                         <br>
                         <a href="https://amzn.to/41anozA" target="_blank">Ver precio</a>
-                        <p style="font-size: 24px; color: #FF0000; font-weight: bold;">Envío gratis</p>
+                        <div class="shipping-container">
+                            <p class="shipping-text">Envío gratis</p>
+                            <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
+                        </div>
+                        <div class="more-info" style="display: none;">
+                            <p>Información adicional sobre el envío gratis y garantía.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -365,5 +457,17 @@
       <button onclick="aceptarCookies(); document.getElementById('cookie-banner').style.display='none';">Aceptar</button>
       <button onclick="rechazarCookies(); document.getElementById('cookie-banner').style.display='none';">Rechazar</button>
     </div>
+    <script>
+        function toggleInfo(button) {
+            var info = button.parentElement.nextElementSibling;
+            if (info.style.display === "none" || info.style.display === "") {
+                info.style.display = "block";
+                button.textContent = "Mostrar menos";
+            } else {
+                info.style.display = "none";
+                button.textContent = "Mostrar más";
+            }
+        }
+    </script>
 </body>
 </html>
