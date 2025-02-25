@@ -1,365 +1,664 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3702060621408236" crossorigin="anonymous"></script>
-    <script async src="https://fundingchoicesmessages.google.com/i/pub-3702060621408236?ers=1" nonce="xyz"></script>
-    <script>
-        window.googlefc = window.googlefc || {};
-        window.googlefc.callbackQueue = window.googlefc.callbackQueue || [];
-        window.googlefc.callbackQueue.push(function() {
-            window.googlefc.setConsentConfig({
-                'consentMode': 'advanced'
-            });
-        });
-    </script>
-    
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11335901809"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-
-      // Configurar el Modo de Consentimiento con valores predeterminados (sin consentimiento)
-      gtag('consent', 'default', {
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3702060621408236" crossorigin="anonymous"></script>
+  <script async src="https://fundingchoicesmessages.google.com/i/pub-3702060621408236?ers=1" nonce="xyz"></script>
+  <script>
+    window.googlefc = window.googlefc || {};
+    window.googlefc.callbackQueue = window.googlefc.callbackQueue || [];
+    window.googlefc.callbackQueue.push(function() {
+      window.googlefc.setConsentConfig({
+        'consentMode': 'advanced'
+      });
+    });
+  </script>
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11335901809"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+  
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'analytics_storage': 'denied'
+    });
+  
+    gtag('js', new Date());
+    gtag('config', 'AW-11335901809');
+  
+    function aceptarCookies() {
+      gtag('consent', 'update', {
+        'ad_storage': 'granted',
+        'analytics_storage': 'granted'
+      });
+    }
+  
+    function rechazarCookies() {
+      gtag('consent', 'update', {
         'ad_storage': 'denied',
         'analytics_storage': 'denied'
       });
-
-      gtag('js', new Date());
-      gtag('config', 'AW-11335901809');
-
-      // Si el usuario acepta las cookies
-      function aceptarCookies() {
-        gtag('consent', 'update', {
-          'ad_storage': 'granted',
-          'analytics_storage': 'granted'
-        });
+    }
+  </script>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Top 10: Los Mejores Auriculares</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+    }
+    .container {
+      max-width: 1200px;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      gap: 40px;
+    }
+    /* Ahora el contenido aparece primero y el sidebar a la derecha */
+    .content {
+      flex: 3;
+      position: relative;
+    }
+    .sidebar {
+      flex: 1;
+      padding: 20px;
+      background-color: #f4f4f4;
+      text-align: center;
+      /* Eliminamos el margen a la izquierda para evitar que quede en la izquierda */
+      margin-left: 0;
+    }
+    h1 {
+      color: #333;
+      font-size: 32px;
+      text-decoration: underline;
+    }
+    p {
+      font-size: 20px;
+      color: #666;
+      max-width: 800px;
+      margin: 0 auto 20px auto;
+      text-align: justify;
+    }
+    .highlight {
+      font-weight: bold;
+      text-decoration: underline;
+      color: black;
+    }
+    .reviews {
+      font-size: 16px;
+      margin: 0 0 10px 0;
+    }
+    .product-list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+      margin-top: 20px;
+    }
+    .product {
+      width: 100%;
+      max-width: 900px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 30px;
+      text-align: left;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+      background-color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      position: relative;
+    }
+    .product img {
+      width: 200px;
+      height: auto;
+      border-radius: 5px;
+    }
+    .product-details {
+      flex: 1;
+    }
+    /* Bloque de oferta para productos (con extra-info lateral) */
+    .offer-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10px;
+    }
+    .offer-buttons {
+      /* Aquí se agrupan el badge y el enlace */
+    }
+    .extra-info {
+      text-align: right;
+    }
+    .extra-info p {
+      margin: 2px 0;
+      font-size: 16px;
+    }
+    .checkmark {
+      color: green;
+      font-weight: bold;
+      margin-right: 5px;
+    }
+    .product a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 25px;
+      background-color: #00CC00;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      font-size: 24px;
+    }
+    .product a:hover {
+      background-color: #008000;
+    }
+    .amazon-badge {
+      background-color: #ff9900;
+      color: white;
+      padding: 5px 8px;
+      border-radius: 5px;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 13px;
+      font-size: 10px;
+    }
+    .rating-logo {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      text-align: center;
+    }
+    .rating-score {
+      width: 50px;
+      height: 50px;
+      border: 5px solid red;
+      border-radius: 50%;
+      line-height: 50px;
+      font-size: 22px;
+      color: black;
+      font-weight: bold;
+      margin: 0 auto;
+      background-color: white;
+    }
+    .rating-label {
+      font-size: 12px;
+      color: #333;
+      margin-top: 5px;
+    }
+    /* Contenedor para envío gratis y botón desplegable */
+    .shipping-container {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+      gap: 10px;
+    }
+    .shipping-text {
+      font-size: 20px;
+      color: #FF0000;
+      font-weight: bold;
+      margin: 0;
+    }
+    .toggle-info {
+      background-color: #ddd;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 16px;
+      width: 150px;
+    }
+    .toggle-info:hover {
+      background-color: #ccc;
+    }
+    .more-info {
+      margin-top: 5px;
+      background-color: #f9f9f9;
+      padding: 5px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 14px;
+      text-align: left;
+    }
+    /* Media Query para dispositivos móviles */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        gap: 20px;
       }
-
-      // Si el usuario rechaza las cookies
-      function rechazarCookies() {
-        gtag('consent', 'update', {
-          'ad_storage': 'denied',
-          'analytics_storage': 'denied'
-        });
+      /* En móvil, el sidebar se mostrará debajo */
+      .sidebar {
+        width: 100%;
       }
-    </script>
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Top 10: Las Mejores Freidoras de Aire</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            text-align: center;
-            display: flex;
-            justify-content: center;
-        }
-        .container {
-            max-width: 1200px;
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-            gap: 40px;
-        }
-        .content {
-            flex: 3;
-            position: relative;
-        }
-        .sidebar {
-            flex: 1;
-            padding: 20px;
-            background-color: #f4f4f4;
-            text-align: center;
-            margin-left: 20px;
-        }
-        h1 {
-            color: #333;
-            font-size: 32px;
-            text-decoration: underline;
-        }
-        p {
-            font-size: 20px;
-            color: #666;
-            max-width: 800px;
-            margin: 0 auto 20px;
-            text-align: justify;
-        }
-        .highlight {
-            font-weight: bold;
-            text-decoration: underline;
-            color: black;
-        }
-        .product-list {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 40px;
-            margin-top: 20px;
-        }
-        .product {
-            width: 100%;
-            max-width: 900px;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            padding: 30px;
-            text-align: left;
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-            background-color: #fff;
-            display: flex;
-            align-items: center;
-            gap: 30px;
-            position: relative; /* Para que los elementos absolutos se posicionen respecto a este contenedor */
-        }
-        .product img {
-            width: 200px;
-            height: auto;
-            border-radius: 5px;
-        }
-        .product-details {
-            flex: 1;
-        }
-        .product a {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 25px;
-            background-color: #ff9900;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            font-size: 24px;
-        }
-        .product a:hover {
-            background-color: #00FF00;
-        }
-        .amazon-badge {
-            background-color: #ff9900;
-            color: white;
-            padding: 5px 8px;
-            border-radius: 5px;
-            font-weight: bold;
-            display: inline-block;
-            margin-top: 13px;
-            font-size: 10px;
-        }
-        /* Estilos para el logo de valoración en la esquina superior derecha */
-        .rating-logo {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            text-align: center;
-        }
-        .rating-score {
-            width: 50px;
-            height: 50px;
-            border: 5px solid red; /* Borde rojo grueso */
-            border-radius: 50%;
-            line-height: 50px;
-            font-size: 22px;
-            color: black; /* Números en negro */
-            font-weight: bold;
-            margin: 0 auto;
-            background-color: white; /* Fondo blanco para resaltar el aro */
-        }
-        .rating-label {
-            font-size: 12px;
-            color: #333;
-            margin-top: 5px;
-        }
-    </style>
+      .content {
+        width: 100%;
+      }
+      .product {
+        flex-direction: column;
+        align-items: center;
+      }
+      .product img {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 0 15px 0;
+      }
+      .product-details {
+        text-align: center;
+      }
+      .shipping-container {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .offer-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .extra-info {
+        margin-top: 10px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <div class="sidebar">
-            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3702060621408236" data-ad-slot="9876543210" data-ad-format="auto"></ins>
-            <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3702060621408236" data-ad-slot="1234567890" data-ad-format="auto"></ins>
-            <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-            <h3>Anuncios Patrocinados</h3>
-            <!-- Código de AdSense u otro anuncio aquí -->
-        </div>
-        <div class="content">
-            <h1>Top 10: Las Mejores Freidoras de Aire</h1>
-            <p>Las <span class="highlight">freidoras de aire</span> son una excelente opción para <span class="highlight">cocinar de manera más saludable</span>, ya que permiten preparar alimentos con <span class="highlight">mucho menos aceite</span>. Son ideales para quienes desean disfrutar de comidas crujientes sin exceso de grasa. Además, ayudan a <span class="highlight">reducir el consumo de calorías</span> y a mantener un <span class="highlight">estilo de vida equilibrado</span>. En este listado hemos seleccionado las <span class="highlight">mejores opciones del mercado</span>, basándonos en calidad, valoraciones y popularidad. ¡Invierte en tu salud con una <span class="highlight">freidora de aire</span>!</p>
-            <p class="amazon-notice">Compra este producto en Amazon a través de este enlace</p>
-            
-            <div class="product-list">
-                <!-- Producto 1 -->
-                <div class="product">
-                    <img src="https://m.media-amazon.com/images/I/71-bVzbgWTL._AC_SX679_.jpg" alt="COSORI Pro LE" style="float: left; margin-right: 20px;">
-                    <!-- Logo de valoración en la esquina superior derecha -->
-                    <div class="rating-logo">
-                        <div class="rating-score">9.8</div>
-                        <p class="rating-label">Valoración</p>
-                    </div>
-                    <div class="product-details">
-                        <h2>1. COSORI Pro LE</h2>
-                        <p>⭐⭐⭐⭐⭐ (25000+ opiniones)</p>
-                        <span class="amazon-badge">Disponible en Amazon</span>
-                        <br>
-                        <a href="https://amzn.to/3Qp9Ef9" target="_blank">Ver precio</a>
-                        <p style="font-size: 24px; color: #FF0000; font-weight: bold;">Envío gratis</p>
-                    </div>
-                </div>
-                <!-- Producto 2 -->
-                <div class="product">
-                    <img src="https://m.media-amazon.com/images/I/519AN1zQmbL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="Cecotec Cecofry" style="float: left; margin-right: 20px;">
-                    <div class="rating-logo">
-                        <div class="rating-score">9.7</div>
-                        <p class="rating-label">Valoración</p>
-                    </div>
-                    <div class="product-details">
-                        <h2>2. Cecotec Cecofry</h2>
-                        <p>⭐⭐⭐⭐⭐ (24200+ opiniones)</p>
-                        <span class="amazon-badge">Disponible en Amazon</span>
-                        <br>
-                        <a href="https://amzn.to/4335EbL" target="_blank">Ver oferta</a>
-                        <p style="font-size: 24px; color: #FF0000; font-weight: bold;">Ver precio</p>
-                    </div>
-                </div>
-                <!-- Producto 3 -->
-                <div class="product">
-                    <img src="https://m.media-amazon.com/images/I/710hgSJ9WSL.__AC_SY300_SX300_QL70_ML2_.jpg" alt="COSORI Dual Blaze" style="float: left; margin-right: 20px;">
-                    <div class="rating-logo">
-                        <div class="rating-score">9.5</div>
-                        <p class="rating-label">Valoración</p>
-                    </div>
-                    <div class="product-details">
-                        <h2>3. COSORI Dual Blaze</h2>
-                        <p>⭐⭐⭐⭐ (24000+ opiniones)</p>
-                        <span class="amazon-badge">Disponible en Amazon</span>
-                        <br>
-                        <a href="https://amzn.to/3X7S9UG" target="_blank">Ver oferta</a>
-                        <p style="font-size: 24px; color: #FF0000; font-weight: bold;">Ver precio</p>
-                    </div>
-                </div>
-                <!-- Producto 4 -->
-                <div class="product">
-                    <img src="https://m.media-amazon.com/images/I/81OJ5uCzWSL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="COSORI Premium" style="float: left; margin-right: 20px;">
-                    <div class="rating-logo">
-                        <div class="rating-score">9.4</div>
-                        <p class="rating-label">Valoración</p>
-                    </div>
-                    <div class="product-details">
-                        <h2>4. COSORI Premium</h2>
-                        <p>⭐⭐⭐⭐⭐ (23900+ opiniones)</p>
-                        <span class="amazon-badge">Disponible en Amazon</span>
-                        <br>
-                        <a href="https://amzn.to/4gSb4JU" target="_blank">Ver precio</a>
-                        <p style="font-size: 24px; color: #FF0000; font-weight: bold;">Envío gratis</p>
-                    </div>
-                </div>
-                <!-- Producto 5 -->
-                <div class="product">
-                    <img src="https://m.media-amazon.com/images/I/51C9-QpMYHL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="Cecotec Cecofry Full Inox" style="float: left; margin-right: 20px;">
-                    <div class="rating-logo">
-                        <div class="rating-score">9.3</div>
-                        <p class="rating-label">Valoración</p>
-                    </div>
-                    <div class="product-details">
-                        <h2>5. Cecotec Cecofry Full Inox</h2>
-                        <p>⭐⭐⭐⭐ (13800+ opiniones)</p>
-                        <span class="amazon-badge">Disponible en Amazon</span>
-                        <br>
-                        <a href="https://amzn.to/3X9hNbt" target="_blank">Ver precio</a>
-                        <p style="font-size: 24px; color: #FF0000; font-weight: bold;">Envío gratis</p>
-                    </div>
-                </div>
-                <!-- Producto 6 -->
-                <div class="product">
-                    <img src="https://m.media-amazon.com/images/I/615EbHeTgmL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="COSORI Turbo Blaze" style="float: left; margin-right: 20px;">
-                    <div class="rating-logo">
-                        <div class="rating-score">9.1</div>
-                        <p class="rating-label">Valoración</p>
-                    </div>
-                    <div class="product-details">
-                        <h2>6. COSORI Turbo Blaze</h2>
-                        <p>⭐⭐⭐⭐⭐ (13700+ opiniones)</p>
-                        <span class="amazon-badge">Disponible en Amazon</span>
-                        <br>
-                        <a href="https://amzn.to/415R8xx" target="_blank">Ver precio</a>
-                        <p style="font-size: 24px; color: #FF0000; font-weight: bold;">Envío gratis</p>
-                    </div>
-                </div>
-                <!-- Producto 7 -->
-                <div class="product">
-                    <img src="https://m.media-amazon.com/images/I/713fuTqP6fL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="Cecotec Turbo Cecofry" style="float: left; margin-right: 20px;">
-                    <div class="rating-logo">
-                        <div class="rating-score">8.9</div>
-                        <p class="rating-label">Valoración</p>
-                    </div>
-                    <div class="product-details">
-                        <h2>7. Cecotec Turbo Cecofry</h2>
-                        <p>⭐⭐⭐⭐ (13600+ opiniones)</p>
-                        <span class="amazon-badge">Disponible en Amazon</span>
-                        <br>
-                        <a href="https://amzn.to/3ENVNwE" target="_blank">Ver precio</a>
-                        <p style="font-size: 24px; color: #FF0000; font-weight: bold;">Envío gratis</p>
-                    </div>
-                </div>
-                <!-- Producto 8 -->
-                <div class="product">
-                    <img src="https://m.media-amazon.com/images/I/813mgKJcarL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="Proscenic T21" style="float: left; margin-right: 20px;">
-                    <div class="rating-logo">
-                        <div class="rating-score">8.8</div>
-                        <p class="rating-label">Valoración</p>
-                    </div>
-                    <div class="product-details">
-                        <h2>8. Proscenic T21</h2>
-                        <p>⭐⭐⭐⭐⭐ (23500+ opiniones)</p>
-                        <span class="amazon-badge">Disponible en Amazon</span>
-                        <br>
-                        <a href="https://amzn.to/4b7zoWW" target="_blank">Ver precio</a>
-                        <p style="font-size: 24px; color: #FF0000; font-weight: bold;">Envío gratis</p>
-                    </div>
-                </div>
-                <!-- Producto 9 -->
-                <div class="product">
-                    <img src="https://m.media-amazon.com/images/I/51jlaaR8MxL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="Innsky Air Fryer" style="float: left; margin-right: 20px;">
-                    <div class="rating-logo">
-                        <div class="rating-score">8.7</div>
-                        <p class="rating-label">Valoración</p>
-                    </div>
-                    <div class="product-details">
-                        <h2>9. Innsky Air Fryer</h2>
-                        <p>⭐⭐⭐⭐ (13400+ opiniones)</p>
-                        <span class="amazon-badge">Disponible en Amazon</span>
-                        <br>
-                        <a href="https://amzn.to/3EImG4V" target="_blank">Ver precio</a>
-                        <p style="font-size: 24px; color: #FF0000; font-weight: bold;">Envío gratis</p>
-                    </div>
-                </div>
-                <!-- Producto 10 -->
-                <div class="product">
-                    <img src="https://m.media-amazon.com/images/I/91wVC-1fPlL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="Tefal Actifry Genius" style="float: left; margin-right: 20px;">
-                    <div class="rating-logo">
-                        <div class="rating-score">8.6</div>
-                        <p class="rating-label">Valoración</p>
-                    </div>
-                    <div class="product-details">
-                        <h2>10. Tefal Actifry Genius</h2>
-                        <p>⭐⭐⭐⭐⭐ (13300+ opiniones)</p>
-                        <span class="amazon-badge">Disponible en Amazon</span>
-                        <br>
-                        <a href="https://amzn.to/4hIu7HL" target="_blank">Ver precio</a>
-                        <p style="font-size: 24px; color: #FF0000; font-weight: bold;">Envío gratis</p>
-                    </div>
-                </div>
+  <div class="container">
+    <!-- El contenido aparece primero -->
+    <div class="content">
+      <h1>Top 10: Las Mejores Freidoras de Aire</h1>
+      <p>Las <span class="highlight">Freidoras de Aire</span> son una excelente opción para <span class="highlight">cocinar de manera saludable</span>, ya que permiten cocinar de manera sana <span class="highlight">mucho mejor el sabor</span>. Son ideales para quienes desean disfrutar de la buena comida. Además, ayudan a <span class="highlight">cocinar más rapido y con gran variedad de alimentas</span> y a mantener el <span class="highlight">estilo de vida equilibrado</span>. En este listado hemos seleccionado las <span class="highlight">mejores opciones del mercado</span>, basándonos en calidad, valoraciones y popularidad. ¡Invierte en tu salud con unos <span class="highlight">Freidoras de Aire</span>!</p>
+      <p class="amazon-notice">Compra este producto en Amazon a través de este enlace</p>
+      
+      <div class="product-list">
+        <!-- Producto 1 -->
+        <div class="product">
+          <img src="https://m.media-amazon.com/images/I/71-bVzbgWTL._AC_SX679_.jpg>
+          <div class="rating-logo">
+            <div class="rating-score">9.9</div>
+            <p class="rating-label">Valoración</p>
+          </div>
+          <div class="product-details">
+            <h2>1. COSORI Pro LE</h2>
+            <p class="reviews">⭐⭐⭐⭐⭐ (18000+ opiniones)</p>
+            <div class="offer-container">
+              <div class="offer-buttons">
+                <span class="amazon-badge">Disponible en Amazon</span><br>
+                <a href="https://amzn.to/4gVVRaH" target="_blank">Ver precio</a>
+              </div>
+              <div class="extra-info">
+                <p><span class="checkmark">✔</span> Facilidad de uso</p>
+                <p><span class="checkmark">✔</span> Facilidad de limpieza</p>
+                <p><span class="checkmark">✔</span> Funcionamiento</p>
+              </div>
             </div>
+            <div class="shipping-container">
+              <p class="shipping-text">Envío gratis</p>
+              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
+            </div>
+            <div class="more-info" style="display: none;">
+              <h3>Acerca de este producto</h3>
+              <p><strong>[ 𝐌𝐨𝐝𝐨 𝐝𝐞 𝐂𝐨𝐜𝐜𝐢ó𝐧 𝐅á𝐜𝐢𝐥 𝐜𝐨𝐧 𝟏 𝐏𝐮𝐥𝐬𝐚𝐜𝐢ó𝐧 ] 13 programas automáticos para facilitar la cocción; temperatura y tiempo ajustables（ Hasta 205ºC y 60 Min） para satisfacer todas las necesidades de cocción.</p>
+              <p><strong>[ 𝟓.𝟓𝐋 𝐆𝐫𝐚𝐧 𝐂𝐚𝐩𝐚𝐜𝐢𝐝𝐚𝐝 ] Puedes cocinar para 6 personas a la vez, fácil preparación de comidas para reuniones familiares.</p>
+              <p><strong>[ 𝐂𝐨𝐦𝐞𝐫 𝐌á𝐬 𝐒𝐚𝐧𝐨 ] El interior está hecho de acero inoxidable para materiales más seguros. Cocinar sin aceite o 85% menos de aceite, la comida sigue siendo dorada y crujiente, llena y jugosa.</p>
+              <p><strong>[ 𝟓𝟓% 𝐌á𝐬 𝐑á𝐩𝐢𝐝𝐨 ] 1700W de potencia lo hacen 3 veces más rápido que los hornos convencionales, con comidas listas en minutos.</p>
+              <p><strong>[ 𝐑𝐞𝐜𝐞𝐭𝐚𝐫𝐢𝐨 𝐄𝐬𝐩𝐚ñ𝐨𝐥 ] 100 recetas en papel y 300+ recetas online gratis, ¡los cocineros novatos pueden hacer platos de nivel de chef profesional!</p>
+            </div>
+          </div>
         </div>
+        <!-- Producto 2 -->
+        <div class="product">
+          <img src="https://m.media-amazon.com/images/I/519AN1zQmbL._AC_SX679_.jpg>
+          <div class="rating-logo">
+            <div class="rating-score">9.8</div>
+            <p class="rating-label">Valoración</p>
+          </div>
+          <div class="product-details">
+            <h2>2. Cecotec Cecofry</h2>
+            <p class="reviews">⭐⭐⭐⭐⭐ (16200+ opiniones)</p>
+            <div class="offer-container">
+              <div class="offer-buttons">
+                <span class="amazon-badge">Disponible en Amazon</span><br>
+                <a href="https://amzn.to/3Xd48QL">Ver precio</a>
+              </div>
+              <div class="extra-info">
+                <p><span class="checkmark">✔</span> Funcionamiento</p>
+                <p><span class="checkmark">✔</span> Facilidad de uso</p>
+                <p><span class="checkmark">✔</span> Calidad</p>
+              </div>
+            </div>
+            <div class="shipping-container">
+              <p class="shipping-text">Envío gratis</p>
+              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
+            </div>
+            <div class="more-info" style="display: none;">
+              <h3>Acerca de este producto</h3>
+              <p><strong>Freidora dietética que permite cocinar con una sola cucharada de aceite, consiguiendo unos resultados más sanos. Diseño moderno y compacto con un panel de control táctil multifunción para controlar el funcionamiento.
+</p>
+              <p><strong>Área de cocinado de 5,5 L para poder cocinar grandes cantidades de alimentos. 1700 W de potencia para cocinar de manera rápida todos los platos.</p>
+              <p><strong>Freidora de diseño elegante y con acabados en acero inoxidable oscurecido, para una mayor resistencia y durabilidad.</p>
+              <p><strong>8 modos preconfigurados que establecen el tiempo y la temperatura necesarios para cocinar distintos tipos de alimentos. Tiempo ajustable de 0 a 60 minutos. Con protección contra sobrecalentamiento</p>
+            </div>
+          </div>
+        </div>
+        <!-- Producto 3 -->
+        <div class="product">
+          <img src="https://m.media-amazon.com/images/I/710hgSJ9WSL._AC_SX679_.jpg">
+          <div class="rating-logo">
+            <div class="rating-score">9.6</div>
+            <p class="rating-label">Valoración</p>
+          </div>
+          <div class="product-details">
+            <h2>3. COSORI Dual Blaze</h2>
+            <p class="reviews">⭐⭐⭐⭐ (15000+ opiniones)</p>
+            <div class="offer-container">
+              <div class="offer-buttons">
+                <span class="amazon-badge">Disponible en Amazon</span><br>
+                <a href="https://amzn.to/3Da6g4R" target="_blank">Ver precio</a>
+              </div>
+              <div class="extra-info">
+                <p><span class="checkmark">✔</span> Calidad</p>
+                <p><span class="checkmark">✔</span> Facilidad de uso</p>
+                <p><span class="checkmark">✔</span> Funcionamiento</p>
+              </div>
+            </div>
+            <div class="shipping-container">
+              <p class="shipping-text">Envío gratis</p>
+              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
+            </div>
+            <div class="more-info" style="display: none;">
+              <h3>Acerca de este producto</h3>
+              <p><strong>Cocina todo con tu Cecofry gracias a su diseño que incorpora freidora de aire, grill para carne y plancha para prepara pizzas con masas óptimas</p>
+              <p><strong>Consigue resultados óptimos en menos tiempo; gracias a su diseño con doble resistencia arriba y abajo; distribuye el calor de manera uniforme, asegurando resultados consistentes y deliciosos en cada preparación, sin que tengas que girar tus alimentos de forma constante
+</p>
+              <p><strong>Marca tus carnes con la placa Grillin Style y consigue el punto óptimo en tus cortes de carne favoritos; prepara las pizzas auténticas en su plancha y consigue masas óptimas crujientes y doradas</p>
+              <p><strong>Ajuste Optimo:</strong> Diseño ergonómico con peso de 3.0 g y estuche ultracompacto para portabilidad.</p>
+              <p><strong>Freidora con 8 litros de capacidad; prepara deliciosas comidas para compartir con tu pareja o disfruta de platillos individuales con suficiente espacio para tus necesidades culinarias; su potencia de 2200 W permite cocinar recetas con una cucharada de aceite, reduciendo significativamente la cantidad de grasas en tus preparaciones; disfruta de platos saludables y deliciosos, sin sacrificar el sabor y la textura que tanto te gusta</p>
+            </div>
+          </div>
+        </div>
+        <!-- Producto 4 -->
+        <div class="product">
+          <img src="https://m.media-amazon.com/images/I/81OJ5uCzWSL.__AC_SX300_SY300_QL70_ML2_.jpg>
+          <div class="rating-logo">
+            <div class="rating-score">9.5</div>
+            <p class="rating-label">Valoración</p>
+          </div>
+          <div class="product-details">
+            <h2>4. COSORI Premium</h2>
+            <p class="reviews">⭐⭐⭐⭐⭐ (9900+ opiniones)</p>
+            <div class="offer-container">
+              <div class="offer-buttons">
+                <span class="amazon-badge">Disponible en Amazon</span><br>
+                <a href="https://amzn.to/4beyasW" target="_blank">Ver precio</a>
+              </div>
+              <div class="extra-info">
+                <p><span class="checkmark">✔</span> Rapidez</p>
+                <p><span class="checkmark">✔</span> Facilidad de uso</p>
+                <p><span class="checkmark">✔</span> Calidad</p>
+              </div>
+            </div>
+            <div class="shipping-container">
+              <p class="shipping-text">Envío gratis</p>
+              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
+            </div>
+            <div class="more-info" style="display: none;">
+              <h3>Acerca de este producto</h3>
+              <p><strong>[Sabor al Máximo Nivel] Esta innovadora freidora de aire está equipada con un motor de alta tecnología llamado “DC”, que permite 5 niveles de velocidad. Cada nivel fue asignado a un tipo de cocción, a fin de garantizarte los mejores resultados. Estas velocidades optimizadas del ventilador y de la parrilla mejoran la circulación del aire caliente hasta en un 28%, asegurando que el resultado final será más uniforme y que tus platillos quedarán mucho más crujientes</p>
+              <p><strong>[Un Solo Dispositivo; Múltiples Posibilidades de Cocción] La TurboBlaze ofrece 9 funciones en un solo dispositivo. Una freidora de aire clásica solo fríe; mientras que la TurboBlaze puede “freir” con aire, pero también puede hornear, asar, calentar, y mucho más. Su temperatura ajustable (30-230℃) y su amplio rango de tiempo (1-24 horas) te ayudan a preparar cada comida según tus preferencias</p>
+              <p><strong>[Come Sano Sin Sacrificar Sabor] Incluye un libro con 30 deliciosas recetas saludables; además, puedes acceder a la aplicación Vesync para más recetas y una tabla con más de 90 ingredientes de cocina. Para aún más contenido, ingresa a cosori.es y siguenos en redes sociales</p>
+              <p><strong>[Significativamente Más Rápida y Energéticamente Eficiente] Gracias a su motor DC, cocina un 46% más rápido que los dispositivos tradicionales y ahorra hasta un 64% de energía en comparación con los hornos convencionales. ¡La TurboBlaze es completamente amigable con el ambiente</p>
+              <p><strong>[Gran Capacidad en un Cuerpo Sumamente Compacto] Podrás cocinar fácilmente alimentos para una familia de 3 a 5 personas, gracias a su cesta de 6L de capacidad. Con su diseño particularmente compacto, la TurboBlaze de Cosori ocupa muy poco espacio y, por lo tanto, es adecuada para casi todas las cocinas (40x30x30cm)</p>
+            </div>
+          </div>
+        </div>
+        <!-- Producto 5 -->
+        <div class="product">
+          <img src="https://m.media-amazon.com/images/I/51C9-QpMYHL._AC_SX679_.jpg">
+          <div class="rating-logo">
+            <div class="rating-score">9.4</div>
+            <p class="rating-label">Valoración</p>
+          </div>
+          <div class="product-details">
+            <h2>5. Cecotec Cecofry Full Inox</h2>
+            <p class="reviews">⭐⭐⭐⭐ (15800+ opiniones)</p>
+            <div class="offer-container">
+              <div class="offer-buttons">
+                <span class="amazon-badge">Disponible en Amazon</span><br>
+                <a href="https://amzn.to/4hSGTUr" target="_blank">Ver precio</a>
+              </div>
+              <div class="extra-info">
+                <p><span class="checkmark">✔</span> Funcionamiento</p>
+                <p><span class="checkmark">✔</span> Calidad</p>
+                <p><span class="checkmark">✔</span> Facilidad de uso</p>
+              </div>
+            </div>
+            <div class="shipping-container">
+              <p class="shipping-text">Envío gratis</p>
+              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
+            </div>
+            <div class="more-info" style="display: none;">
+              <h3>Acerca de este producto</h3>
+              <p><strong>Freidora dietética que permite cocinar con una sola cucharada de aceite, consiguiendo unos resultados más sanos.</p>
+              <p><strong>Cubeta de 7.6 L de capacidad para poder cocinar grandes cantidades de alimentos. 2000 W de potencia para cocinar de manera rápida todos los platos. Resultados excepcionales en todas las recetas gracias a la tecnología PerfectCook de aire caliente que circula por el interior y sale por los orificios traseros.>
+              <p><strong>Diseño moderno y compacto con un panel de control táctil multifunción para controlar el funcionamiento.</p>
+              <p><strong>8 modos preconfigurados que establecen el tiempo y la temperatura necesarios para cocinar distintos tipos de alimentos. Dispone de termostato para regular la temperatura desde 80 ºC hasta 200 ºC. Tiempo ajustable de 0 a 60 minutos</p>
+              <p><strong>Con protección contra sobrecalentamiento. Base antideslizante para favorecer su apoyo durante el funcionamiento.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Producto 6 -->
+        <div class="product">
+          <img src="https://m.media-amazon.com/images/I/718DnKYp+OL._AC_SY300_SX300_.jpg" alt="COSORI Turbo Blaze">
+          <div class="rating-logo">
+            <div class="rating-score">9.2</div>
+            <p class="rating-label">Valoración</p>
+          </div>
+          <div class="product-details">
+            <h2>6. COSORI Turbo Blaze</h2>
+            <p class="reviews">⭐⭐⭐⭐⭐ (11800+ opiniones)</p>
+            <div class="offer-container">
+              <div class="offer-buttons">
+                <span class="amazon-badge">Disponible en Amazon</span><br>
+                <a href="https://amzn.to/4ibp56z" target="_blank">Ver precio</a>
+              </div>
+              <div class="extra-info">
+                <p><span class="checkmark">✔</span> Calidad de sonido</p>
+                <p><span class="checkmark">✔</span> Comodidad</p>
+                <p><span class="checkmark">✔</span> Calidad</p>
+              </div>
+            </div>
+            <div class="shipping-container">
+              <p class="shipping-text">Envío gratis</p>
+              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
+            </div>
+            <div class="more-info" style="display: none;">
+              <h3>Acerca de este producto</h3>
+              <p><strong>Experiencia de sonido única:</strong> Controlador de 13.4 mm y diafragma ultrasensible que revela ricas texturas en un amplio campo sonoro, resaltando las voces en un audio de tres canales.</p>
+              <p><strong>Nuevo Bluetooth 5.3 y emparejamiento rápido:</strong> Equipados con chips Bluetooth 5.3 para una conexión rápida y estable; se emparejan automáticamente al sacarlos de la caja.</p>
+              <p><strong>Batería de Larga Duración, pantalla LED dual:</strong> 8 horas de reproducción con una carga, más 40 horas adicionales; pantalla LED que muestra el nivel de batería y carga rápida USB-C en 1.5 horas.</p>
+              <p><strong>Control Táctil Inteligente, amplia compatibilidad:</strong> Sensor táctil para llamadas, volumen, cambio de canción y activación de Siri, compatible con la mayoría de dispositivos.</p>
+              <p><strong>Ajuste Cómodo, Resistencia al agua:</strong> Ganchos especiales y diseño ergonómico de 120° para un ajuste seguro y cómodo, con protección IP7 contra sudor y lluvia.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Producto 7 -->
+        <div class="product">
+          <img src="https://m.media-amazon.com/images/I/61fFD42IYVL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="Cecotec Turbo Cecofry">
+          <div class="rating-logo">
+            <div class="rating-score">9.1</div>
+            <p class="rating-label">Valoración</p>
+          </div>
+          <div class="product-details">
+            <h2>7. Cecotec Turbo Cecofry</h2>
+            <p class="reviews">⭐⭐⭐⭐ (14800+ opiniones)</p>
+            <div class="offer-container">
+              <div class="offer-buttons">
+                <span class="amazon-badge">Disponible en Amazon</span><br>
+                <a href="https://amzn.to/4i9l6HK" target="_blank">Ver precio</a>
+              </div>
+              <div class="extra-info">
+                <p><span class="checkmark">✔</span> Apariencia</p>
+                <p><span class="checkmark">✔</span> Calidad de sonido</p>
+                <p><span class="checkmark">✔</span> Relación calidad-precio</p>
+              </div>
+            </div>
+            <div class="shipping-container">
+              <p class="shipping-text">Envío gratis</p>
+              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
+            </div>
+            <div class="more-info" style="display: none;">
+              <h3>Acerca de este producto</h3>
+              <p><strong>【Actualizada-Hasta 90 Horas de Tiempo de Juego】</strong> Hasta 90 horas de escucha en modo Bluetooth, con opción de uso por cable (3.5 mm incluido).</p>
+              <p><strong>【Conexión Bluetooth 5.3 & Inalámbrica】</strong> Conexión ultra rápida hasta 20 metros (66 FEET) y batería de 1000 mAh para 90 horas de uso.</p>
+              <p><strong>【Calidad de Sonido Optimizada con 3 Modos EQ】</strong> Tres modos de ecualización para un sonido equilibrado, graves acentuados o alta definición.</p>
+              <p><strong>【Comfort de Todo el día & Diseño Plegable】</strong> Materiales premium y diadema ajustable para un ajuste perfecto; ideal para hogar, oficina, escuela y viajes.</p>
+              <p><strong>【Micrófono Incorporado】</strong> Controladores de 40 mm y micrófono integrado para una comunicación clara y estable.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Producto 8 -->
+        <div class="product">
+          <img src="https://m.media-amazon.com/images/I/71Ilitn6B+L._AC_SY300_SX300_.jpg" alt="TOZO A1 Auriculares">
+          <div class="rating-logo">
+            <div class="rating-score">9.0</div>
+            <p class="rating-label">Valoración</p>
+          </div>
+          <div class="product-details">
+            <h2>8. Proscenic T21</h2>
+            <p class="reviews">⭐⭐⭐⭐⭐ (14500+ opiniones)</p>
+            <div class="offer-container">
+              <div class="offer-buttons">
+                <span class="amazon-badge">Disponible en Amazon</span><br>
+                <a href="https://amzn.to/436bJnN" target="_blank">Ver precio</a>
+              </div>
+              <div class="extra-info">
+                <p><span class="checkmark">✔</span> Calidad</p>
+                <p><span class="checkmark">✔</span> Tamaño</p>
+                <p><span class="checkmark">✔</span> Ajuste</p>
+              </div>
+            </div>
+            <div class="shipping-container">
+              <p class="shipping-text">Envío gratis</p>
+              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
+            </div>
+            <div class="more-info" style="display: none;">
+              <h3>Acerca de este producto</h3>
+              <p><strong>[Ultraligero y compacto]</strong> Diseñados para un ajuste cómodo y discreto; cada auricular pesa solo 3,7 g.</p>
+              <p><strong>[Calidad de sonido estéreo]</strong> Altavoz de 6 mm que ofrece un sonido potente, con agudos dinámicos y graves potentes.</p>
+              <p><strong>[Control táctil inteligente]</strong> Control táctil de doble oído para controlar volumen, cambio de canción, pausa y llamadas.</p>
+              <p><strong>[Bluetooth 5.3 y conexión de larga distancia]</strong> Conexión estable hasta 12 metros; si se desconecta, reinicia presionando 5 veces rápidamente.</p>
+              <p><strong>[Larga duración]</strong> Batería de 40 mAh en cada auricular y estuche de 400 mAh para hasta 6.5 horas de reproducción, más 30 horas adicionales.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Producto 9 -->
+        <div class="product">
+          <img src="https://m.media-amazon.com/images/I/811RreTN3rL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="Auriculares Monitor">
+          <div class="rating-logo">
+            <div class="rating-score">8.8</div>
+            <p class="rating-label">Valoración</p>
+          </div>
+          <div class="product-details">
+            <h2>9. Innsky Air Fryer</h2>
+            <p class="reviews">⭐⭐⭐⭐ (17500+ opiniones)</p>
+            <div class="offer-container">
+              <div class="offer-buttons">
+                <span class="amazon-badge">Disponible en Amazon</span><br>
+                <a href="https://amzn.to/41dTc6n" target="_blank">Ver precio</a>
+              </div>
+              <div class="extra-info">
+                <p><span class="checkmark">✔</span> Calidad de sonido</p>
+                <p><span class="checkmark">✔</span> Relación calidad-precio</p>
+                <p><span class="checkmark">✔</span> Calidad</p>
+              </div>
+            </div>
+            <div class="shipping-container">
+              <p class="shipping-text">Envío gratis</p>
+              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
+            </div>
+            <div class="more-info" style="display: none;">
+              <h3>Acerca de este producto</h3>
+              <p><strong>Calidad de sonido superior:</strong> Controlador de neodimio de 50 mm para un sonido estéreo con graves excelentes.</p>
+              <p><strong>Sin adaptador:</strong> Incluye dos cables extraíbles: uno para TV/sistema (conector de 6,3 mm) y otro para PC/smartphone (conector de 3,5 mm con micrófono).</p>
+              <p><strong>Cómodo:</strong> Almohadillas diseñadas para ofrecer comodidad y aislamiento, con diadema ajustable para un ajuste perfecto.</p>
+              <p><strong>Diseño para DJ:</strong> Almohadillas giratorias de 90° y diseño plegable, ideal para estudio, DJ y producción musical.</p>
+              <p><strong>Amplia compatibilidad:</strong> Compatible con dispositivos con conectores de 3,5 o 6,35 mm; incluye 2 años de garantía.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Producto 10 -->
+        <div class="product">
+          <img src="https://m.media-amazon.com/images/I/71uAeUP2MRL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="Tefal Actifry Genius">
+          <div class="rating-logo">
+            <div class="rating-score">8.5</div>
+            <p class="rating-label">Valoración</p>
+          </div>
+          <div class="product-details">
+            <h2>10. Tefal Actifry Genius</h2>
+            <p class="reviews">⭐⭐⭐⭐⭐ (14300+ opiniones)</p>
+            <div class="offer-container">
+              <div class="offer-buttons">
+                <span class="amazon-badge">Disponible en Amazon</span><br>
+                <a href="https://amzn.to/41anozA" target="_blank">Ver precio</a>
+              </div>
+              <div class="extra-info">
+                <p><span class="checkmark">✔</span> Ajuste</p>
+                <p><span class="checkmark">✔</span> Duración de la batería</p>
+                <p><span class="checkmark">✔</span> Diseño</p>
+              </div>
+            </div>
+            <div class="shipping-container">
+              <p class="shipping-text">Envío gratis</p>
+              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
+            </div>
+            <div class="more-info" style="display: none;">
+              <h3>Acerca de este producto</h3>
+              <p><strong>Bluetooth 5.4 Avanzada:</strong> Avanzado chip Bluetooth 5.4 con mejora de señal del 80% y velocidad hasta 2 veces mayor. Conexión rápida, estable, de baja latencia y alcance de hasta 15 M; se reconecta automáticamente tras el emparejamiento inicial.</p>
+              <p><strong>75 Horas de Experiencia Ininterrumpida:</strong> El estuche de 480 mAh proporciona hasta 15 horas de uso, sumando un total de 75 horas. La carga rápida tipo C y la pantalla LED muestran el nivel de batería de forma intuitiva.</p>
+              <p><strong>Sonido Envolvente Estéreo y 85% ENC Cancelación de Ruido:</strong> Tecnología ENC elimina el 85% del ruido, y los controladores de 14.2 mm ofrecen un sonido claro y sin interferencias.</p>
+              <p><strong>Control Táctil y Amplia Compatibilidad:</strong> Permite controlar el volumen, cambiar canciones y pausar con un toque; compatible con smartphones, tabletas, PCs, iOS y Android.</p>
+              <p><strong>Ajuste Cómodo e Impermeable IP7:</strong> Diseño con gancho suave y tres tamaños de tapones para un ajuste perfecto, con protección IP7 contra sudor y lluvia.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <!-- Banner de cookies -->
-    <div id="cookie-banner" style="position: fixed; bottom: 0; background: #222; color: white; padding: 15px; width: 100%; text-align: center;">
-      Este sitio usa cookies para mejorar la experiencia. ¿Aceptas?
-      <button onclick="aceptarCookies(); document.getElementById('cookie-banner').style.display='none';">Aceptar</button>
-      <button onclick="rechazarCookies(); document.getElementById('cookie-banner').style.display='none';">Rechazar</button>
+    <!-- Sidebar que ahora se muestra a la derecha -->
+    <div class="sidebar">
+      <!-- Aquí puedes colocar el anuncio patrocinado que antes estaba en la izquierda -->
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3702060621408236" data-ad-slot="9876543210" data-ad-format="auto"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3702060621408236" data-ad-slot="1234567890" data-ad-format="auto"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+      <h3>Anuncios Patrocinados</h3>
     </div>
+  </div>
+  <!-- Banner de cookies -->
+  <div id="cookie-banner" style="position: fixed; bottom: 0; background: #222; color: white; padding: 15px; width: 100%; text-align: center;">
+    Este sitio usa cookies para mejorar la experiencia. ¿Aceptas?
+    <button onclick="aceptarCookies(); document.getElementById('cookie-banner').style.display='none';">Aceptar</button>
+    <button onclick="rechazarCookies(); document.getElementById('cookie-banner').style.display='none';">Rechazar</button>
+  </div>
+  <script>
+    function toggleInfo(button) {
+      var info = button.parentElement.nextElementSibling;
+      if (info.style.display === "none" || info.style.display === "") {
+        info.style.display = "block";
+        button.textContent = "Mostrar menos";
+      } else {
+        info.style.display = "none";
+        button.textContent = "Mostrar más";
+      }
+    }
+  </script>
 </body>
 </html>
