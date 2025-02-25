@@ -122,6 +122,28 @@
     .product-details {
       flex: 1;
     }
+    /* Bloque de oferta con información extra (aplicable a productos 1 a 7 y modificado para 8-10) */
+    .offer-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10px;
+    }
+    .offer-buttons {
+      /* Aquí se agrupan el badge y el enlace */
+    }
+    .extra-info {
+      text-align: right;
+    }
+    .extra-info p {
+      margin: 2px 0;
+      font-size: 16px;
+    }
+    .checkmark {
+      color: green;
+      font-weight: bold;
+      margin-right: 5px;
+    }
     .product a {
       display: inline-block;
       margin-top: 10px;
@@ -174,10 +196,10 @@
       display: flex;
       align-items: center;
       margin-top: 10px;
-      gap: 10px; /* Espacio entre el texto y el botón */
+      gap: 10px;
     }
     .shipping-text {
-      font-size: 20px; /* Reducido de 24px */
+      font-size: 20px;
       color: #FF0000;
       font-weight: bold;
       margin: 0;
@@ -190,18 +212,17 @@
       border-radius: 5px;
       font-size: 16px;
       width: 150px;
-      /* Se removió el margen negativo */
     }
     .toggle-info:hover {
       background-color: #ccc;
     }
     .more-info {
-      margin-top: 5px;      /* Reducido de 10px */
+      margin-top: 5px;
       background-color: #f9f9f9;
-      padding: 5px;         /* Reducido de 10px */
+      padding: 5px;
       border: 1px solid #ddd;
       border-radius: 5px;
-      font-size: 14px;      /* Reducido de 16px */
+      font-size: 14px;
       text-align: left;
     }
     /* Media Query para dispositivos móviles */
@@ -233,6 +254,13 @@
         flex-direction: column;
         gap: 10px;
       }
+      .offer-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .extra-info {
+        margin-top: 10px;
+      }
     }
   </style>
 </head>
@@ -255,7 +283,6 @@
       <p class="amazon-notice">Compra este producto en Amazon a través de este enlace</p>
       
       <div class="product-list">
-        <!-- Aquí se incluyen los productos (Producto 1 a Producto 10) -->
         <!-- Producto 1 -->
         <div class="product">
           <img src="https://m.media-amazon.com/images/I/710Lppy-fzL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="COSORI Pro LE">
@@ -266,20 +293,28 @@
           <div class="product-details">
             <h2>1. Auriculares Inalámbricos Bluetooth, Auriculares Bluetooth 5.3, 4 Mic</h2>
             <p class="reviews">⭐⭐⭐⭐⭐ (16000+ opiniones)</p>
-            <span class="amazon-badge">Disponible en Amazon</span>
-            <br>
-            <a href="https://amzn.to/4bc9qBO" target="_blank">Ver precio</a>
+            <div class="offer-container">
+              <div class="offer-buttons">
+                <span class="amazon-badge">Disponible en Amazon</span><br>
+                <a href="https://amzn.to/4bc9qBO" target="_blank">Ver precio</a>
+              </div>
+              <div class="extra-info">
+                <p><span class="checkmark">✔</span> Calidad de sonido</p>
+                <p><span class="checkmark">✔</span> Relación calidad-precio</p>
+                <p><span class="checkmark">✔</span> Duración de batería</p>
+              </div>
+            </div>
             <div class="shipping-container">
               <p class="shipping-text">Envío gratis</p>
               <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
             </div>
             <div class="more-info" style="display: none;">
               <h3>Acerca de este producto</h3>
-              <p><strong>Pantalla LED de carga y 50 horas de reproducción:</strong> Auriculares bluetooth con pantalla LED doble que muestra con precisión el nivel de batería tanto del compartimento de carga como de los auriculares. Además, duración única de 8 horas y 50 horas adicionales con el estuche.</p>
-              <p><strong>85% más de graves y llamadas más nítidas:</strong> Con diafragma de grafeno de 14,2 mm y micrófono dual híbrido ENC que cancela el 90% del ruido de fondo.</p>
-              <p><strong>Ajuste cómodo y resistencia al agua IP7:</strong> Diseño ergonómico que dispersa el 45% de la presión para un ajuste cómodo y tecnología IP7 para proteger contra la humedad.</p>
-              <p><strong>2024 Nuevo Bluetooth 5.3 y emparejamiento en un solo paso:</strong> Conexión 200% más estable que Bluetooth 5.0; tras la conexión inicial, se conectan automáticamente.</p>
-              <p><strong>Control táctil inteligente con amplia compatibilidad:</strong> Emparejamiento sencillo con dispositivos iOS/Android, tabletas y portátiles.</p>
+              <p><strong>Pantalla LED de carga y 50 horas de reproducción:</strong> Auriculares bluetooth con pantalla LED doble que muestra el nivel de batería con precisión; 8 horas de uso y 50 horas adicionales con el estuche.</p>
+              <p><strong>85% más de graves y llamadas más nítidas:</strong> Gracias a un diafragma de grafeno de 14,2 mm y micrófono dual híbrido ENC que cancela el 90% del ruido.</p>
+              <p><strong>Ajuste cómodo y resistencia al agua IP7:</strong> Diseño ergonómico que dispersa el 45% de la presión, con tecnología IP7 para proteger contra la humedad.</p>
+              <p><strong>2024 Nuevo Bluetooth 5.3 y emparejamiento en un solo paso:</strong> Conexión 200% más estable que Bluetooth 5.0; se reconecta automáticamente tras la conexión inicial.</p>
+              <p><strong>Control táctil inteligente con amplia compatibilidad:</strong> Se empareja fácilmente con dispositivos iOS/Android, tabletas y portátiles.</p>
             </div>
           </div>
         </div>
@@ -293,9 +328,17 @@
           <div class="product-details">
             <h2>2. Auriculares Inalámbricos Bluetooth, Cascos Inalámbricos Bluetooth 5.3</h2>
             <p class="reviews">⭐⭐⭐⭐⭐ (14200+ opiniones)</p>
-            <span class="amazon-badge">Disponible en Amazon</span>
-            <br>
-            <a href="https://amzn.to/4gVbMGc" target="_blank">Ver precio</a>
+            <div class="offer-container">
+              <div class="offer-buttons">
+                <span class="amazon-badge">Disponible en Amazon</span><br>
+                <a href="https://amzn.to/4gVbMGc" target="_blank">Ver precio</a>
+              </div>
+              <div class="extra-info">
+                <p><span class="checkmark">✔</span> Calidad de sonido</p>
+                <p><span class="checkmark">✔</span> Conexión</p>
+                <p><span class="checkmark">✔</span> Comodidad</p>
+              </div>
+            </div>
             <div class="shipping-container">
               <p class="shipping-text">Envío gratis</p>
               <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
@@ -303,10 +346,10 @@
             <div class="more-info" style="display: none;">
               <h3>Acerca de este producto</h3>
               <p><strong>Sonido Hi-Fi y 35 Horas de Reproducción:</strong> Drivers de 13mm ofrecen agudos claros y bajos profundos; tecnología CVC reduce el ruido en un 85%.</p>
-              <p><strong>Diseño Ergonómico y Ligero:</strong> Con 3 tamaños de tapones de silicona, pesa 3,8 g y resiste el sudor y la lluvia gracias a nanomateriales ultraligeros.</p>
+              <p><strong>Diseño Ergonómico y Ligero:</strong> Disponible en 3 tamaños de tapones; pesa 3,8 g y resiste sudor y lluvia gracias a nanomateriales ultraligeros.</p>
               <p><strong>Conexión Bluetooth 5.3 Estable y Emparejamiento Automático:</strong> Se conecta instantáneamente tras sacar los auriculares de la caja de carga.</p>
               <p><strong>Pantalla LED muestra la potencia en tiempo real:</strong> Permite conocer el estado de carga en cualquier momento.</p>
-              <p><strong>Control Táctil Sensible y Compatibilidad Universal:</strong> Fácil de manejar para llamadas, pausas y cambio de canciones.</p>
+              <p><strong>Control Táctil Sensible y Compatibilidad Universal:</strong> Facilita llamadas, pausas y cambio de canciones.</p>
             </div>
           </div>
         </div>
@@ -320,20 +363,28 @@
           <div class="product-details">
             <h2>3. Auriculares Inalámbricos, Auriculares Bluetooth 5.4 HiFi Estéreo</h2>
             <p class="reviews">⭐⭐⭐⭐ (14000+ opiniones)</p>
-            <span class="amazon-badge">Disponible en Amazon</span>
-            <br>
-            <a href="https://amzn.to/4idf09a" target="_blank">Ver precio</a>
+            <div class="offer-container">
+              <div class="offer-buttons">
+                <span class="amazon-badge">Disponible en Amazon</span><br>
+                <a href="https://amzn.to/4idf09a" target="_blank">Ver precio</a>
+              </div>
+              <div class="extra-info">
+                <p><span class="checkmark">✔</span> Calidad de sonido</p>
+                <p><span class="checkmark">✔</span> Relación calidad-precio</p>
+                <p><span class="checkmark">✔</span> Duración de batería</p>
+              </div>
+            </div>
             <div class="shipping-container">
               <p class="shipping-text">Envío gratis</p>
               <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
             </div>
             <div class="more-info" style="display: none;">
               <h3>Acerca de este producto</h3>
-              <p><strong>Sin Retrasos:</strong> Nueva generación de chip Bluetooth 5.4 con transmisión de dos canales, 80% más rápido que Bluetooth 5.2. Se reconecta automáticamente.</p>
-              <p><strong>Una Claridad de Audio Excepcional:</strong> Controlador de 13 mm ajustado por expertos; incluye micrófono y ENC para llamadas claras.</p>
+              <p><strong>Sin Retrasos:</strong> Nueva generación de chip Bluetooth 5.4 con transmisión de dos canales, 80% más rápido que Bluetooth 5.2; se reconecta automáticamente.</p>
+              <p><strong>Una Claridad de Audio Excepcional:</strong> Controlador de 13 mm ajustado por expertos, con micrófono incorporado y tecnología ENC para llamadas claras.</p>
               <p><strong>50H de Reproducción y Pantalla LED Doble:</strong> 8 horas de reproducción ampliables a 50 con el estuche, USB-C y carga rápida en 1 hora.</p>
-              <p><strong>Ajuste Optimo:</strong> Diseño ergonómico con peso de 3.0 g, y estuche ultracompacto para llevar en cualquier bolso.</p>
-              <p><strong>IP7 Impermeable y Control Táctil:</strong> Resistente al sudor y lluvia, y permite control táctil para funciones básicas.</p>
+              <p><strong>Ajuste Optimo:</strong> Diseño ergonómico con peso de 3.0 g y estuche ultracompacto para portabilidad.</p>
+              <p><strong>IP7 Impermeable y Control Táctil:</strong> Resistente al sudor y a la lluvia, con funciones táctiles básicas.</p>
             </div>
           </div>
         </div>
@@ -347,18 +398,26 @@
           <div class="product-details">
             <h2>4. KVIDIO Auriculares Supraaurales</h2>
             <p class="reviews">⭐⭐⭐⭐⭐ (23900+ opiniones)</p>
-            <span class="amazon-badge">Disponible en Amazon</span>
-            <br>
-            <a href="https://amzn.to/4bbv5tG" target="_blank">Ver precio</a>
+            <div class="offer-container">
+              <div class="offer-buttons">
+                <span class="amazon-badge">Disponible en Amazon</span><br>
+                <a href="https://amzn.to/4bbv5tG" target="_blank">Ver precio</a>
+              </div>
+              <div class="extra-info">
+                <p><span class="checkmark">✔</span> Funcionamiento</p>
+                <p><span class="checkmark">✔</span> Ajuste</p>
+                <p><span class="checkmark">✔</span> Comodidad</p>
+              </div>
+            </div>
             <div class="shipping-container">
               <p class="shipping-text">Envío gratis</p>
               <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
             </div>
             <div class="more-info" style="display: none;">
               <h3>Acerca de este producto</h3>
-              <p><strong>AURICULARES ESTÉREO DE ALTA FIDELIDAD:</strong> Con controladores duales de 40 mm y tecnología de aislamiento de ruido, ofrecen una experiencia similar a una sala de conciertos.</p>
+              <p><strong>AURICULARES ESTÉREO DE ALTA FIDELIDAD:</strong> Controladores duales de 40 mm y tecnología de aislamiento de ruido que ofrecen una experiencia similar a una sala de conciertos.</p>
               <p><strong>AURICULARES CÓMODOS INIGUALABLES:</strong> Orejeras con espuma viscoelástica y diadema ajustable, diseño liviano y plegable, ideales para viajes y uso diario.</p>
-              <p><strong>AMPLIA COMPATIBILIDAD:</strong> Se emparejan presionando el botón multifunción durante 2 segundos; compatibles con dispositivos Bluetooth y con cable de 3,5 mm.</p>
+              <p><strong>AMPLIA COMPATIBILIDAD:</strong> Presione el botón multifunción durante 2 segundos para emparejar; compatibles con dispositivos Bluetooth y con cable de 3,5 mm.</p>
               <p><strong>CONEXIÓN INALÁMBRICA INCONSÚTIL:</strong> Bluetooth V5.2 garantiza conexión ultrarrápida hasta 33 pies y batería de 500 mAh que se carga en 2,5 horas, con 55 horas de reproducción.</p>
               <p><strong>GARANTÍA Y SOPORTE:</strong> Incluye auricular plegable, cable de audio, cable de carga USB, 30 días de devolución y 18 meses de garantía.</p>
             </div>
@@ -374,20 +433,28 @@
           <div class="product-details">
             <h2>5. Auriculares Inalámbricos Deportivos</h2>
             <p class="reviews">⭐⭐⭐⭐ (13800+ opiniones)</p>
-            <span class="amazon-badge">Disponible en Amazon</span>
-            <br>
-            <a href="https://amzn.to/3DgeTuF" target="_blank">Ver precio</a>
+            <div class="offer-container">
+              <div class="offer-buttons">
+                <span class="amazon-badge">Disponible en Amazon</span><br>
+                <a href="https://amzn.to/3DgeTuF" target="_blank">Ver precio</a>
+              </div>
+              <div class="extra-info">
+                <p><span class="checkmark">✔</span> Calidad de sonido</p>
+                <p><span class="checkmark">✔</span> Calidad</p>
+                <p><span class="checkmark">✔</span> Comodidad</p>
+              </div>
+            </div>
             <div class="shipping-container">
               <p class="shipping-text">Envío gratis</p>
               <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
             </div>
             <div class="more-info" style="display: none;">
               <h3>Acerca de este producto</h3>
-              <p><strong>Bluetooth 5.4 y Emparejamiento Automático:</strong> Tecnología Bluetooth 5.4 compatible con HSP, HFP, A2DP y AVRCP para una conexión estable y rápida; se conectan automáticamente tras sacar los auriculares del estuche.</p>
-              <p><strong>75 Horas de Reproducción y Control Táctil:</strong> Hasta 15 horas de uso por carga, con estuche de 650 mAh recargando hasta 5 veces; incluye control para reproducción, volumen y llamadas.</p>
+              <p><strong>Bluetooth 5.4 y Emparejamiento Automático:</strong> Utiliza tecnología Bluetooth 5.4 compatible con HSP, HFP, A2DP y AVRCP para una conexión estable y rápida; se conectan automáticamente al sacar los auriculares del estuche.</p>
+              <p><strong>75 Horas de Reproducción y Control Táctil:</strong> Hasta 15 horas de uso por carga; el estuche de 650 mAh recarga los auriculares hasta 5 veces, con control para reproducción, volumen y llamadas.</p>
               <p><strong>HIFI Sonido Estéreo y ENC Cancelación de Ruido:</strong> Controladores de 14.2 mm y 4 micrófonos que actualizan el reconocimiento en 30%, para llamadas claras en entornos ruidosos.</p>
               <p><strong>Ganchos Deportivos e Impermeable IP7:</strong> Diseño con alas de goma suave para un ajuste perfecto y resistencia al agua y polvo (IP7).</p>
-              <p><strong>Doble Pantalla LED Digital y Amplia Compatibilidad:</strong> Pantalla LED para ver el nivel de batería, compatible con Android, iOS y Windows vía Bluetooth.</p>
+              <p><strong>Doble Pantalla LED Digital y Amplia Compatibilidad:</strong> Pantalla LED para ver el nivel de batería, compatible con dispositivos Android, iOS y Windows vía Bluetooth.</p>
             </div>
           </div>
         </div>
@@ -401,9 +468,17 @@
           <div class="product-details">
             <h2>6. Jesebang Auriculares Inalámbricos</h2>
             <p class="reviews">⭐⭐⭐⭐⭐ (10700+ opiniones)</p>
-            <span class="amazon-badge">Disponible en Amazon</span>
-            <br>
-            <a href="https://amzn.to/4ibp56z" target="_blank">Ver precio</a>
+            <div class="offer-container">
+              <div class="offer-buttons">
+                <span class="amazon-badge">Disponible en Amazon</span><br>
+                <a href="https://amzn.to/4ibp56z" target="_blank">Ver precio</a>
+              </div>
+              <div class="extra-info">
+                <p><span class="checkmark">✔</span> Calidad de sonido</p>
+                <p><span class="checkmark">✔</span> Comodidad</p>
+                <p><span class="checkmark">✔</span> Calidad</p>
+              </div>
+            </div>
             <div class="shipping-container">
               <p class="shipping-text">Envío gratis</p>
               <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
@@ -428,9 +503,17 @@
           <div class="product-details">
             <h2>7. DOQAUS Auriculares Inalámbricos</h2>
             <p class="reviews">⭐⭐⭐⭐ (15600+ opiniones)</p>
-            <span class="amazon-badge">Disponible en Amazon</span>
-            <br>
-            <a href="https://amzn.to/4i9l6HK" target="_blank">Ver precio</a>
+            <div class="offer-container">
+              <div class="offer-buttons">
+                <span class="amazon-badge">Disponible en Amazon</span><br>
+                <a href="https://amzn.to/4i9l6HK" target="_blank">Ver precio</a>
+              </div>
+              <div class="extra-info">
+                <p><span class="checkmark">✔</span> Apariencia</p>
+                <p><span class="checkmark">✔</span> Calidad de sonido</p>
+                <p><span class="checkmark">✔</span> Relación calidad-precio</p>
+              </div>
+            </div>
             <div class="shipping-container">
               <p class="shipping-text">Envío gratis</p>
               <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
@@ -440,7 +523,7 @@
               <p><strong>【Actualizada-Hasta 90 Horas de Tiempo de Juego】</strong> Hasta 90 horas de escucha en modo Bluetooth, con opción de uso por cable (3.5 mm incluido).</p>
               <p><strong>【Conexión Bluetooth 5.3 & Inalámbrica】</strong> Conexión ultra rápida hasta 20 metros (66 FEET) y batería de 1000 mAh para 90 horas de uso.</p>
               <p><strong>【Calidad de Sonido Optimizada con 3 Modos EQ】</strong> Tres modos de ecualización para un sonido equilibrado, graves acentuados o alta definición.</p>
-              <p><strong>【Comfort de Todo el día & Diseño Plegable】</strong> Materiales premium y diadema ajustable para un ajuste perfecto alrededor de las orejas, ideales para cualquier entorno.</p>
+              <p><strong>【Comfort de Todo el día & Diseño Plegable】</strong> Materiales premium y diadema ajustable para un ajuste perfecto; ideal para hogar, oficina, escuela y viajes.</p>
               <p><strong>【Micrófono Incorporado】</strong> Controladores de 40 mm y micrófono integrado para una comunicación clara y estable.</p>
             </div>
           </div>
@@ -455,17 +538,26 @@
           <div class="product-details">
             <h2>8. TOZO A1 Mini Auriculares Inalámbricos Bluetooth 5.3 con ORIGX</h2>
             <p class="reviews">⭐⭐⭐⭐⭐ (13500+ opiniones)</p>
-            <span class="amazon-badge">Disponible en Amazon</span>
-            <br>
-            <a href="https://amzn.to/436bJnN" target="_blank">Ver precio</a>
+            <div class="offer-container">
+              <div class="offer-buttons">
+                <span class="amazon-badge">Disponible en Amazon</span><br>
+                <a href="https://amzn.to/436bJnN" target="_blank">Ver precio</a>
+              </div>
+              <div class="extra-info">
+                <p><span class="checkmark">✔</span> Calidad</p>
+                <p><span class="checkmark">✔</span> Tamaño</p>
+                <p><span class="checkmark">✔</span> Ajuste</p>
+              </div>
+            </div>
             <div class="shipping-container">
               <p class="shipping-text">Envío gratis</p>
               <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
             </div>
             <div class="more-info" style="display: none;">
               <h3>Acerca de este producto</h3>
+              <!-- Conservamos la información previa del producto 8 en "more-info" -->
               <p><strong>[Ultraligero y compacto]</strong> Diseñados para un ajuste cómodo y discreto; cada auricular pesa solo 3,7 g.</p>
-              <p><strong>[Calidad de sonido estéreo]</strong> Altavoz de 6 mm que ofrece un sonido potente con agudos dinámicos y graves potentes.</p>
+              <p><strong>[Calidad de sonido estéreo]</strong> Altavoz de 6 mm que ofrece un sonido potente, con agudos dinámicos y graves potentes.</p>
               <p><strong>[Control táctil inteligente]</strong> Control táctil de doble oído para controlar volumen, cambio de canción, pausa y llamadas.</p>
               <p><strong>[Bluetooth 5.3 y conexión de larga distancia]</strong> Conexión estable hasta 12 metros; si se desconecta, reinicia presionando 5 veces rápidamente.</p>
               <p><strong>[Larga duración]</strong> Batería de 40 mAh en cada auricular y estuche de 400 mAh para hasta 6.5 horas de reproducción, más 30 horas adicionales.</p>
@@ -482,9 +574,17 @@
           <div class="product-details">
             <h2>9. OneOdio Pro10 Auriculares DJ con Cable, Estéreo de Mezcla y Monitor de Estudio</h2>
             <p class="reviews">⭐⭐⭐⭐ (17400+ opiniones)</p>
-            <span class="amazon-badge">Disponible en Amazon</span>
-            <br>
-            <a href="https://amzn.to/41dTc6n" target="_blank">Ver precio</a>
+            <div class="offer-container">
+              <div class="offer-buttons">
+                <span class="amazon-badge">Disponible en Amazon</span><br>
+                <a href="https://amzn.to/41dTc6n" target="_blank">Ver precio</a>
+              </div>
+              <div class="extra-info">
+                <p><span class="checkmark">✔</span> Calidad de sonido</p>
+                <p><span class="checkmark">✔</span> Relación calidad-precio</p>
+                <p><span class="checkmark">✔</span> Calidad</p>
+              </div>
+            </div>
             <div class="shipping-container">
               <p class="shipping-text">Envío gratis</p>
               <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
@@ -492,10 +592,10 @@
             <div class="more-info" style="display: none;">
               <h3>Acerca de este producto</h3>
               <p><strong>Calidad de sonido superior:</strong> Controlador de neodimio de 50 mm para un sonido estéreo con graves excelentes.</p>
-              <p><strong>Sin adaptador:</strong> Incluye dos cables extraíbles: uno para TV/sistema (6,3 mm) y otro para PC/smartphone (3,5 mm con micrófono).</p>
+              <p><strong>Sin adaptador:</strong> Incluye dos cables extraíbles: uno para TV/sistema (conector de 6,3 mm) y otro para PC/smartphone (conector de 3,5 mm con micrófono).</p>
               <p><strong>Cómodo:</strong> Almohadillas diseñadas para ofrecer comodidad y aislamiento, con diadema ajustable para un ajuste perfecto.</p>
-              <p><strong>Diseño para DJ:</strong> Con almohadillas giratorias de 90° y diseño plegable, ideal para estudio, DJ y producción musical.</p>
-              <p><strong>Amplia compatibilidad:</strong> Compatible con dispositivos con conectores de 3,5 o 6,35 mm, y con 2 años de garantía.</p>
+              <p><strong>Diseño para DJ:</strong> Almohadillas giratorias de 90° y diseño plegable, ideal para estudio, DJ y producción musical.</p>
+              <p><strong>Amplia compatibilidad:</strong> Compatible con dispositivos con conectores de 3,5 o 6,35 mm; incluye 2 años de garantía.</p>
             </div>
           </div>
         </div>
@@ -509,19 +609,27 @@
           <div class="product-details">
             <h2>10. Auriculares Inalámbricos Deportivos, 2024 75Horas Auriculares Bluetooth Sonido</h2>
             <p class="reviews">⭐⭐⭐⭐⭐ (13300+ opiniones)</p>
-            <span class="amazon-badge">Disponible en Amazon</span>
-            <br>
-            <a href="https://amzn.to/41anozA" target="_blank">Ver precio</a>
+            <div class="offer-container">
+              <div class="offer-buttons">
+                <span class="amazon-badge">Disponible en Amazon</span><br>
+                <a href="https://amzn.to/41anozA" target="_blank">Ver precio</a>
+              </div>
+              <div class="extra-info">
+                <p><span class="checkmark">✔</span> Ajuste</p>
+                <p><span class="checkmark">✔</span> Duración de la batería</p>
+                <p><span class="checkmark">✔</span> Diseño</p>
+              </div>
+            </div>
             <div class="shipping-container">
               <p class="shipping-text">Envío gratis</p>
               <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
             </div>
             <div class="more-info" style="display: none;">
               <h3>Acerca de este producto</h3>
-              <p><strong>Bluetooth 5.4 Avanzada:</strong> Avanzado chip Bluetooth 5.4 con mejora de señal del 80% y velocidad hasta 2 veces mayor. Conexión rápida, estable, de baja latencia y alcance de hasta 15 M. Se reconecta automáticamente tras el emparejamiento inicial.</p>
-              <p><strong>75 Horas de Experiencia Ininterrumpida:</strong> Estuche de 480 mAh proporciona hasta 15 horas de uso, sumando 75 horas en total. Carga rápida tipo C y pantalla LED que muestra el nivel de batería.</p>
-              <p><strong>Sonido Envolvente Estéreo y 85% ENC Cancelación de Ruido:</strong> Tecnología ENC elimina el 85% del ruido, con controladores de 14.2 mm para un sonido claro y sin interferencias.</p>
-              <p><strong>Control Táctil y Amplia Compatibilidad:</strong> Control táctil para ajustar volumen, cambiar canciones y pausar; compatible con smartphones, tabletas, PCs, iOS y Android.</p>
+              <p><strong>Bluetooth 5.4 Avanzada:</strong> Avanzado chip Bluetooth 5.4 con mejora de señal del 80% y velocidad hasta 2 veces mayor. Conexión rápida, estable, de baja latencia y alcance de hasta 15 M; se reconecta automáticamente tras el emparejamiento inicial.</p>
+              <p><strong>75 Horas de Experiencia Ininterrumpida:</strong> El estuche de 480 mAh proporciona hasta 15 horas de uso, sumando un total de 75 horas. La carga rápida tipo C y la pantalla LED muestran el nivel de batería de forma intuitiva.</p>
+              <p><strong>Sonido Envolvente Estéreo y 85% ENC Cancelación de Ruido:</strong> Tecnología ENC elimina el 85% del ruido, y los controladores de 14.2 mm ofrecen un sonido claro y sin interferencias.</p>
+              <p><strong>Control Táctil y Amplia Compatibilidad:</strong> Permite controlar el volumen, cambiar canciones y pausar con un toque; compatible con smartphones, tabletas, PCs, iOS y Android.</p>
               <p><strong>Ajuste Cómodo e Impermeable IP7:</strong> Diseño con gancho suave y tres tamaños de tapones para un ajuste perfecto, con protección IP7 contra sudor y lluvia.</p>
             </div>
           </div>
