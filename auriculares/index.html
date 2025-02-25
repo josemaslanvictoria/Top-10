@@ -1,473 +1,519 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3702060621408236" crossorigin="anonymous"></script>
-    <script async src="https://fundingchoicesmessages.google.com/i/pub-3702060621408236?ers=1" nonce="xyz"></script>
-    <script>
-        window.googlefc = window.googlefc || {};
-        window.googlefc.callbackQueue = window.googlefc.callbackQueue || [];
-        window.googlefc.callbackQueue.push(function() {
-            window.googlefc.setConsentConfig({
-                'consentMode': 'advanced'
-            });
-        });
-    </script>
-    
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11335901809"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-
-      // Configurar el Modo de Consentimiento con valores predeterminados (sin consentimiento)
-      gtag('consent', 'default', {
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3702060621408236" crossorigin="anonymous"></script>
+  <script async src="https://fundingchoicesmessages.google.com/i/pub-3702060621408236?ers=1" nonce="xyz"></script>
+  <script>
+    window.googlefc = window.googlefc || {};
+    window.googlefc.callbackQueue = window.googlefc.callbackQueue || [];
+    window.googlefc.callbackQueue.push(function() {
+      window.googlefc.setConsentConfig({
+        'consentMode': 'advanced'
+      });
+    });
+  </script>
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11335901809"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+  
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'analytics_storage': 'denied'
+    });
+  
+    gtag('js', new Date());
+    gtag('config', 'AW-11335901809');
+  
+    function aceptarCookies() {
+      gtag('consent', 'update', {
+        'ad_storage': 'granted',
+        'analytics_storage': 'granted'
+      });
+    }
+  
+    function rechazarCookies() {
+      gtag('consent', 'update', {
         'ad_storage': 'denied',
         'analytics_storage': 'denied'
       });
-
-      gtag('js', new Date());
-      gtag('config', 'AW-11335901809');
-
-      // Si el usuario acepta las cookies
-      function aceptarCookies() {
-        gtag('consent', 'update', {
-          'ad_storage': 'granted',
-          'analytics_storage': 'granted'
-        });
-      }
-
-      // Si el usuario rechaza las cookies
-      function rechazarCookies() {
-        gtag('consent', 'update', {
-          'ad_storage': 'denied',
-          'analytics_storage': 'denied'
-        });
-      }
-    </script>
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Top 10: Los Mejores Auriculares</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            text-align: center;
-            display: flex;
-            justify-content: center;
-        }
-        .container {
-            max-width: 1200px;
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-            gap: 40px;
-        }
-        .content {
-            flex: 3;
-            position: relative;
-        }
-        .sidebar {
-            flex: 1;
-            padding: 20px;
-            background-color: #f4f4f4;
-            text-align: center;
-            margin-left: 20px;
-        }
-        h1 {
-            color: #333;
-            font-size: 32px;
-            text-decoration: underline;
-        }
-        p {
-            font-size: 20px;
-            color: #666;
-            max-width: 800px;
-            margin: 0 auto 20px;
-            text-align: justify;
-        }
-        .highlight {
-            font-weight: bold;
-            text-decoration: underline;
-            color: black;
-        }
-        .reviews {
-            font-size: 16px;
-            margin: 0 0 10px 0;
-        }
-        .product-list {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 40px;
-            margin-top: 20px;
-        }
-        .product {
-            width: 100%;
-            max-width: 900px;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            padding: 30px;
-            text-align: left;
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-            background-color: #fff;
-            display: flex;
-            align-items: center;
-            gap: 30px;
-            position: relative;
-        }
-        .product img {
-            width: 200px;
-            height: auto;
-            border-radius: 5px;
-        }
-        .product-details {
-            flex: 1;
-        }
-        .product a {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 25px;
-            background-color: #00CC00; /* Botón verde más oscuro */
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            font-size: 24px;
-        }
-        .product a:hover {
-            background-color: #008000; /* Verde aún más oscuro al pasar el cursor */
-        }
-        .amazon-badge {
-            background-color: #ff9900;
-            color: white;
-            padding: 5px 8px;
-            border-radius: 5px;
-            font-weight: bold;
-            display: inline-block;
-            margin-top: 13px;
-            font-size: 10px;
-        }
-        /* Estilos para el logo de valoración */
-        .rating-logo {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            text-align: center;
-        }
-        .rating-score {
-            width: 50px;
-            height: 50px;
-            border: 5px solid red;
-            border-radius: 50%;
-            line-height: 50px;
-            font-size: 22px;
-            color: black;
-            font-weight: bold;
-            margin: 0 auto;
-            background-color: white;
-        }
-        .rating-label {
-            font-size: 12px;
-            color: #333;
-            margin-top: 5px;
-        }
-        /* Contenedor para envío gratis y botón desplegable */
-        .shipping-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 10px;
-        }
-        .shipping-text {
-            font-size: 24px;
-            color: #FF0000;
-            font-weight: bold;
-            margin: 0;
-        }
-        .toggle-info {
-            background-color: #ddd;
-            border: none;
-            padding: 10px 15px;
-            cursor: pointer;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-        .toggle-info:hover {
-            background-color: #ccc;
-        }
-        .more-info {
-            margin-top: 10px;
-            background-color: #f9f9f9;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 16px;
-            text-align: left;
-        }
-    </style>
+    }
+  </script>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Top 10: Los Mejores Auriculares</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+    }
+    .container {
+      max-width: 1200px;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      gap: 40px;
+    }
+    .content {
+      flex: 3;
+      position: relative;
+    }
+    .sidebar {
+      flex: 1;
+      padding: 20px;
+      background-color: #f4f4f4;
+      text-align: center;
+      margin-left: 20px;
+    }
+    h1 {
+      color: #333;
+      font-size: 32px;
+      text-decoration: underline;
+    }
+    p {
+      font-size: 20px;
+      color: #666;
+      max-width: 800px;
+      margin: 0 auto 20px;
+      text-align: justify;
+    }
+    .highlight {
+      font-weight: bold;
+      text-decoration: underline;
+      color: black;
+    }
+    .reviews {
+      font-size: 16px;
+      margin: 0 0 10px 0;
+    }
+    .product-list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+      margin-top: 20px;
+    }
+    .product {
+      width: 100%;
+      max-width: 900px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 30px;
+      text-align: left;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+      background-color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      position: relative;
+    }
+    .product img {
+      width: 200px;
+      height: auto;
+      border-radius: 5px;
+    }
+    .product-details {
+      flex: 1;
+    }
+    .product a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 25px;
+      background-color: #00CC00;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      font-size: 24px;
+    }
+    .product a:hover {
+      background-color: #008000;
+    }
+    .amazon-badge {
+      background-color: #ff9900;
+      color: white;
+      padding: 5px 8px;
+      border-radius: 5px;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 13px;
+      font-size: 10px;
+    }
+    .rating-logo {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      text-align: center;
+    }
+    .rating-score {
+      width: 50px;
+      height: 50px;
+      border: 5px solid red;
+      border-radius: 50%;
+      line-height: 50px;
+      font-size: 22px;
+      color: black;
+      font-weight: bold;
+      margin: 0 auto;
+      background-color: white;
+    }
+    .rating-label {
+      font-size: 12px;
+      color: #333;
+      margin-top: 5px;
+    }
+    /* Contenedor para envío gratis y botón desplegable */
+    .shipping-container {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+    }
+    .shipping-text {
+      font-size: 24px;
+      color: #FF0000;
+      font-weight: bold;
+      margin: 0;
+    }
+    .toggle-info {
+      background-color: #ddd;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 16px;
+      width: 150px;
+      margin-right: -10px;
+    }
+    .toggle-info:hover {
+      background-color: #ccc;
+    }
+    .more-info {
+      margin-top: 10px;
+      background-color: #f9f9f9;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 16px;
+      text-align: left;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <div class="sidebar">
-            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3702060621408236" data-ad-slot="9876543210" data-ad-format="auto"></ins>
-            <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3702060621408236" data-ad-slot="1234567890" data-ad-format="auto"></ins>
-            <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-            <h3>Anuncios Patrocinados</h3>
-            <!-- Código de AdSense u otro anuncio aquí -->
-        </div>
-        <div class="content">
-            <h1>Top 10: Los Mejores Auriculares</h1>
-            <p>Las <span class="highlight">Auriculares inalámbricos</span> son una excelente opción para <span class="highlight">oir música en cualquier sitio</span>, ya que permiten oir de manera limpia <span class="highlight">mucho mejor el sonido</span>. Son ideales para quienes desean disfrutar de buena música. Además, ayudan a <span class="highlight">despejarse del sonido exterior</span> y a mantener un <span class="highlight">estilo de vida equilibrado</span>. En este listado hemos seleccionado las <span class="highlight">mejores opciones del mercado</span>, basándonos en calidad, valoraciones y popularidad. ¡Invierte en tu salud con unos <span class="highlight">Auriculares inalámbricos</span>!</p>
-            <p class="amazon-notice">Compra este producto en Amazon a través de este enlace</p>
-            
-            <div class="product-list">
-                <!-- Producto 1 -->
-                <div class="product">
-                    <img src="https://m.media-amazon.com/images/I/710Lppy-fzL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="COSORI Pro LE" style="float: left; margin-right: 20px;">
-                    <div class="rating-logo">
-                        <div class="rating-score">9.9</div>
-                        <p class="rating-label">Valoración</p>
-                    </div>
-                    <div class="product-details">
-                        <h2>1. Auriculares Inalámbricos Bluetooth, Auriculares Bluetooth 5.3, 4 Mic</h2>
-                        <p class="reviews">⭐⭐⭐⭐⭐ (16000+ opiniones)</p>
-                        <span class="amazon-badge">Disponible en Amazon</span>
-                        <br>
-                        <a href="https://amzn.to/4bc9qBO" target="_blank">Ver precio</a>
-                        <div class="shipping-container">
-                            <p class="shipping-text">Envío gratis</p>
-                            <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
-                        </div>
-                        <div class="more-info" style="display: none;">
-                            <p>Información adicional sobre el envío gratis y garantía.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Producto 2 -->
-                <div class="product">
-                    <img src="https://m.media-amazon.com/images/I/71nEAXE7ygL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="Cecotec Cecofry" style="float: left; margin-right: 20px;">
-                    <div class="rating-logo">
-                        <div class="rating-score">9.8</div>
-                        <p class="rating-label">Valoración</p>
-                    </div>
-                    <div class="product-details">
-                        <h2>2. Auriculares Inalámbricos Bluetooth, Cascos Inalámbricos Bluetooth 5.3</h2>
-                        <p class="reviews">⭐⭐⭐⭐⭐ (14200+ opiniones)</p>
-                        <span class="amazon-badge">Disponible en Amazon</span>
-                        <br>
-                        <a href="https://amzn.to/4gVbMGc" target="_blank">Ver precio</a>
-                        <div class="shipping-container">
-                            <p class="shipping-text">Envío gratis</p>
-                            <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
-                        </div>
-                        <div class="more-info" style="display: none;">
-                            <p>Información adicional sobre el envío gratis y garantía.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Producto 3 -->
-                <div class="product">
-                    <img src="https://m.media-amazon.com/images/I/61NPz6iVNjL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="COSORI Dual Blaze" style="float: left; margin-right: 20px;">
-                    <div class="rating-logo">
-                        <div class="rating-score">9.6</div>
-                        <p class="rating-label">Valoración</p>
-                    </div>
-                    <div class="product-details">
-                        <h2>3. Auriculares Inalámbricos, Auriculares Bluetooth 5.4 HiFi Estéreo</h2>
-                        <p class="reviews">⭐⭐⭐⭐ (14000+ opiniones)</p>
-                        <span class="amazon-badge">Disponible en Amazon</span>
-                        <br>
-                        <a href="https://amzn.to/4idf09a" target="_blank">Ver precio</a>
-                        <div class="shipping-container">
-                            <p class="shipping-text">Envío gratis</p>
-                            <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
-                        </div>
-                        <div class="more-info" style="display: none;">
-                            <p>Información adicional sobre el envío gratis y garantía.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Producto 4 -->
-                <div class="product">
-                    <img src="https://m.media-amazon.com/images/I/71Hx8b6HGbL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="COSORI Premium" style="float: left; margin-right: 20px;">
-                    <div class="rating-logo">
-                        <div class="rating-score">9.5</div>
-                        <p class="rating-label">Valoración</p>
-                    </div>
-                    <div class="product-details">
-                        <h2>4. KVIDIO Auriculares Supraaurales</h2>
-                        <p class="reviews">⭐⭐⭐⭐⭐ (23900+ opiniones)</p>
-                        <span class="amazon-badge">Disponible en Amazon</span>
-                        <br>
-                        <a href="https://amzn.to/4bbv5tG" target="_blank">Ver precio</a>
-                        <div class="shipping-container">
-                            <p class="shipping-text">Envío gratis</p>
-                            <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
-                        </div>
-                        <div class="more-info" style="display: none;">
-                            <p>Información adicional sobre el envío gratis y garantía.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Producto 5 -->
-                <div class="product">
-                    <img src="https://m.media-amazon.com/images/I/71iaWpqrPgL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="Cecotec Cecofry Full Inox" style="float: left; margin-right: 20px;">
-                    <div class="rating-logo">
-                        <div class="rating-score">9.4</div>
-                        <p class="rating-label">Valoración</p>
-                    </div>
-                    <div class="product-details">
-                        <h2>5. Auriculares Inalámbricos Deportivos</h2>
-                        <p class="reviews">⭐⭐⭐⭐ (13800+ opiniones)</p>
-                        <span class="amazon-badge">Disponible en Amazon</span>
-                        <br>
-                        <a href="https://amzn.to/3DgeTuF" target="_blank">Ver precio</a>
-                        <div class="shipping-container">
-                            <p class="shipping-text">Envío gratis</p>
-                            <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
-                        </div>
-                        <div class="more-info" style="display: none;">
-                            <p>Información adicional sobre el envío gratis y garantía.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Producto 6 -->
-                <div class="product">
-                    <img src="https://m.media-amazon.com/images/I/718DnKYp+OL._AC_SY300_SX300_.jpg" alt="COSORI Turbo Blaze" style="float: left; margin-right: 20px;">
-                    <div class="rating-logo">
-                        <div class="rating-score">9.2</div>
-                        <p class="rating-label">Valoración</p>
-                    </div>
-                    <div class="product-details">
-                        <h2>6. Jesebang Auriculares Inalámbricos</h2>
-                        <p class="reviews">⭐⭐⭐⭐⭐ (10700+ opiniones)</p>
-                        <span class="amazon-badge">Disponible en Amazon</span>
-                        <br>
-                        <a href="https://amzn.to/4ibp56z" target="_blank">Ver precio</a>
-                        <div class="shipping-container">
-                            <p class="shipping-text">Envío gratis</p>
-                            <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
-                        </div>
-                        <div class="more-info" style="display: none;">
-                            <p>Información adicional sobre el envío gratis y garantía.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Producto 7 -->
-                <div class="product">
-                    <img src="https://m.media-amazon.com/images/I/61fFD42IYVL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="Cecotec Turbo Cecofry" style="float: left; margin-right: 20px;">
-                    <div class="rating-logo">
-                        <div class="rating-score">9.1</div>
-                        <p class="rating-label">Valoración</p>
-                    </div>
-                    <div class="product-details">
-                        <h2>7. DOQAUS Auriculares Inalámbricos</h2>
-                        <p class="reviews">⭐⭐⭐⭐ (15600+ opiniones)</p>
-                        <span class="amazon-badge">Disponible en Amazon</span>
-                        <br>
-                        <a href="https://amzn.to/4i9l6HK" target="_blank">Ver precio</a>
-                        <div class="shipping-container">
-                            <p class="shipping-text">Envío gratis</p>
-                            <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
-                        </div>
-                        <div class="more-info" style="display: none;">
-                            <p>Información adicional sobre el envío gratis y garantía.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Producto 8 -->
-                <div class="product">
-                    <img src="https://m.media-amazon.com/images/I/71Ilitn6B+L._AC_SY300_SX300_.jpg" alt="Proscenic T21" style="float: left; margin-right: 20px;">
-                    <div class="rating-logo">
-                        <div class="rating-score">9.0</div>
-                        <p class="rating-label">Valoración</p>
-                    </div>
-                    <div class="product-details">
-                        <h2>8. TOZO A1 Mini Auriculares Inalámbricos Bluetooth 5.3 con ORIGX</h2>
-                        <p class="reviews">⭐⭐⭐⭐⭐ (13500+ opiniones)</p>
-                        <span class="amazon-badge">Disponible en Amazon</span>
-                        <br>
-                        <a href="https://amzn.to/436bJnN" target="_blank">Ver precio</a>
-                        <div class="shipping-container">
-                            <p class="shipping-text">Envío gratis</p>
-                            <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
-                        </div>
-                        <div class="more-info" style="display: none;">
-                            <p>Información adicional sobre el envío gratis y garantía.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Producto 9 -->
-                <div class="product">
-                    <img src="https://m.media-amazon.com/images/I/811RreTN3rL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="Innsky Air Fryer" style="float: left; margin-right: 20px;">
-                    <div class="rating-logo">
-                        <div class="rating-score">8.8</div>
-                        <p class="rating-label">Valoración</p>
-                    </div>
-                    <div class="product-details">
-                        <h2>9. OneOdio Pro10 Auriculares DJ con Cable, Estéreo de Mezcla y Monitor de Estudio</h2>
-                        <p class="reviews">⭐⭐⭐⭐ (17400+ opiniones)</p>
-                        <span class="amazon-badge">Disponible en Amazon</span>
-                        <br>
-                        <a href="https://amzn.to/41dTc6n" target="_blank">Ver precio</a>
-                        <div class="shipping-container">
-                            <p class="shipping-text">Envío gratis</p>
-                            <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
-                        </div>
-                        <div class="more-info" style="display: none;">
-                            <p>Información adicional sobre el envío gratis y garantía.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Producto 10 -->
-                <div class="product">
-                    <img src="https://m.media-amazon.com/images/I/71uAeUP2MRL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="Tefal Actifry Genius" style="float: left; margin-right: 20px;">
-                    <div class="rating-logo">
-                        <div class="rating-score">8.5</div>
-                        <p class="rating-label">Valoración</p>
-                    </div>
-                    <div class="product-details">
-                        <h2>10. Auriculares Inalámbricos Deportivos, 2024 75Horas Auriculares Bluetooth Sonido</h2>
-                        <p class="reviews">⭐⭐⭐⭐⭐ (13300+ opiniones)</p>
-                        <span class="amazon-badge">Disponible en Amazon</span>
-                        <br>
-                        <a href="https://amzn.to/41anozA" target="_blank">Ver precio</a>
-                        <div class="shipping-container">
-                            <p class="shipping-text">Envío gratis</p>
-                            <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
-                        </div>
-                        <div class="more-info" style="display: none;">
-                            <p>Información adicional sobre el envío gratis y garantía.</p>
-                        </div>
-                    </div>
-                </div>
+  <div class="container">
+    <div class="sidebar">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3702060621408236" data-ad-slot="9876543210" data-ad-format="auto"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3702060621408236" data-ad-slot="1234567890" data-ad-format="auto"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+      <h3>Anuncios Patrocinados</h3>
+    </div>
+    <div class="content">
+      <h1>Top 10: Los Mejores Auriculares</h1>
+      <p>Las <span class="highlight">Auriculares inalámbricos</span> son una excelente opción para <span class="highlight">oir música en cualquier sitio</span>, ya que permiten oir de manera limpia <span class="highlight">mucho mejor el sonido</span>. Son ideales para quienes desean disfrutar de buena música. Además, ayudan a <span class="highlight">despejarse del sonido exterior</span> y a mantener un <span class="highlight">estilo de vida equilibrado</span>. En este listado hemos seleccionado las <span class="highlight">mejores opciones del mercado</span>, basándonos en calidad, valoraciones y popularidad. ¡Invierte en tu salud con unos <span class="highlight">Auriculares inalámbricos</span>!</p>
+      <p class="amazon-notice">Compra este producto en Amazon a través de este enlace</p>
+      
+      <div class="product-list">
+        <!-- Producto 1 -->
+        <div class="product">
+          <img src="https://m.media-amazon.com/images/I/710Lppy-fzL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="COSORI Pro LE" style="float: left; margin-right: 20px;">
+          <div class="rating-logo">
+            <div class="rating-score">9.9</div>
+            <p class="rating-label">Valoración</p>
+          </div>
+          <div class="product-details">
+            <h2>1. Auriculares Inalámbricos Bluetooth, Auriculares Bluetooth 5.3, 4 Mic</h2>
+            <p class="reviews">⭐⭐⭐⭐⭐ (16000+ opiniones)</p>
+            <span class="amazon-badge">Disponible en Amazon</span>
+            <br>
+            <a href="https://amzn.to/4bc9qBO" target="_blank">Ver precio</a>
+            <div class="shipping-container">
+              <p class="shipping-text">Envío gratis</p>
+              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
             </div>
+            <div class="more-info" style="display: none;">
+              <h3>Acerca de este producto</h3>
+              <p><strong>Pantalla LED de carga y 50 horas de reproducción:</strong> Auriculares bluetooth cuentan con una pantalla LED doble que muestra con precisión el nivel de batería tanto del compartimento de carga como de los auriculares Bluetooth. Además, Auriculares X08 tienen una duración de batería única de 8 horas, y el compartimento de carga proporciona 50 horas adicionales de uso.</p>
+              <p><strong>85% más de graves y llamadas más nítidas:</strong> Auriculares inalámbricos con diafragma de grafeno de 14,2 mm para un 85% más de graves y cascos inalambricos bluetooth con micrófono dual híbrido ENC que cancela pasivamente el 90% del ruido de fondo para llamadas más nítidas.</p>
+              <p><strong>Ajuste cómodo y resistencia al agua IP7:</strong> In-ear auriculares son ergonómicos, dispersan el 45% de la presión para un ajuste cómodo que se adapta al 99% del canal auditivo, auriculares inalámbricos deportivos cuentan con la tecnología de nanorrevestimiento IP7 para aislar los componentes de los daños causados por la humedad del aire.</p>
+              <p><strong>2024 Nuevo Bluetooth 5.3 y emparejamiento en un solo paso:</strong> Auricular bluetooth inalámbrico incorpora la última versión de la tecnología Bluetooth 5.3, que es un 200% más estable que la versión 5.0, ofreciendo una experiencia de escucha de baja latencia y llamadas estables. Tras la conexión inicial, quítese los auriculares in ear y se conectarán automáticamente a su dispositivo.</p>
+              <p><strong>Control táctil inteligente con amplia compatibilidad:</strong> Con un diseño de control táctil inteligente, es fácil de manejar sin coger el teléfono móvil. Cascos inalambricos bluetooth se emparejan fácilmente con una gran variedad de dispositivos Bluetooth sin preocuparse por problemas de compatibilidad. Incluidos iOS/Android, tabletas y ordenadores portátiles.</p>
+            </div>
+          </div>
         </div>
+        <!-- Producto 2 -->
+        <div class="product">
+          <img src="https://m.media-amazon.com/images/I/71nEAXE7ygL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="Cecotec Cecofry" style="float: left; margin-right: 20px;">
+          <div class="rating-logo">
+            <div class="rating-score">9.8</div>
+            <p class="rating-label">Valoración</p>
+          </div>
+          <div class="product-details">
+            <h2>2. Auriculares Inalámbricos Bluetooth, Cascos Inalámbricos Bluetooth 5.3</h2>
+            <p class="reviews">⭐⭐⭐⭐⭐ (14200+ opiniones)</p>
+            <span class="amazon-badge">Disponible en Amazon</span>
+            <br>
+            <a href="https://amzn.to/4gVbMGc" target="_blank">Ver precio</a>
+            <div class="shipping-container">
+              <p class="shipping-text">Envío gratis</p>
+              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
+            </div>
+            <div class="more-info" style="display: none;">
+              <h3>Acerca de este producto</h3>
+              <p><strong>Sonido Hi-Fi y 35 Horas de Reproducción:</strong> Con drivers de 13mm, estos auriculares inalambricos Bluetooth ofrecen agudos claros y bajos profundos. Con tecnología CVC, reducen el ruido en un 85%. Disfrute 35 horas constantes en viajes, trabajo o descanso.</p>
+              <p><strong>Diseño Ergonómico y Ligero:</strong> Con 3 tamaños de tapones de silicona suave, estos cascos inalambricos bluetooth ofrecen un ajuste personalizado. Pesando 3,8 g, garantizan comodidad para uso prolongado. Fabricados con nanomateriales ultraligeros, los auriculares inalámbricos resisten el sudor y la lluvia, ideales para el uso diario como caminar, correr y hacer ejercicio.</p>
+              <p><strong>Conexión Bluetooth 5.3 Estable y Emparejamiento Automático:</strong> Con la última tecnología Bluetooth 5.3, los audífonos inalambricos garantizan una conexión estable, transmisión rápida y un amplio rango de conexión (hasta 15m). Simplemente abre la caja de carga, saca los auriculares y se sincronizarán instantáneamente con tu dispositivo.</p>
+              <p><strong>Pantalla LED muestra la potencia en tiempo real:</strong> La pantalla LED en la carcasa puede mostrar simultáneamente el estado de carga de la caja de carga y los dos auriculares. Este diseño facilita a los usuarios conocer el estado de carga del dispositivo en cualquier momento y evita molestias por una carga insuficiente durante el uso.</p>
+              <p><strong>Control Táctil Sensible y Compatibilidad Universal:</strong> Toque los auriculares para llamar, pausar, cambiar canciones, ajustar volumen o activar Siri. Con amplia compatibilidad, se conectan fácilmente a cualquier dispositivo con Bluetooth, como teléfonos, tablets, PCs y TVs.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Producto 3 -->
+        <div class="product">
+          <img src="https://m.media-amazon.com/images/I/61NPz6iVNjL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="COSORI Dual Blaze" style="float: left; margin-right: 20px;">
+          <div class="rating-logo">
+            <div class="rating-score">9.6</div>
+            <p class="rating-label">Valoración</p>
+          </div>
+          <div class="product-details">
+            <h2>3. Auriculares Inalámbricos, Auriculares Bluetooth 5.4 HiFi Estéreo</h2>
+            <p class="reviews">⭐⭐⭐⭐ (14000+ opiniones)</p>
+            <span class="amazon-badge">Disponible en Amazon</span>
+            <br>
+            <a href="https://amzn.to/4idf09a" target="_blank">Ver precio</a>
+            <div class="shipping-container">
+              <p class="shipping-text">Envío gratis</p>
+              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
+            </div>
+            <div class="more-info" style="display: none;">
+              <h3>Acerca de este producto</h3>
+              <p><strong>Sin Retrasos:</strong> El auriculares inalambricos bluetooth adopta una nueva generación de chip Bluetooth 5.4 y transmisión de dos canales (un 80% más rápido que el Bluetooth 5.2), lo que brinda una experiencia de transmisión de señal más rápida y estable. Simplemente saque el auriculares bluetooth de la caja de carga y se volverá a conectar automáticamente con el último dispositivo conectado. Disfruta de un emparejamiento instantáneo y sin esfuerzo para una experiencia de escucha sin preocupaciones.</p>
+              <p><strong>Una Claridad de Audio Excepcional:</strong> El controlador dinámico de 13 mm ha sido ajustado por expertos del Sound Lab, garantizando una calidad de sonido constante y dando vida a cada nota, diseñados para los amantes de la música y compatibles con la decodificación de audio AAC, SBC y MSBC. Cada cascos inalambricos tiene un micrófono incorporado para las llamadas y la tecnología de reducción de ruido ENC permite que la persona con la que está hablando le oiga alto y claro.</p>
+              <p><strong>50H de Reproducción y Pantalla LED Doble:</strong> Los cascos bluetooth proporcionan 8 horas de reproducción con una sola carga, que se pueden ampliar a 50 horas con el estuche de carga. Adopta el puerto de carga USB-C, admite carga rápida y solo toma 1 hora cargar completamente los wireless earbuds. Además, auriculares inalámbricos bluetooth están equipados con una pantalla LED doble que muestra con precisión el nivel de energía del estuche de carga y de los cascos inalámbricos.</p>
+              <p><strong>Ajuste Optimo:</strong> Cascos bluetooth inalámbrico tienen un diseño ergonómico que distribuye eficazmente la presión en el canal auditivo y se adapta al 99% del canal auditivo. Con un peso de solo 3.0 gramos por auriculares in ear, incluso durante un uso prolongado no causarán la más mínima incomodidad. Disfrute de la comodidad duradera que necesita para escuchar sus álbumes favoritos uno tras otro. Además, el estuche ultracompacto entra fácilmente en cualquier bolso o bolsillo.</p>
+              <p><strong>IP7 Impermeable y Control Táctil:</strong> Los auriculares deportivos están fabricados con el estándar Impermeable IP7, pudiendo resistir fácilmente el sudor y la lluvia. Las funciones con sensores de control táctil permiten reproducir/pausar, omitir canciones, responder/colgar, ajustar el volumen y acceder a otras funciones con solo un toque. Además, son compatibles con dispositivos iOS, Android, PC y MAC.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Producto 4 -->
+        <div class="product">
+          <img src="https://m.media-amazon.com/images/I/71Hx8b6HGbL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="KVIDIO Auriculares Supraaurales" style="float: left; margin-right: 20px;">
+          <div class="rating-logo">
+            <div class="rating-score">9.5</div>
+            <p class="rating-label">Valoración</p>
+          </div>
+          <div class="product-details">
+            <h2>4. KVIDIO Auriculares Supraaurales</h2>
+            <p class="reviews">⭐⭐⭐⭐⭐ (23900+ opiniones)</p>
+            <span class="amazon-badge">Disponible en Amazon</span>
+            <br>
+            <a href="https://amzn.to/4bbv5tG" target="_blank">Ver precio</a>
+            <div class="shipping-container">
+              <p class="shipping-text">Envío gratis</p>
+              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
+            </div>
+            <div class="more-info" style="display: none;">
+              <h3>Acerca de este producto</h3>
+              <p><strong>AURICULARES ESTÉREO DE ALTA FIDELIDAD:</strong> Los auriculares bluetooth mejorados de KVIDIO con controladores duales de 40 mm y tecnología de aislamiento de ruido ofrecen una sensación casi similar a la de una sala de conciertos, con tu música favorita tan cerca como si la estuvieras viendo en vivo. Proporciona una reproducción de sonido de alta calidad para oyentes, audiófilos y entusiastas del audio doméstico.</p>
+              <p><strong>AURICULARES CÓMODOS INIGUALABLES:</strong> Las orejeras para colocar sobre las orejas, fabricadas con espuma de proteína viscoelástica, brindan comodidad durante todo el día. La diadema ajustable y las orejeras flexibles se adaptan fácilmente a cualquier forma de cabeza sin ejercer presión sobre la oreja. Su diseño liviano, plegable y de solo 0.44 lb lo convierte en la mejor opción para viajes, entrenamiento y uso diario, especialmente para estudiantes universitarios.</p>
+              <p><strong>AMPLIA COMPATIBILIDAD:</strong> Presione el botón multifunción durante 2 segundos y los auriculares con micrófono estarán listos para emparejarse. Los auriculares inalámbricos KVIDIO son compatibles con cualquier dispositivo Bluetooth o con cables de 3,5 mm. Con el micrófono integrado, puede realizar llamadas con manos libres o participar en reuniones mientras trabaja en casa.</p>
+              <p><strong>CONEXIÓN INALÁMBRICA INCONSÚTIL:</strong> La versión actualizada de Bluetooth V5.2 garantiza una conexión ultrarrápida y prácticamente ininterrumpida de hasta 33 pies (10 metros). La batería recargable de 500 mAh se carga rápidamente en 2,5 horas. Tras 55 horas de reproducción, puede cambiar del modo inalámbrico al modo con cable y disfrutar de su música sin parar, sin preocuparse por la escasez de energía en viajes largos.</p>
+              <p><strong>GARANTÍA Y SOPORTE:</strong> El paquete incluye un auricular plegable de graves profundos, un cable de audio de respaldo de 3,5 mm, un cable de carga USB y un manual del usuario. Además, cuenta con 30 días de devolución gratuita y 18 meses de garantía. No dude en contactarnos si tiene alguna consulta durante el uso.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Producto 5 -->
+        <div class="product">
+          <img src="https://m.media-amazon.com/images/I/71iaWpqrPgL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="Cecotec Cecofry Full Inox" style="float: left; margin-right: 20px;">
+          <div class="rating-logo">
+            <div class="rating-score">9.4</div>
+            <p class="rating-label">Valoración</p>
+          </div>
+          <div class="product-details">
+            <h2>5. Auriculares Inalámbricos Deportivos</h2>
+            <p class="reviews">⭐⭐⭐⭐ (13800+ opiniones)</p>
+            <span class="amazon-badge">Disponible en Amazon</span>
+            <br>
+            <a href="https://amzn.to/3DgeTuF" target="_blank">Ver precio</a>
+            <div class="shipping-container">
+              <p class="shipping-text">Envío gratis</p>
+              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
+            </div>
+            <div class="more-info" style="display: none;">
+              <h3>Acerca de este producto</h3>
+              <p><strong>Bluetooth 5.4 y Emparejamiento Automático:</strong> Los auriculares inalambricos bluetooth utilizan la tecnología bluetooth 5.4 y son compatibles con HSP, HFP, A2DP y AVRCP para garantizar una conexión más estable, menor latencia y menor consumo de energía. Saque ambos cascos inalambricos del estuche de carga; se conectan automáticamente al último dispositivo conectado, de forma conveniente y rápida, sin esperas. Reproduzca su música de forma vívida.</p>
+              <p><strong>75 Horas de Reproducción y Control Táctil:</strong> Los cascos bluetooth proporcionan hasta 15 horas de uso con una sola carga. El estuche de carga con 650 mAh puede recargar los auriculares deportivos hasta 5 veces. Los audífonos inalambricos cuentan con un conjunto de control completo para reproducción/pausa, control de volumen y respuesta o finalización de llamadas, al tocarlos fácilmente.</p>
+              <p><strong>HIFI Sonido Estéreo y ENC Cancelación de Ruido:</strong> Los auriculares inalámbricos bluetooth incorporan controladores dinámicos de 14.2 mm que ofrecen graves potentes, medios suaves y agudos claros. Equipados con 4 micrófonos, el rendimiento se actualiza en un 30%, permitiendo llamadas impecables incluso en entornos ruidosos.</p>
+              <p><strong>Ganchos Deportivos para Las Orejas y Impermeable IP7:</strong> Diseñados para un ajuste perfecto, con alas de goma suave de nuevo diseño que se mantienen firmes y cómodas durante actividades deportivas. Además, son resistentes al agua y al polvo (IP7), ideales para entrenamientos y deportes al aire libre.</p>
+              <p><strong>Doble Pantalla LED Digital y Amplia Compatibilidad:</strong> Utilizan una pantalla LED exclusiva para mostrar la potencia restante de ambos cascos y del estuche, con indicadores del 1 al 100%. Son compatibles con dispositivos Android, iOS y Windows mediante Bluetooth, sin límites mientras entrenas o viajas.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Producto 6 -->
+        <div class="product">
+          <img src="https://m.media-amazon.com/images/I/718DnKYp+OL._AC_SY300_SX300_.jpg" alt="COSORI Turbo Blaze" style="float: left; margin-right: 20px;">
+          <div class="rating-logo">
+            <div class="rating-score">9.2</div>
+            <p class="rating-label">Valoración</p>
+          </div>
+          <div class="product-details">
+            <h2>6. Jesebang Auriculares Inalámbricos</h2>
+            <p class="reviews">⭐⭐⭐⭐⭐ (10700+ opiniones)</p>
+            <span class="amazon-badge">Disponible en Amazon</span>
+            <br>
+            <a href="https://amzn.to/4ibp56z" target="_blank">Ver precio</a>
+            <div class="shipping-container">
+              <p class="shipping-text">Envío gratis</p>
+              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
+            </div>
+            <div class="more-info" style="display: none;">
+              <h3>Acerca de este producto</h3>
+              <p><strong>Experiencia de sonido única:</strong> Con un controlador dinámico de 13.4 mm y un diafragma de polímero ultrasensible, las sutiles vibraciones revelan ricas texturas en un amplio campo sonoro. Las voces se destacan en un marco de audio equilibrado de tres canales, ideal para disfrutar plenamente de tu música favorita.</p>
+              <p><strong>Nuevo Bluetooth 5.3 y emparejamiento rápido:</strong> Los Jesebang YT18 cuentan con chips Bluetooth 5.3 de última generación, ofreciendo una conexión más rápida y estable. El nuevo estándar Bluetooth 5.3 mejora la protección contra interferencias, y se emparejan automáticamente con tu dispositivo al sacarlos de la caja después de la primera conexión.</p>
+              <p><strong>Batería de Larga Duración, pantalla LED dual:</strong> Con una sola carga, los auriculares pueden reproducir hasta 8 horas de forma continua, y el estuche aporta 40 horas adicionales. La pantalla LED muestra el nivel de batería de ambos, y la carga rápida USB-C permite cargar el estuche en solo 1.5 horas.</p>
+              <p><strong>Control Táctil Inteligente, amplia compatibilidad:</strong> Incorporan un sensor táctil altamente sensible para realizar llamadas, ajustar volumen, cambiar canciones o activar Siri, siendo compatibles con la mayoría de dispositivos Android, iOS, tabletas, PC, televisores y portátiles.</p>
+              <p><strong>Ajuste Cómodo, Resistencia al agua:</strong> Vienen con ganchos especiales que se adaptan perfectamente a tus oídos. Su diseño ergonómico en forma de 120° garantiza un ajuste cómodo y seguro durante actividades deportivas, y la carcasa sellada con clasificación IP7 los protege contra el sudor y la lluvia.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Producto 7 -->
+        <div class="product">
+          <img src="https://m.media-amazon.com/images/I/61fFD42IYVL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="Cecotec Turbo Cecofry" style="float: left; margin-right: 20px;">
+          <div class="rating-logo">
+            <div class="rating-score">9.1</div>
+            <p class="rating-label">Valoración</p>
+          </div>
+          <div class="product-details">
+            <h2>7. DOQAUS Auriculares Inalámbricos</h2>
+            <p class="reviews">⭐⭐⭐⭐ (15600+ opiniones)</p>
+            <span class="amazon-badge">Disponible en Amazon</span>
+            <br>
+            <a href="https://amzn.to/4i9l6HK" target="_blank">Ver precio</a>
+            <div class="shipping-container">
+              <p class="shipping-text">Envío gratis</p>
+              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
+            </div>
+            <div class="more-info" style="display: none;">
+              <h3>Acerca de este producto</h3>
+              <p><strong>【Actualizada-Hasta 90 Horas de Tiempo de Juego】</strong> Con hasta 90 horas de escucha en modo Bluetooth, siempre tendrás música para inspirarte. Ya sea usando la comodidad de los auriculares inalámbricos o la conexión por cable (3.5 mm incluido), tienes la opción de disfrutar de la experiencia Doqaus sobre la oreja.</p>
+              <p><strong>【Conexión Bluetooth 5.3 & Inalámbrica】</strong> La versión actualizada V5.3 garantiza una conexión ultra rápida y prácticamente inquebrantable de hasta 20 metros (66 FEET). Con una batería recargable de 1000 mAh, se pueden obtener hasta 90 horas de uso, ideal para viajes largos.</p>
+              <p><strong>【Calidad de Sonido Optimizada con 3 Modos EQ】</strong> Los auriculares Doqaus Wireless Bluetooth disponen de 3 modos de ecualización para alternar entre un sonido equilibrado, graves acentuados o alta definición, ofreciendo calidad de sonido de nivel CD.</p>
+              <p><strong>【Comfort de Todo el día & Diseño Plegable】</strong> Con materiales premium, pesan solo 219g, con diadema ajustable para un ajuste perfecto alrededor de las orejas. Ideales para el hogar, oficina, escuela y viajes para todas las edades.</p>
+              <p><strong>【Micrófono Incorporado】</strong> Equipados con controladores de 40 mm y micrófono integrado, ofrecen una transmisión estable, baja latencia y excelente calidad de audio, permitiendo comunicaciones claras con manos libres.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Producto 8 -->
+        <div class="product">
+          <img src="https://m.media-amazon.com/images/I/71Ilitn6B+L._AC_SY300_SX300_.jpg" alt="TOZO A1 Auriculares" style="float: left; margin-right: 20px;">
+          <div class="rating-logo">
+            <div class="rating-score">9.0</div>
+            <p class="rating-label">Valoración</p>
+          </div>
+          <div class="product-details">
+            <h2>8. TOZO A1 Mini Auriculares Inalámbricos Bluetooth 5.3 con ORIGX</h2>
+            <p class="reviews">⭐⭐⭐⭐⭐ (13500+ opiniones)</p>
+            <span class="amazon-badge">Disponible en Amazon</span>
+            <br>
+            <a href="https://amzn.to/436bJnN" target="_blank">Ver precio</a>
+            <div class="shipping-container">
+              <p class="shipping-text">Envío gratis</p>
+              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
+            </div>
+            <div class="more-info" style="display: none;">
+              <h3>Acerca de este producto</h3>
+              <p><strong>[Ultraligero y compacto]</strong> Los auriculares A1 de TOZO han sido diseñados para lograr la combinación perfecta de belleza y comodidad. Su superficie y ángulo interno han sido refinados para un ajuste discreto, y cada auricular pesa solo 3,7 g.</p>
+              <p><strong>[Calidad de sonido estéreo]</strong> Cuentan con un altavoz de 6 mm que proporciona un sonido potente y amplio, con agudos dinámicos y graves potentes, ideales para deportes o trabajar desde casa.</p>
+              <p><strong>[Control táctil inteligente]</strong> Incorporan control táctil de doble oído para ajustar el volumen, cambiar canciones, pausar y responder llamadas, así como para activar el asistente de voz.</p>
+              <p><strong>[Bluetooth 5.3 y conexión de larga distancia]</strong> Ofrecen una conexión estable hasta 12 metros. Si se desconecta uno, se recomienda apagar Bluetooth, borrar registros [TOZO-A1], sacar ambos auriculares del estuche y tocarlos rápidamente 5 veces para reiniciar.</p>
+              <p><strong>[Larga duración]</strong> Con una batería de 40 mAh en cada auricular y un estuche de 400 mAh, proporcionan hasta 6.5 horas de reproducción, más 30 horas adicionales con 3 cargas completas.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Producto 9 -->
+        <div class="product">
+          <img src="https://m.media-amazon.com/images/I/811RreTN3rL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="Auriculares Monitor" style="float: left; margin-right: 20px;">
+          <div class="rating-logo">
+            <div class="rating-score">8.8</div>
+            <p class="rating-label">Valoración</p>
+          </div>
+          <div class="product-details">
+            <h2>9. OneOdio Pro10 Auriculares DJ con Cable, Estéreo de Mezcla y Monitor de Estudio</h2>
+            <p class="reviews">⭐⭐⭐⭐ (17400+ opiniones)</p>
+            <span class="amazon-badge">Disponible en Amazon</span>
+            <br>
+            <a href="https://amzn.to/41dTc6n" target="_blank">Ver precio</a>
+            <div class="shipping-container">
+              <p class="shipping-text">Envío gratis</p>
+              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
+            </div>
+            <div class="more-info" style="display: none;">
+              <h3>Acerca de este producto</h3>
+              <p><strong>Calidad de sonido superior:</strong> El controlador de neodimio de 50 mm proporciona un sonido estéreo. Disfruta de graves excelentes y potentes sin molestar a nadie gracias al diseño cerrado.</p>
+              <p><strong>Sin adaptador:</strong> Viene con dos cables extraíbles: uno estéreo de 3 m (conector de 6,3 mm) y otro con conector de 3,5 mm con micrófono, compatibles con PC, smartphones, PS4, etc.</p>
+              <p><strong>Cómodo:</strong> Almohadillas de alta calidad especialmente desarrolladas para brindar comodidad y aislamiento de ruido, y una diadema ajustable que permite un ajuste perfecto.</p>
+              <p><strong>Diseño para DJ:</strong> Con almohadillas giratorias de 90° y diseño plegable, es ideal para uso diario, estudio, DJ, producción musical y mezclas.</p>
+              <p><strong>Amplia compatibilidad:</strong> Compatible con dispositivos con conector de 3,5 o 6,35 mm, como MP3, PS4, portátiles o guitarra eléctrica. Además, cuenta con 2 años de garantía.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Producto 10 -->
+        <div class="product">
+          <img src="https://m.media-amazon.com/images/I/71uAeUP2MRL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="Tefal Actifry Genius" style="float: left; margin-right: 20px;">
+          <div class="rating-logo">
+            <div class="rating-score">8.5</div>
+            <p class="rating-label">Valoración</p>
+          </div>
+          <div class="product-details">
+            <h2>10. Auriculares Inalámbricos Deportivos, 2024 75Horas Auriculares Bluetooth Sonido</h2>
+            <p class="reviews">⭐⭐⭐⭐⭐ (13300+ opiniones)</p>
+            <span class="amazon-badge">Disponible en Amazon</span>
+            <br>
+            <a href="https://amzn.to/41anozA" target="_blank">Ver precio</a>
+            <div class="shipping-container">
+              <p class="shipping-text">Envío gratis</p>
+              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
+            </div>
+            <div class="more-info" style="display: none;">
+              <h3>Acerca de este producto</h3>
+              <p><strong>Bluetooth 5.4 Avanzada:</strong> Los auriculares inalambricos bluetooth utilizan un avanzado chip Bluetooth 5.4 con mejora de señal del 80%, permitiendo una velocidad de transferencia hasta 2 veces mayor que la generación anterior. La conexión es rápida, estable y de baja latencia, con alcance de hasta 15 M. Tras el primer emparejamiento, al abrir la caja de carga, se conectan automáticamente al último dispositivo.</p>
+              <p><strong>75 Horas de Experiencia Ininterrumpida:</strong> El estuche de carga (480 mAh) proporciona hasta 15H de uso en una sola carga, sumando un total de 75 horas. La carga rápida tipo C facilita su uso fuera de casa y durante viajes. La pantalla LED muestra de forma intuitiva el nivel restante de la batería y el progreso de carga.</p>
+              <p><strong>Sonido Envolvente Estéreo y 85% ENC Cancelación de Ruido:</strong> Adopta tecnología de cancelación ENC que elimina el 85% del ruido de fondo. Con controladores dinámicos de 14.2 mm, garantiza un sonido claro y fluido, libre de interferencias.</p>
+              <p><strong>Control Táctil y Amplia Compatibilidad:</strong> Permite controlar el volumen, cambiar canciones y pausar la música con un simple toque. Es compatible con la mayoría de dispositivos habilitados para Bluetooth, como smartphones, tabletas, PCs, iOS y Android.</p>
+              <p><strong>Ajuste Cómodo e Impermeable IP7:</strong> Diseñados con un innovador gancho suave y tres tamaños de tapones de silicona, aseguran un ajuste perfecto y se mantienen en su lugar incluso durante entrenamientos intensos. La tecnología IP7 los protege contra el sudor y la lluvia.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <!-- Banner de cookies -->
-    <div id="cookie-banner" style="position: fixed; bottom: 0; background: #222; color: white; padding: 15px; width: 100%; text-align: center;">
-      Este sitio usa cookies para mejorar la experiencia. ¿Aceptas?
-      <button onclick="aceptarCookies(); document.getElementById('cookie-banner').style.display='none';">Aceptar</button>
-      <button onclick="rechazarCookies(); document.getElementById('cookie-banner').style.display='none';">Rechazar</button>
-    </div>
-    <script>
-        function toggleInfo(button) {
-            var info = button.parentElement.nextElementSibling;
-            if (info.style.display === "none" || info.style.display === "") {
-                info.style.display = "block";
-                button.textContent = "Mostrar menos";
-            } else {
-                info.style.display = "none";
-                button.textContent = "Mostrar más";
-            }
-        }
-    </script>
+  </div>
+  <!-- Banner de cookies -->
+  <div id="cookie-banner" style="position: fixed; bottom: 0; background: #222; color: white; padding: 15px; width: 100%; text-align: center;">
+    Este sitio usa cookies para mejorar la experiencia. ¿Aceptas?
+    <button onclick="aceptarCookies(); document.getElementById('cookie-banner').style.display='none';">Aceptar</button>
+    <button onclick="rechazarCookies(); document.getElementById('cookie-banner').style.display='none';">Rechazar</button>
+  </div>
+  <script>
+    function toggleInfo(button) {
+      var info = button.parentElement.nextElementSibling;
+      if (info.style.display === "none" || info.style.display === "") {
+        info.style.display = "block";
+        button.textContent = "Mostrar menos";
+      } else {
+        info.style.display = "none";
+        button.textContent = "Mostrar más";
+      }
+    }
+  </script>
 </body>
 </html>
