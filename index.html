@@ -4,18 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Top 10 Tecnología</title>
-    <link rel="stylesheet" href="/assets/styles.css">
-    
-    <!-- Google reCAPTCHA -->
-    <script src="https://www.google.com/recaptcha/api.js?render=6LfK-OAqAAAAABuT-xDLlP4tYZzxfg3dB9XSYeF5"></script>
-    <script>
-        grecaptcha.ready(function() {
-            grecaptcha.execute('6LfK-OAqAAAAABuT-xDLlP4tYZzxfg3dB9XSYeF5', {action: 'homepage'}).then(function(token) {
-                document.getElementById("recaptchaResponse").value = token;
-            });
-        });
-    </script>
-    
+    <link rel="stylesheet" href="/assets/styles.css"> <!-- Enlace a estilos globales -->
     <style>
         h1 {
             text-align: center;
@@ -24,46 +13,73 @@
             text-decoration: underline;
         }
         .description {
-            text-align: left;
-            font-size: 22px;
+            text-align: center;
+            font-size: 18px;
             max-width: 800px;
             margin: 20px auto;
             line-height: 1.5;
         }
         .category-grid {
             display: flex;
-            justify-content: flex-start;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 30px;
             margin-top: 20px;
         }
+        @media (min-width: 768px) {
+            .category-grid {
+                flex-wrap: nowrap;
+            }
+        }
         .category-box {
-            text-align: center;
+            width: 100%;
+            max-width: 300px;
+            height: 250px;
+            background-color: white;
+            color: black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
             font-size: 22px;
             font-weight: bold;
             text-decoration: none;
-            color: black;
+            border: 2px solid black;
+            border-radius: 10px;
+            overflow: hidden;
+            padding-bottom: 10px;
         }
         .category-box img {
-            width: 200px;
-            height: auto;
-            object-fit: cover;
-            display: block;
-            margin: 0 auto;
-            border-radius: 10px;
+            width: 80%;
+            height: 60%;
+            object-fit: contain;
+            margin-top: 10px;
+        }
+        .category-box span {
+            text-decoration: underline;
+            margin-bottom: 10px;
+        }
+        .category-box:hover {
+            background-color: #e6e6e6;
         }
         .container {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
+        }
+        @media (min-width: 1024px) {
+            .container {
+                flex-direction: row;
+            }
         }
         .content {
             flex: 3;
         }
-        .sidebar, .left-sidebar {
+        .sidebar {
             flex: 1;
             padding: 20px;
             background-color: #f4f4f4;
             text-align: center;
-            margin: 0 20px;
+            margin-left: 20px;
         }
         #cookie-banner {
             position: fixed;
@@ -79,31 +95,34 @@
 <body>
     <header>
         <h1>Top 10 Tecnología</h1>
-        <p class="description">Bienvenido a <strong>Top 10 Tecnología</strong>, el sitio líder en análisis y comparativas de los mejores dispositivos del mercado.</p>
+        <p class="description">Bienvenido a **Top 10 Tecnología**, el sitio líder en análisis y comparativas de los mejores dispositivos del mercado. Descubre nuestras selecciones **más recomendadas** en tecnología para el hogar, como **freidoras de aire y auriculares**, con guías detalladas y enlaces directos a las mejores ofertas. Optimizamos cada recomendación con estudios **SEO avanzados**, asegurando que siempre encuentres lo mejor del mercado. ¡Explora y elige con confianza!</p>
     </header>
     
     <div class="container">
-        <aside class="left-sidebar">
-            <h3>Anuncios</h3>
-            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3702060621408236" data-ad-slot="1234567890" data-ad-format="auto"></ins>
-        </aside>
-
         <div class="content">
             <div class="category-grid">
-                <a href="/freidoras/" class="category-box">
-                    <img src="https://m.media-amazon.com/images/I/81YlVdZBmaL.__AC_SX300_SY300_QL70_FMwebp_.jpg" alt="Freidoras">
-                    <div>Freidoras</div>
-                </a>
                 <a href="/auriculares/" class="category-box">
                     <img src="https://m.media-amazon.com/images/I/61iBtxCUabL._AC_SX679_.jpg" alt="Auriculares">
-                    <div>Auriculares</div>
+                    <span>Auriculares</span>
+                </a>
+                <a href="/cafeteras/" class="category-box">
+                    <img src="https://m.media-amazon.com/images/I/71uiF8cvgbL._AC_SX679_.jpg" alt="Cafeteras">
+                    <span>Cafeteras</span>
+                </a>
+                <a href="/freidoras/" class="category-box">
+                    <img src="https://m.media-amazon.com/images/I/81YlVdZBmaL.__AC_SX300_SY300_QL70_FMwebp_.jpg" alt="Freidoras">
+                    <span>Freidoras</span>
                 </a>
             </div>
         </div>
         
         <aside class="sidebar">
             <h3>Anuncios</h3>
+            <p>Espacio reservado para publicidad</p>
             <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3702060621408236" data-ad-slot="9876543210" data-ad-format="auto"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
         </aside>
     </div>
     
@@ -113,8 +132,7 @@
         <button onclick="aceptarCookies(); document.getElementById('cookie-banner').style.display='none';">Aceptar</button>
         <button onclick="rechazarCookies(); document.getElementById('cookie-banner').style.display='none';">Rechazar</button>
     </div>
-    
-    <input type="hidden" id="recaptchaResponse" name="recaptchaResponse">
 </body>
 </html>
+
 
