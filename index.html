@@ -26,11 +26,6 @@
             gap: 30px;
             margin-top: 20px;
         }
-        @media (min-width: 768px) {
-            .category-grid {
-                flex-wrap: nowrap;
-            }
-        }
         .category-box {
             width: 100%;
             max-width: 300px;
@@ -66,9 +61,17 @@
             display: flex;
             flex-direction: column;
         }
+        @media (min-width: 768px) {
+            .category-grid {
+                flex-wrap: wrap;
+            }
+        }
         @media (min-width: 1024px) {
             .container {
                 flex-direction: row;
+            }
+            .category-grid {
+                flex-wrap: nowrap;
             }
         }
         .content {
@@ -95,7 +98,7 @@
 <body>
     <header>
         <h1>Top 10 Tecnología</h1>
-        <p class="description">Bienvenido a **Top 10 Tecnología**, el sitio líder en análisis y comparativas de los mejores dispositivos del mercado. Descubre nuestras selecciones **más recomendadas** en tecnología para el hogar, como **freidoras de aire y auriculares**, con guías detalladas y enlaces directos a las mejores ofertas. Optimizamos cada recomendación con estudios **SEO avanzados**, asegurando que siempre encuentres lo mejor del mercado. ¡Explora y elige con confianza!</p>
+        <p class="description">Bienvenido a **Top 10 Tecnología**, el sitio líder en análisis y comparativas de los mejores dispositivos del mercado. Descubre nuestras selecciones **más recomendadas** en tecnología para el hogar, como **las mejores lavadoras**, con guías detalladas y enlaces directos a las mejores ofertas. Optimizamos cada recomendación con estudios **SEO avanzados**, asegurando que siempre encuentres lo mejor del mercado. ¡Explora y elige con confianza!</p>
     </header>
     
     <div class="container">
@@ -112,6 +115,10 @@
                 <a href="/freidoras/" class="category-box">
                     <img src="https://m.media-amazon.com/images/I/81YlVdZBmaL.__AC_SX300_SY300_QL70_FMwebp_.jpg" alt="Freidoras">
                     <span>Freidoras</span>
+                </a>
+                <a href="/lavadoras/" class="category-box">
+                    <img src="https://m.media-amazon.com/images/I/71cW-lHnaQL._AC_SX679_.jpg" alt="Lavadoras">
+                    <span>Lavadoras</span>
                 </a>
             </div>
         </div>
@@ -134,5 +141,6 @@
     </div>
 </body>
 </html>
+
 
 
