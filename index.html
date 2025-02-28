@@ -21,7 +21,7 @@
         }
         .category-grid {
             display: flex;
-            flex-wrap: wrap;
+            flex-wrap: nowrap;
             justify-content: center;
             gap: 30px;
             margin-top: 20px;
@@ -57,53 +57,21 @@
         .category-box:hover {
             background-color: #e6e6e6;
         }
-        .container {
-            display: flex;
-            flex-direction: column;
-        }
-        @media (min-width: 768px) {
-            .category-grid {
-                flex-wrap: wrap;
-            }
-        }
-        @media (min-width: 1024px) {
-            .container {
-                flex-direction: row;
-            }
-            .category-grid {
-                flex-wrap: nowrap;
-            }
-        }
-        .content {
-            flex: 3;
-        }
-        .sidebar {
-            flex: 1;
-            padding: 20px;
-            background-color: #f4f4f4;
-            text-align: center;
-            margin-left: 20px;
-        }
-        #cookie-banner {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            background: #222;
-            color: white;
-            text-align: center;
-            padding: 15px;
-        }
     </style>
 </head>
 <body>
     <header>
         <h1>Top 10 Tecnología</h1>
-        <p class="description">Bienvenido a **Top 10 Tecnología**, el sitio líder en análisis y comparativas de los mejores dispositivos del mercado. Descubre nuestras selecciones **más recomendadas** en tecnología para el hogar, como **las mejores lavadoras**, con guías detalladas y enlaces directos a las mejores ofertas. Optimizamos cada recomendación con estudios **SEO avanzados**, asegurando que siempre encuentres lo mejor del mercado. ¡Explora y elige con confianza!</p>
+        <p class="description">Bienvenido a **Top 10 Tecnología**, el sitio líder en análisis y comparativas de los mejores dispositivos del mercado. Descubre nuestras selecciones **más recomendadas** en tecnología para el hogar, como **freidoras de aire y auriculares**, con guías detalladas y enlaces directos a las mejores ofertas. Optimizamos cada recomendación con estudios **SEO avanzados**, asegurando que siempre encuentres lo mejor del mercado. ¡Explora y elige con confianza!</p>
     </header>
     
     <div class="container">
         <div class="content">
             <div class="category-grid">
+                <a href="/aspiradoras-sin-cable/" class="category-box">
+                    <img src="https://m.media-amazon.com/images/I/71WL7Vh6v+L._AC_SY300_SX300_.jpg" alt="Aspiradoras sin cable">
+                    <span>Aspiradoras sin cable</span>
+                </a>
                 <a href="/auriculares/" class="category-box">
                     <img src="https://m.media-amazon.com/images/I/61iBtxCUabL._AC_SX679_.jpg" alt="Auriculares">
                     <span>Auriculares</span>
@@ -116,28 +84,8 @@
                     <img src="https://m.media-amazon.com/images/I/81YlVdZBmaL.__AC_SX300_SY300_QL70_FMwebp_.jpg" alt="Freidoras">
                     <span>Freidoras</span>
                 </a>
-                <a href="/lavadoras/" class="category-box">
-                    <img src="https://m.media-amazon.com/images/I/71cW-lHnaQL._AC_SX679_.jpg" alt="Lavadoras">
-                    <span>Lavadoras</span>
-                </a>
             </div>
         </div>
-        
-        <aside class="sidebar">
-            <h3>Anuncios</h3>
-            <p>Espacio reservado para publicidad</p>
-            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3702060621408236" data-ad-slot="9876543210" data-ad-format="auto"></ins>
-            <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-        </aside>
-    </div>
-    
-    <!-- Banner de cookies -->
-    <div id="cookie-banner">
-        Este sitio usa cookies para mejorar la experiencia. ¿Aceptas?
-        <button onclick="aceptarCookies(); document.getElementById('cookie-banner').style.display='none';">Aceptar</button>
-        <button onclick="rechazarCookies(); document.getElementById('cookie-banner').style.display='none';">Rechazar</button>
     </div>
 </body>
 </html>
