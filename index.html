@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Top 10 Tecnología</title>
-    <link rel="stylesheet" href="/assets/styles.css"> <!-- Enlace a estilos globales -->
+    <link rel="stylesheet" href="/assets/styles.css">
     <style>
         h1 {
             text-align: center;
@@ -12,63 +12,72 @@
             font-weight: bold;
             text-decoration: underline;
         }
+        .offer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px auto;
+            max-width: 900px;
+        }
         .offer-banner {
-            text-align: center;
             font-size: 32px;
             font-weight: bold;
             color: red;
             background-color: yellow;
             padding: 5px 15px;
-            display: block;
-            width: fit-content;
-            margin: 20px auto;
             text-decoration: underline;
         }
-        .description {
-            text-align: center;
-            font-size: 18px;
-            max-width: 800px;
-            margin: 20px auto;
-            line-height: 1.5;
+        .search-box {
+            display: flex;
+            align-items: center;
+            border: 2px solid black;
+            border-radius: 5px;
+            padding: 3px;
+            background-color: white;
+            font-size: 14px;
+        }
+        .search-box input {
+            border: none;
+            outline: none;
+            padding: 3px;
+            font-size: 14px;
+            width: 120px;
         }
         .category-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(4, minmax(100px, 1fr));
+            gap: 5px;
             margin-top: 20px;
             justify-content: center;
         }
         .category-box {
             background-color: white;
-            color: black;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: space-between;
-            font-size: 18px;
-            font-weight: bold;
-            text-decoration: none;
-            border: 2px solid black;
+            border: 1px solid black;
             border-radius: 10px;
             overflow: hidden;
-            padding-bottom: 10px;
+            text-decoration: none;
+            padding: 5px;
+            font-size: 14px;
         }
         .category-box img {
-            width: 100%;
-            height: 120px;
+            width: 100px;
+            height: 100px;
             object-fit: contain;
-            margin-top: 10px;
         }
         .category-box span {
+            color: black;
             text-decoration: underline;
-            margin-bottom: 10px;
-        }
-        .category-box:hover {
-            background-color: #e6e6e6;
+            font-weight: bold;
+            font-size: 16px;
+            margin-top: 5px;
         }
         .container {
             display: flex;
             flex-direction: row;
+            gap: 20px;
         }
         .content {
             flex: 3;
@@ -78,11 +87,20 @@
             padding: 20px;
             background-color: #f4f4f4;
             text-align: center;
-            margin-left: 20px;
         }
-        @media (min-width: 768px) {
+        .description {
+            text-align: center;
+            font-size: 18px;
+            max-width: 800px;
+            margin: 20px auto;
+            line-height: 1.5;
+        }
+        @media (max-width: 768px) {
             .category-grid {
-                grid-template-columns: repeat(4, 1fr);
+                grid-template-columns: repeat(2, minmax(100px, 1fr));
+            }
+            .container {
+                flex-direction: column;
             }
         }
     </style>
@@ -90,13 +108,21 @@
 <body>
     <header>
         <h1>Top 10 Tecnología</h1>
-        <div class="offer-banner">¡Ofertas! Aprovecha y elige el tuyo</div>
+        <div class="offer-container">
+            <div class="offer-banner">¡Ofertas! Aprovecha y elige el tuyo</div>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Buscar..." onkeyup="searchCategory()">
+                <button type="submit">
+                    <img src="https://cdn-icons-png.flaticon.com/512/622/622669.png" alt="Buscar" width="16">
+                </button>
+            </div>
+        </div>
         <p class="description">Bienvenido a <b>Top 10 Tecnología</b>, el sitio líder en análisis y comparativas de los mejores dispositivos del mercado. Descubre nuestras selecciones <b>más recomendadas</b> en tecnología para el hogar, como <b>freidoras de aire, auriculares y una lista infinita de productos</b>, con guías detalladas y enlaces directos a las mejores ofertas. Optimizamos cada recomendación con pruebas <b>y comparativas</b>, asegurando que siempre encuentres lo mejor del mercado. ¡Explora y elige con confianza!</p>
     </header>
     
     <div class="container">
         <div class="content">
-            <div class="category-grid">
+            <div class="category-grid" id="categoryGrid">
                 <a href="/aspiradoras-sin-cable/" class="category-box">
                     <img src="https://m.media-amazon.com/images/I/71WL7Vh6v+L._AC_SY300_SX300_.jpg" alt="Aspiradoras sin cable">
                     <span>Aspiradoras sin cable</span>
@@ -104,6 +130,10 @@
                 <a href="/auriculares/" class="category-box">
                     <img src="https://m.media-amazon.com/images/I/61iBtxCUabL._AC_SX679_.jpg" alt="Auriculares">
                     <span>Auriculares</span>
+                </a>
+                <a href="/batidoras/" class="category-box">
+                    <img src="https://m.media-amazon.com/images/I/71TEsI+pD2L._AC_SX679_.jpg" alt="Batidoras">
+                    <span>Batidoras</span>
                 </a>
                 <a href="/cafeteras/" class="category-box">
                     <img src="https://m.media-amazon.com/images/I/71uiF8cvgbL._AC_SX679_.jpg" alt="Cafeteras">
@@ -134,11 +164,8 @@
         <aside class="sidebar">
             <h3>Anuncios</h3>
             <p>Espacio reservado para publicidad</p>
-            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3702060621408236" data-ad-slot="9876543210" data-ad-format="auto"></ins>
-            <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
         </aside>
     </div>
 </body>
 </html>
+
