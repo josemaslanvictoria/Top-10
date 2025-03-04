@@ -1,170 +1,663 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Top 10 Tecnología:Compra lo mejor Calidad-precio y valorado</title>
-    <link rel="stylesheet" href="/assets/styles.css">
-    <style>
-        h1 {
-            text-align: center;
-            font-size: 36px;
-            font-weight: bold;
-            text-decoration: underline;
-        }
-        .offer-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin: 20px auto;
-            max-width: 900px;
-        }
-        .offer-banner {
-            font-size: 32px;
-            font-weight: bold;
-            color: red;
-            background-color: yellow;
-            padding: 5px 15px;
-            text-decoration: underline;
-        }
-        .search-box {
-            display: flex;
-            align-items: center;
-            border: 2px solid black;
-            border-radius: 5px;
-            padding: 3px;
-            background-color: white;
-            font-size: 14px;
-        }
-        .search-box input {
-            border: none;
-            outline: none;
-            padding: 3px;
-            font-size: 14px;
-            width: 120px;
-        }
-        .category-grid {
-            display: grid;
-            grid-template-columns: repeat(4, minmax(100px, 1fr));
-            gap: 5px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-        .category-box {
-            background-color: white;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            border: 1px solid black;
-            border-radius: 10px;
-            overflow: hidden;
-            text-decoration: none;
-            padding: 5px;
-            font-size: 14px;
-        }
-        .category-box img {
-            width: 100px;
-            height: 100px;
-            object-fit: contain;
-        }
-        .category-box span {
-            color: black;
-            text-decoration: underline;
-            font-weight: bold;
-            font-size: 16px;
-            margin-top: 5px;
-        }
-        .container {
-            display: flex;
-            flex-direction: row;
-            gap: 20px;
-        }
-        .content {
-            flex: 3;
-        }
-        .sidebar {
-            flex: 1;
-            padding: 20px;
-            background-color: #f4f4f4;
-            text-align: center;
-        }
-        .description {
-            text-align: left;
-            font-size: 22px;
-            max-width: 900px;
-            margin: 20px auto;
-            line-height: 1.8;
-        }
-        @media (max-width: 768px) {
-            .category-grid {
-                grid-template-columns: repeat(2, minmax(100px, 1fr));
-            }
-            .container {
-                flex-direction: column;
-            }
-        }
-    </style>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3702060621408236" crossorigin="anonymous"></script>
+  <script async src="https://fundingchoicesmessages.google.com/i/pub-3702060621408236?ers=1" nonce="xyz"></script>
+  <script>
+    window.googlefc = window.googlefc || {};
+    window.googlefc.callbackQueue = window.googlefc.callbackQueue || [];
+    window.googlefc.callbackQueue.push(function() {
+      window.googlefc.setConsentConfig({
+        'consentMode': 'advanced'
+      });
+    });
+  </script>
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11335901809"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+  
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'analytics_storage': 'denied'
+    });
+  
+    gtag('js', new Date());
+    gtag('config', 'AW-11335901809');
+  
+    function aceptarCookies() {
+      gtag('consent', 'update', {
+        'ad_storage': 'granted',
+        'analytics_storage': 'granted'
+      });
+    }
+  
+    function rechazarCookies() {
+      gtag('consent', 'update', {
+        'ad_storage': 'denied',
+        'analytics_storage': 'denied'
+      });
+    }
+  </script>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Top 10: Los Mejores Robot Aspiradores</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+    }
+    .container {
+      max-width: 1200px;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      gap: 40px;
+    }
+    /* Ahora el contenido aparece primero y el sidebar a la derecha */
+    .content {
+      flex: 3;
+      position: relative;
+    }
+    .sidebar {
+      flex: 1;
+      padding: 20px;
+      background-color: #f4f4f4;
+      text-align: center;
+      /* Eliminamos el margen a la izquierda para evitar que quede en la izquierda */
+      margin-left: 0;
+    }
+    h1 {
+      color: #333;
+      font-size: 32px;
+      text-decoration: underline;
+    }
+    p {
+      font-size: 20px;
+      color: #666;
+      max-width: 800px;
+      margin: 0 auto 20px auto;
+      text-align: justify;
+    }
+    .highlight {
+      font-weight: bold;
+      text-decoration: underline;
+      color: black;
+    }
+    .reviews {
+      font-size: 16px;
+      margin: 0 0 10px 0;
+    }
+    .product-list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+      margin-top: 20px;
+    }
+    .product {
+      width: 100%;
+      max-width: 900px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 30px;
+      text-align: left;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+      background-color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      position: relative;
+    }
+    .product img {
+      width: 200px;
+      height: auto;
+      border-radius: 5px;
+    }
+    .product-details {
+      flex: 1;
+    }
+    /* Bloque de oferta para productos (con extra-info lateral) */
+    .offer-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10px;
+    }
+    .offer-buttons {
+      /* Aquí se agrupan el badge y el enlace */
+    }
+    .extra-info {
+      text-align: right;
+    }
+    .extra-info p {
+      margin: 2px 0;
+      font-size: 16px;
+    }
+    .checkmark {
+      color: green;
+      font-weight: bold;
+      margin-right: 5px;
+    }
+    .product a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 25px;
+      background-color: #00CC00;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      font-size: 24px;
+    }
+    .product a:hover {
+      background-color: #008000;
+    }
+    .amazon-badge {
+      background-color: #ff9900;
+      color: white;
+      padding: 5px 8px;
+      border-radius: 5px;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 13px;
+      font-size: 10px;
+    }
+    .rating-logo {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      text-align: center;
+    }
+    .rating-score {
+      width: 50px;
+      height: 50px;
+      border: 5px solid red;
+      border-radius: 50%;
+      line-height: 50px;
+      font-size: 22px;
+      color: black;
+      font-weight: bold;
+      margin: 0 auto;
+      background-color: white;
+    }
+    .rating-label {
+      font-size: 12px;
+      color: #333;
+      margin-top: 5px;
+    }
+    /* Contenedor para envío gratis y botón desplegable */
+    .shipping-container {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+      gap: 10px;
+    }
+    .shipping-text {
+      font-size: 20px;
+      color: #FF0000;
+      font-weight: bold;
+      margin: 0;
+    }
+    .toggle-info {
+      background-color: #ddd;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 16px;
+      width: 150px;
+    }
+    .toggle-info:hover {
+      background-color: #ccc;
+    }
+    .more-info {
+      margin-top: 5px;
+      background-color: #f9f9f9;
+      padding: 5px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 14px;
+      text-align: left;
+    }
+    /* Media Query para dispositivos móviles */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        gap: 20px;
+      }
+      /* En móvil, el sidebar se mostrará debajo */
+      .sidebar {
+        width: 100%;
+      }
+      .content {
+        width: 100%;
+      }
+      .product {
+        flex-direction: column;
+        align-items: center;
+      }
+      .product img {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 0 15px 0;
+      }
+      .product-details {
+        text-align: center;
+      }
+      .shipping-container {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .offer-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .extra-info {
+        margin-top: 10px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Top 10 Tecnología: Compra lo mejor calidad-precio y valorado</h1>
-        <div class="offer-container" style="justify-content: center;">
-            <div class="offer-banner">¡Ofertas! Aprovecha y elige el tuyo</div>
-            <div class="search-box">
-                <input type="text" id="searchInput" placeholder="Buscar..." onkeyup="searchCategory()">
-                <button type="submit">
-                    <img src="https://cdn-icons-png.flaticon.com/512/622/622669.png" alt="Buscar" width="16">
-                </button>
+  <div class="container">
+    <!-- El contenido aparece primero -->
+    <div class="content">
+      <h1>Top 10: Los Mejores Auriculares</h1>
+      <p>Las <span class="highlight">Auriculares inalámbricos</span> son una excelente opción para <span class="highlight">oir música en cualquier sitio</span>, ya que permiten oir de manera limpia <span class="highlight">mucho mejor el sonido</span>. Son ideales para quienes desean disfrutar de buena música. Además, ayudan a <span class="highlight">despejarse del sonido exterior</span> y a mantener un <span class="highlight">estilo de vida equilibrado</span>. En este listado hemos seleccionado las <span class="highlight">mejores opciones del mercado</span>, basándonos en calidad, valoraciones y popularidad. ¡Invierte en tu salud con unos <span class="highlight">Auriculares inalámbricos</span>!</p>
+      <p class="amazon-notice">Compra este producto en Amazon a través de este enlace</p>
+      
+      <div class="product-list">
+        <!-- Producto 1 -->
+        <div class="product">
+          <img src="https://m.media-amazon.com/images/I/71Kv4VyPFtL._AC_SX679_.jpg" alt="Airzeen Robot Aspirador y Fregasuelos">
+          <div class="rating-logo">
+            <div class="rating-score">9.9</div>
+            <p class="rating-label">Valoración</p>
+          </div>
+          <div class="product-details">
+            <h2>1. Airzeen Robot Aspirador y Fregasuelos</h2>
+            <p class="reviews">⭐⭐⭐⭐⭐ (160+ opiniones)</p>
+            <div class="offer-container">
+              <div class="offer-buttons">
+                <span class="amazon-badge">Disponible en Amazon</span><br>
+                <a href="https://www.amazon.es/Airzeen-Aspirador-Fregasuelos-Succi%C3%B3n-Mascotas/dp/B0D9246SJG?crid=1Y95J0C0QC3FL&dib=eyJ2IjoiMSJ9.4-dgY7LUYpAZd9opm-wyVpfmtIauNi4o2blw0KQE-R2z9PI3G2ezzRl1tfGY0BUuFhd_Wt3NW2R0Qrheqa28VOo7eI3lA_iWIVKe9izcspZj-d_7EujnKncJ6m6KYllo3A2Yht1Bu2llnYehCw2jFJAmlsIVn-4L3G_4xyC4g8YqC68yog69ZBsdtnnumBXpjStmh_d9sJC4GG3mhKJkTTQL-D0OrMtU8D6w3GVqLcY.3lI5E-C2PUd-eQoPsLvMaEtLqJ-k5_gwXEQFgrvmCYU&dib_tag=se&keywords=robot+aspirador&qid=1741087034&refinements=p_36%3A-60000&rnid=1323854031&s=kitchen&sprefix=robot+as%2Ckitchen%2C110&sr=1-1&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&linkCode=ll1&tag=yocompro0e-21&linkId=804c4d3b3f874418d5254411a3c5c334&language=es_ES&ref_=as_li_ss_tl"_blank">Ver precio</a>
+              </div>
+              <div class="extra-info">
+                <p><span class="checkmark">✔</span> Limpieza</p>
+                <p><span class="checkmark">✔</span> Funcionamiento</p>
+                <p><span class="checkmark">✔</span> Potencia de succión</p>
+             </div>
             </div>
-        </div>
-        <p class="description" style="text-align: left; margin-left: 5%;">Bienvenido a <b>Top 10 Tecnología</b>, el sitio líder en análisis y comparativas de los mejores dispositivos del mercado. Descubre nuestras selecciones <b>más recomendadas</b> en tecnología para el hogar, como <b>freidoras de aire, auriculares y una lista infinita de productos</b>, con guías detalladas y enlaces directos a las mejores ofertas. Optimizamos cada recomendación con pruebas <b>y comparativas</b>, asegurando que siempre encuentres lo mejor del mercado. ¡Explora y elige con confianza!</p>
-    </header>
-    
-    <div class="container">
-        <div class="content">
-            <div class="category-grid" id="categoryGrid">
-                <a href="/aspiradoras-sin-cable/" class="category-box">
-                    <img src="https://m.media-amazon.com/images/I/71WL7Vh6v+L._AC_SY300_SX300_.jpg" alt="Aspiradoras sin cable">
-                    <span>Aspiradoras sin cable</span>
-                </a>
-                <a href="/auriculares/" class="category-box">
-                    <img src="https://m.media-amazon.com/images/I/61iBtxCUabL._AC_SX679_.jpg" alt="Auriculares">
-                    <span>Auriculares</span>
-                </a>
-                <a href="/batidoras/" class="category-box">
-                    <img src="https://m.media-amazon.com/images/I/71TEsI+pD2L._AC_SX679_.jpg" alt="Batidoras">
-                    <span>Batidoras</span>
-                </a>
-                <a href="/cafeteras/" class="category-box">
-                    <img src="https://m.media-amazon.com/images/I/71uiF8cvgbL._AC_SX679_.jpg" alt="Cafeteras">
-                    <span>Cafeteras</span>
-                </a>
-                <a href="/chimeneas-electricas/" class="category-box">
-                    <img src="https://m.media-amazon.com/images/I/71wjZTnrnnL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="Chimeneas Eléctricas">
-                    <span>Chimeneas Eléctricas</span>
-                </a>
-                <a href="/freidoras/" class="category-box">
-                    <img src="https://m.media-amazon.com/images/I/81YlVdZBmaL.__AC_SX300_SY300_QL70_FMwebp_.jpg" alt="Freidoras">
-                    <span>Freidoras</span>
-                </a>
-                <a href="/lavadoras/" class="category-box">
-                    <img src="https://m.media-amazon.com/images/I/71cW-lHnaQL.__AC_SY445_SX342_QL70_ML2_.jpg" alt="Lavadoras">
-                    <span>Lavadoras</span>
-                </a>
-                <a href="/microondas/" class="category-box">
-                    <img src="https://m.media-amazon.com/images/I/51SbWaeMsdL._AC_SX679_.jpg" alt="Microondas">
-                    <span>Microondas</span>
-                </a>
-                <a href="/mopa-a-vapor/" class="category-box">
-                    <img src="https://m.media-amazon.com/images/I/71QutkthltL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="Mopa a Vapor">
-                    <span>Mopa a Vapor</span>
-                </a>
+            <div class="shipping-container">
+              <p class="shipping-text">Envío gratis</p>
+              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
             </div>
+            <div class="more-info" style="display: none;">
+              <h3>Acerca de este producto</h3>
+              <p><strong>【Limpieza silenciosa y mejorada para alfombras】El robot aspirador puede identificar alfombras de forma inteligente y aumentar la potencia máxima de succión para un rendimiento de limpieza óptimo. El robot aspirador emite un ruido blanco más suave al aspirar, que no perturbará tu descanso</p>
+              <p><strong> Succión Hurricane de 4500 Pa】El robot aspirador tiene una potente potencia de succión de 4500 Pa. El robot aspirador puede alcanzar un tiempo de trabajo ultralargo de 180 minutos y puede limpiar completamente un área de 200 metros cuadrados. </p>
+              <p><strong>【Barrido, succión y trapeado tres en uno】El robot aspirador G20 Pro puede llevar una caja de polvo y un tanque de agua al mismo tiempo, y puede barrer y trapear al mismo tiempo, lo que mejora enormemente la eficiencia de la limpieza. Suciedad, ya sea polvo, escombros o líquidos. </p>
+              <p><strong>【Control Inteligente Múltiple】El robot aspirador G20 PRO también se puede conectar a Alexa y Google Home y viene con un control remoto. . Puede configurar la hora y la ubicación de su robot aspirador a través de la aplicación y personalizarlo.</p>
+              <p><strong>【Siempre estamos aquí】 Robot Aspirador y Fregasuelos Tiene los siguientes servicios: ① Devoluciones y cambios gratuitos durante 30 días; ② Garantía de 2 años, soporte técnico de por vida ③ Servicio al cliente exclusivo 1 a 1 dentro de las 24 horas.</p>
+            </div>
+          </div>
         </div>
-        <aside class="sidebar">
-            <h3>Anuncios</h3>
-            <p>Espacio reservado para publicidad</p>
-        </aside>
+        <!-- Producto 2 -->
+        <div class="product">
+          <img src="https://m.media-amazon.com/images/I/71nEAXE7ygL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="Cecotec Cecofry">
+          <div class="rating-logo">
+            <div class="rating-score">9.8</div>
+            <p class="rating-label">Valoración</p>
+          </div>
+          <div class="product-details">
+            <h2>2. Auriculares Inalámbricos Bluetooth, Cascos Inalámbricos Bluetooth 5.3</h2>
+            <p class="reviews">⭐⭐⭐⭐⭐ (14200+ opiniones)</p>
+            <div class="offer-container">
+              <div class="offer-buttons">
+                <span class="amazon-badge">Disponible en Amazon</span><br>
+                <a href="https://www.amazon.es/Auriculares-Inalambricos-lnal%C3%A1mbricos-Cancelaci%C3%B3n-Reproducci%C3%B3n/dp/B0CHLYB4Z3?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=1HOLXG7FNRRQR&dib=eyJ2IjoiMSJ9.zrGCJNAsEDujt9_FDinGWd2PECiasCogxqscZ-Pochs6TYlWuARxSzPQXku7eNITdp4WroP1AGO67Hx4pK4kYbcnAfGNUOKR0AA4abgHC_6R-oXvB8iNKC2ips7DGmJR2FxlhTYVD9z5uOpeZx8PqiZMlbbtDLoIVbyCKpTGqBg5PY2kyppwY3_I3024ECmEJoSLubRoaqKMadUg4szJxRqSBkK3JYz3VclwE4l6Xt4.dZaO9D6MbIBJvtEtuvR3q8Sgue3upGMnOaRQO7TsRmE&dib_tag=se&keywords=auriculares&psr=EY17&qid=1740355540&s=todays-deals&sprefix=auriculares%2Ctodays-deals%2C108&sr=1-2&srs=21350206031&linkCode=ll1&tag=yocompro0e-21&linkId=61dff55c7dad6a0daf9bac15b4b2d6a5&language=es_ES&ref_=as_li_ss_tl" target="_blank">Ver precio</a>
+              </div>
+              <div class="extra-info">
+                <p><span class="checkmark">✔</span> Calidad de sonido</p>
+                <p><span class="checkmark">✔</span> Conexión</p>
+                <p><span class="checkmark">✔</span> Comodidad</p>
+              </div>
+            </div>
+            <div class="shipping-container">
+              <p class="shipping-text">Envío gratis</p>
+              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
+            </div>
+            <div class="more-info" style="display: none;">
+              <h3>Acerca de este producto</h3>
+              <p><strong>Sonido Hi-Fi y 35 Horas de Reproducción:</strong> Drivers de 13mm ofrecen agudos claros y bajos profundos; tecnología CVC reduce el ruido en un 85%.</p>
+              <p><strong>Diseño Ergonómico y Ligero:</strong> Disponible en 3 tamaños de tapones; pesa 3,8 g y resiste sudor y lluvia gracias a nanomateriales ultraligeros.</p>
+              <p><strong>Conexión Bluetooth 5.3 Estable y Emparejamiento Automático:</strong> Se conecta instantáneamente tras sacar los auriculares de la caja de carga.</p>
+              <p><strong>Pantalla LED muestra la potencia en tiempo real:</strong> Permite conocer el estado de carga en cualquier momento.</p>
+              <p><strong>Control Táctil Sensible y Compatibilidad Universal:</strong> Facilita llamadas, pausas y cambio de canciones.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Producto 3 -->
+        <div class="product">
+          <img src="https://m.media-amazon.com/images/I/61NPz6iVNjL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="COSORI Dual Blaze">
+          <div class="rating-logo">
+            <div class="rating-score">9.6</div>
+            <p class="rating-label">Valoración</p>
+          </div>
+          <div class="product-details">
+            <h2>3. Auriculares Inalámbricos</h2>
+            <p class="reviews">⭐⭐⭐⭐ (14000+ opiniones)</p>
+            <div class="offer-container">
+              <div class="offer-buttons">
+                <span class="amazon-badge">Disponible en Amazon</span><br>
+                <a href="https://www.amazon.es/Auriculares-Inalambricos-Bluetooth-Cancelacion-Impermeable/dp/B0CHYDX493?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=1HOLXG7FNRRQR&dib=eyJ2IjoiMSJ9.zrGCJNAsEDujt9_FDinGWd2PECiasCogxqscZ-Pochs6TYlWuARxSzPQXku7eNITdp4WroP1AGO67Hx4pK4kYbcnAfGNUOKR0AA4abgHC_6R-oXvB8iNKC2ips7DGmJR2FxlhTYVD9z5uOpeZx8PqiZMlbbtDLoIVbyCKpTGqBg5PY2kyppwY3_I3024ECmEJoSLubRoaqKMadUg4szJxRqSBkK3JYz3VclwE4l6Xt4.dZaO9D6MbIBJvtEtuvR3q8Sgue3upGMnOaRQO7TsRmE&dib_tag=se&keywords=auriculares&psr=EY17&qid=1740355540&s=todays-deals&sprefix=auriculares%2Ctodays-deals%2C108&sr=1-3&srs=21350206031&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=cc140be6743aef502b62451d7afd19bf&language=es_ES&ref_=as_li_ss_tl" target="_blank">Ver precio</a>
+              </div>
+              <div class="extra-info">
+                <p><span class="checkmark">✔</span> Calidad de sonido</p>
+                <p><span class="checkmark">✔</span> Relación calidad-precio</p>
+                <p><span class="checkmark">✔</span> Duración de batería</p>
+              </div>
+            </div>
+            <div class="shipping-container">
+              <p class="shipping-text">Envío gratis</p>
+              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
+            </div>
+            <div class="more-info" style="display: none;">
+              <h3>Acerca de este producto</h3>
+              <p><strong>Sin Retrasos:</strong> Nueva generación de chip Bluetooth 5.4 con transmisión de dos canales, 80% más rápido que Bluetooth 5.2; se reconecta automáticamente.</p>
+              <p><strong>Una Claridad de Audio Excepcional:</strong> Controlador de 13 mm ajustado por expertos, con micrófono incorporado y tecnología ENC para llamadas claras.</p>
+              <p><strong>50H de Reproducción y Pantalla LED Doble:</strong> 8 horas de reproducción ampliables a 50 con el estuche, USB-C y carga rápida en 1 hora.</p>
+              <p><strong>Ajuste Optimo:</strong> Diseño ergonómico con peso de 3.0 g y estuche ultracompacto para portabilidad.</p>
+              <p><strong>IP7 Impermeable y Control Táctil:</strong> Resistente al sudor y a la lluvia, con funciones táctiles básicas.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Producto 4 -->
+        <div class="product">
+          <img src="https://m.media-amazon.com/images/I/71Hx8b6HGbL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="KVIDIO Auriculares Supraaurales">
+          <div class="rating-logo">
+            <div class="rating-score">9.5</div>
+            <p class="rating-label">Valoración</p>
+          </div>
+          <div class="product-details">
+            <h2>4. KVIDIO Auriculares Supraaurales</h2>
+            <p class="reviews">⭐⭐⭐⭐⭐ (23900+ opiniones)</p>
+            <div class="offer-container">
+              <div class="offer-buttons">
+                <span class="amazon-badge">Disponible en Amazon</span><br>
+                <a href="https://www.amazon.es/KVIDIO-Auriculares-Supraaurales-Inal%C3%A1mbricos-Reproducci%C3%B3n/dp/B09B1JFLYH?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=1HOLXG7FNRRQR&dib=eyJ2IjoiMSJ9.zrGCJNAsEDujt9_FDinGWd2PECiasCogxqscZ-Pochs6TYlWuARxSzPQXku7eNITdp4WroP1AGO67Hx4pK4kYbcnAfGNUOKR0AA4abgHC_6R-oXvB8iNKC2ips7DGmJR2FxlhTYVD9z5uOpeZx8PqiZMlbbtDLoIVbyCKpTGqBg5PY2kyppwY3_I3024ECmEJoSLubRoaqKMadUg4szJxRqSBkK3JYz3VclwE4l6Xt4.dZaO9D6MbIBJvtEtuvR3q8Sgue3upGMnOaRQO7TsRmE&dib_tag=se&keywords=auriculares&psr=EY17&qid=1740355540&s=todays-deals&sprefix=auriculares%2Ctodays-deals%2C108&sr=1-4&srs=21350206031&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=00e9cd82ae433c75c82aed3b657cd025&language=es_ES&ref_=as_li_ss_tl" target="_blank">Ver precio</a>
+              </div>
+              <div class="extra-info">
+                <p><span class="checkmark">✔</span> Funcionamiento</p>
+                <p><span class="checkmark">✔</span> Ajuste</p>
+                <p><span class="checkmark">✔</span> Comodidad</p>
+              </div>
+            </div>
+            <div class="shipping-container">
+              <p class="shipping-text">Envío gratis</p>
+              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
+            </div>
+            <div class="more-info" style="display: none;">
+              <h3>Acerca de este producto</h3>
+              <p><strong>AURICULARES ESTÉREO DE ALTA FIDELIDAD:</strong> Controladores duales de 40 mm y tecnología de aislamiento de ruido que ofrecen una experiencia similar a una sala de conciertos.</p>
+              <p><strong>AURICULARES CÓMODOS INIGUALABLES:</strong> Orejeras con espuma viscoelástica y diadema ajustable, diseño liviano y plegable, ideales para viajes y uso diario.</p>
+              <p><strong>AMPLIA COMPATIBILIDAD:</strong> Presione el botón multifunción durante 2 segundos para emparejar; compatibles con dispositivos Bluetooth y con cable de 3,5 mm.</p>
+              <p><strong>CONEXIÓN INALÁMBRICA INCONSÚTIL:</strong> Bluetooth V5.2 garantiza conexión ultrarrápida hasta 33 pies y batería de 500 mAh que se carga en 2,5 horas, con 55 horas de reproducción.</p>
+              <p><strong>GARANTÍA Y SOPORTE:</strong> Incluye auricular plegable, cable de audio, cable de carga USB, 30 días de devolución y 18 meses de garantía.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Producto 5 -->
+        <div class="product">
+          <img src="https://m.media-amazon.com/images/I/71iaWpqrPgL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="Cecotec Cecofry Full Inox">
+          <div class="rating-logo">
+            <div class="rating-score">9.4</div>
+            <p class="rating-label">Valoración</p>
+          </div>
+          <div class="product-details">
+            <h2>5. Auriculares Inalámbricos Deportivos</h2>
+            <p class="reviews">⭐⭐⭐⭐ (13800+ opiniones)</p>
+            <div class="offer-container">
+              <div class="offer-buttons">
+                <span class="amazon-badge">Disponible en Amazon</span><br>
+                <a href="https://www.amazon.es/Auriculares-Inal%C3%A1mbricos-Inalambricos-Cancelacion-Impermeable/dp/B0D4QNNGD5?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=1HOLXG7FNRRQR&dib=eyJ2IjoiMSJ9.zrGCJNAsEDujt9_FDinGWd2PECiasCogxqscZ-Pochs6TYlWuARxSzPQXku7eNITdp4WroP1AGO67Hx4pK4kYbcnAfGNUOKR0AA4abgHC_6R-oXvB8iNKC2ips7DGmJR2FxlhTYVD9z5uOpeZx8PqiZMlbbtDLoIVbyCKpTGqBg5PY2kyppwY3_I3024ECmEJoSLubRoaqKMadUg4szJxRqSBkK3JYz3VclwE4l6Xt4.dZaO9D6MbIBJvtEtuvR3q8Sgue3upGMnOaRQO7TsRmE&dib_tag=se&keywords=auriculares&psr=EY17&qid=1740355540&s=todays-deals&sprefix=auriculares%2Ctodays-deals%2C108&sr=1-5&srs=21350206031&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=ef07c73868d15f66436013795dfe1db2&language=es_ES&ref_=as_li_ss_tl" target="_blank">Ver precio</a>
+              </div>
+              <div class="extra-info">
+                <p><span class="checkmark">✔</span> Calidad de sonido</p>
+                <p><span class="checkmark">✔</span> Calidad</p>
+                <p><span class="checkmark">✔</span> Comodidad</p>
+              </div>
+            </div>
+            <div class="shipping-container">
+              <p class="shipping-text">Envío gratis</p>
+              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
+            </div>
+            <div class="more-info" style="display: none;">
+              <h3>Acerca de este producto</h3>
+              <p><strong>Bluetooth 5.4 y Emparejamiento Automático:</strong> Utiliza tecnología Bluetooth 5.4 compatible con HSP, HFP, A2DP y AVRCP para una conexión estable y rápida; se conectan automáticamente al sacar los auriculares del estuche.</p>
+              <p><strong>75 Horas de Reproducción y Control Táctil:</strong> Hasta 15 horas de uso por carga; el estuche de 650 mAh recarga los auriculares hasta 5 veces, con control para reproducción, volumen y llamadas.</p>
+              <p><strong>HIFI Sonido Estéreo y ENC Cancelación de Ruido:</strong> Controladores de 14.2 mm y 4 micrófonos que actualizan el reconocimiento en 30%, para llamadas claras en entornos ruidosos.</p>
+              <p><strong>Ganchos Deportivos e Impermeable IP7:</strong> Diseño con alas de goma suave para un ajuste perfecto y resistencia al agua y polvo (IP7).</p>
+              <p><strong>Doble Pantalla LED Digital y Amplia Compatibilidad:</strong> Pantalla LED para ver el nivel de batería, compatible con dispositivos Android, iOS y Windows vía Bluetooth.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Producto 6 -->
+        <div class="product">
+          <img src="https://m.media-amazon.com/images/I/718DnKYp+OL._AC_SY300_SX300_.jpg" alt="COSORI Turbo Blaze">
+          <div class="rating-logo">
+            <div class="rating-score">9.2</div>
+            <p class="rating-label">Valoración</p>
+          </div>
+          <div class="product-details">
+            <h2>6. Jesebang Auriculares Inalámbricos</h2>
+            <p class="reviews">⭐⭐⭐⭐⭐ (10700+ opiniones)</p>
+            <div class="offer-container">
+              <div class="offer-buttons">
+                <span class="amazon-badge">Disponible en Amazon</span><br>
+                <a href="https://www.amazon.es/Jesebang-Auriculares-Inal%C3%A1mbricos-Reproducci%C3%B3n-Inalambricos/dp/B0C5351V75?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=1HOLXG7FNRRQR&dib=eyJ2IjoiMSJ9.zrGCJNAsEDujt9_FDinGWd2PECiasCogxqscZ-Pochs6TYlWuARxSzPQXku7eNITdp4WroP1AGO67Hx4pK4kYbcnAfGNUOKR0AA4abgHC_6R-oXvB8iNKC2ips7DGmJR2FxlhTYVD9z5uOpeZx8PqiZMlbbtDLoIVbyCKpTGqBg5PY2kyppwY3_I3024ECmEJoSLubRoaqKMadUg4szJxRqSBkK3JYz3VclwE4l6Xt4.dZaO9D6MbIBJvtEtuvR3q8Sgue3upGMnOaRQO7TsRmE&dib_tag=se&keywords=auriculares&psr=EY17&qid=1740355540&s=todays-deals&sprefix=auriculares%2Ctodays-deals%2C108&sr=1-6&srs=21350206031&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=ab6be30167df2507f3fc4b76108d615e&language=es_ES&ref_=as_li_ss_tl" target="_blank">Ver precio</a>
+              </div>
+              <div class="extra-info">
+                <p><span class="checkmark">✔</span> Calidad de sonido</p>
+                <p><span class="checkmark">✔</span> Comodidad</p>
+                <p><span class="checkmark">✔</span> Calidad</p>
+              </div>
+            </div>
+            <div class="shipping-container">
+              <p class="shipping-text">Envío gratis</p>
+              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
+            </div>
+            <div class="more-info" style="display: none;">
+              <h3>Acerca de este producto</h3>
+              <p><strong>Experiencia de sonido única:</strong> Controlador de 13.4 mm y diafragma ultrasensible que revela ricas texturas en un amplio campo sonoro, resaltando las voces en un audio de tres canales.</p>
+              <p><strong>Nuevo Bluetooth 5.3 y emparejamiento rápido:</strong> Equipados con chips Bluetooth 5.3 para una conexión rápida y estable; se emparejan automáticamente al sacarlos de la caja.</p>
+              <p><strong>Batería de Larga Duración, pantalla LED dual:</strong> 8 horas de reproducción con una carga, más 40 horas adicionales; pantalla LED que muestra el nivel de batería y carga rápida USB-C en 1.5 horas.</p>
+              <p><strong>Control Táctil Inteligente, amplia compatibilidad:</strong> Sensor táctil para llamadas, volumen, cambio de canción y activación de Siri, compatible con la mayoría de dispositivos.</p>
+              <p><strong>Ajuste Cómodo, Resistencia al agua:</strong> Ganchos especiales y diseño ergonómico de 120° para un ajuste seguro y cómodo, con protección IP7 contra sudor y lluvia.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Producto 7 -->
+        <div class="product">
+          <img src="https://m.media-amazon.com/images/I/61fFD42IYVL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="Cecotec Turbo Cecofry">
+          <div class="rating-logo">
+            <div class="rating-score">9.1</div>
+            <p class="rating-label">Valoración</p>
+          </div>
+          <div class="product-details">
+            <h2>7. DOQAUS Auriculares Inalámbricos</h2>
+            <p class="reviews">⭐⭐⭐⭐ (15600+ opiniones)</p>
+            <div class="offer-container">
+              <div class="offer-buttons">
+                <span class="amazon-badge">Disponible en Amazon</span><br>
+                <a href="https://www.amazon.es/DOQAUS-Auriculares-Inal%C3%A1mbricos-Reproducci%C3%B3n-Inalambricos/dp/B0BF8RBDFR?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=1HOLXG7FNRRQR&dib=eyJ2IjoiMSJ9.zrGCJNAsEDujt9_FDinGWd2PECiasCogxqscZ-Pochs6TYlWuARxSzPQXku7eNITdp4WroP1AGO67Hx4pK4kYbcnAfGNUOKR0AA4abgHC_6R-oXvB8iNKC2ips7DGmJR2FxlhTYVD9z5uOpeZx8PqiZMlbbtDLoIVbyCKpTGqBg5PY2kyppwY3_I3024ECmEJoSLubRoaqKMadUg4szJxRqSBkK3JYz3VclwE4l6Xt4.dZaO9D6MbIBJvtEtuvR3q8Sgue3upGMnOaRQO7TsRmE&dib_tag=se&keywords=auriculares&psr=EY17&qid=1740355540&s=todays-deals&sprefix=auriculares%2Ctodays-deals%2C108&sr=1-7&srs=21350206031&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=4d5f7290214599b08c688d53cb1f3da6&language=es_ES&ref_=as_li_ss_tl" target="_blank">Ver precio</a>
+              </div>
+              <div class="extra-info">
+                <p><span class="checkmark">✔</span> Apariencia</p>
+                <p><span class="checkmark">✔</span> Calidad de sonido</p>
+                <p><span class="checkmark">✔</span> Relación calidad-precio</p>
+              </div>
+            </div>
+            <div class="shipping-container">
+              <p class="shipping-text">Envío gratis</p>
+              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
+            </div>
+            <div class="more-info" style="display: none;">
+              <h3>Acerca de este producto</h3>
+              <p><strong>【Actualizada-Hasta 90 Horas de Tiempo de Juego】</strong> Hasta 90 horas de escucha en modo Bluetooth, con opción de uso por cable (3.5 mm incluido).</p>
+              <p><strong>【Conexión Bluetooth 5.3 & Inalámbrica】</strong> Conexión ultra rápida hasta 20 metros (66 FEET) y batería de 1000 mAh para 90 horas de uso.</p>
+              <p><strong>【Calidad de Sonido Optimizada con 3 Modos EQ】</strong> Tres modos de ecualización para un sonido equilibrado, graves acentuados o alta definición.</p>
+              <p><strong>【Comfort de Todo el día & Diseño Plegable】</strong> Materiales premium y diadema ajustable para un ajuste perfecto; ideal para hogar, oficina, escuela y viajes.</p>
+              <p><strong>【Micrófono Incorporado】</strong> Controladores de 40 mm y micrófono integrado para una comunicación clara y estable.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Producto 8 -->
+        <div class="product">
+          <img src="https://m.media-amazon.com/images/I/71Ilitn6B+L._AC_SY300_SX300_.jpg" alt="TOZO A1 Auriculares">
+          <div class="rating-logo">
+            <div class="rating-score">9.0</div>
+            <p class="rating-label">Valoración</p>
+          </div>
+          <div class="product-details">
+            <h2>8. TOZO A1 Mini Auriculares Inalámbricos Bluetooth 5.3 con ORIGX</h2>
+            <p class="reviews">⭐⭐⭐⭐⭐ (13500+ opiniones)</p>
+            <div class="offer-container">
+              <div class="offer-buttons">
+                <span class="amazon-badge">Disponible en Amazon</span><br>
+                <a href="https://www.amazon.es/TOZO-A1-Auriculares-inal%C3%A1mbricos-Incorporado/dp/B09FT58QQP?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=1HOLXG7FNRRQR&dib=eyJ2IjoiMSJ9.zrGCJNAsEDujt9_FDinGWd2PECiasCogxqscZ-Pochs6TYlWuARxSzPQXku7eNITdp4WroP1AGO67Hx4pK4kYbcnAfGNUOKR0AA4abgHC_6R-oXvB8iNKC2ips7DGmJR2FxlhTYVD9z5uOpeZx8PqiZMlbbtDLoIVbyCKpTGqBg5PY2kyppwY3_I3024ECmEJoSLubRoaqKMadUg4szJxRqSBkK3JYz3VclwE4l6Xt4.dZaO9D6MbIBJvtEtuvR3q8Sgue3upGMnOaRQO7TsRmE&dib_tag=se&keywords=auriculares&psr=EY17&qid=1740355540&s=todays-deals&sprefix=auriculares%2Ctodays-deals%2C108&sr=1-8&srs=21350206031&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=28ce5fc8d93e5b2d497dc3337117e3da&language=es_ES&ref_=as_li_ss_tl" target="_blank">Ver precio</a>
+              </div>
+              <div class="extra-info">
+                <p><span class="checkmark">✔</span> Calidad</p>
+                <p><span class="checkmark">✔</span> Tamaño</p>
+                <p><span class="checkmark">✔</span> Ajuste</p>
+              </div>
+            </div>
+            <div class="shipping-container">
+              <p class="shipping-text">Envío gratis</p>
+              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
+            </div>
+            <div class="more-info" style="display: none;">
+              <h3>Acerca de este producto</h3>
+              <p><strong>[Ultraligero y compacto]</strong> Diseñados para un ajuste cómodo y discreto; cada auricular pesa solo 3,7 g.</p>
+              <p><strong>[Calidad de sonido estéreo]</strong> Altavoz de 6 mm que ofrece un sonido potente, con agudos dinámicos y graves potentes.</p>
+              <p><strong>[Control táctil inteligente]</strong> Control táctil de doble oído para controlar volumen, cambio de canción, pausa y llamadas.</p>
+              <p><strong>[Bluetooth 5.3 y conexión de larga distancia]</strong> Conexión estable hasta 12 metros; si se desconecta, reinicia presionando 5 veces rápidamente.</p>
+              <p><strong>[Larga duración]</strong> Batería de 40 mAh en cada auricular y estuche de 400 mAh para hasta 6.5 horas de reproducción, más 30 horas adicionales.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Producto 9 -->
+        <div class="product">
+          <img src="https://m.media-amazon.com/images/I/811RreTN3rL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="Auriculares Monitor">
+          <div class="rating-logo">
+            <div class="rating-score">8.8</div>
+            <p class="rating-label">Valoración</p>
+          </div>
+          <div class="product-details">
+            <h2>9. OneOdio Pro10 Auriculares DJ con Cable, Estéreo de Mezcla y Monitor de Estudio</h2>
+            <p class="reviews">⭐⭐⭐⭐ (17400+ opiniones)</p>
+            <div class="offer-container">
+              <div class="offer-buttons">
+                <span class="amazon-badge">Disponible en Amazon</span><br>
+                <a href="https://www.amazon.es/Auriculares-adaptador-cerrados-telesc%C3%B3picos-neodimio/dp/B072J49RNL?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=1HOLXG7FNRRQR&dib=eyJ2IjoiMSJ9.zrGCJNAsEDujt9_FDinGWd2PECiasCogxqscZ-Pochs6TYlWuARxSzPQXku7eNITdp4WroP1AGO67Hx4pK4kYbcnAfGNUOKR0AA4abgHC_6R-oXvB8iNKC2ips7DGmJR2FxlhTYVD9z5uOpeZx8PqiZMlbbtDLoIVbyCKpTGqBg5PY2kyppwY3_I3024ECmEJoSLubRoaqKMadUg4szJxRqSBkK3JYz3VclwE4l6Xt4.dZaO9D6MbIBJvtEtuvR3q8Sgue3upGMnOaRQO7TsRmE&dib_tag=se&keywords=auriculares&psr=EY17&qid=1740355540&s=todays-deals&sprefix=auriculares%2Ctodays-deals%2C108&sr=1-10&srs=21350206031&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=e14c348baeb5199015037668682ff9cb&language=es_ES&ref_=as_li_ss_tl" target="_blank">Ver precio</a>
+              </div>
+              <div class="extra-info">
+                <p><span class="checkmark">✔</span> Calidad de sonido</p>
+                <p><span class="checkmark">✔</span> Relación calidad-precio</p>
+                <p><span class="checkmark">✔</span> Calidad</p>
+              </div>
+            </div>
+            <div class="shipping-container">
+              <p class="shipping-text">Envío gratis</p>
+              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
+            </div>
+            <div class="more-info" style="display: none;">
+              <h3>Acerca de este producto</h3>
+              <p><strong>Calidad de sonido superior:</strong> Controlador de neodimio de 50 mm para un sonido estéreo con graves excelentes.</p>
+              <p><strong>Sin adaptador:</strong> Incluye dos cables extraíbles: uno para TV/sistema (conector de 6,3 mm) y otro para PC/smartphone (conector de 3,5 mm con micrófono).</p>
+              <p><strong>Cómodo:</strong> Almohadillas diseñadas para ofrecer comodidad y aislamiento, con diadema ajustable para un ajuste perfecto.</p>
+              <p><strong>Diseño para DJ:</strong> Almohadillas giratorias de 90° y diseño plegable, ideal para estudio, DJ y producción musical.</p>
+              <p><strong>Amplia compatibilidad:</strong> Compatible con dispositivos con conectores de 3,5 o 6,35 mm; incluye 2 años de garantía.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Producto 10 -->
+        <div class="product">
+          <img src="https://m.media-amazon.com/images/I/71uAeUP2MRL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="Tefal Actifry Genius">
+          <div class="rating-logo">
+            <div class="rating-score">8.5</div>
+            <p class="rating-label">Valoración</p>
+          </div>
+          <div class="product-details">
+            <h2>10. Auriculares Inalámbricos Deportivos, 2025 75Horas Auriculares Bluetooth Sonido</h2>
+            <p class="reviews">⭐⭐⭐⭐⭐ (13300+ opiniones)</p>
+            <div class="offer-container">
+              <div class="offer-buttons">
+                <span class="amazon-badge">Disponible en Amazon</span><br>
+                <a href="https://www.amazon.es/Auriculares-Inal%C3%A1mbricos-Inalambricos-Cancelacion-Impermeable/dp/B0D7VV79HF?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=1HOLXG7FNRRQR&dib=eyJ2IjoiMSJ9.zrGCJNAsEDujt9_FDinGWd2PECiasCogxqscZ-Pochs6TYlWuARxSzPQXku7eNITdp4WroP1AGO67Hx4pK4kYbcnAfGNUOKR0AA4abgHC_6R-oXvB8iNKC2ips7DGmJR2FxlhTYVD9z5uOpeZx8PqiZMlbbtDLoIVbyCKpTGqBg5PY2kyppwY3_I3024ECmEJoSLubRoaqKMadUg4szJxRqSBkK3JYz3VclwE4l6Xt4.dZaO9D6MbIBJvtEtuvR3q8Sgue3upGMnOaRQO7TsRmE&dib_tag=se&keywords=auriculares&psr=EY17&qid=1740355540&s=todays-deals&sprefix=auriculares%2Ctodays-deals%2C108&sr=1-11&srs=21350206031&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=ec209755bc484c133861b19ad8a9efc7&language=es_ES&ref_=as_li_ss_tl" target="_blank">Ver precio</a>
+              </div>
+              <div class="extra-info">
+                <p><span class="checkmark">✔</span> Ajuste</p>
+                <p><span class="checkmark">✔</span> Duración de la batería</p>
+                <p><span class="checkmark">✔</span> Diseño</p>
+              </div>
+            </div>
+            <div class="shipping-container">
+              <p class="shipping-text">Envío gratis</p>
+              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
+            </div>
+            <div class="more-info" style="display: none;">
+              <h3>Acerca de este producto</h3>
+              <p><strong>Bluetooth 5.4 Avanzada:</strong> Avanzado chip Bluetooth 5.4 con mejora de señal del 80% y velocidad hasta 2 veces mayor. Conexión rápida, estable, de baja latencia y alcance de hasta 15 M; se reconecta automáticamente tras el emparejamiento inicial.</p>
+              <p><strong>75 Horas de Experiencia Ininterrumpida:</strong> El estuche de 480 mAh proporciona hasta 15 horas de uso, sumando un total de 75 horas. La carga rápida tipo C y la pantalla LED muestran el nivel de batería de forma intuitiva.</p>
+              <p><strong>Sonido Envolvente Estéreo y 85% ENC Cancelación de Ruido:</strong> Tecnología ENC elimina el 85% del ruido, y los controladores de 14.2 mm ofrecen un sonido claro y sin interferencias.</p>
+              <p><strong>Control Táctil y Amplia Compatibilidad:</strong> Permite controlar el volumen, cambiar canciones y pausar con un toque; compatible con smartphones, tabletas, PCs, iOS y Android.</p>
+              <p><strong>Ajuste Cómodo e Impermeable IP7:</strong> Diseño con gancho suave y tres tamaños de tapones para un ajuste perfecto, con protección IP7 contra sudor y lluvia.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+    <!-- Sidebar que ahora se muestra a la derecha -->
+    <div class="sidebar">
+      <!-- Aquí puedes colocar el anuncio patrocinado que antes estaba en la izquierda -->
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3702060621408236" data-ad-slot="9876543210" data-ad-format="auto"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3702060621408236" data-ad-slot="1234567890" data-ad-format="auto"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+      <h3>Anuncios Patrocinados</h3>
+    </div>
+  </div>
+  <!-- Banner de cookies -->
+  <div id="cookie-banner" style="position: fixed; bottom: 0; background: #222; color: white; padding: 15px; width: 100%; text-align: center;">
+    Este sitio usa cookies para mejorar la experiencia. ¿Aceptas?
+    <button onclick="aceptarCookies(); document.getElementById('cookie-banner').style.display='none';">Aceptar</button>
+    <button onclick="rechazarCookies(); document.getElementById('cookie-banner').style.display='none';">Rechazar</button>
+  </div>
+  <script>
+    function toggleInfo(button) {
+      var info = button.parentElement.nextElementSibling;
+      if (info.style.display === "none" || info.style.display === "") {
+        info.style.display = "block";
+        button.textContent = "Mostrar menos";
+      } else {
+        info.style.display = "none";
+        button.textContent = "Mostrar más";
+      }
+    }
+  </script>
 </body>
 </html>
