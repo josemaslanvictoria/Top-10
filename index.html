@@ -27,22 +27,6 @@
             padding: 5px 15px;
             text-decoration: underline;
         }
-        .search-box {
-            display: flex;
-            align-items: center;
-            border: 2px solid black;
-            border-radius: 5px;
-            padding: 3px;
-            background-color: white;
-            font-size: 14px;
-        }
-        .search-box input {
-            border: none;
-            outline: none;
-            padding: 3px;
-            font-size: 14px;
-            width: 120px;
-        }
         .category-grid {
             display: grid;
             grid-template-columns: repeat(4, minmax(100px, 1fr));
@@ -74,52 +58,50 @@
             font-size: 16px;
             margin-top: 5px;
         }
-        .container {
+        .search-box {
+            margin-top: 10px;
             display: flex;
-            flex-direction: row;
-            gap: 20px;
+            flex-direction: column;
+            align-items: center;
         }
-        .content {
-            flex: 3;
+        .search-box input {
+            padding: 5px;
+            border: 1px solid black;
+            border-radius: 5px;
+            width: 200px;
         }
-        .sidebar {
-            flex: 1;
-            padding: 20px;
-            background-color: #f4f4f4;
-            text-align: center;
+        .suggestions {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 200px;
+            background: white;
+            border: 1px solid black;
+            display: none;
+            position: absolute;
         }
-        .description {
-            text-align: left;
-            font-size: 22px;
-            max-width: 900px;
-            margin: 20px auto;
-            line-height: 1.8;
+        .suggestions li {
+            padding: 5px;
+            cursor: pointer;
         }
-        @media (max-width: 768px) {
-            .category-grid {
-                grid-template-columns: repeat(2, minmax(100px, 1fr));
-            }
-            .container {
-                flex-direction: column;
-            }
+        .suggestions li:hover {
+            background-color: #ddd;
         }
     </style>
 </head>
 <body>
     <header>
         <h1>Top 10 Tecnología: Compra lo mejor calidad-precio y valorado</h1>
-        <div class="offer-container" style="justify-content: center;">
+        <div class="offer-container" style="justify-content: center; display: flex; gap: 20px; flex-wrap: wrap;">
             <div class="offer-banner">¡Ofertas! Aprovecha y elige el tuyo</div>
+        <p style="text-align: center; font-size: 18px; margin-top: 10px; max-width: 900px; margin-left: auto; margin-right: auto;">
+            Encuentra los mejores productos tecnológicos al mejor precio. Analizamos y comparamos <b>cafeteras, freidoras de aire, auriculares, microondas, aspiradoras y mucho más</b>.
+            Descubre nuestras recomendaciones y aprovecha las ofertas exclusivas. ¡Compra con confianza y mejora tu hogar con la última tecnología!</p>
             <div class="search-box">
-                <input type="text" id="searchInput" placeholder="Buscar..." onkeyup="searchCategory()">
-                <button type="submit">
-                    <img src="https://cdn-icons-png.flaticon.com/512/622/622669.png" alt="Buscar" width="16">
-                </button>
-            </div>
+                <input type="text" id="searchCategoryInput" placeholder="Buscar categoría..." onkeyup="showSuggestions()">
+                <ul class="suggestions" id="suggestionsList"></ul>
         </div>
-        <p class="description" style="text-align: left; margin-left: 5%;">Bienvenido a <b>Top 10 Tecnología</b>, el sitio líder en análisis y comparativas de los mejores dispositivos del mercado. Descubre nuestras selecciones <b>más recomendadas</b> en tecnología para el hogar, como <b>freidoras de aire, auriculares y una lista infinita de productos</b>, con guías detalladas y enlaces directos a las mejores ofertas. Optimizamos cada recomendación con pruebas <b>y comparativas</b>, asegurando que siempre encuentres lo mejor del mercado. ¡Explora y elige con confianza!</p>
     </header>
-    
     <div class="container">
         <div class="content">
             <div class="category-grid" id="categoryGrid">
@@ -159,12 +141,54 @@
                     <img src="https://m.media-amazon.com/images/I/71QutkthltL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="Mopa a Vapor">
                     <span>Mopa a Vapor</span>
                 </a>
+                <a href="/robot-aspirador/" class="category-box">
+                    <img src="https://m.media-amazon.com/images/I/71Kv4VyPFtL._AC_SX679_.jpg" alt="Robot Aspirador">
+                    <span>Robot Aspirador</span>
+                </a>
             </div>
         </div>
-        <aside class="sidebar">
-            <h3>Anuncios</h3>
-            <p>Espacio reservado para publicidad</p>
-        </aside>
     </div>
+    <script>
+        const categories = [
+            "Aspiradoras sin cable",
+            "Auriculares",
+            "Batidoras",
+            "Cafeteras",
+            "Chimeneas Eléctricas",
+            "Freidoras",
+            "Lavadoras",
+            "Microondas",
+            "Mopa a Vapor",
+            "Robot Aspirador"
+        ];
+        
+        function showSuggestions() {
+            let input = document.getElementById('searchCategoryInput').value.toLowerCase();
+            let suggestionsList = document.getElementById('suggestionsList');
+            suggestionsList.innerHTML = '';
+            
+            if (input === '') {
+                suggestionsList.style.display = 'none';
+                return;
+            }
+            
+            let matches = categories.filter(category => category.toLowerCase().includes(input));
+            
+            if (matches.length > 0) {
+                suggestionsList.style.display = 'block';
+                matches.forEach(match => {
+                    let li = document.createElement('li');
+                    li.textContent = match;
+                    li.onclick = function() {
+                        document.getElementById('searchCategoryInput').value = match;
+                        suggestionsList.style.display = 'none';
+                    };
+                    suggestionsList.appendChild(li);
+                });
+            } else {
+                suggestionsList.style.display = 'none';
+            }
+        }
+    </script>
 </body>
 </html>
