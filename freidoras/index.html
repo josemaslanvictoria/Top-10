@@ -1,47 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3702060621408236" crossorigin="anonymous"></script>
-  <script async src="https://fundingchoicesmessages.google.com/i/pub-3702060621408236?ers=1" nonce="xyz"></script>
-  <script>
-    window.googlefc = window.googlefc || {};
-    window.googlefc.callbackQueue = window.googlefc.callbackQueue || [];
-    window.googlefc.callbackQueue.push(function() {
-      window.googlefc.setConsentConfig({
-        'consentMode': 'advanced'
-      });
-    });
-  </script>
-  
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11335901809"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-  
-    gtag('consent', 'default', {
-      'ad_storage': 'denied',
-      'analytics_storage': 'denied'
-    });
-  
-    gtag('js', new Date());
-    gtag('config', 'AW-11335901809');
-  
-    function aceptarCookies() {
-      gtag('consent', 'update', {
-        'ad_storage': 'granted',
-        'analytics_storage': 'granted'
-      });
-    }
-  
-    function rechazarCookies() {
-      gtag('consent', 'update', {
-        'ad_storage': 'denied',
-        'analytics_storage': 'denied'
-      });
-    }
-  </script>
-  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Top 10: Los Mejores Freidoras de Aire</title>
@@ -51,49 +10,12 @@
       margin: 0;
       padding: 20px;
       text-align: center;
-      display: flex;
-      justify-content: center;
+      background-color: #f5f5f5;
     }
     .container {
       max-width: 1200px;
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
-      gap: 40px;
-    }
-    /* Ahora el contenido aparece primero y el sidebar a la derecha */
-    .content {
-      flex: 3;
-      position: relative;
-    }
-    .sidebar {
-      flex: 1;
-      padding: 20px;
-      background-color: #f4f4f4;
-      text-align: center;
-      /* Eliminamos el margen a la izquierda para evitar que quede en la izquierda */
-      margin-left: 0;
-    }
-    h1 {
-      color: #333;
-      font-size: 32px;
-      text-decoration: underline;
-    }
-    p {
-      font-size: 20px;
-      color: #666;
-      max-width: 800px;
-      margin: 0 auto 20px auto;
-      text-align: justify;
-    }
-    .highlight {
-      font-weight: bold;
-      text-decoration: underline;
-      color: black;
-    }
-    .reviews {
-      font-size: 16px;
-      margin: 0 0 10px 0;
+      margin: auto;
+      padding: 0 10px;
     }
     .product-list {
       display: flex;
@@ -103,553 +25,82 @@
       margin-top: 20px;
     }
     .product {
-      width: 100%;
-      max-width: 900px;
       border: 1px solid #ddd;
       border-radius: 10px;
-      padding: 30px;
+      padding: 20px;
+      width: 100%;
+      max-width: 600px;
       text-align: left;
-      box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
       background-color: #fff;
       display: flex;
       align-items: center;
-      gap: 30px;
+      gap: 20px;
       position: relative;
+      cursor: pointer;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease-in-out;
+    }
+    .product:hover {
+      transform: scale(1.02);
     }
     .product img {
-      width: 170px;
+      width: 100px;
       height: auto;
       border-radius: 5px;
     }
     .product-details {
       flex: 1;
     }
-    /* Bloque de oferta para productos (con extra-info lateral) */
-    .offer-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 10px;
-    }
-    .offer-buttons {
-      /* Aquí se agrupan el badge y el enlace */
-    }
-    .extra-info {
-      text-align: right;
-    }
-    .extra-info p {
-      margin: 2px 0;
-      font-size: 16px;
-    }
-    .checkmark {
-      color: green;
-      font-weight: bold;
-      margin-right: 5px;
-    }
     .product a {
       display: inline-block;
       margin-top: 10px;
-      padding: 25px;
+      padding: 10px 15px;
       background-color: #00CC00;
       color: white;
       text-decoration: none;
       border-radius: 5px;
       font-weight: bold;
-      font-size: 24px;
     }
     .product a:hover {
       background-color: #008000;
     }
-    .amazon-badge {
-      background-color: #ff9900;
-      color: white;
-      padding: 5px 8px;
+    .toggle-info {
+      margin-top: 10px;
+      padding: 8px 12px;
+      background-color: #ddd;
+      border: none;
       border-radius: 5px;
-      font-weight: bold;
-      display: inline-block;
-      margin-top: 13px;
-      font-size: 10px;
+      cursor: pointer;
     }
-    .rating-logo {
+    .toggle-info:hover {
+      background-color: #bbb;
+    }
+    .more-info {
+      display: none;
+      margin-top: 10px;
+    }
+    .rating-score {
       position: absolute;
       top: 10px;
       right: 10px;
-      text-align: center;
-    }
-    .rating-score {
       width: 50px;
       height: 50px;
-      border: 5px solid red;
       border-radius: 50%;
-      line-height: 50px;
-      font-size: 22px;
-      color: black;
-      font-weight: bold;
-      margin: 0 auto;
       background-color: white;
-    }
-    .rating-label {
-      font-size: 12px;
-      color: #333;
-      margin-top: 5px;
-    }
-    /* Contenedor para envío gratis y botón desplegable */
-    .shipping-container {
-      display: flex;
-      align-items: center;
-      margin-top: 10px;
-      gap: 10px;
-    }
-    .shipping-text {
-      font-size: 20px;
-      color: #FF0000;
+      border: 3px solid red;
+      text-align: center;
+      line-height: 50px;
       font-weight: bold;
-      margin: 0;
-    }
-    .toggle-info {
-      background-color: #ddd;
-      border: none;
-      padding: 10px 15px;
-      cursor: pointer;
-      border-radius: 5px;
-      font-size: 16px;
-      width: 150px;
-    }
-    .toggle-info:hover {
-      background-color: #ccc;
-    }
-    .more-info {
-      margin-top: 5px;
-      background-color: #f9f9f9;
-      padding: 5px;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      font-size: 14px;
-      text-align: left;
-    }
-    /* Media Query para dispositivos móviles */
-    @media (max-width: 768px) {
-      .container {
-        flex-direction: column;
-        gap: 20px;
-      }
-      /* En móvil, el sidebar se mostrará debajo */
-      .sidebar {
-        width: 100%;
-      }
-      .content {
-        width: 100%;
-      }
-      .product {
-        flex-direction: column;
-        align-items: center;
-      }
-      .product img {
-        width: 100%;
-        max-width: 300px;
-        margin: 0 0 15px 0;
-      }
-      .product-details {
-        text-align: center;
-      }
-      .shipping-container {
-        flex-direction: column;
-        gap: 10px;
-      }
-      .offer-container {
-        flex-direction: column;
-        align-items: center;
-      }
-      .extra-info {
-        margin-top: 10px;
-      }
+      color: black;
+      box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
     }
   </style>
-</head>
-<body>
-  <div class="container">
-    <!-- El contenido aparece primero -->
-    <div class="content">
-      <h1>Top 10: Los Mejores Freidoras de Aire</h1>
-      <p>Las <span class="highlight">Freidoras de Aire</span> son una excelente opción para <span class="highlight">cocinar de manera saludable</span>, ya que permiten hacerlo de manera saludable <span class="highlight">y con mejor sabor</span>. Son ideales para quienes desean disfrutar de un buen sabor. Además,Son <span class="highlight">fáciles de limpiar</span> y ayudan a mantener un <span class="highlight">estilo de vida equilibrado</span>. En este listado hemos seleccionado las <span class="highlight">mejores opciones del mercado</span>, basándonos en calidad, valoraciones y popularidad. ¡Invierte en tu salud con una <span class="highlight">Freidoras de Aire</span>!</p>
-      <p class="amazon-notice">Compra este producto en Amazon a través de este enlace</p>
-      
-      <div class="product-list">
-        <!-- Producto 1 -->
-        <div class="product">
-          <img src="https://m.media-amazon.com/images/I/71-bVzbgWTL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="COSORI Pro LE">
-          <div class="rating-logo">
-            <div class="rating-score">9.9</div>
-            <p class="rating-label">Valoración</p>
-          </div>
-          <div class="product-details">
-            <h2>1. COSORI Pro LE</h2>
-            <p class="reviews">⭐⭐⭐⭐⭐ (16000+ opiniones)</p>
-            <div class="offer-container">
-              <div class="offer-buttons">
-                <span class="https://amzn.to/3XiMJ9b">Disponible en Amazon</span><br>
-                <a href="https://www.amazon.es/COSORI-Freidora-Caliente-Programas-Temporizador/dp/B07N8N6C85?crid=3G6Q9INX9KCU3&dib=eyJ2IjoiMSJ9.OarxPqjIR8FIzXKuEurE06cS7U7DTdRNIXY7rRZ9PzIRQ2mozpzx1UmKp7zayb0yICPDFPvRIfyBBfqRU5_OBAlYUYob8UedATSR0LbI-JgnbU_jo0d5WEyhkl7SZ-16azdNErnOHb0aNZHTYkll9mEYzZChZRNE5sKzQrLG8ROiWQDbJqOH3DCN2T_zHBe3wtpyQpKitXehGpRSbzONTyNa3uQOjb_qRt9pTWxTJRs.9frZTvdZ54D8_EUnTlewPgjEvSkb1cu7tAS3065fJqE&dib_tag=se&keywords=freidora%2Bsin%2Baceite&qid=1740005017&s=kitchen&sprefix=%2Ckitchen%2C118&sr=1-1&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=dd0bba76c5fc1eb89ca70d8f1f025369&language=es_ES&ref_=as_li_ss_tl" target="_blank">Ver precio</a>
-              </div>
-              <div class="extra-info">
-                <p><span class="checkmark">✔</span> Facilidad de uso</p>
-                <p><span class="checkmark">✔</span> Facilidad de limpieza</p>
-                <p><span class="checkmark">✔</span> Funcionamiento</p>
-              </div>
-            </div>
-            <div class="shipping-container">
-              <p class="shipping-text">Envío gratis</p>
-              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
-            </div>
-            <div class="more-info" style="display: none;">
-              <h3>Acerca de este producto</h3>
-              <p><strong>[ 𝐌𝐨𝐝𝐨 𝐝𝐞 𝐂𝐨𝐜𝐜𝐢ó𝐧 𝐅á𝐜𝐢𝐥 𝐜𝐨𝐧 𝟏 𝐏𝐮𝐥𝐬𝐚𝐜𝐢ó𝐧 ] 13 programas automáticos para facilitar la cocción; temperatura y tiempo ajustables（ Hasta 205ºC y 60 Min） para satisfacer todas las necesidades de cocción</p>
-              <p><strong>[ 𝟓.𝟓𝐋 𝐆𝐫𝐚𝐧 𝐂𝐚𝐩𝐚𝐜𝐢𝐝𝐚𝐝 ] Puedes cocinar para 6 personas a la vez, fácil preparación de comidas para reuniones familiares.</p>
-              <p><strong>[ 𝐂𝐨𝐦𝐞𝐫 𝐌á𝐬 𝐒𝐚𝐧𝐨 ] El interior está hecho de acero inoxidable para materiales más seguros. Cocinar sin aceite o 85% menos de aceite, la comida sigue siendo dorada y crujiente, llena y jugosa.</p>
-              <p><strong>[ 𝟓𝟓% 𝐌á𝐬 𝐑á𝐩𝐢𝐝𝐨 ] 1700W de potencia lo hacen 3 veces más rápido que los hornos convencionales, con comidas listas en minutos.</p>
-              <p><strong>[ 𝐑𝐞𝐜𝐞𝐭𝐚𝐫𝐢𝐨 𝐄𝐬𝐩𝐚ñ𝐨𝐥 ] 100 recetas en papel y 300+ recetas online gratis, ¡los cocineros novatos pueden hacer platos de nivel de chef profesional!</p>
-            </div>
-          </div>
-        </div>
-        <!-- Producto 2 -->
-        <div class="product">
-          <img src="https://m.media-amazon.com/images/I/519AN1zQmbL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="Cecotec Cecofry">
-          <div class="rating-logo">
-            <div class="rating-score">9.8</div>
-            <p class="rating-label">Valoración</p>
-          </div>
-          <div class="product-details">
-            <h2>2. Cecotec Cecofry</h2>
-            <p class="reviews">⭐⭐⭐⭐⭐ (14200+ opiniones)</p>
-            <div class="offer-container">
-              <div class="offer-buttons">
-                <span class="amazon-badge">Disponible en Amazon</span><br>
-                <a href="https://www.amazon.es/Cecotec-InoxBlack-Tecnolog%C3%ADa-PerfectCook-Termostato/dp/B0BFB3Q7SD?crid=3G6Q9INX9KCU3&dib=eyJ2IjoiMSJ9.OarxPqjIR8FIzXKuEurE06cS7U7DTdRNIXY7rRZ9PzIRQ2mozpzx1UmKp7zayb0yICPDFPvRIfyBBfqRU5_OBAlYUYob8UedATSR0LbI-JgnbU_jo0d5WEyhkl7SZ-16azdNErnOHb0aNZHTYkll9mEYzZChZRNE5sKzQrLG8ROiWQDbJqOH3DCN2T_zHBe3wtpyQpKitXehGpRSbzONTyNa3uQOjb_qRt9pTWxTJRs.9frZTvdZ54D8_EUnTlewPgjEvSkb1cu7tAS3065fJqE&dib_tag=se&keywords=freidora%2Bsin%2Baceite&qid=1740005064&s=kitchen&sprefix=%2Ckitchen%2C118&sr=1-2&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=4ae17578a106e17eb2a1cc8d0a60849b&language=es_ES&ref_=as_li_ss_tl"_blank">Ver precio</a>
-              </div>
-              <div class="extra-info">
-                <p><span class="checkmark">✔</span> Funcionamiento</p>
-                <p><span class="checkmark">✔</span> Facilidad de uso</p>
-                <p><span class="checkmark">✔</span> Calidad</p>
-              </div>
-            </div>
-            <div class="shipping-container">
-              <p class="shipping-text">Envío gratis</p>
-              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
-            </div>
-            <div class="more-info" style="display: none;">
-              <h3>Acerca de este producto</h3>
-              <p><strong>Freidora dietética que permite cocinar con una sola cucharada de aceite, consiguiendo unos resultados más sanos. Diseño moderno y compacto con un panel de control táctil multifunción para controlar el funcionamiento.</p>
-              <p><strong>Área de cocinado de 5,5 L para poder cocinar grandes cantidades de alimentos. 1700 W de potencia para cocinar de manera rápida todos los platos.</p>
-              <p><strong>Resultados excepcionales en todas las recetas gracias a la tecnología PerfectCook de aire caliente que circula por el interior y sale por los orificios traseros. Dispone de termostato para regular la temperatura desde 80 ºC hasta 200 ºC.</p>
-              <p><strong>Freidora de diseño elegante y con acabados en acero inoxidable oscurecido, para una mayor resistencia y durabilidad.</p>
-              <p><strong>8 modos preconfigurados que establecen el tiempo y la temperatura necesarios para cocinar distintos tipos de alimentos. Tiempo ajustable de 0 a 60 minutos. Con protección contra sobrecalentamiento</p>
-            </div>
-          </div>
-        </div>
-        <!-- Producto 3 -->
-        <div class="product">
-          <img src="https://m.media-amazon.com/images/I/710hgSJ9WSL.__AC_SY300_SX300_QL70_ML2_.jpg" alt="COSORI Dual Blaze">
-          <div class="rating-logo">
-            <div class="rating-score">9.6</div>
-            <p class="rating-label">Valoración</p>
-          </div>
-          <div class="product-details">
-            <h2>3. COSORI Dual Blaze</h2>
-            <p class="reviews">⭐⭐⭐⭐ (14000+ opiniones)</p>
-            <div class="offer-container">
-              <div class="offer-buttons">
-                <span class="amazon-badge">Disponible en Amazon</span><br>
-                <a href="https://www.amazon.es/Cecotec-Resistencia-Diet%C3%A9tica-Temperatura-Regulable/dp/B0DGL82RP1?crid=3G6Q9INX9KCU3&dib=eyJ2IjoiMSJ9.OarxPqjIR8FIzXKuEurE06cS7U7DTdRNIXY7rRZ9PzIRQ2mozpzx1UmKp7zayb0yICPDFPvRIfyBBfqRU5_OBAlYUYob8UedATSR0LbI-JgnbU_jo0d5WEyhkl7SZ-16azdNErnOHb0aNZHTYkll9mEYzZChZRNE5sKzQrLG8ROiWQDbJqOH3DCN2T_zHBe3wtpyQpKitXehGpRSbzONTyNa3uQOjb_qRt9pTWxTJRs.9frZTvdZ54D8_EUnTlewPgjEvSkb1cu7tAS3065fJqE&dib_tag=se&keywords=freidora%2Bsin%2Baceite&qid=1740005110&s=kitchen&sprefix=%2Ckitchen%2C118&sr=1-3&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=00e3d1860b61b90b1aeeee03e27293bb&language=es_ES&ref_=as_li_ss_tl" target="_blank">Ver precio</a>
-              </div>
-              <div class="extra-info">
-                <p><span class="checkmark">✔</span> Calidad</p>
-                <p><span class="checkmark">✔</span> Facilidad de uso</p>
-                <p><span class="checkmark">✔</span> Funcionamiento</p>
-              </div>
-            </div>
-            <div class="shipping-container">
-              <p class="shipping-text">Envío gratis</p>
-              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
-            </div>
-            <div class="more-info" style="display: none;">
-              <h3>Acerca de este producto</h3>
-              <p><strong>Cocina todo con tu Cecofry gracias a su diseño que incorpora freidora de aire, grill para carne y plancha para prepara pizzas con masas óptimas</p>
-              <p><strong>Consigue resultados óptimos en menos tiempo; gracias a su diseño con doble resistencia arriba y abajo; distribuye el calor de manera uniforme, asegurando resultados consistentes y deliciosos en cada preparación, sin que tengas que girar tus alimentos de forma constante</p>
-              <p><strong>Marca tus carnes con la placa Grillin Style y consigue el punto óptimo en tus cortes de carne favoritos; prepara las pizzas auténticas en su plancha y consigue masas óptimas crujientes y doradas</p>
-              <p><strong>Freidora con 8 litros de capacidad; prepara deliciosas comidas para compartir con tu pareja o disfruta de platillos individuales con suficiente espacio para tus necesidades culinarias; su potencia de 2200 W</p>
-              <p><strong>La freidora permite controlar el progreso de tus elaboraciones sin necesidad de abrir la cubeta a través de su ventana de visualización; regula la temperatura entre 80-200°C.</p>
-            </div>
-          </div>
-        </div>
-        <!-- Producto 4 -->
-        <div class="product">
-          <img src="https://m.media-amazon.com/images/I/81OJ5uCzWSL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="KVIDIO Freidoras de Aire Supraaurales">
-          <div class="rating-logo">
-            <div class="rating-score">9.5</div>
-            <p class="rating-label">Valoración</p>
-          </div>
-          <div class="product-details">
-            <h2>4. COSORI Premium</h2>
-            <p class="reviews">⭐⭐⭐⭐⭐ (23900+ opiniones)</p>
-            <div class="offer-container">
-              <div class="offer-buttons">
-                <span class="amazon-badge">Disponible en Amazon</span><br>
-                <a href="https://www.amazon.es/COSORI-Freidora-BlazeTM-Lavavajillas-Deshidratar/dp/B0CD2DSXHT?crid=3G6Q9INX9KCU3&dib=eyJ2IjoiMSJ9.OarxPqjIR8FIzXKuEurE06cS7U7DTdRNIXY7rRZ9PzIRQ2mozpzx1UmKp7zayb0yICPDFPvRIfyBBfqRU5_OBAlYUYob8UedATSR0LbI-JgnbU_jo0d5WEyhkl7SZ-16azdNErnOHb0aNZHTYkll9mEYzZChZRNE5sKzQrLG8ROiWQDbJqOH3DCN2T_zHBe3wtpyQpKitXehGpRSbzONTyNa3uQOjb_qRt9pTWxTJRs.9frZTvdZ54D8_EUnTlewPgjEvSkb1cu7tAS3065fJqE&dib_tag=se&keywords=freidora%2Bsin%2Baceite&qid=1740005110&s=kitchen&sprefix=%2Ckitchen%2C118&sr=1-4&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=4ff060cc84bf6e736b691923bd34523e&language=es_ES&ref_=as_li_ss_tl" target="_blank">Ver precio</a>
-              </div>
-              <div class="extra-info">
-                <p><span class="checkmark">✔</span> Rapidez</p>
-                <p><span class="checkmark">✔</span> Facilidad de uso</p>
-                <p><span class="checkmark">✔</span> Calidad</p>
-              </div>
-            </div>
-            <div class="shipping-container">
-              <p class="shipping-text">Envío gratis</p>
-              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
-            </div>
-            <div class="more-info" style="display: none;">
-              <h3>Acerca de este producto</h3>
-              <p><strong>[Sabor al Máximo Nivel] Esta innovadora freidora de aire está equipada con un motor de alta tecnología llamado “DC”, que permite 5 niveles de velocidad. Cada nivel fue asignado a un tipo de cocción, a fin de garantizarte los mejores resultados. Estas velocidades optimizadas del ventilador y de la parrilla mejoran la circulación del aire caliente hasta en un 28%, asegurando que el resultado final será más uniforme y que tus platillos quedarán mucho más crujientes</p>
-              <p><strong>[Un Solo Dispositivo; Múltiples Posibilidades de Cocción] La TurboBlaze ofrece 9 funciones en un solo dispositivo. Una freidora de aire clásica solo fríe; mientras que la TurboBlaze puede “freir” con aire, pero también puede hornear, asar, calentar, y mucho más. Su temperatura ajustable (30-230℃) y su amplio rango de tiempo (1-24 horas) te ayudan a preparar cada comida según tus preferencias</p>
-              <p><strong>[Come Sano Sin Sacrificar Sabor] Incluye un libro con 30 deliciosas recetas saludables; además, puedes acceder a la aplicación Vesync para más recetas y una tabla con más de 90 ingredientes de cocina. Para aún más contenido, ingresa a cosori.es y siguenos en redes sociales</p>
-              <p><strong>[Significativamente Más Rápida y Energéticamente Eficiente] Gracias a su motor DC, cocina un 46% más rápido que los dispositivos tradicionales y ahorra hasta un 64% de energía en comparación con los hornos convencionales.</p>
-              <p><strong>[Gran Capacidad en un Cuerpo Sumamente Compacto] Podrás cocinar fácilmente alimentos para una familia de 3 a 5 personas, gracias a su cesta de 6L de capacidad. Con su diseño particularmente compacto, la TurboBlaze de Cosori ocupa muy poco espacio y, por lo tanto, es adecuada para casi todas las cocinas (40x30x30cm)</p>
-            </div>
-          </div>
-        </div>
-        <!-- Producto 5 -->
-        <div class="product">
-          <img src="https://m.media-amazon.com/images/I/51C9-QpMYHL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="Cecotec Cecofry Full Inox">
-          <div class="rating-logo">
-            <div class="rating-score">9.4</div>
-            <p class="rating-label">Valoración</p>
-          </div>
-          <div class="product-details">
-            <h2>5. Cecotec Cecofry Full Inox</h2>
-            <p class="reviews">⭐⭐⭐⭐ (13800+ opiniones)</p>
-            <div class="offer-container">
-              <div class="offer-buttons">
-                <span class="amazon-badge">Disponible en Amazon</span><br>
-                <a href="https://www.amazon.es/Cecotec-Cecofry-Absolute-PerfectCook-Temperadura/dp/B0BPZPP3GK?crid=3G6Q9INX9KCU3&dib=eyJ2IjoiMSJ9.OarxPqjIR8FIzXKuEurE06cS7U7DTdRNIXY7rRZ9PzIRQ2mozpzx1UmKp7zayb0yICPDFPvRIfyBBfqRU5_OBAlYUYob8UedATSR0LbI-JgnbU_jo0d5WEyhkl7SZ-16azdNErnOHb0aNZHTYkll9mEYzZChZRNE5sKzQrLG8ROiWQDbJqOH3DCN2T_zHBe3wtpyQpKitXehGpRSbzONTyNa3uQOjb_qRt9pTWxTJRs.9frZTvdZ54D8_EUnTlewPgjEvSkb1cu7tAS3065fJqE&dib_tag=se&keywords=freidora%2Bsin%2Baceite&qid=1740005110&s=kitchen&sprefix=%2Ckitchen%2C118&sr=1-5&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=03fb31874ef6641b791142231f603ba9&language=es_ES&ref_=as_li_ss_tl" target="_blank">Ver precio</a>
-              </div>
-              <div class="extra-info">
-                <p><span class="checkmark">✔</span> Funcionamiento</p>
-                <p><span class="checkmark">✔</span> Capacidad</p>
-                <p><span class="checkmark">✔</span> Facilidad de uso</p>
-              </div>
-            </div>
-            <div class="shipping-container">
-              <p class="shipping-text">Envío gratis</p>
-              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
-            </div>
-            <div class="more-info" style="display: none;">
-              <h3>Acerca de este producto</h3>
-              <p><strong>Freidora dietética que permite cocinar con una sola cucharada de aceite, consiguiendo unos resultados más sanos.</p>
-              <p><strong>Cubeta de 7.6 L de capacidad para poder cocinar grandes cantidades de alimentos. 2000 W de potencia para cocinar de manera rápida todos los platos. Resultados excepcionales en todas las recetas gracias a la tecnología PerfectCook de aire caliente que circula por el interior y sale por los orificios traseros.</p>
-              <p><strong>Diseño moderno y compacto con un panel de control táctil multifunción para controlar el funcionamiento.</p>
-              <p><strong>8 modos preconfigurados que establecen el tiempo y la temperatura necesarios para cocinar distintos tipos de alimentos. Dispone de termostato para regular la temperatura desde 80 ºC hasta 200 ºC. Tiempo ajustable de 0 a 60 minutos..</p>
-              <p><strong>Con protección contra sobrecalentamiento. Base antideslizante para favorecer su apoyo durante el funcionamiento</p>
-            </div>
-          </div>
-        </div>
-        <!-- Producto 6 -->
-        <div class="product">
-          <img src="https://m.media-amazon.com/images/I/81OJ5uCzWSL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="COSORI Turbo Blaze">
-          <div class="rating-logo">
-            <div class="rating-score">9.2</div>
-            <p class="rating-label">Valoración</p>
-          </div>
-          <div class="product-details">
-            <h2>6. COSORI Turbo Blaze</h2>
-            <p class="reviews">⭐⭐⭐⭐⭐ (10700+ opiniones)</p>
-            <div class="offer-container">
-              <div class="offer-buttons">
-                <span class="amazon-badge">Disponible en Amazon</span><br>
-                <a href="https://www.amazon.es/COSORI-Freidora-BlazeTM-Lavavajillas-Deshidratar/dp/B0CD2DSXHT?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=3FCF7OCJEEKGO&dib=eyJ2IjoiMSJ9.eXA3DbNZBzcmPJlTGqIHz3hKJYaHw8vS3yq78KmCcRZ8Zorpbd1R0hjGu7iMytzI0cxN-7nSq7Vt67Mjcw0jCH77eJieb09xF-lXe5ZAkyZK2E-JiEHBiYjhjACmnqpf0uaQEZFGuM-PW2reVLlKs3Sch_i7hCIz6rkE1RcakFKwEtCcLOe7tH-Pdl77-EnfHkJtQMAApSx_mK8XXX9whDyMQZvhlWvyxcw6eRXwKFs.3G42KlA8FTTwJk--ecvTPeDJX8J30gLleX5sayqJHjA&dib_tag=se&keywords=cosori%2Bturbo%2Bblaze&qid=1740493558&s=kitchen&sprefix=cosori%2Bturbo%2Bblaze%2Ckitchen%2C111&sr=1-1-spons&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=a274b286416591fdb11de09b30397782&language=es_ES&ref_=as_li_ss_tl"_blank" target="_blank">Ver precio</a>
-              </div>
-              <div class="extra-info">
-                <p><span class="checkmark">✔</span> Rapidez</p>
-                <p><span class="checkmark">✔</span> Facilidad de uso</p>
-                <p><span class="checkmark">✔</span> Calidad</p>
-              </div>
-            </div>
-            <div class="shipping-container">
-              <p class="shipping-text">Envío gratis</p>
-              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
-            </div>
-            <div class="more-info" style="display: none;">
-              <h3>Acerca de este producto</h3>
-              <p><strong>[Sabor al Máximo Nivel] Esta innovadora freidora de aire está equipada con un motor de alta tecnología llamado “DC”, que permite 5 niveles de velocidad. Cada nivel fue asignado a un tipo de cocción, a fin de garantizarte los mejores resultados.</p>
-              <p><strong>[Un Solo Dispositivo; Múltiples Posibilidades de Cocción] La TurboBlaze ofrece 9 funciones en un solo dispositivo. Una freidora de aire clásica solo fríe; mientras que la TurboBlaze puede “freir” con aire, pero también puede hornear, asar, calentar, y mucho más</p>
-              <p><strong>[Come Sano Sin Sacrificar Sabor] Incluye un libro con 30 deliciosas recetas saludables; además, puedes acceder a la aplicación Vesync para más recetas y una tabla con más de 90 ingredientes de cocina. Para aún más contenido, ingresa a cosori.es y siguenos en redes sociales.</p>
-              <p><strong>[Significativamente Más Rápida y Energéticamente Eficiente] Gracias a su motor DC, cocina un 46% más rápido que los dispositivos tradicionales y ahorra hasta un 64% de energía en comparación con los hornos convencionales. ¡La TurboBlaze es completamente amigable con el ambiente</p>
-              <p><strong>[Gran Capacidad en un Cuerpo Sumamente Compacto] Podrás cocinar fácilmente alimentos para una familia de 3 a 5 personas, gracias a su cesta de 6L de capacidad. Con su diseño particularmente compacto, la TurboBlaze de Cosori ocupa muy poco espacio y es adecuada para casi todas las cocinas (40x30x30cm)</p>
-            </div>
-          </div>
-        </div>
-        <!-- Producto 7 -->
-        <div class="product">
-          <img src="https://m.media-amazon.com/images/I/81eEuRL9JkL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="Cecotec Turbo Cecofry">
-          <div class="rating-logo">
-            <div class="rating-score">9.1</div>
-            <p class="rating-label">Valoración</p>
-          </div>
-          <div class="product-details">
-            <h2>7. COSORI Freidora de Aire Wifi</h2>
-            <p class="reviews">⭐⭐⭐⭐ (15600+ opiniones)</p>
-            <div class="offer-container">
-              <div class="offer-buttons">
-                <span class="amazon-badge">Disponible en Amazon</span><br>
-                <a href="https://www.amazon.es/COSORI-Freidora-Resistencia-Recetas-Programas/dp/B0CBKD9PDF?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=3B4GP4N1GFZFC&dib=eyJ2IjoiMSJ9.umkbYewJT1xS2vJVLp5FuM4-DVy9hWWLQUtrOmEHcAC2WH9tXx8myjoe4CA-f9Fa0UbzQNTWU3yZ4pgZlz-6GOgreujQOwqxVfx9AauFx3mTWGM6QjfgjomPnDr4ieHMoxl159Qkxf8Zf0Ej34CHznTwyypNc8yJ1XZJlD_HtJuYFL24zAYGJCyfDaEiwsBpmYuup4D-UOGgXNahy6AckxMhvY_3xZnqPjCOVcZk0a8v5PlpvaOFIYjo5wQ2KHUnhvJLYHPL78CLo2UVP6a4vQ.OClhNjKq8ZSkNvBv5507uQxrRpSr-2BNw2P6Csb7CWE&dib_tag=se&keywords=Cecotec%2BTurbo%2BCecofry&psr=EY17&qid=1740493639&s=todays-deals&sprefix=cecotec%2Bturbo%2Bcecofry%2Ctodays-deals%2C117&sr=1-5-catcorr&srs=21350206031&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=923b2099a784b6488aa7594a5819ff2c&language=es_ES&ref_=as_li_ss_tl" target="_blank">Ver precio</a>
-              </div>
-              <div class="extra-info">
-                <p><span class="checkmark">✔</span> Funcionamiento</p>
-                <p><span class="checkmark">✔</span> Facilidad de limpieza</p>
-                <p><span class="checkmark">✔</span> Facilidad de uso</p>
-              </div>
-            </div>
-            <div class="shipping-container">
-              <p class="shipping-text">Envío gratis</p>
-              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
-            </div>
-            <div class="more-info" style="display: none;">
-              <h3>Acerca de este producto</h3>
-              <p><strong>COSORI es la Marca No.1 de freidoras de aire en España, preferida por 3 millones de familias en todo el mundo, nuestro riguroso control de calidad garantiza mejor calidad y mayor seguridad. ¡Todo esto para que puedas comer sano y tranquilo!</p>
-              <p><strong>6,4L Gran Capacidad: el Dual Blaze tiene un diseño de cesta única de 6,4L y un alto volumen de utilización, que puede contener 1,8kg de patatas fritas y 2,5kg de pollo entero, lo que lo convierte en una elección fácil para tres comidas al día y reuniones familiares, para que pueda disfrutar de su comida al máximo</p>
-              <p><strong>Doble Calefacción: COSORI Dual Blaze es la primera freidora aire del mercado con doble calefacción, lo que aumenta significativamente la velocidad de calentamiento </p>
-              <p><strong>Horno de Sustitución: en comparación con los hornos tradicionales, DualBlaze cocina un 40% más rápido y ahorra un 55% de energía, pero los resultados de la comida no se ven comprometidos, haciendo que cada comida sea realmente rápida, asequible y deliciosa, ¡y es el sustituto perfecto de un horno tradicional!.</p>
-              <p><strong>12 Preajustes de Funciones: 6 preajustes de funciones + 6 preajustes de alimentos para satisfacer las necesidades de diversos escenarios de cocción y tipos de alimentos</p>
-            </div>
-          </div>
-        </div>
-        <!-- Producto 8 -->
-        <div class="product">
-          <img src="https://m.media-amazon.com/images/I/71-bVzbgWTL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="TOZO A1 Freidoras de Aire">
-          <div class="rating-logo">
-            <div class="rating-score">9.0</div>
-            <p class="rating-label">Valoración</p>
-          </div>
-          <div class="product-details">
-            <h2>8. COSORI Freidora de Aire Duradera</h2>
-            <p class="reviews">⭐⭐⭐⭐⭐ (13500+ opiniones)</p>
-            <div class="offer-container">
-              <div class="offer-buttons">
-                <span class="amazon-badge">Disponible en Amazon</span><br>
-                <a href="https://www.amazon.es/COSORI-Freidora-Caliente-Programas-Temporizador/dp/B07N8N6C85?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=12NHOVYHPHTWA&dib=eyJ2IjoiMSJ9.LUMnfOxDdbZtJLSWZ1gk7ZJt-Xxe4b-465T3mna_BtZn92GtXwqPeiH5eytvIm-DcAH6Q0bQEjOUYCP3BJAOH6Ic7qdtPFqoCE3V28WhTbd2W_4GBaUj3RAFtJCpTmGEOz_5RYtF6l-r1GfYWZJQGpP6iFZtG-gUvatHznC_AGqSjiXTPcbKCsHS781cQ4o_da_0eAS7NYzxuAKBYl_92IPx_x9nEshyfuFaGcUO_E-N4kRcLDbMbLMoJMA_bWypyTskFwoNUhqgcwNFiKuaTw.ljUAObys5o_ohxrPiFJstPY8gg9t5_PPmvbjIidUGbU&dib_tag=se&keywords=Proscenic%2BT21&psr=EY17&qid=1740493744&s=todays-deals&sprefix=proscenic%2Bt21%2Ctodays-deals%2C115&sr=1-1&srs=21350206031&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=1eb7d696b241b831ce22ef8cc8ddbe5a&language=es_ES&ref_=as_li_ss_tl" target="_blank">Ver precio</a>
-              </div>
-              <div class="extra-info">
-                <p><span class="checkmark">✔</span> Facilidad de uso</p>
-                <p><span class="checkmark">✔</span> Facilidad de limpieza</p>
-                <p><span class="checkmark">✔</span> Funcionamiento</p>
-              </div>
-            </div>
-            <div class="shipping-container">
-              <p class="shipping-text">Envío gratis</p>
-              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
-            </div>
-            <div class="more-info" style="display: none;">
-              <h3>Acerca de este producto</h3>
-              <p><strong>[ 𝐌𝐨𝐝𝐨 𝐝𝐞 𝐂𝐨𝐜𝐜𝐢ó𝐧 𝐅á𝐜𝐢𝐥 𝐜𝐨𝐧 𝟏 𝐏𝐮𝐥𝐬𝐚𝐜𝐢ó𝐧 ] 13 programas automáticos para facilitar la cocción; temperatura y tiempo ajustables（ Hasta 205ºC y 60 Min） para satisfacer todas las necesidades de cocción.</p>
-              <p><strong>[ 𝟓.𝟓𝐋 𝐆𝐫𝐚𝐧 𝐂𝐚𝐩𝐚𝐜𝐢𝐝𝐚𝐝 ] Puedes cocinar para 6 personas a la vez, fácil preparación de comidas para reuniones familiares..</p>
-              <p><strong>[ 𝐂𝐨𝐦𝐞𝐫 𝐌á𝐬 𝐒𝐚𝐧𝐨 ] El interior está hecho de acero inoxidable para materiales más seguros. Cocinar sin aceite o 85% menos de aceite, la comida sigue siendo dorada y crujiente, llena y jugosa.</p>
-              <p><strong>[ 𝟓𝟓% 𝐌á𝐬 𝐑á𝐩𝐢𝐝𝐨 ] 1700W de potencia lo hacen 3 veces más rápido que los hornos convencionales, con comidas listas en minutos.</p>
-              <p><strong>[ 𝐑𝐞𝐜𝐞𝐭𝐚𝐫𝐢𝐨 𝐄𝐬𝐩𝐚ñ𝐨𝐥 ] 100 recetas en papel y 300+ recetas online gratis, ¡los cocineros novatos pueden hacer platos de nivel de chef profesional!</p>
-            </div>
-          </div>
-        </div>
-        <!-- Producto 9 -->
-        <div class="product">
-          <img src="https://m.media-amazon.com/images/I/81U2V-H9o3L.__AC_SX300_SY300_QL70_ML2_.jpg" alt="Freidoras de Aire Monitor">
-          <div class="rating-logo">
-            <div class="rating-score">8.8</div>
-            <p class="rating-label">Valoración</p>
-          </div>
-          <div class="product-details">
-            <h2>9. KESSER® XXL Airfryer </h2>
-            <p class="reviews">⭐⭐⭐⭐ (17400+ opiniones)</p>
-            <div class="offer-container">
-              <div class="offer-buttons">
-                <span class="amazon-badge">Disponible en Amazon</span><br>
-                <a href="https://www.amazon.es/Kesser-XXL-Airfryer-deshidratada-microondas/dp/B0898NSYXR?crid=25ADPAZY8BZWM&dib=eyJ2IjoiMSJ9.mPaF35EEEVcYF6r6sExUCeaMN4Jn4DpiwWNZzZQn4e4oZ5NeOpTfoYfoHx23uVsA7ncFi0mWpiPwg2hYFJkpZpz0tiacEQjmHL-CYx3f2x7AwWwiakTUttsf1GkCJRdGyQgXyaVu0xwSUqvvydbbVtxlS4xDhJ3D1Xu9lFNzELEfDkv3I1hCDEHk-YqFLecqT9uLsb3JKB21wb2ehjX70lglFOUn3NJ_yO0TLSbkUTs.dXWxNaf-zmYk2-2H1IKFvQhbXuUNkC3Dd4boADhT8dY&dib_tag=se&keywords=freidora%2Baire&psr=EY17&qid=1740493968&s=todays-deals&sprefix=freid%2Ctodays-deals%2C105&sr=1-9&srs=21350206031&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=31c9100d3805f06ff40c7d7f8ab82b7a&language=es_ES&ref_=as_li_ss_tl" target="_blank">Ver precio</a>
-              </div>
-              <div class="extra-info">
-                <p><span class="checkmark">✔</span> Calidad</p>
-                <p><span class="checkmark">✔</span> Relación calidad-precio</p>
-                <p><span class="checkmark">✔</span> Fácil limpieza</p>
-              </div>
-            </div>
-            <div class="shipping-container">
-              <p class="shipping-text">Envío gratis</p>
-              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
-            </div>
-            <div class="more-info" style="display: none;">
-              <h3>Acerca de este producto</h3>
-              <p><strong>𝟗𝐈𝐍𝟏 𝐌𝐔𝐋𝐓𝐈𝐅𝐔𝐍𝐂𝐈Ó𝐍: Combinación única de freidora, horno y grill giratorio para freír, gratinar, deshidratar, asar, gratinar, hornear, microondas, calentar y mantener caliente.Todo en un solo aparato con menos calorías, pero con el mismo sabor y consistencia que una freidora convencional.</p>
-              <p><strong>𝐕𝐄𝐑𝐒𝐀𝐓𝐈𝐋𝐈𝐃𝐀𝐃: Pescado, pizza, secar y deshidratar, pollo entero (asado), pollo, filete y hornear para elegir. Con los 3 niveles puede conjurar un menú entero al mismo tiempo, potente con 1800 vatios. con 3 x rejillas para deshidratar fruta, verdura y carne.</p>
-              <p><strong>𝐕𝐄𝐍𝐓𝐈𝐋𝐀𝐃𝐎𝐑: En la freidora de aire caliente, los alimentos se preparan en una corriente de aire caliente en lugar de en grasa o aceite, de forma similar a un horno de convección.</p>
-              <p><strong>𝐅Á𝐂𝐈𝐋 𝐃𝐄 𝐔𝐒𝐀𝐑: Airfryer con pantalla táctil digital | 8 programas | sin aceite | libro de recetas gratuito | horno ✓ horno ✓ aire caliente ✓ grill etc... </p>
-              <p><strong>𝐀𝐂𝐂𝐄𝐒𝐎𝐑𝐈𝐎𝐒 𝐂𝐎𝐌𝐏𝐋𝐄𝐓𝐎𝐒: 1 x espetón giratorio para un pollo entero // 10 x pinchos para deliciosos shashlik // 1 x cesta giratoria para crujientes patatas fritas // 1 x cesta para freír con asa // 3 x rejillas para secar fruta, verdura y carne // 1 x bandeja de horno // 1 x bandeja recogegrasa // 1x instrucciones</p>
-            </div>
-          </div>
-        </div>
-        <!-- Producto 10 -->
-        <div class="product">
-          <img src="https://m.media-amazon.com/images/I/614rtupnr7L.__AC_SX300_SY300_QL70_ML2_.jpg" alt="Freidoras de Aire Monitor">
-          <div class="rating-logo">
-            <div class="rating-score">8.5</div>
-            <p class="rating-label">Valoración</p>
-          </div>
-          <div class="product-details">
-            <h2>10. Cecotec Freidora de Aire sin Aceite </h2>
-            <p class="reviews">⭐⭐⭐⭐⭐ (13300+ opiniones)</p>
-            <div class="offer-container">
-              <div class="offer-buttons">
-                <span class="amazon-badge">Disponible en Amazon</span><br>
-                <a href="https://www.amazon.es/Cecotec-Accesorios-Incorporado-Pulverizaci%C3%B3n-Autolimpieza/dp/B0BQ1MZFLR?crid=2L8047AYRT3YH&dib=eyJ2IjoiMSJ9.mPaF35EEEVcYF6r6sExUCeaMN4Jn4DpiwWNZzZQn4e4oZ5NeOpTfoYfoHx23uVsA7ncFi0mWpiPwg2hYFJkpZpz0tiacEQjmHL-CYx3f2x7AwWwiakTUttsf1GkCJRdGyQgXyaVu0xwSUqvvydbbVtxlS4xDhJ3D1Xu9lFNzELEfDkv3I1hCDEHk-YqFLecqT9uLsb3JKB21wb2ehjX70lglFOUn3NJ_yO0TLSbkUTs.dXWxNaf-zmYk2-2H1IKFvQhbXuUNkC3Dd4boADhT8dY&dib_tag=se&keywords=freidora%2Baire&psr=EY17&qid=1740494036&s=todays-deals&sprefix=fr%2Ctodays-deals%2C114&sr=1-10&srs=21350206031&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=3a7990ad835336da2a82843e56edb5c7&language=es_ES&ref_=as_li_ss_tl"_blank">Ver precio</a>
-              </div>
-              <div class="extra-info">
-                <p><span class="checkmark">✔</span> Funcionamiento</p>
-                <p><span class="checkmark">✔</span> Consumo de aceite</p>
-                <p><span class="checkmark">✔</span> Facilidad de limpieza</p>
-              </div>
-            </div>
-            <div class="shipping-container">
-              <p class="shipping-text">Envío gratis</p>
-              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
-            </div>
-            <div class="more-info" style="display: none;">
-              <h3>Acerca de este producto</h3>
-              <p><strong>Capacidad y opciones de cocción: la Cecofry Rain cuenta con una gran capacidad de 5.5 litros, lo que la hace ideal para cocinar grandes cantidades de alimentos, lo que la convierte en una excelente opción para familias</p>
-              <p><strong>Control de cocción y limpieza: la freidora de aire Cecofry Rain cuenta con una función de spray incorporado que te permite pulverizar aceite a tu gusto, y puedes cocinar tus comidas al punto que prefieras.</p>
-              <p><strong>Menús predefinidos y función DIY: la Cecofry Rain cuenta con 8 menús predefinidos que simplifican el proceso de cocinar tus platos favoritos..</p>
-              <p><strong>Panel de control táctil multifunción: la Cecofry Rain cuenta con un panel de control táctil multifunción que es fácil de usar y te permite seleccionar las diferentes funciones.</p>
-              <p><strong>Alto rendimiento y versatilidad: la freidora de aire Cecofry Rain cuenta con un alto rendimiento, lo que significa que puede cocinar tus platos favoritos de manera rápida y eficiente.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Sidebar que ahora se muestra a la derecha -->
-    <div class="sidebar">
-      <!-- Aquí puedes colocar el anuncio patrocinado que antes estaba en la izquierda -->
-      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3702060621408236" data-ad-slot="9876543210" data-ad-format="auto"></ins>
-      <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3702060621408236" data-ad-slot="1234567890" data-ad-format="auto"></ins>
-      <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-      <h3>Anuncios Patrocinados</h3>
-    </div>
-  </div>
-  <!-- Banner de cookies -->
-  <div id="cookie-banner" style="position: fixed; bottom: 0; background: #222; color: white; padding: 15px; width: 100%; text-align: center;">
-    Este sitio usa cookies para mejorar la experiencia. ¿Aceptas?
-    <button onclick="aceptarCookies(); document.getElementById('cookie-banner').style.display='none';">Aceptar</button>
-    <button onclick="rechazarCookies(); document.getElementById('cookie-banner').style.display='none';">Rechazar</button>
-  </div>
   <script>
+    function redirectToAmazon(url) {
+      window.open(url, '_blank');
+    }
     function toggleInfo(button) {
-      var info = button.parentElement.nextElementSibling;
+      var info = button.nextElementSibling;
       if (info.style.display === "none" || info.style.display === "") {
         info.style.display = "block";
         button.textContent = "Mostrar menos";
@@ -659,5 +110,48 @@
       }
     }
   </script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Top 10: Los Mejores Freidoras de Aire</h1>
+    <div class="product-list">
+      <script>
+        const products = [
+          { name: "COSORI Pro LE", rating: "9.9", reviews: "16000+ opiniones", image: "https://m.media-amazon.com/images/I/71-bVzbgWTL._AC_SX300_.jpg", url: "https://amzn.to/3XiMJ9b" },
+          { name: "Cecotec Cecofry", rating: "9.8", reviews: "14200+ opiniones", image: "https://m.media-amazon.com/images/I/519AN1zQmbL._AC_SX300_.jpg", url: "https://amzn.to/3XiMJ9b" },
+          { name: "COSORI Dual Blaze", rating: "9.7", reviews: "14000+ opiniones", image: "https://m.media-amazon.com/images/I/710hgSJ9WSL._AC_SX300_.jpg", url: "https://amzn.to/3XiMJ9b" },
+          { name: "COSORI Premium", rating: "9.6", reviews: "23900+ opiniones", image: "https://m.media-amazon.com/images/I/81OJ5uCzWSL._AC_SX300_.jpg", url: "https://amzn.to/3XiMJ9b" },
+          { name: "Cecotec Cecofry Full Inox", rating: "9.5", reviews: "13800+ opiniones", image: "https://m.media-amazon.com/images/I/51C9-QpMYHL._AC_SX300_.jpg", url: "https://amzn.to/3XiMJ9b" },
+          { name: "COSORI Turbo Blaze", rating: "9.4", reviews: "10700+ opiniones", image: "https://m.media-amazon.com/images/I/81OJ5uCzWSL._AC_SX300_.jpg", url: "https://amzn.to/3XiMJ9b" },
+          { name: "COSORI Freidora Wifi", rating: "9.3", reviews: "15600+ opiniones", image: "https://m.media-amazon.com/images/I/81eEuRL9JkL._AC_SX300_.jpg", url: "https://amzn.to/3XiMJ9b" },
+          { name: "KESSER® XXL Airfryer", rating: "9.0", reviews: "17400+ opiniones", image: "https://m.media-amazon.com/images/I/81U2V-H9o3L._AC_SX300_.jpg", url: "https://amzn.to/3XiMJ9b" },
+          { name: "Cecotec Freidora de Aire sin Aceite", rating: "8.8", reviews: "13300+ opiniones", image: "https://m.media-amazon.com/images/I/614rtupnr7L._AC_SX300_.jpg", url: "https://amzn.to/3XiMJ9b" }
+        ];
+
+        products.forEach((product, index) => {
+          document.write(`
+            <div class="product">
+              <span class="rating-score">${product.rating}</span>
+              <img src="${product.image}" alt="Freidora ${index + 1}">
+              <div class="product-details">
+                <h2>${index + 1}. ${product.name}</h2>
+                <p>⭐⭐⭐⭐⭐ (${product.reviews})</p>
+                <a href="${product.url}" target="_blank">Ver precio</a>
+                <br>
+                <div style='display: flex; align-items: center; gap: 10px;'>
+                  <img src='https://s1.qwant.com/thumbr/474x158/9/7/f63c3ffb13724faceb8e31aa326595a97728bf158aeb13ffc95db5f9fa7625/th.jpg?u=https%3A%2F%2Ftse.mm.bing.net%2Fth%3Fid%3DOIP.B1P05zmy1Y_JxrZZilY6kwHaCe%26pid%3DApi&q=0&b=1&p=0&a=0' style='width: 60px; height: auto; display: block; border: 1px solid #ddd; padding: 5px; border-radius: 5px; background-color: white;'>
+                  <button class='toggle-info' onclick='toggleInfo(this)'>Mostrar más</button>
+                </div>
+                <div class="more-info">
+                  <p>Freidora de aire con excelente desempeño y calidad.</p>
+                </div>
+              </div>
+            </div>
+          `);
+        });
+      </script>
+    </div>
+  </div>
 </body>
 </html>
