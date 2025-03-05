@@ -131,7 +131,7 @@
 
         products.forEach((product, index) => {
           document.write(`
-            <div class="product" onclick="window.open('${product.url}', '_blank');">
+            <div class="product" onclick="redirectToAmazon('${product.url}');">
               <span class="rating-score">${product.rating}</span>
               <img src="${product.image}" alt="Freidora ${index + 1}">
               <div class="product-details">
@@ -155,3 +155,4 @@
   </div>
 </body>
 </html>
+
