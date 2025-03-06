@@ -44,56 +44,19 @@
   
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Top 10: Las Mejores Chimeneas eléctricas</title>
+  <title>Top 10: Las Mejores Chimeneas Eléctricas</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 20px;
       text-align: center;
-      display: flex;
-      justify-content: center;
+      background-color: #f5f5f5;
     }
     .container {
       max-width: 1200px;
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
-      gap: 40px;
-    }
-    /* Ahora el contenido aparece primero y el sidebar a la derecha */
-    .content {
-      flex: 3;
-      position: relative;
-    }
-    .sidebar {
-      flex: 1;
-      padding: 20px;
-      background-color: #f4f4f4;
-      text-align: center;
-      /* Eliminamos el margen a la izquierda para evitar que quede en la izquierda */
-      margin-left: 0;
-    }
-    h1 {
-      color: #333;
-      font-size: 32px;
-      text-decoration: underline;
-    }
-    p {
-      font-size: 20px;
-      color: #666;
-      max-width: 800px;
-      margin: 0 auto 20px auto;
-      text-align: justify;
-    }
-    .highlight {
-      font-weight: bold;
-      text-decoration: underline;
-      color: black;
-    }
-    .reviews {
-      font-size: 16px;
-      margin: 0 0 10px 0;
+      margin: auto;
+      padding: 0 10px;
     }
     .product-list {
       display: flex;
@@ -103,553 +66,82 @@
       margin-top: 20px;
     }
     .product {
-      width: 100%;
-      max-width: 900px;
       border: 1px solid #ddd;
       border-radius: 10px;
-      padding: 30px;
+      padding: 20px;
+      width: 100%;
+      max-width: 600px;
       text-align: left;
-      box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
       background-color: #fff;
       display: flex;
       align-items: center;
-      gap: 30px;
+      gap: 20px;
       position: relative;
+      cursor: pointer;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease-in-out;
+    }
+    .product:hover {
+      transform: scale(1.02);
     }
     .product img {
-      width: 170px;
+      width: 100px;
       height: auto;
       border-radius: 5px;
     }
     .product-details {
       flex: 1;
     }
-    /* Bloque de oferta para productos (con extra-info lateral) */
-    .offer-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 10px;
-    }
-    .offer-buttons {
-      /* Aquí se agrupan el badge y el enlace */
-    }
-    .extra-info {
-      text-align: right;
-    }
-    .extra-info p {
-      margin: 2px 0;
-      font-size: 16px;
-    }
-    .checkmark {
-      color: green;
-      font-weight: bold;
-      margin-right: 5px;
-    }
     .product a {
       display: inline-block;
       margin-top: 10px;
-      padding: 25px;
+      padding: 10px 15px;
       background-color: #00CC00;
       color: white;
       text-decoration: none;
       border-radius: 5px;
       font-weight: bold;
-      font-size: 24px;
     }
     .product a:hover {
       background-color: #008000;
     }
-    .amazon-badge {
-      background-color: #ff9900;
-      color: white;
-      padding: 5px 8px;
+    .toggle-info {
+      margin-top: 10px;
+      padding: 8px 12px;
+      background-color: #ddd;
+      border: none;
       border-radius: 5px;
-      font-weight: bold;
-      display: inline-block;
-      margin-top: 13px;
-      font-size: 10px;
+      cursor: pointer;
     }
-    .rating-logo {
+    .toggle-info:hover {
+      background-color: #bbb;
+    }
+    .more-info {
+      display: none;
+      margin-top: 10px;
+    }
+    .rating-score {
       position: absolute;
       top: 10px;
       right: 10px;
-      text-align: center;
-    }
-    .rating-score {
       width: 50px;
       height: 50px;
-      border: 5px solid red;
       border-radius: 50%;
-      line-height: 50px;
-      font-size: 22px;
-      color: black;
-      font-weight: bold;
-      margin: 0 auto;
       background-color: white;
-    }
-    .rating-label {
-      font-size: 12px;
-      color: #333;
-      margin-top: 5px;
-    }
-    /* Contenedor para envío gratis y botón desplegable */
-    .shipping-container {
-      display: flex;
-      align-items: center;
-      margin-top: 10px;
-      gap: 10px;
-    }
-    .shipping-text {
-      font-size: 20px;
-      color: #FF0000;
+      border: 3px solid red;
+      text-align: center;
+      line-height: 50px;
       font-weight: bold;
-      margin: 0;
-    }
-    .toggle-info {
-      background-color: #ddd;
-      border: none;
-      padding: 10px 15px;
-      cursor: pointer;
-      border-radius: 5px;
-      font-size: 16px;
-      width: 150px;
-    }
-    .toggle-info:hover {
-      background-color: #ccc;
-    }
-    .more-info {
-      margin-top: 5px;
-      background-color: #f9f9f9;
-      padding: 5px;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      font-size: 14px;
-      text-align: left;
-    }
-    /* Media Query para dispositivos móviles */
-    @media (max-width: 768px) {
-      .container {
-        flex-direction: column;
-        gap: 20px;
-      }
-      /* En móvil, el sidebar se mostrará debajo */
-      .sidebar {
-        width: 100%;
-      }
-      .content {
-        width: 100%;
-      }
-      .product {
-        flex-direction: column;
-        align-items: center;
-      }
-      .product img {
-        width: 100%;
-        max-width: 300px;
-        margin: 0 0 15px 0;
-      }
-      .product-details {
-        text-align: center;
-      }
-      .shipping-container {
-        flex-direction: column;
-        gap: 10px;
-      }
-      .offer-container {
-        flex-direction: column;
-        align-items: center;
-      }
-      .extra-info {
-        margin-top: 10px;
-      }
+      color: black;
+      box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
     }
   </style>
-</head>
-<body>
-  <div class="container">
-    <!-- El contenido aparece primero -->
-    <div class="content">
-      <h1>Top 10: Las Mejores Chimeneas eléctricas</h1>
-      <p>Las <span class="highlight">chimeneas eléctricas</span> son una excelente opción para <span class="highlight">calentar tu hogar de manera eficiente y sin combustibles tradicionales</span>, ya que utilizan tecnología eléctrica para generar calor <span class="highlight">y un ambiente acogedor.</span>. Son ideales para quienes buscan una solución de calefacción segura, moderna y fácil de instalar. Además, son <span class="highlight">prácticas de usar y mantener,</span> permitiendo disfrutar del  <span class="highlight">confort sin complicaciones.</span>. En este listado hemos seleccionado las <span class="highlight">mejores opciones del mercado</span>, basándonos en calidad, valoraciones y popularidad. ¡Haz que tu hogar sea más cálido y elegante con una <span class="highlight">chimenea eléctrica!Pide ya tu chimenea eléctrica.</span>!</p>
-      <p class="amazon-notice">Compra este producto en Amazon a través de este enlace</p>
-      
-      <div class="product-list">
-        <!-- Producto 1 -->
-        <div class="product">
-          <img src="https://m.media-amazon.com/images/I/71wjZTnrnnL._AC_SX679_.jpg" alt="KAMINIO Eléctrica Chimenea Marlon">
-          <div class="rating-logo">
-            <div class="rating-score">9.9</div>
-            <p class="rating-label">Valoración</p>
-          </div>
-          <div class="product-details">
-            <h2>1. KAMINIO Eléctrica Chimenea Marlon</h2>
-            <p class="reviews">⭐⭐⭐⭐⭐ (17000+ opiniones)</p>
-            <div class="offer-container">
-              <div class="offer-buttons">
-                <span class="https://amzn.to/3XiMJ9b">Disponible en Amazon</span><br>
-                <a href="https://www.amazon.es/KAMINIO-El%C3%A9ctrica-Chimenea-Marlon-calefacci%C3%B3n/dp/B0DCM3YC68?crid=15KELUMMTJ9RX&dib=eyJ2IjoiMSJ9.5GOD4TFP5QEygCzj-uxiECwUZyAxYPMjLgPex4C0VWdnSCOKXSgXx05tlctMpYdU2YsywSHIXkFo4fYyq4ywDEGfKF6nU0QIN-0aPFE7lJrGnd4QOp4-5SCdjcbO-4KJA58JiJc2yrGrGqbzaj3y7lq0q0sKazIKLov3YAgsC2IjTSer8S4sgIlFiP4Zb5DHWbn5rxNJUXJUEd9ivpWp7K2gevYpuO7OkQ32DxAoJUKalGXQWVnQQHyZHZum_0xWBLjcYHiLDJSB19uUXWDsuUrhc4Ee8ANolFSZHjXgPH-cBZ6i4OKwnmPRrQQaU_YuCg65nC6zxSH8aoOZeao8UZORYnOW6a63VdbqxcTRHqodnG_P0jFON2mu3Jtk1cFoNtKkhsCxgcUqQMLGwzn5-O5WSWB3euB4JDy1PSuf89ZlgD1-Kay14eALnKK0uuI9.fPSRPDvpvAttwtNCNIA_EgvUP2KeFqvfhrvcJKCoGYY&dib_tag=se&keywords=chimenea%2Bel%C3%A9ctrica%2Bde%2Bpared&psr=EY17&qid=1740832659&s=todays-deals&sprefix=chimenea%2Belec%2Ctodays-deals%2C104&sr=1-1&srs=21350206031&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=ed6de8bf38d9f269725cebaaf5ce466c&language=es_ES&ref_=as_li_ss_tl" target="_blank">Ver precio</a>
-              </div>
-              <div class="extra-info">
-                <p><span class="checkmark">✔</span> Apariencia</p>
-                <p><span class="checkmark">✔</span> Relación calidad-precio</p>
-                <p><span class="checkmark">✔</span> Calentamiento</p>
-              </div>
-            </div>
-            <div class="shipping-container">
-              <p class="shipping-text">Envío gratis</p>
-              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
-            </div>
-            <div class="more-info" style="display: none;">
-              <h3>Acerca de este producto</h3>
-              <p><strong>3 OPCIONES DE INSTALACIÓN: Como chimenea de pie, de pared o empotrada, la chimenea eléctrica ofrece total flexibilidad. Se puede elegir el tipo de montaje perfecto según el ambiente de la habitación</p>
-              <p><strong>FUEGO DE CHIMENEA ÚNICO: La chimenea 3 en 1 de alta calidad impresiona con una tecnología de llama perfectamente ajustada y eficiente en energía, complementada con efectos de llama en 12 colores </p>
-              <p><strong>SISTEMA DE CALEFACCIÓN INNOVADOR: El sistema de calefacción de 2 niveles, potente y energéticamente eficiente, calienta rápidamente las habitaciones hasta alcanzar la temperatura deseada</p>
-              <p><strong>PLUG & PLAY: El chimenea es adecuado para todas las habitaciones y se puede enchufar a cualquier toma de corriente - Listo para usar - Sin necesidad de electricista o permisos - Control sencillo</p>
-              <p><strong>MÁXIMA SEGURIDAD: Completamente probado, sin riesgo de quemaduras, sin peligroso monóxido de carbono, protección contra sobrecalentamiento, detección de ventanas abiertas</p>
-            </div>
-          </div>
-        </div>
-        <!-- Producto 2 -->
-        <div class="product">
-          <img src="https://m.media-amazon.com/images/I/717ygxNOBNL._AC_SX679_.jpg" alt="KESSER® Chimenea Eléctrica - 127cm">
-          <div class="rating-logo">
-            <div class="rating-score">9.8</div>
-            <p class="rating-label">Valoración</p>
-          </div>
-          <div class="product-details">
-            <h2>2. KESSER® Chimenea Eléctrica - 127cm</h2>
-            <p class="reviews">⭐⭐⭐⭐⭐ (23200+ opiniones)</p>
-            <div class="offer-container">
-              <div class="offer-buttons">
-                <span class="amazon-badge">Disponible en Amazon</span><br>
-                <a href="https://www.amazon.es/KESSER%C2%AE-Chimenea-el%C3%A9ctrica-calefacci%C3%B3n-Montaje/dp/B0BJ7JYZCB?crid=15KELUMMTJ9RX&dib=eyJ2IjoiMSJ9.5GOD4TFP5QEygCzj-uxiECwUZyAxYPMjLgPex4C0VWdnSCOKXSgXx05tlctMpYdU2YsywSHIXkFo4fYyq4ywDEGfKF6nU0QIN-0aPFE7lJrGnd4QOp4-5SCdjcbO-4KJA58JiJc2yrGrGqbzaj3y7lq0q0sKazIKLov3YAgsC2IjTSer8S4sgIlFiP4Zb5DHWbn5rxNJUXJUEd9ivpWp7K2gevYpuO7OkQ32DxAoJUKalGXQWVnQQHyZHZum_0xWBLjcYHiLDJSB19uUXWDsuUrhc4Ee8ANolFSZHjXgPH-cBZ6i4OKwnmPRrQQaU_YuCg65nC6zxSH8aoOZeao8UZORYnOW6a63VdbqxcTRHqodnG_P0jFON2mu3Jtk1cFoNtKkhsCxgcUqQMLGwzn5-O5WSWB3euB4JDy1PSuf89ZlgD1-Kay14eALnKK0uuI9.fPSRPDvpvAttwtNCNIA_EgvUP2KeFqvfhrvcJKCoGYY&dib_tag=se&keywords=chimenea%2Bel%C3%A9ctrica%2Bde%2Bpared&psr=EY17&qid=1740832659&s=todays-deals&sprefix=chimenea%2Belec%2Ctodays-deals%2C104&sr=1-2&srs=21350206031&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=88a25167abe1da37c1d08f64391fae99&language=es_ES&ref_=as_li_ss_tl" target="_blank">Ver precio</a>
-              </div>
-              <div class="extra-info">
-                <p><span class="checkmark">✔</span> Apariencia</p>
-                <p><span class="checkmark">✔</span> Calidez</p>
-                <p><span class="checkmark">✔</span> Calidad-precio</p>
-              </div>
-            </div>
-            <div class="shipping-container">
-              <p class="shipping-text">Envío gratis</p>
-              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
-            </div>
-            <div class="more-info" style="display: none;">
-              <h3>Acerca de este producto</h3>
-              <p><strong> 𝐅𝐔𝐍𝐂𝐈Ó𝐍 𝐃𝐄 𝐀𝐏𝐏 𝐖𝐈𝐅𝐈 𝐘 𝐂𝐎𝐍𝐓𝐑𝐎𝐋 𝐑𝐄𝐌𝐎𝐓𝐎: Todos los ajustes pueden ser convenientemente controlados a través del control remoto y la función de aplicación WiFi. Alternativamente, las funciones como el temporizador también se pueden ajustar a través de la pantalla táctil LED con una práctica indicación de la temperatura en °C. Además, tiene la ventaja de que no se producen cenizas ni suciedad, por lo que usted se libra del trabajo de limpieza.</p>
-              <p><strong> 𝐏𝐎𝐓𝐄𝐍𝐓𝐄: La chimenea eléctrica crea un ambiente romántico en su sala de estar con su alta potencia. Dispone de dos niveles de calefacción ajustables (900 W y 1800 W) y alcanza una temperatura de hasta 37 °C mediante radiación infrarroja, ideal para habitaciones de hasta 30 m². Con el ventilador calefactor incorporado, la función de calefacción se puede controlar por separado.</p>
-              <p><strong> 𝐕𝐀𝐑𝐈𝐎𝐒 𝐌𝐎𝐃𝐎𝐒 𝐃𝐄 𝐀𝐉𝐔𝐒𝐓𝐄: Con 9 modos de color y 5 niveles de luminosidad, la estufa de calefacción KESSER no sólo es mucho más flexible que una chimenea normal. También está libre de CO² gracias a la tecnología de llama inteligente y al módulo de calentamiento eléctrico, limpio y seguro para los niños y las mascotas.</p>
-              <p><strong> 𝐀𝐌𝐈𝐆𝐀𝐁𝐋𝐄 𝐂𝐎𝐍 𝐄𝐋 𝐌𝐄𝐃𝐈𝐎 𝐀𝐌𝐁𝐈𝐄𝐍𝐓𝐄: La quema de madera y carbón produce un humo que también puede ser insalubre para usted y sus hijos. Gracias a los diferentes modelos y diseños, también existe el calefactor de chimenea que se adapta perfectamente a usted</p>
-              <p><strong> 𝐌𝐎𝐍𝐓𝐀𝐉𝐄 𝐄𝐍 𝐋𝐀 𝐏𝐀𝐑𝐄𝐃 𝐎 𝐈𝐍𝐒𝐄𝐑𝐂𝐈Ó𝐍 𝐄𝐍 𝐋𝐀 𝐏𝐀𝐑𝐄𝐃: Con el montaje en la pared suministrado, puede colgar el calefactor rápida y fácilmente en el soporte metálico. También tiene la opción de colocar la chimenea eléctrica en un hueco en la pared. </p>
-            </div>
-          </div>
-        </div>
-        <!-- Producto 3 -->
-        <div class="product">
-          <img src="https://m.media-amazon.com/images/I/61o+F3fZe5L._AC_SX679_.jpg" alt="KLARSTEIN Galeras Smart Chimenea Eléctrica">
-          <div class="rating-logo">
-            <div class="rating-score">9.6</div>
-            <p class="rating-label">Valoración</p>
-          </div>
-          <div class="product-details">
-            <h2>3. KLARSTEIN Galeras Smart Chimenea Eléctrica</h2>
-            <p class="reviews">⭐⭐⭐⭐ (14000+ opiniones)</p>
-            <div class="offer-container">
-              <div class="offer-buttons">
-                <span class="amazon-badge">Disponible en Amazon</span><br>
-                <a href="https://www.amazon.es/KLARSTEIN-Galeras-Smart-Chimenea-El%C3%A9ctrica/dp/B0DPJ8L187?crid=15KELUMMTJ9RX&dib=eyJ2IjoiMSJ9.5GOD4TFP5QEygCzj-uxiECwUZyAxYPMjLgPex4C0VWdnSCOKXSgXx05tlctMpYdU2YsywSHIXkFo4fYyq4ywDEGfKF6nU0QIN-0aPFE7lJrGnd4QOp4-5SCdjcbO-4KJA58JiJc2yrGrGqbzaj3y7lq0q0sKazIKLov3YAgsC2IjTSer8S4sgIlFiP4Zb5DHWbn5rxNJUXJUEd9ivpWp7K2gevYpuO7OkQ32DxAoJUKalGXQWVnQQHyZHZum_0xWBLjcYHiLDJSB19uUXWDsuUrhc4Ee8ANolFSZHjXgPH-cBZ6i4OKwnmPRrQQaU_YuCg65nC6zxSH8aoOZeao8UZORYnOW6a63VdbqxcTRHqodnG_P0jFON2mu3Jtk1cFoNtKkhsCxgcUqQMLGwzn5-O5WSWB3euB4JDy1PSuf89ZlgD1-Kay14eALnKK0uuI9.fPSRPDvpvAttwtNCNIA_EgvUP2KeFqvfhrvcJKCoGYY&dib_tag=se&keywords=chimenea%2Bel%C3%A9ctrica%2Bde%2Bpared&psr=EY17&qid=1740832659&s=todays-deals&sprefix=chimenea%2Belec%2Ctodays-deals%2C104&sr=1-3&srs=21350206031&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=d7c1947c50d69cc2729fdf2599687353&language=es_ES&ref_=as_li_ss_tl" target="_blank">Ver precio</a>
-              </div>
-              <div class="extra-info">
-                <p><span class="checkmark">✔</span> Diseño</p>
-                <p><span class="checkmark">✔</span> Calidez</p>
-                <p><span class="checkmark">✔</span> Calidad</p>
-              </div>
-            </div>
-            <div class="shipping-container">
-              <p class="shipping-text">Envío gratis</p>
-              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
-            </div>
-            <div class="more-info" style="display: none;">
-              <h3>Acerca de este producto</h3>
-              <p><strong> ACOGEDOR Y ROMÁNTICO: Disfruta de llamas ardientes sin leña con esta chimenea eléctrica decorativa, ideal para crear un ambiente cálido y acogedor en cualquier espacio.</p>
-              <p><strong> AUTÉNTICO AMBIENTE DE CHIMENEA: Llamas LED realistas con efecto de resplandor crean un ambiente acogedor con esta chimenea eléctrica decorativa, ideal para cualquier espacio.</p>
-              <p><strong> PRÁCTICO Y SIEMPRE LIMPIO: Disfruta de una chimenea eléctrica sin cenizas ni humo, ideal para cualquier espacio. Perfecta como chimenea eléctrica decorativa o de pared.</p>
-              <p><strong> CONTROL CÓMODO: Maneja tu chimenea eléctrica de forma inteligente con la app o el mando a distancia, ya sea empotrable o de pared, para una experiencia sin esfuerzo.</p>
-              <p><strong> FÁCIL DE INSTALAR: Esta chimenea eléctrica de pared ofrece una instalación sencilla y puede utilizarse como unidad independiente, perfecta para soluciones versátiles de calefacción doméstica.</p>
-            </div>
-          </div>
-        </div>
-        <!-- Producto 4 -->
-        <div class="product">
-          <img src="https://m.media-amazon.com/images/I/81Kg+vdbMnL._AC_SX679_.jpg" alt="KAMINIO Chimenea Eléctrica MATTI">
-          <div class="rating-logo">
-            <div class="rating-score">9.5</div>
-            <p class="rating-label">Valoración</p>
-          </div>
-          <div class="product-details">
-            <h2>4. KAMINIO Chimenea Eléctrica MATTI</h2>
-            <p class="reviews">⭐⭐⭐⭐⭐ (30900+ opiniones)</p>
-            <div class="offer-container">
-              <div class="offer-buttons">
-                <span class="amazon-badge">Disponible en Amazon</span><br>
-                <a href="https://www.amazon.es/KAMINIO-El%C3%A9ctrica-Chimenea-MATTI-calefacci%C3%B3n/dp/B0DCGHHZ4B?crid=15KELUMMTJ9RX&dib=eyJ2IjoiMSJ9.5GOD4TFP5QEygCzj-uxiECwUZyAxYPMjLgPex4C0VWdnSCOKXSgXx05tlctMpYdU2YsywSHIXkFo4fYyq4ywDEGfKF6nU0QIN-0aPFE7lJrGnd4QOp4-5SCdjcbO-4KJA58JiJc2yrGrGqbzaj3y7lq0q0sKazIKLov3YAgsC2IjTSer8S4sgIlFiP4Zb5DHWbn5rxNJUXJUEd9ivpWp7K2gevYpuO7OkQ32DxAoJUKalGXQWVnQQHyZHZum_0xWBLjcYHiLDJSB19uUXWDsuUrhc4Ee8ANolFSZHjXgPH-cBZ6i4OKwnmPRrQQaU_YuCg65nC6zxSH8aoOZeao8UZORYnOW6a63VdbqxcTRHqodnG_P0jFON2mu3Jtk1cFoNtKkhsCxgcUqQMLGwzn5-O5WSWB3euB4JDy1PSuf89ZlgD1-Kay14eALnKK0uuI9.fPSRPDvpvAttwtNCNIA_EgvUP2KeFqvfhrvcJKCoGYY&dib_tag=se&keywords=chimenea+el%C3%A9ctrica+de+pared&psr=EY17&qid=1740832659&s=todays-deals&sprefix=chimenea+elec%2Ctodays-deals%2C104&sr=1-4&srs=21350206031&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&linkCode=ll1&tag=yocompro0e-21&linkId=168191a96fd8fe985d0f162727864d39&language=es_ES&ref_=as_li_ss_tl" target="_blank">Ver precio</a>
-              </div>
-              <div class="extra-info">
-                <p><span class="checkmark">✔</span> Apariencia</p>
-                <p><span class="checkmark">✔</span> Calentamiento</p>
-                <p><span class="checkmark">✔</span> Cumplimiento</p>
-              </div>
-            </div>
-            <div class="shipping-container">
-              <p class="shipping-text">Envío gratis</p>
-              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
-            </div>
-            <div class="more-info" style="display: none;">
-              <h3>Acerca de este producto</h3>
-              <p><strong> FUEGO DE CHMINIES ÚNICO: La chimenea de pie de alta calidad destaca por su tecnología de llama perfectamente ajustada y eficiente en energía, complementada con iluminación ambiental LED en 13 colores</p>
-              <p><strong> SISTEMA DE CALEFACCIÓN INNOVADOR: El sistema de calefacción de 2 niveles, potente y energéticamente eficiente, calienta rápidamente las habitaciones hasta alcanzar la temperatura deseada</p>
-              <p><strong> CHIMENEA DE DISEÑO: La chimenea se adapta perfectamente a cualquier ambiente gracias a su diseño único. El material de alta calidad y fácil mantenimiento convierte a esta estufa en el mueble perfecto</p>
-              <p><strong> PLUG & PLAY: El chimenea es adecuado para todas las habitaciones y se puede enchufar a cualquier toma de corriente - Listo para usar - Sin necesidad de electricista o permisos - Control sencillo</p>
-              <p><strong> MÁXIMA SEGURIDAD: Completamente probado, sin riesgo de quemaduras, sin peligroso monóxido de carbono, protección contra sobrecalentamiento, detección de ventanas abiertas </p>
-            </div>
-          </div>
-        </div>
-        <!-- Producto 5 -->
-        <div class="product">
-          <img src="https://m.media-amazon.com/images/I/711eofQtVHL._AC_SX679_.jpg" alt="KAMINIO Eléctrica Chimenea Lea ">
-          <div class="rating-logo">
-            <div class="rating-score">9.4</div>
-            <p class="rating-label">Valoración</p>
-          </div>
-          <div class="product-details">
-            <h2>5. KAMINIO Eléctrica Chimenea Lea </h2>
-            <p class="reviews">⭐⭐⭐⭐ (15800+ opiniones)</p>
-            <div class="offer-container">
-              <div class="offer-buttons">
-                <span class="amazon-badge">Disponible en Amazon</span><br>
-                <a href="https://www.amazon.es/KAMINIO-El%C3%A9ctrica-Chimenea-Lea-calefacci%C3%B3n/dp/B0DCLWVLJJ?crid=15KELUMMTJ9RX&dib=eyJ2IjoiMSJ9.5GOD4TFP5QEygCzj-uxiECwUZyAxYPMjLgPex4C0VWdnSCOKXSgXx05tlctMpYdU2YsywSHIXkFo4fYyq4ywDEGfKF6nU0QIN-0aPFE7lJrGnd4QOp4-5SCdjcbO-4KJA58JiJc2yrGrGqbzaj3y7lq0q0sKazIKLov3YAgsC2IjTSer8S4sgIlFiP4Zb5DHWbn5rxNJUXJUEd9ivpWp7K2gevYpuO7OkQ32DxAoJUKalGXQWVnQQHyZHZum_0xWBLjcYHiLDJSB19uUXWDsuUrhc4Ee8ANolFSZHjXgPH-cBZ6i4OKwnmPRrQQaU_YuCg65nC6zxSH8aoOZeao8UZORYnOW6a63VdbqxcTRHqodnG_P0jFON2mu3Jtk1cFoNtKkhsCxgcUqQMLGwzn5-O5WSWB3euB4JDy1PSuf89ZlgD1-Kay14eALnKK0uuI9.fPSRPDvpvAttwtNCNIA_EgvUP2KeFqvfhrvcJKCoGYY&dib_tag=se&keywords=chimenea%2Bel%C3%A9ctrica%2Bde%2Bpared&psr=EY17&qid=1740832659&s=todays-deals&sprefix=chimenea%2Belec%2Ctodays-deals%2C104&sr=1-5&srs=21350206031&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=03e5d7d7d8773e3a935b58be04ac3ad2&language=es_ES&ref_=as_li_ss_tl" target="_blank">Ver precio</a>
-              </div>
-              <div class="extra-info">
-                <p><span class="checkmark">✔</span> Diseño</p>
-                <p><span class="checkmark">✔</span> Calidad</p>
-                <p><span class="checkmark">✔</span> Calentamiento</p>
-              </div>
-            </div>
-            <div class="shipping-container">
-              <p class="shipping-text">Envío gratis</p>
-              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
-            </div>
-            <div class="more-info" style="display: none;">
-              <h3>Acerca de este producto</h3>
-              <p><strong> MÁXIMAS POSIBILIDADES: Se puede utilizar como chimenea de pie, de pared o empotrada, con 3 variantes adicionales de instalación: vista panorámica, lateral o empotrada. Perfecto para cualquier espacio.</p>
-              <p><strong> FUEgo DE CHIMENEA ÚNICO: La chimenea 3 en 1 de alta calidad impresiona con una tecnología de llama perfectamente ajustada y eficiente en energía, complementada con efectos de llama en 12 colores</p>
-              <p><strong> SISTEMA DE CALEFACCIÓN INNOVADOR: El sistema de calefacción de 2 niveles, potente y energéticamente eficiente, calienta rápidamente las habitaciones hasta alcanzar la temperatura deseada</p>
-              <p><strong> PLUG & PLAY: El chimenea es adecuado para todas las habitaciones y se puede enchufar a cualquier toma de corriente - Listo para usar - Sin necesidad de electricista o permisos - Control sencillo</p>
-              <p><strong> MÁXIMA SEGURIDAD: Completamente probado, sin riesgo de quemaduras, sin peligroso monóxido de carbono, protección contra sobrecalentamiento, detección de ventanas abiertas</p>
-            </div>
-          </div>
-        </div>
-        <!-- Producto 6 -->
-        <div class="product">
-          <img src="https://m.media-amazon.com/images/I/810SC4ay2BL._AC_SX679_.jpg" alt="KAMINIO Eléctrica Chimenea Liz ">
-          <div class="rating-logo">
-            <div class="rating-score">9.2</div>
-            <p class="rating-label">Valoración</p>
-          </div>
-          <div class="product-details">
-            <h2>6. KAMINIO Eléctrica Chimenea Liz </h2>
-            <p class="reviews">⭐⭐⭐⭐⭐ (12700+ opiniones)</p>
-            <div class="offer-container">
-              <div class="offer-buttons">
-                <span class="amazon-badge">Disponible en Amazon</span><br>
-                <a href="https://www.amazon.es/KAMINIO-El%C3%A9ctrica-Chimenea-Liz-calefacci%C3%B3n/dp/B0DCLZNSSK?crid=15KELUMMTJ9RX&dib=eyJ2IjoiMSJ9.5GOD4TFP5QEygCzj-uxiECwUZyAxYPMjLgPex4C0VWdnSCOKXSgXx05tlctMpYdU2YsywSHIXkFo4fYyq4ywDEGfKF6nU0QIN-0aPFE7lJrGnd4QOp4-5SCdjcbO-4KJA58JiJc2yrGrGqbzaj3y7lq0q0sKazIKLov3YAgsC2IjTSer8S4sgIlFiP4Zb5DHWbn5rxNJUXJUEd9ivpWp7K2gevYpuO7OkQ32DxAoJUKalGXQWVnQQHyZHZum_0xWBLjcYHiLDJSB19uUXWDsuUrhc4Ee8ANolFSZHjXgPH-cBZ6i4OKwnmPRrQQaU_YuCg65nC6zxSH8aoOZeao8UZORYnOW6a63VdbqxcTRHqodnG_P0jFON2mu3Jtk1cFoNtKkhsCxgcUqQMLGwzn5-O5WSWB3euB4JDy1PSuf89ZlgD1-Kay14eALnKK0uuI9.fPSRPDvpvAttwtNCNIA_EgvUP2KeFqvfhrvcJKCoGYY&dib_tag=se&keywords=chimenea%2Bel%C3%A9ctrica%2Bde%2Bpared&psr=EY17&qid=1740832659&s=todays-deals&sprefix=chimenea%2Belec%2Ctodays-deals%2C104&sr=1-6&srs=21350206031&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=09ac4ca1ba75c754ed74849ac34c9f48&language=es_ES&ref_=as_li_ss_tl" target="_blank">Ver precio</a>
-              </div>
-              <div class="extra-info">
-                <p><span class="checkmark">✔</span> Calidad</p>
-                <p><span class="checkmark">✔</span> Diseño</p>
-                <p><span class="checkmark">✔</span> Calentamiento</p>
-              </div>
-            </div>
-            <div class="shipping-container">
-              <p class="shipping-text">Envío gratis</p>
-              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
-            </div>
-            <div class="more-info" style="display: none;">
-              <h3>Acerca de este producto</h3>
-              <p><strong> FUEGO DE CHIMENEA ÚNICO: La chimenea de pared de alta calidad impresiona con una tecnología de llama perfectamente ajustada y eficiente en energía, complementada con iluminación ambiental en blanco</p>
-              <p><strong> SISTEMA DE CALEFACCIÓN INNIVADOR: El sistema de calefacción de 2 niveles, potente y energéticamente eficiente, calienta rápidamente las habitaciones hasta alcanzar la temperatura deseada</p>
-              <p><strong> CHIMENEA DE DISEÑO: La chimenea se adapta perfectamente a cualquier ambiente gracias a su diseño único. El material de alta calidad y fácil mantenimiento convierte a esta estufa en el mueble perfecto.</p>
-              <p><strong> PLUG & PLAY: El chimenea es adecuado para todas las habitaciones y se puede enchufar a cualquier toma de corriente - Listo para usar - Sin necesidad de electricista o permisos - Control sencillo</p>
-              <p><strong> MÁXIMA SEGURIDAD: Completamente probado, sin riesgo de quemaduras, sin peligroso monóxido de carbono, protección contra sobrecalentamiento, detección de ventanas abiertas</p>
-            </div>
-          </div>
-        </div>
-        <!-- Producto 7 -->
-        <div class="product">
-          <img src="https://m.media-amazon.com/images/I/81d97f93vlL._AC_SX679_.jpg" alt="KESSER® Chimenea eléctrica -">
-          <div class="rating-logo">
-            <div class="rating-score">9.1</div>
-            <p class="rating-label">Valoración</p>
-          </div>
-          <div class="product-details">
-            <h2>7. KESSER® Chimenea eléctrica -</h2>
-            <p class="reviews">⭐⭐⭐⭐ (15600+ opiniones)</p>
-            <div class="offer-container">
-              <div class="offer-buttons">
-                <span class="amazon-badge">Disponible en Amazon</span><br>
-                <a href="https://www.amazon.es/KESSER%C2%AE-Chimenea-el%C3%A9ctrica-calefacci%C3%B3n-Temporizador/dp/B0BKGCL8LM?crid=15KELUMMTJ9RX&dib=eyJ2IjoiMSJ9.5GOD4TFP5QEygCzj-uxiECwUZyAxYPMjLgPex4C0VWdnSCOKXSgXx05tlctMpYdU2YsywSHIXkFo4fYyq4ywDEGfKF6nU0QIN-0aPFE7lJrGnd4QOp4-5SCdjcbO-4KJA58JiJc2yrGrGqbzaj3y7lq0q0sKazIKLov3YAgsC2IjTSer8S4sgIlFiP4Zb5DHWbn5rxNJUXJUEd9ivpWp7K2gevYpuO7OkQ32DxAoJUKalGXQWVnQQHyZHZum_0xWBLjcYHiLDJSB19uUXWDsuUrhc4Ee8ANolFSZHjXgPH-cBZ6i4OKwnmPRrQQaU_YuCg65nC6zxSH8aoOZeao8UZORYnOW6a63VdbqxcTRHqodnG_P0jFON2mu3Jtk1cFoNtKkhsCxgcUqQMLGwzn5-O5WSWB3euB4JDy1PSuf89ZlgD1-Kay14eALnKK0uuI9.fPSRPDvpvAttwtNCNIA_EgvUP2KeFqvfhrvcJKCoGYY&dib_tag=se&keywords=chimenea%2Bel%C3%A9ctrica%2Bde%2Bpared&psr=EY17&qid=1740832659&s=todays-deals&sprefix=chimenea%2Belec%2Ctodays-deals%2C104&sr=1-7&srs=21350206031&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=263277761cba762978a5b8f68191fca5&language=es_ES&ref_=as_li_ss_tl" target="_blank">Ver precio</a>
-              </div>
-              <div class="extra-info">
-                <p><span class="checkmark">✔</span> Potencia</p>
-                <p><span class="checkmark">✔</span> Relación calidad-precio</p>
-                <p><span class="checkmark">✔</span> Facilidad de uso</p>
-              </div>
-            </div>
-            <div class="shipping-container">
-              <p class="shipping-text">Envío gratis</p>
-              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
-            </div>
-            <div class="more-info" style="display: none;">
-              <h3>Acerca de este producto</h3>
-              <p><strong>𝐏𝐎𝐓𝐄𝐍𝐓𝐄 𝐘 𝐂𝐀𝐋𝐈𝐄𝐍𝐓𝐄: basta con regular la temperatura deseada con un termostato integrado. Además, gracias al temporizador, puedes elegir cuando debe funcionar la calefacción. Y si no fuera el caso, la protección contra el sobrecalentamiento protege la estufa adicionalmente. En los días más fríos, puedes disfrutar de la función de calefacción del calentador de infrarrojos: aquí se pueden seleccionar temperaturas de hasta 30 °C gracias a la potencia de 1800W.</p>
-              <p><strong>𝐂𝐎𝐍𝐕𝐄𝐍𝐈𝐄𝐍𝐓𝐄 𝐆𝐑𝐀𝐂𝐈𝐀𝐒 𝐀𝐋 𝐌𝐀𝐍𝐃𝐎 𝐀 𝐃𝐈𝐒𝐓𝐀𝐍𝐂𝐈𝐀: Ahora esto será posible con nuestro control remoto. La pantalla integrada en el calefactor radiante te ofrece una visión completa y perfecta. Todas las funciones, como el temporizador, la regulación de la temperatura, el efecto de la llama y la iluminación, pueden controlarse fácilmente a distancia y en el calefactor de estacionamiento. </p>
-              <p><strong>𝐄𝐍𝐆𝐀Ñ𝐎𝐒𝐀𝐌𝐄𝐍𝐓𝐄 𝐑𝐄𝐀𝐋: con nuestra chimenea eléctrica de KESSER, no tendrás que prescindir del fuego, aunque no tengas las condiciones en tu casa o piso para una chimenea de calefacción o una estufa de azulejos</p>
-              <p><strong>Ó𝐏𝐓𝐈𝐂𝐀 𝐃𝐄𝐒𝐓𝐀𝐂𝐀𝐃𝐀: gracias a los diferentes modelos y diseños, también encontrarás el calefactor de chimenea que se adapte perfectamente a tu color: ¡simplemente, es un atractivo! La chimenea ecológica se adapta a la toma de corriente y, por lo tanto, está lista para su uso. Encender y esperar que prenda fuego, combinado con el desarrollo del humo, formará parte de la historia</p>
-              <p><strong>𝐋𝐄𝐃 𝐃𝐄 𝐀𝐆𝐑𝐀𝐃𝐄𝐂𝐈𝐌𝐈𝐄𝐍𝐓𝐎: se acerca el frío invierno y vuelves a casa después de un paseo con tu familia. Ahora podrás echarte al sofá con un chocolate caliente y encender la calefacción de la pared. Según tus preferencias, puedes determinar la intensidad de las llamas.</p>
-            </div>
-          </div>
-        </div>
-        <!-- Producto 8 -->
-        <div class="product">
-          <img src="https://m.media-amazon.com/images/I/8170tVAtgpL._AC_SX679_.jpg" alt="KESSER® Prio Chimenea eléctrica con Calentador">
-          <div class="rating-logo">
-            <div class="rating-score">9.0</div>
-            <p class="rating-label">Valoración</p>
-          </div>
-          <div class="product-details">
-            <h2>8. KESSER® Prio Chimenea eléctrica con Calentador</h2>
-            <p class="reviews">⭐⭐⭐⭐⭐ (15700+ opiniones)</p>
-            <div class="offer-container">
-              <div class="offer-buttons">
-                <span class="amazon-badge">Disponible en Amazon</span><br>
-                <a href="https://www.amazon.es/el%C3%A9ctrica-calentador-ventilador-termostato-Xtra-Large/dp/B09JM7BJ6P?crid=15KELUMMTJ9RX&dib=eyJ2IjoiMSJ9.5GOD4TFP5QEygCzj-uxiECwUZyAxYPMjLgPex4C0VWdnSCOKXSgXx05tlctMpYdU2YsywSHIXkFo4fYyq4ywDEGfKF6nU0QIN-0aPFE7lJrGnd4QOp4-5SCdjcbO-4KJA58JiJc2yrGrGqbzaj3y7lq0q0sKazIKLov3YAgsC2IjTSer8S4sgIlFiP4Zb5DHWbn5rxNJUXJUEd9ivpWp7K2gevYpuO7OkQ32DxAoJUKalGXQWVnQQHyZHZum_0xWBLjcYHiLDJSB19uUXWDsuUrhc4Ee8ANolFSZHjXgPH-cBZ6i4OKwnmPRrQQaU_YuCg65nC6zxSH8aoOZeao8UZORYnOW6a63VdbqxcTRHqodnG_P0jFON2mu3Jtk1cFoNtKkhsCxgcUqQMLGwzn5-O5WSWB3euB4JDy1PSuf89ZlgD1-Kay14eALnKK0uuI9.fPSRPDvpvAttwtNCNIA_EgvUP2KeFqvfhrvcJKCoGYY&dib_tag=se&keywords=chimenea%2Bel%C3%A9ctrica%2Bde%2Bpared&psr=EY17&qid=1740832659&s=todays-deals&sprefix=chimenea%2Belec%2Ctodays-deals%2C104&sr=1-8&srs=21350206031&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=d01cc3f8466415fe5c7378775fd6cba5&language=es_ES&ref_=as_li_ss_tl" target="_blank">Ver precio</a>
-              </div>
-              <div class="extra-info">
-                <p><span class="checkmark">✔</span> Apariencia</p>
-                <p><span class="checkmark">✔</span> Calentamiento</p>
-                <p><span class="checkmark">✔</span> Funcionamiento</p>
-              </div>
-            </div>
-            <div class="shipping-container">
-              <p class="shipping-text">Envío gratis</p>
-              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
-            </div>
-            <div class="more-info" style="display: none;">
-              <h3>Acerca de este producto</h3>
-              <p><strong>𝐏𝐎𝐓𝐄𝐍𝐓𝐄 𝐘 𝐂𝐀𝐋𝐈𝐄𝐍𝐓𝐄: Disfruta de la potente función de calentamiento de infrarrojos: aquí es posible alcanzar temperaturas ambiente de hasta 28 °C, gracias a la potencia máxima de 1900W. Además, gracias al temporizador, puedes elegir cuándo debe funcionar la calefacción.</p>
-              <p><strong>𝐂𝐎𝐍𝐕𝐄𝐍𝐈𝐄𝐍𝐓𝐄 𝐆𝐑𝐀𝐂𝐈𝐀𝐒 𝐀𝐋 𝐌𝐀𝐍𝐃𝐎 𝐀 𝐃𝐈𝐒𝐓𝐀𝐍𝐂𝐈𝐀: Gracias a la pantalla integrada en el mando a distancia, tendrás una visión completa y perfecta. Todas las funciones, como el temporizador, la regulación de la temperatura y el encendido y apagado, pueden controlarse fácilmente a distancia y en el calefactor de estacionamiento.</p>
-              <p><strong>𝐕𝐈𝐒𝐓𝐀 𝐏𝐀𝐍𝐎𝐑Á𝐌𝐈𝐂𝐀 𝐑𝐄𝐀𝐋: Gracias a la ventana panorámica de 3 piezas, no tendrás que prescindir de una chimenea, incluso si no tienes las condiciones en tu casa o piso para una chimenea de calefacción o una estufa de azulejos.</p>
-              <p><strong>𝐌𝐀𝐑𝐀𝐕𝐈𝐋𝐋𝐀 𝐓É𝐂𝐍𝐈𝐂𝐀: Una función especialmente útil es la detección de ventanas abiertas: si la temperatura de la habitación baja, la chimenea reacciona automáticamente. Además, gracias al temporizador semanal, puedes programar los tiempos de calentamiento individualmente para cada día de la semana. </p>
-              <p><strong>𝐃𝐄𝐒𝐓𝐀𝐂𝐀𝐃𝐎 Ó𝐏𝐓𝐈𝐂𝐎: Debajo de las tres ventanas panorámicas extragrandes hay un compartimento decorativo para troncos reales, que crea la ilusión perfecta. La chimenea ecológica se adapta a la toma de corriente y, por lo tanto, está lista para su uso. Encender y esperar que prenda fuego, combinado con el desarrollo del humo, formará parte de la historia. Puedes limpiar nuestra estufa con un paño húmedo.</p>
-            </div>
-          </div>
-        </div>
-        <!-- Producto 9 -->
-        <div class="product">
-          <img src="https://m.media-amazon.com/images/I/71bNYaclMTL._AC_SX679_.jpg" alt="GJCrafts Chimenea eléctrica para montaje en pared">
-          <div class="rating-logo">
-            <div class="rating-score">8.8</div>
-            <p class="rating-label">Valoración</p>
-          </div>
-          <div class="product-details">
-            <h2>9. GJCrafts Chimenea eléctrica para montaje en pared</h2>
-            <p class="reviews">⭐⭐⭐⭐ (26400+ opiniones)</p>
-            <div class="offer-container">
-              <div class="offer-buttons">
-                <span class="amazon-badge">Disponible en Amazon</span><br>
-                <a href="https://www.amazon.es/GJCrafts-Chimenea-el%C3%A9ctrica-montaje-empotrable/dp/B0DPMN4H4T?crid=15KELUMMTJ9RX&dib=eyJ2IjoiMSJ9.5GOD4TFP5QEygCzj-uxiECwUZyAxYPMjLgPex4C0VWdnSCOKXSgXx05tlctMpYdU2YsywSHIXkFo4fYyq4ywDEGfKF6nU0QIN-0aPFE7lJrGnd4QOp4-5SCdjcbO-4KJA58JiJc2yrGrGqbzaj3y7lq0q0sKazIKLov3YAgsC2IjTSer8S4sgIlFiP4Zb5DHWbn5rxNJUXJUEd9ivpWp7K2gevYpuO7OkQ32DxAoJUKalGXQWVnQQHyZHZum_0xWBLjcYHiLDJSB19uUXWDsuUrhc4Ee8ANolFSZHjXgPH-cBZ6i4OKwnmPRrQQaU_YuCg65nC6zxSH8aoOZeao8UZORYnOW6a63VdbqxcTRHqodnG_P0jFON2mu3Jtk1cFoNtKkhsCxgcUqQMLGwzn5-O5WSWB3euB4JDy1PSuf89ZlgD1-Kay14eALnKK0uuI9.fPSRPDvpvAttwtNCNIA_EgvUP2KeFqvfhrvcJKCoGYY&dib_tag=se&keywords=chimenea+el%C3%A9ctrica+de+pared&psr=EY17&qid=1740832659&s=todays-deals&sprefix=chimenea+elec%2Ctodays-deals%2C104&sr=1-1-catcorr&srs=21350206031&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&linkCode=ll1&tag=yocompro0e-21&linkId=b556e3f3890b98731a1b1d13e25aeee5&language=es_ES&ref_=as_li_ss_tl" target="_blank">Ver precio</a>
-              </div>
-              <div class="extra-info">
-                <p><span class="checkmark">✔</span> Relación calidad-precio</p>
-                <p><span class="checkmark">✔</span> Diseño</p>
-                <p><span class="checkmark">✔</span> Potenia</p>
-              </div>
-            </div>
-            <div class="shipping-container">
-              <p class="shipping-text">Envío gratis</p>
-              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
-            </div>
-            <div class="more-info" style="display: none;">
-              <h3>Acerca de este producto</h3>
-              <p><strong>Pantalla táctil y mando a distancia: opere la máquina para la decoración de la pared de la sala de estar cómodamente a través del panel de la chimenea o el mando a distancia incluido. El mando a distancia tiene un alcance de hasta 5 m, por lo que puedes ajustar la configuración desde la comodidad de tu sofá</p>
-              <p><strong>Efectos de llama realistas: esta chimenea está hecha de troncos de madera artificial y piedras de cristal ecológicas y ofrece 2 impresionantes efectos de llama. Con 12 colores de llama y 5 niveles de brillo, puedes personalizar la atmósfera para que coincida con tu estado de ánimo y decoración. Gracias al vidrio templado, puedes ver la llama más claramente.</p>
-              <p><strong>Dos modos de funcionamiento, Eco y Turbo, para adaptar su uso a cada circunstancia. El modo Eco alarga la batería al máximo con resultados impecables y el modo Turbo acaba con la suciedad más difícil y aspira alfombras.</p>
-              <p><strong>2 modos de calefacción: los insertos de chimenea eléctrica tienen 2 modos de calentamiento (750 W y 1500 W). Puede calentar eficazmente una superficie de hasta 37 m². Sus entradas/salidas garantizan una circulación de aire eficiente. Puedes ajustar la temperatura entre 16 y 28 °C (60 – 82 °F) para crear un ambiente cómodo.</p>
-              <p><strong>50 – 60 dB de bajo ruido y ajuste de tiempo: la estufa eléctrica se puede programar para funcionar durante 1 – 8 horas. Tiene un nivel de ruido de solo 50 – 60 dB, lo que te permite disfrutar de la atmósfera cálida sin molestias. Además, cuenta con certificaciones de seguridad como CE, UKCA y RoHS, por lo que puede estar tranquilo</p>
-            </div>
-          </div>
-        </div>
-        <!-- Producto 10 -->
-        <div class="product">
-          <img src="https://m.media-amazon.com/images/I/612F+liWZpL._AC_SX679_.jpg" alt="Mobiclinic®, Chimenea Eléctrica de Pared">
-          <div class="rating-logo">
-            <div class="rating-score">8.5</div>
-            <p class="rating-label">Valoración</p>
-          </div>
-          <div class="product-details">
-            <h2>10. Mobiclinic®, Chimenea Eléctrica de Pared</h2>
-            <p class="reviews">⭐⭐⭐⭐⭐ (13300+ opiniones)</p>
-            <div class="offer-container">
-              <div class="offer-buttons">
-                <span class="amazon-badge">Disponible en Amazon</span><br>
-                <a href="https://www.amazon.es/Mobiclinic%C2%AE-106-5x12x43-Protecci%C3%B3n-Sobrecalentamiento-Temporizador/dp/B0DRJRF7K2?crid=15KELUMMTJ9RX&dib=eyJ2IjoiMSJ9.5GOD4TFP5QEygCzj-uxiECwUZyAxYPMjLgPex4C0VWdnSCOKXSgXx05tlctMpYdU2YsywSHIXkFo4fYyq4ywDEGfKF6nU0QIN-0aPFE7lJrGnd4QOp4-5SCdjcbO-4KJA58JiJc2yrGrGqbzaj3y7lq0q0sKazIKLov3YAgsC2IjTSer8S4sgIlFiP4Zb5DHWbn5rxNJUXJUEd9ivpWp7K2gevYpuO7OkQ32DxAoJUKalGXQWVnQQHyZHZum_0xWBLjcYHiLDJSB19uUXWDsuUrhc4Ee8ANolFSZHjXgPH-cBZ6i4OKwnmPRrQQaU_YuCg65nC6zxSH8aoOZeao8UZORYnOW6a63VdbqxcTRHqodnG_P0jFON2mu3Jtk1cFoNtKkhsCxgcUqQMLGwzn5-O5WSWB3euB4JDy1PSuf89ZlgD1-Kay14eALnKK0uuI9.fPSRPDvpvAttwtNCNIA_EgvUP2KeFqvfhrvcJKCoGYY&dib_tag=se&keywords=chimenea+el%C3%A9ctrica+de+pared&psr=EY17&qid=1740832659&s=todays-deals&sprefix=chimenea+elec%2Ctodays-deals%2C104&sr=1-2-catcorr&srs=21350206031&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&linkCode=ll1&tag=yocompro0e-21&linkId=f54af14b14d5a89cba183c89fa022104&language=es_ES&ref_=as_li_ss_tl"_blank">Ver precio</a>
-              </div>
-              <div class="extra-info">
-                <p><span class="checkmark">✔</span> Potencia</p>
-                <p><span class="checkmark">✔</span> Calidad-precio</p>
-                <p><span class="checkmark">✔</span> Funcionamiento</p>
-              </div>
-            </div>
-            <div class="shipping-container">
-              <p class="shipping-text">Envío gratis</p>
-              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
-            </div>
-            <div class="more-info" style="display: none;">
-              <h3>Acerca de este producto</h3>
-              <p><strong>CALOR EFICIENTE Y SEGURO: Cuenta con 2 niveles de potencia de 900W y 1800w, esta chimenea eléctrica ofrece un calentamiento rápido y uniforme, ideal para espacios de 25 m2. Además, la chimenea eléctrica decorativa cuenta con un sistema de protección contra sobrecalentamiento que garantiza una seguridad, protegiéndote de cualquier posible riesgo. Incluye un temporizador de 1 a 8 horas, para que puedas programarla y disfrutar sin preocupaciones</p>
-              <p><strong>LLAMA 3D PERSONALIZABLE: Disfruta de un ambiente único gracias a su llama 3D que simula el fuego real pero es segura y estética. Podrás elegir entre 6 colores de llama y 9 tonalidades de lecho de brasas con los que podrás personalizar tu experiencia y crear el ambiente perfecto a tu medida. Esta chimenea eléctrica de pared produce una atmósfera cálida y acogedora, creando un entorno de confort único</p>
-              <p><strong>FUNCIÓN APP WIFI Y CONTROL REMOTO: Controla tu chimenea decorativa de manera cómoda e intuitiva gracias a sus múltiples opciones que se adaptan a tus necesidades. Cuenta con mando a distancia, panel de control táctil y control wifi a través de la APP “Tuya Smart” con el que podrás configurar sus funciones desde cualquier lugar y en cualquier momento. ¡Maneja tu chimenea de la manera más fácil y práctica!</p>
-              <p><strong>DISEÑO MODERNO Y PRÁCTICO: La chimenea eléctrica de bajo consumo Fury combina estilo y funcionalidad. Su diseño se integra fácilmente en cualquier espacio y decoración, además es muy práctica gracias a su instalación en pared, ahorrando espacio y convirtiéndola en una opción ideal para hogares, oficinas o negocios. Tiene 42” y es perfecta para espacios de entre 15 y 25 m</p>
-              <p><strong>MOBICLINIC S.L. ofrece la mejor calidad y confianza a sus clientes desde 1985. Esta marca propia de Grupo R.Queraltó, con premio a la mejor PYME Española 2022 entre más de 3 millones de empresas, perteneciente a Grupo Bunzl, mayor distribuidor presente en más de 40 países que cotiza en la bolsa de Londres con una facturación superior a 14 M€ anua</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Sidebar que ahora se muestra a la derecha -->
-    <div class="sidebar">
-      <!-- Aquí puedes colocar el anuncio patrocinado que antes estaba en la izquierda -->
-      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3702060621408236" data-ad-slot="9876543210" data-ad-format="auto"></ins>
-      <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3702060621408236" data-ad-slot="1234567890" data-ad-format="auto"></ins>
-      <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-      <h3>Anuncios Patrocinados</h3>
-    </div>
-  </div>
-  <!-- Banner de cookies -->
-  <div id="cookie-banner" style="position: fixed; bottom: 0; background: #222; color: white; padding: 15px; width: 100%; text-align: center;">
-    Este sitio usa cookies para mejorar la experiencia. ¿Aceptas?
-    <button onclick="aceptarCookies(); document.getElementById('cookie-banner').style.display='none';">Aceptar</button>
-    <button onclick="rechazarCookies(); document.getElementById('cookie-banner').style.display='none';">Rechazar</button>
-  </div>
   <script>
+    function redirectToAmazon(url) {
+      window.open(url, '_blank');
+    }
     function toggleInfo(button) {
-      var info = button.parentElement.nextElementSibling;
+      var info = button.nextElementSibling;
       if (info.style.display === "none" || info.style.display === "") {
         info.style.display = "block";
         button.textContent = "Mostrar menos";
@@ -659,5 +151,55 @@
       }
     }
   </script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Top 10: Las Mejores Chimeneas Eléctricas</h1>
+    <div class="product-list">
+      <script>
+        const products = [
+          { name: "KAMINIO Eléctrica Chimenea Marlon", rating: "9.9", reviews: "14200 Financia este producto", image: "https://m.media-amazon.com/images/I/71wjZTnrnnL._AC_SX679_.jpg", url: "https://www.amazon.es/KAMINIO-El%C3%A9ctrica-Chimenea-Marlon-calefacci%C3%B3n/dp/B0DCM3YC68?crid=15KELUMMTJ9RX&dib=eyJ2IjoiMSJ9.5GOD4TFP5QEygCzj-uxiECwUZyAxYPMjLgPex4C0VWdnSCOKXSgXx05tlctMpYdU2YsywSHIXkFo4fYyq4ywDEGfKF6nU0QIN-0aPFE7lJrGnd4QOp4-5SCdjcbO-4KJA58JiJc2yrGrGqbzaj3y7lq0q0sKazIKLov3YAgsC2IjTSer8S4sgIlFiP4Zb5DHWbn5rxNJUXJUEd9ivpWp7K2gevYpuO7OkQ32DxAoJUKalGXQWVnQQHyZHZum_0xWBLjcYHiLDJSB19uUXWDsuUrhc4Ee8ANolFSZHjXgPH-cBZ6i4OKwnmPRrQQaU_YuCg65nC6zxSH8aoOZeao8UZORYnOW6a63VdbqxcTRHqodnG_P0jFON2mu3Jtk1cFoNtKkhsCxgcUqQMLGwzn5-O5WSWB3euB4JDy1PSuf89ZlgD1-Kay14eALnKK0uuI9.fPSRPDvpvAttwtNCNIA_EgvUP2KeFqvfhrvcJKCoGYY&dib_tag=se&keywords=chimenea%2Bel%C3%A9ctrica%2Bde%2Bpared&psr=EY17&qid=1740832659&s=todays-deals&sprefix=chimenea%2Belec%2Ctodays-deals%2C104&sr=1-1&srs=21350206031&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=bbf2ad202577e9143273f2b706e1db52&language=es_ES&ref_=as_li_ss_tl" },
+          { name: "KESSER® Chimenea Eléctrica - 127cm", rating: "9.8", reviews: "16000+ Financia este producto", image: "https://m.media-amazon.com/images/I/717ygxNOBNL._AC_SX679_.jpg", url: "https://www.amazon.es/KESSER%C2%AE-Chimenea-el%C3%A9ctrica-calefacci%C3%B3n-Montaje/dp/B0BJ7JYZCB?crid=15KELUMMTJ9RX&dib=eyJ2IjoiMSJ9.5GOD4TFP5QEygCzj-uxiECwUZyAxYPMjLgPex4C0VWdnSCOKXSgXx05tlctMpYdU2YsywSHIXkFo4fYyq4ywDEGfKF6nU0QIN-0aPFE7lJrGnd4QOp4-5SCdjcbO-4KJA58JiJc2yrGrGqbzaj3y7lq0q0sKazIKLov3YAgsC2IjTSer8S4sgIlFiP4Zb5DHWbn5rxNJUXJUEd9ivpWp7K2gevYpuO7OkQ32DxAoJUKalGXQWVnQQHyZHZum_0xWBLjcYHiLDJSB19uUXWDsuUrhc4Ee8ANolFSZHjXgPH-cBZ6i4OKwnmPRrQQaU_YuCg65nC6zxSH8aoOZeao8UZORYnOW6a63VdbqxcTRHqodnG_P0jFON2mu3Jtk1cFoNtKkhsCxgcUqQMLGwzn5-O5WSWB3euB4JDy1PSuf89ZlgD1-Kay14eALnKK0uuI9.fPSRPDvpvAttwtNCNIA_EgvUP2KeFqvfhrvcJKCoGYY&dib_tag=se&keywords=chimenea%2Bel%C3%A9ctrica%2Bde%2Bpared&psr=EY17&qid=1740832659&s=todays-deals&sprefix=chimenea%2Belec%2Ctodays-deals%2C104&sr=1-2&srs=21350206031&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=f9acebe7fdd696429d094a785d2638a4&language=es_ES&ref_=as_li_ss_tl" },
+          { name: "KLARSTEIN Galeras Smart Chimenea Eléctrica", rating: "9.7", reviews: "14200+ ACOGEDOR Y ROMÁNTICO:", image: "https://m.media-amazon.com/images/I/61o+F3fZe5L._AC_SX679_.jpg", url: "https://www.amazon.es/KLARSTEIN-Galeras-Smart-Chimenea-El%C3%A9ctrica/dp/B0DPJ8L187?crid=15KELUMMTJ9RX&dib=eyJ2IjoiMSJ9.5GOD4TFP5QEygCzj-uxiECwUZyAxYPMjLgPex4C0VWdnSCOKXSgXx05tlctMpYdU2YsywSHIXkFo4fYyq4ywDEGfKF6nU0QIN-0aPFE7lJrGnd4QOp4-5SCdjcbO-4KJA58JiJc2yrGrGqbzaj3y7lq0q0sKazIKLov3YAgsC2IjTSer8S4sgIlFiP4Zb5DHWbn5rxNJUXJUEd9ivpWp7K2gevYpuO7OkQ32DxAoJUKalGXQWVnQQHyZHZum_0xWBLjcYHiLDJSB19uUXWDsuUrhc4Ee8ANolFSZHjXgPH-cBZ6i4OKwnmPRrQQaU_YuCg65nC6zxSH8aoOZeao8UZORYnOW6a63VdbqxcTRHqodnG_P0jFON2mu3Jtk1cFoNtKkhsCxgcUqQMLGwzn5-O5WSWB3euB4JDy1PSuf89ZlgD1-Kay14eALnKK0uuI9.fPSRPDvpvAttwtNCNIA_EgvUP2KeFqvfhrvcJKCoGYY&dib_tag=se&keywords=chimenea%2Bel%C3%A9ctrica%2Bde%2Bpared&psr=EY17&qid=1740832659&s=todays-deals&sprefix=chimenea%2Belec%2Ctodays-deals%2C104&sr=1-3&srs=21350206031&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=641633531319a0de3e68571bd7108856&language=es_ES&ref_=as_li_ss_tl" },
+          { name: "KAMINIO Chimenea Eléctrica MATTI", rating: "9.5", reviews: "13800+ CHIMENEA DE DISEÑO", image: "https://m.media-amazon.com/images/I/81Kg+vdbMnL._AC_SY300_SX300_.jpg", url: "https://www.amazon.es/KAMINIO-El%C3%A9ctrica-Chimenea-MATTI-calefacci%C3%B3n/dp/B0DCGHHZ4B?crid=15KELUMMTJ9RX&dib=eyJ2IjoiMSJ9.5GOD4TFP5QEygCzj-uxiECwUZyAxYPMjLgPex4C0VWdnSCOKXSgXx05tlctMpYdU2YsywSHIXkFo4fYyq4ywDEGfKF6nU0QIN-0aPFE7lJrGnd4QOp4-5SCdjcbO-4KJA58JiJc2yrGrGqbzaj3y7lq0q0sKazIKLov3YAgsC2IjTSer8S4sgIlFiP4Zb5DHWbn5rxNJUXJUEd9ivpWp7K2gevYpuO7OkQ32DxAoJUKalGXQWVnQQHyZHZum_0xWBLjcYHiLDJSB19uUXWDsuUrhc4Ee8ANolFSZHjXgPH-cBZ6i4OKwnmPRrQQaU_YuCg65nC6zxSH8aoOZeao8UZORYnOW6a63VdbqxcTRHqodnG_P0jFON2mu3Jtk1cFoNtKkhsCxgcUqQMLGwzn5-O5WSWB3euB4JDy1PSuf89ZlgD1-Kay14eALnKK0uuI9.fPSRPDvpvAttwtNCNIA_EgvUP2KeFqvfhrvcJKCoGYY&dib_tag=se&keywords=chimenea+el%C3%A9ctrica+de+pared&psr=EY17&qid=1740832659&s=todays-deals&sprefix=chimenea+elec%2Ctodays-deals%2C104&sr=1-4&srs=21350206031&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&linkCode=ll1&tag=yocompro0e-21&linkId=9bb0ad7bd54b1435001bee71e9b181ce&language=es_ES&ref_=as_li_ss_tl" },
+          { name: "KAMINIO Eléctrica Chimenea Lea", rating: "9.5", reviews: "23900+ PLUG & PLAY ", image: "https://m.media-amazon.com/images/I/711eofQtVHL._AC_SX679_.jpg", url: "https://www.amazon.es/KAMINIO-El%C3%A9ctrica-Chimenea-Lea-calefacci%C3%B3n/dp/B0DCLWVLJJ?crid=15KELUMMTJ9RX&dib=eyJ2IjoiMSJ9.5GOD4TFP5QEygCzj-uxiECwUZyAxYPMjLgPex4C0VWdnSCOKXSgXx05tlctMpYdU2YsywSHIXkFo4fYyq4ywDEGfKF6nU0QIN-0aPFE7lJrGnd4QOp4-5SCdjcbO-4KJA58JiJc2yrGrGqbzaj3y7lq0q0sKazIKLov3YAgsC2IjTSer8S4sgIlFiP4Zb5DHWbn5rxNJUXJUEd9ivpWp7K2gevYpuO7OkQ32DxAoJUKalGXQWVnQQHyZHZum_0xWBLjcYHiLDJSB19uUXWDsuUrhc4Ee8ANolFSZHjXgPH-cBZ6i4OKwnmPRrQQaU_YuCg65nC6zxSH8aoOZeao8UZORYnOW6a63VdbqxcTRHqodnG_P0jFON2mu3Jtk1cFoNtKkhsCxgcUqQMLGwzn5-O5WSWB3euB4JDy1PSuf89ZlgD1-Kay14eALnKK0uuI9.fPSRPDvpvAttwtNCNIA_EgvUP2KeFqvfhrvcJKCoGYY&dib_tag=se&keywords=chimenea%2Bel%C3%A9ctrica%2Bde%2Bpared&psr=EY17&qid=1740832659&s=todays-deals&sprefix=chimenea%2Belec%2Ctodays-deals%2C104&sr=1-5&srs=21350206031&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=bf166ec92313ede297e2b6af1a7fe7b9&language=es_ES&ref_=as_li_ss_tl" },
+          { name: "KAMINIO Eléctrica Chimenea Liz ", rating: "9.5", reviews: "13800+ FUEGO DE CHIMENEA ÚNICO", image: "https://m.media-amazon.com/images/I/810SC4ay2BL._AC_SX679_.jpg", url: "https://www.amazon.es/KAMINIO-El%C3%A9ctrica-Chimenea-Liz-calefacci%C3%B3n/dp/B0DCLZNSSK?crid=15KELUMMTJ9RX&dib=eyJ2IjoiMSJ9.5GOD4TFP5QEygCzj-uxiECwUZyAxYPMjLgPex4C0VWdnSCOKXSgXx05tlctMpYdU2YsywSHIXkFo4fYyq4ywDEGfKF6nU0QIN-0aPFE7lJrGnd4QOp4-5SCdjcbO-4KJA58JiJc2yrGrGqbzaj3y7lq0q0sKazIKLov3YAgsC2IjTSer8S4sgIlFiP4Zb5DHWbn5rxNJUXJUEd9ivpWp7K2gevYpuO7OkQ32DxAoJUKalGXQWVnQQHyZHZum_0xWBLjcYHiLDJSB19uUXWDsuUrhc4Ee8ANolFSZHjXgPH-cBZ6i4OKwnmPRrQQaU_YuCg65nC6zxSH8aoOZeao8UZORYnOW6a63VdbqxcTRHqodnG_P0jFON2mu3Jtk1cFoNtKkhsCxgcUqQMLGwzn5-O5WSWB3euB4JDy1PSuf89ZlgD1-Kay14eALnKK0uuI9.fPSRPDvpvAttwtNCNIA_EgvUP2KeFqvfhrvcJKCoGYY&dib_tag=se&keywords=chimenea%2Bel%C3%A9ctrica%2Bde%2Bpared&psr=EY17&qid=1740832659&s=todays-deals&sprefix=chimenea%2Belec%2Ctodays-deals%2C104&sr=1-6&srs=21350206031&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=6e3a17a393fe705f0fb1d5b5580ea6a8&language=es_ES&ref_=as_li_ss_tl" },
+          { name: "Chimenea eléctrica con Efecto de Llama LED 3D", rating: "9.4", reviews: "10700+ 𝐏𝐎𝐓𝐄𝐍𝐓𝐄 𝐘 𝐂𝐀𝐋𝐈𝐄𝐍𝐓𝐄", image: "https://m.media-amazon.com/images/I/81d97f93vlL._AC_SX679_.jpg", url: "https://www.amazon.es/KESSER%C2%AE-Chimenea-el%C3%A9ctrica-calefacci%C3%B3n-Temporizador/dp/B0BKGCL8LM?crid=15KELUMMTJ9RX&dib=eyJ2IjoiMSJ9.5GOD4TFP5QEygCzj-uxiECwUZyAxYPMjLgPex4C0VWdnSCOKXSgXx05tlctMpYdU2YsywSHIXkFo4fYyq4ywDEGfKF6nU0QIN-0aPFE7lJrGnd4QOp4-5SCdjcbO-4KJA58JiJc2yrGrGqbzaj3y7lq0q0sKazIKLov3YAgsC2IjTSer8S4sgIlFiP4Zb5DHWbn5rxNJUXJUEd9ivpWp7K2gevYpuO7OkQ32DxAoJUKalGXQWVnQQHyZHZum_0xWBLjcYHiLDJSB19uUXWDsuUrhc4Ee8ANolFSZHjXgPH-cBZ6i4OKwnmPRrQQaU_YuCg65nC6zxSH8aoOZeao8UZORYnOW6a63VdbqxcTRHqodnG_P0jFON2mu3Jtk1cFoNtKkhsCxgcUqQMLGwzn5-O5WSWB3euB4JDy1PSuf89ZlgD1-Kay14eALnKK0uuI9.fPSRPDvpvAttwtNCNIA_EgvUP2KeFqvfhrvcJKCoGYY&dib_tag=se&keywords=chimenea%2Bel%C3%A9ctrica%2Bde%2Bpared&psr=EY17&qid=1740832659&s=todays-deals&sprefix=chimenea%2Belec%2Ctodays-deals%2C104&sr=1-7&srs=21350206031&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=98117fc67cf4a5f97ffdfc4e7233f70e&language=es_ES&ref_=as_li_ss_tl" },
+          { name: "Chimenea eléctrica con Calentador", rating: "9.3", reviews: "15600+ 𝐕𝐈𝐒𝐓𝐀 𝐏𝐀𝐍𝐎𝐑Á𝐌𝐈𝐂𝐀 𝐑𝐄𝐀𝐋", image: "https://m.media-amazon.com/images/I/8170tVAtgpL._AC_SX679_.jpg", url: "https://www.amazon.es/el%C3%A9ctrica-calentador-ventilador-termostato-Xtra-Large/dp/B09JM7BJ6P?crid=15KELUMMTJ9RX&dib=eyJ2IjoiMSJ9.5GOD4TFP5QEygCzj-uxiECwUZyAxYPMjLgPex4C0VWdnSCOKXSgXx05tlctMpYdU2YsywSHIXkFo4fYyq4ywDEGfKF6nU0QIN-0aPFE7lJrGnd4QOp4-5SCdjcbO-4KJA58JiJc2yrGrGqbzaj3y7lq0q0sKazIKLov3YAgsC2IjTSer8S4sgIlFiP4Zb5DHWbn5rxNJUXJUEd9ivpWp7K2gevYpuO7OkQ32DxAoJUKalGXQWVnQQHyZHZum_0xWBLjcYHiLDJSB19uUXWDsuUrhc4Ee8ANolFSZHjXgPH-cBZ6i4OKwnmPRrQQaU_YuCg65nC6zxSH8aoOZeao8UZORYnOW6a63VdbqxcTRHqodnG_P0jFON2mu3Jtk1cFoNtKkhsCxgcUqQMLGwzn5-O5WSWB3euB4JDy1PSuf89ZlgD1-Kay14eALnKK0uuI9.fPSRPDvpvAttwtNCNIA_EgvUP2KeFqvfhrvcJKCoGYY&dib_tag=se&keywords=chimenea%2Bel%C3%A9ctrica%2Bde%2Bpared&psr=EY17&qid=1740832659&s=todays-deals&sprefix=chimenea%2Belec%2Ctodays-deals%2C104&sr=1-8&srs=21350206031&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=09feb7a2d3df3eba1bb0a39f83aa24ff&language=es_ES&ref_=as_li_ss_tl" },
+          { name: "Chimenea eléctrica para montaje en pared", rating: "9.0", reviews: "17400+ Bastante realista", image: "https://m.media-amazon.com/images/I/71Mb30ij5yL._AC_SX679_.jpg", url: "https://www.amazon.es/GJCrafts-Chimenea-el%C3%A9ctrica-montaje-empotrable/dp/B0DPMN4H4T?crid=15KELUMMTJ9RX&dib=eyJ2IjoiMSJ9.5GOD4TFP5QEygCzj-uxiECwUZyAxYPMjLgPex4C0VWdnSCOKXSgXx05tlctMpYdU2YsywSHIXkFo4fYyq4ywDEGfKF6nU0QIN-0aPFE7lJrGnd4QOp4-5SCdjcbO-4KJA58JiJc2yrGrGqbzaj3y7lq0q0sKazIKLov3YAgsC2IjTSer8S4sgIlFiP4Zb5DHWbn5rxNJUXJUEd9ivpWp7K2gevYpuO7OkQ32DxAoJUKalGXQWVnQQHyZHZum_0xWBLjcYHiLDJSB19uUXWDsuUrhc4Ee8ANolFSZHjXgPH-cBZ6i4OKwnmPRrQQaU_YuCg65nC6zxSH8aoOZeao8UZORYnOW6a63VdbqxcTRHqodnG_P0jFON2mu3Jtk1cFoNtKkhsCxgcUqQMLGwzn5-O5WSWB3euB4JDy1PSuf89ZlgD1-Kay14eALnKK0uuI9.fPSRPDvpvAttwtNCNIA_EgvUP2KeFqvfhrvcJKCoGYY&dib_tag=se&keywords=chimenea+el%C3%A9ctrica+de+pared&psr=EY17&qid=1740832659&s=todays-deals&sprefix=chimenea+elec%2Ctodays-deals%2C104&sr=1-1-catcorr&srs=21350206031&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&linkCode=ll1&tag=yocompro0e-21&linkId=5e027bc6163e85d8490e4b59b1f81f3e&language=es_ES&ref_=as_li_ss_tl" },
+          { name: "Chimenea Eléctrica de Pared, 106.5x12x43 cm", rating: "8.8", reviews: "13300+ 🔥 LLAMA 3D PERSONALIZABLE ", image: "https://m.media-amazon.com/images/I/612F+liWZpL._AC_SX679_.jpg", url: "https://www.amazon.es/Mobiclinic%C2%AE-106-5x12x43-Protecci%C3%B3n-Sobrecalentamiento-Temporizador/dp/B0DRJRF7K2?crid=15KELUMMTJ9RX&dib=eyJ2IjoiMSJ9.5GOD4TFP5QEygCzj-uxiECwUZyAxYPMjLgPex4C0VWdnSCOKXSgXx05tlctMpYdU2YsywSHIXkFo4fYyq4ywDEGfKF6nU0QIN-0aPFE7lJrGnd4QOp4-5SCdjcbO-4KJA58JiJc2yrGrGqbzaj3y7lq0q0sKazIKLov3YAgsC2IjTSer8S4sgIlFiP4Zb5DHWbn5rxNJUXJUEd9ivpWp7K2gevYpuO7OkQ32DxAoJUKalGXQWVnQQHyZHZum_0xWBLjcYHiLDJSB19uUXWDsuUrhc4Ee8ANolFSZHjXgPH-cBZ6i4OKwnmPRrQQaU_YuCg65nC6zxSH8aoOZeao8UZORYnOW6a63VdbqxcTRHqodnG_P0jFON2mu3Jtk1cFoNtKkhsCxgcUqQMLGwzn5-O5WSWB3euB4JDy1PSuf89ZlgD1-Kay14eALnKK0uuI9.fPSRPDvpvAttwtNCNIA_EgvUP2KeFqvfhrvcJKCoGYY&dib_tag=se&keywords=chimenea+el%C3%A9ctrica+de+pared&psr=EY17&qid=1740832659&s=todays-deals&sprefix=chimenea+elec%2Ctodays-deals%2C104&sr=1-2-catcorr&srs=21350206031&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&linkCode=ll1&tag=yocompro0e-21&linkId=fcdff934e84f4498adc7afb823e827a6&language=es_ES&ref_=as_li_ss_tl" }
+        ];
+
+        products.forEach((product, index) => {
+          document.write(`
+            <div class="product" onclick="redirectToAmazon('${product.url}');">
+              <span class="rating-score">${product.rating}</span>
+              <img src="${product.image}" alt="Freidora ${index + 1}">
+              <div class="product-details">
+                <h2>${index + 1}. ${product.name}</h2>
+                <p>⭐⭐⭐⭐⭐ (${product.reviews})</p>
+                <a href="${product.url}" target="_blank">Ver precio</a>
+                <br>
+                <div style='display: flex; align-items: center; gap: 10px;'>
+                  <img src='https://s1.qwant.com/thumbr/474x158/9/7/f63c3ffb13724faceb8e31aa326595a97728bf158aeb13ffc95db5f9fa7625/th.jpg?u=https%3A%2F%2Ftse.mm.bing.net%2Fth%3Fid%3DOIP.B1P05zmy1Y_JxrZZilY6kwHaCe%26pid%3DApi&q=0&b=1&p=0&a=0' style='width: 60px; height: auto; display: block; border: 1px solid #ddd; padding: 5px; border-radius: 5px; background-color: white;'>
+                  <button class='toggle-info' onclick='toggleInfo(this)'>Mostrar más</button>
+                </div>
+                <div class="more-info">
+                  <p>Freidora de aire con excelente desempeño y calidad.</p>
+                </div>
+              </div>
+            </div>
+          `);
+        });
+      </script>
+    </div>
+   </div>
+  <!-- Banner de cookies -->
+  <div id="cookie-banner" style="position: fixed; bottom: 0; background: #222; color: white; padding: 15px; width: 100%; text-align: center;">
+    Este sitio usa cookies para mejorar la experiencia. ¿Aceptas?
+    <button onclick="aceptarCookies(); document.getElementById('cookie-banner').style.display='none';">Aceptar</button>
+    <button onclick="rechazarCookies(); document.getElementById('cookie-banner').style.display='none';">Rechazar</button>
+  </div>
 </body>
 </html>
