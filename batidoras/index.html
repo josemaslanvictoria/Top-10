@@ -51,49 +51,12 @@
       margin: 0;
       padding: 20px;
       text-align: center;
-      display: flex;
-      justify-content: center;
+      background-color: #f5f5f5;
     }
     .container {
       max-width: 1200px;
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
-      gap: 40px;
-    }
-    /* Ahora el contenido aparece primero y el sidebar a la derecha */
-    .content {
-      flex: 3;
-      position: relative;
-    }
-    .sidebar {
-      flex: 1;
-      padding: 20px;
-      background-color: #f4f4f4;
-      text-align: center;
-      /* Eliminamos el margen a la izquierda para evitar que quede en la izquierda */
-      margin-left: 0;
-    }
-    h1 {
-      color: #333;
-      font-size: 32px;
-      text-decoration: underline;
-    }
-    p {
-      font-size: 20px;
-      color: #666;
-      max-width: 800px;
-      margin: 0 auto 20px auto;
-      text-align: justify;
-    }
-    .highlight {
-      font-weight: bold;
-      text-decoration: underline;
-      color: black;
-    }
-    .reviews {
-      font-size: 16px;
-      margin: 0 0 10px 0;
+      margin: auto;
+      padding: 0 10px;
     }
     .product-list {
       display: flex;
@@ -103,548 +66,82 @@
       margin-top: 20px;
     }
     .product {
-      width: 100%;
-      max-width: 900px;
       border: 1px solid #ddd;
       border-radius: 10px;
-      padding: 30px;
+      padding: 20px;
+      width: 100%;
+      max-width: 600px;
       text-align: left;
-      box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
       background-color: #fff;
       display: flex;
       align-items: center;
-      gap: 30px;
+      gap: 20px;
       position: relative;
+      cursor: pointer;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease-in-out;
+    }
+    .product:hover {
+      transform: scale(1.02);
     }
     .product img {
-      width: 180px;
+      width: 100px;
       height: auto;
       border-radius: 5px;
     }
     .product-details {
       flex: 1;
     }
-    /* Bloque de oferta para productos (con extra-info lateral) */
-    .offer-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 10px;
-    }
-    .offer-buttons {
-      /* Aquí se agrupan el badge y el enlace */
-    }
-    .extra-info {
-      text-align: right;
-    }
-    .extra-info p {
-      margin: 2px 0;
-      font-size: 16px;
-    }
-    .checkmark {
-      color: green;
-      font-weight: bold;
-      margin-right: 5px;
-    }
     .product a {
       display: inline-block;
       margin-top: 10px;
-      padding: 25px;
+      padding: 10px 15px;
       background-color: #00CC00;
       color: white;
       text-decoration: none;
       border-radius: 5px;
       font-weight: bold;
-      font-size: 24px;
     }
     .product a:hover {
       background-color: #008000;
     }
-    .amazon-badge {
-      background-color: #ff9900;
-      color: white;
-      padding: 5px 8px;
+    .toggle-info {
+      margin-top: 10px;
+      padding: 8px 12px;
+      background-color: #ddd;
+      border: none;
       border-radius: 5px;
-      font-weight: bold;
-      display: inline-block;
-      margin-top: 13px;
-      font-size: 10px;
+      cursor: pointer;
     }
-    .rating-logo {
+    .toggle-info:hover {
+      background-color: #bbb;
+    }
+    .more-info {
+      display: none;
+      margin-top: 10px;
+    }
+    .rating-score {
       position: absolute;
       top: 10px;
       right: 10px;
-      text-align: center;
-    }
-    .rating-score {
       width: 50px;
       height: 50px;
-      border: 5px solid red;
       border-radius: 50%;
-      line-height: 50px;
-      font-size: 22px;
-      color: black;
-      font-weight: bold;
-      margin: 0 auto;
       background-color: white;
-    }
-    .rating-label {
-      font-size: 12px;
-      color: #333;
-      margin-top: 5px;
-    }
-    /* Contenedor para envío gratis y botón desplegable */
-    .shipping-container {
-      display: flex;
-      align-items: center;
-      margin-top: 10px;
-      gap: 10px;
-    }
-    .shipping-text {
-      font-size: 20px;
-      color: #FF0000;
+      border: 3px solid red;
+      text-align: center;
+      line-height: 50px;
       font-weight: bold;
-      margin: 0;
-    }
-    .toggle-info {
-      background-color: #ddd;
-      border: none;
-      padding: 10px 15px;
-      cursor: pointer;
-      border-radius: 5px;
-      font-size: 16px;
-      width: 150px;
-    }
-    .toggle-info:hover {
-      background-color: #ccc;
-    }
-    .more-info {
-      margin-top: 5px;
-      background-color: #f9f9f9;
-      padding: 5px;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      font-size: 14px;
-      text-align: left;
-    }
-    /* Media Query para dispositivos móviles */
-    @media (max-width: 768px) {
-      .container {
-        flex-direction: column;
-        gap: 20px;
-      }
-      /* En móvil, el sidebar se mostrará debajo */
-      .sidebar {
-        width: 100%;
-      }
-      .content {
-        width: 100%;
-      }
-      .product {
-        flex-direction: column;
-        align-items: center;
-      }
-      .product img {
-        width: 100%;
-        max-width: 300px;
-        margin: 0 0 15px 0;
-      }
-      .product-details {
-        text-align: center;
-      }
-      .shipping-container {
-        flex-direction: column;
-        gap: 10px;
-      }
-      .offer-container {
-        flex-direction: column;
-        align-items: center;
-      }
-      .extra-info {
-        margin-top: 10px;
-      }
+      color: black;
+      box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
     }
   </style>
-</head>
-<body>
-  <div class="container">
-    <!-- El contenido aparece primero -->
-    <div class="content">
-      <h1>Top 10: Las Mejores Batidoras</h1>
-      <p>Las <span class="highlight">Mejores Batidoras</span> son una excelente opción para <span class="highlight">preparar tus recetas de manera rápida y eficiente.</span>, hemos realizado una comparativa por ti. Y te mostramos las mejores del mercado <span class="highlight">para que aproveches estas ofertas</span>. Tenemos las mejores marcas de batidoras seleccionadas <span class="highlight">para que tu elijas cual es el que más se adapta a ti</span> con relación calidad-precio. <span class="highlight"> Disfruta de practicidad y comodidad en tu cocina</span>. En este listado hemos seleccionado las <span class="highlight">mejores opciones del mercado</span>, basándonos en calidad, valoraciones y popularidad.Ya sea para batidos, masas o salsas, encontrarás la opción ideal. 💪🔄 ¡Optimiza tu tiempo con un <span class="highlight">Batidoras!¡Prepara tus recetas favoritas con una batidora perfecta para ti! 👩‍🍳🥄</span>!</p>
-      <p class="amazon-notice">Compra este producto en Amazon a través de este enlace</p>
-      
-      <div class="product-list">
-        <!-- Producto 1 -->
-        <div class="product">
-          <img src="https://m.media-amazon.com/images/I/71TEsI+pD2L._AC_SX679_.jpg" alt="Bosch - Batidora de mano, Ergomixx, 750 W">
-          <div class="rating-logo">
-            <div class="rating-score">9.9</div>
-            <p class="rating-label">Valoración</p>
-          </div>
-          <div class="product-details">
-            <h2>1. Bosch - Batidora de mano, Ergomixx, 750 W</h2>
-            <p class="reviews">⭐⭐⭐⭐⭐ (21000+ opiniones)</p>
-            <div class="offer-container">
-              <div class="offer-buttons">
-                <span class="amazon-badge">Disponible en Amazon</span><br>
-                <a href="https://www.amazon.es/Bosch-MSM67170-ErgoMixx-regulador-velocidad/dp/B009W0L6KM?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=28SMTDN1N0JPI&dib=eyJ2IjoiMSJ9.6hJg1r9ulQXuS0W3vivlQjhdgAZVZDKX1FEwyk40Ku1g92Q5hSw9jNXrdYwKdaBKdy1OKWuNSm-jzP_TO0iD1tp6RAtDsfyvzRp4zSBtHCUaIqbWM1IBKXJs7qqWi8axpBpRu4wM0oT3j4k4oY2zJGqE8JxMyousa1zj67qLJgzM7Mq1iV1fITXr8pmYonkFhP5UJEKAMh1ApQ76Fcrn70lMvP7lr7BUD1sMDA6iLLUcW3RCkbk1qB7jBYUaezrcJG7PCMHZ_GRsuiu3OjKWTuRuYZ671-GqmHXoHN2I973gg405_h00gk5F7apo20iCD8H_Ccx1RCA5kPHBo5weLqrQTWksT0MDqZR8f1l91qmE_QoleGKuB-9-ySpUXOgyYhzLr7I1LPvSOoVWkTgpkRi_jX6ROTRzFoas5kQcB-D2IMt54YooSasJq8INlU8V.DxVcaSaJ96GKdUkDaQWOmC1s-iNUL50WdTadjWODKc8&dib_tag=se&keywords=batidora&qid=1741013361&sprefix=batidora%2Caps%2C121&sr=8-34&ufe=app_do%3Aamzn1.fos.0fd54328-1d46-4534-bd0f-16141b40bb5b&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=e1c8c5c67d039674161310a2031f806a&language=es_ES&ref_=as_li_ss_tl" target="_blank">Ver precio</a>
-              </div>
-              <div class="extra-info">
-                <p><span class="checkmark">✔</span> Calidad</p>
-                <p><span class="checkmark">✔</span> Relación calidad-precio</p>
-                <p><span class="checkmark">✔</span> Potencia</p>
-              </div>
-            </div>
-            <div class="shipping-container">
-              <p class="shipping-text">Envío gratis</p>
-              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
-            </div>
-            <div class="more-info" style="display: none;">
-              <h3>Acerca de este producto</h3>
-              <p><strong>La batidora de mano ErgoMixx de Bosch ofrece una gran potencia para batir, mezclar, picar o amasar gracias a su motor de 750 W, 12 velocidades, con la función Turbo y sus numerosos accesorios</p>
-              <p><strong>Las cuchillas QuattroBlade Pro de la batidora proporcionan una acción de corte de calidad para enfrentarte incluso a ingredientes grandes con buenos resultados</p>
-              <p><strong>Sistema de montaje y desmontaje fácil con un solo clic: la batidora ErgoMixx ofrece un agarre cómodo y gracias al mango de tacto suave y a los botones grandes</p>
-              <p><strong>Contenido de envío: 1 x Batidora de mano Bosch ErgoMixx con accesorios; un vaso de mezclas con medidor y tapa, un picador universal, una cuchilla para picar hielo y una batidora de varillas.</p>
-            </div>
-          </div>
-        </div>
-        <!-- Producto 2 -->
-        <div class="product">
-          <img src="https://m.media-amazon.com/images/I/51ys4UHU+9L._AC_SX679_.jpg" alt="Cecotec Batidora de Mano Katana">
-          <div class="rating-logo">
-            <div class="rating-score">9.8</div>
-            <p class="rating-label">Valoración</p>
-          </div>
-          <div class="product-details">
-            <h2>2. Cecotec Batidora de Mano Katana</h2>
-            <p class="reviews">⭐⭐⭐⭐⭐ (22300+ opiniones)</p>
-            <div class="offer-container">
-              <div class="offer-buttons">
-                <span class="amazon-badge">Disponible en Amazon</span><br>
-                <a href="https://www.amazon.es/Cecotec-Velocidades-antisalpicaduras-extralargo-accesorios/dp/B0BQ1T55FD?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=28SMTDN1N0JPI&dib=eyJ2IjoiMSJ9.6hJg1r9ulQXuS0W3vivlQjhdgAZVZDKX1FEwyk40Ku1g92Q5hSw9jNXrdYwKdaBK8VWBzHP1Lf_qQKm7aiqggtZekciZtEEl9pS1eQ8sUmgYCYqnFgm0i-Du-DvPxv71pBpRu4wM0oT3j4k4oY2zJEhAn2NPV-CKJSaOPbESsxefhZ3FsZXKdt0KdMt9fqMW5ybg8Fl7e58LUltKT4KyIr7X7pBPQBn3rEO6n-PYTjccW3RCkbk1qB7jBYUaezrcUkqsSt-3eGX_BDqeHttfw86alSvI8G3XgEJomwNcXpAS-0uQzcptv2lScj-U__o3rkGRWQ3IXO72Upd88-IX_QUGDvtFs-gzVAxlTsmgQLkY4PI6h4NzFAVIS2nkMiNrbwz7aXfji_F0Ipq2d5_aLC7Vtsv5YT774NCzKf7H4arGaHV7cKU-MllXa0scp4NR.9SdeAJYuJg5yMOzrusskQIeGnHVghvJAfzYBTkwO_iQ&dib_tag=se&keywords=batidora&qid=1741023080&sprefix=batidora%2Caps%2C121&sr=8-25&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=d99ff91771f65194c194974d18b70d4c&language=es_ES&ref_=as_li_ss_tl" target="_blank">Ver precio</a>
-              </div>
-              <div class="extra-info">
-                <p><span class="checkmark">✔</span> Funcionamiento</p>
-                <p><span class="checkmark">✔</span> Potencia</p>
-                <p><span class="checkmark">✔</span> Relación calidad-precio</p>
-              </div>
-            </div>
-            <div class="shipping-container">
-              <p class="shipping-text">Envío gratis</p>
-              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
-            </div>
-            <div class="more-info" style="display: none;">
-              <h3>Acerca de este producto</h3>
-              <p><strong>Batidora de mano con 1500 W de potencia máxima, perfecta para conseguir mezclas finas y homogéneas de forma rápida y sin esfuerzos.</p>
-              <p><strong>Movimiento PerreoMove que desplaza las cuchillas arriba y abajo para triturar y batir sin esfuerzo, y con mayor eficacia y comodidad. Además cuenta con selector de 21 velocidades y función Turbo para garantizar siempre el punto perfecto en cada receta.</p>
-              <p><strong>Sistema de cuchillas de 4 hojas con recubrimiento de titanio negro, que aumenta la dureza y el afilado para triturar hasta los alimentos más duros, logrando texturas suaves y uniformes. Campana antisalpicaduras que reduce las manchas durante su uso, incluso a máxima potencia, y mejora los resultados.</p>
-            </div>
-          </div>
-        </div>
-        <!-- Producto 3 -->
-        <div class="product">
-          <img src="https://m.media-amazon.com/images/I/51do-MIXZ7L._AC_SX679_.jpg" alt="Moulinex QuickChef DD6578 Batidora.">
-          <div class="rating-logo">
-            <div class="rating-score">9.6</div>
-            <p class="rating-label">Valoración</p>
-          </div>
-          <div class="product-details">
-            <h2>3. Moulinex QuickChef DD6578 Batidora</h2>
-            <p class="reviews">⭐⭐⭐⭐ (19000+ opiniones)</p>
-            <div class="offer-container">
-              <div class="offer-buttons">
-                <span class="amazon-badge">Disponible en Amazon</span><br>
-                <a href="https://www.amazon.es/Moulinex-599392031-batidora-varilla-quickcheff/dp/B0761X9C7L?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=28SMTDN1N0JPI&dib=eyJ2IjoiMSJ9.6hJg1r9ulQXuS0W3vivlQjhdgAZVZDKX1FEwyk40Ku1g92Q5hSw9jNXrdYwKdaBK8VWBzHP1Lf_qQKm7aiqggtZekciZtEEl9pS1eQ8sUmgYCYqnFgm0i-Du-DvPxv71pBpRu4wM0oT3j4k4oY2zJEhAn2NPV-CKJSaOPbESsxefhZ3FsZXKdt0KdMt9fqMW5ybg8Fl7e58LUltKT4KyIr7X7pBPQBn3rEO6n-PYTjccW3RCkbk1qB7jBYUaezrcUkqsSt-3eGX_BDqeHttfw86alSvI8G3XgEJomwNcXpAS-0uQzcptv2lScj-U__o3rkGRWQ3IXO72Upd88-IX_QUGDvtFs-gzVAxlTsmgQLkY4PI6h4NzFAVIS2nkMiNrbwz7aXfji_F0Ipq2d5_aLC7Vtsv5YT774NCzKf7H4arGaHV7cKU-MllXa0scp4NR.9SdeAJYuJg5yMOzrusskQIeGnHVghvJAfzYBTkwO_iQ&dib_tag=se&keywords=batidora&qid=1741023599&sprefix=batidora%2Caps%2C121&sr=8-1&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=3a01aeeeb1ca7256273425bf5338c301&language=es_ES&ref_=as_li_ss_tl" target="_blank">Ver precio</a>
-              </div>
-              <div class="extra-info">
-                <p><span class="checkmark">✔</span> Funcionamiento</p>
-                <p><span class="checkmark">✔</span> Calidad</p>
-                <p><span class="checkmark">✔</span> Potencia</p>
-              </div>
-            </div>
-            <div class="shipping-container">
-              <p class="shipping-text">Envío gratis</p>
-              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
-            </div>
-            <div class="more-info" style="display: none;">
-              <h3>Acerca de este producto</h3>
-              <p><strong>Batidora de mano con motor de alto rendimiento de 1000 W podrás batir fácilmente y preparar una variedad de platos con sencillez y rapidez</p>
-              <p><strong>Regulación mediante rueda retroiluminada de 10 velocidades y Turbo.</p>
-              <p><strong>Batidora varilla que proporciona todo el comfort necesario para cocinar gracias a sus velocidades variables intuitivas ajustables sin detener la batidora a través de un selector retroiluminado de fácil manejo</p>
-              <p><strong>Tecnología Powelix: 4 grandes cuchillas para resultados suaves y rápidos así como homogéneos; ofrece un rendimiento óptimo de hasta un 30 percent más rápido comparándolo con nuestros modelos de dos cuchillas</p>
-              <p><strong>Batidora de mano con pie de acero inox desmontable extra-largo y la protección antisalpicaduras y el mango antideslizante proporcionan comodidad durante su uso</p>
-            </div>
-          </div>
-        </div>
-        <!-- Producto 4 -->
-        <div class="product">
-          <img src="https://m.media-amazon.com/images/I/51yR-qFNubL._AC_SX679_.jpg" alt="Taurus BAPI 1200 Rocket - Batidora">
-          <div class="rating-logo">
-            <div class="rating-score">9.5</div>
-            <p class="rating-label">Valoración</p>
-          </div>
-          <div class="product-details">
-            <h2>4. Taurus BAPI 1200 Rocket - Batidora</h2>
-            <p class="reviews">⭐⭐⭐⭐⭐ (24900+ opiniones)</p>
-            <div class="offer-container">
-              <div class="offer-buttons">
-                <span class="amazon-badge">Disponible en Amazon</span><br>
-                <a href="https://www.amazon.es/Taurus-1200-Rocket-Complet-Inoxidable/dp/B09HGPJBWW?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=28SMTDN1N0JPI&dib=eyJ2IjoiMSJ9.6hJg1r9ulQXuS0W3vivlQjhdgAZVZDKX1FEwyk40Ku1g92Q5hSw9jNXrdYwKdaBK8VWBzHP1Lf_qQKm7aiqggtZekciZtEEl9pS1eQ8sUmgYCYqnFgm0i-Du-DvPxv71pBpRu4wM0oT3j4k4oY2zJEhAn2NPV-CKJSaOPbESsxefhZ3FsZXKdt0KdMt9fqMW5ybg8Fl7e58LUltKT4KyIr7X7pBPQBn3rEO6n-PYTjccW3RCkbk1qB7jBYUaezrcUkqsSt-3eGX_BDqeHttfw86alSvI8G3XgEJomwNcXpAS-0uQzcptv2lScj-U__o3rkGRWQ3IXO72Upd88-IX_QUGDvtFs-gzVAxlTsmgQLkY4PI6h4NzFAVIS2nkMiNrbwz7aXfji_F0Ipq2d5_aLC7Vtsv5YT774NCzKf7H4arGaHV7cKU-MllXa0scp4NR.9SdeAJYuJg5yMOzrusskQIeGnHVghvJAfzYBTkwO_iQ&dib_tag=se&keywords=batidora&qid=1741023599&sprefix=batidora%2Caps%2C121&sr=8-9&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=e4a31055e333f6a2ceff208c9a6ef024&language=es_ES&ref_=as_li_ss_tl">Ver precio</a>
-              </div>
-              <div class="extra-info">
-                <p><span class="checkmark">✔</span> Funcionamiento</p>
-                <p><span class="checkmark">✔</span> Potencia</p>
-                <p><span class="checkmark">✔</span> Relación calidad-precio</p>
-              </div>
-            </div>
-            <div class="shipping-container">
-              <p class="shipping-text">Envío gratis</p>
-              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
-            </div>
-            <div class="more-info" style="display: none;">
-              <h3>Acerca de este producto</h3>
-              <p><strong>【POTENCIA 1200W】Gran potencia para picar y triturar todo tipo de alimentos, hasta los más duros. Se compone de cuchillas de acero inoxidable de alto rendimiento y doble efecto, baten y pican. </p>
-              <p><strong>【20 VELOCIDADES + TURBO】Cuenta con regulador de 20 velocidades ajustable para que puedas elegir la velocidad adecuada para cada tipo de receta. Además, incorpora la función Turbo para que tengas un extra de potencia en el momento que lo necesites.</p>
-              <p><strong>【DOBLE BATIDOR】Incluye como accesorio un doble batidor con el que podrás elaborar tus recetas de repostería favoritas. Fácil montaje y desmontaje. </p>
-              <p><strong>【ACCESORIOS】Cuenta con un doble batidor, un vaso medidor de 500 ml y una jarra-picadora de 350 ml. Totalmente libres de BPA.</p>
-              <p><strong>【DISEÑO ERGONÓMICO】El agarre ergonómico y soft-touch de la batidora permitirá que se adapte de forma fácil a la mano del usuario. Garantía de 2 años. </p>
-            </div>
-          </div>
-        </div>
-        <!-- Producto 5 -->
-        <div class="product">
-          <img src="https://m.media-amazon.com/images/I/51yC5vkwqZL._AC_SX679_.jpg" alt="Braun Hogar Batidora de mano, 21 velocidades">
-          <div class="rating-logo">
-            <div class="rating-score">9.4</div>
-            <p class="rating-label">Valoración</p>
-          </div>
-          <div class="product-details">
-            <h2>5. Braun Hogar Batidora de mano, 21 velocidades</h2>
-            <p class="reviews">⭐⭐⭐⭐ (23800+ opiniones)</p>
-            <div class="offer-container">
-              <div class="offer-buttons">
-                <span class="amazon-badge">Disponible en Amazon</span><br>
-                <a href="https://www.amazon.es/Braun-Minipimer-5220-anti-salpicuduras-mini-picadora/dp/B086HZWBLP?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=28SMTDN1N0JPI&dib=eyJ2IjoiMSJ9.6hJg1r9ulQXuS0W3vivlQjhdgAZVZDKX1FEwyk40Ku1g92Q5hSw9jNXrdYwKdaBK8VWBzHP1Lf_qQKm7aiqggtZekciZtEEl9pS1eQ8sUmgYCYqnFgm0i-Du-DvPxv71pBpRu4wM0oT3j4k4oY2zJEhAn2NPV-CKJSaOPbESsxefhZ3FsZXKdt0KdMt9fqMW5ybg8Fl7e58LUltKT4KyIr7X7pBPQBn3rEO6n-PYTjccW3RCkbk1qB7jBYUaezrcUkqsSt-3eGX_BDqeHttfw86alSvI8G3XgEJomwNcXpAS-0uQzcptv2lScj-U__o3rkGRWQ3IXO72Upd88-IX_QUGDvtFs-gzVAxlTsmgQLkY4PI6h4NzFAVIS2nkMiNrbwz7aXfji_F0Ipq2d5_aLC7Vtsv5YT774NCzKf7H4arGaHV7cKU-MllXa0scp4NR.9SdeAJYuJg5yMOzrusskQIeGnHVghvJAfzYBTkwO_iQ&dib_tag=se&keywords=batidora&qid=1741023599&sprefix=batidora%2Caps%2C121&sr=8-22&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=07a7de6a6170dac3f257b6f9dce3f389&language=es_ES&ref_=as_li_ss_tl" target="_blank">Ver precio</a>
-              </div>
-              <div class="extra-info">
-                <p><span class="checkmark">✔</span> Funcionalidad</p>
-                <p><span class="checkmark">✔</span> Potencia</p>
-                <p><span class="checkmark">✔</span> Relación calidad-precio</p>
-              </div>
-            </div>
-            <div class="shipping-container">
-              <p class="shipping-text">Envío gratis</p>
-              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
-            </div>
-            <div class="more-info" style="display: none;">
-              <h3>Acerca de este producto</h3>
-              <p><strong>POTENTE: la batidora posee una potencia de 1000 w, y la velocidad se puede regular gracias al selector con 21 velocidades y función turbo para obtener mejores resultados en cualquier preparación</p>
-              <p><strong>POWERBELL PLUS: la campara posee un area de corte más grande y un diseño específico para obtener mejores resultados en menos tiempo y con menos esfuerzo</p>
-              <p><strong>SPLASH CONTROL: la campana anti-salpicadura Splash Control de acero inoxidable está diseñada para evitar las salpicaduras y mantener la cocina limpia</p>
-              <p><strong>EASY-CLICK: los accesorios se acoplan y se desmontan fácilmente gracias al sistema easy-click patentado por Braum para poder intercambiar los accesorios de forma rápida y sencilla</p>
-              <p><strong>ACCESORIOS: incluye una mini-picadora de 350ml y un vaso medidor de 600 ml fabricado en plástico sin productos nocivos y libre de BPA, apto para estar en contacto con los alimentos</p>
-            </div>
-          </div>
-        </div>
-        <!-- Producto 6 -->
-        <div class="product">
-          <img src="https://m.media-amazon.com/images/I/51pwKvzredL._AC_SX679_.jpg" alt="Bosch Hogar Batidora mano">
-          <div class="rating-logo">
-            <div class="rating-score">9.1</div>
-            <p class="rating-label">Valoración</p>
-          </div>
-          <div class="product-details">
-            <h2>6. Bosch Hogar Batidora mano</h2>
-            <p class="reviews">⭐⭐⭐⭐⭐ (21700+ opiniones)</p>
-            <div class="offer-container">
-              <div class="offer-buttons">
-                <span class="amazon-badge">Disponible en Amazon</span><br>
-                <a href="https://www.amazon.es/Bosch-MS6CB6110-ErgoMixx-Inoxidable-Velocidades/dp/B07NQ72V2S?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=28SMTDN1N0JPI&dib=eyJ2IjoiMSJ9.6hJg1r9ulQXuS0W3vivlQjhdgAZVZDKX1FEwyk40Ku1g92Q5hSw9jNXrdYwKdaBK8VWBzHP1Lf_qQKm7aiqggtZekciZtEEl9pS1eQ8sUmgYCYqnFgm0i-Du-DvPxv71pBpRu4wM0oT3j4k4oY2zJEhAn2NPV-CKJSaOPbESsxefhZ3FsZXKdt0KdMt9fqMW5ybg8Fl7e58LUltKT4KyIr7X7pBPQBn3rEO6n-PYTjccW3RCkbk1qB7jBYUaezrcUkqsSt-3eGX_BDqeHttfw86alSvI8G3XgEJomwNcXpAS-0uQzcptv2lScj-U__o3rkGRWQ3IXO72Upd88-IX_QUGDvtFs-gzVAxlTsmgQLkY4PI6h4NzFAVIS2nkMiNrbwz7aXfji_F0Ipq2d5_aLC7Vtsv5YT774NCzKf7H4arGaHV7cKU-MllXa0scp4NR.9SdeAJYuJg5yMOzrusskQIeGnHVghvJAfzYBTkwO_iQ&dib_tag=se&keywords=batidora&qid=1741023599&sprefix=batidora%2Caps%2C121&sr=8-27&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=f880436d3612800d309af6e1d5dc76b4&language=es_ES&ref_=as_li_ss_tl" target="_blank">Ver precio</a>
-              </div>
-              <div class="extra-info">
-                <p><span class="checkmark">✔</span> Calidad</p>
-                <p><span class="checkmark">✔</span> Funcionalidad</p>
-                <p><span class="checkmark">✔</span> Potencia</p>
-              </div>
-            </div>
-            <div class="shipping-container">
-              <p class="shipping-text">Envío gratis</p>
-              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
-            </div>
-            <div class="more-info" style="display: none;">
-              <h3>Acerca de este producto</h3>
-              <p><strong>La batidora ErgoMixx Style ofrece una gran potencia para batir, mezclar o triturar gracias a su motor de 1000 W, 12 velocidades, función Turbo y con la opción de intercambiar accesorios fácilmente</p>
-              <p><strong>Las 4 cuchillas duraderas y afiladas QuattroBlade proporcionan una acción de corte de calidad para procesar incluso ingredientes grandes con buenos resultados en poco tiempo</p>
-              <p><strong>Cómoda, ligera, ergonómica y con diseño AntiSplash que evita las salpicaduras; la batidora ErgoMixx ofrece un agarre cómodo y antideslizante gracias al mango de tacto suave y a los grandes botones</p>
-              <p><strong>Fácil de usar por su sistema de montaje y desmontaje con un solo clic</p>
-              <p><strong>Contenido de envío: 1x Batidora de mano Bosch ErgoMixx Style, incluye vaso de mezclas graduado y con tapa, para ofrecerte una experiencia agradable en cocina y conservar tus mezclas cómodamente</p>
-            </div>
-          </div>
-        </div>
-        <!-- Producto 7 -->
-        <div class="product">
-        <img src="https://m.media-amazon.com/images/I/51f-BObpNKL._AC_US100_.jpg" alt="Cecotec Batidora de mano Power TitanBlack 1500">
-          <div class="rating-logo">
-            <div class="rating-score">9.1</div>
-            <p class="rating-label">Valoración</p>
-          </div>
-          <div class="product-details">
-            <h2>7. Cecotec Batidora de mano Power TitanBlack 1500</h2>
-            <p class="reviews">⭐⭐⭐⭐ (16600+ opiniones)</p>
-            <div class="offer-container">
-              <div class="offer-buttons">
-                <span class="amazon-badge">Disponible en Amazon</span><br>
-                <a href="https://www.amazon.es/Cecotec-TitanBlack-Cuchillas-recubrimiento-antisalpicaduras/dp/B08NXN6SB1?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=28SMTDN1N0JPI&dib=eyJ2IjoiMSJ9.6hJg1r9ulQXuS0W3vivlQjhdgAZVZDKX1FEwyk40Ku1g92Q5hSw9jNXrdYwKdaBK8VWBzHP1Lf_qQKm7aiqggtZekciZtEEl9pS1eQ8sUmgYCYqnFgm0i-Du-DvPxv71pBpRu4wM0oT3j4k4oY2zJEhAn2NPV-CKJSaOPbESsxefhZ3FsZXKdt0KdMt9fqMW5ybg8Fl7e58LUltKT4KyIr7X7pBPQBn3rEO6n-PYTjccW3RCkbk1qB7jBYUaezrcUkqsSt-3eGX_BDqeHttfw86alSvI8G3XgEJomwNcXpAS-0uQzcptv2lScj-U__o3rkGRWQ3IXO72Upd88-IX_QUGDvtFs-gzVAxlTsmgQLkY4PI6h4NzFAVIS2nkMiNrbwz7aXfji_F0Ipq2d5_aLC7Vtsv5YT774NCzKf7H4arGaHV7cKU-MllXa0scp4NR.9SdeAJYuJg5yMOzrusskQIeGnHVghvJAfzYBTkwO_iQ&dib_tag=se&keywords=batidora&qid=1741023599&sprefix=batidora%2Caps%2C121&sr=8-32&linkCode=ll1&tag=yocompro0e-21&linkId=4bc3c047e5f329e4227dd83ea9fe1ea3&language=es_ES&ref_=as_li_ss_tl"_blank">Ver precio</a>
-              </div>
-              <div class="extra-info">
-                <p><span class="checkmark">✔</span> Relación calidad-precio</p>
-                <p><span class="checkmark">✔</span> Potencia</p>
-                <p><span class="checkmark">✔</span> Diseño</p>
-              </div>
-            </div>
-            <div class="shipping-container">
-              <p class="shipping-text">Envío gratis</p>
-              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
-            </div>
-            <div class="more-info" style="display: none;">
-              <h3>Acerca de este producto</h3>
-              <p><strong>Batidora de mano con 1500 w de potencia máxima, perfecta para conseguir mezclas finas y homogéneas de forma rápida y sin esfuerzostecnología crossblades: cuchilla de 4 hojas con recubrimiento de titanio negro, que aumenta la dureza y el afilado para triturar hasta los alimentos más duros, logrando texturas suaves y uniformes</p>
-              <p><strong>Modelo xl con pie extralargo para un mayor alcance y comodidad. evita salpicaduras. campana con diseño antisalpicaduras que permite un uso más limpio al batir y triturar a la vez sin salpicar el área de trabajo</p>
-              <p><strong>Sistema fix plus que garantiza un fácil acople y desmontaje del pie y de los accesorios. selector de velocidad ajustable y función turbo para garantizar un triturado perfecto en cualquier receta. bate, pica y tritura todo tipo de alimentos en el menor tiempo, incluso los más duros como el hielo</p>
-              <p><strong>Diseño y botones ergonómicos que facilitan un uso prolongado sin desgaste. recubrimiento soft touch: mayor control con el agarre de tacto suave que se adapta a tu mano. fácil limpieza: accesorios aptos para el lavavajillas</p>
-              <p><strong>Luces led con indicador de funcionamiento. vaso medidor de 800 ml libre de bpa para poder preparar tus elaboraciones cómodamente. incluye tapa. varillas montaclaras: bate, mezcla y monta nata o huevos y prepara postres perfectos y mucho más</p>
-            </div>
-          </div>
-        </div>
-        <!-- Producto 8 -->
-        <div class="product">
-          <img src="https://m.media-amazon.com/images/I/519QYwuoZPL._AC_SX679_.jpg" alt="Cecotec Batidora de mano Power">
-          <div class="rating-logo">
-            <div class="rating-score">9.0</div>
-            <p class="rating-label">Valoración</p>
-          </div>
-          <div class="product-details">
-            <h2>8. Cecotec Batidora de mano Power</h2>
-            <p class="reviews">⭐⭐⭐⭐⭐ (17500+ opiniones)</p>
-            <div class="offer-container">
-              <div class="offer-buttons">
-                <span class="amazon-badge">Disponible en Amazon</span><br>
-                <a href="https://www.amazon.es/Cecotec-TitanBlack-PerfectCream-Cuchillas-antisalpicaduras/dp/B08LDPW2PR?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=28SMTDN1N0JPI&dib=eyJ2IjoiMSJ9.6hJg1r9ulQXuS0W3vivlQjhdgAZVZDKX1FEwyk40Ku1g92Q5hSw9jNXrdYwKdaBK8VWBzHP1Lf_qQKm7aiqggtZekciZtEEl9pS1eQ8sUmgYCYqnFgm0i-Du-DvPxv71pBpRu4wM0oT3j4k4oY2zJEhAn2NPV-CKJSaOPbESsxefhZ3FsZXKdt0KdMt9fqMW5ybg8Fl7e58LUltKT4KyIr7X7pBPQBn3rEO6n-PYTjccW3RCkbk1qB7jBYUaezrcUkqsSt-3eGX_BDqeHttfw86alSvI8G3XgEJomwNcXpAS-0uQzcptv2lScj-U__o3rkGRWQ3IXO72Upd88-IX_QUGDvtFs-gzVAxlTsmgQLkY4PI6h4NzFAVIS2nkMiNrbwz7aXfji_F0Ipq2d5_aLC7Vtsv5YT774NCzKf7H4arGaHV7cKU-MllXa0scp4NR.9SdeAJYuJg5yMOzrusskQIeGnHVghvJAfzYBTkwO_iQ&dib_tag=se&keywords=batidora&qid=1741023599&sprefix=batidora%2Caps%2C121&sr=8-2&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=fff99bd7cfc21d68a73b91bd1ba36246&language=es_ES&ref_=as_li_ss_tl"_blank">Ver precio</a>
-              </div>
-              <div class="extra-info">
-                <p><span class="checkmark">✔</span> Potencia</p>
-                <p><span class="checkmark">✔</span> Relación calidad-precio</p>
-                <p><span class="checkmark">✔</span> Accesorios</p>
-              </div>
-            </div>
-            <div class="shipping-container">
-              <p class="shipping-text">Envío gratis</p>
-              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
-            </div>
-            <div class="more-info" style="display: none;">
-              <h3>Acerca de este producto</h3>
-              <p><strong>Batidora de mano con 1200 W de potencia máxima, perfecta para conseguir mezclas finas y homogéneas de forma rápida y sin esfuerzos. Tecnología CrossBlades: cuchilla de 4 hojas con recubrimiento de titanio negro, que aumenta la dureza y el afilado para triturar hasta los alimentos más duros, logrando texturas suaves y uniformes.</p>
-              <p><strong>Modelo XL con pie extralargo para un mayor alcance y comodidad. Evita salpicaduras. Campana con diseño antisalpicaduras que permite un uso más limpio al batir y triturar a la vez sin salpicar el área de trabajo. Sistema Fix Plus que garantiza un fácil acople y desmontaje del pie y de los accesorios. Selector de velocidad ajustable y función Turbo para garantizar un triturado perfecto en cualquier receta.</p>
-              <p><strong>Bate, pica y tritura todo tipo de alimentos en el menor tiempo, incluso los más duros como el hielo. Diseño y botones ergonómicos que facilitan un uso prolongado sin desgaste. Recubrimiento Soft Touch: mayor control con el agarre de tacto suave que se adapta a tu mano. Fácil limpieza: accesorios aptos para el lavavajillas</p>
-              <p><strong>Luces LED con indicador de funcionamiento. Vaso medidor de 800 ml libre de BPA para poder preparar tus elaboraciones cómodamente. Incluye tapa. Varillas montaclaras: bate, mezcla y monta nata o huevos y prepara postres perfectos y mucho más</p>
-              <p><strong>Picadora de 600 ml especial para picar carne, verduras o frutos secos. Incluye cuchilla IceBlade, diseñada para picar hielo consiguiendo resultados perfectos en pocos segundos. Dos novedosas varillas batidoras perfectas para lograr bizcochos esponjosos. Accesorio pasapuré, obtén purés suaves y cremosos sin esfuerzos.</p>
-            </div>
-          </div>
-        </div>
-        <!-- Producto 9 -->
-        <div class="product">
-          <img src="https://m.media-amazon.com/images/I/71hPjFkNP6L._AC_SX679_.jpg" alt="Ufesa Solar Max Batidora de Mano">
-          <div class="rating-logo">
-            <div class="rating-score">8.8</div>
-            <p class="rating-label">Valoración</p>
-          </div>
-          <div class="product-details">
-            <h2>9. Ufesa Solar Max Batidora de Mano</h2>
-            <p class="reviews">⭐⭐⭐⭐ (17400+ opiniones)</p>
-            <div class="offer-container">
-              <div class="offer-buttons">
-                <span class="amazon-badge">Disponible en Amazon</span><br>
-                <a href="https://www.amazon.es/Ufesa-Velocidades-Inoxidable-Ergon%C3%B3mico-Salpicaduras/dp/B0DGLFNTDX?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=28SMTDN1N0JPI&dib=eyJ2IjoiMSJ9.6hJg1r9ulQXuS0W3vivlQjhdgAZVZDKX1FEwyk40Ku1g92Q5hSw9jNXrdYwKdaBK8VWBzHP1Lf_qQKm7aiqggtZekciZtEEl9pS1eQ8sUmgYCYqnFgm0i-Du-DvPxv71pBpRu4wM0oT3j4k4oY2zJEhAn2NPV-CKJSaOPbESsxefhZ3FsZXKdt0KdMt9fqMW5ybg8Fl7e58LUltKT4KyIr7X7pBPQBn3rEO6n-PYTjccW3RCkbk1qB7jBYUaezrcUkqsSt-3eGX_BDqeHttfw86alSvI8G3XgEJomwNcXpAS-0uQzcptv2lScj-U__o3rkGRWQ3IXO72Upd88-IX_QUGDvtFs-gzVAxlTsmgQLkY4PI6h4NzFAVIS2nkMiNrbwz7aXfji_F0Ipq2d5_aLC7Vtsv5YT774NCzKf7H4arGaHV7cKU-MllXa0scp4NR.9SdeAJYuJg5yMOzrusskQIeGnHVghvJAfzYBTkwO_iQ&dib_tag=se&keywords=batidora&qid=1741023599&sprefix=batidora%2Caps%2C121&sr=8-3&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=69d93bcadf69d715ee4db94a8117ba2c&language=es_ES&ref_=as_li_ss_tl"_blank">Ver precio</a>
-              </div>
-              <div class="extra-info">
-                <p><span class="checkmark">✔</span> Funcionamiento</p>
-                <p><span class="checkmark">✔</span> Calidad</p>
-                <p><span class="checkmark">✔</span> Potencia</p>
-              </div>
-            </div>
-            <div class="shipping-container">
-              <p class="shipping-text">Envío gratis</p>
-              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
-            </div>
-            <div class="more-info" style="display: none;">
-              <h3>Acerca de este producto</h3>
-              <p><strong>POTENCIA. Batidora de mano con motor de 1200W, ideal para mezclar, triturar y batir con rapidez y eficiencia una amplia gama de ingredientes.</p>
-              <p><strong>VELOCIDAD. 12 velocidades con función turbo para un impulso adicional, garantizando resultados perfectos en cada uso.</p>
-              <p><strong>CUCHILLAS. 4 cuchillas de acero inoxidable, asegura un corte rápido y uniforme, proporcionando una textura suave y homogénea en tus preparaciones.</p>
-            </div>
-          </div>
-        </div>
-        <!-- Producto 10 -->
-        <div class="product">
-          <img src="https://m.media-amazon.com/images/I/71nftfTv1GL._AC_SX679_.jpg" alt="Bonsenkitchen batidora de mano ">
-          <div class="rating-logo">
-            <div class="rating-score">8.5</div>
-            <p class="rating-label">Valoración</p>
-          </div>
-          <div class="product-details">
-            <h2>10. Bonsenkitchen batidora de mano </h2>
-            <p class="reviews">⭐⭐⭐⭐⭐ (13500+ opiniones)</p>
-            <div class="offer-container">
-              <div class="offer-buttons">
-                <span class="amazon-badge">Disponible en Amazon</span><br>
-                <a href="https://www.amazon.es/Bonsenkitchen-multifunci%C3%B3n-velocidades-ajustables-procesador/dp/B09SHN8F2Y?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=28SMTDN1N0JPI&dib=eyJ2IjoiMSJ9.6hJg1r9ulQXuS0W3vivlQjhdgAZVZDKX1FEwyk40Ku1g92Q5hSw9jNXrdYwKdaBK8VWBzHP1Lf_qQKm7aiqggtZekciZtEEl9pS1eQ8sUmgYCYqnFgm0i-Du-DvPxv71pBpRu4wM0oT3j4k4oY2zJEhAn2NPV-CKJSaOPbESsxefhZ3FsZXKdt0KdMt9fqMW5ybg8Fl7e58LUltKT4KyIr7X7pBPQBn3rEO6n-PYTjccW3RCkbk1qB7jBYUaezrcUkqsSt-3eGX_BDqeHttfw86alSvI8G3XgEJomwNcXpAS-0uQzcptv2lScj-U__o3rkGRWQ3IXO72Upd88-IX_QUGDvtFs-gzVAxlTsmgQLkY4PI6h4NzFAVIS2nkMiNrbwz7aXfji_F0Ipq2d5_aLC7Vtsv5YT774NCzKf7H4arGaHV7cKU-MllXa0scp4NR.9SdeAJYuJg5yMOzrusskQIeGnHVghvJAfzYBTkwO_iQ&dib_tag=se&keywords=batidora&qid=1741023599&sprefix=batidora%2Caps%2C121&sr=8-11&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=024191f166518f9e1e21db6c13d3df55&language=es_ES&ref_=as_li_ss_tl" target="_blank">Ver precio</a>
-              </div>
-              <div class="extra-info">
-                <p><span class="checkmark">✔</span> Funcionamiento</p>
-                <p><span class="checkmark">✔</span> Relación calidad-precio</p>
-                <p><span class="checkmark">✔</span> Potencia</p>
-              </div>
-            </div>
-            <div class="shipping-container">
-              <p class="shipping-text">Envío gratis</p>
-              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
-            </div>
-            <div class="more-info" style="display: none;">
-              <h3>Acerca de este producto</h3>
-              <p><strong>【Potencia suficiente】La batidora de mano Bonsenkitchen está equipada con un motor de alto rendimiento de 1000 W, que es duradero e ideal para picar de manera eficiente ingredientes duros como nueces y carne, lo que reduce el tiempo de preparación de alimentos.</p>
-              <p><strong>【Velocidad ajustable de 20 velocidades + botón Turbo】 Batidora de mano profesional de velocidad variable de 20 velocidades, puede ajustar fácilmente la velocidad y la potencia de acuerdo con los diferentes alimentos. El botón TURBO alcanza instantáneamente la potencia máxima para obtener los mejores resultados.</p>
-              <p><strong>【Fácil de usar y limpiar】El mango ergonómico proporciona un agarre antideslizante y cómodo para un fácil control del agitador. Bloqueo de botones, seguro y seguro. Los accesorios extraíbles se pueden limpiar después del enjuague (la unidad principal no se puede sumergir en agua)</p>
-              <p><strong>【Juego de licuadora 4 en 1】Incluye licuadora de inmersión de acero inoxidable, batidor, tazón picador de 500 ml, taza medidora de 700 ml. Hay muchas opciones disponibles para ti: sopas, salsas, mayonesas, purés, papillas y más</p>
-              <p><strong>【Garantía de seguridad y calidad】Todas las partes de la batidora de mano que están en contacto con alimentos están libres de BPA. Este producto ofrece 2 año de garantía gratuita. Si tiene alguna pregunta, contáctenos primero, le brindaremos una solución satisfactoria lo antes posible.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Sidebar que ahora se muestra a la derecha -->
-    <div class="sidebar">
-      <!-- Aquí puedes colocar el anuncio patrocinado que antes estaba en la izquierda -->
-      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3702060621408236" data-ad-slot="9876543210" data-ad-format="auto"></ins>
-      <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3702060621408236" data-ad-slot="1234567890" data-ad-format="auto"></ins>
-      <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-      <h3>Anuncios Patrocinados</h3>
-    </div>
-  </div>
-  <!-- Banner de cookies -->
-  <div id="cookie-banner" style="position: fixed; bottom: 0; background: #222; color: white; padding: 15px; width: 100%; text-align: center;">
-    Este sitio usa cookies para mejorar la experiencia. ¿Aceptas?
-    <button onclick="aceptarCookies(); document.getElementById('cookie-banner').style.display='none';">Aceptar</button>
-    <button onclick="rechazarCookies(); document.getElementById('cookie-banner').style.display='none';">Rechazar</button>
-  </div>
   <script>
+    function redirectToAmazon(url) {
+      window.open(url, '_blank');
+    }
     function toggleInfo(button) {
-      var info = button.parentElement.nextElementSibling;
+      var info = button.nextElementSibling;
       if (info.style.display === "none" || info.style.display === "") {
         info.style.display = "block";
         button.textContent = "Mostrar menos";
@@ -654,5 +151,56 @@
       }
     }
   </script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Top 10: Las Mejores Batidoras</h1>
+    <div class="product-list">
+      <script>
+        const products = [
+          { name: "Bosch - Batidora de mano, Ergomixx", rating: "9.9", reviews: "14200 Devoluciones GRATIS", image: "https://m.media-amazon.com/images/I/71TEsI+pD2L._AC_SX679_.jpg", url: "https://www.amazon.es/Bosch-MSM67170-ErgoMixx-regulador-velocidad/dp/B009W0L6KM?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=28SMTDN1N0JPI&dib=eyJ2IjoiMSJ9.6hJg1r9ulQXuS0W3vivlQjhdgAZVZDKX1FEwyk40Ku1g92Q5hSw9jNXrdYwKdaBKdy1OKWuNSm-jzP_TO0iD1tp6RAtDsfyvzRp4zSBtHCUaIqbWM1IBKXJs7qqWi8axpBpRu4wM0oT3j4k4oY2zJGqE8JxMyousa1zj67qLJgzM7Mq1iV1fITXr8pmYonkFhP5UJEKAMh1ApQ76Fcrn70lMvP7lr7BUD1sMDA6iLLUcW3RCkbk1qB7jBYUaezrcJG7PCMHZ_GRsuiu3OjKWTuRuYZ671-GqmHXoHN2I973gg405_h00gk5F7apo20iCD8H_Ccx1RCA5kPHBo5weLqrQTWksT0MDqZR8f1l91qmE_QoleGKuB-9-ySpUXOgyYhzLr7I1LPvSOoVWkTgpkRi_jX6ROTRzFoas5kQcB-D2IMt54YooSasJq8INlU8V.DxVcaSaJ96GKdUkDaQWOmC1s-iNUL50WdTadjWODKc8&dib_tag=se&keywords=batidora&qid=1741013361&sprefix=batidora%2Caps%2C121&sr=8-34&ufe=app_do%3Aamzn1.fos.0fd54328-1d46-4534-bd0f-16141b40bb5b&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=9069665b456e7962a40e710bf6415190&language=es_ES&ref_=as_li_ss_tl" },
+          { name: "Cecotec Batidora de Mano Katana 15", rating: "9.8", reviews: "16000+ Oferta -37 %", image: "https://m.media-amazon.com/images/I/51ys4UHU+9L._AC_SX679_.jpg", url: "https://www.amazon.es/Cecotec-Velocidades-antisalpicaduras-extralargo-accesorios/dp/B0BQ1T55FD?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=28SMTDN1N0JPI&dib=eyJ2IjoiMSJ9.6hJg1r9ulQXuS0W3vivlQjhdgAZVZDKX1FEwyk40Ku1g92Q5hSw9jNXrdYwKdaBK8VWBzHP1Lf_qQKm7aiqggtZekciZtEEl9pS1eQ8sUmgYCYqnFgm0i-Du-DvPxv71pBpRu4wM0oT3j4k4oY2zJEhAn2NPV-CKJSaOPbESsxefhZ3FsZXKdt0KdMt9fqMW5ybg8Fl7e58LUltKT4KyIr7X7pBPQBn3rEO6n-PYTjccW3RCkbk1qB7jBYUaezrcUkqsSt-3eGX_BDqeHttfw86alSvI8G3XgEJomwNcXpAS-0uQzcptv2lScj-U__o3rkGRWQ3IXO72Upd88-IX_QUGDvtFs-gzVAxlTsmgQLkY4PI6h4NzFAVIS2nkMiNrbwz7aXfji_F0Ipq2d5_aLC7Vtsv5YT774NCzKf7H4arGaHV7cKU-MllXa0scp4NR.9SdeAJYuJg5yMOzrusskQIeGnHVghvJAfzYBTkwO_iQ&dib_tag=se&keywords=batidora&qid=1741023080&sprefix=batidora%2Caps%2C121&sr=8-25&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=863e66234b2d0d89ac00b972b30108a5&language=es_ES&ref_=as_li_ss_tl" },
+          { name: "Moulinex QuickChef DD6578 Batidora", rating: "9.7", reviews: "14200+ Oferta -18 %", image: "https://m.media-amazon.com/images/I/51do-MIXZ7L._AC_SX679_.jpg", url: "https://www.amazon.es/Moulinex-599392031-batidora-varilla-quickcheff/dp/B0761X9C7L?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=28SMTDN1N0JPI&dib=eyJ2IjoiMSJ9.6hJg1r9ulQXuS0W3vivlQjhdgAZVZDKX1FEwyk40Ku1g92Q5hSw9jNXrdYwKdaBK8VWBzHP1Lf_qQKm7aiqggtZekciZtEEl9pS1eQ8sUmgYCYqnFgm0i-Du-DvPxv71pBpRu4wM0oT3j4k4oY2zJEhAn2NPV-CKJSaOPbESsxefhZ3FsZXKdt0KdMt9fqMW5ybg8Fl7e58LUltKT4KyIr7X7pBPQBn3rEO6n-PYTjccW3RCkbk1qB7jBYUaezrcUkqsSt-3eGX_BDqeHttfw86alSvI8G3XgEJomwNcXpAS-0uQzcptv2lScj-U__o3rkGRWQ3IXO72Upd88-IX_QUGDvtFs-gzVAxlTsmgQLkY4PI6h4NzFAVIS2nkMiNrbwz7aXfji_F0Ipq2d5_aLC7Vtsv5YT774NCzKf7H4arGaHV7cKU-MllXa0scp4NR.9SdeAJYuJg5yMOzrusskQIeGnHVghvJAfzYBTkwO_iQ&dib_tag=se&keywords=batidora&qid=1741023599&sprefix=batidora%2Caps%2C121&sr=8-1&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=09dc32eed0bb8ee6a951784385fbcd08&language=es_ES&ref_=as_li_ss_tl" },
+          { name: "Taurus BAPI 1200 Rocket - Batidora", rating: "9.6", reviews: "14000+ Oferta flash -44 %", image: "https://m.media-amazon.com/images/I/51yR-qFNubL._AC_SX679_.jpg", url: "https://www.amazon.es/Taurus-1200-Rocket-Complet-Inoxidable/dp/B09HGPJBWW?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=28SMTDN1N0JPI&dib=eyJ2IjoiMSJ9.6hJg1r9ulQXuS0W3vivlQjhdgAZVZDKX1FEwyk40Ku1g92Q5hSw9jNXrdYwKdaBK8VWBzHP1Lf_qQKm7aiqggtZekciZtEEl9pS1eQ8sUmgYCYqnFgm0i-Du-DvPxv71pBpRu4wM0oT3j4k4oY2zJEhAn2NPV-CKJSaOPbESsxefhZ3FsZXKdt0KdMt9fqMW5ybg8Fl7e58LUltKT4KyIr7X7pBPQBn3rEO6n-PYTjccW3RCkbk1qB7jBYUaezrcUkqsSt-3eGX_BDqeHttfw86alSvI8G3XgEJomwNcXpAS-0uQzcptv2lScj-U__o3rkGRWQ3IXO72Upd88-IX_QUGDvtFs-gzVAxlTsmgQLkY4PI6h4NzFAVIS2nkMiNrbwz7aXfji_F0Ipq2d5_aLC7Vtsv5YT774NCzKf7H4arGaHV7cKU-MllXa0scp4NR.9SdeAJYuJg5yMOzrusskQIeGnHVghvJAfzYBTkwO_iQ&dib_tag=se&keywords=batidora&qid=1741023599&sprefix=batidora%2Caps%2C121&sr=8-9&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=72ddf752fbadb5d1a4d2ee71b53a3332&language=es_ES&ref_=as_li_ss_tl" },
+          { name: "Braun Hogar Batidora de mano", rating: "9.5", reviews: "23900+ Oferta -9 % ", image: "https://m.media-amazon.com/images/I/51yC5vkwqZL._AC_SX679_.jpg", url: "https://www.amazon.es/Braun-Minipimer-5220-anti-salpicuduras-mini-picadora/dp/B086HZWBLP?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=28SMTDN1N0JPI&dib=eyJ2IjoiMSJ9.6hJg1r9ulQXuS0W3vivlQjhdgAZVZDKX1FEwyk40Ku1g92Q5hSw9jNXrdYwKdaBK8VWBzHP1Lf_qQKm7aiqggtZekciZtEEl9pS1eQ8sUmgYCYqnFgm0i-Du-DvPxv71pBpRu4wM0oT3j4k4oY2zJEhAn2NPV-CKJSaOPbESsxefhZ3FsZXKdt0KdMt9fqMW5ybg8Fl7e58LUltKT4KyIr7X7pBPQBn3rEO6n-PYTjccW3RCkbk1qB7jBYUaezrcUkqsSt-3eGX_BDqeHttfw86alSvI8G3XgEJomwNcXpAS-0uQzcptv2lScj-U__o3rkGRWQ3IXO72Upd88-IX_QUGDvtFs-gzVAxlTsmgQLkY4PI6h4NzFAVIS2nkMiNrbwz7aXfji_F0Ipq2d5_aLC7Vtsv5YT774NCzKf7H4arGaHV7cKU-MllXa0scp4NR.9SdeAJYuJg5yMOzrusskQIeGnHVghvJAfzYBTkwO_iQ&dib_tag=se&keywords=batidora&qid=1741023599&sprefix=batidora%2Caps%2C121&sr=8-22&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=5fc1f3a707fd1a689e1c5967b2d05438&language=es_ES&ref_=as_li_ss_tl" },
+          { name: "Bosch Hogar Batidora mano", rating: "9.5", reviews: "13800+ Oferta flash -29 %", image: "https://m.media-amazon.com/images/I/51pwKvzredL._AC_SX679_.jpg", url: "https://www.amazon.es/Bosch-MS6CB6110-ErgoMixx-Inoxidable-Velocidades/dp/B07NQ72V2S?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=28SMTDN1N0JPI&dib=eyJ2IjoiMSJ9.6hJg1r9ulQXuS0W3vivlQjhdgAZVZDKX1FEwyk40Ku1g92Q5hSw9jNXrdYwKdaBK8VWBzHP1Lf_qQKm7aiqggtZekciZtEEl9pS1eQ8sUmgYCYqnFgm0i-Du-DvPxv71pBpRu4wM0oT3j4k4oY2zJEhAn2NPV-CKJSaOPbESsxefhZ3FsZXKdt0KdMt9fqMW5ybg8Fl7e58LUltKT4KyIr7X7pBPQBn3rEO6n-PYTjccW3RCkbk1qB7jBYUaezrcUkqsSt-3eGX_BDqeHttfw86alSvI8G3XgEJomwNcXpAS-0uQzcptv2lScj-U__o3rkGRWQ3IXO72Upd88-IX_QUGDvtFs-gzVAxlTsmgQLkY4PI6h4NzFAVIS2nkMiNrbwz7aXfji_F0Ipq2d5_aLC7Vtsv5YT774NCzKf7H4arGaHV7cKU-MllXa0scp4NR.9SdeAJYuJg5yMOzrusskQIeGnHVghvJAfzYBTkwO_iQ&dib_tag=se&keywords=batidora&qid=1741023599&sprefix=batidora%2Caps%2C121&sr=8-27&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=f410ca84dbc0baec8cb140f6b03437d0&language=es_ES&ref_=as_li_ss_tl" },
+          { name: "Power TitanBlack 1500 XL", rating: "9.4", reviews: "10700+ Oferta -15 %", image: "https://m.media-amazon.com/images/I/51-qjajriuL._AC_SX679_.jpg", url: "https://www.amazon.es/Cecotec-TitanBlack-Cuchillas-recubrimiento-antisalpicaduras/dp/B08NXN6SB1?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=28SMTDN1N0JPI&dib=eyJ2IjoiMSJ9.6hJg1r9ulQXuS0W3vivlQjhdgAZVZDKX1FEwyk40Ku1g92Q5hSw9jNXrdYwKdaBK8VWBzHP1Lf_qQKm7aiqggtZekciZtEEl9pS1eQ8sUmgYCYqnFgm0i-Du-DvPxv71pBpRu4wM0oT3j4k4oY2zJEhAn2NPV-CKJSaOPbESsxefhZ3FsZXKdt0KdMt9fqMW5ybg8Fl7e58LUltKT4KyIr7X7pBPQBn3rEO6n-PYTjccW3RCkbk1qB7jBYUaezrcUkqsSt-3eGX_BDqeHttfw86alSvI8G3XgEJomwNcXpAS-0uQzcptv2lScj-U__o3rkGRWQ3IXO72Upd88-IX_QUGDvtFs-gzVAxlTsmgQLkY4PI6h4NzFAVIS2nkMiNrbwz7aXfji_F0Ipq2d5_aLC7Vtsv5YT774NCzKf7H4arGaHV7cKU-MllXa0scp4NR.9SdeAJYuJg5yMOzrusskQIeGnHVghvJAfzYBTkwO_iQ&dib_tag=se&keywords=batidora&qid=1741023599&sprefix=batidora%2Caps%2C121&sr=8-32&linkCode=ll1&tag=yocompro0e-21&linkId=8b4d1502d8f2d0d180ab99d3ba556a59&language=es_ES&ref_=as_li_ss_tl" },
+          { name: "Batidora de mano Power TitanBlack", rating: "9.3", reviews: "15600+ Oferta -29%", image: "https://m.media-amazon.com/images/I/519QYwuoZPL._AC_SX679_.jpg", url: "https://www.amazon.es/Cecotec-TitanBlack-PerfectCream-Cuchillas-antisalpicaduras/dp/B08LDPW2PR?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=28SMTDN1N0JPI&dib=eyJ2IjoiMSJ9.6hJg1r9ulQXuS0W3vivlQjhdgAZVZDKX1FEwyk40Ku1g92Q5hSw9jNXrdYwKdaBK8VWBzHP1Lf_qQKm7aiqggtZekciZtEEl9pS1eQ8sUmgYCYqnFgm0i-Du-DvPxv71pBpRu4wM0oT3j4k4oY2zJEhAn2NPV-CKJSaOPbESsxefhZ3FsZXKdt0KdMt9fqMW5ybg8Fl7e58LUltKT4KyIr7X7pBPQBn3rEO6n-PYTjccW3RCkbk1qB7jBYUaezrcUkqsSt-3eGX_BDqeHttfw86alSvI8G3XgEJomwNcXpAS-0uQzcptv2lScj-U__o3rkGRWQ3IXO72Upd88-IX_QUGDvtFs-gzVAxlTsmgQLkY4PI6h4NzFAVIS2nkMiNrbwz7aXfji_F0Ipq2d5_aLC7Vtsv5YT774NCzKf7H4arGaHV7cKU-MllXa0scp4NR.9SdeAJYuJg5yMOzrusskQIeGnHVghvJAfzYBTkwO_iQ&dib_tag=se&keywords=batidora&qid=1741023599&sprefix=batidora%2Caps%2C121&sr=8-2&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=1d6beda9eac603e1fe0805e3869340a5&language=es_ES&ref_=as_li_ss_tl" },
+          { name: "Ufesa Solar Max Batidora de Mano", rating: "9.0", reviews: "17400+ Oferta flash -18 %", image: "https://m.media-amazon.com/images/I/71hPjFkNP6L._AC_SX679_.jpg", url: "https://www.amazon.es/Ufesa-Velocidades-Inoxidable-Ergon%C3%B3mico-Salpicaduras/dp/B0DGLFNTDX?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=28SMTDN1N0JPI&dib=eyJ2IjoiMSJ9.6hJg1r9ulQXuS0W3vivlQjhdgAZVZDKX1FEwyk40Ku1g92Q5hSw9jNXrdYwKdaBK8VWBzHP1Lf_qQKm7aiqggtZekciZtEEl9pS1eQ8sUmgYCYqnFgm0i-Du-DvPxv71pBpRu4wM0oT3j4k4oY2zJEhAn2NPV-CKJSaOPbESsxefhZ3FsZXKdt0KdMt9fqMW5ybg8Fl7e58LUltKT4KyIr7X7pBPQBn3rEO6n-PYTjccW3RCkbk1qB7jBYUaezrcUkqsSt-3eGX_BDqeHttfw86alSvI8G3XgEJomwNcXpAS-0uQzcptv2lScj-U__o3rkGRWQ3IXO72Upd88-IX_QUGDvtFs-gzVAxlTsmgQLkY4PI6h4NzFAVIS2nkMiNrbwz7aXfji_F0Ipq2d5_aLC7Vtsv5YT774NCzKf7H4arGaHV7cKU-MllXa0scp4NR.9SdeAJYuJg5yMOzrusskQIeGnHVghvJAfzYBTkwO_iQ&dib_tag=se&keywords=batidora&qid=1741023599&sprefix=batidora%2Caps%2C121&sr=8-3&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=90a72b7a4cb8a52ab0604e5dcd482908&language=es_ES&ref_=as_li_ss_tl" },
+          { name: "Bonsenkitchen batidora de mano", rating: "8.8", reviews: "13300+ Oferta -25 % ", image: "https://m.media-amazon.com/images/I/71nftfTv1GL._AC_SX679_.jpg", url: "https://www.amazon.es/Bonsenkitchen-multifunci%C3%B3n-velocidades-ajustables-procesador/dp/B09SHN8F2Y?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=28SMTDN1N0JPI&dib=eyJ2IjoiMSJ9.6hJg1r9ulQXuS0W3vivlQjhdgAZVZDKX1FEwyk40Ku1g92Q5hSw9jNXrdYwKdaBK8VWBzHP1Lf_qQKm7aiqggtZekciZtEEl9pS1eQ8sUmgYCYqnFgm0i-Du-DvPxv71pBpRu4wM0oT3j4k4oY2zJEhAn2NPV-CKJSaOPbESsxefhZ3FsZXKdt0KdMt9fqMW5ybg8Fl7e58LUltKT4KyIr7X7pBPQBn3rEO6n-PYTjccW3RCkbk1qB7jBYUaezrcUkqsSt-3eGX_BDqeHttfw86alSvI8G3XgEJomwNcXpAS-0uQzcptv2lScj-U__o3rkGRWQ3IXO72Upd88-IX_QUGDvtFs-gzVAxlTsmgQLkY4PI6h4NzFAVIS2nkMiNrbwz7aXfji_F0Ipq2d5_aLC7Vtsv5YT774NCzKf7H4arGaHV7cKU-MllXa0scp4NR.9SdeAJYuJg5yMOzrusskQIeGnHVghvJAfzYBTkwO_iQ&dib_tag=se&keywords=batidora&qid=1741023599&sprefix=batidora%2Caps%2C121&sr=8-11&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=a9f98e91d32ad9aac941d327c738dba0&language=es_ES&ref_=as_li_ss_tl" }
+        ];
+
+        products.forEach((product, index) => {
+          document.write(`
+            <div class="product" onclick="redirectToAmazon('${product.url}');">
+              <span class="rating-score">${product.rating}</span>
+              <img src="${product.image}" alt="Freidora ${index + 1}">
+              <div class="product-details">
+                <h2>${index + 1}. ${product.name}</h2>
+                <p>⭐⭐⭐⭐⭐ (${product.reviews})</p>
+                <a href="${product.url}" target="_blank">Ver precio</a>
+                <br>
+                <div style='display: flex; align-items: center; gap: 10px;'>
+                  <img src='https://s1.qwant.com/thumbr/474x158/9/7/f63c3ffb13724faceb8e31aa326595a97728bf158aeb13ffc95db5f9fa7625/th.jpg?u=https%3A%2F%2Ftse.mm.bing.net%2Fth%3Fid%3DOIP.B1P05zmy1Y_JxrZZilY6kwHaCe%26pid%3DApi&q=0&b=1&p=0&a=0' style='width: 60px; height: auto; display: block; border: 1px solid #ddd; padding: 5px; border-radius: 5px; background-color: white;'>
+                  <button class='toggle-info' onclick='toggleInfo(this)'>Mostrar más</button>
+                </div>
+                <div class="more-info">
+                  <p>Freidora de aire con excelente desempeño y calidad.</p>
+                </div>
+              </div>
+            </div>
+          `);
+        });
+      </script>
+    </div>
+   </div>
+  <!-- Banner de cookies -->
+  <div id="cookie-banner" style="position: fixed; bottom: 0; background: #222; color: white; padding: 15px; width: 100%; text-align: center;">
+    Este sitio usa cookies para mejorar la experiencia. ¿Aceptas?
+    <button onclick="aceptarCookies(); document.getElementById('cookie-banner').style.display='none';">Aceptar</button>
+    <button onclick="rechazarCookies(); document.getElementById('cookie-banner').style.display='none';">Rechazar</button>
+  </div>
 </body>
 </html>
+
