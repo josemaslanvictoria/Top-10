@@ -44,56 +44,19 @@
   
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Top 10: Las Mejores Mopas a vapor</title>
+  <title>Top 10: Las Mejores Mopas a Vapor</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 20px;
       text-align: center;
-      display: flex;
-      justify-content: center;
+      background-color: #f5f5f5;
     }
     .container {
       max-width: 1200px;
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
-      gap: 40px;
-    }
-    /* Ahora el contenido aparece primero y el sidebar a la derecha */
-    .content {
-      flex: 3;
-      position: relative;
-    }
-    .sidebar {
-      flex: 1;
-      padding: 20px;
-      background-color: #f4f4f4;
-      text-align: center;
-      /* Eliminamos el margen a la izquierda para evitar que quede en la izquierda */
-      margin-left: 0;
-    }
-    h1 {
-      color: #333;
-      font-size: 32px;
-      text-decoration: underline;
-    }
-    p {
-      font-size: 20px;
-      color: #666;
-      max-width: 800px;
-      margin: 0 auto 20px auto;
-      text-align: justify;
-    }
-    .highlight {
-      font-weight: bold;
-      text-decoration: underline;
-      color: black;
-    }
-    .reviews {
-      font-size: 16px;
-      margin: 0 0 10px 0;
+      margin: auto;
+      padding: 0 10px;
     }
     .product-list {
       display: flex;
@@ -103,554 +66,82 @@
       margin-top: 20px;
     }
     .product {
-      width: 100%;
-      max-width: 900px;
       border: 1px solid #ddd;
       border-radius: 10px;
-      padding: 30px;
+      padding: 20px;
+      width: 100%;
+      max-width: 600px;
       text-align: left;
-      box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
       background-color: #fff;
       display: flex;
       align-items: center;
-      gap: 30px;
+      gap: 20px;
       position: relative;
+      cursor: pointer;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease-in-out;
+    }
+    .product:hover {
+      transform: scale(1.02);
     }
     .product img {
-      width: 170px;
+      width: 100px;
       height: auto;
       border-radius: 5px;
     }
     .product-details {
       flex: 1;
     }
-    /* Bloque de oferta para productos (con extra-info lateral) */
-    .offer-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 10px;
-    }
-    .offer-buttons {
-      /* Aquí se agrupan el badge y el enlace */
-    }
-    .extra-info {
-      text-align: right;
-    }
-    .extra-info p {
-      margin: 2px 0;
-      font-size: 16px;
-    }
-    .checkmark {
-      color: green;
-      font-weight: bold;
-      margin-right: 5px;
-    }
     .product a {
       display: inline-block;
       margin-top: 10px;
-      padding: 25px;
+      padding: 10px 15px;
       background-color: #00CC00;
       color: white;
       text-decoration: none;
       border-radius: 5px;
       font-weight: bold;
-      font-size: 24px;
     }
     .product a:hover {
       background-color: #008000;
     }
-    .amazon-badge {
-      background-color: #ff9900;
-      color: white;
-      padding: 5px 8px;
+    .toggle-info {
+      margin-top: 10px;
+      padding: 8px 12px;
+      background-color: #ddd;
+      border: none;
       border-radius: 5px;
-      font-weight: bold;
-      display: inline-block;
-      margin-top: 13px;
-      font-size: 10px;
+      cursor: pointer;
     }
-    .rating-logo {
+    .toggle-info:hover {
+      background-color: #bbb;
+    }
+    .more-info {
+      display: none;
+      margin-top: 10px;
+    }
+    .rating-score {
       position: absolute;
       top: 10px;
       right: 10px;
-      text-align: center;
-    }
-    .rating-score {
       width: 50px;
       height: 50px;
-      border: 5px solid red;
       border-radius: 50%;
-      line-height: 50px;
-      font-size: 22px;
-      color: black;
-      font-weight: bold;
-      margin: 0 auto;
       background-color: white;
-    }
-    .rating-label {
-      font-size: 12px;
-      color: #333;
-      margin-top: 5px;
-    }
-    /* Contenedor para envío gratis y botón desplegable */
-    .shipping-container {
-      display: flex;
-      align-items: center;
-      margin-top: 10px;
-      gap: 10px;
-    }
-    .shipping-text {
-      font-size: 20px;
-      color: #FF0000;
+      border: 3px solid red;
+      text-align: center;
+      line-height: 50px;
       font-weight: bold;
-      margin: 0;
-    }
-    .toggle-info {
-      background-color: #ddd;
-      border: none;
-      padding: 10px 15px;
-      cursor: pointer;
-      border-radius: 5px;
-      font-size: 16px;
-      width: 150px;
-    }
-    .toggle-info:hover {
-      background-color: #ccc;
-    }
-    .more-info {
-      margin-top: 5px;
-      background-color: #f9f9f9;
-      padding: 5px;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      font-size: 14px;
-      text-align: left;
-    }
-    /* Media Query para dispositivos móviles */
-    @media (max-width: 768px) {
-      .container {
-        flex-direction: column;
-        gap: 20px;
-      }
-      /* En móvil, el sidebar se mostrará debajo */
-      .sidebar {
-        width: 100%;
-      }
-      .content {
-        width: 100%;
-      }
-      .product {
-        flex-direction: column;
-        align-items: center;
-      }
-      .product img {
-        width: 100%;
-        max-width: 300px;
-        margin: 0 0 15px 0;
-      }
-      .product-details {
-        text-align: center;
-      }
-      .shipping-container {
-        flex-direction: column;
-        gap: 10px;
-      }
-      .offer-container {
-        flex-direction: column;
-        align-items: center;
-      }
-      .extra-info {
-        margin-top: 10px;
-      }
+      color: black;
+      box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
     }
   </style>
-</head>
-<body>
-  <div class="container">
-    <!-- El contenido aparece primero -->
-    <div class="content">
-      <h1>Top 10: Las Mejores Mopas a vapor</h1>
-      <p>Las <span class="highlight">Mopas a vapor</span> son una excelente opción para <span class="highlight">limpiar</span>, de manera eficiente y sin productos químicos agresivos, <span class="highlight"> ya que utilizan el poder del vapor para desinfectar y eliminar la suciedad.</span> Son ideales para quienes buscan una limpieza profunda y segura en su hogar. Además, <span class="highlight">son fáciles de usar y mantener, ayudando a mantener un ambiente más higiénico.</span> En este listado hemos seleccionado  <span class="highlight">las mejores opciones del mercado,</span>basándonos en calidad, valoraciones y popularidad.  <span class="highlight">¡Haz que la limpieza de tu hogar sea más fácil</span> y efectiva con una mopa de vapor!<span class="highlight">Pide ya tu Mopa a vapor.</span>!</p>
-      <p class="amazon-notice">Compra este producto en Amazon a través de este enlace</p>
-      
-      <div class="product-list">
-        <!-- Producto 1 -->
-        <div class="product">
-          <img src="https://m.media-amazon.com/images/I/71QutkthltL._AC_SX679_.jpg" alt="Rowenta X-Clean 4, Fregona Eléctrica">
-          <div class="rating-logo">
-            <div class="rating-score">9.9</div>
-            <p class="rating-label">Valoración</p>
-          </div>
-          <div class="product-details">
-            <h2>1. Rowenta X-Clean 4, Fregona Eléctrica</h2>
-            <p class="reviews">⭐⭐⭐⭐⭐ (26000+ opiniones)</p>
-            <div class="offer-container">
-              <div class="offer-buttons">
-                <span class="https://amzn.to/3XiMJ9b">Disponible en Amazon</span><br>
-                <a href="https://www.amazon.es/Rowenta-El%C3%A9ctrica-Pantalla-Inteligente-Autom%C3%A1tico/dp/B0DGMFX35D?crid=14SW03KAGTST2&dib=eyJ2IjoiMSJ9.bLZwz7WZJCPlw5XlhQ0aAJBLMxLEqBC2s_BuR1S-hyQhk-qeoPprbPASMIX-ZVKW3zgpIMAozWwQXXaEQQZ_C_0xRTXA2E_57008r6Q4unCrwyUunVpHQ46XaQoMzCBhg4TycLu2jVgnwLclm5dc6_7AkmsQvJlIOBBTklVoRYKmhDDm3CtxPf5PzCwDqmr26HAnHsUY8C6KLKzjwAqfPqigLSWeIWt7pi1RxunX73K8hfo7ABLMTvXParkFRNTOzT3fZxOD4yrSXDTizyjk-T8CJ1Egi447-0R9jEGpHhdZxrndRcl06NsuM-By4uBtfXf9EgmJpWxp7QTSFoDKKvan9RN7afXIn-YPm2esYiM.XCPmxtoiFW4Gcze2PvzKzuGHX4o33PHjLqsallR66CM&dib_tag=se&keywords=mopa%2Belectrica&qid=1740767973&s=kitchen&sprefix=mopa%2Ckitchen%2C138&sr=1-5&ufe=app_do%3Aamzn1.fos.0fd54328-1d46-4534-bd0f-16141b40bb5b&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=d51530c5d40f6a0eb9aa4b31ccf6a8c9&language=es_ES&ref_=as_li_ss_tl" target="_blank">Ver precio</a>
-              </div>
-              <div class="extra-info">
-                <p><span class="checkmark">✔</span> Limpieza</p>
-                <p><span class="checkmark">✔</span> Calidad</p>
-                <p><span class="checkmark">✔</span> Facilidad de uso</p>
-              </div>
-            </div>
-            <div class="shipping-container">
-              <p class="shipping-text">Envío gratis</p>
-              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
-            </div>
-            <div class="more-info" style="display: none;">
-              <h3>Acerca de este producto</h3>
-              <p><strong>LIMPIEZA 2 EN 1: fregona eléctrica inalámbrica para limpieza seca y húmeda que permite ganar tiempo aspirando y fregando en una sola pasada</p>
-              <p><strong>DETECCIÓN INTELIGENTE DE LA SUCIEDAD: detección automática de la suciedad con indicadores de color en una pantalla led </p>
-              <p><strong>GRAN AUTONOMÍA: limpieza sin cables que marca la diferencia, con hasta 50 min de autonomía para cubrir hasta 350 m² dependiendo del mobiliario de la casa</p>
-              <p><strong>LIMPIEZA SIN ESFUERZO: diseño moderno, ligero, tan solo 1.1 kg en tu mano, inteligente, con un sistema de rodillos ayudados por las ruedas, siendo necesario utilizar solo un 25 % del esfuerzo habitual.</p>
-              <p><strong>SISTEMA DE AUTOLIMPIEZA: activa la función con tan solo pulsar un botón y, una vez lavado el rodillo, solo tienes que dejarlo previamente secar para que esté listo para la siguiente sesión de limpieza mientras se carga en la base
-</p>
-            </div>
-          </div>
-        </div>
-        <!-- Producto 2 -->
-        <div class="product">
-          <img src="https://m.media-amazon.com/images/I/51XfXPFTP2L._AC_SX679_.jpg" alt="Cecotec Fregona Eléctrica FreeGo Wash">
-          <div class="rating-logo">
-            <div class="rating-score">9.8</div>
-            <p class="rating-label">Valoración</p>
-          </div>
-          <div class="product-details">
-            <h2>2. Cecotec Fregona Eléctrica FreeGo Wash</h2>
-            <p class="reviews">⭐⭐⭐⭐⭐ (24200+ opiniones)</p>
-            <div class="offer-container">
-              <div class="offer-buttons">
-                <span class="amazon-badge">Disponible en Amazon</span><br>
-                <a href="https://www.amazon.es/Cecotec-El%C3%A9ctrica-Autonom%C3%ADa-Pulverizador-Autolimpieza/dp/B0BQ133Q9N?crid=14SW03KAGTST2&dib=eyJ2IjoiMSJ9.bLZwz7WZJCPlw5XlhQ0aAJBLMxLEqBC2s_BuR1S-hyQhk-qeoPprbPASMIX-ZVKW3zgpIMAozWwQXXaEQQZ_C_0xRTXA2E_57008r6Q4unCrwyUunVpHQ46XaQoMzCBhg4TycLu2jVgnwLclm5dc6_TEQL9Qc2bflSXcGNNQOx_EM9oJr34E_DvvFu7XOGIJ8o5HsjN_WUFQRrPQdyQ5E6vxxtGII8hJYT-mna_lZguLdxUWsPDaLCqEcpJXEpfVNsmT0j6pmXkhUYlfQqYFBG0IerKTTUVaFrBvFvW0jWtwIo6vpxjug22pViYo5qhhXKq0dg283TXM48YD2yMlxGhIpUPUVIh8_nzQ-xjFrCs.Dkf8i6zlKotglgJGPHJfTHxulmAswWgz5LctOkGJ33Y&dib_tag=se&keywords=mopa%2Belectrica&qid=1740770036&s=kitchen&sprefix=mopa%2Ckitchen%2C138&sr=1-4&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=85c9507a2e61efa487407b7eb22fd474&language=es_ES&ref_=as_li_ss_tl" target="_blank">Ver precio</a>
-              </div>
-              <div class="extra-info">
-                <p><span class="checkmark">✔</span> Funcionamiento</p>
-                <p><span class="checkmark">✔</span> Rendimiento</p>
-                <p><span class="checkmark">✔</span> Comodidad</p>
-              </div>
-            </div>
-            <div class="shipping-container">
-              <p class="shipping-text">Envío gratis</p>
-              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
-            </div>
-            <div class="more-info" style="display: none;">
-              <h3>Acerca de este producto</h3>
-              <p><strong>Friega en profundidad sin esfuerzo gracias a sus 60 W de potencia y a su rodillo Wet Jalisco, que desincrusta la suciedad más difícil de una pasada.</p>
-              <p><strong>Gracias a su potente batería de 14,8 V y 2000 mAh consigue una autonomía de hasta 40 minutos, para que puedas limpiar todo tu hogar sin necesidad de volver a recargarlo. Cuenta con un tiempo de carga de hasta 4 horas</p>
-              <p><strong>Spray delantero: este sistema de pulverización de agua en el cabezal actúa directamente sobre las manchas más complicadas, para humedecerlas antes de pasar sobre ellas para así poder eliminarlas sin esfuerzo.</p>
-              <p><strong>Tanque de agua: su diseño incorpora un depósito de agua limpia de hasta 400 ml y otro de agua sucia de hasta 250 ml para que puedas limpiar el suelo de tu casa sin necesidad de ir cambiando el agua ni de cargar con el cubo de un lado a otro.</p>
-              <p><strong>Sistema de posición parking para poder guardar cómodamente la fregona eléctrica en cualquier lugar de tu casa. Incluye una base de autolimpieza en la que podrás limpiar los cepillos con facilidad. </p>
-            </div>
-          </div>
-        </div>
-        <!-- Producto 3 -->
-        <div class="product">
-          <img src="https://m.media-amazon.com/images/I/31TBiC1wvuL._AC_SX679_.jpg" alt="VILEDA-Steam PLUS-Mopa a vapor">
-          <div class="rating-logo">
-            <div class="rating-score">9.6</div>
-            <p class="rating-label">Valoración</p>
-          </div>
-          <div class="product-details">
-            <h2>3. VILEDA-Steam PLUS-Mopa a vapor</h2>
-            <p class="reviews">⭐⭐⭐⭐ (17000+ opiniones)</p>
-            <div class="offer-container">
-              <div class="offer-buttons">
-                <span class="amazon-badge">Disponible en Amazon</span><br>
-                <a href="https://www.amazon.es/Vileda-Steam-Limpiador-vapor-Grande/dp/B09HL69NY8?crid=14SW03KAGTST2&dib=eyJ2IjoiMSJ9.bLZwz7WZJCPlw5XlhQ0aAJBLMxLEqBC2s_BuR1S-hyQhk-qeoPprbPASMIX-ZVKW3zgpIMAozWwQXXaEQQZ_C_0xRTXA2E_57008r6Q4unCrwyUunVpHQ46XaQoMzCBhg4TycLu2jVgnwLclm5dc6_TEQL9Qc2bflSXcGNNQOx_EM9oJr34E_DvvFu7XOGIJ8o5HsjN_WUFQRrPQdyQ5E6vxxtGII8hJYT-mna_lZguLdxUWsPDaLCqEcpJXEpfVNsmT0j6pmXkhUYlfQqYFBG0IerKTTUVaFrBvFvW0jWtwIo6vpxjug22pViYo5qhhXKq0dg283TXM48YD2yMlxGhIpUPUVIh8_nzQ-xjFrCs.Dkf8i6zlKotglgJGPHJfTHxulmAswWgz5LctOkGJ33Y&dib_tag=se&keywords=mopa%2Belectrica&qid=1740770036&s=kitchen&sprefix=mopa%2Ckitchen%2C138&sr=1-8&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=0be1dd143b21bf0509a40040f4002435&language=es_ES&ref_=as_li_ss_tl" target="_blank">Ver precio</a>
-              </div>
-              <div class="extra-info">
-                <p><span class="checkmark">✔</span> Limpieza</p>
-                <p><span class="checkmark">✔</span> Calidad</p>
-                <p><span class="checkmark">✔</span> Eficacia</p>
-              </div>
-            </div>
-            <div class="shipping-container">
-              <p class="shipping-text">Envío gratis</p>
-              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
-            </div>
-            <div class="more-info" style="display: none;">
-              <h3>Acerca de este producto</h3>
-              <p><strong>Limpia los suelos higiénicamente con el poder del vapor — Vileda Steam PLUS te proporciona un excelente rendimiento de limpieza, eliminando hasta el 99.9% de bacterias y virus</p>
-              <p><strong>isto para limpiar en 15 segundos — La mopa a vapor, que es adecuada para todo tipo de suelos, se calienta en 15 segundos, creando vapor caliente para limpiar tu suelo sin esfuerzo</p>
-              <p><strong>Ideal para esquinas y espacios pequeños — Este limpiador a vapor viene con un marco de suelo de forma triangular para limpiar y maniobrar fácilmente en esquinas, debajo de los muebles y en espacios pequeños</p>
-              <p><strong>Depósito de agua de 400 ml — el depósito de agua de 400 ml permite suficiente tiempo de limpieza sin necesidad de rellenar.</p>
-              <p><strong>Diseño ligero y fácil de almacenar — Simplemente retira el mango y engánchalo en la parte posterior del limpiador de suelos para obtener una unidad más pequeña que se puede guardar fácilmente en tu armario;</p>
-            </div>
-          </div>
-        </div>
-        <!-- Producto 4 -->
-        <div class="product">
-          <img src="https://m.media-amazon.com/images/I/71Dw348ryyL._AC_SX679_.jpg" alt="KVIDIO Di4 Steamclean Multi10 Max Mopa a Vapor">
-          <div class="rating-logo">
-            <div class="rating-score">9.5</div>
-            <p class="rating-label">Valoración</p>
-          </div>
-          <div class="product-details">
-            <h2>4. Di4 Steamclean Multi10 Max Mopa a Vapor</h2>
-            <p class="reviews">⭐⭐⭐⭐⭐ (33900+ opiniones)</p>
-            <div class="offer-container">
-              <div class="offer-buttons">
-                <span class="amazon-badge">Disponible en Amazon</span><br>
-                <a href="https://www.amazon.es/Di4-Steamclean-Limpiador-Multifunci%C3%B3n-Bacterias/dp/B09GG7VD4N?crid=14SW03KAGTST2&dib=eyJ2IjoiMSJ9.bLZwz7WZJCPlw5XlhQ0aAJBLMxLEqBC2s_BuR1S-hyQhk-qeoPprbPASMIX-ZVKW3zgpIMAozWwQXXaEQQZ_C_0xRTXA2E_57008r6Q4unCrwyUunVpHQ46XaQoMzCBhg4TycLu2jVgnwLclm5dc6_TEQL9Qc2bflSXcGNNQOx_EM9oJr34E_DvvFu7XOGIJ8o5HsjN_WUFQRrPQdyQ5E6vxxtGII8hJYT-mna_lZguLdxUWsPDaLCqEcpJXEpfVNsmT0j6pmXkhUYlfQqYFBG0IerKTTUVaFrBvFvW0jWtwIo6vpxjug22pViYo5qhhXKq0dg283TXM48YD2yMlxGhIpUPUVIh8_nzQ-xjFrCs.Dkf8i6zlKotglgJGPHJfTHxulmAswWgz5LctOkGJ33Y&dib_tag=se&keywords=mopa%2Belectrica&qid=1740770036&s=kitchen&sprefix=mopa%2Ckitchen%2C138&sr=1-1&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=28876cbf998ec1c19158da72dd1c7bbc&language=es_ES&ref_=as_li_ss_tl" target="_blank">Ver precio</a>
-              </div>
-              <div class="extra-info">
-                <p><span class="checkmark">✔</span> Limpieza</p>
-                <p><span class="checkmark">✔</span> Calidad</p>
-                <p><span class="checkmark">✔</span> Precio</p>
-              </div>
-            </div>
-            <div class="shipping-container">
-              <p class="shipping-text">Envío gratis</p>
-              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
-            </div>
-            <div class="more-info" style="display: none;">
-              <h3>Acerca de este producto</h3>
-              <p><strong>LIMPIADOR A VAPOR. Sin necesidad de uso de ningún tipo de detergente, manten tu hogar fresco y desinfectado, cuidando de tus seres queridos. Elimina el uso de detergentes contribuyendo al cuidado del medio ambiente</p>
-              <p><strong>MÁS VAPOR Y POTENCIA. La nueva Steamclean Multi10 Max genera la cantidad óptima de vapor gracias a su nuevo diseño renovado y sus 1500W de potencia. Todo esto en una estructura compacta, más ligera y multifuncional.</p>
-              <p><strong>VELOCIDAD ÓPTIMA. Más rápido y práctico, listo para usar en tan sólo 10 segundos. Limpiar tu hogar no tendrá porque llevarte más tiempo del necesario. 10 funciones disponibles listas para usar en el menor tiempo</p>
-              <p><strong>AUTONOMÍA SIN LÍMITES. Podrás usar la Steamclean Multi 10 Max todo el tiempo que necesites y llegar hasta las superficies más dificiles gracias a su base triangular para un acceso fácil a todos los rincones. Además su gran depósito de 380ml te permitirá limpiar durante un tiempo prolongado sin tener que rellenarlo</p>
-              <p><strong>10 ACCESORIO DE LIMPIEZA. ¡El poder de 10 en 1! Ahorra tiempo y dinero con un solo limpiador que te permitirá desinfectar sin ningún tipo de detergente suelos, telas, ventanas, baños, </p>
-            </div>
-          </div>
-        </div>
-        <!-- Producto 5 -->
-        <div class="product">
-          <img src="https://m.media-amazon.com/images/I/71S8FfKmW9L._AC_SX679_.jpg" alt="AlfaBot S2, Frefona Eléctrica Inalámbrica 400ML">
-          <div class="rating-logo">
-            <div class="rating-score">9.4</div>
-            <p class="rating-label">Valoración</p>
-          </div>
-          <div class="product-details">
-            <h2>5. AlfaBot S2, Frefona Eléctrica Inalámbrica 400ML</h2>
-            <p class="reviews">⭐⭐⭐⭐ (13800+ opiniones)</p>
-            <div class="offer-container">
-              <div class="offer-buttons">
-                <span class="amazon-badge">Disponible en Amazon</span><br>
-                <a href="https://www.amazon.es/AlfaBot-S2-el%C3%A9ctrica-inal%C3%A1mbrica-pulverizaci%C3%B3n/dp/B0CT8LKKD2?crid=14SW03KAGTST2&dib=eyJ2IjoiMSJ9.bLZwz7WZJCPlw5XlhQ0aAJBLMxLEqBC2s_BuR1S-hyQhk-qeoPprbPASMIX-ZVKW3zgpIMAozWwQXXaEQQZ_C_0xRTXA2E_57008r6Q4unCrwyUunVpHQ46XaQoMzCBhg4TycLu2jVgnwLclm5dc6_TEQL9Qc2bflSXcGNNQOx_EM9oJr34E_DvvFu7XOGIJ8o5HsjN_WUFQRrPQdyQ5E6vxxtGII8hJYT-mna_lZguLdxUWsPDaLCqEcpJXEpfVNsmT0j6pmXkhUYlfQqYFBG0IerKTTUVaFrBvFvW0jWtwIo6vpxjug22pViYo5qhhXKq0dg283TXM48YD2yMlxGhIpUPUVIh8_nzQ-xjFrCs.Dkf8i6zlKotglgJGPHJfTHxulmAswWgz5LctOkGJ33Y&dib_tag=se&keywords=mopa%2Belectrica&qid=1740770036&s=kitchen&sprefix=mopa%2Ckitchen%2C138&sr=1-3&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=ed46bb269811a547b30639dbc2598e9a&language=es_ES&ref_=as_li_ss_tl" target="_blank">Ver precio</a>
-              </div>
-              <div class="extra-info">
-                <p><span class="checkmark">✔</span> Facilidad de uso</p>
-                <p><span class="checkmark">✔</span> Comodidad</p>
-                <p><span class="checkmark">✔</span> Ligereza</p>
-              </div>
-            </div>
-            <div class="shipping-container">
-              <p class="shipping-text">Envío gratis</p>
-              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
-            </div>
-            <div class="more-info" style="display: none;">
-              <h3>Acerca de este producto</h3>
-              <p><strong>Mopa Eléctrica sin Cable - La fregona eléctrica sin cable está equipada con una batería de 2600 mAh que proporciona un tiempo de limpieza de hasta 60 minutos y puede limpiar un área de hasta 120 m² después de una carga de 5 horas.</p>
-              <p><strong>Fregona con Función Pulverizador - La fregona eléctrica tiene un depósito de agua de 400 ml que pulveriza agua con sólo pulsar un botón, sin necesidad de rellenarlo con frecuencia.</p>
-              <p><strong>Mopa para limpiar todo tipo de suelos duros - La mopa inalámbrica es adecuada para diferentes tipos de suelos, como suelos duros, parquet, mármol, baldosas y suelos de madera</p>
-              <p><strong>Mopa eléctrica para limpieza en seco y húmedo: ofrecemos 3 tipos diferentes de paños de limpieza, 6 paños redondos para uso diario para fregar o encerar suelos.</p>
-              <p><strong>Mopa súper silenciosa: la mopa eléctrica AlfaBot S2 es muy silenciosa en funcionamiento, menos de 60 dB, y no despertará ni molestará a los demás.</p>
-            </div>
-          </div>
-        </div>
-        <!-- Producto 6 -->
-        <div class="product">
-          <img src="https://m.media-amazon.com/images/I/512V0GJlLQL._AC_SX679_.jpg" alt="Shark Mopa de Vapor automática con Steam Blaster">
-          <div class="rating-logo">
-            <div class="rating-score">9.2</div>
-            <p class="rating-label">Valoración</p>
-          </div>
-          <div class="product-details">
-            <h2>6. Shark Mopa de Vapor automática con Steam Blaster</h2>
-            <p class="reviews">⭐⭐⭐⭐⭐ (11700+ opiniones)</p>
-            <div class="offer-container">
-              <div class="offer-buttons">
-                <span class="amazon-badge">Disponible en Amazon</span><br>
-                <a href="https://www.amazon.es/Shark-autom%C3%A1tica-almohadillas-giratorias-S8201EU/dp/B0D54QBYLX?crid=14SW03KAGTST2&dib=eyJ2IjoiMSJ9.bLZwz7WZJCPlw5XlhQ0aAJBLMxLEqBC2s_BuR1S-hyQhk-qeoPprbPASMIX-ZVKW3zgpIMAozWwQXXaEQQZ_C_0xRTXA2E_57008r6Q4unCrwyUunVpHQ46XaQoMzCBhg4TycLu2jVgnwLclm5dc6_TEQL9Qc2bflSXcGNNQOx_EM9oJr34E_DvvFu7XOGIJ8o5HsjN_WUFQRrPQdyQ5E6vxxtGII8hJYT-mna_lZguLdxUWsPDaLCqEcpJXEpfVNsmT0j6pmXkhUYlfQqYFBG0IerKTTUVaFrBvFvW0jWtwIo6vpxjug22pViYo5qhhXKq0dg283TXM48YD2yMlxGhIpUPUVIh8_nzQ-xjFrCs.Dkf8i6zlKotglgJGPHJfTHxulmAswWgz5LctOkGJ33Y&dib_tag=se&keywords=mopa+electrica&qid=1740770036&s=kitchen&sprefix=mopa%2Ckitchen%2C138&sr=1-6&ufe=app_do%3Aamzn1.fos.0fd54328-1d46-4534-bd0f-16141b40bb5b&linkCode=ll1&tag=yocompro0e-21&linkId=7f9d22801f8e76f36d499ebdd1740a8c&language=es_ES&ref_=as_li_ss_tl" target="_blank">Ver precio</a>
-              </div>
-              <div class="extra-info">
-                <p><span class="checkmark">✔</span> Rapidez</p>
-                <p><span class="checkmark">✔</span> Facilidad de uso</p>
-                <p><span class="checkmark">✔</span> Calidad</p>
-              </div>
-            </div>
-            <div class="shipping-container">
-              <p class="shipping-text">Envío gratis</p>
-              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
-            </div>
-            <div class="more-info" style="display: none;">
-              <h3>Acerca de este producto</h3>
-              <p><strong>ELIMINA LAS MANCHAS DIFÍCILES: dos almohadillas giratorias con vapor limpian y frotan al mismo tiempo, deslizándose por los suelos duros, desincrustando y eliminando las manchas rebeldes, el polvo, la grasa, la suciedad y las bacterias</p>
-              <p><strong>LIMPIA Y DESINFECTA hasta el 99.9% de los gérmenes y bacterias domésticas con el poder del vapor (según estudios sanitarios llevados a cabo bajo condiciones de ensayo controladas.</p>
-              <p><strong>MODO STEAM BLASTER: elimina las manchas difíciles con una ráfaga adicional de vapor. Alterna fácilmente entre 3 ajustes automáticos de vapor, LIGERO, NORMAL y PROFUNDO.</p>
-              <p><strong>FÁCIL DE USAR: apta en todos los suelos duros sellados, baldosas, mármol, madera y piedra. Almohadillas de limpieza reutilizables y lavables a máquina. Depósito de agua extraíble. Cable largo de 8 m. Luces LED que iluminan la suciedad.</p>
-              <p><strong>INCLUYE: Shark Mopa de vapor, 4 almohadillas Dirt Grip reutilizables y lavables a máquina (2 juegos). Cable de alimentación de 8 m (enchufe de la UE). Altura: 119 cm. Peso: 3 kg. Color: Blanco/Gris.</p>
-            </div>
-          </div>
-        </div>
-        <!-- Producto 7 -->
-        <div class="product">
-          <img src="https://m.media-amazon.com/images/I/61gAP1jFLRL._AC_SX679_.jpg" alt="iDOO Fregona Electrica en Seco Húmedo">
-          <div class="rating-logo">
-            <div class="rating-score">9.1</div>
-            <p class="rating-label">Valoración</p>
-          </div>
-          <div class="product-details">
-            <h2>7. iDOO Fregona Electrica en Seco Húmedo</h2>
-            <p class="reviews">⭐⭐⭐⭐ (17600+ opiniones)</p>
-            <div class="offer-container">
-              <div class="offer-buttons">
-                <span class="amazon-badge">Disponible en Amazon</span><br>
-                <a href="https://www.amazon.es/iDOO-Electrica-El%C3%A9ctrico-Inal%C3%A1mbrico-Autolimpieza/dp/B0CSD7ZLFW?crid=14SW03KAGTST2&dib=eyJ2IjoiMSJ9.bLZwz7WZJCPlw5XlhQ0aAJBLMxLEqBC2s_BuR1S-hyQhk-qeoPprbPASMIX-ZVKW3zgpIMAozWwQXXaEQQZ_C_0xRTXA2E_57008r6Q4unCrwyUunVpHQ46XaQoMzCBhg4TycLu2jVgnwLclm5dc6_TEQL9Qc2bflSXcGNNQOx_EM9oJr34E_DvvFu7XOGIJ8o5HsjN_WUFQRrPQdyQ5E6vxxtGII8hJYT-mna_lZguLdxUWsPDaLCqEcpJXEpfVNsmT0j6pmXkhUYlfQqYFBG0IerKTTUVaFrBvFvW0jWtwIo6vpxjug22pViYo5qhhXKq0dg283TXM48YD2yMlxGhIpUPUVIh8_nzQ-xjFrCs.Dkf8i6zlKotglgJGPHJfTHxulmAswWgz5LctOkGJ33Y&dib_tag=se&keywords=mopa+electrica&qid=1740770036&s=kitchen&sprefix=mopa%2Ckitchen%2C138&sr=1-10&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&linkCode=ll1&tag=yocompro0e-21&linkId=d9e6962d6bd548c5318fac9e73196898&language=es_ES&ref_=as_li_ss_tl" target="_blank">Ver precio</a>
-              </div>
-              <div class="extra-info">
-                <p><span class="checkmark">✔</span> Funcionamiento</p>
-                <p><span class="checkmark">✔</span> Facilidad de limpieza</p>
-                <p><span class="checkmark">✔</span> Facilidad de uso</p>
-              </div>
-            </div>
-            <div class="shipping-container">
-              <p class="shipping-text">Envío gratis</p>
-              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
-            </div>
-            <div class="more-info" style="display: none;">
-              <h3>Acerca de este producto</h3>
-              <p><strong>Trapeador, Barrido Eficiente: iDOO fregona electrica en seco húmedo usar limpia la basura y trapea el piso al mismo tiempo.lo que le permite limpiar todo tipo de suciedad de manera más rápida y sencilla</p>
-              <p><strong>Diseño Liviano y Autopropulsado: Nuestra fregona eléctrica Inalámbrica en seco y húmedo no tiene cables y es liviana (pesa solo 6.6 libras), fácil de transportar de una habitación a otra. </p>
-              <p><strong>Tiempo de Funcionamiento Duradero: la mopa electrica en seco y húmedo con una batería de 2600 mAh después de 3,5 a 4 horas de carga proporciona hasta 60 minutos de trapeado en seco y 40 minutos de trapeado en húmedo </p>
-              <p><strong>Diseño de Tanque Dual: el pulidora suelos domestica con trapeador eléctrico mantiene los tanques de agua limpia y sucia separados en tanques de agua limpia, lo que garantiza que se use agua fresca cada vez sin necesidad de recargas frecuentes</p>
-              <p><strong>Autolimpieza con Un Solo Toque: Nunca vuelvas a tocar un rodillo sucio. Cuando haya terminado, vuelva a colocar el trapeador limpiador de pisos en la base y la función de autolimpieza manos libres enjuagará automáticamente el rodillo del cepillo para un mantenimiento rápido y sin complicaciones</p>
-            </div>
-          </div>
-        </div>
-        <!-- Producto 8 -->
-        <div class="product">
-          <img src="https://m.media-amazon.com/images/I/71O+a5QePmL._AC_SX679_.jpg" alt="BLACK + DECKER 2en1 Mopa a Vapor 1600W">
-          <div class="rating-logo">
-            <div class="rating-score">9.0</div>
-            <p class="rating-label">Valoración</p>
-          </div>
-          <div class="product-details">
-            <h2>8. BLACK + DECKER 2en1 Mopa a Vapor 1600W</h2>
-            <p class="reviews">⭐⭐⭐⭐⭐ (17500+ opiniones)</p>
-            <div class="offer-container">
-              <div class="offer-buttons">
-                <span class="amazon-badge">Disponible en Amazon</span><br>
-                <a href="https://www.amazon.es/DECKER-BHSM1615DAM-QS-1-600W-cabezal-SteaMitt/dp/B08KJDHJCB?crid=14SW03KAGTST2&dib=eyJ2IjoiMSJ9.bLZwz7WZJCPlw5XlhQ0aAJBLMxLEqBC2s_BuR1S-hyQhk-qeoPprbPASMIX-ZVKW3zgpIMAozWwQXXaEQQZ_C_0xRTXA2E_57008r6Q4unCrwyUunVpHQ46XaQoMzCBhg4TycLu2jVgnwLclm5dc6_TEQL9Qc2bflSXcGNNQOx_EM9oJr34E_DvvFu7XOGIJ8o5HsjN_WUFQRrPQdyQ5E6vxxtGII8hJYT-mna_lZguLdxUWsPDaLCqEcpJXEpfVNsmT0j6pmXkhUYlfQqYFBG0IerKTTUVaFrBvFvW0jWtwIo6vpxjug22pViYo5qhhXKq0dg283TXM48YD2yMlxGhIpUPUVIh8_nzQ-xjFrCs.Dkf8i6zlKotglgJGPHJfTHxulmAswWgz5LctOkGJ33Y&dib_tag=se&keywords=mopa+electrica&qid=1740770036&s=kitchen&sprefix=mopa%2Ckitchen%2C138&sr=1-17&ufe=app_do%3Aamzn1.fos.0fd54328-1d46-4534-bd0f-16141b40bb5b&linkCode=ll1&tag=yocompro0e-21&linkId=69c1a9a3e3d3e4bdff54533001d1489f&language=es_ES&ref_=as_li_ss_tl" target="_blank">Ver precio</a>
-              </div>
-              <div class="extra-info">
-                <p><span class="checkmark">✔</span> Facilidad de uso</p>
-                <p><span class="checkmark">✔</span> Facilidad de limpieza</p>
-                <p><span class="checkmark">✔</span> Funcionamiento</p>
-              </div>
-            </div>
-            <div class="shipping-container">
-              <p class="shipping-text">Envío gratis</p>
-              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
-            </div>
-            <div class="more-info" style="display: none;">
-              <h3>Acerca de este producto</h3>
-              <p><strong>LIMPIEZA A VAPOR PODEROSA: Experimente un poder de limpieza profunda con un rendimiento de 1600W y tecnología innovadora de ráfaga de vapor, eliminando fácilmente la grasa y la suciedad persistente.</p>
-              <p><strong>[DESINFECCIÓN SIN QUÍMICOS: Elimina el 99.9% de bacterias y gérmenes utilizando solo agua del grifo, creando un ambiente seguro e higiénico para su familia y mascotas.</p>
-              <p><strong>VERSATILIDAD 2 EN 1: Combina una mopa de vapor y un limpiador de vapor de mano desmontable, perfecto para limpiar suelos sellados, encimeras, azulejos, espejos y más.</p>
-              <p><strong>TECNOLOGÍA DIGITAL AUTOSELECT: Ajusta automáticamente la salida de vapor según el tipo de suelo seleccionado, garantizando un rendimiento óptimo con resultados de secado rápido.</p>
-              <p><strong>LISTO EN MENOS DE 20 SEGUNDOS: Proporciona vapor continuo rápidamente, permitiéndote limpiar de manera eficiente sin demoras.</p>
-            </div>
-          </div>
-        </div>
-        <!-- Producto 9 -->
-        <div class="product">
-          <img src="https://m.media-amazon.com/images/I/31uF959Gf9L._AC_SX679_.jpg" alt="Kärcher Fregona Eléctrica FC 7 Cordless">
-          <div class="rating-logo">
-            <div class="rating-score">8.8</div>
-            <p class="rating-label">Valoración</p>
-          </div>
-          <div class="product-details">
-            <h2>9. Kärcher Fregona Eléctrica FC 7 Cordless </h2>
-            <p class="reviews">⭐⭐⭐⭐ (27400+ opiniones)</p>
-            <div class="offer-container">
-              <div class="offer-buttons">
-                <span class="amazon-badge">Disponible en Amazon</span><br>
-                <a href="https://www.amazon.es/K%C3%A4rcher-El%C3%A9ctrica-Cordless-Microfibra-Autonom%C3%ADa/dp/B0CGMCD63W?crid=14SW03KAGTST2&dib=eyJ2IjoiMSJ9.bLZwz7WZJCPlw5XlhQ0aAJBLMxLEqBC2s_BuR1S-hyQhk-qeoPprbPASMIX-ZVKW3zgpIMAozWwQXXaEQQZ_C_0xRTXA2E_57008r6Q4unCrwyUunVpHQ46XaQoMzCBhg4TycLu2jVgnwLclm5dc6_TEQL9Qc2bflSXcGNNQOx_EM9oJr34E_DvvFu7XOGIJ8o5HsjN_WUFQRrPQdyQ5E6vxxtGII8hJYT-mna_lZguLdxUWsPDaLCqEcpJXEpfVNsmT0j6pmXkhUYlfQqYFBG0IerKTTUVaFrBvFvW0jWtwIo6vpxjug22pViYo5qhhXKq0dg283TXM48YD2yMlxGhIpUPUVIh8_nzQ-xjFrCs.Dkf8i6zlKotglgJGPHJfTHxulmAswWgz5LctOkGJ33Y&dib_tag=se&keywords=mopa%2Belectrica&qid=1740770036&s=kitchen&sprefix=mopa%2Ckitchen%2C138&sr=1-20&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=dc238a561b57cf800bc7f05d1d64ee44&language=es_ES&ref_=as_li_ss_tl" target="_blank">Ver precio</a>
-              </div>
-              <div class="extra-info">
-                <p><span class="checkmark">✔</span> Calidad</p>
-                <p><span class="checkmark">✔</span> Relación calidad-precio</p>
-                <p><span class="checkmark">✔</span> Fácil limpieza</p>
-              </div>
-            </div>
-            <div class="shipping-container">
-              <p class="shipping-text">Envío gratis</p>
-              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
-            </div>
-            <div class="more-info" style="display: none;">
-              <h3>Acerca de este producto</h3>
-              <p><strong>Dos pasos en uno: la FC 7 Cordless de Kärcher limpia todo tipo de suelos duros y elimina en un solo paso la suciedad seca y la húmeda. No es necesario aspirar antes de usar la fregona eléctrica</p>
-              <p><strong>Fácil de utilizar: la fregadora eléctrica no necesita estar enchufada a la corriente para funcionar. Es fácil de usar, limpia también los bordes y, gracias a su articulación flexible, llega debajo de muebles bajos</p>
-              <p><strong>Dos modos de limpieza: gracias a los dos modos de limpieza, es posible adaptar la cantidad de agua y la velocidad de rotación al tipo de suelo. Para la suciedad resistente, ofrece la función Boost</p>
-              <p><strong>Sistema de doble depósito: los depósitos de agua limpia y sucia están separados. Con una señal visual y acústica se indica si es necesario llenar el agua limpia o vaciar el agua sucia </p>
-              <p><strong>Entrega: fregona eléctrica FC 7 Cordless, 2 pares de rodillos universales amarillos, limpiador de suelos universal RM 536 30 ml, estación de estacionamiento y limpieza, cargador, cepillo de limpieza</p>
-            </div>
-          </div>
-        </div>
-        <!-- Producto 10 -->
-        <div class="product">
-          <img src="https://m.media-amazon.com/images/I/413+06+2QhL._AC_SX679_.jpg" alt="Kärcher Fregona Eléctrica EWM 2">
-          <div class="rating-logo">
-            <div class="rating-score">8.5</div>
-            <p class="rating-label">Valoración</p>
-          </div>
-          <div class="product-details">
-            <h2>10. Kärcher Fregona Eléctrica EWM 2 </h2>
-            <p class="reviews">⭐⭐⭐⭐⭐ (15300+ opiniones)</p>
-            <div class="offer-container">
-              <div class="offer-buttons">
-                <span class="amazon-badge">Disponible en Amazon</span><br>
-                <a href="https://www.amazon.es/K%C3%A4rcher-EWM-2-Fregona-El%C3%A9ctrica/dp/B09CDGBRF4?crid=14SW03KAGTST2&dib=eyJ2IjoiMSJ9.bLZwz7WZJCPlw5XlhQ0aAJBLMxLEqBC2s_BuR1S-hyQhk-qeoPprbPASMIX-ZVKW3zgpIMAozWwQXXaEQQZ_C_0xRTXA2E_57008r6Q4unCrwyUunVpHQ46XaQoMzCBhg4TycLu2jVgnwLclm5dc6_TEQL9Qc2bflSXcGNNQOx_EM9oJr34E_DvvFu7XOGIJ8o5HsjN_WUFQRrPQdyQ5E6vxxtGII8hJYT-mna_lZguLdxUWsPDaLCqEcpJXEpfVNsmT0j6pmXkhUYlfQqYFBG0IerKTTUVaFrBvFvW0jWtwIo6vpxjug22pViYo5qhhXKq0dg283TXM48YD2yMlxGhIpUPUVIh8_nzQ-xjFrCs.Dkf8i6zlKotglgJGPHJfTHxulmAswWgz5LctOkGJ33Y&dib_tag=se&keywords=mopa%2Belectrica&qid=1740770036&s=kitchen&sprefix=mopa%2Ckitchen%2C138&sr=1-21&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=20745e8e3b601fd1b29b71898021d4b6&language=es_ES&ref_=as_li_ss_tl"_blank">Ver precio</a>
-              </div>
-              <div class="extra-info">
-                <p><span class="checkmark">✔</span> Funcionamiento</p>
-                <p><span class="checkmark">✔</span> Calidad-precio</p>
-                <p><span class="checkmark">✔</span> Facilidad de uso</p>
-              </div>
-            </div>
-            <div class="shipping-container">
-              <p class="shipping-text">Envío gratis</p>
-              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
-            </div>
-            <div class="more-info" style="display: none;">
-              <h3>Acerca de este producto</h3>
-              <p><strong>Elimina sin esfuerzo las salpicaduras y manchas en suelos duros: limpieza rápida y eficaz sin necesidad de fregar ni cargar el cubo</p>
-              <p><strong>Resultados de limpieza optimos incluso en los bordes: los rodillos de la EWM 2 limpian a lo largo de los bordes</p>
-              <p><strong>Maniobrable y ahorradora de espacio: gracias a su articulación giratoria la limpieza debajo de los muebles y alrededor de los objetos de difícil acceso se convierte en una tarea fácil; almacenaje en poco espacio.</p>
-              <p><strong>Versátil: la fregona eléctrica es apta para todo tipo de suelos duros (por ejemplo; baldosas, parque, laminado, PVC o piedra)</p>
-              <p><strong>Sin cables enredados: gracias a su funcionamiento a batería no se requieren enchufes cercanos; contenido del paquete: Kärcher EWM 2, 1 par de rodillos universales y 30 ml de detergente de suelos universal RM 536</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Sidebar que ahora se muestra a la derecha -->
-    <div class="sidebar">
-      <!-- Aquí puedes colocar el anuncio patrocinado que antes estaba en la izquierda -->
-      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3702060621408236" data-ad-slot="9876543210" data-ad-format="auto"></ins>
-      <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3702060621408236" data-ad-slot="1234567890" data-ad-format="auto"></ins>
-      <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-      <h3>Anuncios Patrocinados</h3>
-    </div>
-  </div>
-  <!-- Banner de cookies -->
-  <div id="cookie-banner" style="position: fixed; bottom: 0; background: #222; color: white; padding: 15px; width: 100%; text-align: center;">
-    Este sitio usa cookies para mejorar la experiencia. ¿Aceptas?
-    <button onclick="aceptarCookies(); document.getElementById('cookie-banner').style.display='none';">Aceptar</button>
-    <button onclick="rechazarCookies(); document.getElementById('cookie-banner').style.display='none';">Rechazar</button>
-  </div>
   <script>
+    function redirectToAmazon(url) {
+      window.open(url, '_blank');
+    }
     function toggleInfo(button) {
-      var info = button.parentElement.nextElementSibling;
+      var info = button.nextElementSibling;
       if (info.style.display === "none" || info.style.display === "") {
         info.style.display = "block";
         button.textContent = "Mostrar menos";
@@ -660,8 +151,59 @@
       }
     }
   </script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Top 10: Las Mejores Mopas a Vapor</h1>
+    <div class="product-list">
+      <script>
+        const products = [
+          { name: "Rowenta X-Clean 4, Fregona Eléctrica", rating: "9.9", reviews: "14200 Oferta -11 %", image: "https://m.media-amazon.com/images/I/71QutkthltL._AC_SX679_.jpg", url: "https://www.amazon.es/Rowenta-El%C3%A9ctrica-Pantalla-Inteligente-Autom%C3%A1tico/dp/B0DGMFX35D?crid=14SW03KAGTST2&dib=eyJ2IjoiMSJ9.bLZwz7WZJCPlw5XlhQ0aAJBLMxLEqBC2s_BuR1S-hyQhk-qeoPprbPASMIX-ZVKW3zgpIMAozWwQXXaEQQZ_C_0xRTXA2E_57008r6Q4unCrwyUunVpHQ46XaQoMzCBhg4TycLu2jVgnwLclm5dc6_7AkmsQvJlIOBBTklVoRYKmhDDm3CtxPf5PzCwDqmr26HAnHsUY8C6KLKzjwAqfPqigLSWeIWt7pi1RxunX73K8hfo7ABLMTvXParkFRNTOzT3fZxOD4yrSXDTizyjk-T8CJ1Egi447-0R9jEGpHhdZxrndRcl06NsuM-By4uBtfXf9EgmJpWxp7QTSFoDKKvan9RN7afXIn-YPm2esYiM.XCPmxtoiFW4Gcze2PvzKzuGHX4o33PHjLqsallR66CM&dib_tag=se&keywords=mopa%2Belectrica&qid=1740767973&s=kitchen&sprefix=mopa%2Ckitchen%2C138&sr=1-5&ufe=app_do%3Aamzn1.fos.0fd54328-1d46-4534-bd0f-16141b40bb5b&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=e9602b59659416f955eeefb1fb7220df&language=es_ES&ref_=as_li_ss_tl" },
+          { name: "Cecotec Fregona Eléctrica FreeGo", rating: "9.8", reviews: "16000+ Oferta flash -30 %", image: "https://m.media-amazon.com/images/I/51XfXPFTP2L._AC_SX679_.jpg", url: "https://www.amazon.es/Cecotec-El%C3%A9ctrica-Autonom%C3%ADa-Pulverizador-Autolimpieza/dp/B0BQ133Q9N?crid=14SW03KAGTST2&dib=eyJ2IjoiMSJ9.bLZwz7WZJCPlw5XlhQ0aAJBLMxLEqBC2s_BuR1S-hyQhk-qeoPprbPASMIX-ZVKW3zgpIMAozWwQXXaEQQZ_C_0xRTXA2E_57008r6Q4unCrwyUunVpHQ46XaQoMzCBhg4TycLu2jVgnwLclm5dc6_TEQL9Qc2bflSXcGNNQOx_EM9oJr34E_DvvFu7XOGIJ8o5HsjN_WUFQRrPQdyQ5E6vxxtGII8hJYT-mna_lZguLdxUWsPDaLCqEcpJXEpfVNsmT0j6pmXkhUYlfQqYFBG0IerKTTUVaFrBvFvW0jWtwIo6vpxjug22pViYo5qhhXKq0dg283TXM48YD2yMlxGhIpUPUVIh8_nzQ-xjFrCs.Dkf8i6zlKotglgJGPHJfTHxulmAswWgz5LctOkGJ33Y&dib_tag=se&keywords=mopa%2Belectrica&qid=1740770036&s=kitchen&sprefix=mopa%2Ckitchen%2C138&sr=1-4&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=251150ebb2b9498fad94fa9f0741d445&language=es_ES&ref_=as_li_ss_tl" },
+          { name: "VILEDA-Steam PLUS-Mopa a vapor", rating: "9.7", reviews: "14200+ Financia este producto", image: "https://m.media-amazon.com/images/I/41IYCzcL-eL._AC_SX679_.jpg", url: "https://www.amazon.es/Vileda-Steam-Limpiador-vapor-Grande/dp/B09HL69NY8?crid=14SW03KAGTST2&dib=eyJ2IjoiMSJ9.bLZwz7WZJCPlw5XlhQ0aAJBLMxLEqBC2s_BuR1S-hyQhk-qeoPprbPASMIX-ZVKW3zgpIMAozWwQXXaEQQZ_C_0xRTXA2E_57008r6Q4unCrwyUunVpHQ46XaQoMzCBhg4TycLu2jVgnwLclm5dc6_TEQL9Qc2bflSXcGNNQOx_EM9oJr34E_DvvFu7XOGIJ8o5HsjN_WUFQRrPQdyQ5E6vxxtGII8hJYT-mna_lZguLdxUWsPDaLCqEcpJXEpfVNsmT0j6pmXkhUYlfQqYFBG0IerKTTUVaFrBvFvW0jWtwIo6vpxjug22pViYo5qhhXKq0dg283TXM48YD2yMlxGhIpUPUVIh8_nzQ-xjFrCs.Dkf8i6zlKotglgJGPHJfTHxulmAswWgz5LctOkGJ33Y&dib_tag=se&keywords=mopa%2Belectrica&qid=1740770036&s=kitchen&sprefix=mopa%2Ckitchen%2C138&sr=1-8&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=c5e92f170668a4e233332e17c90e8f10&language=es_ES&ref_=as_li_ss_tl" },
+          { name: "Di4 Steamclean Multi10 Max", rating: "9.6", reviews: "14000+ Oferta flash -21 %", image: "https://m.media-amazon.com/images/I/71Dw348ryyL._AC_SX679_.jpg", url: "https://www.amazon.es/Di4-Steamclean-Limpiador-Multifunci%C3%B3n-Bacterias/dp/B09GG7VD4N?crid=14SW03KAGTST2&dib=eyJ2IjoiMSJ9.bLZwz7WZJCPlw5XlhQ0aAJBLMxLEqBC2s_BuR1S-hyQhk-qeoPprbPASMIX-ZVKW3zgpIMAozWwQXXaEQQZ_C_0xRTXA2E_57008r6Q4unCrwyUunVpHQ46XaQoMzCBhg4TycLu2jVgnwLclm5dc6_TEQL9Qc2bflSXcGNNQOx_EM9oJr34E_DvvFu7XOGIJ8o5HsjN_WUFQRrPQdyQ5E6vxxtGII8hJYT-mna_lZguLdxUWsPDaLCqEcpJXEpfVNsmT0j6pmXkhUYlfQqYFBG0IerKTTUVaFrBvFvW0jWtwIo6vpxjug22pViYo5qhhXKq0dg283TXM48YD2yMlxGhIpUPUVIh8_nzQ-xjFrCs.Dkf8i6zlKotglgJGPHJfTHxulmAswWgz5LctOkGJ33Y&dib_tag=se&keywords=mopa%2Belectrica&qid=1740770036&s=kitchen&sprefix=mopa%2Ckitchen%2C138&sr=1-1&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=823be13bcc07f4f0306cbd36d2391d20&language=es_ES&ref_=as_li_ss_tl" },
+          { name: "AlfaBot S2, Frefona Eléctrica", rating: "9.5", reviews: "23900+ Oferta -10 % ", image: "https://m.media-amazon.com/images/I/71S8FfKmW9L._AC_SX679_.jpg", url: "https://www.amazon.es/AlfaBot-S2-el%C3%A9ctrica-inal%C3%A1mbrica-pulverizaci%C3%B3n/dp/B0CT8LKKD2?crid=14SW03KAGTST2&dib=eyJ2IjoiMSJ9.bLZwz7WZJCPlw5XlhQ0aAJBLMxLEqBC2s_BuR1S-hyQhk-qeoPprbPASMIX-ZVKW3zgpIMAozWwQXXaEQQZ_C_0xRTXA2E_57008r6Q4unCrwyUunVpHQ46XaQoMzCBhg4TycLu2jVgnwLclm5dc6_TEQL9Qc2bflSXcGNNQOx_EM9oJr34E_DvvFu7XOGIJ8o5HsjN_WUFQRrPQdyQ5E6vxxtGII8hJYT-mna_lZguLdxUWsPDaLCqEcpJXEpfVNsmT0j6pmXkhUYlfQqYFBG0IerKTTUVaFrBvFvW0jWtwIo6vpxjug22pViYo5qhhXKq0dg283TXM48YD2yMlxGhIpUPUVIh8_nzQ-xjFrCs.Dkf8i6zlKotglgJGPHJfTHxulmAswWgz5LctOkGJ33Y&dib_tag=se&keywords=mopa%2Belectrica&qid=1740770036&s=kitchen&sprefix=mopa%2Ckitchen%2C138&sr=1-3&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=d06f5342d5bef683a581a7f979304243&language=es_ES&ref_=as_li_ss_tl" },
+          { name: "Shark Mopa de Vapor automática", rating: "9.5", reviews: "13800+ Oferta -6 %", image: "https://m.media-amazon.com/images/I/512V0GJlLQL._AC_SX679_.jpg", url: "https://www.amazon.es/Shark-autom%C3%A1tica-almohadillas-giratorias-S8201EU/dp/B0D54QBYLX?crid=14SW03KAGTST2&dib=eyJ2IjoiMSJ9.bLZwz7WZJCPlw5XlhQ0aAJBLMxLEqBC2s_BuR1S-hyQhk-qeoPprbPASMIX-ZVKW3zgpIMAozWwQXXaEQQZ_C_0xRTXA2E_57008r6Q4unCrwyUunVpHQ46XaQoMzCBhg4TycLu2jVgnwLclm5dc6_TEQL9Qc2bflSXcGNNQOx_EM9oJr34E_DvvFu7XOGIJ8o5HsjN_WUFQRrPQdyQ5E6vxxtGII8hJYT-mna_lZguLdxUWsPDaLCqEcpJXEpfVNsmT0j6pmXkhUYlfQqYFBG0IerKTTUVaFrBvFvW0jWtwIo6vpxjug22pViYo5qhhXKq0dg283TXM48YD2yMlxGhIpUPUVIh8_nzQ-xjFrCs.Dkf8i6zlKotglgJGPHJfTHxulmAswWgz5LctOkGJ33Y&dib_tag=se&keywords=mopa+electrica&qid=1740770036&s=kitchen&sprefix=mopa%2Ckitchen%2C138&sr=1-6&ufe=app_do%3Aamzn1.fos.0fd54328-1d46-4534-bd0f-16141b40bb5b&linkCode=ll1&tag=yocompro0e-21&linkId=1ebb0a929dc02d2a92bbf29f5fd6682b&language=es_ES&ref_=as_li_ss_tl" },
+          { name: "iDOO Fregona Electrica en Seco", rating: "9.4", reviews: "10700+ Muy util", image: "https://m.media-amazon.com/images/I/61gAP1jFLRL._AC_SX679_.jpg", url: "https://www.amazon.es/iDOO-Electrica-El%C3%A9ctrico-Inal%C3%A1mbrico-Autolimpieza/dp/B0CSD7ZLFW?crid=14SW03KAGTST2&dib=eyJ2IjoiMSJ9.bLZwz7WZJCPlw5XlhQ0aAJBLMxLEqBC2s_BuR1S-hyQhk-qeoPprbPASMIX-ZVKW3zgpIMAozWwQXXaEQQZ_C_0xRTXA2E_57008r6Q4unCrwyUunVpHQ46XaQoMzCBhg4TycLu2jVgnwLclm5dc6_TEQL9Qc2bflSXcGNNQOx_EM9oJr34E_DvvFu7XOGIJ8o5HsjN_WUFQRrPQdyQ5E6vxxtGII8hJYT-mna_lZguLdxUWsPDaLCqEcpJXEpfVNsmT0j6pmXkhUYlfQqYFBG0IerKTTUVaFrBvFvW0jWtwIo6vpxjug22pViYo5qhhXKq0dg283TXM48YD2yMlxGhIpUPUVIh8_nzQ-xjFrCs.Dkf8i6zlKotglgJGPHJfTHxulmAswWgz5LctOkGJ33Y&dib_tag=se&keywords=mopa+electrica&qid=1740770036&s=kitchen&sprefix=mopa%2Ckitchen%2C138&sr=1-10&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&linkCode=ll1&tag=yocompro0e-21&linkId=29019ed0e9ff60430e362d88bf790255&language=es_ES&ref_=as_li_ss_tl" },
+          { name: "BLACK + DECKER 2en1 Mopa a Vapor", rating: "9.3", reviews: "15600+ Oferta -3 %", image: "https://m.media-amazon.com/images/I/71O+a5QePmL._AC_SX679_.jpg", url: "https://www.amazon.es/DECKER-BHSM1615DAM-QS-1-600W-cabezal-SteaMitt/dp/B08KJDHJCB?crid=14SW03KAGTST2&dib=eyJ2IjoiMSJ9.bLZwz7WZJCPlw5XlhQ0aAJBLMxLEqBC2s_BuR1S-hyQhk-qeoPprbPASMIX-ZVKW3zgpIMAozWwQXXaEQQZ_C_0xRTXA2E_57008r6Q4unCrwyUunVpHQ46XaQoMzCBhg4TycLu2jVgnwLclm5dc6_TEQL9Qc2bflSXcGNNQOx_EM9oJr34E_DvvFu7XOGIJ8o5HsjN_WUFQRrPQdyQ5E6vxxtGII8hJYT-mna_lZguLdxUWsPDaLCqEcpJXEpfVNsmT0j6pmXkhUYlfQqYFBG0IerKTTUVaFrBvFvW0jWtwIo6vpxjug22pViYo5qhhXKq0dg283TXM48YD2yMlxGhIpUPUVIh8_nzQ-xjFrCs.Dkf8i6zlKotglgJGPHJfTHxulmAswWgz5LctOkGJ33Y&dib_tag=se&keywords=mopa+electrica&qid=1740770036&s=kitchen&sprefix=mopa%2Ckitchen%2C138&sr=1-17&ufe=app_do%3Aamzn1.fos.0fd54328-1d46-4534-bd0f-16141b40bb5b&linkCode=ll1&tag=yocompro0e-21&linkId=69f703d3110304a73155a9a17ebeb143&language=es_ES&ref_=as_li_ss_tl" },
+          { name: "Kärcher Fregona Eléctrica FC 7 Cordless", rating: "9.0", reviews: "17400+ Oferta -21 %", image: "https://m.media-amazon.com/images/I/31uF959Gf9L._AC_SX679_.jpg", url: "https://www.amazon.es/K%C3%A4rcher-El%C3%A9ctrica-Cordless-Microfibra-Autonom%C3%ADa/dp/B0CGMCD63W?crid=14SW03KAGTST2&dib=eyJ2IjoiMSJ9.bLZwz7WZJCPlw5XlhQ0aAJBLMxLEqBC2s_BuR1S-hyQhk-qeoPprbPASMIX-ZVKW3zgpIMAozWwQXXaEQQZ_C_0xRTXA2E_57008r6Q4unCrwyUunVpHQ46XaQoMzCBhg4TycLu2jVgnwLclm5dc6_TEQL9Qc2bflSXcGNNQOx_EM9oJr34E_DvvFu7XOGIJ8o5HsjN_WUFQRrPQdyQ5E6vxxtGII8hJYT-mna_lZguLdxUWsPDaLCqEcpJXEpfVNsmT0j6pmXkhUYlfQqYFBG0IerKTTUVaFrBvFvW0jWtwIo6vpxjug22pViYo5qhhXKq0dg283TXM48YD2yMlxGhIpUPUVIh8_nzQ-xjFrCs.Dkf8i6zlKotglgJGPHJfTHxulmAswWgz5LctOkGJ33Y&dib_tag=se&keywords=mopa%2Belectrica&qid=1740770036&s=kitchen&sprefix=mopa%2Ckitchen%2C138&sr=1-20&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=4f50a7a27b358793191ddbbce51928c5&language=es_ES&ref_=as_li_ss_tl" },
+          { name: "Kärcher Fregona Eléctrica EWM 2", rating: "8.8", reviews: "13300+ Devoluciones GRATIS ", image: "https://m.media-amazon.com/images/I/413+06+2QhL._AC_SX679_.jpg", url: "https://www.amazon.es/K%C3%A4rcher-EWM-2-Fregona-El%C3%A9ctrica/dp/B09CDGBRF4?crid=14SW03KAGTST2&dib=eyJ2IjoiMSJ9.bLZwz7WZJCPlw5XlhQ0aAJBLMxLEqBC2s_BuR1S-hyQhk-qeoPprbPASMIX-ZVKW3zgpIMAozWwQXXaEQQZ_C_0xRTXA2E_57008r6Q4unCrwyUunVpHQ46XaQoMzCBhg4TycLu2jVgnwLclm5dc6_TEQL9Qc2bflSXcGNNQOx_EM9oJr34E_DvvFu7XOGIJ8o5HsjN_WUFQRrPQdyQ5E6vxxtGII8hJYT-mna_lZguLdxUWsPDaLCqEcpJXEpfVNsmT0j6pmXkhUYlfQqYFBG0IerKTTUVaFrBvFvW0jWtwIo6vpxjug22pViYo5qhhXKq0dg283TXM48YD2yMlxGhIpUPUVIh8_nzQ-xjFrCs.Dkf8i6zlKotglgJGPHJfTHxulmAswWgz5LctOkGJ33Y&dib_tag=se&keywords=mopa%2Belectrica&qid=1740770036&s=kitchen&sprefix=mopa%2Ckitchen%2C138&sr=1-21&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=ebc1cc24ab6698545f1bb66135f1e0cd&language=es_ES&ref_=as_li_ss_tl" }
+        ];
+
+        products.forEach((product, index) => {
+          document.write(`
+            <div class="product" onclick="redirectToAmazon('${product.url}');">
+              <span class="rating-score">${product.rating}</span>
+              <img src="${product.image}" alt="Freidora ${index + 1}">
+              <div class="product-details">
+                <h2>${index + 1}. ${product.name}</h2>
+                <p>⭐⭐⭐⭐⭐ (${product.reviews})</p>
+                <a href="${product.url}" target="_blank">Ver precio</a>
+                <br>
+                <div style='display: flex; align-items: center; gap: 10px;'>
+                  <img src='https://s1.qwant.com/thumbr/474x158/9/7/f63c3ffb13724faceb8e31aa326595a97728bf158aeb13ffc95db5f9fa7625/th.jpg?u=https%3A%2F%2Ftse.mm.bing.net%2Fth%3Fid%3DOIP.B1P05zmy1Y_JxrZZilY6kwHaCe%26pid%3DApi&q=0&b=1&p=0&a=0' style='width: 60px; height: auto; display: block; border: 1px solid #ddd; padding: 5px; border-radius: 5px; background-color: white;'>
+                  <button class='toggle-info' onclick='toggleInfo(this)'>Mostrar más</button>
+                </div>
+                <div class="more-info">
+                  <p>Freidora de aire con excelente desempeño y calidad.</p>
+                </div>
+              </div>
+            </div>
+          `);
+        });
+      </script>
+    </div>
+   </div>
+  <!-- Banner de cookies -->
+  <div id="cookie-banner" style="position: fixed; bottom: 0; background: #222; color: white; padding: 15px; width: 100%; text-align: center;">
+    Este sitio usa cookies para mejorar la experiencia. ¿Aceptas?
+    <button onclick="aceptarCookies(); document.getElementById('cookie-banner').style.display='none';">Aceptar</button>
+    <button onclick="rechazarCookies(); document.getElementById('cookie-banner').style.display='none';">Rechazar</button>
+  </div>
 </body>
 </html>
+
 
 
 
