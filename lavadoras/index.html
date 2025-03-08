@@ -51,49 +51,12 @@
       margin: 0;
       padding: 20px;
       text-align: center;
-      display: flex;
-      justify-content: center;
+      background-color: #f5f5f5;
     }
     .container {
       max-width: 1200px;
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
-      gap: 40px;
-    }
-    /* Ahora el contenido aparece primero y el sidebar a la derecha */
-    .content {
-      flex: 3;
-      position: relative;
-    }
-    .sidebar {
-      flex: 1;
-      padding: 20px;
-      background-color: #f4f4f4;
-      text-align: center;
-      /* Eliminamos el margen a la izquierda para evitar que quede en la izquierda */
-      margin-left: 0;
-    }
-    h1 {
-      color: #333;
-      font-size: 32px;
-      text-decoration: underline;
-    }
-    p {
-      font-size: 20px;
-      color: #666;
-      max-width: 800px;
-      margin: 0 auto 20px auto;
-      text-align: justify;
-    }
-    .highlight {
-      font-weight: bold;
-      text-decoration: underline;
-      color: black;
-    }
-    .reviews {
-      font-size: 16px;
-      margin: 0 0 10px 0;
+      margin: auto;
+      padding: 0 10px;
     }
     .product-list {
       display: flex;
@@ -103,554 +66,82 @@
       margin-top: 20px;
     }
     .product {
-      width: 100%;
-      max-width: 900px;
       border: 1px solid #ddd;
       border-radius: 10px;
-      padding: 30px;
+      padding: 20px;
+      width: 100%;
+      max-width: 600px;
       text-align: left;
-      box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
       background-color: #fff;
       display: flex;
       align-items: center;
-      gap: 30px;
+      gap: 20px;
       position: relative;
+      cursor: pointer;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease-in-out;
+    }
+    .product:hover {
+      transform: scale(1.02);
     }
     .product img {
-      width: 180px;
+      width: 100px;
       height: auto;
       border-radius: 5px;
     }
     .product-details {
       flex: 1;
     }
-    /* Bloque de oferta para productos (con extra-info lateral) */
-    .offer-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 10px;
-    }
-    .offer-buttons {
-      /* Aquí se agrupan el badge y el enlace */
-    }
-    .extra-info {
-      text-align: right;
-    }
-    .extra-info p {
-      margin: 2px 0;
-      font-size: 16px;
-    }
-    .checkmark {
-      color: green;
-      font-weight: bold;
-      margin-right: 5px;
-    }
     .product a {
       display: inline-block;
       margin-top: 10px;
-      padding: 25px;
+      padding: 10px 15px;
       background-color: #00CC00;
       color: white;
       text-decoration: none;
       border-radius: 5px;
       font-weight: bold;
-      font-size: 24px;
     }
     .product a:hover {
       background-color: #008000;
     }
-    .amazon-badge {
-      background-color: #ff9900;
-      color: white;
-      padding: 5px 8px;
+    .toggle-info {
+      margin-top: 10px;
+      padding: 8px 12px;
+      background-color: #ddd;
+      border: none;
       border-radius: 5px;
-      font-weight: bold;
-      display: inline-block;
-      margin-top: 13px;
-      font-size: 10px;
+      cursor: pointer;
     }
-    .rating-logo {
+    .toggle-info:hover {
+      background-color: #bbb;
+    }
+    .more-info {
+      display: none;
+      margin-top: 10px;
+    }
+    .rating-score {
       position: absolute;
       top: 10px;
       right: 10px;
-      text-align: center;
-    }
-    .rating-score {
       width: 50px;
       height: 50px;
-      border: 5px solid red;
       border-radius: 50%;
-      line-height: 50px;
-      font-size: 22px;
-      color: black;
-      font-weight: bold;
-      margin: 0 auto;
       background-color: white;
-    }
-    .rating-label {
-      font-size: 12px;
-      color: #333;
-      margin-top: 5px;
-    }
-    /* Contenedor para envío gratis y botón desplegable */
-    .shipping-container {
-      display: flex;
-      align-items: center;
-      margin-top: 10px;
-      gap: 10px;
-    }
-    .shipping-text {
-      font-size: 20px;
-      color: #FF0000;
+      border: 3px solid red;
+      text-align: center;
+      line-height: 50px;
       font-weight: bold;
-      margin: 0;
-    }
-    .toggle-info {
-      background-color: #ddd;
-      border: none;
-      padding: 10px 15px;
-      cursor: pointer;
-      border-radius: 5px;
-      font-size: 16px;
-      width: 150px;
-    }
-    .toggle-info:hover {
-      background-color: #ccc;
-    }
-    .more-info {
-      margin-top: 5px;
-      background-color: #f9f9f9;
-      padding: 5px;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      font-size: 14px;
-      text-align: left;
-    }
-    /* Media Query para dispositivos móviles */
-    @media (max-width: 768px) {
-      .container {
-        flex-direction: column;
-        gap: 20px;
-      }
-      /* En móvil, el sidebar se mostrará debajo */
-      .sidebar {
-        width: 100%;
-      }
-      .content {
-        width: 100%;
-      }
-      .product {
-        flex-direction: column;
-        align-items: center;
-      }
-      .product img {
-        width: 100%;
-        max-width: 300px;
-        margin: 0 0 15px 0;
-      }
-      .product-details {
-        text-align: center;
-      }
-      .shipping-container {
-        flex-direction: column;
-        gap: 10px;
-      }
-      .offer-container {
-        flex-direction: column;
-        align-items: center;
-      }
-      .extra-info {
-        margin-top: 10px;
-      }
+      color: black;
+      box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
     }
   </style>
-</head>
-<body>
-  <div class="container">
-    <!-- El contenido aparece primero -->
-    <div class="content">
-      <h1>Top 10: Las Mejores Lavadoras</h1>
-      <p>Las <span class="highlight">Mejores Lavadoras</span> del mercado <span class="highlight">combinan eficiencia energética, gran capacidad y tecnología avanzada</span>, para un lavado impecable, hemos realizado una comparativa por ti. Y te mostramos las mejores del mercado <span class="highlight">para que aproveches estas ofertas</span>. Tenemos las mejores marcas de Lavadoras seleccionadas <span class="highlight">para que tu elijas cual es la que más se adapta a ti</span> con relación calidad-precio. <span class="highlight"> Encuentra lavadoras automáticas, de carga frontal o superior con programas inteligentes y bajo consumo de agua.</span>.Descubre las más recomendadas y elige la ideal para tu hogar. ¡Compara precios y ofertas ahora! En este listado hemos seleccionado las <span class="highlight">mejores opciones del mercado</span>, basándonos en calidad, valoraciones y popularidad. ¡Invierte en tu comodidad, funcionalidad y casa con una <span class="highlight">Lavadora</span>!</p>
-      <p class="amazon-notice">Compra este producto en Amazon a través de este enlace</p>
-      
-      <div class="product-list">
-        <!-- Producto 1 -->
-        <div class="product">
-          <img src="https://m.media-amazon.com/images/I/71mtc1bmq7L._AC_SY879_.jpg" alt="Balay - Lavadora, 9 kg, Carga Frontal">
-          <div class="rating-logo">
-            <div class="rating-score">9.9</div>
-            <p class="rating-label">Valoración</p>
-          </div>
-          <div class="product-details">
-            <h2>1. Balay - Lavadora, 9 kg, Carga Frontal</h2>
-            <p class="reviews">⭐⭐⭐⭐⭐ (23000+ opiniones)</p>
-            <div class="offer-container">
-              <div class="offer-buttons">
-                <span class="amazon-badge">Disponible en Amazon</span><br>
-                <a href="https://www.amazon.es/Balay-Autodosificacion-ProgramaPlancha-antimanchas-3TS395BDS/dp/B0DJ1619DF?crid=1OKQK2A1EINWB&dib=eyJ2IjoiMSJ9.8p3ifjpQ91kt-BSJyDdfkzQy2WiIGkwD_OE4uBv0kLLZHXxkrRbpOENJdd74vAvxvhWKwUBZfGg0SzWY6ZuXChChud8eyIumY26Yw0HrMSBFe6tcu5uZjgR-qjWX7LZOtIPTuh2h8qYUX_vgiEwqNAPAEPIS8FmDOwZpEi09gD9N1-hwd2BzsiehlzwBM0HjCqES2IYfMY78led35MFFkGaUpEFK8wLbbfyDhxnVP5TBb3IHcm8sHEA_uqrR6ZljbMmytDQRB8t5U5nfd4PMc2mPblWTcXby-VvQZCopjytuXX2hNBmeinTsFnOs-2Oef4QC_Qe5aYxFT6D7eFlliWNnSR_KQ4GgCGMZ7mDpHM0.fgq25HaIbwN_z1EWLvuk4-TECOU7BM6of8IEP6UK7vY&dib_tag=se&keywords=lavadora&psr=EY17&qid=1740614773&s=todays-deals&sprefix=lavadora%2Ctodays-deals%2C266&sr=1-1&srs=21350206031&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=e033f22404e23b0936682209e9f187e7&language=es_ES&ref_=as_li_ss_tl" target="_blank">Ver precio</a>
-              </div>
-              <div class="extra-info">
-                <p><span class="checkmark">✔</span> Calidad</p>
-                <p><span class="checkmark">✔</span> Silenciosa</p>
-                <p><span class="checkmark">✔</span> Facilidad de uso</p>
-              </div>
-            </div>
-            <div class="shipping-container">
-              <p class="shipping-text">Envío gratis</p>
-              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
-            </div>
-            <div class="more-info" style="display: none;">
-              <h3>Acerca de este producto</h3>
-              <p><strong>Con la lavadora de eficiencia energética A, disfruta de una capacidad de 9 kg, adecuada para las cargas de lavado de tu familia; el diseño permite la instalación bajo encimera en muebles de altura 85 cm o más</p>
-              <p><strong>La tecnología AquaControl Plus ajusta la entrada de agua según la carga de la lavadora; mientras que su motor ExtraSilencio y su sistema de reducción de ruido, te ofrecen un ambiente tranquilo en tu hogar</p>
-              <p><strong>La lavadora de 9 kg cuenta con AutoDosificación de detergente y suavizante, y con un display LED táctil, que te facilitan la tarea de lavado; además, siempre podrás conocer el tiempo restante, estado de programa, y diferir el fin del ciclo hasta 24 horas</p>
-              <p><strong>Para el cuidado de tu ropa, la lavadora cuenta con un tambor VarioSoft y programas especiales como: Plancha, Rápido, Higiene, Automático delicado, Ropa exterior, y más; además de opciones como: Prelavado, Menos plancha, Más rápido, Tratamiento antimanchas y función PausA+Carga</p>
-              <p><strong>Las dimensiones de la lavadora son de 84,5 x 59,8 x 59 centimeters (alto x ancho x fondo sin puerta)</p>
-            </div>
-          </div>
-        </div>
-        <!-- Producto 2 -->
-        <div class="product">
-          <img src="https://m.media-amazon.com/images/I/71cW-lHnaQL._AC_SX679_.jpg" alt="AEG LFR6194O4Q Lavadora">
-          <div class="rating-logo">
-            <div class="rating-score">9.8</div>
-            <p class="rating-label">Valoración</p>
-          </div>
-          <div class="product-details">
-            <h2>2. AEG LFR6194O4Q Lavadora</h2>
-            <p class="reviews">⭐⭐⭐⭐⭐ (14200+ opiniones)</p>
-            <div class="offer-container">
-              <div class="offer-buttons">
-                <span class="amazon-badge">Disponible en Amazon</span><br>
-                <a href="https://www.amazon.es/AEG-LFR6194O4Q-Lavadora-Instalaci%C3%B3n-C%C3%A1psulas/dp/B0C5FM33VV?crid=1OKQK2A1EINWB&dib=eyJ2IjoiMSJ9.8p3ifjpQ91kt-BSJyDdfkzQy2WiIGkwD_OE4uBv0kLLZHXxkrRbpOENJdd74vAvxvhWKwUBZfGg0SzWY6ZuXChChud8eyIumY26Yw0HrMSBFe6tcu5uZjgR-qjWX7LZOtIPTuh2h8qYUX_vgiEwqNAPAEPIS8FmDOwZpEi09gD9N1-hwd2BzsiehlzwBM0HjCqES2IYfMY78led35MFFkGaUpEFK8wLbbfyDhxnVP5TBb3IHcm8sHEA_uqrR6ZljbMmytDQRB8t5U5nfd4PMc2mPblWTcXby-VvQZCopjytuXX2hNBmeinTsFnOs-2Oef4QC_Qe5aYxFT6D7eFlliWNnSR_KQ4GgCGMZ7mDpHM0.fgq25HaIbwN_z1EWLvuk4-TECOU7BM6of8IEP6UK7vY&dib_tag=se&keywords=lavadora&psr=EY17&qid=1740615245&s=todays-deals&sprefix=lavadora%2Ctodays-deals%2C266&sr=1-2&srs=21350206031&ufe=app_do%3Aamzn1.fos.0fd54328-1d46-4534-bd0f-16141b40bb5b&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=4bc8b88ed581d33af2738c935f0d9b93&language=es_ES&ref_=as_li_ss_tl" target="_blank">Ver precio</a>
-              </div>
-              <div class="extra-info">
-                <p><span class="checkmark">✔</span> Relación calidad-precio</p>
-                <p><span class="checkmark">✔</span> Facilidad de uso</p>
-                <p><span class="checkmark">✔</span> Funcionamiento</p>
-              </div>
-            </div>
-            <div class="shipping-container">
-              <p class="shipping-text">Envío gratis</p>
-              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
-            </div>
-            <div class="more-info" style="display: none;">
-              <h3>Acerca de este producto</h3>
-              <p><strong>FUNCIÓN PROSENSE: Ajusta el tiempo, el agua y energía en un 40% dependiendo de la carga, protegiendo la ropa y colores, hasta 9 kg de lavado</p>
-              <p><strong>PROGRAMA AUTODOSE: Usa sensores inteligentes para calcular la dosis precisa de detergente y suavizante en cada lavado ayudándote a ahorrar un 60% de detergente</p>
-              <p><strong>FUNCIÓN TIMESAVE: Es un programa rápido que reduce el ciclo principal al 50% para lavar las prendas en mucho menos tiempo, tanto las de algodón como las sintéticas</p>
-              <p><strong>PROGRAMA HIGIENE: Funciona a más de 60°C, higienizando durante el proceso de secado y eliminando el 99,9 % de agentes externos, perfecto para edredones, almohadas y prendas delicadas</p>
-              <p><strong>CONECTIVIDAD: Configura tu secadora de forma remota con la APP My AEG Care, fácil conexión y control de lavado; Fabricado en UE</p>
-            </div>
-          </div>
-        </div>
-        <!-- Producto 3 -->
-        <div class="product">
-          <img src="https://m.media-amazon.com/images/I/61azn66-LeL._AC_SX679_.jpg" alt="Haier I-Pro Series 5 HW90-B14959EU1IB">
-          <div class="rating-logo">
-            <div class="rating-score">9.6</div>
-            <p class="rating-label">Valoración</p>
-          </div>
-          <div class="product-details">
-            <h2>3. Haier I-Pro Series 5 HW90-B14959EU1IB</h2>
-            <p class="reviews">⭐⭐⭐⭐ (15000+ opiniones)</p>
-            <div class="offer-container">
-              <div class="offer-buttons">
-                <span class="amazon-badge">Disponible en Amazon</span><br>
-                <a href="https://www.amazon.es/Haier-HW90-B14959EU1IB-Tratamiento-Antibacterias-Autom%C3%A1tico/dp/B0CRHX1N9S?crid=1OKQK2A1EINWB&dib=eyJ2IjoiMSJ9.8p3ifjpQ91kt-BSJyDdfkzQy2WiIGkwD_OE4uBv0kLLZHXxkrRbpOENJdd74vAvxvhWKwUBZfGg0SzWY6ZuXChChud8eyIumY26Yw0HrMSBFe6tcu5uZjgR-qjWX7LZOtIPTuh2h8qYUX_vgiEwqNAPAEPIS8FmDOwZpEi09gD9N1-hwd2BzsiehlzwBM0HjCqES2IYfMY78led35MFFkGaUpEFK8wLbbfyDhxnVP5TBb3IHcm8sHEA_uqrR6ZljbMmytDQRB8t5U5nfd4PMc2mPblWTcXby-VvQZCopjytuXX2hNBmeinTsFnOs-2Oef4QC_Qe5aYxFT6D7eFlliWNnSR_KQ4GgCGMZ7mDpHM0.fgq25HaIbwN_z1EWLvuk4-TECOU7BM6of8IEP6UK7vY&dib_tag=se&keywords=lavadora&psr=EY17&qid=1740615245&s=todays-deals&sprefix=lavadora%2Ctodays-deals%2C266&sr=1-3&srs=21350206031&ufe=app_do%3Aamzn1.fos.0fd54328-1d46-4534-bd0f-16141b40bb5b&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=c17ee21ec1b1e16688bf575d775d25b0&language=es_ES&ref_=as_li_ss_tl" target="_blank">Ver precio</a>
-              </div>
-              <div class="extra-info">
-                <p><span class="checkmark">✔</span> Calidad</p>
-                <p><span class="checkmark">✔</span> Fácil de usar</p>
-                <p><span class="checkmark">✔</span> Relación calidad-precio</p>
-              </div>
-            </div>
-            <div class="shipping-container">
-              <p class="shipping-text">Envío gratis</p>
-              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
-            </div>
-            <div class="more-info" style="display: none;">
-              <h3>Acerca de este producto</h3>
-              <p><strong>Clase A-10%: máxima eficiencia energética, 10% más eficiente que la clase A. Motor Direct Motion: silencioso, eficiente y duradero. Funciona sin correa, conectado directamente al tambor, reduciendo el ruido y las vibraciones.</p>
-              <p><strong>Tecnología ABT: elimina el 99,8% de las bacterías en el cajón del detergente y en la escotilla de la lavadora, evitando su proliferación.</p>
-              <p><strong>Un extra de higiene para una colada más limpia: consigue niveles de higiene extraordinarios gracias a la función de vapor Refresh, al tratamiento ABT y al programa Anti - Alergias con vapor.</p>
-              <p><strong>Programa Refresh para un cuidado profesional: emplea la tecnología de microvapor para alisar tu ropa y eliminar los olores, sin contacto con agua y detergente.
-</p>
-              <p><strong>Tamaño lavadora (alto x ancho x fondo): 85 x 60 x 57 cm.</p>
-            </div>
-          </div>
-        </div>
-        <!-- Producto 4 -->
-        <div class="product">
-          <img src="https://m.media-amazon.com/images/I/61KXKKQnrsL._AC_SX679_.jpg" alt="Electrolux EW6F4942FB">
-          <div class="rating-logo">
-            <div class="rating-score">9.5</div>
-            <p class="rating-label">Valoración</p>
-          </div>
-          <div class="product-details">
-            <h2>4. Electrolux EW6F4942FB</h2>
-            <p class="reviews">⭐⭐⭐⭐⭐ (13900+ opiniones)</p>
-            <div class="offer-container">
-              <div class="offer-buttons">
-                <span class="amazon-badge">Disponible en Amazon</span><br>
-                <a href="https://www.amazon.es/Electrolux-EW6F4942FB-Lavadora-Instalaci%C3%B3n-Diferido/dp/B0BJ39VM4N?crid=1OKQK2A1EINWB&dib=eyJ2IjoiMSJ9.8p3ifjpQ91kt-BSJyDdfkzQy2WiIGkwD_OE4uBv0kLLZHXxkrRbpOENJdd74vAvxvhWKwUBZfGg0SzWY6ZuXChChud8eyIumY26Yw0HrMSBFe6tcu5uZjgR-qjWX7LZOtIPTuh2h8qYUX_vgiEwqNAPAEPIS8FmDOwZpEi09gD9N1-hwd2BzsiehlzwBM0HjCqES2IYfMY78led35MFFkGaUpEFK8wLbbfyDhxnVP5TBb3IHcm8sHEA_uqrR6ZljbMmytDQRB8t5U5nfd4PMc2mPblWTcXby-VvQZCopjytuXX2hNBmeinTsFnOs-2Oef4QC_Qe5aYxFT6D7eFlliWNnSR_KQ4GgCGMZ7mDpHM0.fgq25HaIbwN_z1EWLvuk4-TECOU7BM6of8IEP6UK7vY&dib_tag=se&keywords=lavadora&psr=EY17&qid=1740615245&s=todays-deals&sprefix=lavadora%2Ctodays-deals%2C266&sr=1-4&srs=21350206031&ufe=app_do%3Aamzn1.fos.0fd54328-1d46-4534-bd0f-16141b40bb5b&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=cefe0ecd9c3a09dadf6b179580154442&language=es_ES&ref_=as_li_ss_tl" target="_blank">Ver precio</a>
-              </div>
-              <div class="extra-info">
-                <p><span class="checkmark">✔</span> Calidad</p>
-                <p><span class="checkmark">✔</span> Facilidad de uso</p>
-                <p><span class="checkmark">✔</span> Funcionamiento</p>
-              </div>
-            </div>
-            <div class="shipping-container">
-              <p class="shipping-text">Envío gratis</p>
-              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
-            </div>
-            <div class="more-info" style="display: none;">
-              <h3>Acerca de este producto</h3>
-              <p><strong>AHORRA AGUA Y ENERGÍA CON LA FUNCIÓN SENSICARE: adapta automáticamente el ciclo dependiendo de la carga para ahorrar tiempo, agua y energía. Hasta 9kg de lavado a 1400 rpm</p>
-              <p><strong>FUNCIÓN TIME MANAGER, AHORRA TIEMPO Y ENERGÍA: te permite ajustar la duración de cada ciclo de lavado dependiendo del tiempo que dispongas</p>
-              <p><strong>INICIO DIFERIDO: programa fácilmente la hora de inicio del ciclo de lavado.PROGRAMA VAPOR ANTIALÉRGICO: con el vapor que añade elimina bacterias</p>
-              <p><strong>FILTRO AQUACLEAN: Sustitúyelo cuando te avise y no necesitarás descalcificar la máquina hasta después de 5000 tazas (2), mientras disfrutas de tu café con agua libre de cal y purificada</p>
-              <p><strong>MOTOR INVERTER con 10 años de garantía: mayor durabilidad y eficiencia energética. Menor Ruido. SEGURIDAD INFANTIL: opción de bloqueo de seguridad para niños incluida.</p>
-            </div>
-          </div>
-        </div>
-        <!-- Producto 5 -->
-        <div class="product">
-          <img src="https://m.media-amazon.com/images/I/81-MZdk0i4L._AC_SY879_.jpg" alt="Candy, Smart Pro CSOE H8A2TE">
-          <div class="rating-logo">
-            <div class="rating-score">9.4</div>
-            <p class="rating-label">Valoración</p>
-          </div>
-          <div class="product-details">
-            <h2>5. Candy, Smart Pro CSOE H8A2TE</h2>
-            <p class="reviews">⭐⭐⭐⭐ (16800+ opiniones)</p>
-            <div class="offer-container">
-              <div class="offer-buttons">
-                <span class="amazon-badge">Disponible en Amazon</span><br>
-                <a href="https://www.amazon.es/Candy-CSOE-H8A2TE-Secadora-r%C3%A1pidos/dp/B0933FB5P3?crid=1OKQK2A1EINWB&dib=eyJ2IjoiMSJ9.8p3ifjpQ91kt-BSJyDdfkzQy2WiIGkwD_OE4uBv0kLLZHXxkrRbpOENJdd74vAvxvhWKwUBZfGg0SzWY6ZuXChChud8eyIumY26Yw0HrMSBFe6tcu5uZjgR-qjWX7LZOtIPTuh2h8qYUX_vgiEwqNAPAEPIS8FmDOwZpEi09gD9N1-hwd2BzsiehlzwBM0HjCqES2IYfMY78led35MFFkGaUpEFK8wLbbfyDhxnVP5TBb3IHcm8sHEA_uqrR6ZljbMmytDQRB8t5U5nfd4PMc2mPblWTcXby-VvQZCopjytuXX2hNBmeinTsFnOs-2Oef4QC_Qe5aYxFT6D7eFlliWNnSR_KQ4GgCGMZ7mDpHM0.fgq25HaIbwN_z1EWLvuk4-TECOU7BM6of8IEP6UK7vY&dib_tag=se&keywords=lavadora&psr=EY17&qid=1740615245&s=todays-deals&sprefix=lavadora%2Ctodays-deals%2C266&sr=1-5&srs=21350206031&ufe=app_do%3Aamzn1.fos.0fd54328-1d46-4534-bd0f-16141b40bb5b&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=fe96c973e1c6b809ba2dbb01c6e8a3a6&language=es_ES&ref_=as_li_ss_tl" target="_blank">Ver precio</a>
-              </div>
-              <div class="extra-info">
-                <p><span class="checkmark">✔</span> Calidad</p>
-                <p><span class="checkmark">✔</span> Fácil de usar</p>
-                <p><span class="checkmark">✔</span> Comodidad</p>
-              </div>
-            </div>
-            <div class="shipping-container">
-              <p class="shipping-text">Envío gratis</p>
-              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
-            </div>
-            <div class="more-info" style="display: none;">
-              <h3>Acerca de este producto</h3>
-              <p><strong>Secadora 8Kgs bomba de calor: ofrece el máximo cuidado a los tejidos, el mínimo consumo y protege el medio ambiente (Clase A++).</p>
-              <p><strong>Control por Wi-Fi o por voz: conecta tu secadora a la App hOn y consigue control remoto, consejos de lavado y asistencia inmediata. También compatible con Alexa y Google Home.</p>
-              <p><strong>Cajón "Easy Case" de 5l: ubicado en la puerta de la escotilla, para una extracción cómoda y rápida de la condensación de agu</p>
-              <p><strong>15 ciclos de lavado, 7 rápidos de menos de 90': ahorra tiempo gracias a los programas rápidos y protege incluso a las prendas más delicadas, como la lana.</p>
-              <p><strong>Medidas secadora (alto x ancho x prof): 85 x 60 x 58,5cm</p>
-            </div>
-          </div>
-        </div>
-        <!-- Producto 6 -->
-        <div class="product">
-          <img src="https://m.media-amazon.com/images/I/71rzoGp2JgL._AC_SX679_.jpg" alt="Candy RapidO RO16106DWMCT/1-S">
-          <div class="rating-logo">
-            <div class="rating-score">9.1</div>
-            <p class="rating-label">Valoración</p>
-          </div>
-          <div class="product-details">
-            <h2>6. Candy RapidO RO16106DWMCT/1-S</h2>
-            <p class="reviews">⭐⭐⭐⭐⭐ (11500+ opiniones)</p>
-            <div class="offer-container">
-              <div class="offer-buttons">
-                <span class="amazon-badge">Disponible en Amazon</span><br>
-                <a href="https://www.amazon.es/Candy-RO16106DWMCT-Lavadora-Pantalla-Inverter/dp/B0BWGXJYSK?crid=1OKQK2A1EINWB&dib=eyJ2IjoiMSJ9.8p3ifjpQ91kt-BSJyDdfkzQy2WiIGkwD_OE4uBv0kLLZHXxkrRbpOENJdd74vAvxvhWKwUBZfGg0SzWY6ZuXChChud8eyIumY26Yw0HrMSBFe6tcu5uZjgR-qjWX7LZOtIPTuh2h8qYUX_vgiEwqNAPAEPIS8FmDOwZpEi09gD9N1-hwd2BzsiehlzwBM0HjCqES2IYfMY78led35MFFkGaUpEFK8wLbbfyDhxnVP5TBb3IHcm8sHEA_uqrR6ZljbMmytDQRB8t5U5nfd4PMc2mPblWTcXby-VvQZCopjytuXX2hNBmeinTsFnOs-2Oef4QC_Qe5aYxFT6D7eFlliWNnSR_KQ4GgCGMZ7mDpHM0.fgq25HaIbwN_z1EWLvuk4-TECOU7BM6of8IEP6UK7vY&dib_tag=se&keywords=lavadora&psr=EY17&qid=1740615245&s=todays-deals&sprefix=lavadora%2Ctodays-deals%2C266&sr=1-6&srs=21350206031&ufe=app_do%3Aamzn1.fos.0fd54328-1d46-4534-bd0f-16141b40bb5b&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=7ccd3a7e3c11a008d792873fd9d137fc&language=es_ES&ref_=as_li_ss_tl" target="_blank">Ver precio</a>
-              </div>
-              <div class="extra-info">
-                <p><span class="checkmark">✔</span> Relación calidad-precio</p>
-                <p><span class="checkmark">✔</span> Comodidad</p>
-                <p><span class="checkmark">✔</span> Calidad</p>
-              </div>
-            </div>
-            <div class="shipping-container">
-              <p class="shipping-text">Envío gratis</p>
-              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
-            </div>
-            <div class="more-info" style="display: none;">
-              <h3>Acerca de este producto</h3>
-              <p><strong>Tecnología Quick&Clean: se trata de un innovador sistema de premezcla, el cual activa el detergente antes de entrar en contacto con los tejidos, consiguiendo lavados mucho más eficientes, rápidos y a baja temperatura, ahorrando energía y tiempo.</p>
-              <p><strong>Easy Iron: higieniza, relaja las fibras y facilita el planchado gracias a la función vapor.</p>
-              <p><strong>Ahorra tiempo con los 9 ciclos rápidos de menos de 59': escoge entre sus 9 programas rápidos y eficientes de menos de una hora y consigue los mejores resultados gracias al Motor Inverter Speed Drive.</p>
-              <p><strong>Función Snap and Wash: realiza una foto de la colada y la App hOn te aconsejará que programa rápido utilizar en función de las prendas y tus necesidades.</p>
-              <p><strong>Medidas Lavadora (alto x ancho x profundidad): 85 x 60 x 58 cm</p>
-            </div>
-          </div>
-        </div>
-        <!-- Producto 7 -->
-        <div class="product">
-          <img src="https://m.media-amazon.com/images/I/71NZB87nN1L._AC_SX679_.jpg" alt="Cecotec Lavadora 6Kg">
-          <div class="rating-logo">
-            <div class="rating-score">9.1</div>
-            <p class="rating-label">Valoración</p>
-          </div>
-          <div class="product-details">
-            <h2>7. Cecotec Lavadora 6Kg</h2>
-            <p class="reviews">⭐⭐⭐⭐ (16600+ opiniones)</p>
-            <div class="offer-container">
-              <div class="offer-buttons">
-                <span class="amazon-badge">Disponible en Amazon</span><br>
-                <a href="https://www.amazon.es/Cecotec-Lavadora-DressCode-Inverter-Programas/dp/B0DRPFXDQH?crid=1OKQK2A1EINWB&dib=eyJ2IjoiMSJ9.6SqJoOLT9ABSzqVurC8u2c8RNChucvIjKTkUrmSt7qF1eW20xR-48AC5JcU3xMSfqr5Vd4BWFXMLd08nzRghlfRjjrQ_jmTqsF8_cCxgCrCBF3tk3UUS05aASOO_sgQoFxFnP7bAwRGyR0lAsHVcKHiYmlwrUFB_WlZ-E3et8fH4IwadiL_BlONHpXaaxQEfg8ZBL3Ue7bCRFuup_0M67JRS3Fzc7t7HpLsPrTiwLEG_jiFHUA1_r4RC_gJdok4c7t0p24qZTBjbRWT3cMRUffGzy5ZxSIx8WMgH9mimHVPoe8pg2PiWtBygdbsooF8p03y07MQNlbeRSTsMEG55kckfVYiS_9tB3_H8kkTdKM4.n8leXWRt3uz3U0nlniXfb8hwU15DeKQh7uKLj2c1Csw&dib_tag=se&keywords=lavadora&psr=EY17&qid=1740616807&s=todays-deals&sprefix=lavadora%2Ctodays-deals%2C266&sr=1-2-catcorr&srs=21350206031&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&linkCode=ll1&tag=yocompro0e-21&linkId=73dbeba36fe1cd798e15e22c56f38f67&language=es_ES&ref_=as_li_ss_tl" target="_blank">Ver precio</a>
-              </div>
-              <div class="extra-info">
-                <p><span class="checkmark">✔</span> Calidad</p>
-                <p><span class="checkmark">✔</span> Funcionamiento</p>
-                <p><span class="checkmark">✔</span> Relación calidad-precio</p>
-              </div>
-            </div>
-            <div class="shipping-container">
-              <p class="shipping-text">Envío gratis</p>
-              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
-            </div>
-            <div class="more-info" style="display: none;">
-              <h3>Acerca de este producto</h3>
-              <p><strong>Capacidad de carga 6 Kg. Revoluciones programables: disfruta de sus revoluciones programables de hasta 1200 rpm.</p>
-              <p><strong>Clase A: máxima eficiencia energética que permite un gran ahorro energético en cada lavado. Motor Inverter Plus: garantiza un funcionamiento eficiente lavado tras lavado, lo que permite ahorrar más de un 50% en comparación con un motor universal. Además, reduce el ruido durante su funcionamiento, sobre todo en la fase de centrifugado y lavado.</p>
-              <p><strong>SteamMax: limpieza profunda con vapor que penetra en la ropa, elimina las manchas difíciles y esteriliza cada prenda. 11 programas: un programa para cada momento y cada tejido para ofrecer siempre lavados a medida. Gran variedad de programas que se ajustan a todas tus necesidades y a todas tus prendas.</p>
-              <p><strong>Drum Clean. El tambor se limpia solo para evitar la acumulación de bacterias. Libre de suciedad y malos olores. Programa rápido 15': perfecto para limpiar rápidamente prendas ligeramente sucias, optimizando tiempo y consumo energético.</p>
-              <p><strong>DelayStart: programa el inicio de cada lavado hasta 24 h antes. Stop&Go: para la lavadora durante su funcionamiento para abrir el tambor si te has olvidado de meter una prenda o quieres sacar alguna. Aclarado extra: permite eliminar residuos de detergente y suciedad, garantizando ropa más limpia y fresca</p>
-            </div>
-          </div>
-        </div>
-        <!-- Producto 8 -->
-        <div class="product">
-          <img src="https://m.media-amazon.com/images/I/71vyAnlqtBL._AC_SX679_.jpg" alt="Hisense WFQE8014EVJM ">
-          <div class="rating-logo">
-            <div class="rating-score">9.0</div>
-            <p class="rating-label">Valoración</p>
-          </div>
-          <div class="product-details">
-            <h2>8. Hisense WFQE8014EVJM </h2>
-            <p class="reviews">⭐⭐⭐⭐⭐ (2500+ opiniones)</p>
-            <div class="offer-container">
-              <div class="offer-buttons">
-                <span class="amazon-badge">Disponible en Amazon</span><br>
-                <a href="https://www.amazon.es/Hisense-WFQE8014EVJM-Programas-Autom%C3%A1ticos-Eficiencia/dp/B0CP6QST4D?crid=1OKQK2A1EINWB&dib=eyJ2IjoiMSJ9.6SqJoOLT9ABSzqVurC8u2c8RNChucvIjKTkUrmSt7qF1eW20xR-48AC5JcU3xMSfqr5Vd4BWFXMLd08nzRghlfRjjrQ_jmTqsF8_cCxgCrCBF3tk3UUS05aASOO_sgQoFxFnP7bAwRGyR0lAsHVcKHiYmlwrUFB_WlZ-E3et8fH4IwadiL_BlONHpXaaxQEfg8ZBL3Ue7bCRFuup_0M67JRS3Fzc7t7HpLsPrTiwLEG_jiFHUA1_r4RC_gJdok4c7t0p24qZTBjbRWT3cMRUffGzy5ZxSIx8WMgH9mimHVPoe8pg2PiWtBygdbsooF8p03y07MQNlbeRSTsMEG55kckfVYiS_9tB3_H8kkTdKM4.n8leXWRt3uz3U0nlniXfb8hwU15DeKQh7uKLj2c1Csw&dib_tag=se&keywords=lavadora&psr=EY17&qid=1740617105&s=todays-deals&sprefix=lavadora%2Ctodays-deals%2C266&sr=1-3-catcorr&srs=21350206031&ufe=app_do%3Aamzn1.fos.0fd54328-1d46-4534-bd0f-16141b40bb5b&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=ba4bfbed41db28c762ef50748a0950d8&language=es_ES&ref_=as_li_ss_tl" target="_blank">Ver precio</a>
-              </div>
-              <div class="extra-info">
-                <p><span class="checkmark">✔</span> Calidad</p>
-                <p><span class="checkmark">✔</span> Facilidad de uso</p>
-                <p><span class="checkmark">✔</span> Precio</p>
-              </div>
-            </div>
-            <div class="shipping-container">
-              <p class="shipping-text">Envío gratis</p>
-              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
-            </div>
-            <div class="more-info" style="display: none;">
-              <h3>Acerca de este producto</h3>
-              <p><strong>Capacidad	8 Kilogramos</p>
-              <p><strong>Ubicación de acceso	Carga frontal.</p>
-              <p><strong>Velocidad máxima de rotación	1400 RPM</p>
-              <p><strong>Funcionamiento	Completamente automático</p>
-              <p><strong>Opciones del dispensador de la lavadora	Al menos 1 compartimento para aditivos</p>
-            </div>
-          </div>
-        </div>
-        <!-- Producto 9 -->
-        <div class="product">
-          <img src="https://m.media-amazon.com/images/I/61SCzg9sWaL._AC_SX679_.jpg" alt="Cecotec Lavadora 8Kg">
-          <div class="rating-logo">
-            <div class="rating-score">8.8</div>
-            <p class="rating-label">Valoración</p>
-          </div>
-          <div class="product-details">
-            <h2>9. Cecotec Lavadora 8Kg</h2>
-            <p class="reviews">⭐⭐⭐⭐ (18400+ opiniones)</p>
-            <div class="offer-container">
-              <div class="offer-buttons">
-                <span class="amazon-badge">Disponible en Amazon</span><br>
-                <a href="https://www.amazon.es/Cecotec-Dresscode-Regulables-Programas-Esterilizaci%C3%B3n/dp/B0BPYR5WYS?crid=1OKQK2A1EINWB&dib=eyJ2IjoiMSJ9.6SqJoOLT9ABSzqVurC8u2c8RNChucvIjKTkUrmSt7qF1eW20xR-48AC5JcU3xMSfqr5Vd4BWFXMLd08nzRghlfRjjrQ_jmTqsF8_cCxgCrCBF3tk3UUS05aASOO_sgQoFxFnP7bAwRGyR0lAsHVcKHiYmlwrUFB_WlZ-E3et8fH4IwadiL_BlONHpXaaxQEfg8ZBL3Ue7bCRFuup_0M67JRS3Fzc7t7HpLsPrTiwLEG_jiFHUA1_r4RC_gJdok4c7t0p24qZTBjbRWT3cMRUffGzy5ZxSIx8WMgH9mimHVPoe8pg2PiWtBygdbsooF8p03y07MQNlbeRSTsMEG55kckfVYiS_9tB3_H8kkTdKM4.n8leXWRt3uz3U0nlniXfb8hwU15DeKQh7uKLj2c1Csw&dib_tag=se&keywords=lavadora&psr=EY17&qid=1740617105&s=todays-deals&sprefix=lavadora%2Ctodays-deals%2C266&sr=1-4-catcorr&srs=21350206031&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=790a26d59682eb504c2e5516714f99b7&language=es_ES&ref_=as_li_ss_tl" target="_blank">Ver precio</a>
-              </div>
-              <div class="extra-info">
-                <p><span class="checkmark">✔</span> Calidad</p>
-                <p><span class="checkmark">✔</span> Facilidad de uso</p>
-                <p><span class="checkmark">✔</span> Relación calidad-precio</p>
-              </div>
-            </div>
-            <div class="shipping-container">
-              <p class="shipping-text">Envío gratis</p>
-              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
-            </div>
-            <div class="more-info" style="display: none;">
-              <h3>Acerca de este producto</h3>
-              <p><strong>Con una capacidad de 8 kg, esta lavadora es ideal para familias, permitiéndote lavar grandes cantidades de ropa en un solo ciclo. Puedes regular sus revoluciones hasta 1400 rpm, adaptándose a tus tejidos y necesidades específicas. Además, ofrece 16 programas diferentes para que elijas el que mejor se ajuste a tus requerimientos.</p>
-              <p><strong>Nuestra lavadora destaca por su eficiencia energética superior, alcanzando la clase A con un 10% de ahorro adicional. Con tecnología innovadora, optimiza cada ciclo para ofrecer un lavado impecable, rápido y con menor consumo de energía, siendo la mejor opción para tu hogar y el medio ambiente. El Motor Inverter Plus garantiza un rendimiento de alta calidad y máxima durabilidad, reduciendo vibraciones y ruido, y favoreciendo el ahorro energético.</p>
-              <p><strong>La función SteamMax envuelve la colada con vapor, penetrando eficazmente en cada prenda para esterilizarla y eliminar manchas y olores. El programa Allergy Care utiliza vapor y agua a altas temperaturas para esterilizar la ropa, mientras que Diamond Care cuida tus prendas gracias al tambor en forma de diamante. Además, el tambor se limpia solo con la función Drum Clean, evitando la acumulación de bacterias y malos olores.</p>
-              <p><strong>Con la función Delay Start, puedes programar el inicio del lavado entre 0 y 24 horas antes, adaptándolo a tu horario. La función Stop&Go permite pausar la lavadora durante su funcionamiento para añadir o retirar prendas, ofreciendo flexibilidad en cada lavado. El Modo Eco reduce el consumo y el ruido utilizando una potencia de lavado más suave.</p>
-              <p><strong>La tecnología Kid Lock proporciona un bloqueo de seguridad para niños, evitando que puedan controlar la lavadora y previniendo accidentes en tu hogar. Esta característica asegura que el uso de la lavadora sea seguro y sin preocupaciones, protegiendo a los más pequeños de la casa</p>
-            </div>
-          </div>
-        </div>
-        <!-- Producto 10 -->
-        <div class="product">
-          <img src="https://m.media-amazon.com/images/I/71kjKd4KUCL._AC_SY879_.jpg" alt="Candy Smart CS 14102DE/1-S">
-          <div class="rating-logo">
-            <div class="rating-score">8.5</div>
-            <p class="rating-label">Valoración</p>
-          </div>
-          <div class="product-details">
-            <h2>10. Candy Smart CS 14102DE/1-S</h2>
-            <p class="reviews">⭐⭐⭐⭐⭐ (13500+ opiniones)</p>
-            <div class="offer-container">
-              <div class="offer-buttons">
-                <span class="amazon-badge">Disponible en Amazon</span><br>
-                <a href="https://www.amazon.es/Lavadora-Candy-CS-14102DE-1S-frontal/dp/B08L82PV2J?crid=1OKQK2A1EINWB&dib=eyJ2IjoiMSJ9.6SqJoOLT9ABSzqVurC8u2c8RNChucvIjKTkUrmSt7qF1eW20xR-48AC5JcU3xMSfqr5Vd4BWFXMLd08nzRghlfRjjrQ_jmTqsF8_cCxgCrCBF3tk3UUS05aASOO_sgQoFxFnP7bAwRGyR0lAsHVcKHiYmlwrUFB_WlZ-E3et8fH4IwadiL_BlONHpXaaxQEfg8ZBL3Ue7bCRFuup_0M67JRS3Fzc7t7HpLsPrTiwLEG_jiFHUA1_r4RC_gJdok4c7t0p24qZTBjbRWT3cMRUffGzy5ZxSIx8WMgH9mimHVPoe8pg2PiWtBygdbsooF8p03y07MQNlbeRSTsMEG55kckfVYiS_9tB3_H8kkTdKM4.n8leXWRt3uz3U0nlniXfb8hwU15DeKQh7uKLj2c1Csw&dib_tag=se&keywords=lavadora&psr=EY17&qid=1740617105&s=todays-deals&sprefix=lavadora%2Ctodays-deals%2C266&sr=1-7-catcorr&srs=21350206031&ufe=app_do%3Aamzn1.fos.0fd54328-1d46-4534-bd0f-16141b40bb5b&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=57e4d48fb64ebfd4c99ac7a4fde3e5a3&language=es_ES&ref_=as_li_ss_tl" target="_blank">Ver precio</a>
-              </div>
-              <div class="extra-info">
-                <p><span class="checkmark">✔</span> Calidad</p>
-                <p><span class="checkmark">✔</span> Funcionalidad</p>
-                <p><span class="checkmark">✔</span> Facilidad de uso</p>
-              </div>
-            </div>
-            <div class="shipping-container">
-              <p class="shipping-text">Envío gratis</p>
-              <button class="toggle-info" onclick="toggleInfo(this)">Mostrar más</button>
-            </div>
-            <div class="more-info" style="display: none;">
-              <h3>Acerca de este producto</h3>
-              <p><strong> Lavadora Candy 10kg, la solución perfecta para grandes coladas: ahorra tiempo y electricidad con una lavadora de gran capacidad y lava grandes volúmenes de ropa, sin necesidad de ir a la lavandería.</p>
-              <p><strong> Di adiós a los problemas de espalda, con la escotilla XXL: la puerta más alta y grande ofrece una mayor comodidad de uso, sin forzar la espalda mientras se carga la ropa en la lavadora.</p>
-              <p><strong> Aprovecha tu tiempo con los ciclos rápidos de menos de 59': diseñados para la limpieza de todo tipo de tejidos, garantizando resultados excelentes de la forma más rápida y eficiente.</p>
-              <p><strong> Disfruta de múltiples ventajas en tus sesiones de lavado: inicio retrasado de hasta 24h, tecnología NFC con opción a la descarga de nuevos ciclos, la activación del asistente por voz y mucho más.</p>
-              <p><strong> Tamaño lavadora (alto x ancho x profunidad): 85 x 60 x 58cm</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Sidebar que ahora se muestra a la derecha -->
-    <div class="sidebar">
-      <!-- Aquí puedes colocar el anuncio patrocinado que antes estaba en la izquierda -->
-      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3702060621408236" data-ad-slot="9876543210" data-ad-format="auto"></ins>
-      <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3702060621408236" data-ad-slot="1234567890" data-ad-format="auto"></ins>
-      <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-      <h3>Anuncios Patrocinados</h3>
-    </div>
-  </div>
-  <!-- Banner de cookies -->
-  <div id="cookie-banner" style="position: fixed; bottom: 0; background: #222; color: white; padding: 15px; width: 100%; text-align: center;">
-    Este sitio usa cookies para mejorar la experiencia. ¿Aceptas?
-    <button onclick="aceptarCookies(); document.getElementById('cookie-banner').style.display='none';">Aceptar</button>
-    <button onclick="rechazarCookies(); document.getElementById('cookie-banner').style.display='none';">Rechazar</button>
-  </div>
   <script>
+    function redirectToAmazon(url) {
+      window.open(url, '_blank');
+    }
     function toggleInfo(button) {
-      var info = button.parentElement.nextElementSibling;
+      var info = button.nextElementSibling;
       if (info.style.display === "none" || info.style.display === "") {
         info.style.display = "block";
         button.textContent = "Mostrar menos";
@@ -660,6 +151,56 @@
       }
     }
   </script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Top 10: Las Mejores Lavadoras</h1>
+    <div class="product-list">
+      <script>
+        const products = [
+          { name: "Balay - Lavadora, 9 kg", rating: "9.9", reviews: "14200 Oferta -25 %", image: "https://m.media-amazon.com/images/I/71mtc1bmq7L._AC_SY879_.jpg", url: "https://www.amazon.es/Balay-Autodosificacion-ProgramaPlancha-antimanchas-3TS395BDS/dp/B0DJ1619DF?crid=1OKQK2A1EINWB&dib=eyJ2IjoiMSJ9.8p3ifjpQ91kt-BSJyDdfkzQy2WiIGkwD_OE4uBv0kLLZHXxkrRbpOENJdd74vAvxvhWKwUBZfGg0SzWY6ZuXChChud8eyIumY26Yw0HrMSBFe6tcu5uZjgR-qjWX7LZOtIPTuh2h8qYUX_vgiEwqNAPAEPIS8FmDOwZpEi09gD9N1-hwd2BzsiehlzwBM0HjCqES2IYfMY78led35MFFkGaUpEFK8wLbbfyDhxnVP5TBb3IHcm8sHEA_uqrR6ZljbMmytDQRB8t5U5nfd4PMc2mPblWTcXby-VvQZCopjytuXX2hNBmeinTsFnOs-2Oef4QC_Qe5aYxFT6D7eFlliWNnSR_KQ4GgCGMZ7mDpHM0.fgq25HaIbwN_z1EWLvuk4-TECOU7BM6of8IEP6UK7vY&dib_tag=se&keywords=lavadora&psr=EY17&qid=1740614773&s=todays-deals&sprefix=lavadora%2Ctodays-deals%2C266&sr=1-1&srs=21350206031&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=d294f6729192d370157478fa36b95a4d&language=es_ES&ref_=as_li_ss_tl" },
+          { name: "AEG LFR6194O4Q Lavadora", rating: "9.8", reviews: "16000+ Oferta flash -43 %", image: "https://m.media-amazon.com/images/I/71cW-lHnaQL._AC_SX679_.jpg", url: "https://www.amazon.es/AEG-LFR6194O4Q-Lavadora-Instalaci%C3%B3n-C%C3%A1psulas/dp/B0C5FM33VV?crid=1OKQK2A1EINWB&dib=eyJ2IjoiMSJ9.8p3ifjpQ91kt-BSJyDdfkzQy2WiIGkwD_OE4uBv0kLLZHXxkrRbpOENJdd74vAvxvhWKwUBZfGg0SzWY6ZuXChChud8eyIumY26Yw0HrMSBFe6tcu5uZjgR-qjWX7LZOtIPTuh2h8qYUX_vgiEwqNAPAEPIS8FmDOwZpEi09gD9N1-hwd2BzsiehlzwBM0HjCqES2IYfMY78led35MFFkGaUpEFK8wLbbfyDhxnVP5TBb3IHcm8sHEA_uqrR6ZljbMmytDQRB8t5U5nfd4PMc2mPblWTcXby-VvQZCopjytuXX2hNBmeinTsFnOs-2Oef4QC_Qe5aYxFT6D7eFlliWNnSR_KQ4GgCGMZ7mDpHM0.fgq25HaIbwN_z1EWLvuk4-TECOU7BM6of8IEP6UK7vY&dib_tag=se&keywords=lavadora&psr=EY17&qid=1740615245&s=todays-deals&sprefix=lavadora%2Ctodays-deals%2C266&sr=1-2&srs=21350206031&ufe=app_do%3Aamzn1.fos.0fd54328-1d46-4534-bd0f-16141b40bb5b&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=b13f9fcee8f448e3256ebe3c6ceee859&language=es_ES&ref_=as_li_ss_tl" },
+          { name: "Haier I-Pro Series 5 HW90", rating: "9.7", reviews: "14200+ Oferta -12 %", image: "https://m.media-amazon.com/images/I/61azn66-LeL._AC_SX679_.jpg", url: "https://www.amazon.es/Haier-HW90-B14959EU1IB-Tratamiento-Antibacterias-Autom%C3%A1tico/dp/B0CRHX1N9S?crid=1OKQK2A1EINWB&dib=eyJ2IjoiMSJ9.8p3ifjpQ91kt-BSJyDdfkzQy2WiIGkwD_OE4uBv0kLLZHXxkrRbpOENJdd74vAvxvhWKwUBZfGg0SzWY6ZuXChChud8eyIumY26Yw0HrMSBFe6tcu5uZjgR-qjWX7LZOtIPTuh2h8qYUX_vgiEwqNAPAEPIS8FmDOwZpEi09gD9N1-hwd2BzsiehlzwBM0HjCqES2IYfMY78led35MFFkGaUpEFK8wLbbfyDhxnVP5TBb3IHcm8sHEA_uqrR6ZljbMmytDQRB8t5U5nfd4PMc2mPblWTcXby-VvQZCopjytuXX2hNBmeinTsFnOs-2Oef4QC_Qe5aYxFT6D7eFlliWNnSR_KQ4GgCGMZ7mDpHM0.fgq25HaIbwN_z1EWLvuk4-TECOU7BM6of8IEP6UK7vY&dib_tag=se&keywords=lavadora&psr=EY17&qid=1740615245&s=todays-deals&sprefix=lavadora%2Ctodays-deals%2C266&sr=1-3&srs=21350206031&ufe=app_do%3Aamzn1.fos.0fd54328-1d46-4534-bd0f-16141b40bb5b&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=195a04367abe24cb66c27697657231e8&language=es_ES&ref_=as_li_ss_tl" },
+          { name: "Electrolux EW6F4942FB Lavadora", rating: "9.6", reviews: "14000+ Oferta -13 %", image: "https://m.media-amazon.com/images/I/61KXKKQnrsL._AC_SX679_.jpg", url: "https://www.amazon.es/Electrolux-EW6F4942FB-Lavadora-Instalaci%C3%B3n-Diferido/dp/B0BJ39VM4N?crid=1OKQK2A1EINWB&dib=eyJ2IjoiMSJ9.8p3ifjpQ91kt-BSJyDdfkzQy2WiIGkwD_OE4uBv0kLLZHXxkrRbpOENJdd74vAvxvhWKwUBZfGg0SzWY6ZuXChChud8eyIumY26Yw0HrMSBFe6tcu5uZjgR-qjWX7LZOtIPTuh2h8qYUX_vgiEwqNAPAEPIS8FmDOwZpEi09gD9N1-hwd2BzsiehlzwBM0HjCqES2IYfMY78led35MFFkGaUpEFK8wLbbfyDhxnVP5TBb3IHcm8sHEA_uqrR6ZljbMmytDQRB8t5U5nfd4PMc2mPblWTcXby-VvQZCopjytuXX2hNBmeinTsFnOs-2Oef4QC_Qe5aYxFT6D7eFlliWNnSR_KQ4GgCGMZ7mDpHM0.fgq25HaIbwN_z1EWLvuk4-TECOU7BM6of8IEP6UK7vY&dib_tag=se&keywords=lavadora&psr=EY17&qid=1740615245&s=todays-deals&sprefix=lavadora%2Ctodays-deals%2C266&sr=1-4&srs=21350206031&ufe=app_do%3Aamzn1.fos.0fd54328-1d46-4534-bd0f-16141b40bb5b&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=490a2e28bb330a6090f7ba56c3bcaf59&language=es_ES&ref_=as_li_ss_tl" },
+          { name: "Candy, Smart Pro CSOE Secadora", rating: "9.5", reviews: "23900+ Oferta -11 % ", image: "https://m.media-amazon.com/images/I/81-MZdk0i4L._AC_SY879_.jpg", url: "https://www.amazon.es/Candy-CSOE-H8A2TE-Secadora-r%C3%A1pidos/dp/B0933FB5P3?crid=1OKQK2A1EINWB&dib=eyJ2IjoiMSJ9.8p3ifjpQ91kt-BSJyDdfkzQy2WiIGkwD_OE4uBv0kLLZHXxkrRbpOENJdd74vAvxvhWKwUBZfGg0SzWY6ZuXChChud8eyIumY26Yw0HrMSBFe6tcu5uZjgR-qjWX7LZOtIPTuh2h8qYUX_vgiEwqNAPAEPIS8FmDOwZpEi09gD9N1-hwd2BzsiehlzwBM0HjCqES2IYfMY78led35MFFkGaUpEFK8wLbbfyDhxnVP5TBb3IHcm8sHEA_uqrR6ZljbMmytDQRB8t5U5nfd4PMc2mPblWTcXby-VvQZCopjytuXX2hNBmeinTsFnOs-2Oef4QC_Qe5aYxFT6D7eFlliWNnSR_KQ4GgCGMZ7mDpHM0.fgq25HaIbwN_z1EWLvuk4-TECOU7BM6of8IEP6UK7vY&dib_tag=se&keywords=lavadora&psr=EY17&qid=1740615245&s=todays-deals&sprefix=lavadora%2Ctodays-deals%2C266&sr=1-5&srs=21350206031&ufe=app_do%3Aamzn1.fos.0fd54328-1d46-4534-bd0f-16141b40bb5b&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=968534d7b5a095735706648b71e0fd2f&language=es_ES&ref_=as_li_ss_tl" },
+          { name: "Candy RapidO RO16106DWMCT/1", rating: "9.5", reviews: "13800+ Oferta -31 %", image: "https://m.media-amazon.com/images/I/71rzoGp2JgL._AC_SX679_.jpg", url: "https://www.amazon.es/Candy-RO16106DWMCT-Lavadora-Pantalla-Inverter/dp/B0BWGXJYSK?crid=1OKQK2A1EINWB&dib=eyJ2IjoiMSJ9.8p3ifjpQ91kt-BSJyDdfkzQy2WiIGkwD_OE4uBv0kLLZHXxkrRbpOENJdd74vAvxvhWKwUBZfGg0SzWY6ZuXChChud8eyIumY26Yw0HrMSBFe6tcu5uZjgR-qjWX7LZOtIPTuh2h8qYUX_vgiEwqNAPAEPIS8FmDOwZpEi09gD9N1-hwd2BzsiehlzwBM0HjCqES2IYfMY78led35MFFkGaUpEFK8wLbbfyDhxnVP5TBb3IHcm8sHEA_uqrR6ZljbMmytDQRB8t5U5nfd4PMc2mPblWTcXby-VvQZCopjytuXX2hNBmeinTsFnOs-2Oef4QC_Qe5aYxFT6D7eFlliWNnSR_KQ4GgCGMZ7mDpHM0.fgq25HaIbwN_z1EWLvuk4-TECOU7BM6of8IEP6UK7vY&dib_tag=se&keywords=lavadora&psr=EY17&qid=1740615245&s=todays-deals&sprefix=lavadora%2Ctodays-deals%2C266&sr=1-6&srs=21350206031&ufe=app_do%3Aamzn1.fos.0fd54328-1d46-4534-bd0f-16141b40bb5b&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=db65448a73634ca5c4b5aa3e07f7769e&language=es_ES&ref_=as_li_ss_tl" },
+          { name: "Cecotec Lavadora 6Kg Carga Frontal", rating: "9.4", reviews: "10700+ Impresionante", image: "https://m.media-amazon.com/images/I/71NZB87nN1L._AC_SX679_.jpg", url: "https://www.amazon.es/Cecotec-Lavadora-DressCode-Inverter-Programas/dp/B0DRPFXDQH?crid=1OKQK2A1EINWB&dib=eyJ2IjoiMSJ9.6SqJoOLT9ABSzqVurC8u2c8RNChucvIjKTkUrmSt7qF1eW20xR-48AC5JcU3xMSfqr5Vd4BWFXMLd08nzRghlfRjjrQ_jmTqsF8_cCxgCrCBF3tk3UUS05aASOO_sgQoFxFnP7bAwRGyR0lAsHVcKHiYmlwrUFB_WlZ-E3et8fH4IwadiL_BlONHpXaaxQEfg8ZBL3Ue7bCRFuup_0M67JRS3Fzc7t7HpLsPrTiwLEG_jiFHUA1_r4RC_gJdok4c7t0p24qZTBjbRWT3cMRUffGzy5ZxSIx8WMgH9mimHVPoe8pg2PiWtBygdbsooF8p03y07MQNlbeRSTsMEG55kckfVYiS_9tB3_H8kkTdKM4.n8leXWRt3uz3U0nlniXfb8hwU15DeKQh7uKLj2c1Csw&dib_tag=se&keywords=lavadora&psr=EY17&qid=1740616807&s=todays-deals&sprefix=lavadora%2Ctodays-deals%2C266&sr=1-2-catcorr&srs=21350206031&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&linkCode=ll1&tag=yocompro0e-21&linkId=8746f5c768ec395dbf901f1c9fba78ff&language=es_ES&ref_=as_li_ss_tl" },
+          { name: "Hisense WFQE8014EVJM Lavadora 8 Kg", rating: "9.3", reviews: "15600+ Exclusivo en Amazon", image: "https://m.media-amazon.com/images/I/71vyAnlqtBL._AC_SX679_.jpg", url: "https://www.amazon.es/Hisense-WFQE8014EVJM-Programas-Autom%C3%A1ticos-Eficiencia/dp/B0CP6QST4D?crid=1OKQK2A1EINWB&dib=eyJ2IjoiMSJ9.6SqJoOLT9ABSzqVurC8u2c8RNChucvIjKTkUrmSt7qF1eW20xR-48AC5JcU3xMSfqr5Vd4BWFXMLd08nzRghlfRjjrQ_jmTqsF8_cCxgCrCBF3tk3UUS05aASOO_sgQoFxFnP7bAwRGyR0lAsHVcKHiYmlwrUFB_WlZ-E3et8fH4IwadiL_BlONHpXaaxQEfg8ZBL3Ue7bCRFuup_0M67JRS3Fzc7t7HpLsPrTiwLEG_jiFHUA1_r4RC_gJdok4c7t0p24qZTBjbRWT3cMRUffGzy5ZxSIx8WMgH9mimHVPoe8pg2PiWtBygdbsooF8p03y07MQNlbeRSTsMEG55kckfVYiS_9tB3_H8kkTdKM4.n8leXWRt3uz3U0nlniXfb8hwU15DeKQh7uKLj2c1Csw&dib_tag=se&keywords=lavadora&psr=EY17&qid=1740617105&s=todays-deals&sprefix=lavadora%2Ctodays-deals%2C266&sr=1-3-catcorr&srs=21350206031&ufe=app_do%3Aamzn1.fos.0fd54328-1d46-4534-bd0f-16141b40bb5b&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=bc1f614dc753940109205eae94cd4015&language=es_ES&ref_=as_li_ss_tl" },
+          { name: "Cecotec Lavadora 8Kg", rating: "9.0", reviews: "17400+ Financia este producto", image: "https://m.media-amazon.com/images/I/61SCzg9sWaL._AC_SX679_.jpg", url: "https://www.amazon.es/Cecotec-Dresscode-Regulables-Programas-Esterilizaci%C3%B3n/dp/B0BPYR5WYS?crid=1OKQK2A1EINWB&dib=eyJ2IjoiMSJ9.6SqJoOLT9ABSzqVurC8u2c8RNChucvIjKTkUrmSt7qF1eW20xR-48AC5JcU3xMSfqr5Vd4BWFXMLd08nzRghlfRjjrQ_jmTqsF8_cCxgCrCBF3tk3UUS05aASOO_sgQoFxFnP7bAwRGyR0lAsHVcKHiYmlwrUFB_WlZ-E3et8fH4IwadiL_BlONHpXaaxQEfg8ZBL3Ue7bCRFuup_0M67JRS3Fzc7t7HpLsPrTiwLEG_jiFHUA1_r4RC_gJdok4c7t0p24qZTBjbRWT3cMRUffGzy5ZxSIx8WMgH9mimHVPoe8pg2PiWtBygdbsooF8p03y07MQNlbeRSTsMEG55kckfVYiS_9tB3_H8kkTdKM4.n8leXWRt3uz3U0nlniXfb8hwU15DeKQh7uKLj2c1Csw&dib_tag=se&keywords=lavadora&psr=EY17&qid=1740617105&s=todays-deals&sprefix=lavadora%2Ctodays-deals%2C266&sr=1-4-catcorr&srs=21350206031&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=4dcdbd3d9839a38114542db7decc3a1a&language=es_ES&ref_=as_li_ss_tl" },
+          { name: "Candy Smart CS 14102DE/1-S", rating: "8.8", reviews: "13300+ Oferta flash -3 % ", image: "https://m.media-amazon.com/images/I/71kjKd4KUCL._AC_SY879_.jpg", url: "https://www.amazon.es/Lavadora-Candy-CS-14102DE-1S-frontal/dp/B08L82PV2J?crid=1OKQK2A1EINWB&dib=eyJ2IjoiMSJ9.6SqJoOLT9ABSzqVurC8u2c8RNChucvIjKTkUrmSt7qF1eW20xR-48AC5JcU3xMSfqr5Vd4BWFXMLd08nzRghlfRjjrQ_jmTqsF8_cCxgCrCBF3tk3UUS05aASOO_sgQoFxFnP7bAwRGyR0lAsHVcKHiYmlwrUFB_WlZ-E3et8fH4IwadiL_BlONHpXaaxQEfg8ZBL3Ue7bCRFuup_0M67JRS3Fzc7t7HpLsPrTiwLEG_jiFHUA1_r4RC_gJdok4c7t0p24qZTBjbRWT3cMRUffGzy5ZxSIx8WMgH9mimHVPoe8pg2PiWtBygdbsooF8p03y07MQNlbeRSTsMEG55kckfVYiS_9tB3_H8kkTdKM4.n8leXWRt3uz3U0nlniXfb8hwU15DeKQh7uKLj2c1Csw&dib_tag=se&keywords=lavadora&psr=EY17&qid=1740617105&s=todays-deals&sprefix=lavadora%2Ctodays-deals%2C266&sr=1-7-catcorr&srs=21350206031&ufe=app_do%3Aamzn1.fos.0fd54328-1d46-4534-bd0f-16141b40bb5b&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=8dcf390234f8ea0d66f48cb8f94afbb3&language=es_ES&ref_=as_li_ss_tl" }
+        ];
+
+        products.forEach((product, index) => {
+          document.write(`
+            <div class="product" onclick="redirectToAmazon('${product.url}');">
+              <span class="rating-score">${product.rating}</span>
+              <img src="${product.image}" alt="Freidora ${index + 1}">
+              <div class="product-details">
+                <h2>${index + 1}. ${product.name}</h2>
+                <p>⭐⭐⭐⭐⭐ (${product.reviews})</p>
+                <a href="${product.url}" target="_blank">Ver precio</a>
+                <br>
+                <div style='display: flex; align-items: center; gap: 10px;'>
+                  <img src='https://s1.qwant.com/thumbr/474x158/9/7/f63c3ffb13724faceb8e31aa326595a97728bf158aeb13ffc95db5f9fa7625/th.jpg?u=https%3A%2F%2Ftse.mm.bing.net%2Fth%3Fid%3DOIP.B1P05zmy1Y_JxrZZilY6kwHaCe%26pid%3DApi&q=0&b=1&p=0&a=0' style='width: 60px; height: auto; display: block; border: 1px solid #ddd; padding: 5px; border-radius: 5px; background-color: white;'>
+                  <button class='toggle-info' onclick='toggleInfo(this)'>Mostrar más</button>
+                </div>
+                <div class="more-info">
+                  <p>Freidora de aire con excelente desempeño y calidad.</p>
+                </div>
+              </div>
+            </div>
+          `);
+        });
+      </script>
+    </div>
+   </div>
+  <!-- Banner de cookies -->
+  <div id="cookie-banner" style="position: fixed; bottom: 0; background: #222; color: white; padding: 15px; width: 100%; text-align: center;">
+    Este sitio usa cookies para mejorar la experiencia. ¿Aceptas?
+    <button onclick="aceptarCookies(); document.getElementById('cookie-banner').style.display='none';">Aceptar</button>
+    <button onclick="rechazarCookies(); document.getElementById('cookie-banner').style.display='none';">Rechazar</button>
+  </div>
 </body>
 </html>
 
