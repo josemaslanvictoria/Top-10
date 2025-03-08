@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 10 Tecnología:Compra lo mejor Calidad-precio y valorado</title>
+    <link rel="stylesheet" href="/assets/styles.css">
+    <style>
+        h1 {
+            text-align: center;
+            font-size: 36px;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+        .offer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px auto;
+            max-width: 900px;
+        }
+        .offer-banner {
+            font-size: 32px;
+            font-weight: bold;
+            color: red;
+            background-color: yellow;
+            padding: 5px 15px;
+            text-decoration: underline;
+        }
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(100px, 1fr));
+            gap: 5px;
+            margin-top: 20px;
+            justify-content: center;
+        }
+        .category-box {
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 1px solid black;
+            border-radius: 10px;
+            overflow: hidden;
+            text-decoration: none;
+            padding: 5px;
+            font-size: 14px;
+        }
+        .category-box img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+        }
+        .category-box span {
+            color: black;
+            text-decoration: underline;
+            font-weight: bold;
+            font-size: 16px;
+            margin-top: 5px;
+        }
+        .search-box {
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .search-box input {
+            padding: 5px;
+            border: 1px solid black;
+            border-radius: 5px;
+            width: 200px;
+        }
+        .suggestions {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 200px;
+            background: white;
+            border: 1px solid black;
+            display: none;
+            position: absolute;
+        }
+        .suggestions li {
+            padding: 5px;
+            cursor: pointer;
+        }
+        .suggestions li:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Top 10 Tecnología: Compra lo mejor calidad-precio y valorado</h1>
+        <div class="offer-container" style="justify-content: center; display: flex; gap: 20px; flex-wrap: wrap;">
+            <div class="offer-banner">¡Ofertas! Aprovecha y elige el tuyo</div>
+        <p style="text-align: center; font-size: 18px; margin-top: 10px; max-width: 900px; margin-left: auto; margin-right: auto;">
+            Encuentra los mejores productos tecnológicos al mejor precio. Analizamos y comparamos <b>cafeteras, freidoras de aire, auriculares, microondas, aspiradoras y mucho más</b>.
+            Descubre nuestras recomendaciones y aprovecha las ofertas exclusivas. ¡Compra con confianza y mejora tu hogar con la última tecnología!
+        </p>
+            <div class="search-box">
+                <input type="text" id="searchCategoryInput" placeholder="Buscar categoría..." onkeyup="filterCategories()">
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="content">
+            <div class="category-grid" id="categoryGrid">
+                <a href="/aspiradoras-sin-cable/" class="category-box">
+                    <img src="https://m.media-amazon.com/images/I/71WL7Vh6v+L._AC_SY300_SX300_.jpg" alt="Aspiradoras sin cable">
+                    <span>Aspiradoras sin cable</span>
+                </a>
+                <a href="/auriculares/" class="category-box">
+                    <img src="https://m.media-amazon.com/images/I/61iBtxCUabL._AC_SX679_.jpg" alt="Auriculares">
+                    <span>Auriculares</span>
+                </a>
+                <a href="/batidoras/" class="category-box">
+                    <img src="https://m.media-amazon.com/images/I/71TEsI+pD2L._AC_SX679_.jpg" alt="Batidoras">
+                    <span>Batidoras</span>
+                </a>
+                <a href="/cafeteras/" class="category-box">
+                    <img src="https://m.media-amazon.com/images/I/71uiF8cvgbL._AC_SX679_.jpg" alt="Cafeteras">
+                    <span>Cafeteras</span>
+                </a>
+                <a href="/chimeneas-electricas/" class="category-box">
+                    <img src="https://m.media-amazon.com/images/I/71wjZTnrnnL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="Chimeneas Eléctricas">
+                    <span>Chimeneas Eléctricas</span>
+                </a>
+                <a href="/freidoras/" class="category-box">
+                    <img src="https://m.media-amazon.com/images/I/81YlVdZBmaL.__AC_SX300_SY300_QL70_FMwebp_.jpg" alt="Freidoras">
+                    <span>Freidoras</span>
+                </a>
+                <a href="/lavadoras/" class="category-box">
+                    <img src="https://m.media-amazon.com/images/I/71cW-lHnaQL.__AC_SY445_SX342_QL70_ML2_.jpg" alt="Lavadoras">
+                    <span>Lavadoras</span>
+                </a>
+                <a href="/microondas/" class="category-box">
+                    <img src="https://m.media-amazon.com/images/I/51SbWaeMsdL._AC_SX679_.jpg" alt="Microondas">
+                    <span>Microondas</span>
+                </a>
+                <a href="/mopa-a-vapor/" class="category-box">
+                    <img src="https://m.media-amazon.com/images/I/71QutkthltL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="Mopa a Vapor">
+                    <span>Mopa a Vapor</span>
+                </a>
+                <a href="/robot-aspirador/" class="category-box">
+                    <img src="https://m.media-amazon.com/images/I/71Kv4VyPFtL._AC_SX679_.jpg" alt="Robot Aspirador">
+                    <span>Robot Aspirador</span>
+                </a>
+        </div>
+    </div>
+    <script>
+        function filterCategories() {
+            let input = document.getElementById('searchCategoryInput').value.toLowerCase();
+            let categories = document.querySelectorAll('.category-box');
+            
+            categories.forEach(category => {
+                let text = category.innerText.toLowerCase();
+                if (text.includes(input)) {
+                    category.style.display = "flex";
+                } else {
+                    category.style.display = "none";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
