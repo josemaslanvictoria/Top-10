@@ -1,167 +1,206 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Top 10 Tecnología:Compra lo mejor Calidad-precio y valorado</title>
-    <link rel="stylesheet" href="/assets/styles.css">
-    <style>
-        h1 {
-            text-align: center;
-            font-size: 36px;
-            font-weight: bold;
-            text-decoration: underline;
-        }
-        .offer-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin: 20px auto;
-            max-width: 900px;
-        }
-        .offer-banner {
-            font-size: 32px;
-            font-weight: bold;
-            color: red;
-            background-color: yellow;
-            padding: 5px 15px;
-            text-decoration: underline;
-        }
-        .category-grid {
-            display: grid;
-            grid-template-columns: repeat(4, minmax(100px, 1fr));
-            gap: 5px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-        .category-box {
-            background-color: white;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            border: 1px solid black;
-            border-radius: 10px;
-            overflow: hidden;
-            text-decoration: none;
-            padding: 5px;
-            font-size: 14px;
-        }
-        .category-box img {
-            width: 100px;
-            height: 100px;
-            object-fit: contain;
-        }
-        .category-box span {
-            color: black;
-            text-decoration: underline;
-            font-weight: bold;
-            font-size: 16px;
-            margin-top: 5px;
-        }
-        .search-box {
-            margin-top: 10px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .search-box input {
-            padding: 5px;
-            border: 1px solid black;
-            border-radius: 5px;
-            width: 200px;
-        }
-        .suggestions {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            width: 200px;
-            background: white;
-            border: 1px solid black;
-            display: none;
-            position: absolute;
-        }
-        .suggestions li {
-            padding: 5px;
-            cursor: pointer;
-        }
-        .suggestions li:hover {
-            background-color: #ddd;
-        }
-    </style>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3702060621408236" crossorigin="anonymous"></script>
+  <script async src="https://fundingchoicesmessages.google.com/i/pub-3702060621408236?ers=1" nonce="xyz"></script>
+  <script>
+    window.googlefc = window.googlefc || {};
+    window.googlefc.callbackQueue = window.googlefc.callbackQueue || [];
+    window.googlefc.callbackQueue.push(function() {
+      window.googlefc.setConsentConfig({
+        'consentMode': 'advanced'
+      });
+    });
+  </script>
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11335901809"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+  
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'analytics_storage': 'denied'
+    });
+  
+    gtag('js', new Date());
+    gtag('config', 'AW-11335901809');
+  
+    function aceptarCookies() {
+      gtag('consent', 'update', {
+        'ad_storage': 'granted',
+        'analytics_storage': 'granted'
+      });
+    }
+  
+    function rechazarCookies() {
+      gtag('consent', 'update', {
+        'ad_storage': 'denied',
+        'analytics_storage': 'denied'
+      });
+    }
+  </script>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Top 10: Las Mejores Camaras de Vigilancia</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+      background-color: #f5f5f5;
+    }
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 10px;
+    }
+    .product-list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+      margin-top: 20px;
+    }
+    .product {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 20px;
+      width: 100%;
+      max-width: 600px;
+      text-align: left;
+      background-color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      position: relative;
+      cursor: pointer;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease-in-out;
+    }
+    .product:hover {
+      transform: scale(1.02);
+    }
+    .product img {
+      width: 100px;
+      height: auto;
+      border-radius: 5px;
+    }
+    .product-details {
+      flex: 1;
+    }
+    .product a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 15px;
+      background-color: #00CC00;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    .product a:hover {
+      background-color: #008000;
+    }
+    .toggle-info {
+      margin-top: 10px;
+      padding: 8px 12px;
+      background-color: #ddd;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .toggle-info:hover {
+      background-color: #bbb;
+    }
+    .more-info {
+      display: none;
+      margin-top: 10px;
+    }
+    .rating-score {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: white;
+      border: 3px solid red;
+      text-align: center;
+      line-height: 50px;
+      font-weight: bold;
+      color: black;
+      box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+  <script>
+    function redirectToAmazon(url) {
+      window.open(url, '_blank');
+    }
+    function toggleInfo(button) {
+      var info = button.nextElementSibling;
+      if (info.style.display === "none" || info.style.display === "") {
+        info.style.display = "block";
+        button.textContent = "Mostrar menos";
+      } else {
+        info.style.display = "none";
+        button.textContent = "Mostrar más";
+      }
+    }
+  </script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
-    <header>
-        <h1>Top 10 Tecnología: Compra lo mejor calidad-precio y valorado</h1>
-        <div class="offer-container" style="justify-content: center; display: flex; gap: 20px; flex-wrap: wrap;">
-            <div class="offer-banner">¡Ofertas! Aprovecha y elige el tuyo</div>
-        <p style="text-align: center; font-size: 18px; margin-top: 10px; max-width: 900px; margin-left: auto; margin-right: auto;">
-            Encuentra los mejores productos tecnológicos al mejor precio. Analizamos y comparamos <b>cafeteras, freidoras de aire, auriculares, microondas, aspiradoras y mucho más</b>.
-            Descubre nuestras recomendaciones y aprovecha las ofertas exclusivas. ¡Compra con confianza y mejora tu hogar con la última tecnología!
-        </p>
-            <div class="search-box">
-                <input type="text" id="searchCategoryInput" placeholder="Buscar categoría..." onkeyup="filterCategories()">
+  <div class="container">
+    <h1>Top 10: Las Mejores Camaras de vigilancia</h1>
+    <div class="product-list">
+      <script>
+        const products = [
+          { name: "4G LTE Cámara de Vigilancia Interior", rating: "9.9", reviews: "14200 Oferta -46 %", image: "https://m.media-amazon.com/images/I/61N7zX+8BuL._AC_SX679_.jpg", url: "https://www.amazon.es/PESAIR-Vigilancia-Inal%C3%A1mbrica-Recargable-Bidireccional/dp/B0DRVFTZLW?crid=9E1ZQEEIOA21&dib=eyJ2IjoiMSJ9.WiKYtrxvTFYYJ3YfnCzVHczBdAAbqnCAvNo9VZsu8aXyagbbRVD6p1kOLYTR3PYw5b26Om6bEULdPL-fBgfx_1iVKXeoUAS0abI14gDBN5cJiPJqab0z7ALL7hsw_TZ_077Gh0xk_HqMq5qwyLObwcVeUpVX8I0EfPf_PoEkCwQng9FuOVPsM07A6q-1RTIkDhC6xR-sCboSQ205epfKGkNv8TkRpI7qnc3ljnCHpoY8FKy60wiSerPwuOfx9lG764Y7alg8lsHCkpaBGy9keVUcZQ5bSHT3udIolBQO6BEiq-5LYsacrN4T-b33n3Ya2HHqPn2Rmpn7maIHLlVFnW42sUzdUbY_EEUbEa5Vs2fwMIWwu0C0AK_okBch_AFQzKDJav9EeBgRs8izccRF9fTINTpxNAeNq02EYKGXkYUcHxQkZjuRTei31VS4XYsq.qTrJ14lg-VVYavgO09qjDeIPdx8Ak4f-L7n2hgKD74k&dib_tag=se&keywords=camara%2Bde%2Bvigilancia&qid=1741479586&sprefix=camaras%2Bde%2Bvi%2Caps%2C122&sr=8-1&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=03ff2404bb3724751d01dcedd72f4852&language=es_ES&ref_=as_li_ss_tl" },
+          { name: "Kit de cámara de vigilancia", rating: "9.8", reviews: "16000+ Financia este producto", image: "https://m.media-amazon.com/images/I/61UNj7o2wwL._AC_SX679_.jpg", url: "https://www.amazon.es/Jennov-vigilancia-bidireccional-detecci%C3%B3n-grabaci%C3%B3n/dp/B0CWNV3689?crid=9E1ZQEEIOA21&dib=eyJ2IjoiMSJ9.WiKYtrxvTFYYJ3YfnCzVHczBdAAbqnCAvNo9VZsu8aXyagbbRVD6p1kOLYTR3PYw5b26Om6bEULdPL-fBgfx_1iVKXeoUAS0abI14gDBN5cJiPJqab0z7ALL7hsw_TZ_077Gh0xk_HqMq5qwyLObwcVeUpVX8I0EfPf_PoEkCwQng9FuOVPsM07A6q-1RTIkDhC6xR-sCboSQ205epfKGkNv8TkRpI7qnc3ljnCHpoY8FKy60wiSerPwuOfx9lG764Y7alg8lsHCkpaBGy9keVUcZQ5bSHT3udIolBQO6BEiq-5LYsacrN4T-b33n3Ya2HHqPn2Rmpn7maIHLlVFnW42sUzdUbY_EEUbEa5Vs2fwMIWwu0C0AK_okBch_AFQzKDJav9EeBgRs8izccRF9fTINTpxNAeNq02EYKGXkYUcHxQkZjuRTei31VS4XYsq.qTrJ14lg-VVYavgO09qjDeIPdx8Ak4f-L7n2hgKD74k&dib_tag=se&keywords=camara+de+vigilancia&qid=1741479709&sprefix=camaras+de+vi%2Caps%2C122&sr=8-2&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&linkCode=ll1&tag=yocompro0e-21&linkId=9ef891b70a7429775a88653b2507283c&language=es_ES&ref_=as_li_ss_tl" },
+          { name: "Xega 4G LTE 12X Zoom Híbrido", rating: "9.7", reviews: "14200+ Devoluciones GRATIS", image: "https://m.media-amazon.com/images/I/710k7x5Dx2L._AC_SX679_.jpg", url: "https://www.amazon.es/Xega-Vigilancia-Exterior-Inal%C3%A1mbrica-Detecci%C3%B3n/dp/B0DJ8HZJZR?crid=9E1ZQEEIOA21&dib=eyJ2IjoiMSJ9.WiKYtrxvTFYYJ3YfnCzVHczBdAAbqnCAvNo9VZsu8aXyagbbRVD6p1kOLYTR3PYw5b26Om6bEULdPL-fBgfx_1iVKXeoUAS0abI14gDBN5cJiPJqab0z7ALL7hsw_TZ_077Gh0xk_HqMq5qwyLObwcVeUpVX8I0EfPf_PoEkCwQng9FuOVPsM07A6q-1RTIkDhC6xR-sCboSQ205epfKGkNv8TkRpI7qnc3ljnCHpoY8FKy60wiSerPwuOfx9lG764Y7alg8lsHCkpaBGy9keVUcZQ5bSHT3udIolBQO6BEiq-5LYsacrN4T-b33n3Ya2HHqPn2Rmpn7maIHLlVFnW42sUzdUbY_EEUbEa5Vs2fwMIWwu0C0AK_okBch_AFQzKDJav9EeBgRs8izccRF9fTINTpxNAeNq02EYKGXkYUcHxQkZjuRTei31VS4XYsq.qTrJ14lg-VVYavgO09qjDeIPdx8Ak4f-L7n2hgKD74k&dib_tag=se&keywords=camara+de+vigilancia&qid=1741479709&sprefix=camaras+de+vi%2Caps%2C122&sr=8-3&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&linkCode=ll1&tag=yocompro0e-21&linkId=e7bcd690f061eb6e98db1c28f39b451f&language=es_ES&ref_=as_li_ss_tl" },
+          { name: "Jennov PTZ - Kit de cámara", rating: "9.6", reviews: "14000+ Devoluciones GRATIS", image: "https://m.media-amazon.com/images/I/71nwCiv-SdL._AC_SX679_.jpg", url: "https://www.amazon.es/Jennov-PTZ-c%C3%A1mara-vigilancia-Monitor/dp/B0CWNVMY3J?crid=9E1ZQEEIOA21&dib=eyJ2IjoiMSJ9.WiKYtrxvTFYYJ3YfnCzVHczBdAAbqnCAvNo9VZsu8aXyagbbRVD6p1kOLYTR3PYw5b26Om6bEULdPL-fBgfx_1iVKXeoUAS0abI14gDBN5cJiPJqab0z7ALL7hsw_TZ_077Gh0xk_HqMq5qwyLObwcVeUpVX8I0EfPf_PoEkCwQng9FuOVPsM07A6q-1RTIkDhC6xR-sCboSQ205epfKGkNv8TkRpI7qnc3ljnCHpoY8FKy60wiSerPwuOfx9lG764Y7alg8lsHCkpaBGy9keVUcZQ5bSHT3udIolBQO6BEiq-5LYsacrN4T-b33n3Ya2HHqPn2Rmpn7maIHLlVFnW42sUzdUbY_EEUbEa5Vs2fwMIWwu0C0AK_okBch_AFQzKDJav9EeBgRs8izccRF9fTINTpxNAeNq02EYKGXkYUcHxQkZjuRTei31VS4XYsq.qTrJ14lg-VVYavgO09qjDeIPdx8Ak4f-L7n2hgKD74k&dib_tag=se&keywords=camara+de+vigilancia&qid=1741479887&sprefix=camaras+de+vi%2Caps%2C122&sr=8-4&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&linkCode=ll1&tag=yocompro0e-21&linkId=f150c0ba5bd0e99456d556a6f10dda67&language=es_ES&ref_=as_li_ss_tl" },
+          { name: "LEMNOI 4G LTE Cámara Vigilancia Solar", rating: "9.5", reviews: "23900+ Oferta flash -17 % ", image: "https://m.media-amazon.com/images/I/81f2C-GzM3L._AC_SX679_.jpg", url: "https://www.amazon.es/LEMNOI-Vigilancia-Preinstalado-Bidireccional-Impermeable/dp/B0DMDVNX2Q?crid=9E1ZQEEIOA21&dib=eyJ2IjoiMSJ9.WiKYtrxvTFYYJ3YfnCzVHczBdAAbqnCAvNo9VZsu8aXyagbbRVD6p1kOLYTR3PYw5b26Om6bEULdPL-fBgfx_1iVKXeoUAS0abI14gDBN5cJiPJqab0z7ALL7hsw_TZ_077Gh0xk_HqMq5qwyLObwcVeUpVX8I0EfPf_PoEkCwQng9FuOVPsM07A6q-1RTIkDhC6xR-sCboSQ205epfKGkNv8TkRpI7qnc3ljnCHpoY8FKy60wiSerPwuOfx9lG764Y7alg8lsHCkpaBGy9keVUcZQ5bSHT3udIolBQO6BEiq-5LYsacrN4T-b33n3Ya2HHqPn2Rmpn7maIHLlVFnW42sUzdUbY_EEUbEa5Vs2fwMIWwu0C0AK_okBch_AFQzKDJav9EeBgRs8izccRF9fTINTpxNAeNq02EYKGXkYUcHxQkZjuRTei31VS4XYsq.qTrJ14lg-VVYavgO09qjDeIPdx8Ak4f-L7n2hgKD74k&dib_tag=se&keywords=camara+de+vigilancia&qid=1741479887&sprefix=camaras+de+vi%2Caps%2C122&sr=8-5&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&linkCode=ll1&tag=yocompro0e-21&linkId=55845896d39ade00442fe3dbfd06598a&language=es_ES&ref_=as_li_ss_tl" },
+          { name: "Camara Vigilancia WiFi Exterior", rating: "9.5", reviews: "13800+ Devoluciones GRATIS", image: "https://m.media-amazon.com/images/I/61RkGSxPrkL._AC_SX679_.jpg", url: "https://www.amazon.es/Menborn-Vigilancia-Seguimiento-Autom%C3%A1tico-Bidireccional/dp/B0CBRDZ9L6?content-id=amzn1.sym.1b7dbd21-d76b-48cf-b2c4-3d7772b13950%3Aamzn1.sym.1b7dbd21-d76b-48cf-b2c4-3d7772b13950&crid=9E1ZQEEIOA21&cv_ct_cx=camara%2Bde%2Bvigilancia&keywords=camara%2Bde%2Bvigilancia&pd_rd_i=B0CBRDZ9L6&pd_rd_r=d8e3a62d-1298-45fd-9a1a-be0df5d0acd2&pd_rd_w=EDnI0&pd_rd_wg=BDt73&pf_rd_p=1b7dbd21-d76b-48cf-b2c4-3d7772b13950&pf_rd_r=ER1MRB0PQRB3TJN51WZ5&qid=1741479887&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&sprefix=camaras%2Bde%2Bvi%2Caps%2C122&sr=1-1-07652b71-81e3-41f8-9097-e46726928fb7&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=df45ed6a39fa172c60198a4fe29da641&language=es_ES&ref_=as_li_ss_tl" },
+          { name: "Cámara de Vigilancia FHD 1080p", rating: "9.4", reviews: "10700+ Oferta flash -45 %", image: "https://m.media-amazon.com/images/I/719N77dAWvL._AC_SX679_.jpg", url: "https://www.amazon.es/TP-Link-Vigilancia-Movimiento-Tapo-C200/dp/B07XLML2YS?crid=9E1ZQEEIOA21&dib=eyJ2IjoiMSJ9.WiKYtrxvTFYYJ3YfnCzVHczBdAAbqnCAvNo9VZsu8aXyagbbRVD6p1kOLYTR3PYw5b26Om6bEULdPL-fBgfx_1iVKXeoUAS0abI14gDBN5cJiPJqab0z7ALL7hsw_TZ_077Gh0xk_HqMq5qwyLObwcVeUpVX8I0EfPf_PoEkCwQng9FuOVPsM07A6q-1RTIkDhC6xR-sCboSQ205epfKGkNv8TkRpI7qnc3ljnCHpoY8FKy60wiSerPwuOfx9lG764Y7alg8lsHCkpaBGy9keVUcZQ5bSHT3udIolBQO6BEiq-5LYsacrN4T-b33n3Ya2HHqPn2Rmpn7maIHLlVFnW42sUzdUbY_EEUbEa5Vs2fwMIWwu0C0AK_okBch_AFQzKDJav9EeBgRs8izccRF9fTINTpxNAeNq02EYKGXkYUcHxQkZjuRTei31VS4XYsq.qTrJ14lg-VVYavgO09qjDeIPdx8Ak4f-L7n2hgKD74k&dib_tag=se&keywords=camara+de+vigilancia&qid=1741479887&sprefix=camaras+de+vi%2Caps%2C122&sr=8-7&linkCode=ll1&tag=yocompro0e-21&linkId=c7a376188e4090ebbc6668b437cdfeab&language=es_ES&ref_=as_li_ss_tl" },
+          { name: "Camara Vigilancia WiFi Exterior", rating: "9.3", reviews: "15600+ Oferta -15 %", image: "https://m.media-amazon.com/images/I/612YeX7mduL._AC_SX679_.jpg", url: "https://www.amazon.es/ieGeek-Vigilancia-Movimiento-Seguimiento-Autom%C3%A1tico/dp/B0B872LZLX?crid=9E1ZQEEIOA21&dib=eyJ2IjoiMSJ9.WiKYtrxvTFYYJ3YfnCzVHczBdAAbqnCAvNo9VZsu8aXyagbbRVD6p1kOLYTR3PYw5b26Om6bEULdPL-fBgfx_1iVKXeoUAS0abI14gDBN5cJiPJqab0z7ALL7hsw_TZ_077Gh0xk_HqMq5qwyLObwcVeUpVX8I0EfPf_PoEkCwQng9FuOVPsM07A6q-1RTIkDhC6xR-sCboSQ205epfKGkNv8TkRpI7qnc3ljnCHpoY8FKy60wiSerPwuOfx9lG764Y7alg8lsHCkpaBGy9keVUcZQ5bSHT3udIolBQO6BEiq-5LYsacrN4T-b33n3Ya2HHqPn2Rmpn7maIHLlVFnW42sUzdUbY_EEUbEa5Vs2fwMIWwu0C0AK_okBch_AFQzKDJav9EeBgRs8izccRF9fTINTpxNAeNq02EYKGXkYUcHxQkZjuRTei31VS4XYsq.qTrJ14lg-VVYavgO09qjDeIPdx8Ak4f-L7n2hgKD74k&dib_tag=se&keywords=camara%2Bde%2Bvigilancia&qid=1741479887&sprefix=camaras%2Bde%2Bvi%2Caps%2C122&sr=8-8&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=8fa43b1394bf32d8e6e217fc914b1290&language=es_ES&ref_=as_li_ss_tl" },
+          { name: "Xiaomi Smart Camera C300", rating: "9.0", reviews: "17400+ Financia este producto", image: "https://m.media-amazon.com/images/I/418foBD44CL._AC_SX679_.jpg", url: "https://www.amazon.es/Xiaomi-Smart-Camera-C300-Pack/dp/B0BRZZ3WZ5?crid=9E1ZQEEIOA21&dib=eyJ2IjoiMSJ9.WiKYtrxvTFYYJ3YfnCzVHczBdAAbqnCAvNo9VZsu8aXyagbbRVD6p1kOLYTR3PYw5b26Om6bEULdPL-fBgfx_1iVKXeoUAS0abI14gDBN5cJiPJqab0z7ALL7hsw_TZ_077Gh0xk_HqMq5qwyLObwcVeUpVX8I0EfPf_PoEkCwQng9FuOVPsM07A6q-1RTIkDhC6xR-sCboSQ205epfKGkNv8TkRpI7qnc3ljnCHpoY8FKy60wiSerPwuOfx9lG764Y7alg8lsHCkpaBGy9keVUcZQ5bSHT3udIolBQO6BEiq-5LYsacrN4T-b33n3Ya2HHqPn2Rmpn7maIHLlVFnW42sUzdUbY_EEUbEa5Vs2fwMIWwu0C0AK_okBch_AFQzKDJav9EeBgRs8izccRF9fTINTpxNAeNq02EYKGXkYUcHxQkZjuRTei31VS4XYsq.qTrJ14lg-VVYavgO09qjDeIPdx8Ak4f-L7n2hgKD74k&dib_tag=se&keywords=camara+de+vigilancia&qid=1741479887&sprefix=camaras+de+vi%2Caps%2C122&sr=8-9&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&linkCode=ll1&tag=yocompro0e-21&linkId=5386fc1969f23677fab9c93b58e1ea04&language=es_ES&ref_=as_li_ss_tl" },
+          { name: "Cámara IP WiFi 360° Cámara de Vigilancia 2K", rating: "8.8", reviews: "13300+ Oferta flash -36 %", image: "https://m.media-amazon.com/images/I/51y4bTE2MQL._AC_SX679_.jpg", url: "https://www.amazon.es/Tapo-TP-Link-C210-2-Pack-Vigilancia/dp/B0BWCVYFLC?crid=9E1ZQEEIOA21&dib=eyJ2IjoiMSJ9.WiKYtrxvTFYYJ3YfnCzVHczBdAAbqnCAvNo9VZsu8aXyagbbRVD6p1kOLYTR3PYw5b26Om6bEULdPL-fBgfx_1iVKXeoUAS0abI14gDBN5cJiPJqab0z7ALL7hsw_TZ_077Gh0xk_HqMq5qwyLObwcVeUpVX8I0EfPf_PoEkCwQng9FuOVPsM07A6q-1RTIkDhC6xR-sCboSQ205epfKGkNv8TkRpI7qnc3ljnCHpoY8FKy60wiSerPwuOfx9lG764Y7alg8lsHCkpaBGy9keVUcZQ5bSHT3udIolBQO6BEiq-5LYsacrN4T-b33n3Ya2HHqPn2Rmpn7maIHLlVFnW42sUzdUbY_EEUbEa5Vs2fwMIWwu0C0AK_okBch_AFQzKDJav9EeBgRs8izccRF9fTINTpxNAeNq02EYKGXkYUcHxQkZjuRTei31VS4XYsq.qTrJ14lg-VVYavgO09qjDeIPdx8Ak4f-L7n2hgKD74k&dib_tag=se&keywords=camara+de+vigilancia&qid=1741479887&sprefix=camaras+de+vi%2Caps%2C122&sr=8-10&linkCode=ll1&tag=yocompro0e-21&linkId=23f8c7ee00f3cb4fd6c9ea4bdd791c23&language=es_ES&ref_=as_li_ss_tl" }
+        ];
+
+        products.forEach((product, index) => {
+          document.write(`
+            <div class="product" onclick="redirectToAmazon('${product.url}');">
+              <span class="rating-score">${product.rating}</span>
+              <img src="${product.image}" alt="Freidora ${index + 1}">
+              <div class="product-details">
+                <h2>${index + 1}. ${product.name}</h2>
+                <p>⭐⭐⭐⭐⭐ (${product.reviews})</p>
+                <a href="${product.url}" target="_blank">Ver precio</a>
+                <br>
+                <div style='display: flex; align-items: center; gap: 10px;'>
+                  <img src='https://s1.qwant.com/thumbr/474x158/9/7/f63c3ffb13724faceb8e31aa326595a97728bf158aeb13ffc95db5f9fa7625/th.jpg?u=https%3A%2F%2Ftse.mm.bing.net%2Fth%3Fid%3DOIP.B1P05zmy1Y_JxrZZilY6kwHaCe%26pid%3DApi&q=0&b=1&p=0&a=0' style='width: 60px; height: auto; display: block; border: 1px solid #ddd; padding: 5px; border-radius: 5px; background-color: white;'>
+                  <button class='toggle-info' onclick='toggleInfo(this)'>Mostrar más</button>
+                </div>
+                <div class="more-info">
+                  <p>Freidora de aire con excelente desempeño y calidad.</p>
+                </div>
+              </div>
             </div>
-        </div>
-    </header>
-    <div class="container">
-        <div class="content">
-            <div class="category-grid" id="categoryGrid">
-                <a href="/aspiradoras-sin-cable/" class="category-box">
-                    <img src="https://m.media-amazon.com/images/I/71WL7Vh6v+L._AC_SY300_SX300_.jpg" alt="Aspiradoras sin cable">
-                    <span>Aspiradoras sin cable</span>
-                </a>
-                <a href="/auriculares/" class="category-box">
-                    <img src="https://m.media-amazon.com/images/I/61iBtxCUabL._AC_SX679_.jpg" alt="Auriculares">
-                    <span>Auriculares</span>
-                </a>
-                <a href="/batidoras/" class="category-box">
-                    <img src="https://m.media-amazon.com/images/I/71TEsI+pD2L._AC_SX679_.jpg" alt="Batidoras">
-                    <span>Batidoras</span>
-                </a>
-                <a href="/cafeteras/" class="category-box">
-                    <img src="https://m.media-amazon.com/images/I/71uiF8cvgbL._AC_SX679_.jpg" alt="Cafeteras">
-                    <span>Cafeteras</span>
-                </a>
-                <a href="/chimeneas-electricas/" class="category-box">
-                    <img src="https://m.media-amazon.com/images/I/71wjZTnrnnL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="Chimeneas Eléctricas">
-                    <span>Chimeneas Eléctricas</span>
-                </a>
-                <a href="/freidoras/" class="category-box">
-                    <img src="https://m.media-amazon.com/images/I/81YlVdZBmaL.__AC_SX300_SY300_QL70_FMwebp_.jpg" alt="Freidoras">
-                    <span>Freidoras</span>
-                </a>
-                <a href="/lavadoras/" class="category-box">
-                    <img src="https://m.media-amazon.com/images/I/71cW-lHnaQL.__AC_SY445_SX342_QL70_ML2_.jpg" alt="Lavadoras">
-                    <span>Lavadoras</span>
-                </a>
-                <a href="/microondas/" class="category-box">
-                    <img src="https://m.media-amazon.com/images/I/51SbWaeMsdL._AC_SX679_.jpg" alt="Microondas">
-                    <span>Microondas</span>
-                </a>
-                <a href="/mopa-a-vapor/" class="category-box">
-                    <img src="https://m.media-amazon.com/images/I/71QutkthltL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="Mopa a Vapor">
-                    <span>Mopa a Vapor</span>
-                </a>
-                <a href="/robot-aspirador/" class="category-box">
-                    <img src="https://m.media-amazon.com/images/I/71Kv4VyPFtL._AC_SX679_.jpg" alt="Robot Aspirador">
-                    <span>Robot Aspirador</span>
-                </a>
-        </div>
+          `);
+        });
+      </script>
     </div>
-    <script>
-        function filterCategories() {
-            let input = document.getElementById('searchCategoryInput').value.toLowerCase();
-            let categories = document.querySelectorAll('.category-box');
-            
-            categories.forEach(category => {
-                let text = category.innerText.toLowerCase();
-                if (text.includes(input)) {
-                    category.style.display = "flex";
-                } else {
-                    category.style.display = "none";
-                }
-            });
-        }
-    </script>
+   </div>
+  <!-- Banner de cookies -->
+  <div id="cookie-banner" style="position: fixed; bottom: 0; background: #222; color: white; padding: 15px; width: 100%; text-align: center;">
+    Este sitio usa cookies para mejorar la experiencia. ¿Aceptas?
+    <button onclick="aceptarCookies(); document.getElementById('cookie-banner').style.display='none';">Aceptar</button>
+    <button onclick="rechazarCookies(); document.getElementById('cookie-banner').style.display='none';">Rechazar</button>
+  </div>
 </body>
 </html>
+
