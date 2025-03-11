@@ -139,6 +139,61 @@
                 }
             });
         </script>
+            <script>
+            const categories = {
+                "aspiradoras-sin-cable": "/aspiradoras-sin-cable/",
+                "auriculares": "/auriculares/",
+                "batidoras": "/batidoras/",
+                "cafeteras": "/cafeteras/",
+                "camaras-de-vigilancia": "/camaras-de-vigilancia/",
+                "chimeneas-electricas": "/chimeneas-electricas/",
+                "deshumidificador": "/deshumidificador/",
+                "freidoras": "/freidoras/",
+                "lavadoras": "/lavadoras/",
+                "lavavajillas": "/lavavajillas/",
+                "microondas": "/microondas/",
+                "mopa-a-vapor": "/mopa-a-vapor/",
+                "reloj-inteligente": "/reloj-inteligente/",
+                "robot-aspirador": "/robot-aspirador/",
+                "secador": "/secador/",
+                "televisores": "/televisores/",
+                "tostadoras": "/tostadoras/"
+            };
+
+            document.getElementById('searchCategoryInput').addEventListener('input', function(e) {
+                const input = e.target.value.toLowerCase();
+                const results = Object.keys(categories).filter(category => category.includes(input));
+                let suggestionsHtml = results.map(result => `<li><a href="${categories[result]}">${result}</a></li>`).join('');
+
+                let suggestionsList = document.getElementById('suggestions');
+                if (!suggestionsList) {
+                    suggestionsList = document.createElement('ul');
+                    suggestionsList.id = 'suggestions';
+                    suggestionsList.style.position = 'absolute';
+                    suggestionsList.style.listStyleType = 'none';
+                    suggestionsList.style.padding = '0';
+                    suggestionsList.style.margin = '0';
+                    suggestionsList.style.backgroundColor = 'white';
+                    suggestionsList.style.border = '1px solid #ccc';
+                    suggestionsList.style.width = '100%';
+                    suggestionsList.style.boxSizing = 'border-box';
+                    e.target.parentNode.appendChild(suggestionsList);
+                }
+
+                suggestionsList.innerHTML = suggestionsHtml;
+
+                if (input === '' || results.length === 0) {
+                    suggestionsList.innerHTML = '';
+                }
+            });
+
+            document.addEventListener('click', function(e) {
+                const suggestionsList = document.getElementById('suggestions');
+                if (suggestionsList && e.target !== suggestionsList && e.target.parentNode !== suggestionsList) {
+                    suggestionsList.innerHTML = '';
+                }
+            });
+        </script>
     </header>
     
     <div class="offers">
