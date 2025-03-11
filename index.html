@@ -162,12 +162,10 @@
                 "televisores": "/televisores/",
                 "tostadoras": "/tostadoras/"
             };
-            document.getElementById('searchCategoryInput').addEventListener('keydown', function(e) {
-                if (e.key === 'Enter') {
-                    const input = e.target.value.toLowerCase();
-                    if (categories[input]) {
-                        window.location.href = categories[input];
-                    }
+            document.getElementById('categorySelect').addEventListener('change', function() {
+                const selectedCategory = this.value;
+                if (categories[selectedCategory]) {
+                    window.location.href = categories[selectedCategory];
                 }
             });
 
