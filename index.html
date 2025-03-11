@@ -108,7 +108,28 @@
             <div class="offer-banner">¡Ofertas! Aprovecha y elige el tuyo</div>
         </div>
         <div class="search-box">
+            <select id="categorySelect" style="padding: 10px; border: 1px solid black; border-radius: 5px;">
+                <option value="">Todas las categorías</option>
+                <option value="aspiradoras-sin-cable">Aspiradoras sin cable</option>
+                <option value="auriculares">Auriculares</option>
+                <option value="batidoras">Batidoras</option>
+                <option value="cafeteras">Cafeteras</option>
+                <option value="camaras-de-vigilancia">Cámaras de vigilancia</option>
+                <option value="chimeneas-electricas">Chimeneas eléctricas</option>
+                <option value="deshumidificador">Deshumidificador</option>
+                <option value="freidoras">Freidoras</option>
+                <option value="lavadoras">Lavadoras</option>
+                <option value="lavavajillas">Lavavajillas</option>
+                <option value="microondas">Microondas</option>
+                <option value="mopa-a-vapor">Mopa a vapor</option>
+                <option value="reloj-inteligente">Reloj inteligente</option>
+                <option value="robot-aspirador">Robot aspirador</option>
+                <option value="secador">Secador</option>
+                <option value="televisores">Televisores</option>
+                <option value="tostadoras">Tostadoras</option>
+            </select>
             <input type="text" id="searchCategoryInput" placeholder="Buscar productos...">
+            <ul id="suggestions" style="position: absolute; list-style-type: none; padding: 0; margin: 0; background-color: white; border: none; width: 80%; max-width: 600px; box-sizing: border-box;"></ul>
         </div>
             <script>
             const categories = {
@@ -138,27 +159,6 @@
                     }
                 }
             });
-        </script>
-            <script>
-            const categories = {
-                "aspiradoras-sin-cable": "/aspiradoras-sin-cable/",
-                "auriculares": "/auriculares/",
-                "batidoras": "/batidoras/",
-                "cafeteras": "/cafeteras/",
-                "camaras-de-vigilancia": "/camaras-de-vigilancia/",
-                "chimeneas-electricas": "/chimeneas-electricas/",
-                "deshumidificador": "/deshumidificador/",
-                "freidoras": "/freidoras/",
-                "lavadoras": "/lavadoras/",
-                "lavavajillas": "/lavavajillas/",
-                "microondas": "/microondas/",
-                "mopa-a-vapor": "/mopa-a-vapor/",
-                "reloj-inteligente": "/reloj-inteligente/",
-                "robot-aspirador": "/robot-aspirador/",
-                "secador": "/secador/",
-                "televisores": "/televisores/",
-                "tostadoras": "/tostadoras/"
-            };
 
             document.getElementById('searchCategoryInput').addEventListener('input', function(e) {
                 const input = e.target.value.toLowerCase();
@@ -166,19 +166,6 @@
                 let suggestionsHtml = results.map(result => `<li><a href="${categories[result]}">${result}</a></li>`).join('');
 
                 let suggestionsList = document.getElementById('suggestions');
-                if (!suggestionsList) {
-                    suggestionsList = document.createElement('ul');
-                    suggestionsList.id = 'suggestions';
-                    suggestionsList.style.position = 'absolute';
-                    suggestionsList.style.listStyleType = 'none';
-                    suggestionsList.style.padding = '0';
-                    suggestionsList.style.margin = '0';
-                    suggestionsList.style.backgroundColor = 'white';
-                    suggestionsList.style.border = '1px solid #ccc';
-                    suggestionsList.style.width = '100%';
-                    suggestionsList.style.boxSizing = 'border-box';
-                    e.target.parentNode.appendChild(suggestionsList);
-                }
 
                 suggestionsList.innerHTML = suggestionsHtml;
 
@@ -224,4 +211,3 @@
     </div>
 </body>
 </html>
-
