@@ -14,8 +14,29 @@
             <div class="offer-banner">¡Ofertas! Aprovecha y elige el tuyo</div>
         </div>
         <div class="search-box">
-            <!-- Campo de búsqueda simplificado -->
-            <input type="text" id="searchCategoryInput" placeholder="Busca productos o categorías..." autocomplete="off">
+            <!-- Selector de categorías -->
+            <select id="categorySelect" style="padding: 10px; border: 1px solid black; border-radius: 5px;">
+                <option value="">Todas las categorías</option>
+                <option value="aspiradoras-sin-cable">Aspiradoras sin cable</option>
+                <option value="auriculares">Auriculares</option>
+                <option value="batidoras">Batidoras</option>
+                <option value="cafeteras">Cafeteras</option>
+                <option value="camaras-de-vigilancia">Cámaras de vigilancia</option>
+                <option value="chimeneas-electricas">Chimeneas eléctricas</option>
+                <option value="deshumidificador">Deshumidificador</option>
+                <option value="freidoras">Freidoras</option>
+                <option value="lavadoras">Lavadoras</option>
+                <option value="lavavajillas">Lavavajillas</option>
+                <option value="microondas">Microondas</option>
+                <option value="mopa-a-vapor">Mopa a vapor</option>
+                <option value="reloj-inteligente">Reloj inteligente</option>
+                <option value="robot-aspirador">Robot aspirador</option>
+                <option value="secador">Secador</option>
+                <option value="televisores">Televisores</option>
+                <option value="tostadoras">Tostadoras</option>
+            </select>
+            <!-- Campo de búsqueda general -->
+            <input type="text" id="searchCategoryInput" placeholder="Buscar productos o categorías..." autocomplete="off">
             <ul id="suggestions" style="position: absolute; list-style-type: none; padding: 0; margin: 0; background-color: white; width: 80%; max-width: 600px; box-sizing: border-box; top: calc(100% + 5px);"></ul>
         </div>
 
@@ -81,6 +102,6 @@
     </header>
 
     <!-- Script para el buscador -->
-    <script> // Objeto con las categorías y sus URLs const categories = { "Aspiradoras sin cable": "/aspiradoras-sin-cable/", "Auriculares": "/auriculares/", "Batidoras": "/batidoras/", "Cafeteras": "/cafeteras/", "Cámaras de vigilancia": "/camaras-de-vigilancia/", "Chimeneas eléctricas": "/chimeneas-electricas/", "Deshumidificador": "/deshumidificador/", "Freidoras": "/freidoras/", "Lavadoras": "/lavadoras/", "Lavavajillas": "/lavavajillas/", "Microondas": "/microondas/", "Mopa a vapor": "/mopa-a-vapor/", "Reloj inteligente": "/reloj-inteligente/", "Robot aspirador": "/robot-aspirador/", "Secador": "/secador/", "Televisores": "/televisores/", "Tostadoras": "/tostadoras/" }; // Evento de búsqueda al teclear document.getElementById('searchCategoryInput').addEventListener('keyup', function(event) { const inputValue = event.target.value.trim().toLowerCase(); // Valor ingresado // Filtro de categorías que coinciden con el texto introducido const filteredCategories = Object.entries(categories) .filter(([name, url]) => name.toLowerCase().includes(inputValue)) // Busca coincidencias .map(([name, url]) => `<li><a href="${url}">${name}</a></li>`); // Genera links // Muestra los resultados const suggestionsList = document.getElementById('suggestions'); suggestionsList.innerHTML = filteredCategories.join(''); // Si no hay resultados, muestra un mensaje if (filteredCategories.length === 0) { suggestionsList.innerHTML = '<li>No se encontraron coincidencias.</li>'; } }); // Redirección al pulsar Enter document.getElementById('searchCategoryInput').addEventListener('keydown', function(event) { if (event.key === 'Enter' && !event.shiftKey) { // Solo cuando se presiona Enter event.preventDefault(); const firstMatch = filteredCategories[0]; // Primer resultado if (firstMatch) { window.location.href = firstMatch.url; // Redirecciona a la categoría } else { alert("No se encontró ninguna categoría."); } } }); // Oculta las sugerencias al hacer click fuera document.addEventListener('click', function(event) { const suggestionsList = document.getElementById('suggestions'); if (suggestionsList && event.target !== suggestionsList && event.target.parentNode !== suggestionsList) { suggestionsList.innerHTML = ''; // Limpiamos las sugerencias } }); </script>
+    <script> // Objeto con las categorías y sus URLs const categories = { "Aspiradoras sin cable": "/aspiradoras-sin-cable/", "Auriculares": "/auriculares/", "Batidoras": "/batidoras/", "Cafeteras": "/cafeteras/", "Cámaras de vigilancia": "/camaras-de-vigilancia/", "Chimeneas eléctricas": "/chimeneas-electricas/", "Deshumidificador": "/deshumidificador/", "Freidoras": "/freidoras/", "Lavadoras": "/lavadoras/", "Lavavajillas": "/lavavajillas/", "Microondas": "/microondas/", "Mopa a vapor": "/mopa-a-vapor/", "Reloj inteligente": "/reloj-inteligente/", "Robot aspirador": "/robot-aspirador/", "Secador": "/secador/", "Televisores": "/televisores/", "Tostadoras": "/tostadoras/" }; // Evento de búsqueda al teclear document.getElementById('searchCategoryInput').addEventListener('keyup', function(event) { const inputValue = event.target.value.trim().toLowerCase(); // Valor ingresado // Filtro de categorías que coinciden con el texto introducido const filteredCategories = Object.entries(categories) .filter(([name, url]) => name.toLowerCase().includes(inputValue)) // Busca coincidencias .map(([name, url]) => `<li><a href="${url}">${name}</a></li>`); // Genera links // Muestra los resultados const suggestionsList = document.getElementById('suggestions'); suggestionsList.innerHTML = filteredCategories.join(''); // Si no hay resultados, muestra un mensaje if (filteredCategories.length === 0) { suggestionsList.innerHTML = '<li>No se encontraron coincidencias.</li>'; } }); // Redirección al pulsar Enter document.getElementById('searchCategoryInput').addEventListener('keydown', function(event) { if (event.key === 'Enter' && !event.shiftKey) { // Solo cuando se presiona Enter event.preventDefault(); const firstMatch = filteredCategories[0]; // Primer resultado if (firstMatch) { window.location.href = firstMatch.url; // Redirecciona a la categoría } else { alert("No se encontró ninguna categoría."); } } }); // Oculta las sugerencias al hacer click fuera document.addEventListener('click', function(event) { const suggestionsList = document.getElementById('suggestions'); if (suggestionsList && event.target !== suggestionsList && event.target.parentNode !== suggestionsList) { suggestionsList.innerHTML = ''; // Limpiamos las sugerencias } }); // Seleccionar categoría mediante el menú desplegable document.getElementById('categorySelect').addEventListener('change', function() { const selectedCategory = this.value; if (categories[selectedCategory]) { window.location.href = categories[selectedCategory]; } }); </script>
 </body>
 </html>
