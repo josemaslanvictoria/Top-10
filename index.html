@@ -28,16 +28,6 @@
             margin: 20px auto;
             max-width: 900px;
         }
-        .offer-banner {
-            font-size: 2rem;
-            font-weight: bold;
-            color: red;
-            background-color: yellow;
-            padding: 5px 15px;
-            text-decoration: underline;
-            text-align: center;
-            margin: 0 10px;
-        }
         .search-box {
             margin-top: auto;
             display: flex;
@@ -64,7 +54,7 @@
             color: white;
             font-size: 16px;
             cursor: pointer;
-            margin-right: 10px; /* Mover el botón a la izquierda */
+            margin-right: 10px; /* Botón a la izquierda */
         }
         .categories {
             display: flex;
@@ -99,68 +89,6 @@
             border-radius: 10px;
             margin-bottom: 10px;
         }
-        .offers-section {
-            margin: 20px auto;
-            max-width: 900px;
-            padding: 20px;
-            background-color: #fff;
-            border: 2px solid red;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .offers-section h2 {
-            text-align: center;
-            font-size: 2rem;
-            font-weight: bold;
-            color: red;
-            margin-bottom: 20px;
-        }
-        .offers {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 20px;
-            justify-content: center;
-        }
-        .offer-box {
-            display: block;
-            text-align: center;
-            border: 3px solid red;
-            padding: 10px;
-            background: white;
-            text-decoration: none;
-            border-radius: 10px;
-            max-width: 150px;
-            position: relative;
-        }
-        .offer-tag {
-            position: absolute;
-            top: -20px;
-            left: 10px;
-            background: red;
-            color: white;
-            padding: 5px;
-            font-weight: bold;
-            font-size: 14px;
-            border-radius: 5px;
-        }
-        .offer-box img {
-            width: 100%;
-            max-width: 150px;
-            height: auto;
-            margin-bottom: 20px;
-        }
-        .offer-box span {
-            font-size: 16px;
-            font-weight: bold;
-            color: white;
-            text-decoration: none;
-            background-color: green;
-            padding: 10px 15px;
-            border-radius: 5px;
-            display: block;
-            text-align: center;
-            margin-top: 10px;
-        }
         .amazon-logo {
             width: 100px;
             height: auto;
@@ -172,9 +100,6 @@
                 font-size: 2rem;
             }
             .offer-banner {
-                font-size: 1.5rem;
-            }
-            .offers-section h2 {
                 font-size: 1.5rem;
             }
             .category-box {
@@ -190,9 +115,6 @@
             .offer-banner {
                 font-size: 1.2rem;
             }
-            .offers-section h2 {
-                font-size: 1.2rem;
-            }
             .category-box {
                 width: 100px;
                 padding: 10px;
@@ -203,17 +125,18 @@
 <body>
     <header>
         <h1>Top 10 Tecnología: Compra lo mejor calidad-precio y valorado</h1>
-        <!-- Frase de ofertas -->
+        <!-- Caja de ofertas con la nueva imagen -->
         <div class="offer-container">
-            <a href="/ofertas/" class="category-box" style="background-color: yellow; color: red;">
-                <div class="offer-banner">¡Ofertas! Aprovecha y elige el tuyo</div>
+            <a href="/ofertas/" class="category-box">
+                <img src="https://i.pinimg.com/originals/8a/51/7b/8a517bfb7992a39a7c50eb5fd2448726.png" alt="Ofertas">
+                Ofertas
             </a>
         </div>
         <!-- Buscador -->
         <div class="search-box">
-            <form action="/buscar/" method="GET">
-                <button type="submit">Buscar</button> <!-- Botón a la izquierda -->
-                <input type="text" name="q" placeholder="Buscar productos...">
+            <form id="searchForm" action="/buscar/" method="GET">
+                <button type="submit" style="background-color: red; color: white;">Buscar</button> <!-- Botón rojo a la izquierda -->
+                <input type="text" id="searchInput" name="q" placeholder="Buscar productos...">
             </form>
         </div>
         <!-- Cajas de categorías -->
@@ -290,12 +213,38 @@
         </div>
     </header>
 
-    <!-- Sección de Ofertas -->
-    <div class="offers-section">
-        <h2>Ofertas</h2>
-        <div class="offers">
-            <!-- Ofertas aquí -->
-        </div>
-    </div>
+    <script>
+        // Función para manejar la búsqueda
+        document.getElementById('searchForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evitar el envío del formulario por defecto
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const categories = {
+                "aspiradoras sin cable": "/aspiradoras-sin-cable/",
+                "auriculares": "/auriculares/",
+                "batidoras": "/batidoras/",
+                "cafeteras": "/cafeteras/",
+                "cámaras de vigilancia": "/camaras-de-vigilancia/",
+                "chimeneas eléctricas": "/chimeneas-electricas/",
+                "deshumidificador": "/deshumidificador/",
+                "freidoras": "/freidoras/",
+                "lavadoras": "/lavadoras/",
+                "lavavajillas": "/lavavajillas/",
+                "microondas": "/microondas/",
+                "mopa a vapor": "/mopa-a-vapor/",
+                "reloj inteligente": "/reloj-inteligente/",
+                "robot aspirador": "/robot-aspirador/",
+                "secador": "/secador/",
+                "televisores": "/televisores/",
+                "tostadoras": "/tostadoras/",
+                "ofertas": "/ofertas/"
+            };
+
+            if (categories[searchTerm]) {
+                window.location.href = categories[searchTerm]; // Redirigir a la categoría correspondiente
+            } else {
+                alert("No se encontraron resultados para: " + searchTerm); // Mostrar alerta si no hay coincidencias
+            }
+        });
+    </script>
 </body>
 </html>
