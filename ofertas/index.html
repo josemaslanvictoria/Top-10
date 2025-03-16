@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Top 10 Tecnología: Compra lo mejor calidad-precio y valorado</title>
-    <link rel="stylesheet" href="/assets/styles.css">
+    <title>Ofertas Exclusivas: Los Productos Más Vendidos en Amazon</title>
+    <meta name="description" content="Descubre las mejores ofertas en tecnología. Productos más vendidos en Amazon con descuentos exclusivos. ¡Compra ahora y ahorra!">
     <style>
         /* Estilos generales */
         body {
@@ -12,14 +12,15 @@
             margin: 0;
             padding: 0;
             background-color: #f9f9f9;
+            color: #333;
         }
         h1 {
             text-align: center;
             font-size: 2.5rem;
             font-weight: bold;
-            text-decoration: underline;
             margin-top: 20px;
             padding: 0 10px;
+            color: #e60000; /* Rojo llamativo */
         }
         .offer-container {
             display: flex;
@@ -28,98 +29,12 @@
             margin: 20px auto;
             max-width: 900px;
         }
-        .offer-banner {
-            font-size: 2rem;
-            font-weight: bold;
-            color: red;
-            background-color: yellow;
-            padding: 5px 15px;
-            text-decoration: underline;
-            text-align: center;
-            margin: 0 10px;
-        }
-        .search-box {
-            margin-top: auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            width: 100%;
-            max-width: 900px;
-            margin: 20px auto;
-        }
-        .search-box input {
-            padding: 12px;
-            border: 1px solid black;
-            border-radius: 5px;
-            width: 80%;
-            max-width: 600px;
-            font-size: 16px;
-        }
-        #suggestions {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            background-color: white;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            max-height: 200px;
-            overflow-y: auto;
-            z-index: 1000;
-            width: 80%;
-            max-width: 600px;
-            margin: 0 auto;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        #suggestions li {
-            list-style-type: none;
-            padding: 8px;
-            cursor: pointer;
-            border-bottom: 1px solid #eee;
-        }
-        #suggestions li:hover {
-            background-color: #f5f5f5;
-        }
-        .categories {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            margin: 20px auto;
-            max-width: 900px;
-            padding: 20px;
-        }
-        .category-box {
-            background-color: #fff;
-            border: 2px solid #ff6f61;
-            border-radius: 10px;
-            padding: 20px;
-            text-align: center;
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
-            transition: transform 0.3s, box-shadow 0.3s;
-            width: 150px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .category-box:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            border-color: #ff3b2f;
-        }
-        .category-box img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            margin-bottom: 10px;
-        }
         .offers-section {
             margin: 20px auto;
             max-width: 900px;
             padding: 20px;
             background-color: #fff;
-            border: 2px solid red;
+            border: 2px solid #e60000; /* Rojo llamativo */
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
@@ -127,42 +42,27 @@
             text-align: center;
             font-size: 2rem;
             font-weight: bold;
-            color: red;
+            color: #e60000; /* Rojo llamativo */
             margin-bottom: 20px;
-        }
-        .offers {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 20px;
-            justify-content: center;
         }
         .offer-box {
             display: block;
             text-align: center;
-            border: 3px solid red;
+            border: 3px solid #e60000; /* Rojo llamativo */
             padding: 10px;
             background: white;
             text-decoration: none;
             border-radius: 10px;
-            max-width: 150px;
+            max-width: 300px;
+            margin: 20px auto;
             position: relative;
-        }
-        .offer-tag {
-            position: absolute;
-            top: -20px;
-            left: 10px;
-            background: red;
-            color: white;
-            padding: 5px;
-            font-weight: bold;
-            font-size: 14px;
-            border-radius: 5px;
         }
         .offer-box img {
             width: 100%;
-            max-width: 150px;
+            max-width: 300px;
             height: auto;
             margin-bottom: 20px;
+            border-radius: 10px;
         }
         .offer-box span {
             font-size: 16px;
@@ -177,8 +77,10 @@
             margin-top: 10px;
         }
         .amazon-logo {
-            width: 100px; /* Ajustado */
+            width: 100px;
             height: auto;
+            margin: 20px auto;
+            display: block;
         }
 
         /* Estilos responsivos */
@@ -186,15 +88,11 @@
             h1 {
                 font-size: 2rem;
             }
-            .offer-banner {
-                font-size: 1.5rem;
-            }
             .offers-section h2 {
                 font-size: 1.5rem;
             }
-            .category-box {
-                width: 120px;
-                padding: 15px;
+            .offer-box {
+                max-width: 250px;
             }
         }
 
@@ -202,99 +100,37 @@
             h1 {
                 font-size: 1.5rem;
             }
-            .offer-banner {
-                font-size: 1.2rem;
-            }
             .offers-section h2 {
                 font-size: 1.2rem;
             }
-            .category-box {
-                width: 100px;
-                padding: 10px;
+            .offer-box {
+                max-width: 200px;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Top 10 Tecnología: Compra lo mejor calidad-precio y valorado</h1>
-        <div class="offer-container">
-            <a href="/ofertas/" style="text-decoration: none; color: inherit;">
-                <div class="offer-banner">¡Ofertas! Aprovecha y elige el tuyo</div>
-            </a>
-        </div>
-        <div class="search-box">
-            <input type="text" id="searchCategoryInput" placeholder="Buscar productos...">
-            <ul id="suggestions"></ul>
-        </div>
-        <!-- Cajas de categorías -->
-        <div class="categories">
-            <a href="/aspiradoras-sin-cable/" class="category-box">
-                <img src="https://m.media-amazon.com/images/I/71WL7Vh6v+L._AC_SX679_.jpg" alt="Aspiradora sin cable modelo XYZ">
-                Aspiradoras sin cable
-            </a>
-            <!-- Resto de las categorías -->
-        </div>
+        <h1>Ofertas Exclusivas: Los Productos Más Vendidos en Amazon</h1>
     </header>
 
     <!-- Sección de Ofertas -->
     <div class="offers-section">
-        <h2>Ofertas</h2>
-        <div class="offers">
-            <!-- Ofertas aquí -->
-        </div>
+        <h2>Ofertas Destacadas</h2>
+        <!-- Oferta 1: Televisor CHiQ -->
+        <a href="https://www.amazon.es/CHiQ-L40QH7G-Asistente-Chromecast-Integrado/dp/B0CN4Q1MBF?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=AIMON2QNXX57&dib=eyJ2IjoiMSJ9.cQXRVlmT9qOrOphng9FauIY82P8dQgJfp-xaJuX4fSyS2jaoa78cpYCeHqX2l4ia46QBaVGf2BmhHbq3oD_7FeS91GCvgHJbr4oE7pNo780zrJ8HFDP3RiJF2YoemmBnw2Qd2H0yw8-KXd548FLgVf-B9HF-OOfDj8rM6XYwjHeWHyw7gncIf47ACqkIapKcJIzmt5aUj4Fjqo8rFdWogbhisQ73Nlqu6yWPBZsDf1Xk2bhQn9aCAjXQ3T5GCxDXjA8RPzTHmhW3QMBXfvqnaRf6_jA7q-rcx09YZ4H59hI.cc5WIYdFSgwCjhb1TYoQL7UE5bHFokKHK2UZSkIBvH0&dib_tag=se&keywords=televisores&qid=1742153384&sprefix=televisores%2Caps%2C135&sr=8-3-spons&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=3d415cbda188fb837d92d23dca06ad9e&language=es_ES&ref_=as_li_ss_tl" class="offer-box" target="_blank" rel="noopener noreferrer">
+            <img src="https://m.media-amazon.com/images/I/71uYzSxdYWL._AC_SL1500_.jpg" alt="Televisor CHiQ">
+            <span>Ver Oferta</span>
+        </a>
+        <!-- Más ofertas pueden agregarse aquí -->
     </div>
 
-    <script>
-        const categories = {
-            "aspiradoras sin cable": "/aspiradoras-sin-cable/",
-            "auriculares": "/auriculares/",
-            "batidoras": "/batidoras/",
-            "cafeteras": "/cafeteras/",
-            "cámaras de vigilancia": "/camaras-de-vigilancia/",
-            "chimeneas eléctricas": "/chimeneas-electricas/",
-            "deshumidificador": "/deshumidificador/",
-            "freidoras": "/freidoras/",
-            "lavadoras": "/lavadoras/",
-            "lavavajillas": "/lavavajillas/",
-            "microondas": "/microondas/",
-            "mopa a vapor": "/mopa-a-vapor/",
-            "reloj inteligente": "/reloj-inteligente/",
-            "robot aspirador": "/robot-aspirador/",
-            "secador": "/secador/",
-            "televisores": "/televisores/",
-            "tostadoras": "/tostadoras/"
-        };
+    <!-- Logo de Amazon -->
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon Logo" class="amazon-logo">
 
-        const searchInput = document.getElementById('searchCategoryInput');
-        const suggestionsList = document.getElementById('suggestions');
-
-        let timeout;
-        searchInput.addEventListener('input', function(e) {
-            clearTimeout(timeout);
-            timeout = setTimeout(() => {
-                const input = e.target.value.toLowerCase();
-                const results = Object.keys(categories).filter(category => 
-                    category.toLowerCase().includes(input)
-                );
-
-                let suggestionsHtml = results.map(result => `
-                    <li onclick="window.location.href='${categories[result]}'">${result}</li>
-                `).join('');
-
-                suggestionsList.innerHTML = suggestionsHtml;
-
-                if (input === '' || results.length === 0) {
-                    suggestionsList.innerHTML = '<li>No se encontraron resultados</li>';
-                }
-            }, 300);
-        });
-
-        document.addEventListener('click', function(e) {
-            if (e.target !== searchInput && e.target !== suggestionsList) {
-                suggestionsList.innerHTML = '';
-            }
-        });
-    </script>
+    <!-- Atribución de afiliado -->
+    <p style="text-align: center; font-size: 0.8rem; color: #666;">
+        Como Afiliado de Amazon, recibimos ingresos por las compras adscritas que cumplen los requisitos aplicables.
+    </p>
 </body>
 </html>
