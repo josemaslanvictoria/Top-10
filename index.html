@@ -21,23 +21,6 @@
             margin-top: 20px;
             padding: 0 10px;
         }
-        .offer-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 20px auto;
-            max-width: 900px;
-        }
-        .offer-banner {
-            font-size: 2rem;
-            font-weight: bold;
-            color: red;
-            background-color: yellow;
-            padding: 5px 15px;
-            text-decoration: underline;
-            text-align: center;
-            margin: 0 10px;
-        }
         .search-box {
             margin-top: auto;
             display: flex;
@@ -56,30 +39,15 @@
             max-width: 600px;
             font-size: 16px;
         }
-        #suggestions {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            background-color: white;
-            border: 1px solid #ccc;
+        .search-box button {
+            padding: 12px 20px;
+            border: 1px solid black;
             border-radius: 5px;
-            max-height: 200px;
-            overflow-y: auto;
-            z-index: 1000;
-            width: 80%;
-            max-width: 600px;
-            margin: 0 auto;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        #suggestions li {
-            list-style-type: none;
-            padding: 8px;
+            background-color: red;
+            color: white;
+            font-size: 16px;
             cursor: pointer;
-            border-bottom: 1px solid #eee;
-        }
-        #suggestions li:hover {
-            background-color: #f5f5f5;
+            margin-left: 10px;
         }
         .categories {
             display: flex;
@@ -218,9 +186,12 @@
 <body>
     <header>
         <h1>Top 10 Tecnología: Compra lo mejor calidad-precio y valorado</h1>
+        <!-- Buscador -->
         <div class="search-box">
-            <input type="text" id="searchCategoryInput" placeholder="Buscar productos...">
-            <ul id="suggestions"></ul>
+            <form action="/buscar/" method="GET">
+                <input type="text" name="q" placeholder="Buscar productos...">
+                <button type="submit">Buscar</button>
+            </form>
         </div>
         <!-- Cajas de categorías -->
         <div class="categories">
@@ -308,56 +279,5 @@
             <!-- Ofertas aquí -->
         </div>
     </div>
-
-    <script>
-        const categories = {
-            "ofertas": "/ofertas/",  <!-- Agregado "ofertas" al objeto -->
-            "aspiradoras sin cable": "/aspiradoras-sin-cable/",
-            "auriculares": "/auriculares/",
-            "batidoras": "/batidoras/",
-            "cafeteras": "/cafeteras/",
-            "cámaras de vigilancia": "/camaras-de-vigilancia/",
-            "chimeneas eléctricas": "/chimeneas-electricas/",
-            "deshumidificador": "/deshumidificador/",
-            "freidoras": "/freidoras/",
-            "lavadoras": "/lavadoras/",
-            "lavavajillas": "/lavavajillas/",
-            "microondas": "/microondas/",
-            "mopa a vapor": "/mopa-a-vapor/",
-            "reloj inteligente": "/reloj-inteligente/",
-            "robot aspirador": "/robot-aspirador/",
-            "secador": "/secador/",
-            "televisores": "/televisores/",
-            "tostadoras": "/tostadoras/"
-        };
-
-        const searchInput = document.getElementById('searchCategoryInput');
-        const suggestionsList = document.getElementById('suggestions');
-
-        // Función para mostrar sugerencias
-        searchInput.addEventListener('input', function(e) {
-            const input = e.target.value.toLowerCase();
-            const results = Object.keys(categories).filter(category => 
-                category.toLowerCase().includes(input)
-            );
-
-            let suggestionsHtml = results.map(result => `
-                <li onclick="window.location.href='${categories[result]}'">${result}</li>
-            `).join('');
-
-            suggestionsList.innerHTML = suggestionsHtml;
-
-            if (input === '' || results.length === 0) {
-                suggestionsList.innerHTML = '';
-            }
-        });
-
-        // Ocultar sugerencias al hacer clic fuera
-        document.addEventListener('click', function(e) {
-            if (e.target !== searchInput && e.target !== suggestionsList) {
-                suggestionsList.innerHTML = '';
-            }
-        });
-    </script>
 </body>
 </html>
