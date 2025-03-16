@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ofertas Exclusivas: Los Productos Más Vendidos en Amazon</title>
-    <meta name="description" content="Descubre las mejores ofertas en tecnología. Productos más vendidos en Amazon con descuentos exclusivos. ¡Compra ahora y ahorra!">
+    <title>Ofertas Exclusivas en Amazon: Los Productos Más Vendidos con Descuentos</title>
+    <meta name="description" content="Descubre las mejores ofertas en Amazon. Productos más vendidos en tecnología, hogar y electrodomésticos con descuentos exclusivos. ¡Compra ahora y ahorra!">
+    <meta name="keywords" content="ofertas Amazon, productos más vendidos, descuentos tecnología, compras online, electrodomésticos baratos">
+    <meta name="author" content="TuNombre">
+    <link rel="canonical" href="https://tudominio.com" />
     <style>
         /* Estilos generales */
         body {
@@ -24,10 +27,10 @@
         }
         .offers-section {
             margin: 20px auto;
-            max-width: 900px;
+            max-width: 1200px;
             padding: 20px;
             background-color: #fff;
-            border: 2px solid #e60000; /* Rojo llamativo */
+            border: 2px solid #e60000;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
@@ -35,33 +38,39 @@
             text-align: center;
             font-size: 2rem;
             font-weight: bold;
-            color: #e60000; /* Rojo llamativo */
+            color: #e60000;
             margin-bottom: 20px;
         }
+        .offer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+        }
         .offer-box {
-            display: block;
+            flex: 1 1 calc(50% - 40px);
+            max-width: calc(50% - 40px);
             text-align: center;
-            border: 3px solid #e60000; /* Rojo llamativo */
+            border: 3px solid #e60000;
             padding: 10px;
             background: white;
             text-decoration: none;
             border-radius: 10px;
-            max-width: 300px;
-            margin: 20px auto;
             position: relative;
+            transition: transform 0.3s ease;
+        }
+        .offer-box:hover {
+            transform: scale(1.05);
         }
         .offer-box img {
             width: 100%;
-            max-width: 300px;
             height: auto;
-            margin-bottom: 20px;
             border-radius: 10px;
         }
         .offer-box span {
             font-size: 16px;
             font-weight: bold;
             color: white;
-            text-decoration: none;
             background-color: green;
             padding: 10px 15px;
             border-radius: 5px;
@@ -85,7 +94,8 @@
                 font-size: 1.5rem;
             }
             .offer-box {
-                max-width: 250px;
+                flex: 1 1 100%;
+                max-width: 100%;
             }
         }
 
@@ -96,9 +106,6 @@
             .offers-section h2 {
                 font-size: 1.2rem;
             }
-            .offer-box {
-                max-width: 200px;
-            }
         }
     </style>
 </head>
@@ -108,38 +115,45 @@
     </header>
 
     <!-- Sección de Ofertas -->
-    <div class="offers-section">
+    <section class="offers-section">
         <h2>Ofertas Destacadas</h2>
+        <div class="offer-container">
+            <!-- Oferta 1: Televisor CHiQ -->
+            <a href="https://www.amazon.es/CHiQ-L40QH7G-Asistente-Chromecast-Integrado/dp/B0CN4Q1MBF" class="offer-box" target="_blank" rel="noopener noreferrer nofollow">
+                <img src="https://m.media-amazon.com/images/I/71uYzSxdYWL._AC_SL1500_.jpg" alt="Televisor CHiQ 40 Pulgadas con Asistente de Voz y Chromecast Integrado">
+                <span>Ver Oferta</span>
+            </a>
 
-        <!-- Oferta 1: Televisor CHiQ -->
-        <a href="https://www.amazon.es/CHiQ-L40QH7G-Asistente-Chromecast-Integrado/dp/B0CN4Q1MBF?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=AIMON2QNXX57&dib=eyJ2IjoiMSJ9.cQXRVlmT9qOrOphng9FauIY82P8dQgJfp-xaJuX4fSyS2jaoa78cpYCeHqX2l4ia46QBaVGf2BmhHbq3oD_7FeS91GCvgHJbr4oE7pNo780zrJ8HFDP3RiJF2YoemmBnw2Qd2H0yw8-KXd548FLgVf-B9HF-OOfDj8rM6XYwjHeWHyw7gncIf47ACqkIapKcJIzmt5aUj4Fjqo8rFdWogbhisQ73Nlqu6yWPBZsDf1Xk2bhQn9aCAjXQ3T5GCxDXjA8RPzTHmhW3QMBXfvqnaRf6_jA7q-rcx09YZ4H59hI.cc5WIYdFSgwCjhb1TYoQL7UE5bHFokKHK2UZSkIBvH0&dib_tag=se&keywords=televisores&qid=1742153384&sprefix=televisores%2Caps%2C135&sr=8-3-spons&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=3d415cbda188fb837d92d23dca06ad9e&language=es_ES&ref_=as_li_ss_tl" class="offer-box" target="_blank" rel="noopener noreferrer">
-            <img src="https://m.media-amazon.com/images/I/71uYzSxdYWL._AC_SL1500_.jpg" alt="Televisor CHiQ">
-            <span>Ver Oferta</span>
-        </a>
+            <!-- Oferta 2: Freidora Princess -->
+            <a href="https://www.amazon.es/Freidora-Princess-182626-Family-Castle/dp/B0000C7825" class="offer-box" target="_blank" rel="noopener noreferrer nofollow">
+                <img src="https://m.media-amazon.com/images/I/71WL7Vh6v+L._AC_SX679_.jpg" alt="Freidora Princess Family Castle, 2.5 Litros, 1500W">
+                <span>Ver Oferta</span>
+            </a>
 
-        <!-- Oferta 2: Freidora Princess -->
-        <a href="https://www.amazon.es/Freidora-Princess-182626-Family-Castle/dp/B0000C7825?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=5TBUZPF71OH&dib=eyJ2IjoiMSJ9.ttfo3-nESExUfh4XtHavH_y8LBCsknE8td5LjjtgfHs2t66OOTjDYqG-L9PWmnqgmLmyNWefwRSfl5LefekFa90frX7Dk7xthn1SJxU_TVrQ9uC_FFRcWZKZDK2rDxg-_CkhcZZXuKQOLfd6-LFPUl51MoqiHTp6rM0sJsZ1dPw1OobZ7cAKuUp0qsH20-rGxMPMV1d2ftHP-zTBCw6PXPIjKcsplIKGtyYvgyPjHlajgSUU6unTR5kaTTROOaTwXMtlHpbr4arOnfFllN6KFXdEVcmml9GR9wzJG4BFnUsh5jSGdkr4jRxEH98UwftC3bbcZlyHSlvpP6P3H9NXx3uGbum-Km35IOHcT-MZ0xFHsTTxxTNq7iFl1p6qlMwCvJByoYOKBu-gd1GMT_gkAXPTua5Zlou1OyUBrrHeY8O5PlXpPLGfaxjiNJ2tZ4IU.mUPTLlf4yhzqe6m5ICPrUPc_E5viUgYtjIVq058iM0w&dib_tag=se&keywords=freidora&qid=1742158592&sprefix=freidoras%2Caps%2C182&sr=8-8&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=7709fbd1c46efc43dad44f60545fa21a&language=es_ES&ref_=as_li_ss_tl" class="offer-box" target="_blank" rel="noopener noreferrer">
-            <img src="https://m.media-amazon.com/images/I/71WL7Vh6v+L._AC_SX679_.jpg" alt="Freidora Princess">
-            <span>Ver Oferta</span>
-        </a>
+            <!-- Oferta 3: Robot Aspirador LEFANT -->
+            <a href="https://www.amazon.es/LEFANT-Aspirador-Autonom%C3%ADa-silenciosa-Limpieza/dp/B0BN64CY6B" class="offer-box" target="_blank" rel="noopener noreferrer nofollow">
+                <img src="https://m.media-amazon.com/images/I/71Kv4VyPFtL._AC_SL1500_.jpg" alt="Robot Aspirador LEFANT, Autonomía de 150 Minutos, Silencioso">
+                <span>Ver Oferta</span>
+            </a>
 
-        <!-- Oferta 3: Robot Aspirador LEFANT -->
-        <a href="https://www.amazon.es/LEFANT-Aspirador-Autonom%C3%ADa-silenciosa-Limpieza/dp/B0BN64CY6B?crid=AFOVGU7RMMPI&dib=eyJ2IjoiMSJ9.7ZC5jWATvg945RKucrlrzA8vm0g_Hrg2oM99rTJIJuXwJJ0oKPsDzYFnj50PZetvZ3uksFB3nwITFdsQPnUSsJBgXjPodmitWY4jld9L37t1sEj45UyN6qdpJB4aSPHqMneKzCgprNezxGrHv22j4fzoW4ytrGKwSzl3kxXiWwzWuqDEZ-ghKGWv6TS9bK5JcM922Q9iVxgPMOZgGMWzzRDLrZjVMQvY4GILsky3sLcbNbODceph0IhVP6YXQtaXMG1Q9KAO4yevnIHqgpt0pemS7gS0_lqO5YFkj8U-5hJNiLAX5RDFKmSp0W5vMA2w5TdUrCWNwxY_kYrxy_KPYwQhbUH5FMaauRfGB3IeBL7IlQ-92qHyiVlCA-MUOGB5DF-kiOF6dNHwxT0lRoKcjiCODzH_YurJ6jdsIpRL8Osk18IyY2PwoI5PCJWVrTZt.ljybEPWGzO6IpViSSUogVsLA7NKMhKH5EAUKmZJpfXg&dib_tag=se&keywords=robot%2Baspirador&qid=1742158626&sprefix=robot%2Caps%2C138&sr=8-5&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=56364c70a7952043c12f8c18b86e8356&language=es_ES&ref_=as_li_ss_tl" class="offer-box" target="_blank" rel="noopener noreferrer">
-            <img src="https://m.media-amazon.com/images/I/71Kv4VyPFtL._AC_SL1500_.jpg" alt="Robot Aspirador LEFANT">
-            <span>Ver Oferta</span>
-        </a>
+            <!-- Oferta 4: Auriculares Inalámbricos -->
+            <a href="https://www.amazon.es/Auriculares-Inalambricos-Bluetooth-Cancelacion-Impermeable/dp/B0CHYDX493" class="offer-box" target="_blank" rel="noopener noreferrer nofollow">
+                <img src="https://m.media-amazon.com/images/I/710Lppy-fzL._AC_SL1500_.jpg" alt="Auriculares Inalámbricos Bluetooth con Cancelación de Ruido">
+                <span>Ver Oferta</span>
+            </a>
 
-        <!-- Oferta 4: Auriculares Inalámbricos -->
-        <a href="https://www.amazon.es/Auriculares-Inalambricos-Bluetooth-Cancelacion-Impermeable/dp/B0CHYDX493?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=15P0ZP2KJ31E1&dib=eyJ2IjoiMSJ9.sIFnzhVry6jVlpZR_UCYSIODX3ALqju9GpqIPAyUUzk4MDtvTwUJu9O9BSIC0wERbRBuhej0Lhvt3ImxUtjpGqhi7zNzUB224gREe0EWaJFmh1d1xrGkL4QfRZ4TjwPxqLN6AwYxPn_GvbwXcgUAiOZUiwJIPCl3MMLL7HaXRZ7DaxWHTZdjwckiCO7hiIehoaBfI_2l4eASa6tfb1jtd0Ma4ydC0-cwRwskZyRihJkYn3uRwmaFTKos09MkzcZY-6i9d9I_HqP2xXYK-azi2WzeI0wpAfcL5jyqB2017Ys._DWcTQsomUxX9pM_KDcFV9ucojAr-Els6LXeU7HTZfc&dib_tag=se&keywords=auriculares&qid=1742158658&sprefix=auriculares%2Caps%2C139&sr=8-2-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=d4ad6d5887208f3178ac11d3731a62ee&language=es_ES&ref_=as_li_ss_tl" class="offer-box" target="_blank" rel="noopener noreferrer">
-            <img src="https://m.media-amazon.com/images/I/710Lppy-fzL._AC_SL1500_.jpg" alt="Auriculares Inalámbricos">
-            <span>Ver Oferta</span>
-        </a>
+            <!-- Oferta 5: Purificador de Aire Rowenta -->
+            <a href="https://www.amazon.es/Rowenta-Eclipse-QU5062-purificador-programable/dp/B0B9HMMPKV" class="offer-box" target="_blank" rel="noopener noreferrer nofollow">
+                <img src="https://m.media-amazon.com/images/I/71wjZTnrnnL._AC_SL1500_.jpg" alt="Purificador de Aire Rowenta Eclipse, Programable y Silencioso">
+                <span>Ver Oferta</span>
+            </a>
 
-        <!-- Oferta 5: Purificador de Aire Rowenta -->
-        <a href="https://www.amazon.es/Rowenta-Eclipse-QU5062-purificador-programable/dp/B0B9HMMPKV?content-id=amzn1.sym.1b7dbd21-d76b-48cf-b2c4-3d7772b13950%3Aamzn1.sym.1b7dbd21-d76b-48cf-b2c4-3d7772b13950&crid=3SDWM2PY0G6F6&cv_ct_cx=aire%2Bacondicionado&keywords=aire%2Bacondicionado&pd_rd_i=B0B9HMMPKV&pd_rd_r=7c535981-c41c-4577-9b19-903ed3b3b5ba&pd_rd_w=jecek&pd_rd_wg=BXfEM&pf_rd_p=1b7dbd21-d76b-48cf-b2c4-3d7772b13950&pf_rd_r=72QANHKGVD9FJQEZ8DCE&qid=1742158701&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&sprefix=aire%2Caps%2C136&sr=1-1-07652b71-81e3-41f8-9097-e46726928fb7&ufe=app_do%3Aamzn1.fos.0fd54328-1d46-4534-bd0f-16141b40bb5b&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=aebd0d674d25a4b11010cc01af3ad93b&language=es_ES&ref_=as_li_ss_tl" class="offer-box" target="_blank" rel="noopener noreferrer">
-            <img src="https://m.media-amazon.com/images/I/71wjZTnrnnL._AC_SL1500_.jpg" alt="Purificador de Aire Rowenta">
-            <span>Ver Oferta</span>
-        </a>
-
-        <!-- Oferta 6: Lavadora Candy -->
-        <a href="https://www.amazon.es/Lavadora-Candy-CS-14102DE-1S-frontal/dp/B08L82PV2J?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=HDXCD0QK4MES&dib=eyJ2IjoiMSJ9.bWEpx7MGL21_QvtyWoVI9lU41L7DuIbMA054RUId-nq7L9XtRzBZsGlB4DsYWBZoFPvmbF6s0ALQxSdJbnizkpJnPHQITI8HbTtjsIa81Cq_56lpyu4K_TwJFjyPVDRVR8qy3I_2JwwNohw2c0guBbPfvTe6poLEVnXiqdD2O8TDQ-hu-IZkfNnSssm26i7F5Wk0O_ok7czD67JF5EAv0oDMYPRnUa8mG5vQvE4VjJs9YxmOvvS7UA9slQGfBh-CPC
+            <!-- Oferta 6: Lavadora Candy -->
+            <a href="https://www.amazon.es/Lavadora-Candy-CS-14102DE-1S-frontal/dp/B08L82PV2J" class="offer-box" target="_blank" rel="noopener noreferrer nofollow">
+                <img src="https://m.media-amazon.com/images/I/71wjZTnrnnL._AC_SL1500_.jpg" alt="Lavadora Candy CS14102DE, 10 Kg, Clase A+++">
+                <span>Ver Oferta</span>
+            </a>
+        </div>
+    </section>
+</body>
+</html>
