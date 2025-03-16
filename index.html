@@ -6,22 +6,19 @@
     <title>Top 10 Tecnología: Compra lo mejor calidad-precio y valorado</title>
     <link rel="stylesheet" href="/assets/styles.css">
     <style>
-        #suggestions li a {
-            color: black;
-            text-decoration: none;
-            display: block;
-            padding: 8px;
-            border-bottom: 1px solid #ccc;
-        }
-
-        #suggestions li a:hover {
-            background-color: #f5f5f5;
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
         }
         h1 {
             text-align: center;
             font-size: 36px;
             font-weight: bold;
             text-decoration: underline;
+            margin-top: 20px;
         }
         .offer-container {
             display: flex;
@@ -56,6 +53,28 @@
             width: 80%;
             max-width: 600px;
             font-size: 16px;
+        }
+        .categories {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px auto;
+            max-width: 900px;
+        }
+        .category-box {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .category-box:hover {
+            background-color: #f5f5f5;
         }
         .offers {
             margin-top: 20px;
@@ -142,111 +161,86 @@
             <input type="text" id="searchCategoryInput" placeholder="Buscar productos...">
             <ul id="suggestions" style="position: absolute; list-style-type: none; padding: 0; margin: 0; background-color: white; width: 80%; max-width: 600px; box-sizing: border-box; top: calc(100% + 5px);"></ul>
         </div>
-            <script>
-            const categories = {
-                "aspiradoras sin cable": "/aspiradoras-sin-cable/",
-                "auriculares": "/auriculares/",
-                "batidoras": "/batidoras/",
-                "cafeteras": "/cafeteras/",
-                "cámaras de vigilancia": "/camaras-de-vigilancia/",
-                "chimeneas eléctricas": "/chimeneas-electricas/",
-                "deshumidificador": "/deshumidificador/",
-                "freidoras": "/freidoras/",
-                "lavadoras": "/lavadoras/",
-                "lavavajillas": "/lavavajillas/",
-                "microondas": "/microondas/",
-                "mopa-a-vapor": "/mopa-a-vapor/",
-                "reloj inteligente": "/reloj-inteligente/",
-                "robot aspirador": "/robot-aspirador/",
-                "secador": "/secador/",
-                "televisores": "/televisores/",
-                "tostadoras": "/tostadoras/"
-            };
-            document.getElementById('categorySelect').addEventListener('change', function() {
-                const selectedCategory = this.value;
-                if (categories[selectedCategory]) {
-                    window.location.href = categories[selectedCategory];
-                }
-            });
-
-            document.getElementById('searchCategoryInput').addEventListener('input', function(e) {
-                const input = e.target.value.toLowerCase();
-                const results = Object.keys(categories).filter(category => category.includes(input));
-                let suggestionsHtml = results.map(result => `<li><a href="${categories[result]}">${result}</a></li>`).join('');
-
-                let suggestionsList = document.getElementById('suggestions');
-
-                suggestionsList.innerHTML = suggestionsHtml;
-
-                if (input === '' || results.length === 0) {
-                    suggestionsList.innerHTML = '';
-                }
-            });
-
-            document.addEventListener('click', function(e) {
-                const suggestionsList = document.getElementById('suggestions');
-                if (suggestionsList && e.target !== suggestionsList && e.target.parentNode !== suggestionsList) {
-                    suggestionsList.innerHTML = '';
-                }
-            });
-        </script>
+        <!-- Cajas de categorías -->
+        <div class="categories">
+            <a href="/aspiradoras-sin-cable/" class="category-box">Aspiradoras sin cable</a>
+            <a href="/auriculares/" class="category-box">Auriculares</a>
+            <a href="/batidoras/" class="category-box">Batidoras</a>
+            <a href="/cafeteras/" class="category-box">Cafeteras</a>
+            <a href="/camaras-de-vigilancia/" class="category-box">Cámaras de vigilancia</a>
+            <a href="/chimeneas-electricas/" class="category-box">Chimeneas eléctricas</a>
+            <a href="/deshumidificador/" class="category-box">Deshumidificador</a>
+            <a href="/freidoras/" class="category-box">Freidoras</a>
+            <a href="/lavadoras/" class="category-box">Lavadoras</a>
+            <a href="/lavavajillas/" class="category-box">Lavavajillas</a>
+            <a href="/microondas/" class="category-box">Microondas</a>
+            <a href="/mopa-a-vapor/" class="category-box">Mopa a vapor</a>
+            <a href="/reloj-inteligente/" class="category-box">Reloj inteligente</a>
+            <a href="/robot-aspirador/" class="category-box">Robot aspirador</a>
+            <a href="/secador/" class="category-box">Secador</a>
+            <a href="/televisores/" class="category-box">Televisores</a>
+            <a href="/tostadoras/" class="category-box">Tostadoras</a>
+        </div>
     </header>
-    
+
+    <!-- Sección de Ofertas -->
     <div class="offers">
-        
         <a href="https://www.amazon.es/COSORI-Freidora-BlazeTM-Lavavajillas-Deshidratar/dp/B0CD2DSXHT?th=1&linkCode=ll1&tag=yocompro0e-21&linkId=431063f531084654ad983266e3ecda59&language=es_ES&ref_=as_li_ss_tl" class="offer-box">
             <div class="offer-tag">🔥 Oferta Flash</div>
             <img src="https://m.media-amazon.com/images/I/81OJ5uCzWSL._AC_UL640_FMwebp_QL65_.jpg" alt="Freidora COSORI">
             <img class="amazon-logo" src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon Logo">
             <span>Ver precio</span>
         </a>
-        
-        <a href="https://www.amazon.es/Krups-Authentic-Espumador-Compactadora-capacidad/dp/B0D92CZC7Z?linkCode=ll1&tag=yocompro0e-21&linkId=9b2ed12c593f5980fdc1d974d90ece83&language=es_ES&ref_=as_li_ss_tl" class="offer-box">
-            <div class="offer-tag">🔥 Oferta Flash</div>
-            <img src="https://m.media-amazon.com/images/I/71-kfLDQNDL._AC_SX679_.jpg" alt="Cafetera Krups">
-            <img class="amazon-logo" src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon Logo">
-            <span>Ver precio</span>
-        </a>
-            <a href="https://www.amazon.es/Taylor-Swoden-Darcy-reutilizable-descalcificaci%C3%B3n/dp/B082KG27KV?linkCode=ll1&tag=yocompro0e-21&linkId=de7256fe7078ee1487d5002dd378c7f9&language=es_ES&ref_=as_li_ss_tl" class="offer-box">
-            <div class="offer-tag">🔥 Oferta Flash</div>
-            <img src="https://m.media-amazon.com/images/I/71ZIcAyGNrL._AC_SX679_.jpg" alt="Cafetera Taylor Swoden">
-            <img class="amazon-logo" src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon Logo">
-            <span>Ver precio</span>
-        </a>
-            
+        <!-- Repite las ofertas aquí -->
+    </div>
 
-<a href="https://www.amazon.es/Fachixy%E3%80%8C2024-Nuevo%E3%80%8DFC300-Auriculares-inal%C3%A1mbricos-Gaming/dp/B0D5HLV7G8?linkCode=ll1&tag=yocompro0e-21&linkId=f25cfc7f9d7ad3cd0a33b010a840074d&language=es_ES&ref_=as_li_ss_tl" class="offer-box">
-<div class="offer-tag">🔥 Oferta Flash</div>
-<img src="https://m.media-amazon.com/images/I/71ctIXLeNuL._AC_SX679_.jpg" alt="Auriculares Fachixy">
-<img class="amazon-logo" src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon Logo">
-<span>Ver precio</span>
-</a>
-                            <a href="https://www.amazon.es/LEFANT-Aspirador-Autonom%C3%ADa-Alfombras-Industrial/dp/B0BPS134K8?linkCode=ll1&tag=yocompro0e-21&linkId=159ea3b0a78244329431d30cbbf7cd95&language=es_ES&ref_=as_li_ss_tl" class="offer-box">
-            <div class="offer-tag">🔥 Oferta Flash</div>
-            <img src="https://m.media-amazon.com/images/I/617V8FVAcIL._AC_SX679_.jpg" alt="LEFANT Aspirador">
-            <img class="amazon-logo" src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon Logo">
-            <span>Ver precio</span>
-        </a>
-                <a href="https://www.amazon.es/ASUS-Vivobook-F1504ZA-NJ691W-Ordenador-Port%C3%A1til/dp/B086ZTHDQL?linkCode=ll1&tag=yocompro0e-21&linkId=8c32d4b491b0e8075627a15128c58fea&language=es_ES&ref_=as_li_ss_tl" class="offer-box">
-            <div class="offer-tag">🔥 Oferta Flash</div>
-            <img src="https://m.media-amazon.com/images/I/71+5loltm-L._AC_SX679_.jpg" alt="Portátil ASUS Vivobook">
-            <img class="amazon-logo" src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon Logo">
-            <span>Ver precio</span>
-        </a>
-    <a href="https://www.amazon.es/CHiQ-L40QH7G-Asistente-Chromecast-Integrado/dp/B0CN4Q1MBF?th=1&linkCode=ll1&tag=yocompro0e-21&linkId=8cea06ad201e0371eee97af7488f7300&language=es_ES&ref_=as_li_ss_tl" class="offer-box">
-    <div class="offer-tag">🔥 Oferta Flash</div>
-    <img src="https://m.media-amazon.com/images/I/71o28wCZD-L._AC_UL640_FMwebp_QL65_.jpg" alt="Televisor CHiQ">
-    <img class="amazon-logo" src="https://logo-logos.com/2016/12/Amazon_logo.png" alt="Amazon Logo">
-    <span>Ver precio</span>
-</a>
-<a href="https://www.amazon.es/Moulinex-tecnolog%C3%ADa-silencioso-2velocidades-DD67L810/dp/B0CVBDPDTP?th=1&linkCode=ll1&tag=yocompro0e-21&linkId=397a37891edaa5f2c5572b20dafd068b&language=es_ES&ref_=as_li_ss_tl" class="offer-box">
-    <div class="offer-tag">🔥 Oferta Flash</div>
-    <img src="https://m.media-amazon.com/images/I/71kjKd4KUCL._AC_SY879_.jpg" alt="Batidora Moulinex">
-    <img class="amazon-logo" src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon Logo">
-    <span>Ver precio</span>
-</a>
+    <script>
+        const categories = {
+            "aspiradoras sin cable": "/aspiradoras-sin-cable/",
+            "auriculares": "/auriculares/",
+            "batidoras": "/batidoras/",
+            "cafeteras": "/cafeteras/",
+            "cámaras de vigilancia": "/camaras-de-vigilancia/",
+            "chimeneas eléctricas": "/chimeneas-electricas/",
+            "deshumidificador": "/deshumidificador/",
+            "freidoras": "/freidoras/",
+            "lavadoras": "/lavadoras/",
+            "lavavajillas": "/lavavajillas/",
+            "microondas": "/microondas/",
+            "mopa-a-vapor": "/mopa-a-vapor/",
+            "reloj inteligente": "/reloj-inteligente/",
+            "robot aspirador": "/robot-aspirador/",
+            "secador": "/secador/",
+            "televisores": "/televisores/",
+            "tostadoras": "/tostadoras/"
+        };
 
+        document.getElementById('categorySelect').addEventListener('change', function() {
+            const selectedCategory = this.value;
+            if (categories[selectedCategory]) {
+                window.location.href = categories[selectedCategory];
+            }
+        });
 
+        document.getElementById('searchCategoryInput').addEventListener('input', function(e) {
+            const input = e.target.value.toLowerCase();
+            const results = Object.keys(categories).filter(category => category.includes(input));
+            let suggestionsHtml = results.map(result => `<li><a href="${categories[result]}">${result}</a></li>`).join('');
+
+            let suggestionsList = document.getElementById('suggestions');
+            suggestionsList.innerHTML = suggestionsHtml;
+
+            if (input === '' || results.length === 0) {
+                suggestionsList.innerHTML = '';
+            }
+        });
+
+        document.addEventListener('click', function(e) {
+            const suggestionsList = document.getElementById('suggestions');
+            if (suggestionsList && e.target !== suggestionsList && e.target.parentNode !== suggestionsList) {
+                suggestionsList.innerHTML = '';
+            }
+        });
+    </script>
+</body>
 </html>
-
-
