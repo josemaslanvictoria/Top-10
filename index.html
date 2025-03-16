@@ -15,11 +15,11 @@
         }
         h1 {
             text-align: center;
-            font-size: 2.5rem; /* Tamaño relativo */
+            font-size: 2.5rem;
             font-weight: bold;
             text-decoration: underline;
             margin-top: 20px;
-            padding: 0 10px; /* Añadir padding para dispositivos pequeños */
+            padding: 0 10px;
         }
         .offer-container {
             display: flex;
@@ -29,14 +29,14 @@
             max-width: 900px;
         }
         .offer-banner {
-            font-size: 2rem; /* Tamaño relativo */
+            font-size: 2rem;
             font-weight: bold;
             color: red;
             background-color: yellow;
             padding: 5px 15px;
             text-decoration: underline;
             text-align: center;
-            margin: 0 10px; /* Añadir margen para dispositivos pequeños */
+            margin: 0 10px;
         }
         .search-box {
             margin-top: auto;
@@ -92,7 +92,7 @@
         }
         .category-box {
             background-color: #fff;
-            border: 2px solid #ff6f61; /* Borde color naranja */
+            border: 2px solid #ff6f61;
             border-radius: 10px;
             padding: 20px;
             text-align: center;
@@ -104,13 +104,13 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         .category-box:hover {
-            transform: translateY(-5px); /* Efecto de elevación */
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
-            border-color: #ff3b2f; /* Cambio de color al hacer hover */
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            border-color: #ff3b2f;
         }
         .category-box img {
             width: 100%;
-            height: auto; /* Ajusta la altura automáticamente */
+            height: auto;
             border-radius: 10px;
             margin-bottom: 10px;
         }
@@ -177,20 +177,20 @@
             margin-top: 10px;
         }
         .amazon-logo {
-            width: 0.03125px;
+            width: 100px;
             height: auto;
         }
 
         /* Estilos responsivos */
         @media (max-width: 768px) {
             h1 {
-                font-size: 2rem; /* Tamaño más pequeño para tablets y móviles */
+                font-size: 2rem;
             }
             .offer-banner {
-                font-size: 1.5rem; /* Tamaño más pequeño para tablets y móviles */
+                font-size: 1.5rem;
             }
             .offers-section h2 {
-                font-size: 1.5rem; /* Tamaño más pequeño para tablets y móviles */
+                font-size: 1.5rem;
             }
             .category-box {
                 width: 120px;
@@ -200,13 +200,13 @@
 
         @media (max-width: 480px) {
             h1 {
-                font-size: 1.5rem; /* Tamaño más pequeño para móviles */
+                font-size: 1.5rem;
             }
             .offer-banner {
-                font-size: 1.2rem; /* Tamaño más pequeño para móviles */
+                font-size: 1.2rem;
             }
             .offers-section h2 {
-                font-size: 1.2rem; /* Tamaño más pequeño para móviles */
+                font-size: 1.2rem;
             }
             .category-box {
                 width: 100px;
@@ -218,17 +218,18 @@
 <body>
     <header>
         <h1>Top 10 Tecnología: Compra lo mejor calidad-precio y valorado</h1>
-        <div class="offer-container">
-            <a href="/ofertas/" style="text-decoration: none; color: inherit;">
-                <div class="offer-banner">¡Ofertas! Aprovecha y elige el tuyo</div>
-            </a>
-        </div>
         <div class="search-box">
             <input type="text" id="searchCategoryInput" placeholder="Buscar productos...">
             <ul id="suggestions"></ul>
         </div>
         <!-- Cajas de categorías -->
         <div class="categories">
+            <!-- Caja de Ofertas -->
+            <a href="/ofertas/" class="category-box">
+                <img src="https://m.media-amazon.com/images/I/71WL7Vh6v+L._AC_SX679_.jpg" alt="Ofertas">
+                Ofertas
+            </a>
+            <!-- Resto de las categorías -->
             <a href="/aspiradoras-sin-cable/" class="category-box">
                 <img src="https://m.media-amazon.com/images/I/71WL7Vh6v+L._AC_SX679_.jpg" alt="Aspiradoras sin cable">
                 Aspiradoras sin cable
@@ -304,12 +305,13 @@
     <div class="offers-section">
         <h2>Ofertas</h2>
         <div class="offers">
-            <!-- Ofertas aquí (igual que en el código anterior) -->
+            <!-- Ofertas aquí -->
         </div>
     </div>
 
     <script>
         const categories = {
+            "ofertas": "/ofertas/",  <!-- Agregado "ofertas" al objeto -->
             "aspiradoras sin cable": "/aspiradoras-sin-cable/",
             "auriculares": "/auriculares/",
             "batidoras": "/batidoras/",
