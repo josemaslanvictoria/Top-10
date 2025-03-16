@@ -16,13 +16,13 @@
             padding: 0;
             background-color: #f9f9f9;
             color: #333;
+            line-height: 1.6;
         }
         h1 {
             text-align: center;
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: bold;
-            margin-top: 20px;
-            padding: 0 10px;
+            margin: 20px 0;
             color: #e60000; /* Rojo llamativo */
         }
         .offers-section {
@@ -30,53 +30,66 @@
             max-width: 1200px;
             padding: 20px;
             background-color: #fff;
-            border: 2px solid #e60000;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         .offers-section h2 {
             text-align: center;
-            font-size: 2rem;
+            font-size: 1.5rem;
             font-weight: bold;
-            color: #e60000;
+            color: #333;
             margin-bottom: 20px;
         }
         .offer-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
+            justify-content: center;
         }
         .offer-box {
-            flex: 1 1 calc(50% - 40px);
-            max-width: calc(50% - 40px);
             text-align: center;
-            border: 3px solid #e60000;
-            padding: 10px;
+            border: 1px solid #e0e0e0;
+            padding: 15px;
             background: white;
             text-decoration: none;
             border-radius: 10px;
-            position: relative;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .offer-box:hover {
-            transform: scale(1.05);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
         .offer-box img {
             width: 100%;
+            max-width: 200px;
             height: auto;
             border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        .offer-box h3 {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #333;
+            margin: 10px 0;
+        }
+        .offer-box p {
+            font-size: 0.9rem;
+            color: #666;
+            margin: 10px 0;
         }
         .offer-box span {
-            font-size: 16px;
+            font-size: 1rem;
             font-weight: bold;
             color: white;
-            background-color: green;
+            background-color: #e60000;
             padding: 10px 15px;
             border-radius: 5px;
-            display: block;
-            text-align: center;
+            display: inline-block;
             margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+        .offer-box span:hover {
+            background-color: #cc0000;
         }
         .amazon-logo {
             width: 100px;
@@ -88,14 +101,16 @@
         /* Estilos responsivos */
         @media (max-width: 768px) {
             h1 {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
             .offers-section h2 {
-                font-size: 1.5rem;
+                font-size: 1.3rem;
             }
             .offer-box {
-                flex: 1 1 100%;
-                max-width: 100%;
+                padding: 10px;
+            }
+            .offer-box img {
+                max-width: 150px;
             }
         }
 
@@ -105,6 +120,12 @@
             }
             .offers-section h2 {
                 font-size: 1.2rem;
+            }
+            .offer-box {
+                padding: 10px;
+            }
+            .offer-box img {
+                max-width: 120px;
             }
         }
     </style>
@@ -120,37 +141,49 @@
         <div class="offer-container">
             <!-- Oferta 1: Televisor CHiQ -->
             <a href="https://www.amazon.es/CHiQ-L40QH7G-Asistente-Chromecast-Integrado/dp/B0CN4Q1MBF" class="offer-box" target="_blank" rel="noopener noreferrer nofollow">
-                <img src="https://m.media-amazon.com/images/I/71uYzSxdYWL._AC_SL1500_.jpg" alt="Televisor CHiQ 40 Pulgadas con Asistente de Voz y Chromecast Integrado">
+                <img src="https://m.media-amazon.com/images/I/71o28wCZD-L._AC_SL1500_.jpg" alt="Televisor CHiQ 40 Pulgadas con Asistente de Voz y Chromecast Integrado">
+                <h3>Televisor CHiQ 40"</h3>
+                <p>Asistente de voz, Chromecast integrado y calidad 4K.</p>
                 <span>Ver Oferta</span>
             </a>
 
             <!-- Oferta 2: Freidora Princess -->
             <a href="https://www.amazon.es/Freidora-Princess-182626-Family-Castle/dp/B0000C7825" class="offer-box" target="_blank" rel="noopener noreferrer nofollow">
-                <img src="https://m.media-amazon.com/images/I/71WL7Vh6v+L._AC_SX679_.jpg" alt="Freidora Princess Family Castle, 2.5 Litros, 1500W">
+                <img src="https://m.media-amazon.com/images/I/813+06isyNL._AC_SY300_SX300_.jpg" alt="Freidora Princess Family Castle, 2.5 Litros, 1500W">
+                <h3>Freidora Princess</h3>
+                <p>2.5 litros, 1500W, ideal para familias.</p>
                 <span>Ver Oferta</span>
             </a>
 
             <!-- Oferta 3: Robot Aspirador LEFANT -->
             <a href="https://www.amazon.es/LEFANT-Aspirador-Autonom%C3%ADa-silenciosa-Limpieza/dp/B0BN64CY6B" class="offer-box" target="_blank" rel="noopener noreferrer nofollow">
                 <img src="https://m.media-amazon.com/images/I/61fIsuUkunL._AC_SX679_.jpg" alt="Robot Aspirador LEFANT, Autonomía de 150 Minutos, Silencioso">
+                <h3>Robot Aspirador LEFANT</h3>
+                <p>Autonomía de 150 minutos, silencioso y eficiente.</p>
                 <span>Ver Oferta</span>
             </a>
 
             <!-- Oferta 4: Auriculares Inalámbricos -->
             <a href="https://www.amazon.es/Auriculares-Inalambricos-Bluetooth-Cancelacion-Impermeable/dp/B0CHYDX493" class="offer-box" target="_blank" rel="noopener noreferrer nofollow">
                 <img src="https://m.media-amazon.com/images/I/61NPz6iVNjL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="Auriculares Inalámbricos Bluetooth con Cancelación de Ruido">
+                <h3>Auriculares Inalámbricos</h3>
+                <p>Bluetooth, cancelación de ruido y diseño impermeable.</p>
                 <span>Ver Oferta</span>
             </a>
 
             <!-- Oferta 5: Purificador de Aire Rowenta -->
             <a href="https://www.amazon.es/Rowenta-Eclipse-QU5062-purificador-programable/dp/B0B9HMMPKV" class="offer-box" target="_blank" rel="noopener noreferrer nofollow">
                 <img src="https://m.media-amazon.com/images/I/71DiGMnP7cL._AC_SX679_.jpg" alt="Purificador de Aire Rowenta Eclipse, Programable y Silencioso">
+                <h3>Purificador de Aire Rowenta</h3>
+                <p>Programable, silencioso y eficiente.</p>
                 <span>Ver Oferta</span>
             </a>
 
             <!-- Oferta 6: Lavadora Candy -->
             <a href="https://www.amazon.es/Lavadora-Candy-CS-14102DE-1S-frontal/dp/B08L82PV2J" class="offer-box" target="_blank" rel="noopener noreferrer nofollow">
                 <img src="https://m.media-amazon.com/images/I/71kjKd4KUCL.__AC_SX342_SY445_QL70_ML2_.jpg" alt="Lavadora Candy CS14102DE, 10 Kg, Clase A+++">
+                <h3>Lavadora Candy</h3>
+                <p>10 kg, clase A+++, eficiencia energética.</p>
                 <span>Ver Oferta</span>
             </a>
         </div>
