@@ -21,6 +21,23 @@
             margin-top: 20px;
             padding: 0 10px;
         }
+        .offer-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px auto;
+            max-width: 900px;
+        }
+        .offer-banner {
+            font-size: 2rem;
+            font-weight: bold;
+            color: red;
+            background-color: yellow;
+            padding: 5px 15px;
+            text-decoration: underline;
+            text-align: center;
+            margin: 0 10px;
+        }
         .search-box {
             margin-top: auto;
             display: flex;
@@ -47,7 +64,7 @@
             color: white;
             font-size: 16px;
             cursor: pointer;
-            margin-left: 10px;
+            margin-right: 10px; /* Mover el botón a la izquierda */
         }
         .categories {
             display: flex;
@@ -186,20 +203,21 @@
 <body>
     <header>
         <h1>Top 10 Tecnología: Compra lo mejor calidad-precio y valorado</h1>
+        <!-- Frase de ofertas -->
+        <div class="offer-container">
+            <a href="/ofertas/" class="category-box" style="background-color: yellow; color: red;">
+                <div class="offer-banner">¡Ofertas! Aprovecha y elige el tuyo</div>
+            </a>
+        </div>
         <!-- Buscador -->
         <div class="search-box">
             <form action="/buscar/" method="GET">
+                <button type="submit">Buscar</button> <!-- Botón a la izquierda -->
                 <input type="text" name="q" placeholder="Buscar productos...">
-                <button type="submit">Buscar</button>
             </form>
         </div>
         <!-- Cajas de categorías -->
         <div class="categories">
-            <!-- Caja de Ofertas -->
-            <a href="/ofertas/" class="category-box">
-                <img src="https://m.media-amazon.com/images/I/71WL7Vh6v+L._AC_SX679_.jpg" alt="Ofertas">
-                Ofertas
-            </a>
             <!-- Resto de las categorías -->
             <a href="/aspiradoras-sin-cable/" class="category-box">
                 <img src="https://m.media-amazon.com/images/I/71WL7Vh6v+L._AC_SX679_.jpg" alt="Aspiradoras sin cable">
