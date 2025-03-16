@@ -3,32 +3,298 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Anterior</title>
+    <title>Top 10 Tecnología: Compra lo mejor calidad-precio y valorado</title>
+    <link rel="stylesheet" href="/assets/styles.css">
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-decoration: underline;
+            margin-top: 20px;
+            padding: 0 10px;
+        }
+        .offer-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px auto;
+            max-width: 900px;
+        }
+        .offer-banner {
+            font-size: 2rem;
+            font-weight: bold;
+            color: red;
+            background-color: yellow;
+            padding: 5px 15px;
+            text-decoration: underline;
+            text-align: center;
+            margin: 0 10px;
+        }
+        .search-box {
+            margin-top: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            margin: 20px auto;
+        }
+        .search-box input {
+            padding: 12px;
+            border: 1px solid black;
+            border-radius: 5px;
+            width: 80%;
+            max-width: 600px;
+            font-size: 16px;
+        }
+        #suggestions {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-height: 200px;
+            overflow-y: auto;
+            z-index: 1000;
+            width: 80%;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        #suggestions li {
+            list-style-type: none;
+            padding: 8px;
+            cursor: pointer;
+            border-bottom: 1px solid #eee;
+        }
+        #suggestions li:hover {
+            background-color: #f5f5f5;
+        }
+        .categories {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px auto;
+            max-width: 900px;
+            padding: 20px;
+        }
+        .category-box {
+            background-color: #fff;
+            border: 2px solid #ff6f61;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+            width: 150px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .category-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            border-color: #ff3b2f;
+        }
+        .category-box img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        .offers-section {
+            margin: 20px auto;
+            max-width: 900px;
+            padding: 20px;
+            background-color: #fff;
+            border: 2px solid red;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .offers-section h2 {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            color: red;
+            margin-bottom: 20px;
+        }
+        .offers {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            justify-content: center;
+        }
+        .offer-box {
+            display: block;
+            text-align: center;
+            border: 3px solid red;
+            padding: 10px;
+            background: white;
+            text-decoration: none;
+            border-radius: 10px;
+            max-width: 150px;
+            position: relative;
+        }
+        .offer-tag {
+            position: absolute;
+            top: -20px;
+            left: 10px;
+            background: red;
+            color: white;
+            padding: 5px;
+            font-weight: bold;
+            font-size: 14px;
+            border-radius: 5px;
+        }
+        .offer-box img {
+            width: 100%;
+            max-width: 150px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .offer-box span {
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            background-color: green;
+            padding: 10px 15px;
+            border-radius: 5px;
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+        }
+        .amazon-logo {
+            width: 100px; /* Ajustado */
+            height: auto;
+        }
+
+        /* Estilos responsivos */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            .offer-banner {
+                font-size: 1.5rem;
+            }
+            .offers-section h2 {
+                font-size: 1.5rem;
+            }
+            .category-box {
+                width: 120px;
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+            .offer-banner {
+                font-size: 1.2rem;
+            }
+            .offers-section h2 {
+                font-size: 1.2rem;
+            }
+            .category-box {
+                width: 100px;
+                padding: 10px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Página Anterior</h1>
-    <p>Esta es la página anterior con la caja de oferta especial.</p>
+    <header>
+        <h1>Top 10 Tecnología: Compra lo mejor calidad-precio y valorado</h1>
+        <div class="offer-container">
+            <a href="/ofertas/" style="text-decoration: none; color: inherit;">
+                <div class="offer-banner">¡Ofertas! Aprovecha y elige el tuyo</div>
+            </a>
+        </div>
+        <div class="search-box">
+            <input type="text" id="searchCategoryInput" placeholder="Buscar productos...">
+            <ul id="suggestions"></ul>
+        </div>
+        <!-- Cajas de categorías -->
+        <div class="categories">
+            <a href="/aspiradoras-sin-cable/" class="category-box">
+                <img src="https://m.media-amazon.com/images/I/71WL7Vh6v+L._AC_SX679_.jpg" alt="Aspiradora sin cable modelo XYZ">
+                Aspiradoras sin cable
+            </a>
+            <!-- Resto de las categorías -->
+        </div>
+    </header>
 
-    <!-- Contenido adicional de la página anterior -->
-    <div>
-        <h2>Información importante</h2>
-        <p>Este es el contenido adicional de la página anterior.</p>
+    <!-- Sección de Ofertas -->
+    <div class="offers-section">
+        <h2>Ofertas</h2>
+        <div class="offers">
+            <!-- Ofertas aquí -->
+        </div>
     </div>
 
-    <!-- Caja de oferta -->
-    <div id="caja-oferta" style="margin-top: 20px; padding: 15px; border: 2px solid #ffcc00; background-color: #fff8e1;">
-        <h2>Oferta Especial</h2>
-        <p>¡No te pierdas esta increíble oferta!</p>
-        <ul>
-            <li>Descuento del 50%</li>
-            <li>Válido hasta fin de mes</li>
-        </ul>
-    </div>
+    <script>
+        const categories = {
+            "aspiradoras sin cable": "/aspiradoras-sin-cable/",
+            "auriculares": "/auriculares/",
+            "batidoras": "/batidoras/",
+            "cafeteras": "/cafeteras/",
+            "cámaras de vigilancia": "/camaras-de-vigilancia/",
+            "chimeneas eléctricas": "/chimeneas-electricas/",
+            "deshumidificador": "/deshumidificador/",
+            "freidoras": "/freidoras/",
+            "lavadoras": "/lavadoras/",
+            "lavavajillas": "/lavavajillas/",
+            "microondas": "/microondas/",
+            "mopa a vapor": "/mopa-a-vapor/",
+            "reloj inteligente": "/reloj-inteligente/",
+            "robot aspirador": "/robot-aspirador/",
+            "secador": "/secador/",
+            "televisores": "/televisores/",
+            "tostadoras": "/tostadoras/"
+        };
 
-    <!-- Más contenido de la página anterior -->
-    <div>
-        <h2>Más detalles</h2>
-        <p>Aquí puedes encontrar más información sobre la oferta y otros productos.</p>
-    </div>
+        const searchInput = document.getElementById('searchCategoryInput');
+        const suggestionsList = document.getElementById('suggestions');
+
+        let timeout;
+        searchInput.addEventListener('input', function(e) {
+            clearTimeout(timeout);
+            timeout = setTimeout(() => {
+                const input = e.target.value.toLowerCase();
+                const results = Object.keys(categories).filter(category => 
+                    category.toLowerCase().includes(input)
+                );
+
+                let suggestionsHtml = results.map(result => `
+                    <li onclick="window.location.href='${categories[result]}'">${result}</li>
+                `).join('');
+
+                suggestionsList.innerHTML = suggestionsHtml;
+
+                if (input === '' || results.length === 0) {
+                    suggestionsList.innerHTML = '<li>No se encontraron resultados</li>';
+                }
+            }, 300);
+        });
+
+        document.addEventListener('click', function(e) {
+            if (e.target !== searchInput && e.target !== suggestionsList) {
+                suggestionsList.innerHTML = '';
+            }
+        });
+    </script>
 </body>
 </html>
