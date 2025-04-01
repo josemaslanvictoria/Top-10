@@ -3,48 +3,310 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Top 10 Tecnología: Compra lo mejor calidad-precio y valorado</title>
-    <meta name="description" content="Descubre los mejores productos tecnológicos con la mejor relación calidad-precio. Ofertas exclusivas en cafeteras, aspiradoras, televisores y más.">
-    <meta name="keywords" content="tecnología, ofertas, compras online, mejores productos, calidad-precio, Cecotec, cafeteras, aspiradoras, auriculares">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://tusitio.com/">
-    <link rel="stylesheet" href="/assets/styles.css">
+    <title>Top 10 Tecnología: Compra lo mejor calidad-precio</title>
+    <meta name="description" content="Ofertas en tecnología: cafeteras Cecotec, aspiradoras, auriculares, televisores y más. ¡Envío rápido!">
     <style>
-        /* Estilos generales */
-        body {
-            font-family: Arial, sans-serif;
+        /* Estilos base */
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
             background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        header {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
         }
         h1 {
-            text-align: center;
-            font-size: 2.5rem;
-            font-weight: bold;
+            color: #2c3e50;
+            margin: 20px 0;
+            font-size: 2.2rem;
             text-decoration: underline;
-            margin-top: 20px;
-            padding: 0 10px;
+            text-underline-offset: 8px;
         }
+
+        /* Ofertas */
         .offer-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 20px auto;
-            max-width: 900px;
+            margin: 30px auto;
+            max-width: 300px;
         }
-        .search-box {
-            margin-top: auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
+        .offer-box {
+            background: #fff;
+            border: 2px solid #e74c3c;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .offer-box img {
             width: 100%;
-            max-width: 900px;
+            border-radius: 8px;
+        }
+
+        /* Buscador */
+        .search-box {
+            max-width: 600px;
             margin: 20px auto;
+            display: flex;
         }
         .search-box input {
+            flex: 1;
             padding: 12px;
-            border: 1px solid black;
-            border-radius: 5px;
-            width: 80%;
-            max-width: 600
+            border: 2px solid #ddd;
+            border-radius: 4px 0 0 4px;
+            font-size: 16px;
+        }
+        .search-box button {
+            padding: 0 20px;
+            background: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* Tarjeta Prueba */
+        .test-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 30px auto;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .test-card h2 {
+            color: #27ae60;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .test-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .test-option {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+        .test-option:hover {
+            background: #e9f7ef;
+            box-shadow: 0 4px 12px rgba(46, 204, 113, 0.2);
+        }
+        .test-option h3 {
+            color: #27ae60;
+            margin-bottom: 5px;
+        }
+
+        /* Categorías */
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 30px auto;
+        }
+        .category-box {
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            text-decoration: none;
+            color: #333;
+        }
+        .category-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+        .category-box img {
+            width: 100%;
+            height: 120px;
+            object-fit: contain;
+            margin-bottom: 10px;
+            border-radius: 8px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .categories {
+                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .categories {
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            }
+            .test-options {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Top 10 Tecnología: Compra lo mejor calidad-precio</h1>
+        
+        <!-- Ofertas -->
+        <div class="offer-container">
+            <a href="ofertas.html" class="offer-box">
+                <img src="https://i.pinimg.com/originals/8a/51/7b/8a517bfb7992a39a7c50eb5fd2448726.png" alt="Ofertas">
+                <p>Ofertas</p>
+            </a>
+        </div>
+        
+        <!-- Buscador -->
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Buscar productos...">
+            <button id="searchButton">Buscar</button>
+        </div>
+        
+        <!-- Tarjeta Prueba -->
+        <div class="test-card">
+            <h2>Productos Destacados</h2>
+            <div class="test-options">
+                <div class="test-option">
+                    <a href="cecotec-power-espresso-20-crema.html">
+                        <h3>Cecotec Power Espresso 20 Crema</h3>
+                        <p>Cafetera profesional con 20 bares de presión</p>
+                    </a>
+                </div>
+                <div class="test-option">
+                    <a href="robot-aspirador.html">
+                        <h3>Robot Aspirador</h3>
+                        <p>Limpieza automática con app</p>
+                    </a>
+                </div>
+                <div class="test-option">
+                    <a href="ofertas.html">
+                        <h3>Ofertas Flash</h3>
+                        <p>Hasta 50% de descuento</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Categorías completas -->
+    <div class="categories">
+        <a href="aspiradoras-sin-cable.html" class="category-box">
+            <img src="https://m.media-amazon.com/images/I/71WL7Vh6v+L._AC_SX679_.jpg" alt="Aspiradoras sin cable">
+            Aspiradoras sin cable
+        </a>
+        <a href="auriculares.html" class="category-box">
+            <img src="https://m.media-amazon.com/images/I/710Lppy-fzL._AC_SL1500_.jpg" alt="Auriculares">
+            Auriculares
+        </a>
+        <a href="batidoras.html" class="category-box">
+            <img src="https://m.media-amazon.com/images/I/71TEsI+pD2L._AC_SY300_SX300_.jpg" alt="Batidoras">
+            Batidoras
+        </a>
+        <a href="cafeteras.html" class="category-box">
+            <img src="https://m.media-amazon.com/images/I/71uiF8cvgbL._AC_SL1500_.jpg" alt="Cafeteras">
+            Cafeteras
+        </a>
+        <a href="camaras-vigilancia.html" class="category-box">
+            <img src="https://m.media-amazon.com/images/I/61N7zX+8BuL._AC_SY300_SX300_.jpg" alt="Cámaras vigilancia">
+            Cámaras vigilancia
+        </a>
+        <a href="chimeneas-electricas.html" class="category-box">
+            <img src="https://m.media-amazon.com/images/I/71wjZTnrnnL._AC_SL1500_.jpg" alt="Chimeneas eléctricas">
+            Chimeneas eléctricas
+        </a>
+        <a href="deshumidificador.html" class="category-box">
+            <img src="https://m.media-amazon.com/images/I/61QEL7T6eQL._AC_SL1500_.jpg" alt="Deshumidificador">
+            Deshumidificador
+        </a>
+        <a href="freidoras.html" class="category-box">
+            <img src="https://m.media-amazon.com/images/I/71-bVzbgWTL._AC_SL1500_.jpg" alt="Freidoras">
+            Freidoras
+        </a>
+        <a href="lavadoras.html" class="category-box">
+            <img src="https://m.media-amazon.com/images/I/71mtc1bmq7L._AC_SL1500_.jpg" alt="Lavadoras">
+            Lavadoras
+        </a>
+        <a href="lavavajillas.html" class="category-box">
+            <img src="https://m.media-amazon.com/images/I/51AaUJGoQtL._AC_SL1050_.jpg" alt="Lavavajillas">
+            Lavavajillas
+        </a>
+        <a href="microondas.html" class="category-box">
+            <img src="https://m.media-amazon.com/images/I/51SbWaeMsdL._AC_SL1000_.jpg" alt="Microondas">
+            Microondas
+        </a>
+        <a href="mopa-vapor.html" class="category-box">
+            <img src="https://m.media-amazon.com/images/I/71QutkthltL._AC_SL1500_.jpg" alt="Mopa a vapor">
+            Mopa a vapor
+        </a>
+        <a href="reloj-inteligente.html" class="category-box">
+            <img src="https://m.media-amazon.com/images/I/719pl2rBmyL._AC_SL1500_.jpg" alt="Reloj inteligente">
+            Reloj inteligente
+        </a>
+        <a href="robot-aspirador.html" class="category-box">
+            <img src="https://m.media-amazon.com/images/I/71Kv4VyPFtL._AC_SL1500_.jpg" alt="Robot aspirador">
+            Robot aspirador
+        </a>
+        <a href="secador.html" class="category-box">
+            <img src="https://m.media-amazon.com/images/I/61udgSWIs2L._AC_SL1500_.jpg" alt="Secador">
+            Secador
+        </a>
+        <a href="televisores.html" class="category-box">
+            <img src="https://m.media-amazon.com/images/I/71uYzSxdYWL._AC_SL1500_.jpg" alt="Televisores">
+            Televisores
+        </a>
+        <a href="tostadoras.html" class="category-box">
+            <img src="https://m.media-amazon.com/images/I/611OVuN4rsL._AC_SL1500_.jpg" alt="Tostadoras">
+            Tostadoras
+        </a>
+    </div>
+
+    <script>
+        // Búsqueda mejorada
+        document.getElementById('searchButton').addEventListener('click', function() {
+            const term = document.getElementById('searchInput').value.toLowerCase();
+            const categories = {
+                'aspiradora': 'aspiradoras-sin-cable.html',
+                'auricular': 'auriculares.html',
+                'batidora': 'batidoras.html',
+                'cafetera': 'cafeteras.html',
+                'cecotec': 'cecotec-power-espresso-20-crema.html',
+                'cámara': 'camaras-vigilancia.html',
+                'chimenea': 'chimeneas-electricas.html',
+                'deshumidificador': 'deshumidificador.html',
+                'freidora': 'freidoras.html',
+                'lavadora': 'lavadoras.html',
+                'lavavajillas': 'lavavajillas.html',
+                'microondas': 'microondas.html',
+                'mopa': 'mopa-vapor.html',
+                'reloj': 'reloj-inteligente.html',
+                'robot': 'robot-aspirador.html',
+                'secador': 'secador.html',
+                'televisor': 'televisores.html',
+                'tostadora': 'tostadoras.html',
+                'oferta': 'ofertas.html'
+            };
+            
+            for (const [keyword, page] of Object.entries(categories)) {
+                if (term.includes(keyword)) {
+                    window.location.href = page;
+                    return;
+                }
+            }
+            
+            alert('Producto no encontrado. Prueba con: "cafetera", "robot aspirador", etc.');
+        });
+    </script>
+</body>
+</html>
