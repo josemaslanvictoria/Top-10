@@ -129,16 +129,6 @@
             top: 15px;
             color: #7f8c8d;
         }
-        .search-results {
-            display: none;
-            background: white;
-            border-radius: 0 0 15px 15px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            padding: 10px;
-            margin-top: -15px;
-            z-index: 10;
-            position: relative;
-        }
         
         /* Categorías */
         .categories {
@@ -156,6 +146,7 @@
             transition: all 0.3s ease;
             text-decoration: none;
             color: #333;
+            display: block; /* Para el filtrado */
         }
         .category:hover {
             transform: translateY(-5px);
@@ -173,6 +164,7 @@
             text-align: center;
             padding: 40px;
             color: #7f8c8d;
+            font-style: italic;
         }
         footer {
             text-align: center;
@@ -227,11 +219,10 @@
             <div class="search-container">
                 <input type="text" id="searchInput" placeholder="Busca productos (cafetera, robot, televisor...)">
                 <div class="search-icon">🔍</div>
-                <div class="search-results" id="searchResults"></div>
             </div>
         </div>
 
-        <!-- Todas las categorías -->
+        <!-- Todas las categorías (21 en total) -->
         <div class="categories" id="categoriesContainer">
             <!-- Cecotec -->
             <a href="cecotec-power-espresso-20-cream/index.html" class="category" data-keywords="cafetera cecotec espresso cafe">
@@ -258,9 +249,21 @@
             </a>
             
             <!-- Cocina -->
-            <a href="cocina/index.html" class="category" data-keywords="cocina freidora batidora microondas horno tostadora">
+            <a href="cocina/index.html" class="category" data-keywords="cocina horno microondas">
                 <img src="https://m.media-amazon.com/images/I/71-bVzbgWTL._AC_SL1500_.jpg" alt="Cocina">
                 Cocina
+            </a>
+            
+            <!-- Freidoras (añadida) -->
+            <a href="freidoras/index.html" class="category" data-keywords="freidora aire fritura cocina">
+                <img src="https://m.media-amazon.com/images/I/71-bVzbgWTL._AC_SL1500_.jpg" alt="Freidoras">
+                Freidoras
+            </a>
+            
+            <!-- Batidoras (añadida) -->
+            <a href="batidoras/index.html" class="category" data-keywords="batidora mezclar cocina electrodomestico">
+                <img src="https://m.media-amazon.com/images/I/71TEsI+pD2L._AC_SY300_SX300_.jpg" alt="Batidoras">
+                Batidoras
             </a>
             
             <!-- Lavadoras -->
@@ -273,6 +276,12 @@
             <a href="televisores/index.html" class="category" data-keywords="televisor tv pantalla smart led">
                 <img src="https://m.media-amazon.com/images/I/71uYzSxdYWL._AC_SL1500_.jpg" alt="TV">
                 Televisores
+            </a>
+            
+            <!-- Auriculares (añadida) -->
+            <a href="auriculares/index.html" class="category" data-keywords="auriculares audio musica sonido">
+                <img src="https://m.media-amazon.com/images/I/710Lppy-fzL._AC_SL1500_.jpg" alt="Auriculares">
+                Auriculares
             </a>
             
             <!-- Seguridad -->
@@ -325,6 +334,12 @@
             const categories = document.querySelectorAll('.category');
             let hasResults = false;
             
+            // Primero ocultamos todos
+            categories.forEach(category => {
+                category.style.display = 'none';
+            });
+            
+            // Mostramos solo coincidencias
             categories.forEach(category => {
                 const keywords = category.getAttribute('data-keywords').toLowerCase();
                 const title = category.textContent.toLowerCase();
@@ -332,27 +347,20 @@
                 if (keywords.includes(searchTerm) || title.includes(searchTerm)) {
                     category.style.display = 'block';
                     hasResults = true;
-                } else {
-                    category.style.display = 'none';
                 }
             });
             
-            // Mostrar mensaje si no hay resultados
-            const noResults = document.createElement('div');
-            noResults.className = 'no-results';
-            noResults.textContent = 'No se encontraron productos. Prueba con: cafetera, robot, televisor...';
-            
+            // Mensaje si no hay resultados
             const container = document.getElementById('categoriesContainer');
-            const existingNoResults = container.querySelector('.no-results');
+            let noResultsMsg = container.querySelector('.no-results');
             
-            if (!hasResults) {
-                if (!existingNoResults) {
-                    container.appendChild(noResults);
-                }
-            } else {
-                if (existingNoResults) {
-                    container.removeChild(existingNoResults);
-                }
+            if (!hasResults && !noResultsMsg) {
+                noResultsMsg = document.createElement('div');
+                noResultsMsg.className = 'no-results';
+                noResultsMsg.textContent = 'No se encontraron productos. Prueba con: cafetera, robot, televisor...';
+                container.appendChild(noResultsMsg);
+            } else if (hasResults && noResultsMsg) {
+                container.removeChild(noResultsMsg);
             }
         });
     </script>
