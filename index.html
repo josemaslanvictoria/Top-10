@@ -102,6 +102,44 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
         
+        /* Buscador inteligente */
+        .smart-search {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        .search-container {
+            position: relative;
+        }
+        #searchInput {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #ddd;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        #searchInput:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+        .search-icon {
+            position: absolute;
+            right: 20px;
+            top: 15px;
+            color: #7f8c8d;
+        }
+        .search-results {
+            display: none;
+            background: white;
+            border-radius: 0 0 15px 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            padding: 10px;
+            margin-top: -15px;
+            z-index: 10;
+            position: relative;
+        }
+        
         /* Categorías */
         .categories {
             display: grid;
@@ -130,6 +168,12 @@
             margin-bottom: 12px;
             border-radius: 8px;
         }
+        .no-results {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 40px;
+            color: #7f8c8d;
+        }
         footer {
             text-align: center;
             margin-top: 50px;
@@ -146,6 +190,7 @@
         @media (max-width: 480px) {
             h1 { font-size: 1.8rem; }
             .categories { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }
+            #searchInput { padding: 12px 15px; }
         }
     </style>
 </head>
@@ -177,46 +222,93 @@
             </div>
         </div>
 
+        <!-- Buscador inteligente -->
+        <div class="smart-search">
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Busca productos (cafetera, robot, televisor...)">
+                <div class="search-icon">🔍</div>
+                <div class="search-results" id="searchResults"></div>
+            </div>
+        </div>
+
         <!-- Todas las categorías -->
-        <div class="categories">
-            <a href="aspiradoras-sin-cable/index.html" class="category">
+        <div class="categories" id="categoriesContainer">
+            <!-- Cecotec -->
+            <a href="cecotec-power-espresso-20-cream/index.html" class="category" data-keywords="cafetera cecotec espresso cafe">
+                <img src="https://m.media-amazon.com/images/I/71uiF8cvgbL._AC_SL1500_.jpg" alt="Cecotec">
+                Cafetera Cecotec
+            </a>
+            
+            <!-- Aspiradoras -->
+            <a href="aspiradoras-sin-cable/index.html" class="category" data-keywords="aspiradora limpieza cable sin cable">
                 <img src="https://m.media-amazon.com/images/I/71WL7Vh6v+L._AC_SX679_.jpg" alt="Aspiradoras">
                 Aspiradoras
             </a>
             
-            <a href="robot-aspirador/index.html" class="category">
+            <!-- Robots -->
+            <a href="robot-aspirador/index.html" class="category" data-keywords="robot aspirador limpieza automatico smart">
                 <img src="https://m.media-amazon.com/images/I/71Kv4VyPFtL._AC_SL1500_.jpg" alt="Robot">
                 Robots
             </a>
             
-            <a href="climatizacion/index.html" class="category">
+            <!-- Climatización -->
+            <a href="climatizacion/index.html" class="category" data-keywords="clima aire acondicionado ventilador calefaccion deshumidificador">
                 <img src="https://m.media-amazon.com/images/I/61QEL7T6eQL._AC_SL1500_.jpg" alt="Climatización">
                 Climatización
             </a>
             
-            <a href="cocina/index.html" class="category">
+            <!-- Cocina -->
+            <a href="cocina/index.html" class="category" data-keywords="cocina freidora batidora microondas horno tostadora">
                 <img src="https://m.media-amazon.com/images/I/71-bVzbgWTL._AC_SL1500_.jpg" alt="Cocina">
                 Cocina
             </a>
             
-            <a href="lavadoras/index.html" class="category">
+            <!-- Lavadoras -->
+            <a href="lavadoras/index.html" class="category" data-keywords="lavadora lavar ropa electrodomestico">
                 <img src="https://m.media-amazon.com/images/I/71mtc1bmq7L._AC_SL1500_.jpg" alt="Lavadoras">
                 Lavadoras
             </a>
             
-            <a href="televisores/index.html" class="category">
+            <!-- Televisores -->
+            <a href="televisores/index.html" class="category" data-keywords="televisor tv pantalla smart led">
                 <img src="https://m.media-amazon.com/images/I/71uYzSxdYWL._AC_SL1500_.jpg" alt="TV">
                 Televisores
             </a>
             
-            <a href="seguridad/index.html" class="category">
+            <!-- Seguridad -->
+            <a href="seguridad/index.html" class="category" data-keywords="seguridad alarma camara vigilancia">
                 <img src="https://m.media-amazon.com/images/I/61N7zX+8BuL._AC_SY300_SX300_.jpg" alt="Seguridad">
                 Seguridad
             </a>
             
-            <a href="pequenos-electrodomesticos/index.html" class="category">
+            <!-- Pequeños electrodomésticos -->
+            <a href="pequenos-electrodomesticos/index.html" class="category" data-keywords="electrodomestico pequeño secador plancha">
                 <img src="https://m.media-amazon.com/images/I/611OVuN4rsL._AC_SL1500_.jpg" alt="Electrodomésticos">
                 Pequeños electro
+            </a>
+            
+            <!-- Lavavajillas -->
+            <a href="lavavajillas/index.html" class="category" data-keywords="lavavajillas lavar platos">
+                <img src="https://m.media-amazon.com/images/I/51AaUJGoQtL._AC_SL1050_.jpg" alt="Lavavajillas">
+                Lavavajillas
+            </a>
+            
+            <!-- Chimeneas -->
+            <a href="chimeneas-electricas/index.html" class="category" data-keywords="chimenea electrica calor hogar">
+                <img src="https://m.media-amazon.com/images/I/71wjZTnrnnL._AC_SL1500_.jpg" alt="Chimeneas">
+                Chimeneas
+            </a>
+            
+            <!-- Mopa vapor -->
+            <a href="mopa-a-vapor/index.html" class="category" data-keywords="mopa vapor limpieza suelo">
+                <img src="https://m.media-amazon.com/images/I/71QutkthltL._AC_SL1500_.jpg" alt="Mopa">
+                Mopa vapor
+            </a>
+            
+            <!-- Reloj inteligente -->
+            <a href="reloj-inteligente/index.html" class="category" data-keywords="reloj smartwatch inteligente">
+                <img src="https://m.media-amazon.com/images/I/719pl2rBmyL._AC_SL1500_.jpg" alt="Reloj">
+                Smartwatch
             </a>
         </div>
 
@@ -225,5 +317,44 @@
             <p><a href="licencia.html">Términos y condiciones</a> | <a href="contacto.html">Contacto</a></p>
         </footer>
     </div>
+
+    <script>
+        // Buscador inteligente
+        document.getElementById('searchInput').addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            const categories = document.querySelectorAll('.category');
+            let hasResults = false;
+            
+            categories.forEach(category => {
+                const keywords = category.getAttribute('data-keywords').toLowerCase();
+                const title = category.textContent.toLowerCase();
+                
+                if (keywords.includes(searchTerm) || title.includes(searchTerm)) {
+                    category.style.display = 'block';
+                    hasResults = true;
+                } else {
+                    category.style.display = 'none';
+                }
+            });
+            
+            // Mostrar mensaje si no hay resultados
+            const noResults = document.createElement('div');
+            noResults.className = 'no-results';
+            noResults.textContent = 'No se encontraron productos. Prueba con: cafetera, robot, televisor...';
+            
+            const container = document.getElementById('categoriesContainer');
+            const existingNoResults = container.querySelector('.no-results');
+            
+            if (!hasResults) {
+                if (!existingNoResults) {
+                    container.appendChild(noResults);
+                }
+            } else {
+                if (existingNoResults) {
+                    container.removeChild(existingNoResults);
+                }
+            }
+        });
+    </script>
 </body>
 </html>
