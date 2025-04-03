@@ -1,127 +1,170 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <!-- Meta tags y estilos (se mantienen igual) -->
-    <!-- ... -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 10 Tecnología - Mejor calidad-precio</title>
+    <meta name="description" content="Ofertas en tecnología: Cecotec, aspiradoras, auriculares y más">
+    <style>
+        /* RESET Y ESTILOS BASE */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* HEADER */
+        header {
+            text-align: center;
+            margin: 20px 0 30px;
+        }
+        h1 {
+            color: #2c3e50;
+            font-size: 2rem;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e74c3c;
+            display: inline-block;
+        }
+
+        /* OFERTA DESTACADA */
+        .highlight {
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 300px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .highlight img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        /* CATEGORÍAS */
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .category {
+            background: #fff;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: #333;
+        }
+        .category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        .category img {
+            width: 100%;
+            height: 100px;
+            object-fit: contain;
+            margin-bottom: 10px;
+            border-radius: 8px;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #7f8c8d;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            h1 { font-size: 1.6rem; }
+            .categories { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
+        }
+        @media (max-width: 480px) {
+            .categories { grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); }
+            .category img { height: 80px; }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <!-- Contenido del header (se mantiene igual) -->
-        <!-- ... -->
-    </header>
-    
-    <!-- Categorías actualizadas según tu repositorio -->
-    <div class="categories">
-        <!-- Nota: Todos los enlaces apuntan a archivos en la raíz del repositorio -->
-        <a href="aspiradoras-sin-cable.html" class="category-box">
-            <img src="https://m.media-amazon.com/images/I/71WL7Vh6v+L._AC_SX679_.jpg" alt="Aspiradoras sin cable">
-            Aspiradoras sin cable
-        </a>
-        <a href="auriculares.html" class="category-box">
-            <img src="https://m.media-amazon.com/images/I/710Lppy-fzL._AC_SL1500_.jpg" alt="Auriculares">
-            Auriculares
-        </a>
-        <a href="batidoras.html" class="category-box">
-            <img src="https://m.media-amazon.com/images/I/71TEsI+pD2L._AC_SY300_SX300_.jpg" alt="Batidoras">
-            Batidoras
-        </a>
-        <a href="cafeteras.html" class="category-box">
-            <img src="https://m.media-amazon.com/images/I/71uiF8cvgbL._AC_SL1500_.jpg" alt="Cafeteras">
-            Cafeteras
-        </a>
-        <a href="camaras-de-vigilancia.html" class="category-box">
-            <img src="https://m.media-amazon.com/images/I/61N7zX+8BuL._AC_SY300_SX300_.jpg" alt="Cámaras de vigilancia">
-            Cámaras de vigilancia
-        </a>
-        <a href="cecotec-power-espresso-20-cream.html" class="category-box"> <!-- Cambiado -->
-            <img src="https://m.media-amazon.com/images/I/71uiF8cvgbL._AC_SL1500_.jpg" alt="Cecotec Power Espresso 20 Crema">
-            Cecotec Power Espresso 20 Crema
-        </a>
-        <a href="chimeneas-electricas.html" class="category-box">
-            <img src="https://m.media-amazon.com/images/I/71wjZTnrnnL._AC_SL1500_.jpg" alt="Chimeneas eléctricas">
-            Chimeneas eléctricas
-        </a>
-        <a href="deshumidificador.html" class="category-box">
-            <img src="https://m.media-amazon.com/images/I/61QEL7T6eQL._AC_SL1500_.jpg" alt="Deshumidificador">
-            Deshumidificador
-        </a>
-        <a href="freidoras.html" class="category-box">
-            <img src="https://m.media-amazon.com/images/I/71-bVzbgWTL._AC_SL1500_.jpg" alt="Freidoras">
-            Freidoras
-        </a>
-        <a href="lavadoras.html" class="category-box">
-            <img src="https://m.media-amazon.com/images/I/71mtc1bmq7L._AC_SL1500_.jpg" alt="Lavadoras">
-            Lavadoras
-        </a>
-        <a href="lavavajillas.html" class="category-box">
-            <img src="https://m.media-amazon.com/images/I/51AaUJGoQtL._AC_SL1050_.jpg" alt="Lavavajillas">
-            Lavavajillas
-        </a>
-        <a href="microondas.html" class="category-box">
-            <img src="https://m.media-amazon.com/images/I/51SbWaeMsdL._AC_SL1000_.jpg" alt="Microondas">
-            Microondas
-        </a>
-        <a href="mopa-a-vapor.html" class="category-box">
-            <img src="https://m.media-amazon.com/images/I/71QutkthltL._AC_SL1500_.jpg" alt="Mopa a vapor">
-            Mopa a vapor
-        </a>
-        <a href="reloj-inteligente.html" class="category-box">
-            <img src="https://m.media-amazon.com/images/I/719pl2rBmyL._AC_SL1500_.jpg" alt="Reloj inteligente">
-            Reloj inteligente
-        </a>
-        <a href="robot-aspirador.html" class="category-box">
-            <img src="https://m.media-amazon.com/images/I/71Kv4VyPFtL._AC_SL1500_.jpg" alt="Robot aspirador">
-            Robot aspirador
-        </a>
-        <a href="secador.html" class="category-box">
-            <img src="https://m.media-amazon.com/images/I/61udgSWIs2L._AC_SL1500_.jpg" alt="Secador">
-            Secador
-        </a>
-        <a href="televisores.html" class="category-box">
-            <img src="https://m.media-amazon.com/images/I/71uYzSxdYWL._AC_SL1500_.jpg" alt="Televisores">
-            Televisores
-        </a>
-        <a href="tostadoras.html" class="category-box">
-            <img src="https://m.media-amazon.com/images/I/611OVuN4rsL._AC_SL1500_.jpg" alt="Tostadoras">
-            Tostadoras
-        </a>
-    </div>
+    <div class="container">
+        <header>
+            <h1>Top 10 Tecnología</h1>
+            <p>Los mejores productos calidad-precio</p>
+            
+            <div class="highlight">
+                <a href="ofertas/ofertas.html">
+                    <img src="https://i.pinimg.com/originals/8a/51/7b/8a517bfb7992a39a7c50eb5fd2448726.png" alt="Ofertas">
+                    <h3>Ofertas Especiales</h3>
+                </a>
+            </div>
+        </header>
 
-    <script>
-        // Script de búsqueda actualizado
-        document.getElementById('searchButton').addEventListener('click', function() {
-            const term = document.getElementById('searchInput').value.toLowerCase();
-            const categories = {
-                'aspiradora': 'aspiradoras-sin-cable.html',
-                'auricular': 'auriculares.html',
-                'batidora': 'batidoras.html',
-                'cafetera': 'cafeteras.html',
-                'cecotec': 'cecotec-power-espresso-20-cream.html', // Actualizado
-                'cámara': 'camaras-de-vigilancia.html',
-                'chimenea': 'chimeneas-electricas.html',
-                'deshumidificador': 'deshumidificador.html',
-                'freidora': 'freidoras.html',
-                'lavadora': 'lavadoras.html',
-                'lavavajillas': 'lavavajillas.html',
-                'microondas': 'microondas.html',
-                'mopa': 'mopa-a-vapor.html',
-                'reloj': 'reloj-inteligente.html',
-                'robot': 'robot-aspirador.html',
-                'secador': 'secador.html',
-                'televisor': 'televisores.html',
-                'tostadora': 'tostadoras.html',
-                'oferta': 'ofertas.html'
-            };
+        <div class="categories">
+            <!-- ENLACES A CARPETAS EXISTENTES -->
+            <a href="aspiradoras-sin-cable/aspiradoras-sin-cable.html" class="category">
+                <img src="https://m.media-amazon.com/images/I/71WL7Vh6v+L._AC_SX679_.jpg" alt="Aspiradoras">
+                Aspiradoras sin cable
+            </a>
             
-            for (const [keyword, page] of Object.entries(categories)) {
-                if (term.includes(keyword)) {
-                    window.location.href = page;
-                    return;
-                }
-            }
+            <a href="auriculares/auriculares.html" class="category">
+                <img src="https://m.media-amazon.com/images/I/710Lppy-fzL._AC_SL1500_.jpg" alt="Auriculares">
+                Auriculares
+            </a>
             
-            alert('Producto no encontrado. Prueba con: "cafetera", "robot aspirador", etc.');
-        });
-    </script>
+            <a href="batidoras/batidoras.html" class="category">
+                <img src="https://m.media-amazon.com/images/I/71TEsI+pD2L._AC_SY300_SX300_.jpg" alt="Batidoras">
+                Batidoras
+            </a>
+            
+            <a href="cafeteras/cafeteras.html" class="category">
+                <img src="https://m.media-amazon.com/images/I/71uiF8cvgbL._AC_SL1500_.jpg" alt="Cafeteras">
+                Cafeteras
+            </a>
+            
+            <a href="cecotec-power-espresso-20-cream/cecotec-power-espresso-20-cream.html" class="category">
+                <img src="https://m.media-amazon.com/images/I/71uiF8cvgbL._AC_SL1500_.jpg" alt="Cecotec">
+                Cecotec Power Espresso
+            </a>
+            
+            <a href="camaras-de-vigilancia/camaras-de-vigilancia.html" class="category">
+                <img src="https://m.media-amazon.com/images/I/61N7zX+8BuL._AC_SY300_SX300_.jpg" alt="Cámaras">
+                Cámaras vigilancia
+            </a>
+            
+            <a href="robot-aspirador/robot-aspirador.html" class="category">
+                <img src="https://m.media-amazon.com/images/I/71Kv4VyPFtL._AC_SL1500_.jpg" alt="Robot">
+                Robot aspirador
+            </a>
+            
+            <a href="televisores/televisores.html" class="category">
+                <img src="https://m.media-amazon.com/images/I/71uYzSxdYWL._AC_SL1500_.jpg" alt="TV">
+                Televisores
+            </a>
+            
+            <!-- Añade más categorías según tu estructura -->
+        </div>
+
+        <footer>
+            <p>© 2023 Top 10 Tecnología - Todos los derechos reservados</p>
+        </footer>
+    </div>
 </body>
 </html>
