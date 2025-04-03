@@ -1,8 +1,190 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <!-- Meta tags y estilos (se mantienen igual) -->
-    <!-- ... -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Don Hogar 2025 - Tecnología para tu hogar</title>
+    <meta name="description" content="Productos de tecnología para el hogar: Cecotec, aspiradoras, climatización y más">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        header {
+            text-align: center;
+            margin: 20px 0 30px;
+        }
+        h1 {
+            color: #2c3e50;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #e74c3c, #3498db);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        /* Sección destacada doble */
+        .highlight-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        @media (max-width: 768px) {
+            .highlight-section {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Ventana destacada */
+        .highlight-box {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: all 0.3s;
+        }
+        .test-box {
+            border: 2px solid #e74c3c;
+        }
+        .offers-box {
+            border: 2px solid #3498db;
+        }
+        .highlight-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        .highlight-box h2 {
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+        .test-box h2 {
+            color: #e74c3c;
+        }
+        .offers-box h2 {
+            color: #3498db;
+        }
+        .highlight-box img {
+            max-width: 200px;
+            margin: 15px auto;
+            display: block;
+            border-radius: 10px;
+        }
+        .highlight-button {
+            background: linear-gradient(90deg, #e74c3c, #3498db);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: all 0.3s;
+            display: inline-block;
+            text-decoration: none;
+        }
+        .highlight-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        /* Buscador inteligente */
+        .smart-search {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        .search-container {
+            position: relative;
+        }
+        #searchInput {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #ddd;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        #searchInput:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+        .search-icon {
+            position: absolute;
+            right: 20px;
+            top: 15px;
+            color: #7f8c8d;
+        }
+        
+        /* Categorías */
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+        .category {
+            background: white;
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: #333;
+            display: block; /* Para el filtrado */
+        }
+        .category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        .category img {
+            width: 100%;
+            height: 110px;
+            object-fit: contain;
+            margin-bottom: 12px;
+            border-radius: 8px;
+        }
+        .no-results {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 40px;
+            color: #7f8c8d;
+            font-style: italic;
+        }
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 25px;
+            color: #7f8c8d;
+            border-top: 1px solid #eee;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .categories { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+        }
+        @media (max-width: 480px) {
+            h1 { font-size: 1.8rem; }
+            .categories { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }
+            #searchInput { padding: 12px 15px; }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -11,112 +193,176 @@
             <p>Tecnología inteligente para tu hogar</p>
         </header>
         
-        <!-- Sección destacada doble (se mantiene igual) -->
+        <!-- Sección destacada doble -->
         <div class="highlight-section">
-            <!-- ... -->
+            <!-- Cajón de "A Prueba" -->
+            <div class="highlight-box test-box">
+                <h2>🌟 A Prueba 🌟</h2>
+                <h3>Cafetera Cecotec Power Espresso</h3>
+                <img src="https://m.media-amazon.com/images/I/71uiF8cvgbL._AC_SL1500_.jpg" alt="Cecotec">
+                <p>Pruébalo 15 días gratis en tu casa</p>
+                <a href="cecotec-power-espresso-20-cream/index.html" class="highlight-button">¡Quiero probarlo!</a>
+            </div>
+            
+            <!-- Cajón de "Ofertas" -->
+            <div class="highlight-box offers-box">
+                <h2>🔥 Ofertas Flash 🔥</h2>
+                <h3>Hasta 50% de descuento</h3>
+                <img src="https://i.pinimg.com/originals/8a/51/7b/8a517bfb7992a39a7c50eb5fd2448726.png" alt="Ofertas">
+                <p>Productos seleccionados por tiempo limitado</p>
+                <a href="ofertas/index.html" class="highlight-button">Ver ofertas</a>
+            </div>
         </div>
 
-        <!-- Buscador inteligente (se mantiene igual) -->
+        <!-- Buscador inteligente -->
         <div class="smart-search">
-            <!-- ... -->
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Busca productos (cafetera, robot, televisor...)">
+                <div class="search-icon">🔍</div>
+            </div>
         </div>
 
-        <!-- Todas las categorías ORDENADAS ALFABÉTICAMENTE -->
+        <!-- Todas las categorías (21 en total) -->
         <div class="categories" id="categoriesContainer">
-            <!-- A -->
-            <a href="auriculares/index.html" class="category" data-keywords="auriculares audio musica sonido">
-                <img src="https://m.media-amazon.com/images/I/710Lppy-fzL._AC_SL1500_.jpg" alt="Auriculares">
-                Auriculares
+            <!-- Cecotec -->
+            <a href="cecotec-power-espresso-20-cream/index.html" class="category" data-keywords="cafetera cecotec espresso cafe">
+                <img src="https://m.media-amazon.com/images/I/71uiF8cvgbL._AC_SL1500_.jpg" alt="Cecotec">
+                Cafetera Cecotec
             </a>
             
+            <!-- Aspiradoras -->
             <a href="aspiradoras-sin-cable/index.html" class="category" data-keywords="aspiradora limpieza cable sin cable">
                 <img src="https://m.media-amazon.com/images/I/71WL7Vh6v+L._AC_SX679_.jpg" alt="Aspiradoras">
                 Aspiradoras
             </a>
             
-            <!-- B -->
-            <a href="batidoras/index.html" class="category" data-keywords="batidora mezclar cocina electrodomestico">
-                <img src="https://m.media-amazon.com/images/I/71TEsI+pD2L._AC_SY300_SX300_.jpg" alt="Batidoras">
-                Batidoras
-            </a>
-            
-            <!-- C -->
-            <a href="cecotec-power-espresso-20-cream/index.html" class="category" data-keywords="cafetera cecotec espresso cafe">
-                <img src="https://m.media-amazon.com/images/I/71uiF8cvgbL._AC_SL1500_.jpg" alt="Cecotec">
-                Cecotec Power Espresso
-            </a>
-            
-            <a href="chimeneas-electricas/index.html" class="category" data-keywords="chimenea electrica calor hogar">
-                <img src="https://m.media-amazon.com/images/I/71wjZTnrnnL._AC_SL1500_.jpg" alt="Chimeneas">
-                Chimeneas
-            </a>
-            
-            <a href="climatizacion/index.html" class="category" data-keywords="clima aire acondicionado ventilador calefaccion deshumidificador">
-                <img src="https://m.media-amazon.com/images/I/61QEL7T6eQL._AC_SL1500_.jpg" alt="Climatización">
-                Climatización
-            </a>
-                
-            <!-- F -->
-            <a href="freidoras/index.html" class="category" data-keywords="freidora aire fritura cocina">
-                <img src="https://m.media-amazon.com/images/I/71-bVzbgWTL._AC_SL1500_.jpg" alt="Freidoras">
-                Freidoras
-            </a>
-            
-            <!-- L -->
-            <a href="lavadoras/index.html" class="category" data-keywords="lavadora lavar ropa electrodomestico">
-                <img src="https://m.media-amazon.com/images/I/71mtc1bmq7L._AC_SL1500_.jpg" alt="Lavadoras">
-                Lavadoras
-            </a>
-            
-            <a href="lavavajillas/index.html" class="category" data-keywords="lavavajillas lavar platos">
-                <img src="https://m.media-amazon.com/images/I/51AaUJGoQtL._AC_SL1050_.jpg" alt="Lavavajillas">
-                Lavavajillas
-            </a>
-            
-            <!-- M -->
-            <a href="mopa-a-vapor/index.html" class="category" data-keywords="mopa vapor limpieza suelo">
-                <img src="https://m.media-amazon.com/images/I/71QutkthltL._AC_SL1500_.jpg" alt="Mopa">
-                Mopa vapor
-            </a>
-            
-            <!-- P -->
-            <a href="pequenos-electrodomesticos/index.html" class="category" data-keywords="electrodomestico pequeño secador plancha">
-                <img src="https://m.media-amazon.com/images/I/611OVuN4rsL._AC_SL1500_.jpg" alt="Electrodomésticos">
-                Pequeños electro
-            </a>
-            
-            <!-- R -->
+            <!-- Robots -->
             <a href="robot-aspirador/index.html" class="category" data-keywords="robot aspirador limpieza automatico smart">
                 <img src="https://m.media-amazon.com/images/I/71Kv4VyPFtL._AC_SL1500_.jpg" alt="Robot">
                 Robots
             </a>
             
-            <a href="reloj-inteligente/index.html" class="category" data-keywords="reloj smartwatch inteligente">
-                <img src="https://m.media-amazon.com/images/I/719pl2rBmyL._AC_SL1500_.jpg" alt="Reloj">
-                Smartwatch
+            <!-- Climatización -->
+            <a href="climatizacion/index.html" class="category" data-keywords="clima aire acondicionado ventilador calefaccion deshumidificador">
+                <img src="https://m.media-amazon.com/images/I/61QEL7T6eQL._AC_SL1500_.jpg" alt="Climatización">
+                Climatización
             </a>
             
-            <!-- S -->
+            <!-- Cocina -->
+            <a href="cocina/index.html" class="category" data-keywords="cocina horno microondas">
+                <img src="https://m.media-amazon.com/images/I/71-bVzbgWTL._AC_SL1500_.jpg" alt="Cocina">
+                Cocina
+            </a>
+            
+            <!-- Freidoras (añadida) -->
+            <a href="freidoras/index.html" class="category" data-keywords="freidora aire fritura cocina">
+                <img src="https://m.media-amazon.com/images/I/71-bVzbgWTL._AC_SL1500_.jpg" alt="Freidoras">
+                Freidoras
+            </a>
+            
+            <!-- Batidoras (añadida) -->
+            <a href="batidoras/index.html" class="category" data-keywords="batidora mezclar cocina electrodomestico">
+                <img src="https://m.media-amazon.com/images/I/71TEsI+pD2L._AC_SY300_SX300_.jpg" alt="Batidoras">
+                Batidoras
+            </a>
+            
+            <!-- Lavadoras -->
+            <a href="lavadoras/index.html" class="category" data-keywords="lavadora lavar ropa electrodomestico">
+                <img src="https://m.media-amazon.com/images/I/71mtc1bmq7L._AC_SL1500_.jpg" alt="Lavadoras">
+                Lavadoras
+            </a>
+            
+            <!-- Televisores -->
+            <a href="televisores/index.html" class="category" data-keywords="televisor tv pantalla smart led">
+                <img src="https://m.media-amazon.com/images/I/71uYzSxdYWL._AC_SL1500_.jpg" alt="TV">
+                Televisores
+            </a>
+            
+            <!-- Auriculares (añadida) -->
+            <a href="auriculares/index.html" class="category" data-keywords="auriculares audio musica sonido">
+                <img src="https://m.media-amazon.com/images/I/710Lppy-fzL._AC_SL1500_.jpg" alt="Auriculares">
+                Auriculares
+            </a>
+            
+            <!-- Seguridad -->
             <a href="seguridad/index.html" class="category" data-keywords="seguridad alarma camara vigilancia">
                 <img src="https://m.media-amazon.com/images/I/61N7zX+8BuL._AC_SY300_SX300_.jpg" alt="Seguridad">
                 Seguridad
             </a>
             
-            <!-- T -->
-            <a href="televisores/index.html" class="category" data-keywords="televisor tv pantalla smart led">
-                <img src="https://m.media-amazon.com/images/I/71uYzSxdYWL._AC_SL1500_.jpg" alt="TV">
-                Televisores
+            <!-- Pequeños electrodomésticos -->
+            <a href="pequenos-electrodomesticos/index.html" class="category" data-keywords="electrodomestico pequeño secador plancha">
+                <img src="https://m.media-amazon.com/images/I/611OVuN4rsL._AC_SL1500_.jpg" alt="Electrodomésticos">
+                Pequeños electro
+            </a>
+            
+            <!-- Lavavajillas -->
+            <a href="lavavajillas/index.html" class="category" data-keywords="lavavajillas lavar platos">
+                <img src="https://m.media-amazon.com/images/I/51AaUJGoQtL._AC_SL1050_.jpg" alt="Lavavajillas">
+                Lavavajillas
+            </a>
+            
+            <!-- Chimeneas -->
+            <a href="chimeneas-electricas/index.html" class="category" data-keywords="chimenea electrica calor hogar">
+                <img src="https://m.media-amazon.com/images/I/71wjZTnrnnL._AC_SL1500_.jpg" alt="Chimeneas">
+                Chimeneas
+            </a>
+            
+            <!-- Mopa vapor -->
+            <a href="mopa-a-vapor/index.html" class="category" data-keywords="mopa vapor limpieza suelo">
+                <img src="https://m.media-amazon.com/images/I/71QutkthltL._AC_SL1500_.jpg" alt="Mopa">
+                Mopa vapor
+            </a>
+            
+            <!-- Reloj inteligente -->
+            <a href="reloj-inteligente/index.html" class="category" data-keywords="reloj smartwatch inteligente">
+                <img src="https://m.media-amazon.com/images/I/719pl2rBmyL._AC_SL1500_.jpg" alt="Reloj">
+                Smartwatch
             </a>
         </div>
 
         <footer>
-            <!-- ... -->
+            <p>© 2025 Don Hogar - Tecnología para tu hogar</p>
+            <p><a href="licencia.html">Términos y condiciones</a> | <a href="contacto.html">Contacto</a></p>
         </footer>
     </div>
 
-    <!-- Script del buscador (se mantiene igual) -->
     <script>
-        // ... 
+        // Buscador inteligente
+        document.getElementById('searchInput').addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            const categories = document.querySelectorAll('.category');
+            let hasResults = false;
+            
+            // Primero ocultamos todos
+            categories.forEach(category => {
+                category.style.display = 'none';
+            });
+            
+            // Mostramos solo coincidencias
+            categories.forEach(category => {
+                const keywords = category.getAttribute('data-keywords').toLowerCase();
+                const title = category.textContent.toLowerCase();
+                
+                if (keywords.includes(searchTerm) || title.includes(searchTerm)) {
+                    category.style.display = 'block';
+                    hasResults = true;
+                }
+            });
+            
+            // Mensaje si no hay resultados
+            const container = document.getElementById('categoriesContainer');
+            let noResultsMsg = container.querySelector('.no-results');
+            
+            if (!hasResults && !noResultsMsg) {
+                noResultsMsg = document.createElement('div');
+                noResultsMsg.className = 'no-results';
+                noResultsMsg.textContent = 'No se encontraron productos. Prueba con: cafetera, robot, televisor...';
+                container.appendChild(noResultsMsg);
+            } else if (hasResults && noResultsMsg) {
+                container.removeChild(noResultsMsg);
+            }
+        });
     </script>
 </body>
 </html>
