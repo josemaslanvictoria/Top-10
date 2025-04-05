@@ -325,6 +325,27 @@
       margin-left: 0.5rem;
       font-size: 0.9rem;
     }
+    
+    /* Selector de idioma */
+    .language-selector {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+    
+    .language-btn {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 5px 15px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 500;
+      box-shadow: var(--shadow);
+    }
   </style>
   
   <!-- Scripts diferidos -->
@@ -364,15 +385,24 @@
   </script>
 </head>
 <body>
+  <!-- Selector de idioma -->
+  <div class="language-selector">
+    <button class="language-btn" onclick="toggleLanguage()">
+      <span id="current-language">ES</span>
+      <span>→</span>
+      <span id="target-language">EN</span>
+    </button>
+  </div>
+
   <div class="container">
-    <h1>Top 10: Las Mejores Auriculares 2025 relación calidad-precio</h1>
+    <h1 id="main-title">Top 10: Las Mejores Auriculares 2025 relación calidad-precio</h1>
     
     <!-- Sección introductoria mejorada para SEO -->
     <div class="intro-section">
-      <p>En este análisis exhaustivo, hemos evaluado más de 50 modelos de auriculares para presentarte los <strong>10 mejores auriculares del 2025</strong> según criterios de calidad de sonido, comodidad, duración de batería y relación calidad-precio.</p>
+      <p id="intro-text">En este análisis exhaustivo, hemos evaluado más de 50 modelos de auriculares para presentarte los <strong>10 mejores auriculares del 2025</strong> según criterios de calidad de sonido, comodidad, duración de batería y relación calidad-precio.</p>
       
-      <h2>¿Cómo seleccionamos los mejores auriculares?</h2>
-      <ul>
+      <h2 id="selection-criteria">¿Cómo seleccionamos los mejores auriculares?</h2>
+      <ul id="criteria-list">
         <li><strong>Pruebas de sonido:</strong> Evaluamos claridad, graves y cancelación de ruido</li>
         <li><strong>Comodidad:</strong> Uso prolongado con diferentes tipos de orejas</li>
         <li><strong>Duración de batería:</strong> Tests reales de autonomía</li>
@@ -380,7 +410,7 @@
         <li><strong>Relación calidad-precio:</strong> Valor por dinero invertido</li>
       </ul>
       
-      <p>Nuestro equipo de expertos en audio ha dedicado más de 200 horas a esta investigación para garantizar que nuestras recomendaciones sean objetivas y basadas en datos reales.</p>
+      <p id="conclusion-text">Nuestro equipo de expertos en audio ha dedicado más de 200 horas a esta investigación para garantizar que nuestras recomendaciones sean objetivas y basadas en datos reales.</p>
     </div>
     
     <div class="product-list">
@@ -776,48 +806,8 @@
 
       <!-- Producto 8 -->
       <article class="product" itemscope itemtype="https://schema.org/Product">
-        <span class="rating-badge" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
-          <span itemprop="ratingValue">9.3</span>
-          <meta itemprop="bestRating" content="10">
-          <meta itemprop="worstRating" content="1">
-          <meta itemprop="reviewCount" content="15600">
-        </span>
-        <span class="discount-badge">-23%</span>
-        <img 
-          src="https://m.media-amazon.com/images/I/71Ilitn6B+L._AC_SX679_.jpg" 
-          alt="Auriculares TOZO A1 Inalámbricos - Mini tamaño, gran sonido" 
-          class="product-img" 
-          loading="lazy"
-          width="300"
-          height="200"
-          itemprop="image"
-        >
-        <div class="product-content">
-          <h2 class="product-title" itemprop="name">8. Auriculares TOZO A1 Inalámbricos</h2>
-          <div class="product-rating">
-            <span class="stars">★★★★★</span>
-            <span itemprop="reviewCount">15,600+ reviews</span>
-          </div>
-          <div class="product-description" itemprop="description" style="display:none;">
-            Auriculares in-ear ultrapequeños con gran calidad de sonido. Tecnología de drivers avanzada 
-            en un diseño minimalista y discreto para uso diario.
-          </div>
-          <ul class="product-features" style="display:none;">
-            <li itemprop="feature">Diseño mini (solo 3.7g por auricular)</li>
-            <li itemprop="feature">Drivers dinámicos de 6mm</li>
-            <li itemprop="feature">Autonomía de 6h (24h con estuche)</li>
-            <li itemprop="feature">Conexión instantánea al abrir el estuche</li>
-            <li itemprop="feature">Resistencia al agua IPX6</li>
-          </ul>
-          <div class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-            <meta itemprop="priceValidUntil" content="2025-12-31">
-            <meta itemprop="availability" content="https://schema.org/InStock">
-            <meta itemprop="itemCondition" content="https://schema.org/NewCondition">
-            <span itemprop="priceCurrency" content="EUR">€</span>
-            <span itemprop="price" content="19.54">19.54</span>
-            <span class="original-price">25.38€</span>
-          </div>
-          <a 
+        <span class="rating-badge" itemprop="aggregateRating" itemscope itemtype="https://schema.org/A
+                    <a 
             href="https://www.amazon.es/dp/B09FT58QQP?tag=yocompro0e-21" 
             class="btn" 
             target="_blank" 
@@ -944,15 +934,104 @@
 
   <!-- Cookie Banner Moderno -->
   <div id="cookie-banner" class="cookie-banner" aria-live="polite">
-    <p>Utilizamos cookies para mejorar tu experiencia. Al continuar, aceptas nuestra <a href="/politica-cookies" style="color: var(--primary);">Política de Cookies</a>.</p>
-    <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Aceptar</button>
-    <button class="cookie-btn cookie-reject" onclick="rejectCookies()">Rechazar</button>
+    <p id="cookie-text">Utilizamos cookies para mejorar tu experiencia. Al continuar, aceptas nuestra <a href="/politica-cookies" style="color: var(--primary);">Política de Cookies</a>.</p>
+    <button class="cookie-btn cookie-accept" onclick="acceptCookies()" id="accept-cookies">Aceptar</button>
+    <button class="cookie-btn cookie-reject" onclick="rejectCookies()" id="reject-cookies">Rechazar</button>
   </div>
 
   <!-- Scripts optimizados -->
   <script>
     // Micro-optimizaciones de rendimiento
     (function() {
+      // Configuración de idioma
+      const translations = {
+        es: {
+          title: "Top 10: Las Mejores Auriculares 2025 relación calidad-precio",
+          intro: "En este análisis exhaustivo, hemos evaluado más de 50 modelos de auriculares para presentarte los <strong>10 mejores auriculares del 2025</strong> según criterios de calidad de sonido, comodidad, duración de batería y relación calidad-precio.",
+          criteria: "¿Cómo seleccionamos los mejores auriculares?",
+          criteriaList: [
+            "<strong>Pruebas de sonido:</strong> Evaluamos claridad, graves y cancelación de ruido",
+            "<strong>Comodidad:</strong> Uso prolongado con diferentes tipos de orejas",
+            "<strong>Duración de batería:</strong> Tests reales de autonomía",
+            "<strong>Opiniones de usuarios:</strong> Analizamos miles de reviews",
+            "<strong>Relación calidad-precio:</strong> Valor por dinero invertido"
+          ],
+          conclusion: "Nuestro equipo de expertos en audio ha dedicado más de 200 horas a esta investigación para garantizar que nuestras recomendaciones sean objetivas y basadas en datos reales.",
+          cookieText: "Utilizamos cookies para mejorar tu experiencia. Al continuar, aceptas nuestra <a href='/politica-cookies' style='color: var(--primary);'>Política de Cookies</a>.",
+          accept: "Aceptar",
+          reject: "Rechazar",
+          offer: "Ver oferta en Amazon",
+          reviews: "reviews"
+        },
+        en: {
+          title: "Top 10: Best Headphones 2025 - Price/Quality Ratio",
+          intro: "In this comprehensive analysis, we've evaluated over 50 headphone models to present you the <strong>10 best headphones of 2025</strong> based on sound quality, comfort, battery life and price/quality ratio criteria.",
+          criteria: "How we select the best headphones?",
+          criteriaList: [
+            "<strong>Sound tests:</strong> We evaluate clarity, bass and noise cancellation",
+            "<strong>Comfort:</strong> Prolonged use with different ear types",
+            "<strong>Battery life:</strong> Real autonomy tests",
+            "<strong>User reviews:</strong> We analyze thousands of reviews",
+            "<strong>Price/quality ratio:</strong> Value for money"
+          ],
+          conclusion: "Our team of audio experts has spent over 200 hours on this research to ensure our recommendations are objective and based on real data.",
+          cookieText: "We use cookies to improve your experience. By continuing, you accept our <a href='/cookie-policy' style='color: var(--primary);'>Cookie Policy</a>.",
+          accept: "Accept",
+          reject: "Reject",
+          offer: "View deal on Amazon",
+          reviews: "reviews"
+        }
+      };
+      
+      let currentLang = 'es';
+      
+      function toggleLanguage() {
+        currentLang = currentLang === 'es' ? 'en' : 'es';
+        updateLanguage();
+      }
+      
+      function updateLanguage() {
+        document.getElementById('main-title').innerHTML = translations[currentLang].title;
+        document.getElementById('intro-text').innerHTML = translations[currentLang].intro;
+        document.getElementById('selection-criteria').innerHTML = translations[currentLang].criteria;
+        
+        const criteriaList = document.getElementById('criteria-list');
+        criteriaList.innerHTML = '';
+        translations[currentLang].criteriaList.forEach(item => {
+          const li = document.createElement('li');
+          li.innerHTML = item;
+          criteriaList.appendChild(li);
+        });
+        
+        document.getElementById('conclusion-text').innerHTML = translations[currentLang].conclusion;
+        document.getElementById('cookie-text').innerHTML = translations[currentLang].cookieText;
+        document.getElementById('accept-cookies').innerHTML = translations[currentLang].accept;
+        document.getElementById('reject-cookies').innerHTML = translations[currentLang].reject;
+        
+        document.querySelectorAll('.btn').forEach(btn => {
+          btn.innerHTML = translations[currentLang].offer;
+        });
+        
+        document.querySelectorAll('[itemprop="reviewCount"]').forEach(el => {
+          const text = el.textContent;
+          if (text.includes('reviews') || text.includes('reseñas')) {
+            el.textContent = text.replace(/reviews|reseñas/g, translations[currentLang].reviews);
+          }
+        });
+        
+        document.getElementById('current-language').textContent = currentLang.toUpperCase();
+        document.getElementById('target-language').textContent = currentLang === 'es' ? 'EN' : 'ES';
+      }
+      
+      // Detectar idioma del navegador
+      function detectLanguage() {
+        const userLang = navigator.language || navigator.userLanguage;
+        if (userLang.startsWith('en')) {
+          currentLang = 'en';
+          updateLanguage();
+        }
+      }
+      
       // Carga diferida de recursos no críticos
       if ('requestIdleCallback' in window) {
         window.requestIdleCallback(loadNonCriticalResources);
@@ -973,7 +1052,7 @@
         if (window.gtag) {
           gtag('event', 'click', {
             'event_category': 'Product',
-            'event_label': 'Auricular ' + productId,
+            'event_label': 'Headphones ' + productId,
             'value': productId
           });
         }
@@ -1058,6 +1137,13 @@
           document.body.appendChild(script);
         });
       }
+      
+      // Inicialización
+      document.addEventListener('DOMContentLoaded', () => {
+        detectLanguage();
+        updateLanguage();
+        document.querySelector('.language-btn').addEventListener('click', toggleLanguage);
+      });
     })();
   </script>
 </body>
