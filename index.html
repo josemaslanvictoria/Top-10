@@ -26,6 +26,7 @@
         header {
             text-align: center;
             margin: 20px 0 30px;
+            position: relative;
         }
         h1 {
             color: #2c3e50;
@@ -34,6 +35,20 @@
             background: linear-gradient(90deg, #e74c3c, #3498db);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+        }
+        
+        /* Selector de idioma */
+        .language-selector {
+            position: absolute;
+            top: 0;
+            right: 15px;
+        }
+        .language-selector select {
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            background: white;
+            cursor: pointer;
         }
         
         /* Sección destacada doble */
@@ -166,6 +181,23 @@
             color: #7f8c8d;
             font-style: italic;
         }
+        
+        /* Redes sociales */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .social-links a {
+            color: #2c3e50;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        .social-links a:hover {
+            color: #e74c3c;
+        }
+        
         footer {
             text-align: center;
             margin-top: 50px;
@@ -183,12 +215,24 @@
             h1 { font-size: 1.8rem; }
             .categories { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }
             #searchInput { padding: 12px 15px; }
+            .language-selector {
+                position: static;
+                margin-bottom: 15px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
+            <div class="language-selector">
+                <select id="languageSelect">
+                    <option value="es">Español</option>
+                    <option value="en">English</option>
+                    <option value="fr">Français</option>
+                    <option value="de">Deutsch</option>
+                </select>
+            </div>
             <h1>Don Hogar 2025</h1>
             <p>Tecnología inteligente para tu hogar</p>
         </header>
@@ -325,11 +369,24 @@
                 <img src="https://m.media-amazon.com/images/I/61G5lbT+lEL._AC_SX679_.jpg" alt="Tostadoras">
                 Tostadoras
             </a>
+            
+            <!-- Comparativa de freidoras (nueva categoría) -->
+            <a href="comparativa-freidoras/index.html" class="category" data-keywords="comparativa freidora análisis guía">
+                <img src="https://m.media-amazon.com/images/I/71-bVzbgWTL._AC_SL1500_.jpg" alt="Comparativa freidoras">
+                Comparativa Freidoras
+            </a>
         </div>
 
         <footer>
             <p>© 2025 Don Hogar - Tecnología para tu hogar</p>
             <p><a href="licencia.html">Términos y condiciones</a> | <a href="contacto.html">Contacto</a></p>
+            
+            <div class="social-links">
+                <a href="https://www.tiktok.com/@market_premiun?is_from_webapp=1&sender_device=pc" target="_blank" title="TikTok">🎵</a>
+                <a href="https://www.instagram.com/market_premiun_?igsh=NG9scGtvdDVjbnVp&utm_source=qr" target="_blank" title="Instagram">📷</a>
+                <a href="https://www.youtube.com/@DonHogar" target="_blank" title="YouTube">▶️</a>
+                <a href="https://es.pinterest.com/Donhogars/?actingBusinessId=1093530490679600103" target="_blank" title="Pinterest">📌</a>
+            </div>
         </footer>
     </div>
 
@@ -367,6 +424,40 @@
                 container.appendChild(noResultsMsg);
             } else if (hasResults && noResultsMsg) {
                 container.removeChild(noResultsMsg);
+            }
+        });
+        
+        // Selector de idioma
+        document.getElementById('languageSelect').addEventListener('change', function() {
+            const language = this.value;
+            // Aquí puedes implementar la lógica para cambiar el idioma
+            // Por ahora solo muestra un mensaje
+            alert(`Idioma cambiado a ${this.options[this.selectedIndex].text}. En una implementación real, esto cargaría traducciones.`);
+            
+            // Detectar idioma del navegador al cargar la página
+            const userLang = navigator.language || navigator.userLanguage; 
+            if (userLang.startsWith('es')) {
+                document.getElementById('languageSelect').value = 'es';
+            } else if (userLang.startsWith('en')) {
+                document.getElementById('languageSelect').value = 'en';
+            } else if (userLang.startsWith('fr')) {
+                document.getElementById('languageSelect').value = 'fr';
+            } else if (userLang.startsWith('de')) {
+                document.getElementById('languageSelect').value = 'de';
+            }
+        });
+        
+        // Detectar idioma del navegador al cargar la página
+        window.addEventListener('DOMContentLoaded', function() {
+            const userLang = navigator.language || navigator.userLanguage; 
+            if (userLang.startsWith('es')) {
+                document.getElementById('languageSelect').value = 'es';
+            } else if (userLang.startsWith('en')) {
+                document.getElementById('languageSelect').value = 'en';
+            } else if (userLang.startsWith('fr')) {
+                document.getElementById('languageSelect').value = 'fr';
+            } else if (userLang.startsWith('de')) {
+                document.getElementById('languageSelect').value = 'de';
             }
         });
     </script>
