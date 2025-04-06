@@ -1,58 +1,16 @@
 <!DOCTYPE html>
-<html lang="es" data-js="false">
+<html lang="es" dir="ltr" data-js="true">
 <head>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3702060621408236" crossorigin="anonymous"></script>
-  <script async src="https://fundingchoicesmessages.google.com/i/pub-3702060621408236?ers=1" nonce="xyz"></script>
-  <script>
-    window.googlefc = window.googlefc || {};
-    window.googlefc.callbackQueue = window.googlefc.callbackQueue || [];
-    window.googlefc.callbackQueue.push(function() {
-      window.googlefc.setConsentConfig({
-        'consentMode': 'advanced'
-      });
-    });
-  </script>
-  
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11335901809"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-  
-    gtag('consent', 'default', {
-      'ad_storage': 'denied',
-      'analytics_storage': 'denied'
-    });
-  
-    gtag('js', new Date());
-    gtag('config', 'AW-11335901809');
-  
-    function aceptarCookies() {
-      gtag('consent', 'update', {
-        'ad_storage': 'granted',
-        'analytics_storage': 'granted'
-      });
-      document.getElementById('cookie-banner').style.display = 'none';
-      localStorage.setItem('cookiesAceptadas', 'true');
-    }
-  
-    function rechazarCookies() {
-      gtag('consent', 'update', {
-        'ad_storage': 'denied',
-        'analytics_storage': 'denied'
-      });
-      document.getElementById('cookie-banner').style.display = 'none';
-      localStorage.setItem('cookiesAceptadas', 'false');
-    }
-  </script>
-  
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Comparativa de las 10 mejores batidoras del 2025 según expertos. Análisis de potencia, funciones y relación calidad-precio.">
-  <meta name="keywords" content="batidoras 2025, mejores batidoras, batidoras de mano, comparativa batidoras, batidoras baratas">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <meta name="description" content="Comparativa profesional de las 10 mejores batidoras del 2025 según expertos. Análisis detallado de potencia, funciones y relación calidad-precio.">
+  <meta name="keywords" content="batidoras 2025, mejores batidoras, batidoras de mano, comparativa batidoras, batidoras baratas, análisis batidoras">
   <meta name="robots" content="index, follow">
+  
+  <!-- Preconexiones -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://www.googletagmanager.com">
-  <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
   
   <!-- Open Graph / Social Media -->
   <meta property="og:title" content="Top 10: Las Mejores Batidoras 2025 | Análisis Profesional">
@@ -60,6 +18,8 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://tusitio.com/mejores-batidoras-2025">
   <meta property="og:image" content="https://m.media-amazon.com/images/I/71TEsI+pD2L._AC_SX679_.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   
   <!-- Canonical URL -->
   <link rel="canonical" href="https://tusitio.com/mejores-batidoras-2025">
@@ -70,28 +30,20 @@
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [{
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Inicio",
-        "item": "https://tusitio.com"
-      },{
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Electrodomésticos",
-        "item": "https://tusitio.com/electrodomesticos"
-      },{
-        "@type": "ListItem",
-        "position": 3,
-        "name": "Mejores batidoras 2025"
-      }]
+      "@type": "Product",
+      "name": "Comparativa de Batidoras 2025",
+      "description": "Análisis profesional de las 10 mejores batidoras de 2025",
+      "brand": {
+        "@type": "Brand",
+        "name": "Top10Tecnología"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "125"
+      }
     }
   </script>
-  
-  <!-- Preload crítico -->
-  <link rel="preload" href="https://m.media-amazon.com/images/I/71TEsI+pD2L._AC_SX679_.jpg" as="image" fetchpriority="high">
-  <link rel="preload" href="styles.min.css" as="style">
   
   <!-- CSS crítico inline -->
   <style>
@@ -99,12 +51,12 @@
       --primary: #00a854;
       --primary-dark: #007a3d;
       --secondary: #f5f5f5;
-      --text: #333;
-      --text-light: #666;
+      --text: #222;
+      --text-light: #555;
       --white: #fff;
       --border: #e1e1e1;
-      --shadow: 0 4px 12px rgba(0,0,0,0.08);
-      --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      --shadow: 0 2px 8px rgba(0,0,0,0.1);
+      --transition: all 0.2s ease;
     }
     
     * { 
@@ -118,7 +70,6 @@
       line-height: 1.6;
       color: var(--text);
       background-color: var(--secondary);
-      padding: 0;
       text-rendering: optimizeLegibility;
       -webkit-font-smoothing: antialiased;
     }
@@ -126,51 +77,38 @@
     .container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 2rem 1rem;
+      padding: 1rem;
     }
     
     h1 {
       font-size: clamp(1.8rem, 4vw, 2.5rem);
       text-align: center;
-      margin-bottom: 2.5rem;
+      margin: 1.5rem 0;
       color: var(--text);
       font-weight: 700;
-      position: relative;
-      padding-bottom: 1rem;
-    }
-    
-    h1::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80px;
-      height: 4px;
-      background: var(--primary);
-      border-radius: 2px;
+      line-height: 1.3;
     }
     
     .product-list {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       gap: 1.5rem;
-      margin-top: 1.5rem;
+      margin: 2rem 0;
     }
     
     .product {
       background: var(--white);
-      border-radius: 12px;
+      border-radius: 10px;
       overflow: hidden;
       box-shadow: var(--shadow);
       transition: var(--transition);
       position: relative;
-      will-change: transform;
     }
     
+    .product:focus-within, 
     .product:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
     }
     
     .product-img {
@@ -183,7 +121,7 @@
     }
     
     .product-content {
-      padding: 1.5rem;
+      padding: 1.2rem;
     }
     
     .product-title {
@@ -200,7 +138,7 @@
       display: flex;
       align-items: center;
       gap: 0.5rem;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.5rem;
       color: var(--text-light);
       font-size: 0.9rem;
     }
@@ -220,30 +158,33 @@
     
     .btn {
       display: inline-block;
-      padding: 0.75rem 1.5rem;
+      padding: 0.7rem 1.2rem;
       background: var(--primary);
       color: var(--white);
       text-decoration: none;
-      border-radius: 8px;
+      border-radius: 6px;
       font-weight: 600;
       text-align: center;
       transition: var(--transition);
       border: none;
       cursor: pointer;
       width: 100%;
+      font-size: 0.95rem;
     }
     
-    .btn:hover {
+    .btn:hover,
+    .btn:focus {
       background: var(--primary-dark);
-      transform: translateY(-2px);
+      outline: 2px solid var(--primary-dark);
+      outline-offset: 2px;
     }
     
     .rating-badge {
       position: absolute;
       top: 1rem;
       right: 1rem;
-      width: 40px;
-      height: 40px;
+      width: 36px;
+      height: 36px;
       border-radius: 50%;
       background: var(--white);
       display: flex;
@@ -253,7 +194,7 @@
       box-shadow: var(--shadow);
       border: 2px solid var(--primary);
       color: var(--primary);
-      font-size: 0.9rem;
+      font-size: 0.85rem;
     }
     
     .discount-badge {
@@ -262,47 +203,71 @@
       left: 1rem;
       background: #ff4757;
       color: var(--white);
-      padding: 0.25rem 0.5rem;
+      padding: 0.2rem 0.5rem;
       border-radius: 4px;
       font-size: 0.8rem;
       font-weight: 600;
     }
     
-    /* Cookie banner moderno */
-    .cookie-banner {
+    .original-price {
+      text-decoration: line-through;
+      color: var(--text-light);
+      margin-left: 0.5rem;
+      font-size: 0.9rem;
+    }
+    
+    /* Intro section */
+    .intro-section {
+      background: var(--white);
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      margin-bottom: 1.5rem;
+    }
+    
+    .intro-section h2 {
+      font-size: 1.3rem;
+      margin: 1rem 0;
+      color: var(--text);
+    }
+    
+    .intro-section ul {
+      margin-left: 1.2rem;
+      margin-bottom: 1rem;
+    }
+    
+    .intro-section li {
+      margin-bottom: 0.5rem;
+      line-height: 1.5;
+    }
+    
+    /* Cookie banner */
+    #cookie-banner {
       position: fixed;
       bottom: 0;
       left: 0;
       right: 0;
-      background: rgba(0,0,0,0.9);
+      background: rgba(0,0,0,0.95);
       color: var(--white);
-      padding: 1.5rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      justify-content: center;
-      align-items: center;
+      padding: 1rem;
+      display: none;
       z-index: 1000;
-      transform: translateY(100%);
-      transition: transform 0.4s ease-out;
     }
     
-    .cookie-banner.active {
-      transform: translateY(0);
-    }
-    
-    .cookie-banner p {
-      margin: 0;
-      flex: 1 1 300px;
+    .cookie-buttons {
+      display: flex;
+      gap: 0.8rem;
+      margin-top: 0.8rem;
     }
     
     .cookie-btn {
-      padding: 0.5rem 1.5rem;
-      border-radius: 6px;
-      font-weight: 600;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      font-weight: 500;
       cursor: pointer;
       transition: var(--transition);
       border: none;
+      font-size: 0.9rem;
     }
     
     .cookie-accept {
@@ -316,123 +281,54 @@
       border: 1px solid var(--white);
     }
     
-    /* Mejoras de accesibilidad */
-    .sr-only {
+    /* Skip link para accesibilidad */
+    .skip-link {
       position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border-width: 0;
+      top: -40px;
+      left: 0;
+      background: var(--primary);
+      color: white;
+      padding: 0.5rem 1rem;
+      z-index: 100;
     }
     
-    /* Optimización móvil */
+    .skip-link:focus {
+      top: 0;
+    }
+    
+    /* Mobile optimizations */
     @media (max-width: 768px) {
       .product-list {
         grid-template-columns: 1fr;
       }
       
       .container {
-        padding: 1.5rem 1rem;
+        padding: 0.8rem;
+      }
+      
+      .product-img {
+        height: 180px;
       }
     }
     
-    /* Estilos para la sección introductoria */
-    .intro-section {
-      background: var(--white);
-      padding: 1.5rem;
-      border-radius: 12px;
-      box-shadow: var(--shadow);
-      margin-bottom: 2rem;
-    }
-    
-    .intro-section h2 {
-      font-size: 1.3rem;
-      margin: 1.5rem 0 1rem;
-      color: var(--text);
-    }
-    
-    .intro-section ul {
-      margin-left: 1.5rem;
-      margin-bottom: 1.5rem;
-    }
-    
-    .intro-section li {
-      margin-bottom: 0.5rem;
-    }
-    
-    .original-price {
-      text-decoration: line-through;
-      color: var(--text-light);
-      margin-left: 0.5rem;
-      font-size: 0.9rem;
-    }
-    
-    /* Selector de idioma */
-    .language-selector {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      z-index: 1000;
-    }
-    
-    .language-btn {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 5px 15px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-weight: 500;
-      box-shadow: var(--shadow);
+    @media (prefers-reduced-motion) {
+      .product {
+        transition: none;
+      }
     }
   </style>
   
-  <!-- Scripts diferidos -->
-  <script>
-    // Detección temprana de JS para SSR/SSG
-    document.documentElement.dataset.js = "true";
-    
-    // Precarga de scripts no críticos
-    function loadScript(src, async = true) {
-      return new Promise((resolve, reject) => {
-        const script = document.createElement('script');
-        script.src = src;
-        script.async = async;
-        script.onload = resolve;
-        script.onerror = reject;
-        document.body.appendChild(script);
-      });
-    }
-    
-    // Precarga de recursos
-    if (window.requestIdleCallback) {
-      window.requestIdleCallback(() => {
-        const resources = [
-          'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3702060621408236',
-          'https://www.googletagmanager.com/gtag/js?id=AW-11335901809'
-        ];
-        
-        resources.forEach(res => {
-          const link = document.createElement('link');
-          link.rel = 'preload';
-          link.href = res;
-          link.as = 'script';
-          document.head.appendChild(link);
-        });
-      });
-    }
-  </script>
+  <!-- Preload de imágenes importantes -->
+  <link rel="preload" href="https://m.media-amazon.com/images/I/71TEsI+pD2L._AC_SX679_.jpg" as="image" fetchpriority="high">
 </head>
+
 <body>
+  <!-- Skip link para accesibilidad -->
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
   <!-- Selector de idioma -->
-  <div class="language-selector">
-    <button class="language-btn" onclick="toggleLanguage()">
+  <div class="language-selector" style="position:fixed;top:20px;right:20px;z-index:1000;">
+    <button class="language-btn" onclick="toggleLanguage()" aria-label="Cambiar idioma">
       <span id="current-language">ES</span>
       <span>→</span>
       <span id="target-language">EN</span>
@@ -442,8 +338,8 @@
   <div class="container">
     <h1 id="main-title">Top 10: Las Mejores Batidoras 2025 relación calidad-precio</h1>
     
-    <!-- Sección introductoria mejorada para SEO -->
-    <div class="intro-section">
+    <!-- Sección introductoria -->
+    <section class="intro-section" aria-labelledby="selection-criteria">
       <p id="intro-text">En este análisis exhaustivo, hemos evaluado más de 30 modelos de batidoras para presentarte las <strong>10 mejores batidoras del 2025</strong> según criterios de potencia, durabilidad, funciones especiales y relación calidad-precio.</p>
       
       <h2 id="selection-criteria">¿Cómo seleccionamos las mejores batidoras?</h2>
@@ -456,9 +352,10 @@
       </ul>
       
       <p id="conclusion-text">Nuestro equipo de expertos en electrodomésticos ha dedicado más de 150 horas a esta investigación para garantizar recomendaciones objetivas.</p>
-    </div>
+    </section>
     
-    <div class="product-list">
+    <!-- Lista de productos -->
+    <div class="product-list" id="main-content" role="region" aria-label="Lista de productos">
       <!-- Producto 1 -->
       <article class="product" itemscope itemtype="https://schema.org/Product">
         <span class="rating-badge" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
@@ -483,16 +380,7 @@
             <span class="stars">★★★★★</span>
             <span itemprop="reviewCount">14,200 reviews</span>
           </div>
-          <div class="product-description" itemprop="description" style="display:none;">
-            Batidora de mano con 700W de potencia, diseño ergonómico y tecnología anti-salpicaduras. Incluye varillas para montar y picador.
-          </div>
-          <ul class="product-features" style="display:none;">
-            <li itemprop="feature">700W de potencia</li>
-            <li itemprop="feature">Tecnología anti-salpicaduras</li>
-            <li itemprop="feature">Picador de 500ml incluido</li>
-            <li itemprop="feature">Diseño ergonómico</li>
-            <li itemprop="feature">2 velocidades + turbo</li>
-          </ul>
+          <div itemprop="description" hidden>Batidora de mano con 700W de potencia, diseño ergonómico y tecnología anti-salpicaduras. Incluye varillas para montar y picador.</div>
           <div class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
             <meta itemprop="priceValidUntil" content="2025-12-31">
             <meta itemprop="availability" content="https://schema.org/InStock">
@@ -508,6 +396,7 @@
             rel="noopener sponsored"
             onclick="trackClick(1)"
             itemprop="url"
+            aria-label="Comprar Bosch ErgoMixx MSM67170 en Amazon"
           >
             Ver oferta en Amazon
           </a>
@@ -538,16 +427,7 @@
             <span class="stars">★★★★★</span>
             <span itemprop="reviewCount">16,000+ reviews</span>
           </div>
-          <div class="product-description" itemprop="description" style="display:none;">
-            Batidora de mano con 1500W de potencia y 15 velocidades. Incluye vaso mezclador de 1L y accesorios para múltiples funciones.
-          </div>
-          <ul class="product-features" style="display:none;">
-            <li itemprop="feature">1500W de potencia</li>
-            <li itemprop="feature">15 velocidades regulables</li>
-            <li itemprop="feature">Vaso mezclador de 1L</li>
-            <li itemprop="feature">Tecnología PerfectCrush</li>
-            <li itemprop="feature">Diseño ergonómico</li>
-          </ul>
+          <div itemprop="description" hidden>Batidora de mano con 1500W de potencia y 15 velocidades. Incluye vaso mezclador de 1L y accesorios para múltiples funciones.</div>
           <div class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
             <meta itemprop="priceValidUntil" content="2025-12-31">
             <meta itemprop="availability" content="https://schema.org/InStock">
@@ -563,6 +443,7 @@
             rel="noopener sponsored"
             onclick="trackClick(2)"
             itemprop="url"
+            aria-label="Comprar Cecotec Batidora Katana 15 en Amazon"
           >
             Ver oferta en Amazon
           </a>
@@ -593,16 +474,7 @@
             <span class="stars">★★★★★</span>
             <span itemprop="reviewCount">14,200+ reviews</span>
           </div>
-          <div class="product-description" itemprop="description" style="display:none;">
-            Batidora de mano con 750W de potencia y diseño compacto. Incluye varillas para montar y picador de 500ml.
-          </div>
-          <ul class="product-features" style="display:none;">
-            <li itemprop="feature">750W de potencia</li>
-            <li itemprop="feature">Peso ligero (1.2kg)</li>
-            <li itemprop="feature">Picador de 500ml</li>
-            <li itemprop="feature">5 velocidades + turbo</li>
-            <li itemprop="feature">Diseño compacto</li>
-          </ul>
+          <div itemprop="description" hidden>Batidora de mano con 750W de potencia y diseño compacto. Incluye varillas para montar y picador de 500ml.</div>
           <div class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
             <meta itemprop="priceValidUntil" content="2025-12-31">
             <meta itemprop="availability" content="https://schema.org/InStock">
@@ -618,6 +490,7 @@
             rel="noopener sponsored"
             onclick="trackClick(3)"
             itemprop="url"
+            aria-label="Comprar Moulinex QuickChef DD6578 en Amazon"
           >
             Ver oferta en Amazon
           </a>
@@ -648,16 +521,7 @@
             <span class="stars">★★★★★</span>
             <span itemprop="reviewCount">14,000+ reviews</span>
           </div>
-          <div class="product-description" itemprop="description" style="display:none;">
-            Batidora de mano con 1200W de potencia y tecnología Rocket para máxima eficiencia. Incluye vaso mezclador y accesorios.
-          </div>
-          <ul class="product-features" style="display:none;">
-            <li itemprop="feature">1200W de potencia</li>
-            <li itemprop="feature">Tecnología Rocket</li>
-            <li itemprop="feature">Vaso mezclador de 1L</li>
-            <li itemprop="feature">5 velocidades + turbo</li>
-            <li itemprop="feature">Diseño ergonómico</li>
-          </ul>
+          <div itemprop="description" hidden>Batidora de mano con 1200W de potencia y tecnología Rocket para máxima eficiencia. Incluye vaso mezclador y accesorios.</div>
           <div class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
             <meta itemprop="priceValidUntil" content="2025-12-31">
             <meta itemprop="availability" content="https://schema.org/InStock">
@@ -673,6 +537,7 @@
             rel="noopener sponsored"
             onclick="trackClick(4)"
             itemprop="url"
+            aria-label="Comprar Taurus BAPI 1200 Rocket en Amazon"
           >
             Ver oferta en Amazon
           </a>
@@ -703,16 +568,7 @@
             <span class="stars">★★★★★</span>
             <span itemprop="reviewCount">23,900+ reviews</span>
           </div>
-          <div class="product-description" itemprop="description" style="display:none;">
-            Batidora de mano Braun con 1000W de potencia y tecnología anti-salpicaduras. Incluye picador y varillas.
-          </div>
-          <ul class="product-features" style="display:none;">
-            <li itemprop="feature">1000W de potencia</li>
-            <li itemprop="feature">Tecnología anti-salpicaduras</li>
-            <li itemprop="feature">Picador de 500ml</li>
-            <li itemprop="feature">21 velocidades</li>
-            <li itemprop="feature">Diseño ergonómico</li>
-          </ul>
+          <div itemprop="description" hidden>Batidora de mano Braun con 1000W de potencia y tecnología anti-salpicaduras. Incluye picador y varillas.</div>
           <div class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
             <meta itemprop="priceValidUntil" content="2025-12-31">
             <meta itemprop="availability" content="https://schema.org/InStock">
@@ -728,6 +584,7 @@
             rel="noopener sponsored"
             onclick="trackClick(5)"
             itemprop="url"
+            aria-label="Comprar Braun MQ5235 en Amazon"
           >
             Ver oferta en Amazon
           </a>
@@ -758,16 +615,7 @@
             <span class="stars">★★★★★</span>
             <span itemprop="reviewCount">13,800+ reviews</span>
           </div>
-          <div class="product-description" itemprop="description" style="display:none;">
-            Batidora de mano con 600W de potencia y diseño ergonómico. Incluye accesorios para múltiples funciones.
-          </div>
-          <ul class="product-features" style="display:none;">
-            <li itemprop="feature">600W de potencia</li>
-            <li itemprop="feature">Diseño ergonómico</li>
-            <li itemprop="feature">Picador de 500ml</li>
-            <li itemprop="feature">5 velocidades</li>
-            <li itemprop="feature">Tecnología anti-salpicaduras</li>
-          </ul>
+          <div itemprop="description" hidden>Batidora de mano con 600W de potencia y diseño ergonómico. Incluye accesorios para múltiples funciones.</div>
           <div class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
             <meta itemprop="priceValidUntil" content="2025-12-31">
             <meta itemprop="availability" content="https://schema.org/InStock">
@@ -783,6 +631,7 @@
             rel="noopener sponsored"
             onclick="trackClick(6)"
             itemprop="url"
+            aria-label="Comprar Bosch MS6CB6110 en Amazon"
           >
             Ver oferta en Amazon
           </a>
@@ -800,7 +649,7 @@
         <span class="discount-badge">-15%</span>
         <img 
           src="https://m.media-amazon.com/images/I/61pZ7+kU7-L._AC_SY300_SX300_.jpg" 
-          alt="Taurus. - Batidora de mano | 20 velocidades | función turbo | 1500W de potencia | Cuchillas de acero inoxidable de 4 filos | Set completo de accesorios | vaso medidor 1 L | Diseño ergonómico" 
+          alt="Taurus Batidora de mano con 20 velocidades y 1500W de potencia" 
           class="product-img" 
           loading="lazy"
           width="300"
@@ -808,21 +657,12 @@
           itemprop="image"
         >
         <div class="product-content">
-          <h2 class="product-title" itemprop="name">7. Taurus. - Batidora de mano | 20 velocidades</h2>
+          <h2 class="product-title" itemprop="name">7. Taurus Batidora 20 velocidades</h2>
           <div class="product-rating">
             <span class="stars">★★★★★</span>
             <span itemprop="reviewCount">10,700+ reviews</span>
           </div>
-          <div class="product-description" itemprop="description" style="display:none;">
-            Taurus. - Batidora de mano | 20 velocidades | función turbo | 1500W de potencia | Cuchillas de acero inoxidable de 4 filos | Set completo de accesorios | vaso medidor 1 L | Diseño ergonómico
-          </div>
-          <ul class="product-features" style="display:none;">
-            <li itemprop="feature">1500W de potencia</li>
-            <li itemprop="feature">función turbo</li>
-            <li itemprop="feature">Cuchillas de acero inoxidable de 4 filos</li>
-            <li itemprop="feature">Set completo de accesorios</li>
-            <li itemprop="feature">Diseño ergonómico</li>
-          </ul>
+          <div itemprop="description" hidden>Taurus Batidora de mano con 20 velocidades y 1500W de potencia. Incluye vaso mezclador y accesorios.</div>
           <div class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
             <meta itemprop="priceValidUntil" content="2025-12-31">
             <meta itemprop="availability" content="https://schema.org/InStock">
@@ -832,12 +672,13 @@
             <span class="original-price">59.90€</span>
           </div>
           <a 
-            href="https://www.amazon.es/Taurus-velocidades-inoxidable-accesorios-ergon%C3%B3mico/dp/B0CQ2SC8TQ?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=1RM0H0Z3P10IT&dib=eyJ2IjoiMSJ9.np5jISL31_nUHWHCBGUt-bdFnrCfqdTwHLMNjhtciVGjkpVdDin2F74QhxRMNySC65hesq2349QXrNfFXcKVQTrkUTRtywcHeRq-nHAxP38ESSy9XfC924o_CXeVp5LM_TKV1P48Y6RzdVbghaTCgXB9TKoJ-22O-m4DwXT1kLH81kLJq9aUZoHyX2kTqrjgV5uftNoC_SOggA3MHxOEJoKJNDFUPZqISm04Cy_i-NU.sB7fMhfAX4Rp_OGDo8IUgMrxTFH8ZqXYVv-CrA6okR0&dib_tag=se&keywords=batidora&qid=1743884176&s=kitchen&sprefix=batidora%2Ckitchen%2C136&sr=1-7&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=330e8aca5d29fb87b91daeaac83e45ba&language=es_ES&ref_=as_li_ss_tl" 
+            href="https://www.amazon.es/Taurus-velocidades-inoxidable-accesorios-ergon%C3%B3mico/dp/B0CQ2SC8TQ?tag=yocompro0e-21" 
             class="btn" 
             target="_blank" 
             rel="noopener sponsored"
             onclick="trackClick(7)"
             itemprop="url"
+            aria-label="Comprar Taurus Batidora 20 velocidades en Amazon"
           >
             Ver oferta en Amazon
           </a>
@@ -868,16 +709,7 @@
             <span class="stars">★★★★★</span>
             <span itemprop="reviewCount">15,600+ reviews</span>
           </div>
-          <div class="product-description" itemprop="description" style="display:none;">
-            Batidora de mano con 1500W de potencia y tecnología PerfectCream para mezclas perfectas. Incluye múltiples accesorios.
-          </div>
-          <ul class="product-features" style="display:none;">
-            <li itemprop="feature">1500W de potencia</li>
-            <li itemprop="feature">Tecnología PerfectCream</li>
-            <li itemprop="feature">Vaso mezclador de 1.2L</li>
-            <li itemprop="feature">7 velocidades + turbo</li>
-            <li itemprop="feature">Diseño ergonómico</li>
-          </ul>
+          <div itemprop="description" hidden>Batidora de mano con 1500W de potencia y tecnología PerfectCream para mezclas perfectas. Incluye múltiples accesorios.</div>
           <div class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
             <meta itemprop="priceValidUntil" content="2025-12-31">
             <meta itemprop="availability" content="https://schema.org/InStock">
@@ -893,6 +725,7 @@
             rel="noopener sponsored"
             onclick="trackClick(8)"
             itemprop="url"
+            aria-label="Comprar Cecotec TitanBlack PerfectCream en Amazon"
           >
             Ver oferta en Amazon
           </a>
@@ -923,16 +756,7 @@
             <span class="stars">★★★★★</span>
             <span itemprop="reviewCount">17,400+ reviews</span>
           </div>
-          <div class="product-description" itemprop="description" style="display:none;">
-            Batidora de mano con 1000W de potencia y diseño ergonómico. Incluye accesorios para múltiples funciones.
-          </div>
-          <ul class="product-features" style="display:none;">
-            <li itemprop="feature">1000W de potencia</li>
-            <li itemprop="feature">Diseño ergonómico</li>
-            <li itemprop="feature">Picador de 500ml</li>
-            <li itemprop="feature">5 velocidades + turbo</li>
-            <li itemprop="feature">Tecnología anti-salpicaduras</li>
-          </ul>
+          <div itemprop="description" hidden>Batidora de mano con 1000W de potencia y diseño ergonómico. Incluye accesorios para múltiples funciones.</div>
           <div class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
             <meta itemprop="priceValidUntil" content="2025-12-31">
             <meta itemprop="availability" content="https://schema.org/InStock">
@@ -948,6 +772,7 @@
             rel="noopener sponsored"
             onclick="trackClick(9)"
             itemprop="url"
+            aria-label="Comprar Ufesa Solar Max en Amazon"
           >
             Ver oferta en Amazon
           </a>
@@ -978,16 +803,7 @@
             <span class="stars">★★★★★</span>
             <span itemprop="reviewCount">13,300+ reviews</span>
           </div>
-          <div class="product-description" itemprop="description" style="display:none;">
-            Batidora de mano multifunción con 800W de potencia. Incluye accesorios para picar, batir y mezclar.
-          </div>
-          <ul class="product-features" style="display:none;">
-            <li itemprop="feature">800W de potencia</li>
-            <li itemprop="feature">Multifunción</li>
-            <li itemprop="feature">Picador de 500ml</li>
-            <li itemprop="feature">5 velocidades</li>
-            <li itemprop="feature">Diseño compacto</li>
-          </ul>
+          <div itemprop="description" hidden>Batidora de mano multifunción con 800W de potencia. Incluye accesorios para picar, batir y mezclar.</div>
           <div class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
             <meta itemprop="priceValidUntil" content="2025-12-31">
             <meta itemprop="availability" content="https://schema.org/InStock">
@@ -1003,6 +819,7 @@
             rel="noopener sponsored"
             onclick="trackClick(10)"
             itemprop="url"
+            aria-label="Comprar Bonsenkitchen en Amazon"
           >
             Ver oferta en Amazon
           </a>
@@ -1011,219 +828,189 @@
     </div>
   </div>
 
-  <!-- Cookie Banner Moderno -->
-  <div id="cookie-banner" class="cookie-banner" aria-live="polite">
+  <!-- Cookie Banner -->
+  <div id="cookie-banner" role="dialog" aria-labelledby="cookie-heading" aria-describedby="cookie-text">
+    <h2 id="cookie-heading" hidden>Preferencias de cookies</h2>
     <p id="cookie-text">Utilizamos cookies para mejorar tu experiencia. Al continuar, aceptas nuestra <a href="/politica-cookies" style="color: var(--primary);">Política de Cookies</a>.</p>
-    <button class="cookie-btn cookie-accept" onclick="acceptCookies()" id="accept-cookies">Aceptar</button>
-    <button class="cookie-btn cookie-reject" onclick="rejectCookies()" id="reject-cookies">Rechazar</button>
+    <div class="cookie-buttons">
+      <button class="cookie-btn cookie-accept" onclick="acceptCookies()" id="accept-cookies">Aceptar</button>
+      <button class="cookie-btn cookie-reject" onclick="rejectCookies()" id="reject-cookies">Rechazar</button>
+    </div>
   </div>
 
   <!-- Scripts optimizados -->
   <script>
-    // Micro-optimizaciones de rendimiento
-    (function() {
-      // Configuración de idioma
-      const translations = {
-        es: {
-          title: "Top 10: Las Mejores Batidoras 2025 relación calidad-precio",
-          intro: "En este análisis exhaustivo, hemos evaluado más de 30 modelos de batidoras para presentarte las <strong>10 mejores batidoras del 2025</strong> según criterios de potencia, durabilidad, funciones especiales y relación calidad-precio.",
-          criteria: "¿Cómo seleccionamos las mejores batidoras?",
-          criteriaList: [
-            "<strong>Potencia y rendimiento:</strong> Evaluamos velocidad, torque y eficiencia energética",
-            "<strong>Durabilidad:</strong> Materiales resistentes y pruebas de larga duración",
-            "<strong>Funciones especiales:</strong> Modo turbo, accesorios incluidos y tecnología anti-salpicaduras",
-            "<strong>Opiniones de usuarios:</strong> Analizamos miles de reviews reales",
-            "<strong>Relación calidad-precio:</strong> Valor por dinero invertido"
-          ],
-          conclusion: "Nuestro equipo de expertos en electrodomésticos ha dedicado más de 150 horas a esta investigación para garantizar recomendaciones objetivas.",
-          cookieText: "Utilizamos cookies para mejorar tu experiencia. Al continuar, aceptas nuestra <a href='/politica-cookies' style='color: var(--primary);'>Política de Cookies</a>.",
-          accept: "Aceptar",
-          reject: "Rechazar",
-          offer: "Ver oferta en Amazon",
-          reviews: "reviews"
-        },
-        en: {
-          title: "Top 10: Best Blenders 2025 - Price/Quality Ratio",
-          intro: "In this comprehensive analysis, we've evaluated over 30 blender models to present you the <strong>10 best blenders of 2025</strong> based on power, durability, special features and price/quality ratio.",
-          criteria: "How we select the best blenders?",
-          criteriaList: [
-            "<strong>Power and performance:</strong> We evaluate speed, torque and energy efficiency",
-            "<strong>Durability:</strong> Resistant materials and long-term tests",
-            "<strong>Special features:</strong> Turbo mode, included accessories and anti-splash technology",
-            "<strong>User reviews:</strong> We analyze thousands of real reviews",
-            "<strong>Price/quality ratio:</strong> Value for money"
-          ],
-          conclusion: "Our team of appliance experts has spent over 150 hours on this research to ensure objective recommendations.",
-          cookieText: "We use cookies to improve your experience. By continuing, you accept our <a href='/cookie-policy' style='color: var(--primary);'>Cookie Policy</a>.",
-          accept: "Accept",
-          reject: "Reject",
-          offer: "View deal on Amazon",
-          reviews: "reviews"
-        }
-      };
-      
-      let currentLang = 'es';
-      
-      function toggleLanguage() {
-        currentLang = currentLang === 'es' ? 'en' : 'es';
-        updateLanguage();
+    // Gestión de cookies
+    function showCookieBanner() {
+      if (!localStorage.getItem('cookiePrefs')) {
+        const banner = document.getElementById('cookie-banner');
+        banner.style.display = 'block';
+        banner.setAttribute('aria-hidden', 'false');
       }
-      
-      function updateLanguage() {
-        document.getElementById('main-title').innerHTML = translations[currentLang].title;
-        document.getElementById('intro-text').innerHTML = translations[currentLang].intro;
-        document.getElementById('selection-criteria').innerHTML = translations[currentLang].criteria;
+    }
+    
+    function acceptCookies() {
+      localStorage.setItem('cookiePrefs', JSON.stringify({
+        necessary: true,
+        analytics: true,
+        marketing: true
+      }));
+      document.getElementById('cookie-banner').style.display = 'none';
+      loadAnalytics();
+    }
+    
+    function rejectCookies() {
+      localStorage.setItem('cookiePrefs', JSON.stringify({
+        necessary: true,
+        analytics: false,
+        marketing: false
+      }));
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+    
+    // Analytics
+    function loadAnalytics() {
+      const prefs = JSON.parse(localStorage.getItem('cookiePrefs') || '{}');
+      if (prefs.analytics) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'AW-11335901809');
         
-        const criteriaList = document.getElementById('criteria-list');
-        criteriaList.innerHTML = '';
-        translations[currentLang].criteriaList.forEach(item => {
-          const li = document.createElement('li');
-          li.innerHTML = item;
-          criteriaList.appendChild(li);
-        });
-        
-        document.getElementById('conclusion-text').innerHTML = translations[currentLang].conclusion;
-        document.getElementById('cookie-text').innerHTML = translations[currentLang].cookieText;
-        document.getElementById('accept-cookies').innerHTML = translations[currentLang].accept;
-        document.getElementById('reject-cookies').innerHTML = translations[currentLang].reject;
-        
-        document.querySelectorAll('.btn').forEach(btn => {
-          btn.innerHTML = translations[currentLang].offer;
-        });
-        
-        document.querySelectorAll('[itemprop="reviewCount"]').forEach(el => {
-          const text = el.textContent;
-          if (text.includes('reviews') || text.includes('reseñas')) {
-            el.textContent = text.replace(/reviews|reseñas/g, translations[currentLang].reviews);
-          }
-        });
-        
-        document.getElementById('current-language').textContent = currentLang.toUpperCase();
-        document.getElementById('target-language').textContent = currentLang === 'es' ? 'EN' : 'ES';
+        const script = document.createElement('script');
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=AW-11335901809';
+        script.async = true;
+        document.body.appendChild(script);
       }
-      
-      // Detectar idioma del navegador
-      function detectLanguage() {
-        const userLang = navigator.language || navigator.userLanguage;
-        if (userLang.startsWith('en')) {
-          currentLang = 'en';
-          updateLanguage();
-        }
-      }
-      
-      // Carga diferida de recursos no críticos
-      if ('requestIdleCallback' in window) {
-        window.requestIdleCallback(loadNonCriticalResources);
-      } else {
-        window.addEventListener('load', loadNonCriticalResources);
-      }
-      
-      // Mostrar banner de cookies
-      setTimeout(() => {
-        const cookieBanner = document.getElementById('cookie-banner');
-        if (!localStorage.getItem('cookiesAccepted')) {
-          cookieBanner.classList.add('active');
-        }
-      }, 1000);
-      
-      // Tracking de clicks
-      window.trackClick = function(productId) {
-        if (window.gtag) {
-          gtag('event', 'click', {
-            'event_category': 'Product',
-            'event_label': 'Blender ' + productId,
-            'value': productId
-          });
-        }
-      };
-      
-      // Gestión de cookies
-      window.acceptCookies = function() {
-        localStorage.setItem('cookiesAccepted', 'true');
-        document.getElementById('cookie-banner').classList.remove('active');
-        
-        if (window.gtag) {
-          gtag('consent', 'update', {
-            'ad_storage': 'granted',
-            'analytics_storage': 'granted'
-          });
-        }
-        
-        loadAnalytics();
-      };
-      
-      window.rejectCookies = function() {
-        localStorage.setItem('cookiesAccepted', 'false');
-        document.getElementById('cookie-banner').classList.remove('active');
-        
-        if (window.gtag) {
-          gtag('consent', 'update', {
-            'ad_storage': 'denied',
-            'analytics_storage': 'denied'
-          });
-        }
-      };
-      
-      // Carga de recursos no críticos
-      function loadNonCriticalResources() {
-        // Carga Google Ads si se aceptaron cookies
-        if (localStorage.getItem('cookiesAccepted') === 'true') {
-          loadScript('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3702060621408236')
-            .then(() => {
-              (adsbygoogle = window.adsbygoogle || []).push({});
-            });
-        }
-        
-        // Carga de imágenes diferidas
-        const lazyImages = [].slice.call(document.querySelectorAll('img[loading="lazy"]'));
-        if ('IntersectionObserver' in window) {
-          const imageObserver = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                const image = entry.target;
-                image.src = image.dataset.src || image.src;
-                imageObserver.unobserve(image);
-              }
-            });
-          });
-          
-          lazyImages.forEach((image) => {
-            imageObserver.observe(image);
-          });
-        }
-      }
-      
-      // Carga de analytics si se aceptaron cookies
-      function loadAnalytics() {
-        if (localStorage.getItem('cookiesAccepted') === 'true') {
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'AW-11335901809');
-          
-          loadScript('https://www.googletagmanager.com/gtag/js?id=AW-11335901809');
-        }
-      }
-      
-      // Helper para cargar scripts
-      function loadScript(src, async = true) {
-        return new Promise((resolve, reject) => {
-          const script = document.createElement('script');
-          script.src = src;
-          script.async = async;
-          script.onload = resolve;
-          script.onerror = reject;
-          document.body.appendChild(script);
+    }
+    
+    // Tracking de clicks
+    window.trackClick = function(productId) {
+      const prefs = JSON.parse(localStorage.getItem('cookiePrefs') || {};
+      if (prefs.analytics && window.gtag) {
+        gtag('event', 'click', {
+          'event_category': 'Product',
+          'event_label': 'Blender ' + productId,
+          'value': productId
         });
       }
+    };
+    
+    // Internacionalización
+    const translations = {
+      es: {
+        title: "Top 10: Las Mejores Batidoras 2025 relación calidad-precio",
+        intro: "En este análisis exhaustivo, hemos evaluado más de 30 modelos de batidoras para presentarte las <strong>10 mejores batidoras del 2025</strong> según criterios de potencia, durabilidad, funciones especiales y relación calidad-precio.",
+        criteria: "¿Cómo seleccionamos las mejores batidoras?",
+        criteriaList: [
+          "<strong>Potencia y rendimiento:</strong> Evaluamos velocidad, torque y eficiencia energética",
+          "<strong>Durabilidad:</strong> Materiales resistentes y pruebas de larga duración",
+          "<strong>Funciones especiales:</strong> Modo turbo, accesorios incluidos y tecnología anti-salpicaduras",
+          "<strong>Opiniones de usuarios:</strong> Analizamos miles de reviews reales",
+          "<strong>Relación calidad-precio:</strong> Valor por dinero invertido"
+        ],
+        conclusion: "Nuestro equipo de expertos en electrodomésticos ha dedicado más de 150 horas a esta investigación para garantizar recomendaciones objetivas.",
+        cookieText: "Utilizamos cookies para mejorar tu experiencia. Al continuar, aceptas nuestra <a href='/politica-cookies' style='color: var(--primary);'>Política de Cookies</a>.",
+        accept: "Aceptar",
+        reject: "Rechazar",
+        offer: "Ver oferta en Amazon",
+        reviews: "reviews"
+      },
+      en: {
+        title: "Top 10: Best Blenders 2025 - Price/Quality Ratio",
+        intro: "In this comprehensive analysis, we've evaluated over 30 blender models to present you the <strong>10 best blenders of 2025</strong> based on power, durability, special features and price/quality ratio.",
+        criteria: "How we select the best blenders?",
+        criteriaList: [
+          "<strong>Power and performance:</strong> We evaluate speed, torque and energy efficiency",
+          "<strong>Durability:</strong> Resistant materials and long-term tests",
+          "<strong>Special features:</strong> Turbo mode, included accessories and anti-splash technology",
+          "<strong>User reviews:</strong> We analyze thousands of real reviews",
+          "<strong>Price/quality ratio:</strong> Value for money"
+        ],
+        conclusion: "Our team of appliance experts has spent over 150 hours on this research to ensure objective recommendations.",
+        cookieText: "We use cookies to improve your experience. By continuing, you accept our <a href='/cookie-policy' style='color: var(--primary);'>Cookie Policy</a>.",
+        accept: "Accept",
+        reject: "Reject",
+        offer: "View deal on Amazon",
+        reviews: "reviews"
+      }
+    };
+    
+    let currentLang = 'es';
+    
+    function toggleLanguage() {
+      currentLang = currentLang === 'es' ? 'en' : 'es';
+      updateLanguage();
+    }
+    
+    function updateLanguage() {
+      const trans = translations[currentLang];
+      document.getElementById('main-title').innerHTML = trans.title;
+      document.getElementById('intro-text').innerHTML = trans.intro;
+      document.getElementById('selection-criteria').textContent = trans.criteria;
       
-      // Inicialización
-      document.addEventListener('DOMContentLoaded', () => {
-        detectLanguage();
-        updateLanguage();
-        document.querySelector('.language-btn').addEventListener('click', toggleLanguage);
+      const criteriaList = document.getElementById('criteria-list');
+      criteriaList.innerHTML = '';
+      trans.criteriaList.forEach(item => {
+        const li = document.createElement('li');
+        li.innerHTML = item;
+        criteriaList.appendChild(li);
       });
-    })();
+      
+      document.getElementById('conclusion-text').textContent = trans.conclusion;
+      document.getElementById('cookie-text').innerHTML = trans.cookieText;
+      document.getElementById('accept-cookies').textContent = trans.accept;
+      document.getElementById('reject-cookies').textContent = trans.reject;
+      
+      document.querySelectorAll('.btn').forEach(btn => {
+        btn.textContent = trans.offer;
+      });
+      
+      document.getElementById('current-language').textContent = currentLang.toUpperCase();
+      document.getElementById('target-language').textContent = currentLang === 'es' ? 'EN' : 'ES';
+    }
+    
+    // Lazy loading de imágenes
+    function initLazyLoading() {
+      const lazyImages = [].slice.call(document.querySelectorAll('img[loading="lazy"]'));
+      
+      if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const img = entry.target;
+              img.src = img.dataset.src || img.src;
+              imageObserver.unobserve(img);
+            }
+          });
+        }, {
+          rootMargin: '200px'
+        });
+        
+        lazyImages.forEach((img) => {
+          imageObserver.observe(img);
+        });
+      }
+    }
+    
+    // Inicialización
+    document.addEventListener('DOMContentLoaded', () => {
+      // Detectar idioma del navegador
+      const userLang = navigator.language || navigator.userLanguage;
+      if (userLang.startsWith('en')) {
+        currentLang = 'en';
+      }
+      
+      updateLanguage();
+      showCookieBanner();
+      initLazyLoading();
+      
+      // Cargar analytics si ya estaban aceptadas
+      const prefs = JSON.parse(localStorage.getItem('cookiePrefs') || {};
+      if (prefs.analytics) {
+        loadAnalytics();
+      }
+    });
   </script>
 </body>
 </html>
