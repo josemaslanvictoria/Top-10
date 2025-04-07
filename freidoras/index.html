@@ -342,6 +342,34 @@
       font-weight: 500;
       box-shadow: var(--shadow);
     }
+
+    /* Estilos para el desplegable de características */
+    .product-features {
+      display: none;
+      margin-top: 1rem;
+      padding-left: 1rem;
+    }
+
+    .product-features li {
+      margin-bottom: 0.5rem;
+      list-style-type: disc;
+    }
+
+    .toggle-info {
+      background: var(--secondary);
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: var(--transition);
+      margin-top: 0.5rem;
+      width: 100%;
+    }
+
+    .toggle-info:hover {
+      background: #e0e0e0;
+    }
   </style>
   
   <!-- Scripts diferidos -->
@@ -452,6 +480,7 @@
             <span itemprop="price" content="99.99">99.99</span>
             <span class="original-price">139.99€</span>
           </div>
+          <button class="toggle-info" onclick="toggleInfo(this)">Mostrar características</button>
           <a 
             href="https://www.amazon.es/COSORI-Freidora-Caliente-Programas-Temporizador/dp/B07N8N6C85?crid=3G6Q9INX9KCU3&dib=eyJ2IjoiMSJ9.OarxPqjIR8FIzXKuEurE06cS7U7DTdRNIXY7rRZ9PzIRQ2mozpzx1UmKp7zayb0yICPDFPvRIfyBBfqRU5_OBAlYUYob8UedATSR0LbI-JgnbU_jo0d5WEyhkl7SZ-16azdNErnOHb0aNZHTYkll9mEYzZChZRNE5sKzQrLG8ROiWQDbJqOH3DCN2T_zHBe3wtpyQpKitXehGpRSbzONTyNa3uQOjb_qRt9pTWxTJRs.9frZTvdZ54D8_EUnTlewPgjEvSkb1cu7tAS3065fJqE&dib_tag=se&keywords=freidora%2Bsin%2Baceite&qid=1740005017&s=kitchen&sprefix=%2Ckitchen%2C118&sr=1-1&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=d205f9ec3916abe526c19422a97921cd&language=es_ES&ref_=as_li_ss_tl" 
             class="btn" 
@@ -507,6 +536,7 @@
             <span itemprop="price" content="64.90">64.90</span>
             <span class="original-price">79.90€</span>
           </div>
+          <button class="toggle-info" onclick="toggleInfo(this)">Mostrar características</button>
           <a 
             href="https://www.amazon.es/Cecotec-Accesorios-Tecnolog%C3%ADa-PerfectCook-Temperatura/dp/B0BPZPFNM4?crid=3UEO7FA1XB9JL&dib=eyJ2IjoiMSJ9.twxdLJ-9pBGDeoWP2tKSYpdNqSBjdrjgo3PtFlKOucnGmwc_-Ducac7l0TJzl5VUc6wmrrph0NF_y95eQZBo9w8I3u5MdQPV6oMKlsIfpw3znim41ePdJCp6sJcRp-Hu-FgR0uHFV2HtR6ptpL61VOCq_k_oNFCQsQr4OU-QW5mpTmOnKybDime4cYW3oiyV_QkzVjDE5eEM03X7opzUpdCSGmCzmsbVX_QwzdyjwgY.VscjJwUGPnUlZhkvsGnw1hP7PKREIERj5JlKv7RPD3Q&dib_tag=se&keywords=freidora%2Baire&qid=1741195183&s=kitchen&sprefix=freidora%2B%2Ckitchen%2C110&sr=1-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=0ffe5951e72cd465fd4529e4769669a9&language=es_ES&ref_=as_li_ss_tl" 
             class="btn" 
@@ -562,6 +592,7 @@
             <span itemprop="price" content="63.99">63.99</span>
             <span class="original-price">119.99€</span>
           </div>
+          <button class="toggle-info" onclick="toggleInfo(this)">Mostrar características</button>
           <a 
             href="https://www.amazon.es/Moulinex-Easy-Fry-Max-autom%C3%A1ticos/dp/B0CG6C26QW?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=10E7MD3WT3CJ0&dib=eyJ2IjoiMSJ9.0nuEsC3P7DpijQHqQTFU-bwPPM5xj3QSdJKpH87wvs5cQEhZQeYLnavNKS_L5M13afMK9KhWXiKxEH9_Y_dbYkEpRd9Nh-gMigKzm9aBM85j-rz3_ZNYpojnCjGHByNWsUcvLDf8rEj0Hxm9ykJwBevue_37YSYu8FSWR7YfurtYh868Bw8N5lpFeJHdEbEQoIUfb8Hf8V3ioN9AaIUaXkU15zj6hy27t2YtWf6dBkY.eZZKxVT0WJqQdSvseeHe5eE6Zbg1dYkvofJ2FAB-o6c&dib_tag=se&keywords=freidora&qid=1743799862&s=kitchen&sprefix=freidora%2Ckitchen%2C115&sr=1-2&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=c72b91a0eb89469260966b46d0bbcb1e&language=es_ES&ref_=as_li_ss_tl" 
             class="btn" 
@@ -615,6 +646,7 @@
             <span itemprop="priceCurrency" content="EUR">€</span>
             <span itemprop="price" content="98.36">98.36</span>
           </div>
+          <button class="toggle-info" onclick="toggleInfo(this)">Mostrar características</button>
           <a 
             href="https://www.amazon.es/Cecotec-Resistencia-Diet%C3%A9tica-Temperatura-Regulable/dp/B0DGL82RP1?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=1X483R2U44942&dib=eyJ2IjoiMSJ9.twxdLJ-9pBGDeoWP2tKSYlZn-m4m6GtpAu1mSgUnUm1MBsMQGKQCG3LAp1fp5KoAc73OM8x-_a-Ar9odgObsoy7EhBsRhb20ZLtM8r-Z_UvhiWv59NW7Knb1X_xFiL4touMo8cZKPRgKaF4GRcX4edbk5Ma7hF2Mile9snAtNHL9xRV2TJKUwMTEoQaRqFRvy6S3cUBrpnLSwKBsuo1w1s8MlDh-2QeKIo_Rgdk9ix0.3SO_NrkdhbzoiNfcFyH3V22j77OP6DEJDQffEZSQ2EY&dib_tag=se&keywords=freidora%2Bde%2Baire&qid=1741199181&s=kitchen&sprefix=freidora%2Bde%2Baire%2Ckitchen%2C102&sr=1-5&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=bcace9b08f70222c0a0611677fd5d952&language=es_ES&ref_=as_li_ss_tl" 
             class="btn" 
@@ -670,6 +702,7 @@
             <span itemprop="price" content="99.00">99.00</span>
             <span class="original-price">109.99€</span>
           </div>
+          <button class="toggle-info" onclick="toggleInfo(this)">Mostrar características</button>
           <a 
             href="https://www.amazon.es/Philips-Airfryer-serie-2000-transparente/dp/B0CWP7M17B?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=JK757H3X4HO5&dib=eyJ2IjoiMSJ9.kJ5M2_T6ei0glmtSsSCoJ9AqD1HpSev-DzOm34t69IBjnd6kxtS5BAWl6ZsH0zFe7nTc3x_td2wy9MD-iYjJEjHbJm3_dmbFpY2hVeGjJB9RKNCO6KqzADKSnw7Ch06beNqabR8WOYmGwi_6CZeh8dcYibFC4pCtVvKIVCvYunjZ6OctiswPSJMaBMADZ9UIG008bmUTC_kS3GUUpScFbeDWm1YC79yjpGvC4_O_oiR1os8FBo8FQGp79GM68HVH2FlGDMyXzNHNHsi_yK-aBQFsILVOLJMcHGjuMtqwdsg.BUMG_u1d3LirSYoXNEg8VySjWRAqbFj7YBfDaDg8GCA&dib_tag=se&keywords=freidora&qid=1743800407&sprefix=freidora%2Caps%2C131&sr=8-60&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=960fee93a50f41905840402f735fc270&language=es_ES&ref_=as_li_ss_tl" 
             class="btn" 
@@ -725,6 +758,7 @@
             <span itemprop="price" content="64.90">64.90</span>
             <span class="original-price">89.90€</span>
           </div>
+          <button class="toggle-info" onclick="toggleInfo(this)">Mostrar características</button>
           <a 
             href="https://www.amazon.es/Cecotec-Cecofry-Absolute-PerfectCook-Temperadura/dp/B0BPZPP3GK?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=186JX86PCVLOJ&dib=eyJ2IjoiMSJ9.twxdLJ-9pBGDeoWP2tKSYlZn-m4m6GtpAu1mSgUnUm0tT9ngfMs0oUhkT9msbYspsvzswLN7e4K3VNtqKC5NQyFOQHNEr9Ge75b0_eCIT-0P8MY0Oj9xPgTUIvf5pp15Bgwj4SVA3MKipnb_W73pOM3CnWEnFWna7fSEEAnIw0yvHOGNq-KfhyEWXOVa7FBd_QkzVjDE5eEM03X7opzUpeXruTadUBAqX4YnJQJmwfg.KlHkpKb17iQ8fDsaIw1Z1M2t1FKiIqGk7k6op4qVuT0&dib_tag=se&keywords=freidoras%2Bde%2Baire&qid=1741199531&s=kitchen&sprefix=freidoras%2Bde%2Baire%2Ckitchen%2C113&sr=1-2-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=fefd4c144ee4fc41e0da90ac20346224&language=es_ES&ref_=as_li_ss_tl" 
             class="btn" 
@@ -780,6 +814,7 @@
             <span itemprop="price" content="79.99">79.99</span>
             <span class="original-price">139.99€</span>
           </div>
+          <button class="toggle-info" onclick="toggleInfo(this)">Mostrar características</button>
           <a 
             href="https://www.amazon.es/COSORI-Freidora-Tecnolog%C3%ADa-Patentada-Programas/dp/B0936FGLQS?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=186JX86PCVLOJ&dib=eyJ2IjoiMSJ9.twxdLJ-9pBGDeoWP2tKSYlZn-m4m6GtpAu1mSgUnUm0tT9ngfMs0oUhkT9msbYspsvzswLN7e4K3VNtqKC5NQyFOQHNEr9Ge75b0_eCIT-0P8MY0Oj9xPgTUIvf5pp15Bgwj4SVA3MKipnb_W73pOM3CnWEnFWna7fSEEAnIw0yvHOGNq-KfhyEWXOVa7FBd_QkzVjDE5eEM03X7opzUpeXruTadUBAqX4YnJQJmwfg.KlHkpKb17iQ8fDsaIw1Z1M2t1FKiIqGk7k6op4qVuT0&dib_tag=se&keywords=freidoras+de+aire&qid=1741199531&s=kitchen&sprefix=freidoras+de+aire%2Ckitchen%2C113&sr=1-7-spons&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&sp_csd=d2lkZ2V0TmFtZT1zcF9tdGY&psc=1&linkCode=ll1&tag=yocompro0e-21&linkId=52fa1f7c750395172ab3dbd6dfe62460&language=es_ES&ref_=as_li_ss_tl" 
             class="btn" 
@@ -835,6 +870,7 @@
             <span itemprop="price" content="93.01">93.01</span>
             <span class="original-price">125.99€</span>
           </div>
+          <button class="toggle-info" onclick="toggleInfo(this)">Mostrar características</button>
           <a 
             href="https://www.amazon.es/Tristar-FR-6964-multifunci%C3%B3n-capacidad-temperatura/dp/B08B699FVK?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=186JX86PCVLOJ&dib=eyJ2IjoiMSJ9.twxdLJ-9pBGDeoWP2tKSYlZn-m4m6GtpAu1mSgUnUm0tT9ngfMs0oUhkT9msbYspsvzswLN7e4K3VNtqKC5NQyFOQHNEr9Ge75b0_eCIT-0P8MY0Oj9xPgTUIvf5pp15Bgwj4SVA3MKipnb_W73pOM3CnWEnFWna7fSEEAnIw0yvHOGNq-KfhyEWXOVa7FBd_QkzVjDE5eEM03X7opzUpeXruTadUBAqX4YnJQJmwfg.HFAmzkgBWCr48sfaGlGqRC11tKjqNtALLWaQedQ7WFA&dib_tag=se&keywords=freidoras%2Bde%2Baire&qid=1741199531&s=kitchen&sprefix=freidoras%2Bde%2Baire%2Ckitchen%2C113&sr=1-11&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=a2c4fcbe08595323495fb062da53091a&language=es_ES&ref_=as_li_ss_tl" 
             class="btn" 
@@ -890,6 +926,7 @@
             <span itemprop="price" content="64.99">64.99</span>
             <span class="original-price">69.99€</span>
           </div>
+          <button class="toggle-info" onclick="toggleInfo(this)">Mostrar características</button>
           <a 
             href="https://www.amazon.es/Aigostar-Cube-Freidora-funciones-preestablecidas/dp/B0896YTRQS?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=186JX86PCVLOJ&dib=eyJ2IjoiMSJ9.twxdLJ-9pBGDeoWP2tKSYlZn-m4m6GtpAu1mSgUnUm0tT9ngfMs0oUhkT9msbYspsvzswLN7e4K3VNtqKC5NQyFOQHNEr9Ge75b0_eCIT-0P8MY0Oj9xPgTUIvf5pp15Bgwj4SVA3MKipnb_W73pOM3CnWEnFWna7fSEEAnIw0yvHOGNq-KfhyEWXOVa7FBd_QkzVjDE5eEM03X7opzUpeXruTadUBAqX4YnJQJmwfg.HFAmzkgBWCr48sfaGlGqRC11tKjqNtALLWaQedQ7WFA&dib_tag=se&keywords=freidoras%2Bde%2Baire&qid=1741199531&s=kitchen&sprefix=freidoras%2Bde%2Baire%2Ckitchen%2C113&sr=1-9&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=14ac592ab9e3c0766c20877ae5efeb4b&language=es_ES&ref_=as_li_ss_tl" 
             class="btn" 
@@ -943,6 +980,7 @@
             <span itemprop="priceCurrency" content="EUR">€</span>
             <span itemprop="price" content="96.00">96.00</span>
           </div>
+          <button class="toggle-info" onclick="toggleInfo(this)">Mostrar características</button>
           <a 
             href="https://www.amazon.es/Cecotec-Freidora-Aire-sin-Aceite/dp/B0DGLBKDDG?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=186JX86PCVLOJ&dib=eyJ2IjoiMSJ9.twxdLJ-9pBGDeoWP2tKSYlZn-m4m6GtpAu1mSgUnUm0tT9ngfMs0oUhkT9msbYspsvzswLN7e4K3VNtqKC5NQyFOQHNEr9Ge75b0_eCIT-0P8MY0Oj9xPgTUIvf5pp15Bgwj4SVA3MKipnb_W73pOM3CnWEnFWna7fSEEAnIw0yvHOGNq-KfhyEWXOVa7FBd_QkzVjDE5eEM03X7opzUpeXruTadUBAqX4YnJQJmwfg.HFAmzkgBWCr48sfaGlGqRC11tKjqNtALLWaQedQ7WFA&dib_tag=se&keywords=freidoras%2Bde%2Baire&qid=1741199531&s=kitchen&sprefix=freidoras%2Bde%2Baire%2Ckitchen%2C113&sr=1-12&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=78656b2a19bca132c52e05ee0f8068c3&language=es_ES&ref_=as_li_ss_tl" 
             class="btn" 
@@ -987,7 +1025,9 @@
           accept: "Aceptar",
           reject: "Rechazar",
           offer: "Ver oferta en Amazon",
-          reviews: "reviews"
+          reviews: "reviews",
+          features: "Mostrar características",
+          hideFeatures: "Ocultar características"
         },
         en: {
           title: "Top 10: Best Air Fryers 2025 - Price/Quality Ratio",
@@ -1005,7 +1045,9 @@
           accept: "Accept",
           reject: "Reject",
           offer: "View deal on Amazon",
-          reviews: "reviews"
+          reviews: "reviews",
+          features: "Show features",
+          hideFeatures: "Hide features"
         }
       };
       
@@ -1044,10 +1086,34 @@
             el.textContent = text.replace(/reviews|reseñas/g, translations[currentLang].reviews);
           }
         });
+
+        document.querySelectorAll('.toggle-info').forEach(btn => {
+          const features = btn.closest('.product').querySelector('.product-features');
+          btn.textContent = features.style.display === 'block' ? 
+            translations[currentLang].hideFeatures : 
+            translations[currentLang].features;
+        });
         
         document.getElementById('current-language').textContent = currentLang.toUpperCase();
         document.getElementById('target-language').textContent = currentLang === 'es' ? 'EN' : 'ES';
       }
+      
+      // Función para mostrar/ocultar características
+      window.toggleInfo = function(button) {
+        const product = button.closest('.product');
+        const features = product.querySelector('.product-features');
+        const description = product.querySelector('.product-description');
+        
+        if (features.style.display === 'none' || !features.style.display) {
+          features.style.display = 'block';
+          description.style.display = 'block';
+          button.textContent = translations[currentLang].hideFeatures;
+        } else {
+          features.style.display = 'none';
+          description.style.display = 'none';
+          button.textContent = translations[currentLang].features;
+        }
+      };
       
       // Detectar idioma del navegador
       function detectLanguage() {
