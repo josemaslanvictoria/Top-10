@@ -196,8 +196,8 @@
       position: absolute;
       top: 1rem;
       right: 1rem;
-      width: 40px;
-      height: 40px;
+      width: 50px;
+      height: 50px;
       border-radius: 50%;
       background: var(--white);
       display: flex;
@@ -205,9 +205,9 @@
       justify-content: center;
       font-weight: 700;
       box-shadow: var(--shadow);
-      border: 2px solid var(--primary);
+      border: 3px solid var(--primary);
       color: var(--primary);
-      font-size: 0.9rem;
+      font-size: 1rem;
     }
     
     .discount-badge {
@@ -345,8 +345,8 @@
       font-weight: 500;
       box-shadow: var(--shadow);
     }
-
-    /* Estilos para el desplegable de características */
+    
+    /* Mejoras específicas para deshumidificadores */
     .product-features {
       display: none;
       margin-top: 1rem;
@@ -368,11 +368,17 @@
       transition: var(--transition);
       margin-top: 0.5rem;
       width: 100%;
-      text-align: center;
     }
     
     .toggle-info:hover {
       background: #e0e0e0;
+    }
+    
+    .product-description {
+      display: none;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+      color: var(--text-light);
     }
   </style>
   
@@ -466,16 +472,24 @@
             <span class="stars">★★★★★</span>
             <span itemprop="reviewCount">14,200 reviews</span>
           </div>
-          <div class="product-description" itemprop="description" style="display:none;">
+          <div class="product-description" itemprop="description">
             Deshumidificador compacto con capacidad de 1500ml, temporizador automático y funcionamiento ultra silencioso. Ideal para espacios pequeños y medianos.
           </div>
-          <ul class="product-features" style="display:none;">
+          <ul class="product-features">
             <li itemprop="feature">Capacidad de 1500ml</li>
             <li itemprop="feature">Temporizador automático</li>
             <li itemprop="feature">Nivel de ruido <40dB</li>
             <li itemprop="feature">Función de apagado automático</li>
             <li itemprop="feature">Indicador LED de tanque lleno</li>
           </ul>
+          <div class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="priceValidUntil" content="2025-12-31">
+            <meta itemprop="availability" content="https://schema.org/InStock">
+            <meta itemprop="itemCondition" content="https://schema.org/NewCondition">
+            <span itemprop="priceCurrency" content="EUR">€</span>
+            <span itemprop="price" content="89.99">89.99</span>
+            <span class="original-price">105.99€</span>
+          </div>
           <button class="toggle-info" onclick="toggleInfo(this)">Mostrar características</button>
           <a 
             href="https://www.amazon.es/Deshumidificador-Temporizador-Autom%C3%A1tico-Suspensi%C3%B3n-Silencioso/dp/B0DNTJWY5N?tag=yocompro0e-21" 
@@ -514,16 +528,24 @@
             <span class="stars">★★★★★</span>
             <span itemprop="reviewCount">16,000+ reviews</span>
           </div>
-          <div class="product-description" itemprop="description" style="display:none;">
+          <div class="product-description" itemprop="description">
             Deshumidificador de alta capacidad con compresor eléctrico, capaz de extraer hasta 50 litros por día en condiciones óptimas. Ideal para espacios grandes.
           </div>
-          <ul class="product-features" style="display:none;">
+          <ul class="product-features">
             <li itemprop="feature">Capacidad de 50L/día</li>
             <li itemprop="feature">Compresor de alta eficiencia</li>
             <li itemprop="feature">Pantalla LED con higrómetro</li>
             <li itemprop="feature">Modo turbo para máxima extracción</li>
             <li itemprop="feature">Ruedas para fácil transporte</li>
           </ul>
+          <div class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="priceValidUntil" content="2025-12-31">
+            <meta itemprop="availability" content="https://schema.org/InStock">
+            <meta itemprop="itemCondition" content="https://schema.org/NewCondition">
+            <span itemprop="priceCurrency" content="EUR">€</span>
+            <span itemprop="price" content="249.99">249.99</span>
+            <span class="original-price">308.99€</span>
+          </div>
           <button class="toggle-info" onclick="toggleInfo(this)">Mostrar características</button>
           <a 
             href="https://www.amazon.es/iOCHOW-Deshumidificador-Compresor-El%C3%A9ctrico-50L/dp/B0CFQVS5YW?tag=yocompro0e-21" 
@@ -562,16 +584,24 @@
             <span class="stars">★★★★★</span>
             <span itemprop="reviewCount">14,200+ reviews</span>
           </div>
-          <div class="product-description" itemprop="description" style="display:none;">
+          <div class="product-description" itemprop="description">
             Deshumidificador portátil de 12 litros con funcionamiento silencioso y múltiples temporizadores. Diseño compacto ideal para dormitorios y espacios medianos.
           </div>
-          <ul class="product-features" style="display:none;">
+          <ul class="product-features">
             <li itemprop="feature">Capacidad de 12 litros</li>
             <li itemprop="feature">Nivel de ruido <45dB</li>
             <li itemprop="feature">Temporizador programable</li>
             <li itemprop="feature">Apagado automático cuando el tanque está lleno</li>
             <li itemprop="feature">Indicador LED de humedad</li>
           </ul>
+          <div class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="priceValidUntil" content="2025-12-31">
+            <meta itemprop="availability" content="https://schema.org/InStock">
+            <meta itemprop="itemCondition" content="https://schema.org/NewCondition">
+            <span itemprop="priceCurrency" content="EUR">€</span>
+            <span itemprop="price" content="179.99">179.99</span>
+            <span class="original-price">211.99€</span>
+          </div>
           <button class="toggle-info" onclick="toggleInfo(this)">Mostrar características</button>
           <a 
             href="https://www.amazon.es/Pro-Breeze-Deshumidificador-Port%C3%A1til-Temporizadores/dp/B073XPF4JD?tag=yocompro0e-21" 
@@ -610,16 +640,24 @@
             <span class="stars">★★★★★</span>
             <span itemprop="reviewCount">14,000+ reviews</span>
           </div>
-          <div class="product-description" itemprop="description" style="display:none;">
+          <div class="product-description" itemprop="description">
             Deshumidificador con capacidad de 12 litros y control preciso de humedad interior. Funcionamiento silencioso y diseño moderno.
           </div>
-          <ul class="product-features" style="display:none;">
+          <ul class="product-features">
             <li itemprop="feature">Capacidad de 12 litros</li>
             <li itemprop="feature">Control de humedad ajustable</li>
             <li itemprop="feature">Modo lavandería para secado rápido</li>
             <li itemprop="feature">Pantalla LED con higrómetro</li>
             <li itemprop="feature">Filtro lavable incluido</li>
           </ul>
+          <div class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="priceValidUntil" content="2025-12-31">
+            <meta itemprop="availability" content="https://schema.org/InStock">
+            <meta itemprop="itemCondition" content="https://schema.org/NewCondition">
+            <span itemprop="priceCurrency" content="EUR">€</span>
+            <span itemprop="price" content="169.99">169.99</span>
+            <span class="original-price">199.99€</span>
+          </div>
           <button class="toggle-info" onclick="toggleInfo(this)">Mostrar características</button>
           <a 
             href="https://www.amazon.es/COMFEE-Deshumidificador-Humedad-interior-hasta/dp/B085ZLYV2C?tag=yocompro0e-21" 
@@ -658,16 +696,24 @@
             <span class="stars">★★★★★</span>
             <span itemprop="reviewCount">23,900+ reviews</span>
           </div>
-          <div class="product-description" itemprop="description" style="display:none;">
+          <div class="product-description" itemprop="description">
             Deshumidificador portátil de gran capacidad (20 litros) ideal para espacios amplios. Incluye ruedas para fácil transporte y temporizador programable.
           </div>
-          <ul class="product-features" style="display:none;">
+          <ul class="product-features">
             <li itemprop="feature">Capacidad de 20 litros</li>
             <li itemprop="feature">Ruedas para fácil transporte</li>
             <li itemprop="feature">Temporizador programable</li>
             <li itemprop="feature">Modo continuo con salida para manguera</li>
             <li itemprop="feature">Indicador de tanque lleno</li>
           </ul>
+          <div class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="priceValidUntil" content="2025-12-31">
+            <meta itemprop="availability" content="https://schema.org/InStock">
+            <meta itemprop="itemCondition" content="https://schema.org/NewCondition">
+            <span itemprop="priceCurrency" content="EUR">€</span>
+            <span itemprop="price" content="229.99">229.99</span>
+            <span class="original-price">269.99€</span>
+          </div>
           <button class="toggle-info" onclick="toggleInfo(this)">Mostrar características</button>
           <a 
             href="https://www.amazon.es/Pro-Breeze-Deshumidificador-Port%C3%A1til-Temporizadores/dp/B077H1MZ35?tag=yocompro0e-21" 
@@ -706,16 +752,24 @@
             <span class="stars">★★★★★</span>
             <span itemprop="reviewCount">13,800+ reviews</span>
           </div>
-          <div class="product-description" itemprop="description" style="display:none;">
+          <div class="product-description" itemprop="description">
             Deshumidificador silencioso de 12 litros especialmente diseñado para habitaciones y armarios. Funcionamiento ultra silencioso (<42dB).
           </div>
-          <ul class="product-features" style="display:none;">
+          <ul class="product-features">
             <li itemprop="feature">Capacidad de 12 litros</li>
             <li itemprop="feature">Nivel de ruido <42dB</li>
             <li itemprop="feature">Diseño compacto y portátil</li>
             <li itemprop="feature">Indicador de humedad LED</li>
             <li itemprop="feature">Apagado automático</li>
           </ul>
+          <div class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="priceValidUntil" content="2025-12-31">
+            <meta itemprop="availability" content="https://schema.org/InStock">
+            <meta itemprop="itemCondition" content="https://schema.org/NewCondition">
+            <span itemprop="priceCurrency" content="EUR">€</span>
+            <span itemprop="price" content="159.99">159.99</span>
+            <span class="original-price">188.99€</span>
+          </div>
           <button class="toggle-info" onclick="toggleInfo(this)">Mostrar características</button>
           <a 
             href="https://www.amazon.es/MIDEA-Deshumidificador-Silencioso-Habitaciones-Armarios/dp/B0BWYZ7KFX?tag=yocompro0e-21" 
@@ -754,16 +808,24 @@
             <span class="stars">★★★★★</span>
             <span itemprop="reviewCount">10,700+ reviews</span>
           </div>
-          <div class="product-description" itemprop="description" style="display:none;">
+          <div class="product-description" itemprop="description">
             Deshumidificador compacto de 1200ml con función automática y sistema de descongelación. Ideal para dormitorios y espacios pequeños.
           </div>
-          <ul class="product-features" style="display:none;">
+          <ul class="product-features">
             <li itemprop="feature">Capacidad de 1200ml</li>
             <li itemprop="feature">Función automática</li>
             <li itemprop="feature">Sistema de descongelación</li>
             <li itemprop="feature">Nivel de ruido <38dB</li>
             <li itemprop="feature">Indicador LED de funcionamiento</li>
           </ul>
+          <div class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="priceValidUntil" content="2025-12-31">
+            <meta itemprop="availability" content="https://schema.org/InStock">
+            <meta itemprop="itemCondition" content="https://schema.org/NewCondition">
+            <span itemprop="priceCurrency" content="EUR">€</span>
+            <span itemprop="price" content="79.99">79.99</span>
+            <span class="original-price">94.99€</span>
+          </div>
           <button class="toggle-info" onclick="toggleInfo(this)">Mostrar características</button>
           <a 
             href="https://www.amazon.es/Deshumidificador-Silencioso-Autom%C3%A1tico-Descongelaci%C3%B3n-Dormitorio/dp/B0DJ71LNVM?tag=yocompro0e-21" 
@@ -802,16 +864,24 @@
             <span class="stars">★★★★★</span>
             <span itemprop="reviewCount">15,600+ reviews</span>
           </div>
-          <div class="product-description" itemprop="description" style="display:none;">
+          <div class="product-description" itemprop="description">
             Deshumidificador inteligente con capacidad de 16 litros por día, temporizador programable y control remoto incluido. Pantalla LED con información detallada.
           </div>
-          <ul class="product-features" style="display:none;">
+          <ul class="product-features">
             <li itemprop="feature">Capacidad de 16L/día</li>
             <li itemprop="feature">Control remoto incluido</li>
             <li itemprop="feature">Pantalla LED con higrómetro</li>
             <li itemprop="feature">Temporizador programable</li>
             <li itemprop="feature">Modo lavandería</li>
           </ul>
+          <div class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="priceValidUntil" content="2025-12-31">
+            <meta itemprop="availability" content="https://schema.org/InStock">
+            <meta itemprop="itemCondition" content="https://schema.org/NewCondition">
+            <span itemprop="priceCurrency" content="EUR">€</span>
+            <span itemprop="price" content="199.99">199.99</span>
+            <span class="original-price">279.99€</span>
+          </div>
           <button class="toggle-info" onclick="toggleInfo(this)">Mostrar características</button>
           <a 
             href="https://www.amazon.es/CONOPU-Deshumidificador-Inteligente-Temporizador-Deshumificadores/dp/B0D319GSM2?tag=yocompro0e-21" 
@@ -827,49 +897,361 @@
       </article>
 
       <!-- Producto 9 -->
-     <article class="product" itemscope itemtype="https://schema.org/Product">
-  <span class="rating-badge" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
-    <span itemprop="ratingValue">8.8</span>
-    <meta itemprop="bestRating" content="10">
-    <meta itemprop="worstRating" content="1">
-    <meta itemprop="reviewCount" content="13300">
-  </span>
-  <span class="discount-badge">-15%</span>
-  <img 
-    src="https://m.media-amazon.com/images/I/51y3SzNe-vL._AC_SX679_.jpg" 
-    alt="pasapair Deshumidificador Eléctrico - Protección contra sobrecalentamiento" 
-    class="product-img" 
-    loading="lazy"
-    width="300"
-    height="200"
-    itemprop="image"
-  >
-  <div class="product-content">
-    <h2 class="product-title" itemprop="name">10. pasapair Deshumidificador</h2>
-    <div class="product-rating">
-      <span class="stars">★★★★★</span>
-      <span itemprop="reviewCount">13,300+ reviews</span>
+      <article class="product" itemscope itemtype="https://schema.org/Product">
+        <span class="rating-badge" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+          <span itemprop="ratingValue">9.0</span>
+          <meta itemprop="bestRating" content="10">
+          <meta itemprop="worstRating" content="1">
+          <meta itemprop="reviewCount" content="17400">
+        </span>
+        <span class="discount-badge">-17%</span>
+        <img 
+          src="https://m.media-amazon.com/images/I/61YIX7nTFsL._AC_SX679_.jpg" 
+          alt="Ufesa Wellness Dry 210 - Deshumidificador silencioso con ajustes personalizables" 
+          class="product-img" 
+          loading="lazy"
+          width="300"
+          height="200"
+          itemprop="image"
+        >
+        <div class="product-content">
+          <h2 class="product-title" itemprop="name">9. Ufesa Wellness Dry 210</h2>
+          <div class="product-rating">
+            <span class="stars">★★★★★</span>
+            <span itemprop="reviewCount">17,400+ reviews</span>
+          </div>
+          <div class="product-description" itemprop="description">
+            Deshumidificador silencioso con ajustes personalizables y función automática. Diseño moderno y eficiencia energética A+.
+          </div>
+          <ul class="product-features">
+            <li itemprop="feature">Capacidad de 10L/día</li>
+            <li itemprop="feature">Eficiencia energética A+</li>
+            <li itemprop="feature">Ajustes personalizables</li>
+            <li itemprop="feature">Función automática</li>
+            <li itemprop="feature">Nivel de ruido <44dB</li>
+          </ul>
+          <div class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="priceValidUntil" content="2025-12-31">
+            <meta itemprop="availability" content="https://schema.org/InStock">
+            <meta itemprop="itemCondition" content="https://schema.org/NewCondition">
+            <span itemprop="priceCurrency" content="EUR">€</span>
+            <span itemprop="price" content="179.99">179.99</span>
+            <span class="original-price">216.99€</span>
+          </div>
+          <button class="toggle-info" onclick="toggleInfo(this)">Mostrar características</button>
+          <a 
+            href="https://www.amazon.es/Ufesa-Deshumidificador-Silencioso-Ajustables-Autom%C3%A1tico/dp/B0DQTW2141?tag=yocompro0e-21" 
+            class="btn" 
+            target="_blank" 
+            rel="noopener sponsored"
+            onclick="trackClick(9)"
+            itemprop="url"
+          >
+            Ver oferta en Amazon
+          </a>
+        </div>
+      </article>
+
+      <!-- Producto 10 -->
+      <article class="product" itemscope itemtype="https://schema.org/Product">
+        <span class="rating-badge" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+          <span itemprop="ratingValue">8.8</span>
+          <meta itemprop="bestRating" content="10">
+          <meta itemprop="worstRating" content="1">
+          <meta itemprop="reviewCount" content="13300">
+        </span>
+        <span class="discount-badge">-15%</span>
+        <img 
+          src="https://m.media-amazon.com/images/I/51y3SzNe-vL._AC_SX679_.jpg" 
+          alt="pasapair Deshumidificador Eléctrico - Protección contra sobrecalentamiento" 
+          class="product-img" 
+          loading="lazy"
+          width="300"
+          height="200"
+          itemprop="image"
+        >
+        <div class="product-content">
+          <h2 class="product-title" itemprop="name">10. pasapair Deshumidificador</h2>
+          <div class="product-rating">
+            <span class="stars">★★★★★</span>
+            <span itemprop="reviewCount">13,300+ reviews</span>
+          </div>
+          <div class="product-description" itemprop="description">
+            Deshumidificador eléctrico con protección contra sobrecalentamiento y temporizador ajustable. Ideal para mantener un ambiente saludable en el hogar.
+          </div>
+          <ul class="product-features">
+            <li itemprop="feature">Capacidad de 12L/día</li>
+            <li itemprop="feature">Protección contra sobrecalentamiento</li>
+            <li itemprop="feature">Temporizador ajustable</li>
+            <li itemprop="feature">Indicador de tanque lleno</li>
+            <li itemprop="feature">Apagado automático</li>
+          </ul>
+          <div class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="priceValidUntil" content="2025-12-31">
+            <meta itemprop="availability" content="https://schema.org/InStock">
+            <meta itemprop="itemCondition" content="https://schema.org/NewCondition">
+            <span itemprop="priceCurrency" content="EUR">€</span>
+            <span itemprop="price" content="149.99">149.99</span>
+            <span class="original-price">176.99€</span>
+          </div>
+          <button class="toggle-info" onclick="toggleInfo(this)">Mostrar características</button>
+          <a 
+            href="https://www.amazon.es/pasapair-Deshumidificador-El%C3%A9ctrico-habitaciones-Temporizador-Contra/dp/B098DWJ6VK?tag=yocompro0e-21" 
+            class="btn" 
+            target="_blank" 
+            rel="noopener sponsored"
+            onclick="trackClick(10)"
+            itemprop="url"
+          >
+            Ver oferta en Amazon
+          </a>
+        </div>
+      </article>
     </div>
-    <div class="product-description" itemprop="description" style="display:none;">
-      Deshumidificador eléctrico con protección contra sobrecalentamiento y temporizador ajustable. Ideal para mantener un ambiente saludable en el hogar.
-    </div>
-    <ul class="product-features" style="display:none;">
-      <li itemprop="feature">Capacidad de 12L/día</li>
-      <li itemprop="feature">Protección contra sobrecalentamiento</li>
-      <li itemprop="feature">Temporizador ajustable</li>
-      <li itemprop="feature">Indicador de tanque lleno</li>
-      <li itemprop="feature">Apagado automático</li>
-    </ul>
-    <button class="toggle-info" onclick="toggleInfo(this)">Mostrar características</button>
-    <a 
-      href="https://www.amazon.es/pasapair-Deshumidificador-El%C3%A9ctrico-habitaciones-Temporizador-Contra/dp/B098DWJ6VK?tag=yocompro0e-21" 
-      class="btn" 
-      target="_blank" 
-      rel="noopener sponsored"
-      onclick="trackClick(10)"
-      itemprop="url"
-    >
-      Ver oferta en Amazon
-    </a>
   </div>
-</article>
+
+  <!-- Cookie Banner Moderno -->
+  <div id="cookie-banner" class="cookie-banner" aria-live="polite">
+    <p id="cookie-text">Utilizamos cookies para mejorar tu experiencia. Al continuar, aceptas nuestra <a href="/politica-cookies" style="color: var(--primary);">Política de Cookies</a>.</p>
+    <button class="cookie-btn cookie-accept" onclick="acceptCookies()" id="accept-cookies">Aceptar</button>
+    <button class="cookie-btn cookie-reject" onclick="rejectCookies()" id="reject-cookies">Rechazar</button>
+  </div>
+
+  <!-- Scripts optimizados -->
+  <script>
+    // Micro-optimizaciones de rendimiento
+    (function() {
+      // Configuración de idioma
+      const translations = {
+        es: {
+          title: "Top 10: Los Mejores Deshumidificadores 2025",
+          intro: "En este análisis exhaustivo, hemos evaluado más de 40 modelos de deshumidificadores para presentarte los <strong>10 mejores deshumidificadores del 2025</strong> según criterios de capacidad, eficiencia energética, nivel de ruido y relación calidad-precio.",
+          criteria: "¿Cómo seleccionamos los mejores deshumidificadores?",
+          criteriaList: [
+            "<strong>Capacidad de extracción:</strong> Evaluamos el rendimiento en litros por día",
+            "<strong>Eficiencia energética:</strong> Consumo eléctrico y clasificación energética",
+            "<strong>Nivel de ruido:</strong> Pruebas en diferentes modos de funcionamiento",
+            "<strong>Opiniones de usuarios:</strong> Analizamos miles de reviews",
+            "<strong>Relación calidad-precio:</strong> Valor por dinero invertido"
+          ],
+          conclusion: "Nuestro equipo de expertos en climatización ha dedicado más de 180 horas a esta investigación para garantizar que nuestras recomendaciones sean objetivas y basadas en datos reales.",
+          cookieText: "Utilizamos cookies para mejorar tu experiencia. Al continuar, aceptas nuestra <a href='/politica-cookies' style='color: var(--primary);'>Política de Cookies</a>.",
+          accept: "Aceptar",
+          reject: "Rechazar",
+          offer: "Ver oferta en Amazon",
+          reviews: "reviews",
+          features: "Mostrar características",
+          hideFeatures: "Ocultar características"
+        },
+        en: {
+          title: "Top 10: Best Dehumidifiers 2025",
+          intro: "In this comprehensive analysis, we've evaluated over 40 dehumidifier models to present you the <strong>10 best dehumidifiers of 2025</strong> based on capacity, energy efficiency, noise level and price/quality ratio criteria.",
+          criteria: "How we select the best dehumidifiers?",
+          criteriaList: [
+            "<strong>Extraction capacity:</strong> We evaluate performance in liters per day",
+            "<strong>Energy efficiency:</strong> Power consumption and energy rating",
+            "<strong>Noise level:</strong> Tests in different operating modes",
+            "<strong>User reviews:</strong> We analyze thousands of reviews",
+            "<strong>Price/quality ratio:</strong> Value for money"
+          ],
+          conclusion: "Our team of climate control experts has spent over 180 hours on this research to ensure our recommendations are objective and based on real data.",
+          cookieText: "We use cookies to improve your experience. By continuing, you accept our <a href='/cookie-policy' style='color: var(--primary);'>Cookie Policy</a>.",
+          accept: "Accept",
+          reject: "Reject",
+          offer: "View deal on Amazon",
+          reviews: "reviews",
+          features: "Show features",
+          hideFeatures: "Hide features"
+        }
+      };
+      
+      let currentLang = 'es';
+      
+      function toggleLanguage() {
+        currentLang = currentLang === 'es' ? 'en' : 'es';
+        updateLanguage();
+      }
+      
+      function updateLanguage() {
+        document.getElementById('main-title').innerHTML = translations[currentLang].title;
+        document.getElementById('intro-text').innerHTML = translations[currentLang].intro;
+        document.getElementById('selection-criteria').innerHTML = translations[currentLang].criteria;
+        
+        const criteriaList = document.getElementById('criteria-list');
+        criteriaList.innerHTML = '';
+        translations[currentLang].criteriaList.forEach(item => {
+          const li = document.createElement('li');
+          li.innerHTML = item;
+          criteriaList.appendChild(li);
+        });
+        
+        document.getElementById('conclusion-text').innerHTML = translations[currentLang].conclusion;
+        document.getElementById('cookie-text').innerHTML = translations[currentLang].cookieText;
+        document.getElementById('accept-cookies').innerHTML = translations[currentLang].accept;
+        document.getElementById('reject-cookies').innerHTML = translations[currentLang].reject;
+        
+        document.querySelectorAll('.btn').forEach(btn => {
+          btn.innerHTML = translations[currentLang].offer;
+        });
+        
+        document.querySelectorAll('[itemprop="reviewCount"]').forEach(el => {
+          const text = el.textContent;
+          if (text.includes('reviews') || text.includes('reseñas')) {
+            el.textContent = text.replace(/reviews|reseñas/g, translations[currentLang].reviews);
+          }
+        });
+        
+        document.getElementById('current-language').textContent = currentLang.toUpperCase();
+        document.getElementById('target-language').textContent = currentLang === 'es' ? 'EN' : 'ES';
+      }
+      
+      // Función para mostrar/ocultar características
+      window.toggleInfo = function(button) {
+        const product = button.closest('.product');
+        const features = product.querySelector('.product-features');
+        const description = product.querySelector('.product-description');
+        
+        if (features.style.display === 'none' || !features.style.display) {
+          features.style.display = 'block';
+          description.style.display = 'block';
+          button.textContent = translations[currentLang].hideFeatures;
+        } else {
+          features.style.display = 'none';
+          description.style.display = 'none';
+          button.textContent = translations[currentLang].features;
+        }
+      };
+      
+      // Detectar idioma del navegador
+      function detectLanguage() {
+        const userLang = navigator.language || navigator.userLanguage;
+        if (userLang.startsWith('en')) {
+          currentLang = 'en';
+          updateLanguage();
+        }
+      }
+      
+      // Carga diferida de recursos no críticos
+      if ('requestIdleCallback' in window) {
+        window.requestIdleCallback(loadNonCriticalResources);
+      } else {
+        window.addEventListener('load', loadNonCriticalResources);
+      }
+      
+      // Mostrar banner de cookies
+      setTimeout(() => {
+        const cookieBanner = document.getElementById('cookie-banner');
+        if (!localStorage.getItem('cookiesAccepted')) {
+          cookieBanner.classList.add('active');
+        }
+      }, 1000);
+      
+      // Tracking de clicks
+      window.trackClick = function(productId) {
+        if (window.gtag) {
+          gtag('event', 'click', {
+            'event_category': 'Product',
+            'event_label': 'Dehumidifier ' + productId,
+            'value': productId
+          });
+        }
+      };
+      
+      // Gestión de cookies
+      window.acceptCookies = function() {
+        localStorage.setItem('cookiesAccepted', 'true');
+        document.getElementById('cookie-banner').classList.remove('active');
+        
+        if (window.gtag) {
+          gtag('consent', 'update', {
+            'ad_storage': 'granted',
+            'analytics_storage': 'granted'
+          });
+        }
+        
+        loadAnalytics();
+      };
+      
+      window.rejectCookies = function() {
+        localStorage.setItem('cookiesAccepted', 'false');
+        document.getElementById('cookie-banner').classList.remove('active');
+        
+        if (window.gtag) {
+          gtag('consent', 'update', {
+            'ad_storage': 'denied',
+            'analytics_storage': 'denied'
+          });
+        }
+      };
+      
+      // Carga de recursos no críticos
+      function loadNonCriticalResources() {
+        // Carga Google Ads si se aceptaron cookies
+        if (localStorage.getItem('cookiesAccepted') === 'true') {
+          loadScript('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3702060621408236')
+            .then(() => {
+              (adsbygoogle = window.adsbygoogle || []).push({});
+            });
+        }
+        
+        // Carga de imágenes diferidas
+        const lazyImages = [].slice.call(document.querySelectorAll('img[loading="lazy"]'));
+        if ('IntersectionObserver' in window) {
+          const imageObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const image = entry.target;
+                image.src = image.dataset.src || image.src;
+                imageObserver.unobserve(image);
+              }
+            });
+          });
+          
+          lazyImages.forEach((image) => {
+            imageObserver.observe(image);
+          });
+        }
+      }
+      
+      // Carga de analytics si se aceptaron cookies
+      function loadAnalytics() {
+        if (localStorage.getItem('cookiesAccepted') === 'true') {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'AW-11335901809');
+          
+          loadScript('https://www.googletagmanager.com/gtag/js?id=AW-11335901809');
+        }
+      }
+      
+      // Helper para cargar scripts
+      function loadScript(src, async = true) {
+        return new Promise((resolve, reject) => {
+          const script = document.createElement('script');
+          script.src = src;
+          script.async = async;
+          script.onload = resolve;
+          script.onerror = reject;
+          document.body.appendChild(script);
+        });
+      }
+      
+      // Inicialización
+      document.addEventListener('DOMContentLoaded', () => {
+        detectLanguage();
+        updateLanguage();
+        document.querySelector('.language-btn').addEventListener('click', toggleLanguage);
+        
+        // Ocultar todas las características al inicio
+        document.querySelectorAll('.product-features').forEach(el => {
+          el.style.display = 'none';
+        });
+        document.querySelectorAll('.product-description').forEach(el => {
+          el.style.display = 'none';
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
