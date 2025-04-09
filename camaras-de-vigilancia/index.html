@@ -394,6 +394,66 @@
       height: 15px;
       object-fit: cover;
     }
+    
+    /* Estilos para el desplegable de detalles del producto */
+    .details-btn {
+      background: none;
+      border: none;
+      color: var(--primary);
+      cursor: pointer;
+      padding: 0.5rem 0;
+      margin: 0.5rem 0;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: var(--transition);
+      width: 100%;
+      text-align: left;
+    }
+    
+    .details-btn:hover {
+      color: var(--primary-dark);
+    }
+    
+    .details-btn::after {
+      content: '▼';
+      font-size: 0.8rem;
+      transition: var(--transition);
+    }
+    
+    .details-btn.active::after {
+      transform: rotate(180deg);
+    }
+    
+    .product-details {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+      margin: 0;
+    }
+    
+    .product-details.active {
+      max-height: 500px;
+      margin: 1rem 0;
+    }
+    
+    .product-features {
+      margin-left: 1.5rem;
+      margin-top: 0.5rem;
+    }
+    
+    .product-features li {
+      margin-bottom: 0.5rem;
+      list-style-type: disc;
+      color: var(--text-light);
+    }
+    
+    .product-description {
+      margin-bottom: 1rem;
+      color: var(--text-light);
+      line-height: 1.5;
+    }
   </style>
   
   <!-- Scripts diferidos -->
@@ -497,17 +557,6 @@
             <span class="stars">★★★★★</span>
             <span itemprop="reviewCount">14,200 reviews</span>
           </div>
-          <div class="product-description" itemprop="description" style="display:none;">
-            Cámara de vigilancia interior con conectividad 4G LTE, visión nocturna y audio bidireccional. 
-            Funciona sin WiFi gracias a su conexión móvil y batería recargable.
-          </div>
-          <ul class="product-features" style="display:none;">
-            <li itemprop="feature">Conectividad 4G LTE (sin necesidad de WiFi)</li>
-            <li itemprop="feature">Visión nocturna a color de 10m</li>
-            <li itemprop="feature">Audio bidireccional con cancelación de eco</li>
-            <li itemprop="feature">Batería recargable de larga duración</li>
-            <li itemprop="feature">Detección de movimiento inteligente</li>
-          </ul>
           <div class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
             <meta itemprop="priceValidUntil" content="2025-12-31">
             <meta itemprop="availability" content="https://schema.org/InStock">
@@ -516,6 +565,25 @@
             <span itemprop="price" content="56,99">56,99</span>
             <span class="original-price">129,99€</span>
           </div>
+          
+          <button class="details-btn" onclick="toggleDetails(this)">
+            <span class="details-btn-text">Ver detalles</span>
+          </button>
+          
+          <div class="product-details">
+            <div class="product-description" itemprop="description">
+              Cámara de vigilancia interior con conectividad 4G LTE, visión nocturna y audio bidireccional. 
+              Funciona sin WiFi gracias a su conexión móvil y batería recargable.
+            </div>
+            <ul class="product-features">
+              <li itemprop="feature">Conectividad 4G LTE (sin necesidad de WiFi)</li>
+              <li itemprop="feature">Visión nocturna a color de 10m</li>
+              <li itemprop="feature">Audio bidireccional con cancelación de eco</li>
+              <li itemprop="feature">Batería recargable de larga duración</li>
+              <li itemprop="feature">Detección de movimiento inteligente</li>
+            </ul>
+          </div>
+          
           <a 
             href="https://www.amazon.es/PESAIR-Vigilancia-Inal%C3%A1mbrica-Recargable-Bidireccional/dp/B0DRVFTZLW?th=1&linkCode=ll1&tag=yocompro0e-21&linkId=c1df561f2300f4566c2166929c31084d&language=es_ES&ref_=as_li_ss_tl" 
             class="btn" 
@@ -552,17 +620,6 @@
             <span class="stars">★★★★★</span>
             <span itemprop="reviewCount">16,000+ reviews</span>
           </div>
-          <div class="product-description" itemprop="description" style="display:none;">
-            Sistema completo de seguridad con 4 cámaras HD, grabador NVR y detección de movimiento. 
-            Instalación sencilla y monitorización remota desde cualquier dispositivo.
-          </div>
-          <ul class="product-features" style="display:none;">
-            <li itemprop="feature">4 cámaras Full HD 1080p</li>
-            <li itemprop="feature">Grabador NVR con disco duro de 1TB</li>
-            <li itemprop="feature">Detección de movimiento inteligente</li>
-            <li itemprop="feature">Visión nocturna de 30 metros</li>
-            <li itemprop="feature">Monitorización remota vía app</li>
-          </ul>
           <div class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
             <meta itemprop="priceValidUntil" content="2025-12-31">
             <meta itemprop="availability" content="https://schema.org/InStock">
@@ -570,6 +627,25 @@
             <span itemprop="priceCurrency" content="EUR">€</span>
             <span itemprop="price" content="699,00">699,00</span>
           </div>
+          
+          <button class="details-btn" onclick="toggleDetails(this)">
+            <span class="details-btn-text">Ver detalles</span>
+          </button>
+          
+          <div class="product-details">
+            <div class="product-description" itemprop="description">
+              Sistema completo de seguridad con 4 cámaras HD, grabador NVR y detección de movimiento. 
+              Instalación sencilla y monitorización remota desde cualquier dispositivo.
+            </div>
+            <ul class="product-features">
+              <li itemprop="feature">4 cámaras Full HD 1080p</li>
+              <li itemprop="feature">Grabador NVR con disco duro de 1TB</li>
+              <li itemprop="feature">Detección de movimiento inteligente</li>
+              <li itemprop="feature">Visión nocturna de 30 metros</li>
+              <li itemprop="feature">Monitorización remota vía app</li>
+            </ul>
+          </div>
+          
           <a 
             href="https://www.amazon.es/Jennov-vigilancia-bidireccional-detecci%C3%B3n-grabaci%C3%B3n/dp/B0CWNV3689?&linkCode=ll1&tag=yocompro0e-21&linkId=58ebe41a7a4385fb52075d56304a6687&language=es_ES&ref_=as_li_ss_tl" 
             class="btn" 
@@ -607,17 +683,6 @@
             <span class="stars">★★★★★</span>
             <span itemprop="reviewCount">14,200+ reviews</span>
           </div>
-          <div class="product-description" itemprop="description" style="display:none;">
-            Cámara de vigilancia exterior profesional con zoom óptico 12X, conectividad 4G LTE y 
-            visión térmica. Ideal para vigilancia perimetral y áreas extensas.
-          </div>
-          <ul class="product-features" style="display:none;">
-            <li itemprop="feature">Zoom óptico 12X y digital 25X</li>
-            <li itemprop="feature">Conectividad 4G LTE y WiFi</li>
-            <li itemprop="feature">Visión térmica para detección en oscuridad total</li>
-            <li itemprop="feature">Resistencia IP66 (impermeable)</li>
-            <li itemprop="feature">Seguimiento automático de movimiento</li>
-          </ul>
           <div class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
             <meta itemprop="priceValidUntil" content="2025-12-31">
             <meta itemprop="availability" content="https://schema.org/InStock">
@@ -626,6 +691,25 @@
             <span itemprop="price" content="82,99">82,99</span>
             <span class="original-price">99.99€</span>
           </div>
+          
+          <button class="details-btn" onclick="toggleDetails(this)">
+            <span class="details-btn-text">Ver detalles</span>
+          </button>
+          
+          <div class="product-details">
+            <div class="product-description" itemprop="description">
+              Cámara de vigilancia exterior profesional con zoom óptico 12X, conectividad 4G LTE y 
+              visión térmica. Ideal para vigilancia perimetral y áreas extensas.
+            </div>
+            <ul class="product-features">
+              <li itemprop="feature">Zoom óptico 12X y digital 25X</li>
+              <li itemprop="feature">Conectividad 4G LTE y WiFi</li>
+              <li itemprop="feature">Visión térmica para detección en oscuridad total</li>
+              <li itemprop="feature">Resistencia IP66 (impermeable)</li>
+              <li itemprop="feature">Seguimiento automático de movimiento</li>
+            </ul>
+          </div>
+          
           <a 
             href="https://www.amazon.es/Xega-Vigilancia-Exterior-Inal%C3%A1mbrica-Detecci%C3%B3n/dp/B0DJ8HZJZR?&linkCode=ll1&tag=yocompro0e-21&linkId=ab1455df8a3cd00166999c1954e81804&language=es_ES&ref_=as_li_ss_tl" 
             class="btn" 
@@ -662,17 +746,6 @@
             <span class="stars">★★★★★</span>
             <span itemprop="reviewCount">14,000+ reviews</span>
           </div>
-          <div class="product-description" itemprop="description" style="display:none;">
-            Cámara PTZ (Pan-Tilt-Zoom) con seguimiento automático de movimiento, visión nocturna 
-            a color y monitor incluido. Solución todo-en-uno para vigilancia profesional.
-          </div>
-          <ul class="product-features" style="display:none;">
-            <li itemprop="feature">Movimiento PTZ (360° horizontal, 90° vertical)</li>
-            <li itemprop="feature">Seguimiento automático de objetos</li>
-            <li itemprop="feature">Monitor HD de 7 pulgadas incluido</li>
-            <li itemprop="feature">Visión nocturna a color de 20m</li>
-            <li itemprop="feature">Almacenamiento en tarjeta SD y NVR</li>
-          </ul>
           <div class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
             <meta itemprop="priceValidUntil" content="2025-12-31">
             <meta itemprop="availability" content="https://schema.org/InStock">
@@ -680,6 +753,25 @@
             <span itemprop="priceCurrency" content="EUR">€</span>
             <span itemprop="price" content="699,00">699,00</span>
           </div>
+          
+          <button class="details-btn" onclick="toggleDetails(this)">
+            <span class="details-btn-text">Ver detalles</span>
+          </button>
+          
+          <div class="product-details">
+            <div class="product-description" itemprop="description">
+              Cámara PTZ (Pan-Tilt-Zoom) con seguimiento automático de movimiento, visión nocturna 
+              a color y monitor incluido. Solución todo-en-uno para vigilancia profesional.
+            </div>
+            <ul class="product-features">
+              <li itemprop="feature">Movimiento PTZ (360° horizontal, 90° vertical)</li>
+              <li itemprop="feature">Seguimiento automático de objetos</li>
+              <li itemprop="feature">Monitor HD de 7 pulgadas incluido</li>
+              <li itemprop="feature">Visión nocturna a color de 20m</li>
+              <li itemprop="feature">Almacenamiento en tarjeta SD y NVR</li>
+            </ul>
+          </div>
+          
           <a 
             href="https://www.amazon.es/Jennov-PTZ-c%C3%A1mara-vigilancia-Monitor/dp/B0CWNVMY3J?&linkCode=ll1&tag=yocompro0e-21&linkId=304399647ed87fa1baf4257d6013158e&language=es_ES&ref_=as_li_ss_tl" 
             class="btn" 
@@ -717,17 +809,6 @@
             <span class="stars">★★★★★</span>
             <span itemprop="reviewCount">23,900+ reviews</span>
           </div>
-          <div class="product-description" itemprop="description" style="display:none;">
-            Cámara de vigilancia exterior con panel solar integrado para energía autónoma. 
-            Conectividad 4G LTE y WiFi, ideal para ubicaciones remotas sin acceso a electricidad.
-          </div>
-          <ul class="product-features" style="display:none;">
-            <li itemprop="feature">Panel solar integrado con batería de respaldo</li>
-            <li itemprop="feature">Conectividad 4G LTE y WiFi</li>
-            <li itemprop="feature">Resistencia IP66 (impermeable)</li>
-            <li itemprop="feature">Detección de movimiento con alertas</li>
-            <li itemprop="feature">Audio bidireccional y sirena integrada</li>
-          </ul>
           <div class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
             <meta itemprop="priceValidUntil" content="2025-12-31">
             <meta itemprop="availability" content="https://schema.org/InStock">
@@ -736,6 +817,25 @@
             <span itemprop="price" content="119,99">119,99</span>
             <span class="original-price">149.99€</span>
           </div>
+          
+          <button class="details-btn" onclick="toggleDetails(this)">
+            <span class="details-btn-text">Ver detalles</span>
+          </button>
+          
+          <div class="product-details">
+            <div class="product-description" itemprop="description">
+              Cámara de vigilancia exterior con panel solar integrado para energía autónoma. 
+              Conectividad 4G LTE y WiFi, ideal para ubicaciones remotas sin acceso a electricidad.
+            </div>
+            <ul class="product-features">
+              <li itemprop="feature">Panel solar integrado con batería de respaldo</li>
+              <li itemprop="feature">Conectividad 4G LTE y WiFi</li>
+              <li itemprop="feature">Resistencia IP66 (impermeable)</li>
+              <li itemprop="feature">Detección de movimiento con alertas</li>
+              <li itemprop="feature">Audio bidireccional y sirena integrada</li>
+            </ul>
+          </div>
+          
           <a 
             href="https://www.amazon.es/LEMNOI-Vigilancia-Preinstalado-Bidireccional-Impermeable/dp/B0DMDVNX2Q?&linkCode=ll1&tag=yocompro0e-21&linkId=0956c7c8dbc1d879a8eacdd0ec1f702f&language=es_ES&ref_=as_li_ss_tl" 
             class="btn" 
@@ -772,17 +872,6 @@
             <span class="stars">★★★★★</span>
             <span itemprop="reviewCount">13,800+ reviews</span>
           </div>
-          <div class="product-description" itemprop="description" style="display:none;">
-            Cámara de vigilancia exterior resistente a la intemperie con seguimiento automático 
-            de movimiento y visión nocturna a color. Fácil instalación y configuración.
-          </div>
-          <ul class="product-features" style="display:none;">
-            <li itemprop="feature">Resistencia IP65 (a prueba de lluvia)</li>
-            <li itemprop="feature">Visión nocturna a color de 15m</li>
-            <li itemprop="feature">Seguimiento automático de movimiento</li>
-            <li itemprop="feature">Almacenamiento en tarjeta SD y nube</li>
-            <li itemprop="feature">Audio bidireccional con cancelación de eco</li>
-          </ul>
           <div class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
             <meta itemprop="priceValidUntil" content="2025-12-31">
             <meta itemprop="availability" content="https://schema.org/InStock">
@@ -790,6 +879,25 @@
             <span itemprop="priceCurrency" content="EUR">€</span>
             <span itemprop="price" content="49,99">49,99</span>
           </div>
+          
+          <button class="details-btn" onclick="toggleDetails(this)">
+            <span class="details-btn-text">Ver detalles</span>
+          </button>
+          
+          <div class="product-details">
+            <div class="product-description" itemprop="description">
+              Cámara de vigilancia exterior resistente a la intemperie con seguimiento automático 
+              de movimiento y visión nocturna a color. Fácil instalación y configuración.
+            </div>
+            <ul class="product-features">
+              <li itemprop="feature">Resistencia IP65 (a prueba de lluvia)</li>
+              <li itemprop="feature">Visión nocturna a color de 15m</li>
+              <li itemprop="feature">Seguimiento automático de movimiento</li>
+              <li itemprop="feature">Almacenamiento en tarjeta SD y nube</li>
+              <li itemprop="feature">Audio bidireccional con cancelación de eco</li>
+            </ul>
+          </div>
+          
           <a 
             href="https://www.amazon.es/Menborn-Vigilancia-Seguimiento-Autom%C3%A1tico-Bidireccional/dp/B0CBRDZ9L6?th=1&linkCode=ll1&tag=yocompro0e-21&linkId=1edefaa4ee0db81ccd3fb68ab608041b&language=es_ES&ref_=as_li_ss_tl" 
             class="btn" 
@@ -827,17 +935,6 @@
             <span class="stars">★★★★★</span>
             <span itemprop="reviewCount">10,700+ reviews</span>
           </div>
-          <div class="product-description" itemprop="description" style="display:none;">
-            Cámara de vigilancia interior económica con resolución Full HD 1080p, visión nocturna 
-            y detección de movimiento. Ideal para monitoreo doméstico básico.
-          </div>
-          <ul class="product-features" style="display:none;">
-            <li itemprop="feature">Resolución Full HD 1080p</li>
-            <li itemprop="feature">Visión nocturna de 10 metros</li>
-            <li itemprop="feature">Detección de movimiento con alertas</li>
-            <li itemprop="feature">Audio bidireccional</li>
-            <li itemprop="feature">Almacenamiento en tarjeta microSD</li>
-          </ul>
           <div class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
             <meta itemprop="priceValidUntil" content="2025-12-31">
             <meta itemprop="availability" content="https://schema.org/InStock">
@@ -846,6 +943,25 @@
             <span itemprop="price" content=" 23,99"> 23,99</span>
             <span class="original-price">39,99€</span>
           </div>
+          
+          <button class="details-btn" onclick="toggleDetails(this)">
+            <span class="details-btn-text">Ver detalles</span>
+          </button>
+          
+          <div class="product-details">
+            <div class="product-description" itemprop="description">
+              Cámara de vigilancia interior económica con resolución Full HD 1080p, visión nocturna 
+              y detección de movimiento. Ideal para monitoreo doméstico básico.
+            </div>
+            <ul class="product-features">
+              <li itemprop="feature">Resolución Full HD 1080p</li>
+              <li itemprop="feature">Visión nocturna de 10 metros</li>
+              <li itemprop="feature">Detección de movimiento con alertas</li>
+              <li itemprop="feature">Audio bidireccional</li>
+              <li itemprop="feature">Almacenamiento en tarjeta microSD</li>
+            </ul>
+          </div>
+          
           <a 
             href="https://www.amazon.es/TP-Link-Vigilancia-Movimiento-Tapo-C200/dp/B07XLML2YS?&linkCode=ll1&tag=yocompro0e-21&linkId=ab1b09be6c62ceb3da7716f20ae731e4&language=es_ES&ref_=as_li_ss_tl" 
             class="btn" 
@@ -883,17 +999,6 @@
             <span class="stars">★★★★★</span>
             <span itemprop="reviewCount">15,600+ reviews</span>
           </div>
-          <div class="product-description" itemprop="description" style="display:none;">
-            Cámara exterior resistente con visión nocturna de 20m, detección de persona/vehículo/mascota 
-            y sirena integrada. Funciona con batería o alimentación solar opcional.
-          </div>
-          <ul class="product-features" style="display:none;">
-            <li itemprop="feature">Visión nocturna full color de 20m</li>
-            <li itemprop="feature">Detección inteligente de personas/animales</li>
-            <li itemprop="feature">Sirena de 100dB integrada</li>
-            <li itemprop="feature">Batería de 6 meses o panel solar opcional</li>
-            <li itemprop="feature">Resistencia IP65 (impermeable)</li>
-          </ul>
           <div class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
             <meta itemprop="priceValidUntil" content="2025-12-31">
             <meta itemprop="availability" content="https://schema.org/InStock">
@@ -902,6 +1007,25 @@
             <span itemprop="price" content="32,29">32,29</span>
             <span class="original-price">49,99€</span>
           </div>
+          
+          <button class="details-btn" onclick="toggleDetails(this)">
+            <span class="details-btn-text">Ver detalles</span>
+          </button>
+          
+          <div class="product-details">
+            <div class="product-description" itemprop="description">
+              Cámara exterior resistente con visión nocturna de 20m, detección de persona/vehículo/mascota 
+              y sirena integrada. Funciona con batería o alimentación solar opcional.
+            </div>
+            <ul class="product-features">
+              <li itemprop="feature">Visión nocturna full color de 20m</li>
+              <li itemprop="feature">Detección inteligente de personas/animales</li>
+              <li itemprop="feature">Sirena de 100dB integrada</li>
+              <li itemprop="feature">Batería de 6 meses o panel solar opcional</li>
+              <li itemprop="feature">Resistencia IP65 (impermeable)</li>
+            </ul>
+          </div>
+          
           <a 
             href="https://www.amazon.es/ieGeek-Vigilancia-Movimiento-Seguimiento-Autom%C3%A1tico/dp/B0B872LZLX?th=1&linkCode=ll1&tag=yocompro0e-21&linkId=3fbc38f8b6e4f21b492db684910b2170&language=es_ES&ref_=as_li_ss_tl" 
             class="btn" 
@@ -938,17 +1062,6 @@
             <span class="stars">★★★★★</span>
             <span itemprop="reviewCount">17,400+ reviews</span>
           </div>
-          <div class="product-description" itemprop="description" style="display:none;">
-            Cámara inteligente para el hogar con resolución 2K, IA para reconocimiento de personas 
-            y compatibilidad con asistentes de voz. Integración perfecta con ecosistema Xiaomi.
-          </div>
-          <ul class="product-features" style="display:none;">
-            <li itemprop="feature">Resolución 2K con visión nocturna</li>
-            <li itemprop="feature">Reconocimiento IA de personas/animales</li>
-            <li itemprop="feature">Compatibilidad con Google Assistant y Alexa</li>
-            <li itemprop="feature">Almacenamiento local y en la nube</li>
-            <li itemprop="feature">Diseño compacto y discreto</li>
-          </ul>
           <div class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
             <meta itemprop="priceValidUntil" content="2025-12-31">
             <meta itemprop="availability" content="https://schema.org/InStock">
@@ -956,6 +1069,25 @@
             <span itemprop="priceCurrency" content="EUR">€</span>
             <span itemprop="price" content="115,00">115,00</span>
           </div>
+          
+          <button class="details-btn" onclick="toggleDetails(this)">
+            <span class="details-btn-text">Ver detalles</span>
+          </button>
+          
+          <div class="product-details">
+            <div class="product-description" itemprop="description">
+              Cámara inteligente para el hogar con resolución 2K, IA para reconocimiento de personas 
+              y compatibilidad con asistentes de voz. Integración perfecta con ecosistema Xiaomi.
+            </div>
+            <ul class="product-features">
+              <li itemprop="feature">Resolución 2K con visión nocturna</li>
+              <li itemprop="feature">Reconocimiento IA de personas/animales</li>
+              <li itemprop="feature">Compatibilidad con Google Assistant y Alexa</li>
+              <li itemprop="feature">Almacenamiento local y en la nube</li>
+              <li itemprop="feature">Diseño compacto y discreto</li>
+            </ul>
+          </div>
+          
           <a 
             href="https://www.amazon.es/Xiaomi-Smart-Camera-C300-Pack/dp/B0BRZZ3WZ5?&linkCode=ll1&tag=yocompro0e-21&linkId=ce739d9417a28dd5d467ac6ba00bc929&language=es_ES&ref_=as_li_ss_tl" 
             class="btn" 
@@ -993,17 +1125,6 @@
             <span class="stars">★★★★★</span>
             <span itemprop="reviewCount">13,300+ reviews</span>
           </div>
-          <div class="product-description" itemprop="description" style="display:none;">
-            Cámara de vigilancia 360° con seguimiento automático de movimiento, resolución 2K y 
-            visión nocturna. Cubre toda la habitación sin puntos ciegos.
-          </div>
-          <ul class="product-features" style="display:none;">
-            <li itemprop="feature">Rotación 360° horizontal y 114° vertical</li>
-            <li itemprop="feature">Resolución 2K con visión nocturna</li>
-            <li itemprop="feature">Seguimiento automático de movimiento</li>
-            <li itemprop="feature">Audio bidireccional con cancelación de ruido</li>
-            <li itemprop="feature">Almacenamiento en tarjeta microSD hasta 512GB</li>
-          </ul>
           <div class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
             <meta itemprop="priceValidUntil" content="2025-12-31">
             <meta itemprop="availability" content="https://schema.org/InStock">
@@ -1012,6 +1133,25 @@
             <span itemprop="price" content="49,99">49,99</span>
             <span class="original-price">69,99€</span>
           </div>
+          
+          <button class="details-btn" onclick="toggleDetails(this)">
+            <span class="details-btn-text">Ver detalles</span>
+          </button>
+          
+          <div class="product-details">
+            <div class="product-description" itemprop="description">
+              Cámara de vigilancia 360° con seguimiento automático de movimiento, resolución 2K y 
+              visión nocturna. Cubre toda la habitación sin puntos ciegos.
+            </div>
+            <ul class="product-features">
+              <li itemprop="feature">Rotación 360° horizontal y 114° vertical</li>
+              <li itemprop="feature">Resolución 2K con visión nocturna</li>
+              <li itemprop="feature">Seguimiento automático de movimiento</li>
+              <li itemprop="feature">Audio bidireccional con cancelación de ruido</li>
+              <li itemprop="feature">Almacenamiento en tarjeta microSD hasta 512GB</li>
+            </ul>
+          </div>
+          
           <a 
             href="https://www.amazon.es/Tapo-TP-Link-C210-2-Pack-Vigilancia/dp/B0BWCVYFLC?&linkCode=ll1&tag=yocompro0e-21&linkId=356e3ec2e18d02ab16afd46cea336673&language=es_ES&ref_=as_li_ss_tl" 
             class="btn" 
@@ -1056,7 +1196,8 @@
           accept: "Aceptar",
           reject: "Rechazar",
           offer: "Ver oferta en Amazon",
-          reviews: "reviews"
+          reviews: "reviews",
+          details: "Ver detalles"
         },
         en: {
           title: "Top 10: Best Security Cameras 2025",
@@ -1074,11 +1215,28 @@
           accept: "Accept",
           reject: "Reject",
           offer: "View deal on Amazon",
-          reviews: "reviews"
+          reviews: "reviews",
+          details: "View details"
         }
       };
       
       let currentLang = 'es';
+      
+      // Función para mostrar/ocultar detalles del producto
+      window.toggleDetails = function(btn) {
+        const product = btn.closest('.product-content');
+        const details = product.querySelector('.product-details');
+        details.classList.toggle('active');
+        btn.classList.toggle('active');
+        
+        // Cambiar texto del botón
+        const btnText = btn.querySelector('.details-btn-text');
+        if (details.classList.contains('active')) {
+          btnText.textContent = currentLang === 'es' ? 'Ocultar detalles' : 'Hide details';
+        } else {
+          btnText.textContent = translations[currentLang].details;
+        }
+      };
       
       function toggleDropdown() {
         const dropdown = document.getElementById('language-dropdown');
@@ -1118,6 +1276,15 @@
         
         document.querySelectorAll('.btn').forEach(btn => {
           btn.innerHTML = translations[currentLang].offer;
+        });
+        
+        document.querySelectorAll('.details-btn-text').forEach(btn => {
+          const details = btn.closest('.product-content').querySelector('.product-details');
+          if (details && !details.classList.contains('active')) {
+            btn.textContent = translations[currentLang].details;
+          } else if (details && details.classList.contains('active')) {
+            btn.textContent = currentLang === 'es' ? 'Ocultar detalles' : 'Hide details';
+          }
         });
         
         document.querySelectorAll('[itemprop="reviewCount"]').forEach(el => {
