@@ -296,6 +296,71 @@
       top: 0;
     }
     
+    /* Estilos para el selector de idioma desplegable */
+    .language-selector {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+    
+    .language-btn {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+    
+    .language-btn:hover {
+      background: var(--secondary);
+    }
+    
+    .dropdown-arrow {
+      font-size: 0.7rem;
+      transition: transform 0.2s ease;
+    }
+    
+    .language-dropdown {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      box-shadow: var(--shadow);
+      list-style: none;
+      padding: 0.5rem 0;
+      margin-top: 0.5rem;
+      min-width: 120px;
+      display: none;
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: all 0.2s ease;
+    }
+    
+    .language-dropdown.show {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .language-dropdown li {
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    
+    .language-dropdown li:hover {
+      background: var(--secondary);
+      color: var(--primary);
+    }
+    
     /* Mobile optimizations */
     @media (max-width: 768px) {
       .product-list {
@@ -309,10 +374,19 @@
       .product-img {
         height: 180px;
       }
+      
+      .language-selector {
+        top: 10px;
+        right: 10px;
+      }
     }
     
     @media (prefers-reduced-motion) {
       .product {
+        transition: none;
+      }
+      
+      .language-dropdown {
         transition: none;
       }
     }
@@ -326,13 +400,16 @@
   <!-- Skip link para accesibilidad -->
   <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
 
-  <!-- Selector de idioma -->
-  <div class="language-selector" style="position:fixed;top:20px;right:20px;z-index:1000;">
-    <button class="language-btn" onclick="toggleLanguage()" aria-label="Cambiar idioma">
+  <!-- Selector de idioma desplegable -->
+  <div class="language-selector">
+    <button class="language-btn" onclick="toggleDropdown()" aria-expanded="false" aria-haspopup="true" aria-label="Cambiar idioma">
       <span id="current-language">ES</span>
-      <span>→</span>
-      <span id="target-language">EN</span>
+      <span class="dropdown-arrow">▼</span>
     </button>
+    <ul class="language-dropdown" id="language-dropdown" role="menu" aria-hidden="true">
+      <li role="menuitem" onclick="changeLanguage('es')">Español (ES)</li>
+      <li role="menuitem" onclick="changeLanguage('en')">English (EN)</li>
+    </ul>
   </div>
 
   <div class="container">
@@ -886,7 +963,7 @@
     
     // Tracking de clicks
     window.trackClick = function(productId) {
-      const prefs = JSON.parse(localStorage.getItem('cookiePrefs') || {};
+      const prefs = JSON.parse(localStorage.getItem('cookiePrefs') || '{}');
       if (prefs.analytics && window.gtag) {
         gtag('event', 'click', {
           'event_category': 'Product',
@@ -938,11 +1015,28 @@
     
     let currentLang = 'es';
     
-    function toggleLanguage() {
-      currentLang = currentLang === 'es' ? 'en' : 'es';
-      updateLanguage();
+    // Función para mostrar/ocultar el desplegable
+    function toggleDropdown() {
+      const dropdown = document.getElementById('language-dropdown');
+      const btn = document.querySelector('.language-btn');
+      const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+      
+      dropdown.classList.toggle('show');
+      btn.setAttribute('aria-expanded', !isExpanded);
+      dropdown.setAttribute('aria-hidden', isExpanded);
     }
     
+    // Función para cambiar el idioma
+    function changeLanguage(lang) {
+      currentLang = lang;
+      updateLanguage();
+      toggleDropdown(); // Cierra el desplegable después de seleccionar
+      
+      // Guardar preferencia de idioma
+      localStorage.setItem('languagePref', lang);
+    }
+    
+    // Función para actualizar el contenido según el idioma
     function updateLanguage() {
       const trans = translations[currentLang];
       document.getElementById('main-title').innerHTML = trans.title;
@@ -967,8 +1061,19 @@
       });
       
       document.getElementById('current-language').textContent = currentLang.toUpperCase();
-      document.getElementById('target-language').textContent = currentLang === 'es' ? 'EN' : 'ES';
     }
+    
+    // Cerrar el desplegable al hacer clic fuera
+    document.addEventListener('click', function(event) {
+      const dropdown = document.getElementById('language-dropdown');
+      const btn = document.querySelector('.language-btn');
+      
+      if (!btn.contains(event.target) && !dropdown.contains(event.target)) {
+        dropdown.classList.remove('show');
+        btn.setAttribute('aria-expanded', 'false');
+        dropdown.setAttribute('aria-hidden', 'true');
+      }
+    });
     
     // Lazy loading de imágenes
     function initLazyLoading() {
@@ -995,9 +1100,13 @@
     
     // Inicialización
     document.addEventListener('DOMContentLoaded', () => {
-      // Detectar idioma del navegador
+      // Detectar idioma del navegador o preferencia guardada
+      const savedLang = localStorage.getItem('languagePref');
       const userLang = navigator.language || navigator.userLanguage;
-      if (userLang.startsWith('en')) {
+      
+      if (savedLang) {
+        currentLang = savedLang;
+      } else if (userLang.startsWith('en')) {
         currentLang = 'en';
       }
       
@@ -1006,7 +1115,7 @@
       initLazyLoading();
       
       // Cargar analytics si ya estaban aceptadas
-      const prefs = JSON.parse(localStorage.getItem('cookiePrefs') || {};
+      const prefs = JSON.parse(localStorage.getItem('cookiePrefs') || '{}');
       if (prefs.analytics) {
         loadAnalytics();
       }
