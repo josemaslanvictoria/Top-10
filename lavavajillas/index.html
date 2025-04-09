@@ -135,6 +135,23 @@
       color: black;
       box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
     }
+    #cookie-banner {
+      position: fixed;
+      bottom: 0;
+      background: #222;
+      color: white;
+      padding: 15px;
+      width: 100%;
+      text-align: center;
+      z-index: 1000;
+    }
+    #cookie-banner button {
+      margin: 0 10px;
+      padding: 5px 15px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
   </style>
   <script>
     function redirectToAmazon(url) {
@@ -157,46 +174,190 @@
   <div class="container">
     <h1>Top 10: Los Mejores Lavavajillas</h1>
     <div class="product-list">
-      <script>
-        const products = [
-          { name: "Lavavajillas BOSCH SMS6ZCI42E", rating: "9.9", reviews: "14200 Excelente lavavajillas", image: "https://m.media-amazon.com/images/I/51AaUJGoQtL._AC_SX679_.jpg", url: "https://www.amazon.es/Lavavajillas-BOSCH-SMS6ZCI42E-Inox-3%C2%AABandeja/dp/B091FRVXYJ?crid=UJ5XFDW1BZ6Z&dib=eyJ2IjoiMSJ9.hf5hCmf52vtSA12O6Lnaxyo_Oyeg5aOLFSRjHItDw05DZuWFzJl1cjpkz9iZeUmXcXUA9arAipkb2J9x46_KmsJQ2YqbjsPeJIXzecTqnyBsKhYMlxbhuzNoui62Lm_HZPkuZbSsM39o5phMPRKyRZO_73vAJ-b1PVtv04WrddF-8-Vapo6P8VKVPxOQOZJTr_7Sy4vJVH_9aw46igPWEtXQygzlPIrzVWDeRUtSQVvho1WQiGIX9Sfw1PxuVwX1GZM4L5lKGrDRPqnBnUogYNP3tcWs6Jl9Yhxil3jU28bV--gGy70UJN0Z_VvYapLe6uAJSoapp6BpuQRwhBnb7JPFkOZVCB9SccJpwtL5xhmGksm3WDrW660JZ-jLjyJVX0k-Hrdx_bV7hk3B-32zokp1SsE9LBKvTlBXooW2djNNX6ObkxLgxQ5atBDdLTHD.OF2BEzA0QVBIHkDeyb64FtMeYp74tTEbbOhZ7f3hgoQ&dib_tag=se&keywords=lavavajillas&qid=1741628096&sprefix=lava%2Caps%2C133&sr=8-7&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&linkCode=ll1&tag=yocompro0e-21&linkId=d42ed0db78480aecad305ba752c97b0d&language=es_ES&ref_=as_li_ss_tl" },
-          { name: "Bosch - Lavavajillas integrable", rating: "9.8", reviews: "16000+ Tamaño compacto", image: "https://m.media-amazon.com/images/I/512A09i0SOL._AC_SX679_.jpg", url: "https://www.amazon.es/Bosch-Lavavajillas-integrable-AquaStop-SCX6ITB00E/dp/B0DDV1S35Y?crid=UJ5XFDW1BZ6Z&dib=eyJ2IjoiMSJ9.hf5hCmf52vtSA12O6Lnaxyo_Oyeg5aOLFSRjHItDw05DZuWFzJl1cjpkz9iZeUmXcXUA9arAipkb2J9x46_KmsJQ2YqbjsPeJIXzecTqnyBsKhYMlxbhuzNoui62Lm_HZPkuZbSsM39o5phMPRKyRZO_73vAJ-b1PVtv04WrddF-8-Vapo6P8VKVPxOQOZJTr_7Sy4vJVH_9aw46igPWEtXQygzlPIrzVWDeRUtSQVvho1WQiGIX9Sfw1PxuVwX1GZM4L5lKGrDRPqnBnUogYNP3tcWs6Jl9Yhxil3jU28bV--gGy70UJN0Z_VvYapLe6uAJSoapp6BpuQRwhBnb7JPFkOZVCB9SccJpwtL5xhmGksm3WDrW660JZ-jLjyJVX0k-Hrdx_bV7hk3B-32zokp1SsE9LBKvTlBXooW2djNNX6ObkxLgxQ5atBDdLTHD.OF2BEzA0QVBIHkDeyb64FtMeYp74tTEbbOhZ7f3hgoQ&dib_tag=se&keywords=lavavajillas&qid=1741628096&sprefix=lava%2Caps%2C133&sr=8-11&ufe=app_do%3Aamzn1.fos.0fd54328-1d46-4534-bd0f-16141b40bb5b&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=89b1fc6580815d9fa5fe4fc33c98c5ee&language=es_ES&ref_=as_li_ss_tl" },
-          { name: "Siemens SN23EC14CE iQ300", rating: "9.7", reviews: "14200+ easyStart:", image: "https://m.media-amazon.com/images/I/71tdZzzDGUL._AC_SX679_.jpg", url: "https://www.amazon.es/Siemens-SN23EC14CE-Lavavajillas-independiente-compatible/dp/B08H5X14V9?crid=UJ5XFDW1BZ6Z&dib=eyJ2IjoiMSJ9.hf5hCmf52vtSA12O6Lnaxyo_Oyeg5aOLFSRjHItDw05DZuWFzJl1cjpkz9iZeUmXcXUA9arAipkb2J9x46_KmsJQ2YqbjsPeJIXzecTqnyBsKhYMlxbhuzNoui62Lm_HZPkuZbSsM39o5phMPRKyRZO_73vAJ-b1PVtv04WrddF-8-Vapo6P8VKVPxOQOZJTr_7Sy4vJVH_9aw46igPWEtXQygzlPIrzVWDeRUtSQVvho1WQiGIX9Sfw1PxuVwX1GZM4L5lKGrDRPqnBnUogYNP3tcWs6Jl9Yhxil3jU28bV--gGy70UJN0Z_VvYapLe6uAJSoapp6BpuQRwhBnb7JPFkOZVCB9SccJpwtL5xhmGksm3WDrW660JZ-jLjyJVX0k-Hrdx_bV7hk3B-32zokp1SsE9LBKvTlBXooW2djNNX6ObkxLgxQ5atBDdLTHD.OF2BEzA0QVBIHkDeyb64FtMeYp74tTEbbOhZ7f3hgoQ&dib_tag=se&keywords=lavavajillas&qid=1741628096&sprefix=lava%2Caps%2C133&sr=8-12&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&linkCode=ll1&tag=yocompro0e-21&linkId=085d71ea3d3c7d71da1a0f152eeb4ac8&language=es_ES&ref_=as_li_ss_tl" },
-          { name: "Bosch Lavavajillas Serie 6", rating: "9.5", reviews: "13800+ Empotrable", image: "https://m.media-amazon.com/images/I/71dkC+wc3ZL._AC_SX679_.jpg", url: "https://www.amazon.es/Bosch-Elettrodomestici-SMV6YCX02E-Concealed-Dishwasher/dp/B0CGRHZDK9?crid=UJ5XFDW1BZ6Z&dib=eyJ2IjoiMSJ9.hf5hCmf52vtSA12O6Lnaxyo_Oyeg5aOLFSRjHItDw05DZuWFzJl1cjpkz9iZeUmXcXUA9arAipkb2J9x46_KmsJQ2YqbjsPeJIXzecTqnyBsKhYMlxbhuzNoui62Lm_HZPkuZbSsM39o5phMPRKyRZO_73vAJ-b1PVtv04WrddF-8-Vapo6P8VKVPxOQOZJTr_7Sy4vJVH_9aw46igPWEtXQygzlPIrzVWDeRUtSQVvho1WQiGIX9Sfw1PxuVwX1GZM4L5lKGrDRPqnBnUogYNP3tcWs6Jl9Yhxil3jU28bV--gGy70UJN0Z_VvYapLe6uAJSoapp6BpuQRwhBnb7JPFkOZVCB9SccJpwtL5xhmGksm3WDrW660JZ-jLjyJVX0k-Hrdx_bV7hk3B-32zokp1SsE9LBKvTlBXooW2djNNX6ObkxLgxQ5atBDdLTHD.OF2BEzA0QVBIHkDeyb64FtMeYp74tTEbbOhZ7f3hgoQ&dib_tag=se&keywords=lavavajillas&qid=1741628096&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&sprefix=lava%2Caps%2C133&sr=8-13&linkCode=ll1&tag=yocompro0e-21&linkId=e380e3eb8e01e8ebbe4d3740d362539f&language=es_ES&ref_=as_li_ss_tl" },
-          { name: "Balay - Lavavajillas", rating: "9.5", reviews: "23900+ Oferta -31 % ", image: "https://m.media-amazon.com/images/I/61FSEmXdCJL._AC_SY879_.jpg", url: "https://www.amazon.es/Balay-Lavavajillas-3VS506BP-Blanco/dp/B085M7LQ9S?crid=UJ5XFDW1BZ6Z&dib=eyJ2IjoiMSJ9.hf5hCmf52vtSA12O6Lnaxyo_Oyeg5aOLFSRjHItDw05DZuWFzJl1cjpkz9iZeUmXcXUA9arAipkb2J9x46_KmsJQ2YqbjsPeJIXzecTqnyBsKhYMlxbhuzNoui62Lm_HZPkuZbSsM39o5phMPRKyRZO_73vAJ-b1PVtv04WrddF-8-Vapo6P8VKVPxOQOZJTr_7Sy4vJVH_9aw46igPWEtXQygzlPIrzVWDeRUtSQVvho1WQiGIX9Sfw1PxuVwX1GZM4L5lKGrDRPqnBnUogYNP3tcWs6Jl9Yhxil3jU28bV--gGy70UJN0Z_VvYapLe6uAJSoapp6BpuQRwhBnb7JPFkOZVCB9SccJpwtL5xhmGksm3WDrW660JZ-jLjyJVX0k-Hrdx_bV7hk3B-32zokp1SsE9LBKvTlBXooW2djNNX6ObkxLgxQ5atBDdLTHD.OF2BEzA0QVBIHkDeyb64FtMeYp74tTEbbOhZ7f3hgoQ&dib_tag=se&keywords=lavavajillas&qid=1741628096&sprefix=lava%2Caps%2C133&sr=8-15&ufe=app_do%3Aamzn1.fos.0fd54328-1d46-4534-bd0f-16141b40bb5b&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=46246b8fc12706fb908462370b6f9eb1&language=es_ES&ref_=as_li_ss_tl" },
-          { name: "Electrolux SatelliteClean 600", rating: "9.5", reviews: "13800+ LIMPIEZA EXCEPCIONAL", image: "https://m.media-amazon.com/images/I/61A8NBbykwL._AC_SX679_.jpg", url: "https://www.amazon.es/Electrolux-SatelliteClean-600-Lavavajillas-ExtraHygiene/dp/B0CBKX91JR?crid=UJ5XFDW1BZ6Z&dib=eyJ2IjoiMSJ9.hf5hCmf52vtSA12O6Lnaxyo_Oyeg5aOLFSRjHItDw05DZuWFzJl1cjpkz9iZeUmXcXUA9arAipkb2J9x46_KmsJQ2YqbjsPeJIXzecTqnyBsKhYMlxbhuzNoui62Lm_HZPkuZbSsM39o5phMPRKyRZO_73vAJ-b1PVtv04WrddF-8-Vapo6P8VKVPxOQOZJTr_7Sy4vJVH_9aw46igPWEtXQygzlPIrzVWDeRUtSQVvho1WQiGIX9Sfw1PxuVwX1GZM4L5lKGrDRPqnBnUogYNP3tcWs6Jl9Yhxil3jU28bV--gGy70UJN0Z_VvYapLe6uAJSoapp6BpuQRwhBnb7JPFkOZVCB9SccJpwtL5xhmGksm3WDrW660JZ-jLjyJVX0k-Hrdx_bV7hk3B-32zokp1SsE9LBKvTlBXooW2djNNX6ObkxLgxQ5atBDdLTHD.OF2BEzA0QVBIHkDeyb64FtMeYp74tTEbbOhZ7f3hgoQ&dib_tag=se&keywords=lavavajillas&qid=1741628096&sprefix=lava%2Caps%2C133&sr=8-19&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&linkCode=ll1&tag=yocompro0e-21&linkId=5d73170c01a663cab12f0b540069164a&language=es_ES&ref_=as_li_ss_tl" },
-          { name: "BALAY - Lavavajillas", rating: "9.4", reviews: "10700+ Oferta -40 %", image: "https://m.media-amazon.com/images/I/81J89F2Wd+L._AC_SY879_.jpg", url: "https://www.amazon.es/BALAY-Lavavajillas-Instalaci%C3%B3n-Silencioso-Antihuellas/dp/B01LVXU9BF?crid=UJ5XFDW1BZ6Z&dib=eyJ2IjoiMSJ9.hf5hCmf52vtSA12O6Lnaxyo_Oyeg5aOLFSRjHItDw05DZuWFzJl1cjpkz9iZeUmXcXUA9arAipkb2J9x46_KmsJQ2YqbjsPeJIXzecTqnyBsKhYMlxbhuzNoui62Lm_HZPkuZbSsM39o5phMPRKyRZO_73vAJ-b1PVtv04WrddF-8-Vapo6P8VKVPxOQOZJTr_7Sy4vJVH_9aw46igPWEtXQygzlPIrzVWDeRUtSQVvho1WQiGIX9Sfw1PxuVwX1GZM4L5lKGrDRPqnBnUogYNP3tcWs6Jl9Yhxil3jU28bV--gGy70UJN0Z_VvYapLe6uAJSoapp6BpuQRwhBnb7JPFkOZVCB9SccJpwtL5xhmGksm3WDrW660JZ-jLjyJVX0k-Hrdx_bV7hk3B-32zokp1SsE9LBKvTlBXooW2djNNX6ObkxLgxQ5atBDdLTHD.OF2BEzA0QVBIHkDeyb64FtMeYp74tTEbbOhZ7f3hgoQ&dib_tag=se&keywords=lavavajillas&qid=1741628096&sprefix=lava%2Caps%2C133&sr=8-22&ufe=app_do%3Aamzn1.fos.0fd54328-1d46-4534-bd0f-16141b40bb5b&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=caafcb211413c5f3aac6dec12da7bc10&language=es_ES&ref_=as_li_ss_tl" },
-          { name: "LG DF243FV - Lavavajillas", rating: "9.3", reviews: "15600+ Oferta -27 %", image: "https://m.media-amazon.com/images/I/61s-ap8dP1L._AC_SX679_.jpg", url: "https://www.amazon.es/LG-DF243FV-Lavavajillas-Autodiagn%C3%B3stico-Clasificaci%C3%B3n/dp/B0D1CLLK4N?crid=UJ5XFDW1BZ6Z&dib=eyJ2IjoiMSJ9.vdi-yTgUBPMtzmILW5DnLOlA6LLQ2snp9BaoRmoj8pn8IcHi_-u01aA-ADTvD_w5PpL8H9aNpWXBmPjACWr5JPHBVTrSRPpCpJ7JclfHm04eci-8LW3cwDs81QxictJG6FOKNPyPKGhMZHlQoCRtcKzACz5mMgmu4H8WLnMH6xb7ofJxCcwkXgz1K8gljrzIMYSIq6Hz-uoe5OwwSq-yGsk42Va2TOs23KF4E5Ma5aVN1ePfXE3MAjkX-TdVElvKTb56_I4Na_1LC09OrqecqFpJF6Y0ND3S_wpGXvDxqDo.kDKjvkba4-R83AmNKZfld8PGCQ0MVLxUC_MuN0UACe8&dib_tag=se&keywords=lavavajillas&qid=1741628842&sprefix=lava%2Caps%2C133&sr=8-49-spons&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&sp_csd=d2lkZ2V0TmFtZT1zcF9idGY&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=b268bb1d9559296a7afe862d7335879e&language=es_ES&ref_=as_li_ss_tl" },
-          { name: "Cecotec Lavavajillas 60cm", rating: "9.0", reviews: "17400+ Motor Inverter Plus", image: "https://m.media-amazon.com/images/I/71Fkqv8sIuL._AC_SX679_.jpg", url: "https://www.amazon.es/Cecotec-Lavavajillas-Independiente-Cubiertos-Programas/dp/B0BQ1G4HGJ?crid=UJ5XFDW1BZ6Z&dib=eyJ2IjoiMSJ9.vdi-yTgUBPMtzmILW5DnLOlA6LLQ2snp9BaoRmoj8pn8IcHi_-u01aA-ADTvD_w5PpL8H9aNpWXBmPjACWr5JPHBVTrSRPpCpJ7JclfHm04eci-8LW3cwDs81QxictJG6FOKNPyPKGhMZHlQoCRtcKzACz5mMgmu4H8WLnMH6xb7ofJxCcwkXgz1K8gljrzIMYSIq6Hz-uoe5OwwSq-yGsk42Va2TOs23KF4E5Ma5aVN1ePfXE3MAjkX-TdVElvKTb56_I4Na_1LC09OrqecqFpJF6Y0ND3S_wpGXvDxqDo.kDKjvkba4-R83AmNKZfld8PGCQ0MVLxUC_MuN0UACe8&dib_tag=se&keywords=lavavajillas&qid=1741628930&sprefix=lava%2Caps%2C133&sr=8-52-spons&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&sp_csd=d2lkZ2V0TmFtZT1zcF9idGY&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=b994a7fed78d872fb2deb81a2ebf1380&language=es_ES&ref_=as_li_ss_tl" },
-          { name: "BALAY - Lavavajillas", rating: "8.8", reviews: "13300+ Oferta -40 % ", image: "https://m.media-amazon.com/images/I/81J89F2Wd+L._AC_SY879_.jpg", url: "https://www.amazon.es/BALAY-Lavavajillas-Instalaci%C3%B3n-Silencioso-Antihuellas/dp/B01LVXU9BF?crid=UJ5XFDW1BZ6Z&dib=eyJ2IjoiMSJ9.nM5g20kSjnKCcXc7QrNvsL9PhoyhpRWOYP55pSn_CYh9Hp6S56EQF1iP3B3D0KdrxYfaHMWJRSai9A9JmfXQ_vaiz_DKxjD5IxFltzySHrOJMTKMSRKs73wgxz0Fxb5F9Zf46QG8WJ0A5MLtqbJuZuByDJ8Cf7camRNMHcagiXNkKxzbu0iy3BiT_wW_JMZ16g0Oi8kjpK-p1t_7EcosEoUfRBaNkqNcSR6p_4blmUPtk6ubuuZj-4gxGDYzdU-u8yqOUDmIPcNzxQhiYxoPR7ZNJoGISW53TQtTl4uA7ZfeqRobvbyG_3BXXsPi3vTkRJuoMRBr-r5ewbEx11U82I1_-noDrqa0OZTX50fcKGMzKeQySBJvfxZQ4KIpQKFxju5wEzed6YxL3HMrvK4EJAZZCyI4NkFMk5U4tYOu1vkOlaYuvWEDfqWzDDMtINrB.-HbECisYmUJeuXvEL4ZRBDwJmzLKPyVB7WFa9TEoz6k&dib_tag=se&keywords=lavavajillas&qid=1741629074&sprefix=lava%2Caps%2C133&sr=8-7&ufe=app_do%3Aamzn1.fos.0fd54328-1d46-4534-bd0f-16141b40bb5b&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=e45fc4bb54ceb2175bd1693b1db3587f&language=es_ES&ref_=as_li_ss_tl" }
-        ];
+      <div class="product" onclick="redirectToAmazon('https://www.amazon.es/Lavavajillas-BOSCH-SMS6ZCI42E-Inox-3%C2%AABandeja/dp/B091FRVXYJ?crid=UJ5XFDW1BZ6Z&dib=eyJ2IjoiMSJ9.hf5hCmf52vtSA12O6Lnaxyo_Oyeg5aOLFSRjHItDw05DZuWFzJl1cjpkz9iZeUmXcXUA9arAipkb2J9x46_KmsJQ2YqbjsPeJIXzecTqnyBsKhYMlxbhuzNoui62Lm_HZPkuZbSsM39o5phMPRKyRZO_73vAJ-b1PVtv04WrddF-8-Vapo6P8VKVPxOQOZJTr_7Sy4vJVH_9aw46igPWEtXQygzlPIrzVWDeRUtSQVvho1WQiGIX9Sfw1PxuVwX1GZM4L5lKGrDRPqnBnUogYNP3tcWs6Jl9Yhxil3jU28bV--gGy70UJN0Z_VvYapLe6uAJSoapp6BpuQRwhBnb7JPFkOZVCB9SccJpwtL5xhmGksm3WDrW660JZ-jLjyJVX0k-Hrdx_bV7hk3B-32zokp1SsE9LBKvTlBXooW2djNNX6ObkxLgxQ5atBDdLTHD.OF2BEzA0QVBIHkDeyb64FtMeYp74tTEbbOhZ7f3hgoQ&dib_tag=se&keywords=lavavajillas&qid=1741628096&sprefix=lava%2Caps%2C133&sr=8-7&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&linkCode=ll1&tag=yocompro0e-21&linkId=d42ed0db78480aecad305ba752c97b0d&language=es_ES&ref_=as_li_ss_tl');">
+        <span class="rating-score">9.9</span>
+        <img src="https://m.media-amazon.com/images/I/51AaUJGoQtL._AC_SX679_.jpg" alt="Lavavajillas BOSCH SMS6ZCI42E">
+        <div class="product-details">
+          <h2>1. Lavavajillas BOSCH SMS6ZCI42E</h2>
+          <p>⭐⭐⭐⭐⭐ (14,200 opiniones)</p>
+          <a href="https://www.amazon.es/Lavavajillas-BOSCH-SMS6ZCI42E-Inox-3%C2%AABandeja/dp/B091FRVXYJ?crid=UJ5XFDW1BZ6Z&dib=eyJ2IjoiMSJ9.hf5hCmf52vtSA12O6Lnaxyo_Oyeg5aOLFSRjHItDw05DZuWFzJl1cjpkz9iZeUmXcXUA9arAipkb2J9x46_KmsJQ2YqbjsPeJIXzecTqnyBsKhYMlxbhuzNoui62Lm_HZPkuZbSsM39o5phMPRKyRZO_73vAJ-b1PVtv04WrddF-8-Vapo6P8VKVPxOQOZJTr_7Sy4vJVH_9aw46igPWEtXQygzlPIrzVWDeRUtSQVvho1WQiGIX9Sfw1PxuVwX1GZM4L5lKGrDRPqnBnUogYNP3tcWs6Jl9Yhxil3jU28bV--gGy70UJN0Z_VvYapLe6uAJSoapp6BpuQRwhBnb7JPFkOZVCB9SccJpwtL5xhmGksm3WDrW660JZ-jLjyJVX0k-Hrdx_bV7hk3B-32zokp1SsE9LBKvTlBXooW2djNNX6ObkxLgxQ5atBDdLTHD.OF2BEzA0QVBIHkDeyb64FtMeYp74tTEbbOhZ7f3hgoQ&dib_tag=se&keywords=lavavajillas&qid=1741628096&sprefix=lava%2Caps%2C133&sr=8-7&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&linkCode=ll1&tag=yocompro0e-21&linkId=d42ed0db78480aecad305ba752c97b0d&language=es_ES&ref_=as_li_ss_tl" target="_blank">Ver precio</a>
+          <br>
+          <div style='display: flex; align-items: center; gap: 10px;'>
+            <img src='https://s1.qwant.com/thumbr/474x158/9/7/f63c3ffb13724faceb8e31aa326595a97728bf158aeb13ffc95db5f9fa7625/th.jpg?u=https%3A%2F%2Ftse.mm.bing.net%2Fth%3Fid%3DOIP.B1P05zmy1Y_JxrZZilY6kwHaCe%26pid%3DApi&q=0&b=1&p=0&a=0' style='width: 60px; height: auto; display: block; border: 1px solid #ddd; padding: 5px; border-radius: 5px; background-color: white;'>
+            <button class='toggle-info' onclick='event.stopPropagation(); toggleInfo(this)'>Mostrar más</button>
+          </div>
+          <div class="more-info">
+            <p>Lavavajillas independiente con 3 bandejas, clase A+++, sistema ActiveWater para máxima eficiencia y programa automático que ajusta el lavado según la suciedad. Incluye función de media carga y display digital.</p>
+          </div>
+        </div>
+      </div>
 
-        products.forEach((product, index) => {
-          document.write(`
-            <div class="product" onclick="redirectToAmazon('${product.url}');">
-              <span class="rating-score">${product.rating}</span>
-              <img src="${product.image}" alt="Freidora ${index + 1}">
-              <div class="product-details">
-                <h2>${index + 1}. ${product.name}</h2>
-                <p>⭐⭐⭐⭐⭐ (${product.reviews})</p>
-                <a href="${product.url}" target="_blank">Ver precio</a>
-                <br>
-                <div style='display: flex; align-items: center; gap: 10px;'>
-                  <img src='https://s1.qwant.com/thumbr/474x158/9/7/f63c3ffb13724faceb8e31aa326595a97728bf158aeb13ffc95db5f9fa7625/th.jpg?u=https%3A%2F%2Ftse.mm.bing.net%2Fth%3Fid%3DOIP.B1P05zmy1Y_JxrZZilY6kwHaCe%26pid%3DApi&q=0&b=1&p=0&a=0' style='width: 60px; height: auto; display: block; border: 1px solid #ddd; padding: 5px; border-radius: 5px; background-color: white;'>
-                  <button class='toggle-info' onclick='toggleInfo(this)'>Mostrar más</button>
-                </div>
-                <div class="more-info">
-                  <p>Freidora de aire con excelente desempeño y calidad.</p>
-                </div>
-              </div>
-            </div>
-          `);
-        });
-      </script>
+      <div class="product" onclick="redirectToAmazon('https://www.amazon.es/Bosch-Lavavajillas-integrable-AquaStop-SCX6ITB00E/dp/B0DDV1S35Y?crid=UJ5XFDW1BZ6Z&dib=eyJ2IjoiMSJ9.hf5hCmf52vtSA12O6Lnaxyo_Oyeg5aOLFSRjHItDw05DZuWFzJl1cjpkz9iZeUmXcXUA9arAipkb2J9x46_KmsJQ2YqbjsPeJIXzecTqnyBsKhYMlxbhuzNoui62Lm_HZPkuZbSsM39o5phMPRKyRZO_73vAJ-b1PVtv04WrddF-8-Vapo6P8VKVPxOQOZJTr_7Sy4vJVH_9aw46igPWEtXQygzlPIrzVWDeRUtSQVvho1WQiGIX9Sfw1PxuVwX1GZM4L5lKGrDRPqnBnUogYNP3tcWs6Jl9Yhxil3jU28bV--gGy70UJN0Z_VvYapLe6uAJSoapp6BpuQRwhBnb7JPFkOZVCB9SccJpwtL5xhmGksm3WDrW660JZ-jLjyJVX0k-Hrdx_bV7hk3B-32zokp1SsE9LBKvTlBXooW2djNNX6ObkxLgxQ5atBDdLTHD.OF2BEzA0QVBIHkDeyb64FtMeYp74tTEbbOhZ7f3hgoQ&dib_tag=se&keywords=lavavajillas&qid=1741628096&sprefix=lava%2Caps%2C133&sr=8-11&ufe=app_do%3Aamzn1.fos.0fd54328-1d46-4534-bd0f-16141b40bb5b&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=89b1fc6580815d9fa5fe4fc33c98c5ee&language=es_ES&ref_=as_li_ss_tl');">
+        <span class="rating-score">9.8</span>
+        <img src="https://m.media-amazon.com/images/I/512A09i0SOL._AC_SX679_.jpg" alt="Bosch - Lavavajillas integrable">
+        <div class="product-details">
+          <h2>2. Bosch - Lavavajillas integrable</h2>
+          <p>⭐⭐⭐⭐⭐ (16,000+ opiniones)</p>
+          <a href="https://www.amazon.es/Bosch-Lavavajillas-integrable-AquaStop-SCX6ITB00E/dp/B0DDV1S35Y?crid=UJ5XFDW1BZ6Z&dib=eyJ2IjoiMSJ9.hf5hCmf52vtSA12O6Lnaxyo_Oyeg5aOLFSRjHItDw05DZuWFzJl1cjpkz9iZeUmXcXUA9arAipkb2J9x46_KmsJQ2YqbjsPeJIXzecTqnyBsKhYMlxbhuzNoui62Lm_HZPkuZbSsM39o5phMPRKyRZO_73vAJ-b1PVtv04WrddF-8-Vapo6P8VKVPxOQOZJTr_7Sy4vJVH_9aw46igPWEtXQygzlPIrzVWDeRUtSQVvho1WQiGIX9Sfw1PxuVwX1GZM4L5lKGrDRPqnBnUogYNP3tcWs6Jl9Yhxil3jU28bV--gGy70UJN0Z_VvYapLe6uAJSoapp6BpuQRwhBnb7JPFkOZVCB9SccJpwtL5xhmGksm3WDrW660JZ-jLjyJVX0k-Hrdx_bV7hk3B-32zokp1SsE9LBKvTlBXooW2djNNX6ObkxLgxQ5atBDdLTHD.OF2BEzA0QVBIHkDeyb64FtMeYp74tTEbbOhZ7f3hgoQ&dib_tag=se&keywords=lavavajillas&qid=1741628096&sprefix=lava%2Caps%2C133&sr=8-11&ufe=app_do%3Aamzn1.fos.0fd54328-1d46-4534-bd0f-16141b40bb5b&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=89b1fc6580815d9fa5fe4fc33c98c5ee&language=es_ES&ref_=as_li_ss_tl" target="_blank">Ver precio</a>
+          <br>
+          <div style='display: flex; align-items: center; gap: 10px;'>
+            <img src='https://s1.qwant.com/thumbr/474x158/9/7/f63c3ffb13724faceb8e31aa326595a97728bf158aeb13ffc95db5f9fa7625/th.jpg?u=https%3A%2F%2Ftse.mm.bing.net%2Fth%3Fid%3DOIP.B1P05zmy1Y_JxrZZilY6kwHaCe%26pid%3DApi&q=0&b=1&p=0&a=0' style='width: 60px; height: auto; display: block; border: 1px solid #ddd; padding: 5px; border-radius: 5px; background-color: white;'>
+            <button class='toggle-info' onclick='event.stopPropagation(); toggleInfo(this)'>Mostrar más</button>
+          </div>
+          <div class="more-info">
+            <p>Lavavajillas compacto integrable con sistema AquaStop contra fugas, 6 programas de lavado y tecnología EcoSilence Drive para un funcionamiento silencioso (solo 44 dB). Incluye bandeja para cubiertos ajustable y función de ahorro de tiempo.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="product" onclick="redirectToAmazon('https://www.amazon.es/Siemens-SN23EC14CE-Lavavajillas-independiente-compatible/dp/B08H5X14V9?crid=UJ5XFDW1BZ6Z&dib=eyJ2IjoiMSJ9.hf5hCmf52vtSA12O6Lnaxyo_Oyeg5aOLFSRjHItDw05DZuWFzJl1cjpkz9iZeUmXcXUA9arAipkb2J9x46_KmsJQ2YqbjsPeJIXzecTqnyBsKhYMlxbhuzNoui62Lm_HZPkuZbSsM39o5phMPRKyRZO_73vAJ-b1PVtv04WrddF-8-Vapo6P8VKVPxOQOZJTr_7Sy4vJVH_9aw46igPWEtXQygzlPIrzVWDeRUtSQVvho1WQiGIX9Sfw1PxuVwX1GZM4L5lKGrDRPqnBnUogYNP3tcWs6Jl9Yhxil3jU28bV--gGy70UJN0Z_VvYapLe6uAJSoapp6BpuQRwhBnb7JPFkOZVCB9SccJpwtL5xhmGksm3WDrW660JZ-jLjyJVX0k-Hrdx_bV7hk3B-32zokp1SsE9LBKvTlBXooW2djNNX6ObkxLgxQ5atBDdLTHD.OF2BEzA0QVBIHkDeyb64FtMeYp74tTEbbOhZ7f3hgoQ&dib_tag=se&keywords=lavavajillas&qid=1741628096&sprefix=lava%2Caps%2C133&sr=8-12&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&linkCode=ll1&tag=yocompro0e-21&linkId=085d71ea3d3c7d71da1a0f152eeb4ac8&language=es_ES&ref_=as_li_ss_tl');">
+        <span class="rating-score">9.7</span>
+        <img src="https://m.media-amazon.com/images/I/71tdZzzDGUL._AC_SX679_.jpg" alt="Siemens SN23EC14CE iQ300">
+        <div class="product-details">
+          <h2>3. Siemens SN23EC14CE iQ300</h2>
+          <p>⭐⭐⭐⭐⭐ (14,200+ opiniones)</p>
+          <a href="https://www.amazon.es/Siemens-SN23EC14CE-Lavavajillas-independiente-compatible/dp/B08H5X14V9?crid=UJ5XFDW1BZ6Z&dib=eyJ2IjoiMSJ9.hf5hCmf52vtSA12O6Lnaxyo_Oyeg5aOLFSRjHItDw05DZuWFzJl1cjpkz9iZeUmXcXUA9arAipkb2J9x46_KmsJQ2YqbjsPeJIXzecTqnyBsKhYMlxbhuzNoui62Lm_HZPkuZbSsM39o5phMPRKyRZO_73vAJ-b1PVtv04WrddF-8-Vapo6P8VKVPxOQOZJTr_7Sy4vJVH_9aw46igPWEtXQygzlPIrzVWDeRUtSQVvho1WQiGIX9Sfw1PxuVwX1GZM4L5lKGrDRPqnBnUogYNP3tcWs6Jl9Yhxil3jU28bV--gGy70UJN0Z_VvYapLe6uAJSoapp6BpuQRwhBnb7JPFkOZVCB9SccJpwtL5xhmGksm3WDrW660JZ-jLjyJVX0k-Hrdx_bV7hk3B-32zokp1SsE9LBKvTlBXooW2djNNX6ObkxLgxQ5atBDdLTHD.OF2BEzA0QVBIHkDeyb64FtMeYp74tTEbbOhZ7f3hgoQ&dib_tag=se&keywords=lavavajillas&qid=1741628096&sprefix=lava%2Caps%2C133&sr=8-12&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&linkCode=ll1&tag=yocompro0e-21&linkId=085d71ea3d3c7d71da1a0f152eeb4ac8&language=es_ES&ref_=as_li_ss_tl" target="_blank">Ver precio</a>
+          <br>
+          <div style='display: flex; align-items: center; gap: 10px;'>
+            <img src='https://s1.qwant.com/thumbr/474x158/9/7/f63c3ffb13724faceb8e31aa326595a97728bf158aeb13ffc95db5f9fa7625/th.jpg?u=https%3A%2F%2Ftse.mm.bing.net%2Fth%3Fid%3DOIP.B1P05zmy1Y_JxrZZilY6kwHaCe%26pid%3DApi&q=0&b=1&p=0&a=0' style='width: 60px; height: auto; display: block; border: 1px solid #ddd; padding: 5px; border-radius: 5px; background-color: white;'>
+            <button class='toggle-info' onclick='event.stopPropagation(); toggleInfo(this)'>Mostrar más</button>
+          </div>
+          <div class="more-info">
+            <p>Lavavajillas independiente con función easyStart, sistema de secado extraDry y tecnología sensorDry que detecta el nivel de humedad para un secado perfecto. Clase energética A+++, 14 cubiertos y programa automático con sensor de turbidez.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="product" onclick="redirectToAmazon('https://www.amazon.es/Bosch-Elettrodomestici-SMV6YCX02E-Concealed-Dishwasher/dp/B0CGRHZDK9?crid=UJ5XFDW1BZ6Z&dib=eyJ2IjoiMSJ9.hf5hCmf52vtSA12O6Lnaxyo_Oyeg5aOLFSRjHItDw05DZuWFzJl1cjpkz9iZeUmXcXUA9arAipkb2J9x46_KmsJQ2YqbjsPeJIXzecTqnyBsKhYMlxbhuzNoui62Lm_HZPkuZbSsM39o5phMPRKyRZO_73vAJ-b1PVtv04WrddF-8-Vapo6P8VKVPxOQOZJTr_7Sy4vJVH_9aw46igPWEtXQygzlPIrzVWDeRUtSQVvho1WQiGIX9Sfw1PxuVwX1GZM4L5lKGrDRPqnBnUogYNP3tcWs6Jl9Yhxil3jU28bV--gGy70UJN0Z_VvYapLe6uAJSoapp6BpuQRwhBnb7JPFkOZVCB9SccJpwtL5xhmGksm3WDrW660JZ-jLjyJVX0k-Hrdx_bV7hk3B-32zokp1SsE9LBKvTlBXooW2djNNX6ObkxLgxQ5atBDdLTHD.OF2BEzA0QVBIHkDeyb64FtMeYp74tTEbbOhZ7f3hgoQ&dib_tag=se&keywords=lavavajillas&qid=1741628096&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&sprefix=lava%2Caps%2C133&sr=8-13&linkCode=ll1&tag=yocompro0e-21&linkId=e380e3eb8e01e8ebbe4d3740d362539f&language=es_ES&ref_=as_li_ss_tl');">
+        <span class="rating-score">9.5</span>
+        <img src="https://m.media-amazon.com/images/I/71dkC+wc3ZL._AC_SX679_.jpg" alt="Bosch Lavavajillas Serie 6">
+        <div class="product-details">
+          <h2>4. Bosch Lavavajillas Serie 6</h2>
+          <p>⭐⭐⭐⭐⭐ (13,800+ opiniones)</p>
+          <a href="https://www.amazon.es/Bosch-Elettrodomestici-SMV6YCX02E-Concealed-Dishwasher/dp/B0CGRHZDK9?crid=UJ5XFDW1BZ6Z&dib=eyJ2IjoiMSJ9.hf5hCmf52vtSA12O6Lnaxyo_Oyeg5aOLFSRjHItDw05DZuWFzJl1cjpkz9iZeUmXcXUA9arAipkb2J9x46_KmsJQ2YqbjsPeJIXzecTqnyBsKhYMlxbhuzNoui62Lm_HZPkuZbSsM39o5phMPRKyRZO_73vAJ-b1PVtv04WrddF-8-Vapo6P8VKVPxOQOZJTr_7Sy4vJVH_9aw46igPWEtXQygzlPIrzVWDeRUtSQVvho1WQiGIX9Sfw1PxuVwX1GZM4L5lKGrDRPqnBnUogYNP3tcWs6Jl9Yhxil3jU28bV--gGy70UJN0Z_VvYapLe6uAJSoapp6BpuQRwhBnb7JPFkOZVCB9SccJpwtL5xhmGksm3WDrW660JZ-jLjyJVX0k-Hrdx_bV7hk3B-32zokp1SsE9LBKvTlBXooW2djNNX6ObkxLgxQ5atBDdLTHD.OF2BEzA0QVBIHkDeyb64FtMeYp74tTEbbOhZ7f3hgoQ&dib_tag=se&keywords=lavavajillas&qid=1741628096&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&sprefix=lava%2Caps%2C133&sr=8-13&linkCode=ll1&tag=yocompro0e-21&linkId=e380e3eb8e01e8ebbe4d3740d362539f&language=es_ES&ref_=as_li_ss_tl" target="_blank">Ver precio</a>
+          <br>
+          <div style='display: flex; align-items: center; gap: 10px;'>
+            <img src='https://s1.qwant.com/thumbr/474x158/9/7/f63c3ffb13724faceb8e31aa326595a97728bf158aeb13ffc95db5f9fa7625/th.jpg?u=https%3A%2F%2Ftse.mm.bing.net%2Fth%3Fid%3DOIP.B1P05zmy1Y_JxrZZilY6kwHaCe%26pid%3DApi&q=0&b=1&p=0&a=0' style='width: 60px; height: auto; display: block; border: 1px solid #ddd; padding: 5px; border-radius: 5px; background-color: white;'>
+            <button class='toggle-info' onclick='event.stopPropagation(); toggleInfo(this)'>Mostrar más</button>
+          </div>
+          <div class="more-info">
+            <p>Lavavajillas empotrable con display táctil, 6 programas de lavado, función VarioSpeed que reduce el tiempo de lavado hasta un 50% y tecnología ActiveWater. Incluye bandeja superior ajustable en altura y sistema de secado por condensación.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="product" onclick="redirectToAmazon('https://www.amazon.es/Balay-Lavavajillas-3VS506BP-Blanco/dp/B085M7LQ9S?crid=UJ5XFDW1BZ6Z&dib=eyJ2IjoiMSJ9.hf5hCmf52vtSA12O6Lnaxyo_Oyeg5aOLFSRjHItDw05DZuWFzJl1cjpkz9iZeUmXcXUA9arAipkb2J9x46_KmsJQ2YqbjsPeJIXzecTqnyBsKhYMlxbhuzNoui62Lm_HZPkuZbSsM39o5phMPRKyRZO_73vAJ-b1PVtv04WrddF-8-Vapo6P8VKVPxOQOZJTr_7Sy4vJVH_9aw46igPWEtXQygzlPIrzVWDeRUtSQVvho1WQiGIX9Sfw1PxuVwX1GZM4L5lKGrDRPqnBnUogYNP3tcWs6Jl9Yhxil3jU28bV--gGy70UJN0Z_VvYapLe6uAJSoapp6BpuQRwhBnb7JPFkOZVCB9SccJpwtL5xhmGksm3WDrW660JZ-jLjyJVX0k-Hrdx_bV7hk3B-32zokp1SsE9LBKvTlBXooW2djNNX6ObkxLgxQ5atBDdLTHD.OF2BEzA0QVBIHkDeyb64FtMeYp74tTEbbOhZ7f3hgoQ&dib_tag=se&keywords=lavavajillas&qid=1741628096&sprefix=lava%2Caps%2C133&sr=8-15&ufe=app_do%3Aamzn1.fos.0fd54328-1d46-4534-bd0f-16141b40bb5b&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=46246b8fc12706fb908462370b6f9eb1&language=es_ES&ref_=as_li_ss_tl');">
+        <span class="rating-score">9.5</span>
+        <img src="https://m.media-amazon.com/images/I/61FSEmXdCJL._AC_SY879_.jpg" alt="Balay - Lavavajillas">
+        <div class="product-details">
+          <h2>5. Balay - Lavavajillas 3VS506BP</h2>
+          <p>⭐⭐⭐⭐⭐ (23,900+ opiniones)</p>
+          <a href="https://www.amazon.es/Balay-Lavavajillas-3VS506BP-Blanco/dp/B085M7LQ9S?crid=UJ5XFDW1BZ6Z&dib=eyJ2IjoiMSJ9.hf5hCmf52vtSA12O6Lnaxyo_Oyeg5aOLFSRjHItDw05DZuWFzJl1cjpkz9iZeUmXcXUA9arAipkb2J9x46_KmsJQ2YqbjsPeJIXzecTqnyBsKhYMlxbhuzNoui62Lm_HZPkuZbSsM39o5phMPRKyRZO_73vAJ-b1PVtv04WrddF-8-Vapo6P8VKVPxOQOZJTr_7Sy4vJVH_9aw46igPWEtXQygzlPIrzVWDeRUtSQVvho1WQiGIX9Sfw1PxuVwX1GZM4L5lKGrDRPqnBnUogYNP3tcWs6Jl9Yhxil3jU28bV--gGy70UJN0Z_VvYapLe6uAJSoapp6BpuQRwhBnb7JPFkOZVCB9SccJpwtL5xhmGksm3WDrW660JZ-jLjyJVX0k-Hrdx_bV7hk3B-32zokp1SsE9LBKvTlBXooW2djNNX6ObkxLgxQ5atBDdLTHD.OF2BEzA0QVBIHkDeyb64FtMeYp74tTEbbOhZ7f3hgoQ&dib_tag=se&keywords=lavavajillas&qid=1741628096&sprefix=lava%2Caps%2C133&sr=8-15&ufe=app_do%3Aamzn1.fos.0fd54328-1d46-4534-bd0f-16141b40bb5b&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=46246b8fc12706fb908462370b6f9eb1&language=es_ES&ref_=as_li_ss_tl" target="_blank">Ver precio</a>
+          <br>
+          <div style='display: flex; align-items: center; gap: 10px;'>
+            <img src='https://s1.qwant.com/thumbr/474x158/9/7/f63c3ffb13724faceb8e31aa326595a97728bf158aeb13ffc95db5f9fa7625/th.jpg?u=https%3A%2F%2Ftse.mm.bing.net%2Fth%3Fid%3DOIP.B1P05zmy1Y_JxrZZilY6kwHaCe%26pid%3DApi&q=0&b=1&p=0&a=0' style='width: 60px; height: auto; display: block; border: 1px solid #ddd; padding: 5px; border-radius: 5px; background-color: white;'>
+            <button class='toggle-info' onclick='event.stopPropagation(); toggleInfo(this)'>Mostrar más</button>
+          </div>
+          <div class="more-info">
+            <p>Lavavajillas blanco con 3 bandejas, programa intensivo para vajillas muy sucias, función de media carga y sistema de secado por condensación. Clase energética A++, consumo de agua de 9.5 litros por ciclo y nivel de ruido de 46 dB.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="product" onclick="redirectToAmazon('https://www.amazon.es/Electrolux-SatelliteClean-600-Lavavajillas-ExtraHygiene/dp/B0CBKX91JR?crid=UJ5XFDW1BZ6Z&dib=eyJ2IjoiMSJ9.hf5hCmf52vtSA12O6Lnaxyo_Oyeg5aOLFSRjHItDw05DZuWFzJl1cjpkz9iZeUmXcXUA9arAipkb2J9x46_KmsJQ2YqbjsPeJIXzecTqnyBsKhYMlxbhuzNoui62Lm_HZPkuZbSsM39o5phMPRKyRZO_73vAJ-b1PVtv04WrddF-8-Vapo6P8VKVPxOQOZJTr_7Sy4vJVH_9aw46igPWEtXQygzlPIrzVWDeRUtSQVvho1WQiGIX9Sfw1PxuVwX1GZM4L5lKGrDRPqnBnUogYNP3tcWs6Jl9Yhxil3jU28bV--gGy70UJN0Z_VvYapLe6uAJSoapp6BpuQRwhBnb7JPFkOZVCB9SccJpwtL5xhmGksm3WDrW660JZ-jLjyJVX0k-Hrdx_bV7hk3B-32zokp1SsE9LBKvTlBXooW2djNNX6ObkxLgxQ5atBDdLTHD.OF2BEzA0QVBIHkDeyb64FtMeYp74tTEbbOhZ7f3hgoQ&dib_tag=se&keywords=lavavajillas&qid=1741628096&sprefix=lava%2Caps%2C133&sr=8-19&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&linkCode=ll1&tag=yocompro0e-21&linkId=5d73170c01a663cab12f0b540069164a&language=es_ES&ref_=as_li_ss_tl');">
+        <span class="rating-score">9.5</span>
+        <img src="https://m.media-amazon.com/images/I/61A8NBbykwL._AC_SX679_.jpg" alt="Electrolux SatelliteClean 600">
+        <div class="product-details">
+          <h2>6. Electrolux SatelliteClean 600</h2>
+          <p>⭐⭐⭐⭐⭐ (13,800+ opiniones)</p>
+          <a href="https://www.amazon.es/Electrolux-SatelliteClean-600-Lavavajillas-ExtraHygiene/dp/B0CBKX91JR?crid=UJ5XFDW1BZ6Z&dib=eyJ2IjoiMSJ9.hf5hCmf52vtSA12O6Lnaxyo_Oyeg5aOLFSRjHItDw05DZuWFzJl1cjpkz9iZeUmXcXUA9arAipkb2J9x46_KmsJQ2YqbjsPeJIXzecTqnyBsKhYMlxbhuzNoui62Lm_HZPkuZbSsM39o5phMPRKyRZO_73vAJ-b1PVtv04WrddF-8-Vapo6P8VKVPxOQOZJTr_7Sy4vJVH_9aw46igPWEtXQygzlPIrzVWDeRUtSQVvho1WQiGIX9Sfw1PxuVwX1GZM4L5lKGrDRPqnBnUogYNP3tcWs6Jl9Yhxil3jU28bV--gGy70UJN0Z_VvYapLe6uAJSoapp6BpuQRwhBnb7JPFkOZVCB9SccJpwtL5xhmGksm3WDrW660JZ-jLjyJVX0k-Hrdx_bV7hk3B-32zokp1SsE9LBKvTlBXooW2djNNX6ObkxLgxQ5atBDdLTHD.OF2BEzA0QVBIHkDeyb64FtMeYp74tTEbbOhZ7f3hgoQ&dib_tag=se&keywords=lavavajillas&qid=1741628096&sprefix=lava%2Caps%2C133&sr=8-19&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&linkCode=ll1&tag=yocompro0e-21&linkId=5d73170c01a663cab12f0b540069164a&language=es_ES&ref_=as_li_ss_tl" target="_blank">Ver precio</a>
+          <br>
+          <div style='display: flex; align-items: center; gap: 10px;'>
+            <img src='https://s1.qwant.com/thumbr/474x158/9/7/f63c3ffb13724faceb8e31aa326595a97728bf158aeb13ffc95db5f9fa7625/th.jpg?u=https%3A%2F%2Ftse.mm.bing.net%2Fth%3Fid%3DOIP.B1P05zmy1Y_JxrZZilY6kwHaCe%26pid%3DApi&q=0&b=1&p=0&a=0' style='width: 60px; height: auto; display: block; border: 1px solid #ddd; padding: 5px; border-radius: 5px; background-color: white;'>
+            <button class='toggle-info' onclick='event.stopPropagation(); toggleInfo(this)'>Mostrar más</button>
+          </div>
+          <div class="more-info">
+            <p>Lavavajillas con tecnología ExtraHygiene que elimina el 99.99% de las bacterias, sistema SatelliteClean para una limpieza uniforme y programa automático. Incluye función de secado automático, bandeja superior ajustable y consumo de agua de solo 9 litros por ciclo.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="product" onclick="redirectToAmazon('https://www.amazon.es/BALAY-Lavavajillas-Instalaci%C3%B3n-Silencioso-Antihuellas/dp/B01LVXU9BF?crid=UJ5XFDW1BZ6Z&dib=eyJ2IjoiMSJ9.hf5hCmf52vtSA12O6Lnaxyo_Oyeg5aOLFSRjHItDw05DZuWFzJl1cjpkz9iZeUmXcXUA9arAipkb2J9x46_KmsJQ2YqbjsPeJIXzecTqnyBsKhYMlxbhuzNoui62Lm_HZPkuZbSsM39o5phMPRKyRZO_73vAJ-b1PVtv04WrddF-8-Vapo6P8VKVPxOQOZJTr_7Sy4vJVH_9aw46igPWEtXQygzlPIrzVWDeRUtSQVvho1WQiGIX9Sfw1PxuVwX1GZM4L5lKGrDRPqnBnUogYNP3tcWs6Jl9Yhxil3jU28bV--gGy70UJN0Z_VvYapLe6uAJSoapp6BpuQRwhBnb7JPFkOZVCB9SccJpwtL5xhmGksm3WDrW660JZ-jLjyJVX0k-Hrdx_bV7hk3B-32zokp1SsE9LBKvTlBXooW2djNNX6ObkxLgxQ5atBDdLTHD.OF2BEzA0QVBIHkDeyb64FtMeYp74tTEbbOhZ7f3hgoQ&dib_tag=se&keywords=lavavajillas&qid=1741628096&sprefix=lava%2Caps%2C133&sr=8-22&ufe=app_do%3Aamzn1.fos.0fd54328-1d46-4534-bd0f-16141b40bb5b&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=caafcb211413c5f3aac6dec12da7bc10&language=es_ES&ref_=as_li_ss_tl');">
+        <span class="rating-score">9.4</span>
+        <img src="https://m.media-amazon.com/images/I/81J89F2Wd+L._AC_SY879_.jpg" alt="BALAY - Lavavajillas">
+        <div class="product-details">
+          <h2>7. BALAY - Lavavajillas 3VB726B</h2>
+          <p>⭐⭐⭐⭐⭐ (10,700+ opiniones)</p>
+          <a href="https://www.amazon.es/BALAY-Lavavajillas-Instalaci%C3%B3n-Silencioso-Antihuellas/dp/B01LVXU9BF?crid=UJ5XFDW1BZ6Z&dib=eyJ2IjoiMSJ9.hf5hCmf52vtSA12O6Lnaxyo_Oyeg5aOLFSRjHItDw05DZuWFzJl1cjpkz9iZeUmXcXUA9arAipkb2J9x46_KmsJQ2YqbjsPeJIXzecTqnyBsKhYMlxbhuzNoui62Lm_HZPkuZbSsM39o5phMPRKyRZO_73vAJ-b1PVtv04WrddF-8-Vapo6P8VKVPxOQOZJTr_7Sy4vJVH_9aw46igPWEtXQygzlPIrzVWDeRUtSQVvho1WQiGIX9Sfw1PxuVwX1GZM4L5lKGrDRPqnBnUogYNP3tcWs6Jl9Yhxil3jU28bV--gGy70UJN0Z_VvYapLe6uAJSoapp6BpuQRwhBnb7JPFkOZVCB9SccJpwtL5xhmGksm3WDrW660JZ-jLjyJVX0k-Hrdx_bV7hk3B-32zokp1SsE9LBKvTlBXooW2djNNX6ObkxLgxQ5atBDdLTHD.OF2BEzA0QVBIHkDeyb64FtMeYp74tTEbbOhZ7f3hgoQ&dib_tag=se&keywords=lavavajillas&qid=1741628096&sprefix=lava%2Caps%2C133&sr=8-22&ufe=app_do%3Aamzn1.fos.0fd54328-1d46-4534-bd0f-16141b40bb5b&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=caafcb211413c5f3aac6dec12da7bc10&language=es_ES&ref_=as_li_ss_tl" target="_blank">Ver precio</a>
+          <br>
+          <div style='display: flex; align-items: center; gap: 10px;'>
+            <img src='https://s1.qwant.com/thumbr/474x158/9/7/f63c3ffb13724faceb8e31aa326595a97728bf158aeb13ffc95db5f9fa7625/th.jpg?u=https%3A%2F%2Ftse.mm.bing.net%2Fth%3Fid%3DOIP.B1P05zmy1Y_JxrZZilY6kwHaCe%26pid%3DApi&q=0&b=1&p=0&a=0' style='width: 60px; height: auto; display: block; border: 1px solid #ddd; padding: 5px; border-radius: 5px; background-color: white;'>
+            <button class='toggle-info' onclick='event.stopPropagation(); toggleInfo(this)'>Mostrar más</button>
+          </div>
+          <div class="more-info">
+            <p>Lavavajillas integrable con acabado antihuellas, sistema de lavado por zonas, función de secado intensivo y programa Eco para un bajo consumo de agua y energía. Clase energética A+++, capacidad para 13 cubiertos y nivel de ruido de 44 dB.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="product" onclick="redirectToAmazon('https://www.amazon.es/LG-DF243FV-Lavavajillas-Autodiagn%C3%B3stico-Clasificaci%C3%B3n/dp/B0D1CLLK4N?crid=UJ5XFDW1BZ6Z&dib=eyJ2IjoiMSJ9.vdi-yTgUBPMtzmILW5DnLOlA6LLQ2snp9BaoRmoj8pn8IcHi_-u01aA-ADTvD_w5PpL8H9aNpWXBmPjACWr5JPHBVTrSRPpCpJ7JclfHm04eci-8LW3cwDs81QxictJG6FOKNPyPKGhMZHlQoCRtcKzACz5mMgmu4H8WLnMH6xb7ofJxCcwkXgz1K8gljrzIMYSIq6Hz-uoe5OwwSq-yGsk42Va2TOs23KF4E5Ma5aVN1ePfXE3MAjkX-TdVElvKTb56_I4Na_1LC09OrqecqFpJF6Y0ND3S_wpGXvDxqDo.kDKjvkba4-R83AmNKZfld8PGCQ0MVLxUC_MuN0UACe8&dib_tag=se&keywords=lavavajillas&qid=1741628842&sprefix=lava%2Caps%2C133&sr=8-49-spons&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&sp_csd=d2lkZ2V0TmFtZT1zcF9idGY&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=b268bb1d9559296a7afe862d7335879e&language=es_ES&ref_=as_li_ss_tl');">
+        <span class="rating-score">9.3</span>
+        <img src="https://m.media-amazon.com/images/I/61s-ap8dP1L._AC_SX679_.jpg" alt="LG DF243FV - Lavavajillas">
+        <div class="product-details">
+          <h2>8. LG DF243FV - Lavavajillas</h2>
+          <p>⭐⭐⭐⭐⭐ (15,600+ opiniones)</p>
+          <a href="https://www.amazon.es/LG-DF243FV-Lavavajillas-Autodiagn%C3%B3stico-Clasificaci%C3%B3n/dp/B0D1CLLK4N?crid=UJ5XFDW1BZ6Z&dib=eyJ2IjoiMSJ9.vdi-yTgUBPMtzmILW5DnLOlA6LLQ2snp9BaoRmoj8pn8IcHi_-u01aA-ADTvD_w5PpL8H9aNpWXBmPjACWr5JPHBVTrSRPpCpJ7JclfHm04eci-8LW3cwDs81QxictJG6FOKNPyPKGhMZHlQoCRtcKzACz5mMgmu4H8WLnMH6xb7ofJxCcwkXgz1K8gljrzIMYSIq6Hz-uoe5OwwSq-yGsk42Va2TOs23KF4E5Ma5aVN1ePfXE3MAjkX-TdVElvKTb56_I4Na_1LC09OrqecqFpJF6Y0ND3S_wpGXvDxqDo.kDKjvkba4-R83AmNKZfld8PGCQ0MVLxUC_MuN0UACe8&dib_tag=se&keywords=lavavajillas&qid=1741628842&sprefix=lava%2Caps%2C133&sr=8-49-spons&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&sp_csd=d2lkZ2V0TmFtZT1zcF9idGY&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=b268bb1d9559296a7afe862d7335879e&language=es_ES&ref_=as_li_ss_tl" target="_blank">Ver precio</a>
+          <br>
+          <div style='display: flex; align-items: center; gap: 10px;'>
+            <img src='https://s1.qwant.com/thumbr/474x158/9/7/f63c3ffb13724faceb8e31aa326595a97728bf158aeb13ffc95db5f9fa7625/th.jpg?u=https%3A%2F%2Ftse.mm.bing.net%2Fth%3Fid%3DOIP.B1P05zmy1Y_JxrZZilY6kwHaCe%26pid%3DApi&q=0&b=1&p=0&a=0' style='width: 60px; height: auto; display: block; border: 1px solid #ddd; padding: 5px; border-radius: 5px; background-color: white;'>
+            <button class='toggle-info' onclick='event.stopPropagation(); toggleInfo(this)'>Mostrar más</button>
+          </div>
+          <div class="more-info">
+            <p>Lavavajillas con sistema QuadWash que proporciona una limpieza en 4 direcciones, función Auto Door Open para un mejor secado y tecnología TrueSteam. Incluye programa inteligente que detecta la suciedad, capacidad para 14 cubiertos y clasificación energética A+++.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="product" onclick="redirectToAmazon('https://www.amazon.es/Cecotec-Lavavajillas-Independiente-Cubiertos-Programas/dp/B0BQ1G4HGJ?crid=UJ5XFDW1BZ6Z&dib=eyJ2IjoiMSJ9.vdi-yTgUBPMtzmILW5DnLOlA6LLQ2snp9BaoRmoj8pn8IcHi_-u01aA-ADTvD_w5PpL8H9aNpWXBmPjACWr5JPHBVTrSRPpCpJ7JclfHm04eci-8LW3cwDs81QxictJG6FOKNPyPKGhMZHlQoCRtcKzACz5mMgmu4H8WLnMH6xb7ofJxCcwkXgz1K8gljrzIMYSIq6Hz-uoe5OwwSq-yGsk42Va2TOs23KF4E5Ma5aVN1ePfXE3MAjkX-TdVElvKTb56_I4Na_1LC09OrqecqFpJF6Y0ND3S_wpGXvDxqDo.kDKjvkba4-R83AmNKZfld8PGCQ0MVLxUC_MuN0UACe8&dib_tag=se&keywords=lavavajillas&qid=1741628930&sprefix=lava%2Caps%2C133&sr=8-52-spons&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&sp_csd=d2lkZ2V0TmFtZT1zcF9idGY&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=b994a7fed78d872fb2deb81a2ebf1380&language=es_ES&ref_=as_li_ss_tl');">
+        <span class="rating-score">9.0</span>
+        <img src="https://m.media-amazon.com/images/I/71Fkqv8sIuL._AC_SX679_.jpg" alt="Cecotec Lavavajillas 60cm">
+        <div class="product-details">
+          <h2>9. Cecotec Lavavajillas 60cm</h2>
+          <p>⭐⭐⭐⭐⭐ (17,400+ opiniones)</p>
+          <a href="https://www.amazon.es/Cecotec-Lavavajillas-Independiente-Cubiertos-Programas/dp/B0BQ1G4HGJ?crid=UJ5XFDW1BZ6Z&dib=eyJ2IjoiMSJ9.vdi-yTgUBPMtzmILW5DnLOlA6LLQ2snp9BaoRmoj8pn8IcHi_-u01aA-ADTvD_w5PpL8H9aNpWXBmPjACWr5JPHBVTrSRPpCpJ7JclfHm04eci-8LW3cwDs81QxictJG6FOKNPyPKGhMZHlQoCRtcKzACz5mMgmu4H8WLnMH6xb7ofJxCcwkXgz1K8gljrzIMYSIq6Hz-uoe5OwwSq-yGsk42Va2TOs23KF4E5Ma5aVN1ePfXE3MAjkX-TdVElvKTb56_I4Na_1LC09OrqecqFpJF6Y0ND3S_wpGXvDxqDo.kDKjvkba4-R83AmNKZfld8PGCQ0MVLxUC_MuN0UACe8&dib_tag=se&keywords=lavavajillas&qid=1741628930&sprefix=lava%2Caps%2C133&sr=8-52-spons&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&sp_csd=d2lkZ2V0TmFtZT1zcF9idGY&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=b994a7fed78d872fb2deb81a2ebf1380&language=es_ES&ref_=as_li_ss_tl" target="_blank">Ver precio</a>
+          <br>
+          <div style='display: flex; align-items: center; gap: 10px;'>
+            <img src='https://s1.qwant.com/thumbr/474x158/9/7/f63c3ffb13724faceb8e31aa326595a97728bf158aeb13ffc95db5f9fa7625/th.jpg?u=https%3A%2F%2Ftse.mm.bing.net%2Fth%3Fid%3DOIP.B1P05zmy1Y_JxrZZilY6kwHaCe%26pid%3DApi&q=0&b=1&p=0&a=0' style='width: 60px; height: auto; display: block; border: 1px solid #ddd; padding: 5px; border-radius: 5px; background-color: white;'>
+            <button class='toggle-info' onclick='event.stopPropagation(); toggleInfo(this)'>Mostrar más</button>
+          </div>
+          <div class="more-info">
+            <p>Lavavajillas independiente con Motor Inverter Plus para mayor durabilidad, 8 programas de lavado, display LED y función de ahorro de tiempo. Capacidad para 14 cubiertos, clase energética A++ y sistema de secado por condensación con ventilación automática.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="product" onclick="redirectToAmazon('https://www.amazon.es/BALAY-Lavavajillas-Instalaci%C3%B3n-Silencioso-Antihuellas/dp/B01LVXU9BF?crid=UJ5XFDW1BZ6Z&dib=eyJ2IjoiMSJ9.nM5g20kSjnKCcXc7QrNvsL9PhoyhpRWOYP55pSn_CYh9Hp6S56EQF1iP3B3D0KdrxYfaHMWJRSai9A9JmfXQ_vaiz_DKxjD5IxFltzySHrOJMTKMSRKs73wgxz0Fxb5F9Zf46QG8WJ0A5MLtqbJuZuByDJ8Cf7camRNMHcagiXNkKxzbu0iy3BiT_wW_JMZ16g0Oi8kjpK-p1t_7EcosEoUfRBaNkqNcSR6p_4blmUPtk6ubuuZj-4gxGDYzdU-u8yqOUDmIPcNzxQhiYxoPR7ZNJoGISW53TQtTl4uA7ZfeqRobvbyG_3BXXsPi3vTkRJuoMRBr-r5ewbEx11U82I1_-noDrqa0OZTX50fcKGMzKeQySBJvfxZQ4KIpQKFxju5wEzed6YxL3HMrvK4EJAZZCyI4NkFMk5U4tYOu1vkOlaYuvWEDfqWzDDMtINrB.-HbECisYmUJeuXvEL4ZRBDwJmzLKPyVB7WFa9TEoz6k&dib_tag=se&keywords=lavavajillas&qid=1741629074&sprefix=lava%2Caps%2C133&sr=8-7&ufe=app_do%3Aamzn1.fos.0fd54328-1d46-4534-bd0f-16141b40bb5b&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=e45fc4bb54ceb2175bd1693b1db3587f&language=es_ES&ref_=as_li_ss_tl');">
+        <span class="rating-score">8.8</span>
+        <img src="https://m.media-amazon.com/images/I/81J89F2Wd+L._AC_SY879_.jpg" alt="BALAY - Lavavajillas">
+        <div class="product-details">
+          <h2>10. BALAY - Lavavajillas 3VB726B</h2>
+          <p>⭐⭐⭐⭐⭐ (13,300+ opiniones)</p>
+          <a href="https://www.amazon.es/BALAY-Lavavajillas-Instalaci%C3%B3n-Silencioso-Antihuellas/dp/B01LVXU9BF?crid=UJ5XFDW1BZ6Z&dib=eyJ2IjoiMSJ9.nM5g20kSjnKCcXc7QrNvsL9PhoyhpRWOYP55pSn_CYh9Hp6S56EQF1iP3B3D0KdrxYfaHMWJRSai9A9JmfXQ_vaiz_DKxjD5IxFltzySHrOJMTKMSRKs73wgxz0Fxb5F9Zf46QG8WJ0A5MLtqbJuZuByDJ8Cf7camRNMHcagiXNkKxzbu0iy3BiT_wW_JMZ16g0Oi8kjpK-p1t_7EcosEoUfRBaNkqNcSR6p_4blmUPtk6ubuuZj-4gxGDYzdU-u8yqOUDmIPcNzxQhiYxoPR7ZNJoGISW53TQtTl4uA7ZfeqRobvbyG_3BXXsPi3vTkRJuoMRBr-r5ewbEx11U82I1_-noDrqa0OZTX50fcKGMzKeQySBJvfxZQ4KIpQKFxju5wEzed6YxL3HMrvK4EJAZZCyI4NkFMk5U4tYOu1vkOlaYuvWEDfqWzDDMtINrB.-HbECisYmUJeuXvEL4ZRBDwJmzLKPyVB7WFa9TEoz6k&dib_tag=se&keywords=lavavajillas&qid=1741629074&sprefix=lava%2Caps%2C133&sr=8-7&ufe=app_do%3Aamzn1.fos.0fd54328-1d46-4534-bd0f-16141b40bb5b&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=e45fc4bb54ceb2175bd1693b1db3587f&language=es_ES&ref_=as_li_ss_tl" target="_blank">Ver precio</a>
+          <br>
+          <div style='display: flex; align-items: center; gap: 10px;'>
+            <img src='https://s1.qwant.com/thumbr/474x158/9/7/f63c3ffb13724faceb8e31aa326595a97728bf158aeb13ffc95db5f9fa7625/th.jpg?u=https%3A%2F%2Ftse.mm.bing.net%2Fth%3Fid%3DOIP.B1P05zmy1Y_JxrZZilY6kwHaCe%26pid%3DApi&q=0&b=1&p=0&a=0' style='width: 60px; height: auto; display: block; border: 1px solid #ddd; padding: 5px; border-radius: 5px; background-color: white;'>
+            <button class='toggle-info' onclick='event.stopPropagation(); toggleInfo(this)'>Mostrar más</button>
+          </div>
+          <div class="more-info">
+            <p>Lavavajillas integrable con sistema de lavado por zonas, función de secado intensivo y programa Eco para un bajo consumo de agua y energía. Acabado antihuellas, capacidad para 13 cubiertos y nivel de ruido de solo 44 dB. Ideal para cocinas modernas.</p>
+          </div>
+        </div>
+      </div>
     </div>
-   </div>
+  </div>
+  
   <!-- Banner de cookies -->
-  <div id="cookie-banner" style="position: fixed; bottom: 0; background: #222; color: white; padding: 15px; width: 100%; text-align: center;">
+  <div id="cookie-banner">
     Este sitio usa cookies para mejorar la experiencia. ¿Aceptas?
     <button onclick="aceptarCookies(); document.getElementById('cookie-banner').style.display='none';">Aceptar</button>
     <button onclick="rechazarCookies(); document.getElementById('cookie-banner').style.display='none';">Rechazar</button>
