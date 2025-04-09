@@ -193,8 +193,8 @@
       position: absolute;
       top: 1rem;
       right: 1rem;
-      width: 40px;
-      height: 40px;
+      width: 50px;
+      height: 50px;
       border-radius: 50%;
       background: var(--white);
       display: flex;
@@ -202,9 +202,9 @@
       justify-content: center;
       font-weight: 700;
       box-shadow: var(--shadow);
-      border: 2px solid var(--primary);
+      border: 3px solid var(--primary);
       color: var(--primary);
-      font-size: 0.9rem;
+      font-size: 1rem;
     }
     
     .discount-badge {
@@ -342,6 +342,41 @@
       font-weight: 500;
       box-shadow: var(--shadow);
     }
+    
+    /* Mejoras específicas para cafeteras */
+    .product-features {
+      display: none;
+      margin-top: 1rem;
+      padding-left: 1rem;
+    }
+    
+    .product-features li {
+      margin-bottom: 0.5rem;
+      list-style-type: disc;
+    }
+    
+    .toggle-info {
+      background: var(--secondary);
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: var(--transition);
+      margin-top: 0.5rem;
+      width: 100%;
+    }
+    
+    .toggle-info:hover {
+      background: #e0e0e0;
+    }
+    
+    .product-description {
+      display: none;
+      margin-bottom: 1rem;
+      color: var(--text-light);
+      font-size: 0.9rem;
+    }
   </style>
   
   <!-- Scripts diferidos -->
@@ -434,10 +469,10 @@
             <span class="stars">★★★★★</span>
             <span itemprop="reviewCount">14,200+ reviews</span>
           </div>
-          <div class="product-description" itemprop="description" style="display:none;">
+          <div class="product-description" itemprop="description">
             La cafetera superautomática Krups Evidence ofrece preparación profesional con 15 tipos de café, sistema de limpieza automático y diseño compacto. Perfecta para amantes del café.
           </div>
-          <ul class="product-features" style="display:none;">
+          <ul class="product-features">
             <li itemprop="feature">Tipo: Superautomática</li>
             <li itemprop="feature">15 tipos de café</li>
             <li itemprop="feature">Pantalla táctil intuitiva</li>
@@ -452,6 +487,7 @@
             <span itemprop="price" content="730.32">730.32</span>
             <span class="original-price">799.99€</span>
           </div>
+          <button class="toggle-info" onclick="toggleInfo(this)">Mostrar características</button>
           <a 
             href="https://www.amazon.es/Krups-Cafetera-autom%C3%A1tica-Evidence-capuchino/dp/B0757QJQJC?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=K1TYYLLR437X&dib=eyJ2IjoiMSJ9.ommU63amm29cEAndlRxFdLu5FSM5gVJUUseXfUqOVib_CjR1E3gBuHYY6eU9qbq2uIW9nrbdSe3P7JPcdt7G9XXBo_3wz6Y5Ouk-uThXLbNRMlLFBVOulaq_69TLHjG-se0HmZvj-HRPhgkYRujeQwaTFLlQBXJuTXllR2DK_VKIEB9n3peX6xk3OBRwINApaTMIeL09-2sj_fa9Lc-QIjwtCUxFHvD5wm2w2Ap6qQ3JtzHyXAh-lq8YXjqFlVtW.qruhBKodhcn2h-S25PV29GoYUuAoa7mzIROlrs1E21A&dib_tag=se&keywords=cafetera&psr=EY17&qid=1740568289&s=todays-deals&sprefix=cafeteras%2Ctodays-deals%2C113&sr=1-1&srs=21350206031&ufe=app_do%3Aamzn1.fos.0fd54328-1d46-4534-bd0f-16141b40bb5b&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=0e8f3e3cde6bc3431c78ca7131ede64a&language=es_ES&ref_=as_li_ss_tl" 
             class="btn" 
@@ -489,10 +525,10 @@
             <span class="stars">★★★★★</span>
             <span itemprop="reviewCount">16,000+ reviews</span>
           </div>
-          <div class="product-description" itemprop="description" style="display:none;">
+          <div class="product-description" itemprop="description">
             Cafetera superautomática Krups con sistema de preparación profesional, capacidad para 2 tazas simultáneas y diseño compacto.
           </div>
-          <ul class="product-features" style="display:none;">
+          <ul class="product-features">
             <li itemprop="feature">Tipo: Superautomática</li>
             <li itemprop="feature">Prepara 2 tazas simultáneas</li>
             <li itemprop="feature">5 niveles de molido ajustables</li>
@@ -507,6 +543,7 @@
             <span itemprop="price" content="410.60">410.60</span>
             <span class="original-price">469.99€</span>
           </div>
+          <button class="toggle-info" onclick="toggleInfo(this)">Mostrar características</button>
           <a 
             href="https://www.amazon.es/Krups-EA8160-Cafetera-autom%C3%A1tica-color/dp/B00UTJQLZK?crid=13E901RS7QJ9J&dib=eyJ2IjoiMSJ9.ommU63amm29cEAndlRxFdLu5FSM5gVJUUseXfUqOVib_CjR1E3gBuHYY6eU9qbq2uIW9nrbdSe3P7JPcdt7G9XXBo_3wz6Y5Ouk-uThXLbNRMlLFBVOulaq_69TLHjG-se0HmZvj-HRPhgkYRujeQwaTFLlQBXJuTXllR2DK_VKIEB9n3peX6xk3OBRwINApaTMIeL09-2sj_fa9Lc-QIjwtCUxFHvD5wm2w2Ap6qQ3JtzHyXAh-lq8YXjqFlVtW.qruhBKodhcn2h-S25PV29GoYUuAoa7mzIROlrs1E21A&dib_tag=se&keywords=cafetera&psr=EY17&qid=1740571181&s=todays-deals&sprefix=cafetera%2Ctodays-deals%2C104&sr=1-2&srs=21350206031&ufe=app_do%3Aamzn1.fos.0fd54328-1d46-4534-bd0f-16141b40bb5b&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=f2c3976718537b2fe224051109305f62&language=es_ES&ref_=as_li_ss_tl" 
             class="btn" 
@@ -544,10 +581,10 @@
             <span class="stars">★★★★★</span>
             <span itemprop="reviewCount">14,200+ reviews</span>
           </div>
-          <div class="product-description" itemprop="description" style="display:none;">
+          <div class="product-description" itemprop="description">
             Cafetera espresso con bomba de presión profesional de 15 bares, sistema Thermoblock para calentamiento rápido y espumador de leche integrado.
           </div>
-          <ul class="product-features" style="display:none;">
+          <ul class="product-features">
             <li itemprop="feature">Tipo: Espresso</li>
             <li itemprop="feature">Presión 15 bares</li>
             <li itemprop="feature">Sistema Thermoblock</li>
@@ -562,6 +599,7 @@
             <span itemprop="price" content="174.90">174.90</span>
             <span class="original-price">199.99€</span>
           </div>
+          <button class="toggle-info" onclick="toggleInfo(this)">Mostrar características</button>
           <a 
             href="https://www.amazon.es/Krups-Cafetera-espresso-Virtuoso-Thermoblock/dp/B0C85NMRXP?crid=2ZO285JVJ9203&dib=eyJ2IjoiMSJ9.ommU63amm29cEAndlRxFdLu5FSM5gVJUUseXfUqOVib_CjR1E3gBuHYY6eU9qbq2uIW9nrbdSe3P7JPcdt7G9XXBo_3wz6Y5Ouk-uThXLbNRMlLFBVOulaq_69TLHjG-se0HmZvj-HRPhgkYRujeQwaTFLlQBXJuTXllR2DK_VKIEB9n3peX6xk3OBRwINApaTMIeL09-2sj_fa9Lc-QIjwtCUxFHvD5wm2w2Ap6qQ3JtzHyXAh-lq8YXjqFlVtW.qruhBKodhcn2h-S25PV29GoYUuAoa7mzIROlrs1E21A&dib_tag=se&keywords=cafetera&psr=EY17&qid=1740571587&s=todays-deals&sprefix=ca%2Ctodays-deals%2C142&sr=1-4&srs=21350206031&ufe=app_do%3Aamzn1.fos.0fd54328-1d46-4534-bd0f-16141b40bb5b&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=f22df8d2096d043a7b6dfd0eb14ea8c5&language=es_ES&ref_=as_li_ss_tl" 
             class="btn" 
@@ -599,10 +637,10 @@
             <span class="stars">★★★★★</span>
             <span itemprop="reviewCount">14,000+ reviews</span>
           </div>
-          <div class="product-description" itemprop="description" style="display:none;">
+          <div class="product-description" itemprop="description">
             Cafetera superautomática Philips con molinillo integrado, 12 tipos de café y sistema de limpieza automático. Ideal para uso diario intensivo.
           </div>
-          <ul class="product-features" style="display:none;">
+          <ul class="product-features">
             <li itemprop="feature">Tipo: Superautomática</li>
             <li itemprop="feature">Molinillo integrado de cerámica</li>
             <li itemprop="feature">12 tipos de café</li>
@@ -617,6 +655,7 @@
             <span itemprop="price" content="387.99">387.99</span>
             <span class="original-price">449.99€</span>
           </div>
+          <button class="toggle-info" onclick="toggleInfo(this)">Mostrar características</button>
           <a 
             href="https://www.amazon.es/Philips-Serie-3300-Cafetera-Superautom%C3%A1tica/dp/B0CDCFRXPN?crid=2ZO285JVJ9203&dib=eyJ2IjoiMSJ9.ommU63amm29cEAndlRxFdLu5FSM5gVJUUseXfUqOVib_CjR1E3gBuHYY6eU9qbq2uIW9nrbdSe3P7JPcdt7G9XXBo_3wz6Y5Ouk-uThXLbNRMlLFBVOulaq_69TLHjG-se0HmZvj-HRPhgkYRujeQwaTFLlQBXJuTXllR2DK_VKIEB9n3peX6xk3OBRwINApaTMIeL09-2sj_fa9Lc-QIjwtCUxFHvD5wm2w2Ap6qQ3JtzHyXAh-lq8YXjqFlVtW.qruhBKodhcn2h-S25PV29GoYUuAoa7mzIROlrs1E21A&dib_tag=se&keywords=cafetera&psr=EY17&qid=1740572250&s=todays-deals&sprefix=ca%2Ctodays-deals%2C142&sr=1-3&srs=21350206031&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=207e5e412c5bcac568d08dc40c60540c&language=es_ES&ref_=as_li_ss_tl" 
             class="btn" 
@@ -654,10 +693,10 @@
             <span class="stars">★★★★★</span>
             <span itemprop="reviewCount">23,900+ reviews</span>
           </div>
-          <div class="product-description" itemprop="description" style="display:none;">
+          <div class="product-description" itemprop="description">
             Cafetera espresso manual con bomba de presión de 15 bares, espumador de leche y diseño compacto. Perfecta para quienes buscan control total sobre su café.
           </div>
-          <ul class="product-features" style="display:none;">
+          <ul class="product-features">
             <li itemprop="feature">Tipo: Espresso manual</li>
             <li itemprop="feature">Presión 15 bares</li>
             <li itemprop="feature">Espumador de leche integrado</li>
@@ -672,12 +711,13 @@
             <span itemprop="price" content="166.66">166.66</span>
             <span class="original-price">249.99€</span>
           </div>
+          <button class="toggle-info" onclick="toggleInfo(this)">Mostrar características</button>
           <a 
             href="https://www.amazon.es/Krups-Authentic-Espumador-Compactadora-capacidad/dp/B0D92G5WJL?crid=2ZO285JVJ9203&dib=eyJ2IjoiMSJ9.ommU63amm29cEAndlRxFdLu5FSM5gVJUUseXfUqOVib_CjR1E3gBuHYY6eU9qbq2uIW9nrbdSe3P7JPcdt7G9XXBo_3wz6Y5Ouk-uThXLbNRMlLFBVOulaq_69TLHjG-se0HmZvj-HRPhgkYRujeQwaTFLlQBXJuTXllR2DK_VKIEB9n3peX6xk3OBRwINApaTMIeL09-2sj_fa9Lc-QIjwtCUxFHvD5wm2w2Ap6qQ3JtzHyXAh-lq8YXjqFlVtW.qruhBKodhcn2h-S25PV29GoYUuAoa7mzIROlrs1E21A&dib_tag=se&keywords=cafetera&psr=EY17&qid=1740572250&s=todays-deals&sprefix=ca%2Ctodays-deals%2C142&sr=1-5&srs=21350206031&ufe=app_do%3Aamzn1.fos.0fd54328-1d46-4534-bd0f-16141b40bb5b&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=8741bc17d9551b92e74cb7dd314ed968&language=es_ES&ref_=as_li_ss_tl"
              class="btn" 
             target="_blank" 
             rel="noopener sponsored"
-            onclick="trackClick(4)"
+            onclick="trackClick(5)"
             itemprop="url"
           >
             Ver oferta en Amazon
@@ -685,7 +725,7 @@
         </div>
       </article>
 
-            <!-- Producto 6 -->
+      <!-- Producto 6 -->
       <article class="product" itemscope itemtype="https://schema.org/Product">
         <span class="rating-badge" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
           <span itemprop="ratingValue">9.5</span>
@@ -708,10 +748,10 @@
             <span class="stars">★★★★★</span>
             <span itemprop="reviewCount">13,800+ reviews</span>
           </div>
-          <div class="product-description" itemprop="description" style="display:none;">
+          <div class="product-description" itemprop="description">
             Cafetera portátil compatible con cápsulas, ideal para viajes. Funciona con batería recargable y prepara espresso de calidad en cualquier lugar.
           </div>
-          <ul class="product-features" style="display:none;">
+          <ul class="product-features">
             <li itemprop="feature">Tipo: Portátil con cápsulas</li>
             <li itemprop="feature">Batería recargable</li>
             <li itemprop="feature">Presión 15 bares</li>
@@ -725,6 +765,7 @@
             <span itemprop="priceCurrency" content="EUR">€</span>
             <span itemprop="price" content="139.99">139.99</span>
           </div>
+          <button class="toggle-info" onclick="toggleInfo(this)">Mostrar características</button>
           <a 
             href="https://www.amazon.es/CONQUECO-Cafetera-Port%C3%A1til-C%C3%A1psula-Espresso/dp/B0CYLKQF8D?crid=2ZO285JVJ9203&dib=eyJ2IjoiMSJ9.ommU63amm29cEAndlRxFdLu5FSM5gVJUUseXfUqOVib_CjR1E3gBuHYY6eU9qbq2uIW9nrbdSe3P7JPcdt7G9XXBo_3wz6Y5Ouk-uThXLbNRMlLFBVOulaq_69TLHjG-se0HmZvj-HRPhgkYRujeQwaTFLlQBXJuTXllR2DK_VKIEB9n3peX6xk3OBRwINApaTMIeL09-2sj_fa9Lc-QIjwtCUxFHvD5wm2w2Ap6qQ3JtzHyXAh-lq8YXjqFlVtW.qruhBKodhcn2h-S25PV29GoYUuAoa7mzIROlrs1E21A&dib_tag=se&keywords=cafetera&psr=EY17&qid=1740572250&s=todays-deals&sprefix=ca%2Ctodays-deals%2C142&sr=1-6&srs=21350206031&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=a5b4186c370e7fd591b0261a85e15c99&language=es_ES&ref_=as_li_ss_tl" 
             class="btn" 
@@ -762,10 +803,10 @@
             <span class="stars">★★★★★</span>
             <span itemprop="reviewCount">10,700+ reviews</span>
           </div>
-          <div class="product-description" itemprop="description" style="display:none;">
+          <div class="product-description" itemprop="description">
             Cafetera semiautomática con sistema Thermoblock, presión de 20 bares y espumador de leche profesional. Excelente relación calidad-precio.
           </div>
-          <ul class="product-features" style="display:none;">
+          <ul class="product-features">
             <li itemprop="feature">Tipo: Semiautomática</li>
             <li itemprop="feature">Presión 20 bares</li>
             <li itemprop="feature">Sistema Thermoblock</li>
@@ -780,6 +821,7 @@
             <span itemprop="price" content="115.90">115.90</span>
             <span class="original-price">134.90€</span>
           </div>
+          <button class="toggle-info" onclick="toggleInfo(this)">Mostrar características</button>
           <a 
             href="https://www.amazon.es/Cecotec-Cafetera-Semiautom%C3%A1tica-Instant-ccino-c%C3%A1psulas/dp/B0851RFDZM?crid=2ZO285JVJ9203&dib=eyJ2IjoiMSJ9.ommU63amm29cEAndlRxFdLu5FSM5gVJUUseXfUqOVib_CjR1E3gBuHYY6eU9qbq2uIW9nrbdSe3P7JPcdt7G9XXBo_3wz6Y5Ouk-uThXLbNRMlLFBVOulaq_69TLHjG-se0HmZvj-HRPhgkYRujeQwaTFLlQBXJuTXllR2DK_VKIEB9n3peX6xk3OBRwINApaTMIeL09-2sj_fa9Lc-QIjwtCUxFHvD5wm2w2Ap6qQ3JtzHyXAh-lq8YXjqFlVtW.qruhBKodhcn2h-S25PV29GoYUuAoa7mzIROlrs1E21A&dib_tag=se&keywords=cafetera&psr=EY17&qid=1740572250&s=todays-deals&sprefix=ca%2Ctodays-deals%2C142&sr=1-7&srs=21350206031&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=9a9e3515fb47f7c58678d17aa46d6188&language=es_ES&ref_=as_li_ss_tl" 
             class="btn" 
@@ -817,10 +859,10 @@
             <span class="stars">★★★★★</span>
             <span itemprop="reviewCount">15,600+ reviews</span>
           </div>
-          <div class="product-description" itemprop="description" style="display:none;">
+          <div class="product-description" itemprop="description">
             Cafetera express con sistema Thermoblock, prepara café y capuccino instantáneo. Ideal para quienes buscan rapidez sin sacrificar calidad.
           </div>
-          <ul class="product-features" style="display:none;">
+          <ul class="product-features">
             <li itemprop="feature">Tipo: Express</li>
             <li itemprop="feature">Sistema Thermoblock</li>
             <li itemprop="feature">Prepara capuccino instantáneo</li>
@@ -835,6 +877,7 @@
             <span itemprop="price" content="129.00">129.00</span>
             <span class="original-price">134.90€</span>
           </div>
+          <button class="toggle-info" onclick="toggleInfo(this)">Mostrar características</button>
           <a 
             href="https://www.amazon.es/Cecotec-Power-Instant-ccino-Semiautom%C3%A1tica-Thermoblock/dp/B07MLT15R4?crid=2ZO285JVJ9203&dib=eyJ2IjoiMSJ9.ommU63amm29cEAndlRxFdLu5FSM5gVJUUseXfUqOVib_CjR1E3gBuHYY6eU9qbq2uIW9nrbdSe3P7JPcdt7G9XXBo_3wz6Y5Ouk-uThXLbNRMlLFBVOulaq_69TLHjG-se0HmZvj-HRPhgkYRujeQwaTFLlQBXJuTXllR2DK_VKIEB9n3peX6xk3OBRwINApaTMIeL09-2sj_fa9Lc-QIjwtCUxFHvD5wm2w2Ap6qQ3JtzHyXAh-lq8YXjqFlVtW.qruhBKodhcn2h-S25PV29GoYUuAoa7mzIROlrs1E21A&dib_tag=se&keywords=cafetera&psr=EY17&qid=1740572250&s=todays-deals&sprefix=ca%2Ctodays-deals%2C142&sr=1-8&srs=21350206031&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=1c89e89eccd82d639e24841a958b26ae&language=es_ES&ref_=as_li_ss_tl" 
             class="btn" 
@@ -872,10 +915,10 @@
             <span class="stars">★★★★★</span>
             <span itemprop="reviewCount">17,400+ reviews</span>
           </div>
-          <div class="product-description" itemprop="description" style="display:none;">
+          <div class="product-description" itemprop="description">
             Cafetera espresso y capuccino con vaporizador profesional, diseño compacto y sistema de preparación rápida. Ideal para pequeños espacios.
           </div>
-          <ul class="product-features" style="display:none;">
+          <ul class="product-features">
             <li itemprop="feature">Tipo: Espresso/Capuccino</li>
             <li itemprop="feature">Vaporizador profesional</li>
             <li itemprop="feature">Presión 15 bares</li>
@@ -890,6 +933,7 @@
             <span itemprop="price" content="111.77">111.77</span>
             <span class="original-price">129.99€</span>
           </div>
+          <button class="toggle-info" onclick="toggleInfo(this)">Mostrar características</button>
           <a 
             href="https://www.amazon.es/Ufesa-Capuccino-Vaporizador-Orientable-Monodosis/dp/B0BSFPT3WV?crid=2ZO285JVJ9203&dib=eyJ2IjoiMSJ9.ommU63amm29cEAndlRxFdLu5FSM5gVJUUseXfUqOVib_CjR1E3gBuHYY6eU9qbq2uIW9nrbdSe3P7JPcdt7G9XXBo_3wz6Y5Ouk-uThXLbNRMlLFBVOulaq_69TLHjG-se0HmZvj-HRPhgkYRujeQwaTFLlQBXJuTXllR2DK_VKIEB9n3peX6xk3OBRwINApaTMIeL09-2sj_fa9Lc-QIjwtCUxFHvD5wm2w2Ap6qQ3JtzHyXAh-lq8YXjqFlVtW.qruhBKodhcn2h-S25PV29GoYUuAoa7mzIROlrs1E21A&dib_tag=se&keywords=cafetera&psr=EY17&qid=1740572250&s=todays-deals&sprefix=ca%2Ctodays-deals%2C142&sr=1-9&srs=21350206031&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=974ac608ccb13ec993238af23ec8d4f1&language=es_ES&ref_=as_li_ss_tl" 
             class="btn" 
@@ -926,10 +970,10 @@
             <span class="stars">★★★★★</span>
             <span itemprop="reviewCount">13,300+ reviews</span>
           </div>
-          <div class="product-description" itemprop="description" style="display:none;">
+          <div class="product-description" itemprop="description">
             Cafetera 4 en 1 compatible con cápsulas, prepara espresso, lungo, ristretto y americano. Presión profesional de 19 bares y diseño compacto.
           </div>
-          <ul class="product-features" style="display:none;">
+          <ul class="product-features">
             <li itemprop="feature">Tipo: Multifunción con cápsulas</li>
             <li itemprop="feature">Presión 19 bares</li>
             <li itemprop="feature">4 tipos de café</li>
@@ -943,6 +987,7 @@
             <span itemprop="priceCurrency" content="EUR">€</span>
             <span itemprop="price" content="119.99">119.99</span>
           </div>
+          <button class="toggle-info" onclick="toggleInfo(this)">Mostrar características</button>
           <a 
             href="https://www.amazon.es/KOTLIE-Cafetera-Capsulas-Nespresso-Autom%C3%A1tico/dp/B0BG45M36F?crid=2ZO285JVJ9203&dib=eyJ2IjoiMSJ9.ommU63amm29cEAndlRxFdLu5FSM5gVJUUseXfUqOVib_CjR1E3gBuHYY6eU9qbq2uIW9nrbdSe3P7JPcdt7G9XXBo_3wz6Y5Ouk-uThXLbNRMlLFBVOulaq_69TLHjG-se0HmZvj-HRPhgkYRujeQwaTFLlQBXJuTXllR2DK_VKIEB9n3peX6xk3OBRwINApaTMIeL09-2sj_fa9Lc-QIjwtCUxFHvD5wm2w2Ap6qQ3JtzHyXAh-lq8YXjqFlVtW.qruhBKodhcn2h-S25PV29GoYUuAoa7mzIROlrs1E21A&dib_tag=se&keywords=cafetera&psr=EY17&qid=1740572250&s=todays-deals&sprefix=ca%2Ctodays-deals%2C142&sr=1-11&srs=21350206031&ufe=app_do%3Aamzn1.fos.5e544547-1f8e-4072-8c08-ed563e39fc7d&th=1&linkCode=ll1&tag=yocompro0e-21&linkId=f2f68a57be82f90bc4e7aded10951091&language=es_ES&ref_=as_li_ss_tl" 
             class="btn" 
@@ -987,7 +1032,9 @@
           accept: "Aceptar",
           reject: "Rechazar",
           offer: "Ver oferta en Amazon",
-          reviews: "reviews"
+          reviews: "reviews",
+          features: "Mostrar características",
+          hideFeatures: "Ocultar características"
         },
         en: {
           title: "Top 10: Best Coffee Makers 2025 - Price/Quality Ratio",
@@ -1005,7 +1052,9 @@
           accept: "Accept",
           reject: "Reject",
           offer: "View deal on Amazon",
-          reviews: "reviews"
+          reviews: "reviews",
+          features: "Show features",
+          hideFeatures: "Hide features"
         }
       };
       
@@ -1045,9 +1094,35 @@
           }
         });
         
+        document.querySelectorAll('.toggle-info').forEach(btn => {
+          const features = btn.closest('.product').querySelector('.product-features');
+          if (features.style.display === 'block') {
+            btn.textContent = translations[currentLang].hideFeatures;
+          } else {
+            btn.textContent = translations[currentLang].features;
+          }
+        });
+        
         document.getElementById('current-language').textContent = currentLang.toUpperCase();
         document.getElementById('target-language').textContent = currentLang === 'es' ? 'EN' : 'ES';
       }
+      
+      // Función para mostrar/ocultar características
+      window.toggleInfo = function(button) {
+        const product = button.closest('.product');
+        const features = product.querySelector('.product-features');
+        const description = product.querySelector('.product-description');
+        
+        if (features.style.display === 'none' || !features.style.display) {
+          features.style.display = 'block';
+          description.style.display = 'block';
+          button.textContent = translations[currentLang].hideFeatures;
+        } else {
+          features.style.display = 'none';
+          description.style.display = 'none';
+          button.textContent = translations[currentLang].features;
+        }
+      };
       
       // Detectar idioma del navegador
       function detectLanguage() {
@@ -1169,6 +1244,11 @@
         detectLanguage();
         updateLanguage();
         document.querySelector('.language-btn').addEventListener('click', toggleLanguage);
+        
+        // Inicialmente ocultar características y descripción
+        document.querySelectorAll('.product-features, .product-description').forEach(el => {
+          el.style.display = 'none';
+        });
       });
     })();
   </script>
