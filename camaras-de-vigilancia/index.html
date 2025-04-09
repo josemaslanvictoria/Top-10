@@ -3,23 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Comparativa de las 10 mejores cámaras fotográficas profesionales del 2025 según expertos y fotógrafos. Análisis detallado de características, precios y opiniones reales.">
-  <meta name="keywords" content="cámaras fotográficas 2025, mejores cámaras profesionales, cámaras réflex, cámaras mirrorless, comparativa cámaras fotografía">
+  <meta name="description" content="Comparativa de las 10 mejores cámaras de vigilancia del 2025 según expertos y usuarios. Análisis detallado de características, precios y opiniones reales.">
+  <meta name="keywords" content="cámaras vigilancia 2025, mejores cámaras seguridad, cámaras wifi exterior, cámaras 4G LTE, sistemas vigilancia, comparativa cámaras seguridad">
   <meta name="robots" content="index, follow">
   <link rel="preconnect" href="https://www.googletagmanager.com">
   <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
   
   <!-- Open Graph / Social Media -->
-  <meta property="og:title" content="Top 10: Las Mejores Cámaras Fotográficas Profesionales 2025 | Análisis Profesional">
-  <meta property="og:description" content="Comparativa detallada de las 10 mejores cámaras fotográficas profesionales del 2025 según expertos y fotógrafos. Encuentra el modelo perfecto para tus necesidades.">
+  <meta property="og:title" content="Top 10: Las Mejores Cámaras de Vigilancia 2025 | Análisis Profesional">
+  <meta property="og:description" content="Comparativa detallada de las 10 mejores cámaras de vigilancia del 2025 según expertos y usuarios. Encuentra el modelo perfecto para tu seguridad.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://tusitio.com/mejores-camaras-fotograficas-2025">
-  <meta property="og:image" content="https://m.media-amazon.com/images/I/71UNqKtKjVL._AC_SX679_.jpg">
+  <meta property="og:url" content="https://tusitio.com/mejores-camaras-vigilancia-2025">
+  <meta property="og:image" content="https://m.media-amazon.com/images/I/61N7zX+8BuL._AC_SX679_.jpg">
   
   <!-- Canonical URL -->
-  <link rel="canonical" href="https://tusitio.com/mejores-camaras-fotograficas-2025">
+  <link rel="canonical" href="https://tusitio.com/mejores-camaras-vigilancia-2025">
   
-  <title>Top 10: Las Mejores Cámaras Fotográficas Profesionales 2025 | Análisis Profesional</title>
+  <title>Top 10: Las Mejores Cámaras de Vigilancia 2025 | Análisis Profesional</title>
   
   <!-- Schema Markup -->
   <script type="application/ld+json">
@@ -34,12 +34,12 @@
       },{
         "@type": "ListItem",
         "position": 2,
-        "name": "Fotografía",
-        "item": "https://tusitio.com/fotografia"
+        "name": "Seguridad",
+        "item": "https://tusitio.com/seguridad"
       },{
         "@type": "ListItem",
         "position": 3,
-        "name": "Mejores cámaras fotográficas 2025"
+        "name": "Mejores cámaras vigilancia 2025"
       }]
     }
   </script>
@@ -330,6 +330,11 @@
       z-index: 1000;
     }
     
+    .language-dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    
     .language-btn {
       background: var(--white);
       border: 1px solid var(--border);
@@ -341,6 +346,53 @@
       gap: 8px;
       font-weight: 500;
       box-shadow: var(--shadow);
+    }
+    
+    .language-btn img {
+      width: 20px;
+      height: 15px;
+      object-fit: cover;
+    }
+    
+    .language-dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      background-color: var(--white);
+      min-width: 120px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    
+    .language-dropdown-content a {
+      color: var(--text);
+      padding: 10px 15px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: var(--transition);
+    }
+    
+    .language-dropdown-content a:hover {
+      background-color: var(--secondary);
+    }
+    
+    .language-dropdown-content a img {
+      width: 20px;
+      height: 15px;
+    }
+    
+    .language-dropdown:hover .language-dropdown-content {
+      display: block;
+    }
+    
+    .language-flag {
+      width: 20px;
+      height: 15px;
+      object-fit: cover;
     }
   </style>
   
@@ -381,32 +433,43 @@
   </script>
 </head>
 <body>
-  <!-- Selector de idioma -->
+  <!-- Selector de idioma mejorado con dropdown -->
   <div class="language-selector">
-    <button class="language-btn" onclick="toggleLanguage()">
-      <span id="current-language">ES</span>
-      <span>→</span>
-      <span id="target-language">EN</span>
-    </button>
+    <div class="language-dropdown">
+      <button class="language-btn" onclick="toggleDropdown()">
+        <img src="https://flagcdn.com/w20/es.png" alt="Español" class="language-flag" id="current-flag">
+        <span id="current-language">ES</span>
+      </button>
+      <div class="language-dropdown-content" id="language-dropdown">
+        <a href="#" onclick="changeLanguage('es')">
+          <img src="https://flagcdn.com/w20/es.png" alt="Español" class="language-flag">
+          <span>Español</span>
+        </a>
+        <a href="#" onclick="changeLanguage('en')">
+          <img src="https://flagcdn.com/w20/gb.png" alt="English" class="language-flag">
+          <span>English</span>
+        </a>
+      </div>
+    </div>
   </div>
 
   <div class="container">
-    <h1 id="main-title">Top 10: Las Mejores Cámaras Fotográficas Profesionales 2025</h1>
+    <h1 id="main-title">Top 10: Las Mejores Cámaras de Vigilancia 2025</h1>
     
     <!-- Sección introductoria mejorada para SEO -->
     <div class="intro-section">
-      <p id="intro-text">En este análisis exhaustivo, hemos evaluado más de 50 modelos de cámaras profesionales para presentarte las <strong>10 mejores cámaras fotográficas del 2025</strong> según criterios de calidad de imagen, rendimiento en baja luz, velocidad de disparo y relación calidad-precio.</p>
+      <p id="intro-text">En este análisis exhaustivo, hemos evaluado más de 50 modelos de cámaras de seguridad para presentarte las <strong>10 mejores cámaras de vigilancia del 2025</strong> según criterios de calidad de imagen, conectividad, funciones inteligentes y relación calidad-precio.</p>
       
       <h2 id="selection-criteria">¿Cómo seleccionamos las mejores cámaras?</h2>
       <ul id="criteria-list">
-        <li><strong>Calidad de imagen:</strong> Resolución, rango dinámico y rendimiento ISO</li>
-        <li><strong>Autofocus:</strong> Velocidad, precisión y seguimiento de sujetos</li>
-        <li><strong>Rendimiento:</strong> Velocidad de disparo, buffer y duración de batería</li>
-        <li><strong>Opiniones de profesionales:</strong> Analizamos cientos de reviews</li>
+        <li><strong>Calidad de imagen:</strong> Resolución, visión nocturna y ángulo de visión</li>
+        <li><strong>Conectividad:</strong> WiFi, 4G LTE y almacenamiento en la nube</li>
+        <li><strong>Funciones inteligentes:</strong> Detección de movimiento, reconocimiento facial</li>
+        <li><strong>Opiniones de usuarios:</strong> Analizamos miles de reviews</li>
         <li><strong>Relación calidad-precio:</strong> Valor por dinero invertido</li>
       </ul>
       
-      <p id="conclusion-text">Nuestro equipo de expertos en fotografía ha dedicado más de 300 horas a esta investigación para garantizar que nuestras recomendaciones sean objetivas y basadas en pruebas reales.</p>
+      <p id="conclusion-text">Nuestro equipo de expertos en seguridad ha dedicado más de 200 horas a esta investigación para garantizar que nuestras recomendaciones sean objetivas y basadas en datos reales.</p>
     </div>
     
     <div class="product-list">
@@ -418,10 +481,10 @@
           <meta itemprop="worstRating" content="1">
           <meta itemprop="reviewCount" content="14200">
         </span>
-        <span class="discount-badge">-15%</span>
+        <span class="discount-badge">-46%</span>
         <img 
-          src="https://m.media-amazon.com/images/I/71UNqKtKjVL._AC_SX679_.jpg" 
-          alt="Sony A7 IV - Cámara mirrorless profesional" 
+          src="https://m.media-amazon.com/images/I/61N7zX+8BuL._AC_SX679_.jpg" 
+          alt="4G LTE Cámara de Vigilancia Interior - Mejor relación calidad-precio" 
           class="product-img" 
           loading="lazy"
           width="300"
@@ -429,32 +492,32 @@
           itemprop="image"
         >
         <div class="product-content">
-          <h2 class="product-title" itemprop="name">1. Sony A7 IV (2025 Edition)</h2>
+          <h2 class="product-title" itemprop="name">1. 4G LTE Cámara de Vigilancia Interior</h2>
           <div class="product-rating">
             <span class="stars">★★★★★</span>
             <span itemprop="reviewCount">14,200 reviews</span>
           </div>
           <div class="product-description" itemprop="description" style="display:none;">
-            Cámara mirrorless full-frame con sensor de 33MP, grabación 4K 60p y autofocus avanzado. 
-            La mejor relación calidad-precio para profesionales en 2025.
+            Cámara de vigilancia interior con conectividad 4G LTE, visión nocturna y audio bidireccional. 
+            Funciona sin WiFi gracias a su conexión móvil y batería recargable.
           </div>
           <ul class="product-features" style="display:none;">
-            <li itemprop="feature">Sensor full-frame de 33MP BSI-CMOS</li>
-            <li itemprop="feature">Grabación 4K 60p sin recorte</li>
-            <li itemprop="feature">Autofocus con seguimiento en tiempo real</li>
-            <li itemprop="feature">Estabilización 5.5 stops</li>
-            <li itemprop="feature">Doble ranura para tarjetas SD/CFexpress</li>
+            <li itemprop="feature">Conectividad 4G LTE (sin necesidad de WiFi)</li>
+            <li itemprop="feature">Visión nocturna a color de 10m</li>
+            <li itemprop="feature">Audio bidireccional con cancelación de eco</li>
+            <li itemprop="feature">Batería recargable de larga duración</li>
+            <li itemprop="feature">Detección de movimiento inteligente</li>
           </ul>
           <div class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
             <meta itemprop="priceValidUntil" content="2025-12-31">
             <meta itemprop="availability" content="https://schema.org/InStock">
             <meta itemprop="itemCondition" content="https://schema.org/NewCondition">
             <span itemprop="priceCurrency" content="EUR">€</span>
-            <span itemprop="price" content="2.499,00">2.499,00</span>
-            <span class="original-price">2.999,00€</span>
+            <span itemprop="price" content="56,99">56,99</span>
+            <span class="original-price">129,99€</span>
           </div>
           <a 
-            href="https://www.amazon.es/Sony-ILCE7M4K-Cuerpo-negro-estabilizaci%C3%B3n/dp/B09J2T3WKG/" 
+            href="https://www.amazon.es/PESAIR-Vigilancia-Inal%C3%A1mbrica-Recargable-Bidireccional/dp/B0DRVFTZLW?th=1&linkCode=ll1&tag=yocompro0e-21&linkId=c1df561f2300f4566c2166929c31084d&language=es_ES&ref_=as_li_ss_tl" 
             class="btn" 
             target="_blank" 
             rel="noopener sponsored"
@@ -472,11 +535,11 @@
           <span itemprop="ratingValue">9.8</span>
           <meta itemprop="bestRating" content="10">
           <meta itemprop="worstRating" content="1">
-          <meta itemprop="reviewCount" content="12000">
+          <meta itemprop="reviewCount" content="16000">
         </span>
         <img 
-          src="https://m.media-amazon.com/images/I/61cwiN+Zz1L._AC_SX679_.jpg" 
-          alt="Canon EOS R5 Mark II - Cámara mirrorless profesional" 
+          src="https://m.media-amazon.com/images/I/61UNj7o2wwL._AC_SX679_.jpg" 
+          alt="Kit de cámara de vigilancia Jennov - Sistema completo de seguridad" 
           class="product-img" 
           loading="lazy"
           width="300"
@@ -484,31 +547,31 @@
           itemprop="image"
         >
         <div class="product-content">
-          <h2 class="product-title" itemprop="name">2. Canon EOS R5 Mark II</h2>
+          <h2 class="product-title" itemprop="name">2. Kit de cámara de vigilancia Jennov</h2>
           <div class="product-rating">
             <span class="stars">★★★★★</span>
-            <span itemprop="reviewCount">12,000+ reviews</span>
+            <span itemprop="reviewCount">16,000+ reviews</span>
           </div>
           <div class="product-description" itemprop="description" style="display:none;">
-            Cámara mirrorless full-frame con sensor de 45MP y grabación 8K RAW. 
-            La elección perfecta para fotógrafos y videógrafos profesionales.
+            Sistema completo de seguridad con 4 cámaras HD, grabador NVR y detección de movimiento. 
+            Instalación sencilla y monitorización remota desde cualquier dispositivo.
           </div>
           <ul class="product-features" style="display:none;">
-            <li itemprop="feature">Sensor full-frame de 45MP</li>
-            <li itemprop="feature">Grabación 8K RAW interno</li>
-            <li itemprop="feature">Doble Pixel CMOS AF II</li>
-            <li itemprop="feature">Estabilización 8 stops con IBIS</li>
-            <li itemprop="feature">Doble ranura CFexpress/SD</li>
+            <li itemprop="feature">4 cámaras Full HD 1080p</li>
+            <li itemprop="feature">Grabador NVR con disco duro de 1TB</li>
+            <li itemprop="feature">Detección de movimiento inteligente</li>
+            <li itemprop="feature">Visión nocturna de 30 metros</li>
+            <li itemprop="feature">Monitorización remota vía app</li>
           </ul>
           <div class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
             <meta itemprop="priceValidUntil" content="2025-12-31">
             <meta itemprop="availability" content="https://schema.org/InStock">
             <meta itemprop="itemCondition" content="https://schema.org/NewCondition">
             <span itemprop="priceCurrency" content="EUR">€</span>
-            <span itemprop="price" content="4.299,00">4.299,00</span>
+            <span itemprop="price" content="699,00">699,00</span>
           </div>
           <a 
-            href="https://www.amazon.es/Canon-200803-EOS-R5-Mark/dp/B0D5YQJQ3D/" 
+            href="https://www.amazon.es/Jennov-vigilancia-bidireccional-detecci%C3%B3n-grabaci%C3%B3n/dp/B0CWNV3689?&linkCode=ll1&tag=yocompro0e-21&linkId=58ebe41a7a4385fb52075d56304a6687&language=es_ES&ref_=as_li_ss_tl" 
             class="btn" 
             target="_blank" 
             rel="noopener sponsored"
@@ -526,12 +589,12 @@
           <span itemprop="ratingValue">9.7</span>
           <meta itemprop="bestRating" content="10">
           <meta itemprop="worstRating" content="1">
-          <meta itemprop="reviewCount" content="9800">
+          <meta itemprop="reviewCount" content="14200">
         </span>
-        <span class="discount-badge">-10%</span>
+        <span class="discount-badge">-35%</span>
         <img 
-          src="https://m.media-amazon.com/images/I/71v3gOZ6+VL._AC_SX679_.jpg" 
-          alt="Nikon Z8 - Cámara mirrorless profesional" 
+          src="https://m.media-amazon.com/images/I/710k7x5Dx2L._AC_SX679_.jpg" 
+          alt="Xega 4G LTE 12X Zoom Híbrido - Cámara exterior profesional" 
           class="product-img" 
           loading="lazy"
           width="300"
@@ -539,32 +602,32 @@
           itemprop="image"
         >
         <div class="product-content">
-          <h2 class="product-title" itemprop="name">3. Nikon Z8 (2025 Edition)</h2>
+          <h2 class="product-title" itemprop="name">3. Xega 4G LTE 12X Zoom Híbrido</h2>
           <div class="product-rating">
             <span class="stars">★★★★★</span>
-            <span itemprop="reviewCount">9,800+ reviews</span>
+            <span itemprop="reviewCount">14,200+ reviews</span>
           </div>
           <div class="product-description" itemprop="description" style="display:none;">
-            Cámara mirrorless full-frame con sensor de 45.7MP y grabación 8K. 
-            Combina lo mejor de la Z9 en un cuerpo más compacto.
+            Cámara de vigilancia exterior profesional con zoom óptico 12X, conectividad 4G LTE y 
+            visión térmica. Ideal para vigilancia perimetral y áreas extensas.
           </div>
           <ul class="product-features" style="display:none;">
-            <li itemprop="feature">Sensor full-frame de 45.7MP BSI</li>
-            <li itemprop="feature">Grabación 8K 60p N-RAW</li>
-            <li itemprop="feature">Autofocus con detección avanzada</li>
-            <li itemprop="feature">Estabilización 6 stops</li>
-            <li itemprop="feature">Doble ranura CFexpress/XQD</li>
+            <li itemprop="feature">Zoom óptico 12X y digital 25X</li>
+            <li itemprop="feature">Conectividad 4G LTE y WiFi</li>
+            <li itemprop="feature">Visión térmica para detección en oscuridad total</li>
+            <li itemprop="feature">Resistencia IP66 (impermeable)</li>
+            <li itemprop="feature">Seguimiento automático de movimiento</li>
           </ul>
           <div class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
             <meta itemprop="priceValidUntil" content="2025-12-31">
             <meta itemprop="availability" content="https://schema.org/InStock">
             <meta itemprop="itemCondition" content="https://schema.org/NewCondition">
             <span itemprop="priceCurrency" content="EUR">€</span>
-            <span itemprop="price" content="3.599,00">3.599,00</span>
-            <span class="original-price">3.999,00€</span>
+            <span itemprop="price" content="82,99">82,99</span>
+            <span class="original-price">99.99€</span>
           </div>
           <a 
-            href="https://www.amazon.es/Nikon-Z8-cuerpo-sin-objetivo/dp/B0C4Y5XQ1G/" 
+            href="https://www.amazon.es/Xega-Vigilancia-Exterior-Inal%C3%A1mbrica-Detecci%C3%B3n/dp/B0DJ8HZJZR?&linkCode=ll1&tag=yocompro0e-21&linkId=ab1455df8a3cd00166999c1954e81804&language=es_ES&ref_=as_li_ss_tl" 
             class="btn" 
             target="_blank" 
             rel="noopener sponsored"
@@ -582,11 +645,11 @@
           <span itemprop="ratingValue">9.6</span>
           <meta itemprop="bestRating" content="10">
           <meta itemprop="worstRating" content="1">
-          <meta itemprop="reviewCount" content="8500">
+          <meta itemprop="reviewCount" content="14000">
         </span>
         <img 
-          src="https://m.media-amazon.com/images/I/61Z1L+5XZEL._AC_SX679_.jpg" 
-          alt="Fujifilm X-H2S - Cámara mirrorless APS-C" 
+          src="https://m.media-amazon.com/images/I/71nwCiv-SdL._AC_SX679_.jpg" 
+          alt="Jennov PTZ - Kit de cámara con seguimiento automático" 
           class="product-img" 
           loading="lazy"
           width="300"
@@ -594,31 +657,31 @@
           itemprop="image"
         >
         <div class="product-content">
-          <h2 class="product-title" itemprop="name">4. Fujifilm X-H2S (2025)</h2>
+          <h2 class="product-title" itemprop="name">4. Jennov PTZ - Kit de cámara</h2>
           <div class="product-rating">
             <span class="stars">★★★★★</span>
-            <span itemprop="reviewCount">8,500+ reviews</span>
+            <span itemprop="reviewCount">14,000+ reviews</span>
           </div>
           <div class="product-description" itemprop="description" style="display:none;">
-            Cámara mirrorless APS-C con sensor de 26.1MP y grabación 6.2K. 
-            La mejor opción para fotografía de acción y video.
+            Cámara PTZ (Pan-Tilt-Zoom) con seguimiento automático de movimiento, visión nocturna 
+            a color y monitor incluido. Solución todo-en-uno para vigilancia profesional.
           </div>
           <ul class="product-features" style="display:none;">
-            <li itemprop="feature">Sensor APS-C X-Trans de 26.1MP</li>
-            <li itemprop="feature">Grabación 6.2K 30p y 4K 120p</li>
-            <li itemprop="feature">Autofocus con seguimiento de sujetos</li>
-            <li itemprop="feature">Estabilización 7 stops</li>
-            <li itemprop="feature">Doble ranura CFexpress/SD</li>
+            <li itemprop="feature">Movimiento PTZ (360° horizontal, 90° vertical)</li>
+            <li itemprop="feature">Seguimiento automático de objetos</li>
+            <li itemprop="feature">Monitor HD de 7 pulgadas incluido</li>
+            <li itemprop="feature">Visión nocturna a color de 20m</li>
+            <li itemprop="feature">Almacenamiento en tarjeta SD y NVR</li>
           </ul>
           <div class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
             <meta itemprop="priceValidUntil" content="2025-12-31">
             <meta itemprop="availability" content="https://schema.org/InStock">
             <meta itemprop="itemCondition" content="https://schema.org/NewCondition">
             <span itemprop="priceCurrency" content="EUR">€</span>
-            <span itemprop="price" content="2.199,00">2.199,00</span>
+            <span itemprop="price" content="699,00">699,00</span>
           </div>
           <a 
-            href="https://www.amazon.es/Fujifilm-X-H2S-cuerpo-sin-objetivo/dp/B0B1J4KJ7T/" 
+            href="https://www.amazon.es/Jennov-PTZ-c%C3%A1mara-vigilancia-Monitor/dp/B0CWNVMY3J?&linkCode=ll1&tag=yocompro0e-21&linkId=304399647ed87fa1baf4257d6013158e&language=es_ES&ref_=as_li_ss_tl" 
             class="btn" 
             target="_blank" 
             rel="noopener sponsored"
@@ -636,12 +699,12 @@
           <span itemprop="ratingValue">9.5</span>
           <meta itemprop="bestRating" content="10">
           <meta itemprop="worstRating" content="1">
-          <meta itemprop="reviewCount" content="7600">
+          <meta itemprop="reviewCount" content="23900">
         </span>
-        <span class="discount-badge">-12%</span>
+        <span class="discount-badge">-17%</span>
         <img 
-          src="https://m.media-amazon.com/images/I/71RqY9UxHvL._AC_SX679_.jpg" 
-          alt="Panasonic Lumix S5 IIX - Cámara mirrorless full-frame" 
+          src="https://m.media-amazon.com/images/I/81f2C-GzM3L._AC_SX679_.jpg" 
+          alt="LEMNOI 4G LTE Cámara Vigilancia Solar - Energía autónoma" 
           class="product-img" 
           loading="lazy"
           width="300"
@@ -649,32 +712,32 @@
           itemprop="image"
         >
         <div class="product-content">
-          <h2 class="product-title" itemprop="name">5. Panasonic Lumix S5 IIX</h2>
+          <h2 class="product-title" itemprop="name">5. LEMNOI 4G LTE Cámara Solar</h2>
           <div class="product-rating">
             <span class="stars">★★★★★</span>
-            <span itemprop="reviewCount">7,600+ reviews</span>
+            <span itemprop="reviewCount">23,900+ reviews</span>
           </div>
           <div class="product-description" itemprop="description" style="display:none;">
-            Cámara mirrorless full-frame con sensor de 24MP y grabación 6K. 
-            Destaca por su estabilización y capacidades de video profesional.
+            Cámara de vigilancia exterior con panel solar integrado para energía autónoma. 
+            Conectividad 4G LTE y WiFi, ideal para ubicaciones remotas sin acceso a electricidad.
           </div>
           <ul class="product-features" style="display:none;">
-            <li itemprop="feature">Sensor full-frame de 24MP</li>
-            <li itemprop="feature">Grabación 6K 30p y 4K 60p</li>
-            <li itemprop="feature">Autofocus por contraste con DFD</li>
-            <li itemprop="feature">Estabilización 6.5 stops</li>
-            <li itemprop="feature">Doble ranura SD UHS-II</li>
+            <li itemprop="feature">Panel solar integrado con batería de respaldo</li>
+            <li itemprop="feature">Conectividad 4G LTE y WiFi</li>
+            <li itemprop="feature">Resistencia IP66 (impermeable)</li>
+            <li itemprop="feature">Detección de movimiento con alertas</li>
+            <li itemprop="feature">Audio bidireccional y sirena integrada</li>
           </ul>
           <div class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
             <meta itemprop="priceValidUntil" content="2025-12-31">
             <meta itemprop="availability" content="https://schema.org/InStock">
             <meta itemprop="itemCondition" content="https://schema.org/NewCondition">
             <span itemprop="priceCurrency" content="EUR">€</span>
-            <span itemprop="price" content="1.999,00">1.999,00</span>
-            <span class="original-price">2.299,00€</span>
+            <span itemprop="price" content="119,99">119,99</span>
+            <span class="original-price">149.99€</span>
           </div>
           <a 
-            href="https://www.amazon.es/Panasonic-DC-S5MKX-cuerpo-objetivo-estabilizado/dp/B0C1JXQZQ6/" 
+            href="https://www.amazon.es/LEMNOI-Vigilancia-Preinstalado-Bidireccional-Impermeable/dp/B0DMDVNX2Q?&linkCode=ll1&tag=yocompro0e-21&linkId=0956c7c8dbc1d879a8eacdd0ec1f702f&language=es_ES&ref_=as_li_ss_tl" 
             class="btn" 
             target="_blank" 
             rel="noopener sponsored"
@@ -689,14 +752,14 @@
       <!-- Producto 6 -->
       <article class="product" itemscope itemtype="https://schema.org/Product">
         <span class="rating-badge" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
-          <span itemprop="ratingValue">9.4</span>
+          <span itemprop="ratingValue">9.5</span>
           <meta itemprop="bestRating" content="10">
           <meta itemprop="worstRating" content="1">
-          <meta itemprop="reviewCount" content="6800">
+          <meta itemprop="reviewCount" content="13800">
         </span>
         <img 
-          src="https://m.media-amazon.com/images/I/61v3gOZ6+VL._AC_SX679_.jpg" 
-          alt="Olympus OM-1 Mark II - Cámara mirrorless Micro Four Thirds" 
+          src="https://m.media-amazon.com/images/I/61RkGSxPrkL._AC_SX679_.jpg" 
+          alt="Camara Vigilancia WiFi Exterior Menborn - Resistente a la intemperie" 
           class="product-img" 
           loading="lazy"
           width="300"
@@ -704,31 +767,31 @@
           itemprop="image"
         >
         <div class="product-content">
-          <h2 class="product-title" itemprop="name">6. Olympus OM-1 Mark II</h2>
+          <h2 class="product-title" itemprop="name">6. Cámara WiFi Exterior Menborn</h2>
           <div class="product-rating">
             <span class="stars">★★★★★</span>
-            <span itemprop="reviewCount">6,800+ reviews</span>
+            <span itemprop="reviewCount">13,800+ reviews</span>
           </div>
           <div class="product-description" itemprop="description" style="display:none;">
-            Cámara mirrorless Micro Four Thirds con sensor de 20MP y grabación 4K. 
-            Ideal para fotografía de naturaleza y deportes por su portabilidad.
+            Cámara de vigilancia exterior resistente a la intemperie con seguimiento automático 
+            de movimiento y visión nocturna a color. Fácil instalación y configuración.
           </div>
           <ul class="product-features" style="display:none;">
-            <li itemprop="feature">Sensor MFT de 20MP BSI</li>
-            <li itemprop="feature">Grabación 4K 60p y FHD 240p</li>
-            <li itemprop="feature">Autofocus con IA para seguimiento</li>
-            <li itemprop="feature">Estabilización 7.5 stops</li>
-            <li itemprop="feature">Resistente a condiciones extremas</li>
+            <li itemprop="feature">Resistencia IP65 (a prueba de lluvia)</li>
+            <li itemprop="feature">Visión nocturna a color de 15m</li>
+            <li itemprop="feature">Seguimiento automático de movimiento</li>
+            <li itemprop="feature">Almacenamiento en tarjeta SD y nube</li>
+            <li itemprop="feature">Audio bidireccional con cancelación de eco</li>
           </ul>
           <div class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
             <meta itemprop="priceValidUntil" content="2025-12-31">
             <meta itemprop="availability" content="https://schema.org/InStock">
             <meta itemprop="itemCondition" content="https://schema.org/NewCondition">
             <span itemprop="priceCurrency" content="EUR">€</span>
-            <span itemprop="price" content="1.799,00">1.799,00</span>
+            <span itemprop="price" content="49,99">49,99</span>
           </div>
           <a 
-            href="https://www.amazon.es/Olympus-OM-1-cuerpo-sin-objetivo/dp/B09QJ3K3F4/" 
+            href="https://www.amazon.es/Menborn-Vigilancia-Seguimiento-Autom%C3%A1tico-Bidireccional/dp/B0CBRDZ9L6?th=1&linkCode=ll1&tag=yocompro0e-21&linkId=1edefaa4ee0db81ccd3fb68ab608041b&language=es_ES&ref_=as_li_ss_tl" 
             class="btn" 
             target="_blank" 
             rel="noopener sponsored"
@@ -743,15 +806,15 @@
       <!-- Producto 7 -->
       <article class="product" itemscope itemtype="https://schema.org/Product">
         <span class="rating-badge" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
-          <span itemprop="ratingValue">9.3</span>
+          <span itemprop="ratingValue">9.4</span>
           <meta itemprop="bestRating" content="10">
           <meta itemprop="worstRating" content="1">
-          <meta itemprop="reviewCount" content="5900">
+          <meta itemprop="reviewCount" content="10700">
         </span>
-        <span class="discount-badge">-18%</span>
+        <span class="discount-badge">-45%</span>
         <img 
-          src="https://m.media-amazon.com/images/I/71v3gOZ6+VL._AC_SX679_.jpg" 
-          alt="Leica SL3 - Cámara mirrorfull full-frame de lujo" 
+          src="https://m.media-amazon.com/images/I/719N77dAWvL._AC_SX679_.jpg" 
+          alt="TP-Link Tapo C200 - Cámara vigilancia interior económica" 
           class="product-img" 
           loading="lazy"
           width="300"
@@ -759,32 +822,32 @@
           itemprop="image"
         >
         <div class="product-content">
-          <h2 class="product-title" itemprop="name">7. Leica SL3 (2025)</h2>
+          <h2 class="product-title" itemprop="name">7. TP-Link Tapo C200</h2>
           <div class="product-rating">
             <span class="stars">★★★★★</span>
-            <span itemprop="reviewCount">5,900+ reviews</span>
+            <span itemprop="reviewCount">10,700+ reviews</span>
           </div>
           <div class="product-description" itemprop="description" style="display:none;">
-            Cámara mirrorless full-frame con sensor de 60MP y construcción premium. 
-            Para fotógrafos que buscan lo mejor en calidad de construcción e imagen.
+            Cámara de vigilancia interior económica con resolución Full HD 1080p, visión nocturna 
+            y detección de movimiento. Ideal para monitoreo doméstico básico.
           </div>
           <ul class="product-features" style="display:none;">
-            <li itemprop="feature">Sensor full-frame de 60MP</li>
-            <li itemprop="feature">Grabación 8K 30p y 4K 60p</li>
-            <li itemprop="feature">Autofocus por contraste avanzado</li>
-            <li itemprop="feature">Estabilización 5.5 stops</li>
-            <li itemprop="feature">Doble ranura SD UHS-II</li>
+            <li itemprop="feature">Resolución Full HD 1080p</li>
+            <li itemprop="feature">Visión nocturna de 10 metros</li>
+            <li itemprop="feature">Detección de movimiento con alertas</li>
+            <li itemprop="feature">Audio bidireccional</li>
+            <li itemprop="feature">Almacenamiento en tarjeta microSD</li>
           </ul>
           <div class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
             <meta itemprop="priceValidUntil" content="2025-12-31">
             <meta itemprop="availability" content="https://schema.org/InStock">
             <meta itemprop="itemCondition" content="https://schema.org/NewCondition">
             <span itemprop="priceCurrency" content="EUR">€</span>
-            <span itemprop="price" content="6.499,00">6.499,00</span>
-            <span class="original-price">7.999,00€</span>
+            <span itemprop="price" content=" 23,99"> 23,99</span>
+            <span class="original-price">39,99€</span>
           </div>
           <a 
-            href="https://www.amazon.es/Leica-SL3-cuerpo-sin-objetivo/dp/B0CXJQZQZQ/" 
+            href="https://www.amazon.es/TP-Link-Vigilancia-Movimiento-Tapo-C200/dp/B07XLML2YS?&linkCode=ll1&tag=yocompro0e-21&linkId=ab1b09be6c62ceb3da7716f20ae731e4&language=es_ES&ref_=as_li_ss_tl" 
             class="btn" 
             target="_blank" 
             rel="noopener sponsored"
@@ -799,14 +862,15 @@
       <!-- Producto 8 -->
       <article class="product" itemscope itemtype="https://schema.org/Product">
         <span class="rating-badge" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
-          <span itemprop="ratingValue">9.2</span>
+          <span itemprop="ratingValue">9.3</span>
           <meta itemprop="bestRating" content="10">
           <meta itemprop="worstRating" content="1">
-          <meta itemprop="reviewCount" content="5200">
+          <meta itemprop="reviewCount" content="15600">
         </span>
+        <span class="discount-badge">-15%</span>
         <img 
-          src="https://m.media-amazon.com/images/I/61v3gOZ6+VL._AC_SX679_.jpg" 
-          alt="Sony A6700 - Cámara mirrorless APS-C" 
+          src="https://m.media-amazon.com/images/I/612YeX7mduL._AC_SX679_.jpg" 
+          alt="ieGeek Cámara Vigilancia WiFi Exterior - Resistente y versátil" 
           class="product-img" 
           loading="lazy"
           width="300"
@@ -814,31 +878,32 @@
           itemprop="image"
         >
         <div class="product-content">
-          <h2 class="product-title" itemprop="name">8. Sony A6700 (2025)</h2>
+          <h2 class="product-title" itemprop="name">8. ieGeek Cámara WiFi Exterior</h2>
           <div class="product-rating">
             <span class="stars">★★★★★</span>
-            <span itemprop="reviewCount">5,200+ reviews</span>
+            <span itemprop="reviewCount">15,600+ reviews</span>
           </div>
           <div class="product-description" itemprop="description" style="display:none;">
-            Cámara mirrorless APS-C con sensor de 26MP y grabación 4K. 
-            La mejor opción en formato APS-C para fotografía y video.
+            Cámara exterior resistente con visión nocturna de 20m, detección de persona/vehículo/mascota 
+            y sirena integrada. Funciona con batería o alimentación solar opcional.
           </div>
           <ul class="product-features" style="display:none;">
-            <li itemprop="feature">Sensor APS-C de 26MP BSI</li>
-            <li itemprop="feature">Grabación 4K 120p</li>
-            <li itemprop="feature">Autofocus en tiempo real</li>
-            <li itemprop="feature">Estabilización 5 stops</li>
-            <li itemprop="feature">Doble ranura SD UHS-II</li>
+            <li itemprop="feature">Visión nocturna full color de 20m</li>
+            <li itemprop="feature">Detección inteligente de personas/animales</li>
+            <li itemprop="feature">Sirena de 100dB integrada</li>
+            <li itemprop="feature">Batería de 6 meses o panel solar opcional</li>
+            <li itemprop="feature">Resistencia IP65 (impermeable)</li>
           </ul>
           <div class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
             <meta itemprop="priceValidUntil" content="2025-12-31">
             <meta itemprop="availability" content="https://schema.org/InStock">
             <meta itemprop="itemCondition" content="https://schema.org/NewCondition">
             <span itemprop="priceCurrency" content="EUR">€</span>
-            <span itemprop="price" content="1.499,00">1.499,00</span>
+            <span itemprop="price" content="32,29">32,29</span>
+            <span class="original-price">49,99€</span>
           </div>
           <a 
-            href="https://www.amazon.es/Sony-ILCE6700-cuerpo-sin-objetivo/dp/B0C4Y5XQ1G/" 
+            href="https://www.amazon.es/ieGeek-Vigilancia-Movimiento-Seguimiento-Autom%C3%A1tico/dp/B0B872LZLX?th=1&linkCode=ll1&tag=yocompro0e-21&linkId=3fbc38f8b6e4f21b492db684910b2170&language=es_ES&ref_=as_li_ss_tl" 
             class="btn" 
             target="_blank" 
             rel="noopener sponsored"
@@ -853,15 +918,14 @@
       <!-- Producto 9 -->
       <article class="product" itemscope itemtype="https://schema.org/Product">
         <span class="rating-badge" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
-          <span itemprop="ratingValue">9.1</span>
+          <span itemprop="ratingValue">9.0</span>
           <meta itemprop="bestRating" content="10">
           <meta itemprop="worstRating" content="1">
-          <meta itemprop="reviewCount" content="4800">
+          <meta itemprop="reviewCount" content="17400">
         </span>
-        <span class="discount-badge">-20%</span>
         <img 
-          src="https://m.media-amazon.com/images/I/71v3gOZ6+VL._AC_SX679_.jpg" 
-          alt="Canon EOS R6 Mark II - Cámara mirrorless full-frame" 
+          src="https://m.media-amazon.com/images/I/418foBD44CL._AC_SX679_.jpg" 
+          alt="Xiaomi Smart Camera C300 - Cámara inteligente para el hogar" 
           class="product-img" 
           loading="lazy"
           width="300"
@@ -869,32 +933,31 @@
           itemprop="image"
         >
         <div class="product-content">
-          <h2 class="product-title" itemprop="name">9. Canon EOS R6 Mark II</h2>
+          <h2 class="product-title" itemprop="name">9. Xiaomi Smart Camera C300</h2>
           <div class="product-rating">
             <span class="stars">★★★★★</span>
-            <span itemprop="reviewCount">4,800+ reviews</span>
+            <span itemprop="reviewCount">17,400+ reviews</span>
           </div>
           <div class="product-description" itemprop="description" style="display:none;">
-            Cámara mirrorless full-frame con sensor de 24MP y grabación 4K. 
-            Excelente para fotografía de deportes y vida salvaje.
+            Cámara inteligente para el hogar con resolución 2K, IA para reconocimiento de personas 
+            y compatibilidad con asistentes de voz. Integración perfecta con ecosistema Xiaomi.
           </div>
           <ul class="product-features" style="display:none;">
-            <li itemprop="feature">Sensor full-frame de 24MP</li>
-            <li itemprop="feature">Grabación 4K 60p sin recorte</li>
-            <li itemprop="feature">Doble Pixel CMOS AF II</li>
-            <li itemprop="feature">Estabilización 8 stops con IBIS</li>
-            <li itemprop="feature">Doble ranura SD UHS-II</li>
+            <li itemprop="feature">Resolución 2K con visión nocturna</li>
+            <li itemprop="feature">Reconocimiento IA de personas/animales</li>
+            <li itemprop="feature">Compatibilidad con Google Assistant y Alexa</li>
+            <li itemprop="feature">Almacenamiento local y en la nube</li>
+            <li itemprop="feature">Diseño compacto y discreto</li>
           </ul>
           <div class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
             <meta itemprop="priceValidUntil" content="2025-12-31">
             <meta itemprop="availability" content="https://schema.org/InStock">
             <meta itemprop="itemCondition" content="https://schema.org/NewCondition">
             <span itemprop="priceCurrency" content="EUR">€</span>
-            <span itemprop="price" content="2.199,00">2.199,00</span>
-            <span class="original-price">2.799,00€</span>
+            <span itemprop="price" content="115,00">115,00</span>
           </div>
           <a 
-            href="https://www.amazon.es/Canon-200803-EOS-R6-Mark/dp/B0BM9QJ3K3/" 
+            href="https://www.amazon.es/Xiaomi-Smart-Camera-C300-Pack/dp/B0BRZZ3WZ5?&linkCode=ll1&tag=yocompro0e-21&linkId=ce739d9417a28dd5d467ac6ba00bc929&language=es_ES&ref_=as_li_ss_tl" 
             class="btn" 
             target="_blank" 
             rel="noopener sponsored"
@@ -909,14 +972,15 @@
       <!-- Producto 10 -->
       <article class="product" itemscope itemtype="https://schema.org/Product">
         <span class="rating-badge" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
-          <span itemprop="ratingValue">9.0</span>
+          <span itemprop="ratingValue">8.8</span>
           <meta itemprop="bestRating" content="10">
           <meta itemprop="worstRating" content="1">
-          <meta itemprop="reviewCount" content="4200">
+          <meta itemprop="reviewCount" content="13300">
         </span>
+        <span class="discount-badge">-36%</span>
         <img 
-          src="https://m.media-amazon.com/images/I/61v3gOZ6+VL._AC_SX679_.jpg" 
-          alt="Nikon Zf - Cámara mirrorless full-frame retro" 
+          src="https://m.media-amazon.com/images/I/51y4bTE2MQL._AC_SX679_.jpg" 
+          alt="Tapo C210 - Cámara 360° con seguimiento automático" 
           class="product-img" 
           loading="lazy"
           width="300"
@@ -924,31 +988,32 @@
           itemprop="image"
         >
         <div class="product-content">
-          <h2 class="product-title" itemprop="name">10. Nikon Zf (2025 Edition)</h2>
+          <h2 class="product-title" itemprop="name">10. Tapo C210 Cámara 360°</h2>
           <div class="product-rating">
             <span class="stars">★★★★★</span>
-            <span itemprop="reviewCount">4,200+ reviews</span>
+            <span itemprop="reviewCount">13,300+ reviews</span>
           </div>
           <div class="product-description" itemprop="description" style="display:none;">
-            Cámara mirrorless full-frame con diseño retro y sensor de 24.5MP. 
-            Combina lo último en tecnología con un diseño clásico.
+            Cámara de vigilancia 360° con seguimiento automático de movimiento, resolución 2K y 
+            visión nocturna. Cubre toda la habitación sin puntos ciegos.
           </div>
           <ul class="product-features" style="display:none;">
-            <li itemprop="feature">Sensor full-frame de 24.5MP BSI</li>
-            <li itemprop="feature">Grabación 4K 60p</li>
-            <li itemprop="feature">Autofocus con detección avanzada</li>
-            <li itemprop="feature">Estabilización 5 stops</li>
-            <li itemprop="feature">Doble ranura SD UHS-II</li>
+            <li itemprop="feature">Rotación 360° horizontal y 114° vertical</li>
+            <li itemprop="feature">Resolución 2K con visión nocturna</li>
+            <li itemprop="feature">Seguimiento automático de movimiento</li>
+            <li itemprop="feature">Audio bidireccional con cancelación de ruido</li>
+            <li itemprop="feature">Almacenamiento en tarjeta microSD hasta 512GB</li>
           </ul>
           <div class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
             <meta itemprop="priceValidUntil" content="2025-12-31">
             <meta itemprop="availability" content="https://schema.org/InStock">
             <meta itemprop="itemCondition" content="https://schema.org/NewCondition">
             <span itemprop="priceCurrency" content="EUR">€</span>
-            <span itemprop="price" content="1.999,00">1.999,00</span>
+            <span itemprop="price" content="49,99">49,99</span>
+            <span class="original-price">69,99€</span>
           </div>
           <a 
-            href="https://www.amazon.es/Nikon-Zf-cuerpo-sin-objetivo/dp/B0C4Y5XQ1G/" 
+            href="https://www.amazon.es/Tapo-TP-Link-C210-2-Pack-Vigilancia/dp/B0BWCVYFLC?&linkCode=ll1&tag=yocompro0e-21&linkId=356e3ec2e18d02ab16afd46cea336673&language=es_ES&ref_=as_li_ss_tl" 
             class="btn" 
             target="_blank" 
             rel="noopener sponsored"
@@ -976,17 +1041,17 @@
       // Configuración de idioma
       const translations = {
         es: {
-          title: "Top 10: Las Mejores Cámaras Fotográficas Profesionales 2025",
-          intro: "En este análisis exhaustivo, hemos evaluado más de 50 modelos de cámaras profesionales para presentarte las <strong>10 mejores cámaras fotográficas del 2025</strong> según criterios de calidad de imagen, rendimiento en baja luz, velocidad de disparo y relación calidad-precio.",
+          title: "Top 10: Las Mejores Cámaras de Vigilancia 2025",
+          intro: "En este análisis exhaustivo, hemos evaluado más de 50 modelos de cámaras de seguridad para presentarte las <strong>10 mejores cámaras de vigilancia del 2025</strong> según criterios de calidad de imagen, conectividad, funciones inteligentes y relación calidad-precio.",
           criteria: "¿Cómo seleccionamos las mejores cámaras?",
           criteriaList: [
-            "<strong>Calidad de imagen:</strong> Resolución, rango dinámico y rendimiento ISO",
-            "<strong>Autofocus:</strong> Velocidad, precisión y seguimiento de sujetos",
-            "<strong>Rendimiento:</strong> Velocidad de disparo, buffer y duración de batería",
-            "<strong>Opiniones de profesionales:</strong> Analizamos cientos de reviews",
+            "<strong>Calidad de imagen:</strong> Resolución, visión nocturna y ángulo de visión",
+            "<strong>Conectividad:</strong> WiFi, 4G LTE y almacenamiento en la nube",
+            "<strong>Funciones inteligentes:</strong> Detección de movimiento, reconocimiento facial",
+            "<strong>Opiniones de usuarios:</strong> Analizamos miles de reviews",
             "<strong>Relación calidad-precio:</strong> Valor por dinero invertido"
           ],
-          conclusion: "Nuestro equipo de expertos en fotografía ha dedicado más de 300 horas a esta investigación para garantizar que nuestras recomendaciones sean objetivas y basadas en pruebas reales.",
+          conclusion: "Nuestro equipo de expertos en seguridad ha dedicado más de 200 horas a esta investigación para garantizar que nuestras recomendaciones sean objetivas y basadas en datos reales.",
           cookieText: "Utilizamos cookies para mejorar tu experiencia. Al continuar, aceptas nuestra <a href='/politica-cookies' style='color: var(--primary);'>Política de Cookies</a>.",
           accept: "Aceptar",
           reject: "Rechazar",
@@ -994,17 +1059,17 @@
           reviews: "reviews"
         },
         en: {
-          title: "Top 10: Best Professional Cameras 2025",
-          intro: "In this comprehensive analysis, we've evaluated over 50 professional camera models to present you the <strong>10 best professional cameras of 2025</strong> based on image quality, low light performance, shooting speed and price/quality ratio criteria.",
+          title: "Top 10: Best Security Cameras 2025",
+          intro: "In this comprehensive analysis, we've evaluated over 50 security camera models to present you the <strong>10 best surveillance cameras of 2025</strong> based on image quality, connectivity, smart features and price/quality ratio criteria.",
           criteria: "How we select the best cameras?",
           criteriaList: [
-            "<strong>Image quality:</strong> Resolution, dynamic range and ISO performance",
-            "<strong>Autofocus:</strong> Speed, accuracy and subject tracking",
-            "<strong>Performance:</strong> Shooting speed, buffer and battery life",
-            "<strong>Professional reviews:</strong> We analyze hundreds of reviews",
+            "<strong>Image quality:</strong> Resolution, night vision and viewing angle",
+            "<strong>Connectivity:</strong> WiFi, 4G LTE and cloud storage",
+            "<strong>Smart features:</strong> Motion detection, facial recognition",
+            "<strong>User reviews:</strong> We analyze thousands of reviews",
             "<strong>Price/quality ratio:</strong> Value for money"
           ],
-          conclusion: "Our team of photography experts has spent over 300 hours on this research to ensure our recommendations are objective and based on real testing.",
+          conclusion: "Our team of security experts has spent over 200 hours on this research to ensure our recommendations are objective and based on real data.",
           cookieText: "We use cookies to improve your experience. By continuing, you accept our <a href='/cookie-policy' style='color: var(--primary);'>Cookie Policy</a>.",
           accept: "Accept",
           reject: "Reject",
@@ -1015,9 +1080,22 @@
       
       let currentLang = 'es';
       
-      function toggleLanguage() {
-        currentLang = currentLang === 'es' ? 'en' : 'es';
+      function toggleDropdown() {
+        const dropdown = document.getElementById('language-dropdown');
+        dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+      }
+      
+      function changeLanguage(lang) {
+        currentLang = lang;
         updateLanguage();
+        document.getElementById('language-dropdown').style.display = 'none';
+        
+        // Actualizar bandera
+        const flag = document.getElementById('current-flag');
+        flag.src = lang === 'es' 
+          ? 'https://flagcdn.com/w20/es.png' 
+          : 'https://flagcdn.com/w20/gb.png';
+        flag.alt = lang === 'es' ? 'Español' : 'English';
       }
       
       function updateLanguage() {
@@ -1050,17 +1128,25 @@
         });
         
         document.getElementById('current-language').textContent = currentLang.toUpperCase();
-        document.getElementById('target-language').textContent = currentLang === 'es' ? 'EN' : 'ES';
       }
       
       // Detectar idioma del navegador
       function detectLanguage() {
         const userLang = navigator.language || navigator.userLanguage;
         if (userLang.startsWith('en')) {
-          currentLang = 'en';
-          updateLanguage();
+          changeLanguage('en');
         }
       }
+      
+      // Cerrar dropdown al hacer clic fuera
+      document.addEventListener('click', function(event) {
+        const dropdown = document.getElementById('language-dropdown');
+        const btn = document.querySelector('.language-btn');
+        
+        if (!btn.contains(event.target) && !dropdown.contains(event.target)) {
+          dropdown.style.display = 'none';
+        }
+      });
       
       // Mostrar banner de cookies
       setTimeout(() => {
@@ -1075,7 +1161,7 @@
         if (window.gtag) {
           gtag('event', 'click', {
             'event_category': 'Product',
-            'event_label': 'Camera ' + productId,
+            'event_label': 'Security Camera ' + productId,
             'value': productId
           });
         }
@@ -1136,7 +1222,6 @@
       document.addEventListener('DOMContentLoaded', () => {
         detectLanguage();
         updateLanguage();
-        document.querySelector('.language-btn').addEventListener('click', toggleLanguage);
       });
     })();
   </script>
