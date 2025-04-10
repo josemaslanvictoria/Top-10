@@ -197,8 +197,8 @@
       position: absolute;
       top: 1rem;
       right: 1rem;
-      width: 40px;
-      height: 40px;
+      width: 50px;
+      height: 50px;
       border-radius: 50%;
       background: var(--white);
       display: flex;
@@ -206,9 +206,9 @@
       justify-content: center;
       font-weight: 700;
       box-shadow: var(--shadow);
-      border: 2px solid var(--primary);
+      border: 3px solid var(--primary);
       color: var(--primary);
-      font-size: 0.9rem;
+      font-size: 1rem;
     }
     
     .discount-badge {
@@ -346,6 +346,33 @@
       font-weight: 500;
       box-shadow: var(--shadow);
     }
+    
+    /* Mejoras específicas para relojes */
+    .product-features {
+      display: none;
+      margin-top: 1rem;
+      padding-left: 1rem;
+    }
+    
+    .product-features li {
+      margin-bottom: 0.5rem;
+      list-style-type: disc;
+    }
+    
+    .toggle-info {
+      background: var(--secondary);
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: var(--transition);
+      margin-top: 0.5rem;
+    }
+    
+    .toggle-info:hover {
+      background: #e0e0e0;
+    }
   </style>
   
   <!-- Scripts diferidos -->
@@ -456,6 +483,7 @@
             <span itemprop="price" content="18.99">18.99</span>
             <span class="original-price">49.49€</span>
           </div>
+          <button class="toggle-info" onclick="toggleInfo(this)">Mostrar características</button>
           <a 
             href="https://www.amazon.es/Csasan-Inteligente-Smartwatch-Deportivos-Puls%C3%B3metro/dp/B0DWFLBHTL?tag=yocompro0e-21" 
             class="btn" 
@@ -511,6 +539,7 @@
             <span itemprop="price" content="359.99">359.99</span>
             <span class="original-price">499.99€</span>
           </div>
+          <button class="toggle-info" onclick="toggleInfo(this)">Mostrar características</button>
           <a 
             href="https://www.amazon.es/Ticwatch-Atlas-Smartwatch-Inteligente-Entrenamiento/dp/B0DG2NL4SZ?tag=yocompro0e-21" 
             class="btn" 
@@ -566,6 +595,7 @@
             <span itemprop="price" content="99.99">99.99</span>
             <span class="original-price">105.99€</span>
           </div>
+          <button class="toggle-info" onclick="toggleInfo(this)">Mostrar características</button>
           <a 
             href="https://www.amazon.es/OUKITEL-Inteligente-BT12-Smartwatch-Impermeable/dp/B0DN1KLC2K?tag=yocompro0e-21" 
             class="btn" 
@@ -621,6 +651,7 @@
             <span itemprop="price" content="39.99">39.99</span>
             <span class="original-price">99.99€</span>
           </div>
+          <button class="toggle-info" onclick="toggleInfo(this)">Mostrar características</button>
           <a 
             href="https://www.amazon.es/Inteligente-Smartwatch-Pod%C3%B3metro-Deportivos-Impermeable/dp/B0DSBV5FX2?tag=yocompro0e-21" 
             class="btn" 
@@ -676,6 +707,7 @@
             <span itemprop="price" content="49.99">49.99</span>
             <span class="original-price">62.99€</span>
           </div>
+          <button class="toggle-info" onclick="toggleInfo(this)">Mostrar características</button>
           <a 
             href="https://www.amazon.es/BANLVS-Inteligente-Smartwatch-Deportivos-Impermeable/dp/B0DFGV1P49?tag=yocompro0e-21" 
             class="btn" 
@@ -731,6 +763,7 @@
             <span itemprop="price" content="39.99">39.99</span>
             <span class="original-price">49.99€</span>
           </div>
+          <button class="toggle-info" onclick="toggleInfo(this)">Mostrar características</button>
           <a 
             href="https://www.amazon.es/OUKITEL-Inteligente-Smartwatch-Notificaciones-Puls%C3%B3metro/dp/B0DRHT648B?tag=yocompro0e-21" 
             class="btn" 
@@ -786,6 +819,7 @@
             <span itemprop="price" content="29.99">29.99</span>
             <span class="original-price">99.99€</span>
           </div>
+          <button class="toggle-info" onclick="toggleInfo(this)">Mostrar características</button>
           <a 
             href="https://www.amazon.es/Inteligente-Smartwatch-Deportivos-Puls%C3%B3metro-Impermeable/dp/B0DK4NB7HJ?tag=yocompro0e-21" 
             class="btn" 
@@ -841,6 +875,7 @@
             <span itemprop="price" content="29.99">29.99</span>
             <span class="original-price">49.99€</span>
           </div>
+          <button class="toggle-info" onclick="toggleInfo(this)">Mostrar características</button>
           <a 
             href="https://www.amazon.es/Inteligente-Smartwatch-Puls%C3%B3metro-Deportivos-Impermeable/dp/B0DWX6X3LM?tag=yocompro0e-21" 
             class="btn" 
@@ -896,6 +931,7 @@
             <span itemprop="price" content="59.99">49.99</span>
             <span class="original-price">70.99€</span>
           </div>
+          <button class="toggle-info" onclick="toggleInfo(this)">Mostrar características</button>
           <a 
             href="https://www.amazon.es/DEKELIFE-Inteligente-Smartwatch-Impermeable-Deportivos/dp/B0DBHSQH81?tag=yocompro0e-21" 
             class="btn" 
@@ -951,6 +987,7 @@
             <span itemprop="price" content="35.99">35.99</span>
             <span class="original-price">55.99€</span>
           </div>
+          <button class="toggle-info" onclick="toggleInfo(this)">Mostrar características</button>
           <a 
             href="https://www.amazon.es/RUXINGX-Inteligente-Puls%C3%B3metro-Deportivos-Smartwatch/dp/B0D93CYZG6?tag=yocompro0e-21" 
             class="btn" 
@@ -995,7 +1032,9 @@
           accept: "Aceptar",
           reject: "Rechazar",
           offer: "Ver oferta en Amazon",
-          reviews: "reviews"
+          reviews: "reviews",
+          features: "Mostrar características",
+          hideFeatures: "Ocultar características"
         },
         en: {
           title: "Top 10: Best Smartwatches 2025 - Price/Quality Ratio",
@@ -1013,7 +1052,9 @@
           accept: "Accept",
           reject: "Reject",
           offer: "View deal on Amazon",
-          reviews: "reviews"
+          reviews: "reviews",
+          features: "Show features",
+          hideFeatures: "Hide features"
         }
       };
       
@@ -1056,6 +1097,23 @@
         document.getElementById('current-language').textContent = currentLang.toUpperCase();
         document.getElementById('target-language').textContent = currentLang === 'es' ? 'EN' : 'ES';
       }
+      
+      // Función para mostrar/ocultar características
+      window.toggleInfo = function(button) {
+        const product = button.closest('.product');
+        const features = product.querySelector('.product-features');
+        const description = product.querySelector('.product-description');
+        
+        if (features.style.display === 'none' || !features.style.display) {
+          features.style.display = 'block';
+          description.style.display = 'block';
+          button.textContent = translations[currentLang].hideFeatures;
+        } else {
+          features.style.display = 'none';
+          description.style.display = 'none';
+          button.textContent = translations[currentLang].features;
+        }
+      };
       
       // Detectar idioma del navegador
       function detectLanguage() {
