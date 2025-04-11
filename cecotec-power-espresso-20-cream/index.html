@@ -587,6 +587,44 @@
             text-decoration: underline;
         }
         
+        /* Language Selector */
+        .language-selector {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            gap: 10px;
+            background: white;
+            padding: 10px;
+            border-radius: 50px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .language-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 2px solid transparent;
+            font-weight: bold;
+            background: #f1f1f1;
+        }
+        
+        .language-btn:hover {
+            transform: scale(1.1);
+        }
+        
+        .language-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: white;
+        }
+        
         /* Responsive */
         @media (max-width: 768px) {
             h1 {
@@ -604,6 +642,11 @@
             .header-content {
                 padding: 0;
             }
+            
+            .language-selector {
+                bottom: 10px;
+                right: 10px;
+            }
         }
     </style>
 </head>
@@ -611,11 +654,11 @@
     <header>
         <div class="container">
             <div class="header-content">
-                <h1>Cecotec Power Espresso 20 Cream</h1>
-                <p class="subtitle">Análisis Profesional y Opinión Real 2025</p>
+                <h1 id="main-title">Cecotec Power Espresso 20 Cream</h1>
+                <p class="subtitle" id="main-subtitle">Análisis Profesional y Opinión Real 2025</p>
                 <div class="author">
                     <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Autora" width="36" height="36" loading="lazy">
-                    <span>Por María García | Actualizado: 1 Abril 2025</span>
+                    <span id="author-text">Por María García | Actualizado: 1 Abril 2025</span>
                 </div>
             </div>
         </div>
@@ -623,32 +666,32 @@
     
     <div class="container">
         <div class="breadcrumbs">
-            <a href="/">Inicio</a> &raquo; <a href="/reviews">Análisis</a> &raquo; <span>Cecotec Power Espresso 20 Cream</span>
+            <a href="/" id="home-link">Inicio</a> &raquo; <a href="/reviews" id="reviews-link">Análisis</a> &raquo; <span id="current-page">Cecotec Power Espresso 20 Cream</span>
         </div>
         
         <div class="blog-content">
             <article>
-                <p><strong>Después de 6 meses de uso intensivo</strong>, podemos afirmar que la <strong>Cecotec Power Espresso 20 Cream</strong> es una de las mejores opciones en relación calidad-precio del mercado de cafeteras superautomáticas. En este análisis exhaustivo te contamos todo lo que necesitas saber antes de comprar esta máquina de café con sistema Cream integrado.</p>
+                <p id="intro-text"><strong>Después de 6 meses de uso intensivo</strong>, podemos afirmar que la <strong>Cecotec Power Espresso 20 Cream</strong> es una de las mejores opciones en relación calidad-precio del mercado de cafeteras superautomáticas. En este análisis exhaustivo te contamos todo lo que necesitas saber antes de comprar esta máquina de café con sistema Cream integrado.</p>
                 
                 <img src="https://m.media-amazon.com/images/I/815wwugo1xL._AC_SL1500_.jpg" alt="Cecotec Power Espresso 20 Cream - Vista frontal" class="featured-image" width="1200" height="800" loading="lazy">
                 
-                <h2>Características Principales y Especificaciones Técnicas</h2>
+                <h2 id="features-title">Características Principales y Especificaciones Técnicas</h2>
                 
-                <p>La <strong>Cecotec Power Espresso 20 Cream</strong> destaca por su <strong>sistema de 20 bares de presión</strong>, un valor excepcional en su gama de precio que garantiza una extracción profesional del café. El <strong>depósito de agua de 1.8 litros</strong> permite preparar múltiples tazas sin necesidad de recarga constante, ideal para familias o pequeñas oficinas.</p>
+                <p id="features-text1">La <strong>Cecotec Power Espresso 20 Cream</strong> destaca por su <strong>sistema de 20 bares de presión</strong>, un valor excepcional en su gama de precio que garantiza una extracción profesional del café. El <strong>depósito de agua de 1.8 litros</strong> permite preparar múltiples tazas sin necesidad de recarga constante, ideal para familias o pequeñas oficinas.</p>
                 
-                <p>El <strong>sistema Cream Technology</strong> es sin duda su mayor innovación, permitiendo crear espuma de leche perfecta para capuchinos y lattes con solo pulsar un botón, sin necesidad de aprender técnicas manuales como en cafeteras más básicas.</p>
+                <p id="features-text2">El <strong>sistema Cream Technology</strong> es sin duda su mayor innovación, permitiendo crear espuma de leche perfecta para capuchinos y lattes con solo pulsar un botón, sin necesidad de aprender técnicas manuales como en cafeteras más básicas.</p>
                 
                 <div class="image-gallery">
                     <img src="https://m.media-amazon.com/images/I/51L+1dyZSDL._AC_SY300_SX300_.jpg" alt="Panel de control Cecotec Power Espresso 20 Cream" class="gallery-image" width="300" height="300" loading="lazy">
                     <img src="https://m.media-amazon.com/images/I/41brWlKSlrL._AC_US100_.jpg" alt="Cecotec Power Espresso 20 Cream preparando café" class="gallery-image" width="300" height="300" loading="lazy">
                 </div>
                 
-                <h3>Ventajas y Desventajas del Sistema Cream</h3>
+                <h3 id="pros-cons-title">Ventajas y Desventajas del Sistema Cream</h3>
                 
                 <div class="pros-cons">
                     <div class="pros">
-                        <h3>✅ Lo que nos encantó</h3>
-                        <ul>
+                        <h3 id="pros-title">✅ Lo que nos encantó</h3>
+                        <ul id="pros-list">
                             <li><strong>Espuma profesional consistente</strong>: Resultados comparables a cafeterías especializadas</li>
                             <li><strong>Facilidad de uso</strong>: Prepara bebidas complejas con un solo botón</li>
                             <li><strong>Limpieza automatizada</strong>: Programa de autolimpieza para el circuito de leche</li>
@@ -656,8 +699,8 @@
                         </ul>
                     </div>
                     <div class="cons">
-                        <h3>❌ Aspectos mejorables</h3>
-                        <ul>
+                        <h3 id="cons-title">❌ Aspectos mejorables</h3>
+                        <ul id="cons-list">
                             <li><strong>Ruido durante el vaporizado</strong>: Más notable que en modelos premium</li>
                             <li><strong>Capacidad del depósito</strong>: 700ml pueden quedarse cortos para familias grandes</li>
                             <li><strong>Mantenimiento</strong>: Requiere limpieza diaria del circuito de leche</li>
@@ -665,18 +708,18 @@
                     </div>
                 </div>
                 
-                <h2>Comparativa con Otras Cafeteras Superautomáticas (2025)</h2>
+                <h2 id="comparison-title">Comparativa con Otras Cafeteras Superautomáticas (2025)</h2>
                 
-                <p>Para entender realmente el valor de la <strong>Cecotec Power Espresso 20 Cream</strong>, la hemos comparado con tres modelos representativos de diferentes segmentos de precio:</p>
+                <p id="comparison-text">Para entender realmente el valor de la <strong>Cecotec Power Espresso 20 Cream</strong>, la hemos comparado con tres modelos representativos de diferentes segmentos de precio:</p>
                 
                 <table class="comparison-table">
                     <thead>
                         <tr>
-                            <th>Modelo</th>
-                            <th>Precio</th>
-                            <th>Presión</th>
-                            <th>Tipo</th>
-                            <th>Puntos Fuertes</th>
+                            <th id="model-header">Modelo</th>
+                            <th id="price-header">Precio</th>
+                            <th id="pressure-header">Presión</th>
+                            <th id="type-header">Tipo</th>
+                            <th id="strengths-header">Puntos Fuertes</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -684,65 +727,65 @@
                             <td><strong>Cecotec Power Espresso 20 Cream</strong></td>
                             <td>€149</td>
                             <td>20 bares</td>
-                            <td>Semiautomática</td>
-                            <td>Sistema Cream, relación calidad-precio</td>
+                            <td id="type-cell1">Semiautomática</td>
+                            <td id="strengths-cell1">Sistema Cream, relación calidad-precio</td>
                         </tr>
                         <tr>
                             <td><a href="https://www.amazon.es/Krups-Authentic-Espumador-Compactadora-capacidad/dp/B0D92CZC7Z?th=1&linkCode=ll1&tag=yocompro0e-21&linkId=f21afb385c205d013611260747fa4de2&language=es_ES&ref_=as_li_ss_tl" rel="nofollow sponsored">Krups Authentic</a></td>
                             <td>€105,99</td>
                             <td>15 bares</td>
-                            <td>Manual</td>
-                            <td>Diseño compacto, precio económico</td>
+                            <td id="type-cell2">Manual</td>
+                            <td id="strengths-cell2">Diseño compacto, precio económico</td>
                         </tr>
                         <tr>
                             <td><a href="https://www.amazon.es/DeLonghi-Magnifica-ECAM11-112-B-Superautom%C3%A1tica-Soft-Touch/dp/B0BWSFGQ49?th=1&linkCode=ll1&tag=yocompro0e-21&linkId=97c65ae433f4d3a656f663185c0890f6&language=es_ES&ref_=as_li_ss_tl" rel="nofollow sponsored">De'Longhi Magnifica S</a></td>
                             <td>€329,99</td>
                             <td>15 bares</td>
-                            <td>Superautomática</td>
-                            <td>Molinillo integrado, calidad profesional</td>
+                            <td id="type-cell3">Superautomática</td>
+                            <td id="strengths-cell3">Molinillo integrado, calidad profesional</td>
                         </tr>
                     </tbody>
                 </table>
                 
-                <h2>Nuestro Análisis en Vídeo</h2>
+                <h2 id="video-title">Nuestro Análisis en Vídeo</h2>
                 
-                <p>En nuestro canal de YouTube encontrarás un análisis completo con pruebas reales de la Cecotec Power Espresso 20 Cream donde mostramos su funcionamiento, mantenimiento y calidad del café:</p>
+                <p id="video-text">En nuestro canal de YouTube encontrarás un análisis completo con pruebas reales de la Cecotec Power Espresso 20 Cream donde mostramos su funcionamiento, mantenimiento y calidad del café:</p>
                 
                 <div class="video-container">
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/D4-kFzwLuvQ?si=NdqmJTKbaSbLWg_J" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" title="Análisis en vídeo de la Cecotec Power Espresso 20 Cream"></iframe>
                 </div>
                 
                 <div class="conclusion">
-                    <h2>Conclusión: ¿Merece la Pena en 2025?</h2>
-                    <p>La <strong>Cecotec Power Espresso 20 Cream</strong> ofrece un excelente equilibrio entre calidad y precio, destacando especialmente por su <strong>sistema Cream para espuma profesional</strong>. Aunque no alcanza el nivel de modelos premium en términos de materiales o personalización, supera claramente a otras opciones en su rango de precio.</p>
+                    <h2 id="conclusion-title">Conclusión: ¿Merece la Pena en 2025?</h2>
+                    <p id="conclusion-text1">La <strong>Cecotec Power Espresso 20 Cream</strong> ofrece un excelente equilibrio entre calidad y precio, destacando especialmente por su <strong>sistema Cream para espuma profesional</strong>. Aunque no alcanza el nivel de modelos premium en términos de materiales o personalización, supera claramente a otras opciones en su rango de precio.</p>
                     
-                    <p>Recomendada especialmente para quienes buscan <strong>calidad de cafetería en casa</strong> sin realizar una gran inversión. Los amantes del capuchino y latte apreciarán particularmente su sistema automatizado de espuma.</p>
+                    <p id="conclusion-text2">Recomendada especialmente para quienes buscan <strong>calidad de cafetería en casa</strong> sin realizar una gran inversión. Los amantes del capuchino y latte apreciarán particularmente su sistema automatizado de espuma.</p>
                     
-                    <a href="https://www.amazon.es/dp/B0BPYQBK6B?th=1&linkCode=ll1&tag=yocompro0e-21&linkId=0b17b70dc0a9043699a0aa58b1233d1b&language=es_ES&ref_=as_li_ss_tl" class="btn" rel="nofollow sponsored">Comprar en Amazon - €149.00</a>
+                    <a href="https://www.amazon.es/dp/B0BPYQBK6B?th=1&linkCode=ll1&tag=yocompro0e-21&linkId=0b17b70dc0a9043699a0aa58b1233d1b&language=es_ES&ref_=as_li_ss_tl" class="btn" rel="nofollow sponsored" id="buy-button">Comprar en Amazon - €149.00</a>
                 </div>
             </article>
             
             <aside>
                 <div class="sidebar-widget">
-                    <h3>Oferta Actual</h3>
+                    <h3 id="offer-title">Oferta Actual</h3>
                     <div class="product-card">
                         <img src="https://m.media-amazon.com/images/I/815wwugo1xL._AC_SL1500_.jpg" alt="Cecotec Power Espresso 20 Cream" width="200" height="200" loading="lazy">
                         <h4>Cecotec Power Espresso 20 Cream</h4>
                         <div class="price">€149,00</div>
-                        <div class="price-savings">¡Ahorra 15%!</div>
-                        <div class="shipping-info">Envío GRATIS</div>
-                        <a href="https://www.amazon.es/dp/B0BPYQBK6B?th=1&linkCode=ll1&tag=yocompro0e-21&linkId=0b17b70dc0a9043699a0aa58b1233d1b&language=es_ES&ref_=as_li_ss_tl" class="btn" rel="nofollow sponsored">Comprar Ahora</a>
+                        <div class="price-savings" id="savings-text">¡Ahorra 15%!</div>
+                        <div class="shipping-info" id="shipping-text">Envío GRATIS</div>
+                        <a href="https://www.amazon.es/dp/B0BPYQBK6B?th=1&linkCode=ll1&tag=yocompro0e-21&linkId=0b17b70dc0a9043699a0aa58b1233d1b&language=es_ES&ref_=as_li_ss_tl" class="btn" rel="nofollow sponsored" id="buy-now-button">Comprar Ahora</a>
                     </div>
                 </div>
                 
                 <div class="sidebar-widget">
-                    <h3>Alternativas Recomendadas</h3>
+                    <h3 id="alternatives-title">Alternativas Recomendadas</h3>
                     <div class="product-card">
                         <img src="https://m.media-amazon.com/images/I/61Whmd4LjGL._AC_UL640_FMwebp_QL65_.jpg" alt="Krups Authentic" width="200" height="200" loading="lazy">
                         <h4>Krups Authentic</h4>
                         <div class="price">€105,99</div>
                         <div class="shipping-info">Envío GRATIS</div>
-                        <a href="https://www.amazon.es/Krups-Authentic-Espumador-Compactadora-capacidad/dp/B0D92CZC7Z?tag=yocompro0e-21" class="btn btn-secondary" rel="nofollow sponsored">Ver Oferta</a>
+                        <a href="https://www.amazon.es/Krups-Authentic-Espumador-Compactadora-capacidad/dp/B0D92CZC7Z?tag=yocompro0e-21" class="btn btn-secondary" rel="nofollow sponsored" id="alternative-button1">Ver Oferta</a>
                     </div>
                     
                     <div class="product-card" style="margin-top: 1.5rem;">
@@ -750,17 +793,17 @@
                         <h4>De'Longhi Magnifica S</h4>
                         <div class="price">€329.99</div>
                         <div class="shipping-info">Envío GRATIS</div>
-                        <a href="https://www.amazon.es/DeLonghi-Magnifica-ECAM11-112-B-Superautom%C3%A1tica-Soft-Touch/dp/B0BWSFGQ49?tag=yocompro0e-21" class="btn btn-secondary" rel="nofollow sponsored">Ver Oferta</a>
+                        <a href="https://www.amazon.es/DeLonghi-Magnifica-ECAM11-112-B-Superautom%C3%A1tica-Soft-Touch/dp/B0BWSFGQ49?tag=yocompro0e-21" class="btn btn-secondary" rel="nofollow sponsored" id="alternative-button2">Ver Oferta</a>
                     </div>
                 </div>
                 
                 <div class="sidebar-widget">
-                    <h3>Más Análisis</h3>
-                    <p>Descubre nuestras otras reviews de productos para el hogar:</p>
+                    <h3 id="more-reviews-title">Más Análisis</h3>
+                    <p id="more-reviews-text">Descubre nuestras otras reviews de productos para el hogar:</p>
                     <ul style="list-style-type: none; padding-left: 0;">
-                        <li style="margin-bottom: 0.5rem;">→ <a href="https://www.top10tecnologia.com/robot-aspirador/index.html" style="text-decoration: none; color: var(--secondary);">Mejores robots aspiradores 2025</a></li>
-                        <li style="margin-bottom: 0.5rem;">→ <a href="https://www.top10tecnologia.com/freidoras/index.html" style="text-decoration: none; color: var(--secondary);">Freidoras de aire comparativa</a></li>
-                        <li style="margin-bottom: 0.5rem;">→ <a href="https://www.top10tecnologia.com/deshumidificador/index.html" style="text-decoration: none; color: var(--secondary);">Purificadores de aire análisis</a></li>
+                        <li style="margin-bottom: 0.5rem;">→ <a href="https://www.top10tecnologia.com/robot-aspirador/index.html" style="text-decoration: none; color: var(--secondary);" id="review-link1">Mejores robots aspiradores 2025</a></li>
+                        <li style="margin-bottom: 0.5rem;">→ <a href="https://www.top10tecnologia.com/freidoras/index.html" style="text-decoration: none; color: var(--secondary);" id="review-link2">Freidoras de aire comparativa</a></li>
+                        <li style="margin-bottom: 0.5rem;">→ <a href="https://www.top10tecnologia.com/deshumidificador/index.html" style="text-decoration: none; color: var(--secondary);" id="review-link3">Purificadores de aire análisis</a></li>
                     </ul>
                 </div>
             </aside>
@@ -771,12 +814,203 @@
         <div class="container">
             <p>© 2025 Don Hogar - Tecnología para tu hogar</p>
             <div class="footer-links">
-                <a href="/politica-privacidad">Política de Privacidad</a>
-                <a href="/aviso-legal">Aviso Legal</a>
-                <a href="/cookies">Cookies</a>
-                <a href="/contacto">Contacto</a>
+                <a href="/politica-privacidad" id="privacy-link">Política de Privacidad</a>
+                <a href="/aviso-legal" id="legal-link">Aviso Legal</a>
+                <a href="/cookies" id="cookies-link">Cookies</a>
+                <a href="/contacto" id="contact-link">Contacto</a>
             </div>
         </div>
     </footer>
+    
+    <!-- Language Selector -->
+    <div class="language-selector">
+        <div class="language-btn active" data-lang="es">ES</div>
+        <div class="language-btn" data-lang="en">EN</div>
+    </div>
+    
+    <script>
+        // Detectar idioma del navegador
+        const userLang = navigator.language || navigator.userLanguage;
+        const isEnglish = userLang.startsWith('en');
+        
+        // Traducciones
+        const translations = {
+            es: {
+                "main-title": "Cecotec Power Espresso 20 Cream",
+                "main-subtitle": "Análisis Profesional y Opinión Real 2025",
+                "author-text": "Por María García | Actualizado: 1 Abril 2025",
+                "home-link": "Inicio",
+                "reviews-link": "Análisis",
+                "current-page": "Cecotec Power Espresso 20 Cream",
+                "intro-text": "<strong>Después de 6 meses de uso intensivo</strong>, podemos afirmar que la <strong>Cecotec Power Espresso 20 Cream</strong> es una de las mejores opciones en relación calidad-precio del mercado de cafeteras superautomáticas. En este análisis exhaustivo te contamos todo lo que necesitas saber antes de comprar esta máquina de café con sistema Cream integrado.",
+                "features-title": "Características Principales y Especificaciones Técnicas",
+                "features-text1": "La <strong>Cecotec Power Espresso 20 Cream</strong> destaca por su <strong>sistema de 20 bares de presión</strong>, un valor excepcional en su gama de precio que garantiza una extracción profesional del café. El <strong>depósito de agua de 1.8 litros</strong> permite preparar múltiples tazas sin necesidad de recarga constante, ideal para familias o pequeñas oficinas.",
+                "features-text2": "El <strong>sistema Cream Technology</strong> es sin duda su mayor innovación, permitiendo crear espuma de leche perfecta para capuchinos y lattes con solo pulsar un botón, sin necesidad de aprender técnicas manuales como en cafeteras más básicas.",
+                "pros-cons-title": "Ventajas y Desventajas del Sistema Cream",
+                "pros-title": "✅ Lo que nos encantó",
+                "pros-list": [
+                    "<strong>Espuma profesional consistente</strong>: Resultados comparables a cafeterías especializadas",
+                    "<strong>Facilidad de uso</strong>: Prepara bebidas complejas con un solo botón",
+                    "<strong>Limpieza automatizada</strong>: Programa de autolimpieza para el circuito de leche",
+                    "<strong>Personalización</strong>: Ajuste de intensidad del café y cantidad de espuma"
+                ],
+                "cons-title": "❌ Aspectos mejorables",
+                "cons-list": [
+                    "<strong>Ruido durante el vaporizado</strong>: Más notable que en modelos premium",
+                    "<strong>Capacidad del depósito</strong>: 700ml pueden quedarse cortos para familias grandes",
+                    "<strong>Mantenimiento</strong>: Requiere limpieza diaria del circuito de leche"
+                ],
+                "comparison-title": "Comparativa con Otras Cafeteras Superautomáticas (2025)",
+                "comparison-text": "Para entender realmente el valor de la <strong>Cecotec Power Espresso 20 Cream</strong>, la hemos comparado con tres modelos representativos de diferentes segmentos de precio:",
+                "model-header": "Modelo",
+                "price-header": "Precio",
+                "pressure-header": "Presión",
+                "type-header": "Tipo",
+                "strengths-header": "Puntos Fuertes",
+                "type-cell1": "Semiautomática",
+                "strengths-cell1": "Sistema Cream, relación calidad-precio",
+                "type-cell2": "Manual",
+                "strengths-cell2": "Diseño compacto, precio económico",
+                "type-cell3": "Superautomática",
+                "strengths-cell3": "Molinillo integrado, calidad profesional",
+                "video-title": "Nuestro Análisis en Vídeo",
+                "video-text": "En nuestro canal de YouTube encontrarás un análisis completo con pruebas reales de la Cecotec Power Espresso 20 Cream donde mostramos su funcionamiento, mantenimiento y calidad del café:",
+                "conclusion-title": "Conclusión: ¿Merece la Pena en 2025?",
+                "conclusion-text1": "La <strong>Cecotec Power Espresso 20 Cream</strong> ofrece un excelente equilibrio entre calidad y precio, destacando especialmente por su <strong>sistema Cream para espuma profesional</strong>. Aunque no alcanza el nivel de modelos premium en términos de materiales o personalización, supera claramente a otras opciones en su rango de precio.",
+                "conclusion-text2": "Recomendada especialmente para quienes buscan <strong>calidad de cafetería en casa</strong> sin realizar una gran inversión. Los amantes del capuchino y latte apreciarán particularmente su sistema automatizado de espuma.",
+                "buy-button": "Comprar en Amazon - €149.00",
+                "offer-title": "Oferta Actual",
+                "savings-text": "¡Ahorra 15%!",
+                "shipping-text": "Envío GRATIS",
+                "buy-now-button": "Comprar Ahora",
+                "alternatives-title": "Alternativas Recomendadas",
+                "alternative-button1": "Ver Oferta",
+                "alternative-button2": "Ver Oferta",
+                "more-reviews-title": "Más Análisis",
+                "more-reviews-text": "Descubre nuestras otras reviews de productos para el hogar:",
+                "review-link1": "Mejores robots aspiradores 2025",
+                "review-link2": "Freidoras de aire comparativa",
+                "review-link3": "Purificadores de aire análisis",
+                "privacy-link": "Política de Privacidad",
+                "legal-link": "Aviso Legal",
+                "cookies-link": "Cookies",
+                "contact-link": "Contacto"
+            },
+            en: {
+                "main-title": "Cecotec Power Espresso 20 Cream",
+                "main-subtitle": "Professional Review and Real Opinion 2025",
+                "author-text": "By María García | Updated: April 1, 2025",
+                "home-link": "Home",
+                "reviews-link": "Reviews",
+                "current-page": "Cecotec Power Espresso 20 Cream",
+                "intro-text": "<strong>After 6 months of intensive use</strong>, we can confirm that the <strong>Cecotec Power Espresso 20 Cream</strong> is one of the best value-for-money options in the superautomatic coffee machine market. In this comprehensive review, we tell you everything you need to know before buying this coffee machine with integrated Cream system.",
+                "features-title": "Main Features and Technical Specifications",
+                "features-text1": "The <strong>Cecotec Power Espresso 20 Cream</strong> stands out for its <strong>20-bar pressure system</strong>, an exceptional value in its price range that guarantees professional coffee extraction. The <strong>1.8-liter water tank</strong> allows preparing multiple cups without constant refills, ideal for families or small offices.",
+                "features-text2": "The <strong>Cream Technology system</strong> is undoubtedly its greatest innovation, allowing you to create perfect milk foam for cappuccinos and lattes with just the push of a button, without needing to learn manual techniques as with more basic coffee machines.",
+                "pros-cons-title": "Advantages and Disadvantages of the Cream System",
+                "pros-title": "✅ What We Loved",
+                "pros-list": [
+                    "<strong>Consistent professional foam</strong>: Results comparable to specialty coffee shops",
+                    "<strong>Ease of use</strong>: Prepares complex drinks with a single button",
+                    "<strong>Automatic cleaning</strong>: Self-cleaning program for the milk circuit",
+                    "<strong>Customization</strong>: Adjust coffee intensity and foam amount"
+                ],
+                "cons-title": "❌ Areas for Improvement",
+                "cons-list": [
+                    "<strong>Noise during steaming</strong>: More noticeable than in premium models",
+                    "<strong>Tank capacity</strong>: 700ml may be insufficient for large families",
+                    "<strong>Maintenance</strong>: Requires daily cleaning of the milk circuit"
+                ],
+                "comparison-title": "Comparison with Other Superautomatic Coffee Machines (2025)",
+                "comparison-text": "To truly understand the value of the <strong>Cecotec Power Espresso 20 Cream</strong>, we've compared it with three representative models from different price segments:",
+                "model-header": "Model",
+                "price-header": "Price",
+                "pressure-header": "Pressure",
+                "type-header": "Type",
+                "strengths-header": "Key Features",
+                "type-cell1": "Semi-automatic",
+                "strengths-cell1": "Cream system, value for money",
+                "type-cell2": "Manual",
+                "strengths-cell2": "Compact design, affordable price",
+                "type-cell3": "Superautomatic",
+                "strengths-cell3": "Built-in grinder, professional quality",
+                "video-title": "Our Video Review",
+                "video-text": "On our YouTube channel you'll find a complete analysis with real tests of the Cecotec Power Espresso 20 Cream where we show its operation, maintenance and coffee quality:",
+                "conclusion-title": "Conclusion: Is It Worth It in 2025?",
+                "conclusion-text1": "The <strong>Cecotec Power Espresso 20 Cream</strong> offers an excellent balance between quality and price, standing out especially for its <strong>Cream system for professional foam</strong>. Although it doesn't reach the level of premium models in terms of materials or customization, it clearly surpasses other options in its price range.",
+                "conclusion-text2": "Highly recommended for those looking for <strong>cafe-quality at home</strong> without making a large investment. Cappuccino and latte lovers will particularly appreciate its automated foam system.",
+                "buy-button": "Buy on Amazon - €149.00",
+                "offer-title": "Current Offer",
+                "savings-text": "Save 15%!",
+                "shipping-text": "FREE Shipping",
+                "buy-now-button": "Buy Now",
+                "alternatives-title": "Recommended Alternatives",
+                "alternative-button1": "View Offer",
+                "alternative-button2": "View Offer",
+                "more-reviews-title": "More Reviews",
+                "more-reviews-text": "Discover our other home product reviews:",
+                "review-link1": "Best robot vacuums 2025",
+                "review-link2": "Air fryer comparison",
+                "review-link3": "Air purifier analysis",
+                "privacy-link": "Privacy Policy",
+                "legal-link": "Legal Notice",
+                "cookies-link": "Cookies",
+                "contact-link": "Contact"
+            }
+        };
+        
+        // Función para cambiar el idioma
+        function changeLanguage(lang) {
+            // Cambiar atributo lang del html
+            document.documentElement.lang = lang;
+            
+            // Activar botón correspondiente
+            document.querySelectorAll('.language-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.lang === lang);
+            });
+            
+            // Obtener traducciones
+            const t = translations[lang];
+            
+            // Aplicar traducciones a todos los elementos con ID
+            for (const [key, value] of Object.entries(t)) {
+                const element = document.getElementById(key);
+                if (element) {
+                    if (key.includes('list')) {
+                        // Para listas, actualizar cada elemento li
+                        const items = Array.isArray(value) ? value : [];
+                        const listItems = element.querySelectorAll('li');
+                        items.forEach((item, index) => {
+                            if (listItems[index]) {
+                                listItems[index].innerHTML = item;
+                            }
+                        });
+                    } else {
+                        // Para otros elementos, actualizar texto o HTML
+                        if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                            element.value = value;
+                        } else {
+                            element.innerHTML = value;
+                        }
+                    }
+                }
+            }
+            
+            // Guardar preferencia en localStorage
+            localStorage.setItem('preferredLanguage', lang);
+        }
+        
+        // Cambiar idioma al hacer clic en los botones
+        document.querySelectorAll('.language-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                changeLanguage(btn.dataset.lang);
+            });
+        });
+        
+        // Inicializar con el idioma preferido (navegador o guardado)
+        const savedLang = localStorage.getItem('preferredLanguage');
+        const initialLang = savedLang || (isEnglish ? 'en' : 'es');
+        changeLanguage(initialLang);
+    </script>
 </body>
 </html>
