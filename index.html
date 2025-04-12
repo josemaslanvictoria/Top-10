@@ -44,6 +44,9 @@
     <link rel="preload" href="https://m.media-amazon.com/images/I/51L+1dyZSDL._AC_UL640_FMwebp_QL65_.jpg" as="image" fetchpriority="high">
     <link rel="preload" href="https://m.media-amazon.com/images/I/71-bVzbgWTL._AC_SL1500_.jpg" as="image" fetchpriority="high">
     
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <!-- Favicon y Apple Touch Icon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -52,6 +55,9 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#e74c3c">
     <meta name="msapplication-TileColor" content="#2c3e50">
     <meta name="theme-color" content="#ffffff">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Schema.org Markup -->
     <script type="application/ld+json">
@@ -87,14 +93,24 @@
     <style>
         :root {
             --primary: #2c3e50;
+            --primary-light: #3d566e;
             --secondary: #e74c3c;
+            --secondary-light: #f16b5d;
             --accent: #3498db;
-            --light: #ecf0f1;
+            --accent-light: #5dade2;
+            --light: #f8f9fa;
+            --light-gray: #eaecee;
+            --medium-gray: #bdc3c7;
             --dark: #2c3e50;
-            --gray: #95a5a6;
-            --border-radius: 12px;
-            --box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            --dark-gray: #7f8c8d;
+            --white: #ffffff;
+            --black: #1a1a1a;
+            --border-radius: 10px;
+            --border-radius-lg: 15px;
+            --box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            --box-shadow-lg: 0 10px 30px rgba(0,0,0,0.15);
             --transition: all 0.3s ease;
+            --header-height: 80px;
         }
         
         * {
@@ -104,13 +120,13 @@
         }
         
         body {
-            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-            background-color: #f8f9fa;
+            font-family: 'Poppins', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--light);
             color: var(--dark);
             line-height: 1.6;
-            padding: 20px;
             -webkit-font-smoothing: antialiased;
             text-rendering: optimizeLegibility;
+            padding-top: var(--header-height);
         }
         
         .container {
@@ -119,36 +135,94 @@
             padding: 0 15px;
         }
         
+        /* Header */
         header {
-            text-align: center;
-            margin: 20px 0 30px;
-            position: relative;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            height: var(--header-height);
+            display: flex;
+            align-items: center;
         }
         
-        h1 {
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        
+        .logo-icon {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-right: 10px;
+        }
+        
+        .logo-text {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
             color: var(--primary);
-            font-size: 2.5rem;
-            margin-bottom: 10px;
             background: linear-gradient(90deg, var(--secondary), var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            font-weight: 700;
-            line-height: 1.2;
         }
         
-        /* Selector de idioma mejorado */
+        /* Navigation */
+        .nav-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        .main-nav {
+            display: flex;
+            list-style: none;
+        }
+        
+        .main-nav li {
+            position: relative;
+        }
+        
+        .main-nav a {
+            display: block;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+            border-radius: var(--border-radius);
+        }
+        
+        .main-nav a:hover {
+            color: var(--secondary);
+            background-color: var(--light-gray);
+        }
+        
+        .main-nav .active a {
+            color: var(--secondary);
+            font-weight: 600;
+        }
+        
+        /* Language Selector */
         .language-selector {
-            position: absolute;
-            top: 0;
-            right: 15px;
-            z-index: 100;
+            margin-left: 20px;
         }
         
         .language-selector select {
             padding: 8px 15px;
-            border-radius: 25px;
-            border: 2px solid var(--accent);
-            background: white;
+            border-radius: var(--border-radius);
+            border: 2px solid var(--light-gray);
+            background: var(--white);
             cursor: pointer;
             font-weight: 500;
             appearance: none;
@@ -161,145 +235,116 @@
         }
         
         .language-selector select:hover {
-            border-color: #2980b9;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-color: var(--medium-gray);
         }
         
         .language-selector select:focus {
             outline: none;
+            border-color: var(--accent);
             box-shadow: 0 0 0 3px rgba(52,152,219,0.3);
         }
         
-        /* Sección destacada */
-        .highlight-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 25px;
-            margin: 40px 0;
-        }
-        
-        @media (max-width: 768px) {
-            .highlight-section {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        /* Tarjetas de análisis destacados */
-        .highlight-card {
-            background: white;
-            border-radius: var(--border-radius);
-            padding: 25px;
-            box-shadow: var(--box-shadow);
-            transition: var(--transition);
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-            position: relative;
-            border-top: 5px solid transparent;
-        }
-        
-        .test-card {
-            border-top-color: var(--secondary);
-        }
-        
-        .comparison-card {
-            border-top-color: var(--accent);
-        }
-        
-        .highlight-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-        }
-        
-        .highlight-card .meta {
-            font-size: 0.9rem;
-            color: var(--gray);
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        .highlight-card h2 {
-            font-size: 1.6rem;
-            margin-bottom: 15px;
-            color: var(--dark);
-            position: relative;
-            padding-bottom: 10px;
-            line-height: 1.3;
-        }
-        
-        .highlight-card h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background: linear-gradient(90deg, var(--secondary), var(--accent));
-        }
-        
-        .highlight-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-            color: var(--dark);
-            font-weight: 600;
-        }
-        
-        .highlight-card p {
-            margin-bottom: 20px;
-            color: var(--gray);
-            flex-grow: 1;
-        }
-        
-        .highlight-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            margin: 15px 0;
-            border-radius: 8px;
-            transition: transform 0.3s;
-        }
-        
-        .highlight-card:hover img {
-            transform: scale(1.03);
-        }
-        
-        .highlight-button {
-            background: linear-gradient(90deg, var(--secondary), var(--accent));
-            color: white;
+        /* Mobile Menu Toggle */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
             border: none;
+            font-size: 1.5rem;
+            color: var(--dark);
+            cursor: pointer;
+            padding: 10px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: var(--white);
+            padding: 80px 0;
+            text-align: center;
+            margin-bottom: 40px;
+            border-radius: 0 0 var(--border-radius-lg) var(--border-radius-lg);
+        }
+        
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-block;
             padding: 12px 25px;
             border-radius: 50px;
-            font-size: 1rem;
-            cursor: pointer;
-            margin-top: 15px;
-            transition: var(--transition);
-            display: inline-block;
-            text-decoration: none;
-            text-align: center;
             font-weight: 600;
-            align-self: flex-start;
+            text-decoration: none;
+            transition: var(--transition);
+            text-align: center;
         }
         
-        .highlight-button:hover {
+        .btn-primary {
+            background: linear-gradient(90deg, var(--secondary), var(--secondary-light));
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(90deg, var(--secondary-light), var(--secondary));
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            background: linear-gradient(90deg, #c0392b, #2980b9);
+            box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
         }
         
-        /* Sección de artículos */
-        .articles-section {
-            margin: 50px 0;
+        .btn-secondary {
+            background-color: var(--white);
+            color: var(--primary);
+            border: 2px solid var(--white);
+        }
+        
+        .btn-secondary:hover {
+            background-color: transparent;
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--white);
+            color: var(--primary);
+        }
+        
+        /* Featured Cards */
+        .featured-section {
+            margin: 60px 0;
         }
         
         .section-title {
-            font-size: 2.2rem;
-            color: var(--dark);
+            font-size: 2rem;
+            color: var(--primary);
             margin-bottom: 30px;
             text-align: center;
             position: relative;
             padding-bottom: 15px;
+            font-weight: 600;
         }
         
         .section-title::after {
@@ -313,326 +358,465 @@
             background: linear-gradient(90deg, var(--secondary), var(--accent));
         }
         
-        .articles-grid {
+        .featured-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
         }
         
-        .article-card {
-            background: white;
-            border-radius: var(--border-radius);
+        .featured-card {
+            background: var(--white);
+            border-radius: var(--border-radius-lg);
             overflow: hidden;
             box-shadow: var(--box-shadow);
             transition: var(--transition);
+            display: flex;
+            flex-direction: column;
         }
         
-        .article-card:hover {
+        .featured-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            box-shadow: var(--box-shadow-lg);
         }
         
-        .article-image {
+        .card-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--secondary);
+            color: var(--white);
+            padding: 5px 10px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 1;
+        }
+        
+        .card-image {
             width: 100%;
             height: 200px;
             object-fit: cover;
         }
         
-        .article-content {
-            padding: 25px;
+        .card-content {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
         
-        .article-tag {
-            display: inline-block;
-            background: var(--secondary);
-            color: white;
-            padding: 4px 12px;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            margin-bottom: 12px;
+        .card-title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--primary);
             font-weight: 600;
         }
         
-        .article-content h3 {
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-            color: var(--dark);
-            line-height: 1.3;
-        }
-        
-        .article-content p {
-            color: var(--gray);
+        .card-text {
+            color: var(--dark-gray);
             margin-bottom: 20px;
+            flex-grow: 1;
         }
         
-        .article-meta {
+        .card-meta {
             display: flex;
             justify-content: space-between;
-            color: var(--gray);
+            color: var(--medium-gray);
             font-size: 0.9rem;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         
-        .article-link {
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: 600;
+        .card-link {
             display: inline-flex;
             align-items: center;
+            color: var(--accent);
+            font-weight: 600;
+            text-decoration: none;
             transition: var(--transition);
         }
         
-        .article-link:hover {
+        .card-link:hover {
             color: var(--secondary);
-            text-decoration: underline;
         }
         
-        .article-link svg {
+        .card-link i {
             margin-left: 5px;
             transition: transform 0.3s;
         }
         
-        .article-link:hover svg {
+        .card-link:hover i {
             transform: translateX(5px);
         }
         
-        /* Buscador inteligente */
-        .smart-search {
-            margin: 40px 0;
-            padding: 20px;
-            background: white;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-        }
-        
-        .search-container {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        #searchInput {
-            width: 100%;
-            padding: 15px 20px;
-            border-radius: 50px;
-            border: 2px solid #ddd;
-            font-size: 1.1rem;
-            transition: var(--transition);
-            padding-right: 50px;
-        }
-        
-        #searchInput:focus {
-            outline: none;
-            border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(52,152,219,0.3);
-        }
-        
-        .search-icon {
-            position: absolute;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 1.2rem;
-            color: var(--gray);
-        }
-        
-        /* Categorías -->
+        /* Categories Section */
         .categories-section {
-            margin: 50px 0;
+            margin: 60px 0;
         }
         
-        .categories-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-        
-        .category {
-            background: white;
-            border-radius: var(--border-radius);
-            padding: 20px;
-            text-align: center;
+        .categories-container {
+            background-color: var(--white);
+            border-radius: var(--border-radius-lg);
+            padding: 30px;
             box-shadow: var(--box-shadow);
-            transition: var(--transition);
-            position: relative;
+        }
+        
+        .category-accordion {
+            margin-top: 20px;
+        }
+        
+        .category-item {
+            margin-bottom: 10px;
+            border-radius: var(--border-radius);
             overflow: hidden;
         }
         
-        .category:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        .category-header {
+            background-color: var(--light-gray);
+            padding: 15px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
         }
         
-        .category::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(90deg, var(--secondary), var(--accent));
+        .category-header:hover {
+            background-color: #e0e3e6;
         }
         
-        .category img {
-            width: 80px;
-            height: 80px;
-            object-fit: contain;
-            margin-bottom: 15px;
+        .category-title {
+            font-weight: 600;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+        }
+        
+        .category-icon {
+            margin-right: 10px;
+            color: var(--secondary);
+            font-size: 1.2rem;
+        }
+        
+        .category-arrow {
             transition: transform 0.3s;
         }
         
-        .category:hover img {
-            transform: scale(1.1);
+        .category-item.active .category-arrow {
+            transform: rotate(180deg);
         }
         
-        .category h3 {
-            font-size: 1.1rem;
-            margin-bottom: 10px;
-            color: var(--dark);
+        .category-content {
+            background-color: var(--white);
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .category-links {
+            padding: 15px 20px 15px 50px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
         }
         
         .category-link {
-            display: inline-block;
-            color: var(--accent);
-            font-weight: 600;
+            display: block;
+            padding: 8px 12px;
+            color: var(--dark-gray);
             text-decoration: none;
-            margin-top: 10px;
-            font-size: 0.9rem;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+            font-size: 0.95rem;
         }
         
         .category-link:hover {
-            text-decoration: underline;
+            color: var(--secondary);
+            background-color: var(--light-gray);
         }
         
-        .no-results {
+        .category-link i {
+            margin-right: 8px;
+            color: var(--accent);
+        }
+        
+        /* Newsletter */
+        .newsletter {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: var(--white);
+            padding: 50px 0;
+            border-radius: var(--border-radius-lg);
+            margin: 60px 0;
             text-align: center;
-            padding: 20px;
-            color: var(--gray);
-            grid-column: 1 / -1;
         }
         
-        /* Footer -->
-        footer {
-            text-align: center;
-            margin-top: 60px;
-            padding: 30px 0;
-            border-top: 1px solid #eee;
-            color: var(--gray);
-        }
-        
-        footer p {
+        .newsletter h2 {
+            font-size: 1.8rem;
             margin-bottom: 15px;
         }
         
-        footer a {
-            color: var(--accent);
-            text-decoration: none;
-            margin: 0 10px;
-            font-weight: 500;
+        .newsletter p {
+            max-width: 600px;
+            margin: 0 auto 25px;
+            opacity: 0.9;
         }
         
-        footer a:hover {
-            text-decoration: underline;
-            color: var(--secondary);
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .newsletter-input {
+            flex-grow: 1;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 50px 0 0 50px;
+            font-size: 1rem;
+            outline: none;
+        }
+        
+        .newsletter-btn {
+            padding: 12px 25px;
+            background-color: var(--secondary);
+            color: var(--white);
+            border: none;
+            border-radius: 0 50px 50px 0;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .newsletter-btn:hover {
+            background-color: var(--secondary-light);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 60px 0 30px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: inline-block;
+            background: linear-gradient(90deg, var(--secondary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .footer-about p {
+            opacity: 0.8;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .footer-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--secondary), var(--accent));
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-links a:hover {
+            color: var(--white);
+            transform: translateX(5px);
+        }
+        
+        .footer-links a i {
+            margin-right: 8px;
+            font-size: 0.8rem;
         }
         
         .social-links {
-            margin-top: 20px;
             display: flex;
-            justify-content: center;
             gap: 15px;
+            margin-top: 20px;
         }
         
-        .social-links a {
-            display: inline-flex;
+        .social-link {
+            display: flex;
             align-items: center;
             justify-content: center;
             width: 40px;
             height: 40px;
-            background: #f1f1f1;
+            background-color: rgba(255,255,255,0.1);
             border-radius: 50%;
-            color: var(--dark);
-            font-size: 1.2rem;
+            color: var(--white);
+            font-size: 1.1rem;
             transition: var(--transition);
             text-decoration: none;
         }
         
-        .social-links a:hover {
-            background: var(--accent);
-            color: white;
+        .social-link:hover {
+            background-color: var(--secondary);
             transform: translateY(-3px);
         }
         
-        /* Breadcrumb -->
-        .breadcrumb {
-            margin: 20px 0;
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.6);
             font-size: 0.9rem;
-            color: var(--gray);
         }
         
-        .breadcrumb a {
-            color: var(--accent);
+        .footer-bottom a {
+            color: rgba(255,255,255,0.8);
             text-decoration: none;
+            transition: var(--transition);
         }
         
-        .breadcrumb a:hover {
-            text-decoration: underline;
+        .footer-bottom a:hover {
+            color: var(--white);
         }
         
-        .breadcrumb span {
-            margin: 0 5px;
-            color: #ccc;
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--secondary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
         
-        /* Responsive -->
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background-color: var(--secondary-light);
+            transform: translateY(-5px);
+        }
+        
+        /* Responsive */
         @media (max-width: 992px) {
-            .articles-grid {
-                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            .featured-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             }
             
-            .highlight-card h2 {
-                font-size: 1.4rem;
-            }
-            
-            .highlight-card h3 {
-                font-size: 1.2rem;
-            }
-            
-            .categories-grid {
-                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            .category-links {
+                grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
             }
         }
         
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
-                padding-top: 40px;
+            .mobile-menu-toggle {
+                display: block;
             }
             
-            .section-title {
-                font-size: 1.8rem;
+            .main-nav {
+                position: fixed;
+                top: var(--header-height);
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+                transform: translateY(-150%);
+                transition: transform 0.3s ease;
+                z-index: 999;
             }
             
-            .highlight-card img,
-            .article-image {
-                height: 180px;
+            .main-nav.active {
+                transform: translateY(0);
             }
             
-            .language-selector {
-                position: static;
-                margin-bottom: 20px;
-                display: flex;
-                justify-content: center;
+            .main-nav li {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .main-nav a {
+                padding: 15px;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 80%;
+                max-width: 300px;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .newsletter-input {
+                border-radius: 50px;
+                margin-bottom: 10px;
+            }
+            
+            .newsletter-btn {
+                border-radius: 50px;
             }
         }
         
         @media (max-width: 576px) {
-            .articles-grid {
-                grid-template-columns: 1fr;
+            .hero {
+                padding: 60px 0;
             }
             
-            h1 {
+            .hero h1 {
                 font-size: 1.8rem;
             }
             
@@ -640,453 +824,482 @@
                 font-size: 1.6rem;
             }
             
-            .highlight-card {
-                padding: 20px;
+            .footer-container {
+                grid-template-columns: 1fr;
             }
             
-            .categories-grid {
-                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-                gap: 15px;
+            .footer-about {
+                text-align: center;
             }
             
-            .category {
-                padding: 15px 10px;
+            .footer-title {
+                text-align: center;
             }
             
-            .category img {
-                width: 60px;
-                height: 60px;
+            .footer-title::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .footer-links {
+                text-align: center;
+            }
+            
+            .footer-links a {
+                justify-content: center;
+            }
+            
+            .social-links {
+                justify-content: center;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="language-selector">
-                <select id="languageSelect">
-                    <option value="es">Español</option>
-                    <option value="en">English</option>
-                </select>
-            </div>
-            <h1 id="main-title">Don Hogar 2025</h1>
-            <p id="main-subtitle">Tecnología inteligente para tu hogar</p>
-        </header>
-        
-        <!-- Sección destacada -->
-        <div class="highlight-section">
-            <!-- Tarjeta de prueba -->
-            <div class="highlight-card test-card">
-                <div class="meta">
-                    <span>📅 <span id="test-date">20 Marzo 2025</span></span>
-                    <span>⏱ <span id="test-reading-time">5 min lectura</span></span>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon"><i class="fas fa-home"></i></span>
+                <span class="logo-text">Don Hogar</span>
+            </a>
+            
+            <nav class="nav-container">
+                <ul class="main-nav" id="mainNav">
+                    <li class="active"><a href="index.html" id="nav-home">Inicio</a></li>
+                    <li><a href="analisis.html" id="nav-reviews">Análisis</a></li>
+                    <li><a href="comparativas.html" id="nav-comparisons">Comparativas</a></li>
+                    <li><a href="categorias.html" id="nav-categories">Categorías</a></li>
+                    <li><a href="ofertas.html" id="nav-deals">Ofertas</a></li>
+                    <li><a href="contacto.html" id="nav-contact">Contacto</a></li>
+                </ul>
+                
+                <div class="language-selector">
+                    <select id="languageSelect">
+                        <option value="es">Español</option>
+                        <option value="en">English</option>
+                    </select>
                 </div>
-                <h2 id="test-title">Análisis en Profundidad</h2>
-                <h3 id="test-subtitle">Cafetera Cecotec Power Espresso 20 Cream</h3>
-                <img src="https://m.media-amazon.com/images/I/51L+1dyZSDL._AC_UL640_FMwebp_QL65_.jpg" alt="Cecotec Power Espresso 20 Cream" loading="lazy" width="600" height="400">
-                <p id="test-description">Prueba exclusiva de 15 días con la cafetera superautomática más avanzada de Cecotec. Descubre nuestros hallazgos tras un mes de uso intensivo.</p>
-                <a href="cecotec-power-espresso-20-cream/index.html" class="highlight-button" id="test-button">Leer Análisis Completo</a>
+                
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 id="hero-title">Tecnología Inteligente para tu Hogar</h1>
+            <p id="hero-subtitle">Descubre los mejores productos para tu hogar con análisis expertos y pruebas reales</p>
+            <div class="hero-buttons">
+                <a href="#featured" class="btn btn-primary" id="hero-btn-primary">Ver Análisis</a>
+                <a href="#categories" class="btn btn-outline" id="hero-btn-secondary">Explorar Categorías</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Section -->
+    <section class="featured-section" id="featured">
+        <div class="container">
+            <h2 class="section-title" id="featured-title">Análisis Destacados</h2>
+            <div class="featured-grid">
+                <!-- Featured Card 1 -->
+                <div class="featured-card">
+                    <span class="card-badge" id="featured-badge1">Nuevo</span>
+                    <img src="https://m.media-amazon.com/images/I/71uiF8cvgbL._AC_SL1500_.jpg" alt="Cafetera superautomática" class="card-image" loading="lazy">
+                    <div class="card-content">
+                        <h3 class="card-title" id="featured-title1">Cafetera Cecotec Power Espresso</h3>
+                        <p class="card-text" id="featured-text1">Análisis completo de la cafetera superautomática con sistema de crema profesional y 20 ajustes de molienda.</p>
+                        <div class="card-meta">
+                            <span id="featured-date1">20 Marzo 2025</span>
+                            <span id="featured-author1">Por María García</span>
+                        </div>
+                        <a href="cecotec-power-espresso.html" class="card-link" id="featured-link1">Leer análisis <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Featured Card 2 -->
+                <div class="featured-card">
+                    <span class="card-badge" id="featured-badge2">Comparativa</span>
+                    <img src="https://m.media-amazon.com/images/I/71-bVzbgWTL._AC_SL1500_.jpg" alt="Freidoras de aire" class="card-image" loading="lazy">
+                    <div class="card-content">
+                        <h3 class="card-title" id="featured-title2">Top 5 Freidoras de Aire 2025</h3>
+                        <p class="card-text" id="featured-text2">Comparativa técnica de las mejores freidoras de aire basada en pruebas de consumo y resultados.</p>
+                        <div class="card-meta">
+                            <span id="featured-date2">15 Marzo 2025</span>
+                            <span id="featured-author2">Por Carlos Martínez</span>
+                        </div>
+                        <a href="comparativa-freidoras.html" class="card-link" id="featured-link2">Ver comparativa <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Featured Card 3 -->
+                <div class="featured-card">
+                    <span class="card-badge" id="featured-badge3">Prueba</span>
+                    <img src="https://m.media-amazon.com/images/I/71Kv4VyPFtL._AC_SL1500_.jpg" alt="Robot aspirador" class="card-image" loading="lazy">
+                    <div class="card-content">
+                        <h3 class="card-title" id="featured-title3">Robot Aspirador X800 Pro</h3>
+                        <p class="card-text" id="featured-text3">Prueba de 30 días con el robot aspirador más avanzado del mercado. Resultados reales de limpieza.</p>
+                        <div class="card-meta">
+                            <span id="featured-date3">10 Marzo 2025</span>
+                            <span id="featured-author3">Por Equipo Don Hogar</span>
+                        </div>
+                        <a href="robot-aspirador-x800.html" class="card-link" id="featured-link3">Ver resultados <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories-section" id="categories">
+        <div class="container">
+            <h2 class="section-title" id="categories-title">Categorías Populares</h2>
+            <div class="categories-container">
+                <p class="categories-intro" id="categories-intro">Explora nuestras categorías principales y encuentra los mejores productos para tu hogar. Haz clic en cada categoría para ver los análisis y recomendaciones.</p>
+                
+                <div class="category-accordion">
+                    <!-- Category 1 -->
+                    <div class="category-item">
+                        <div class="category-header">
+                            <span class="category-title">
+                                <i class="fas fa-blender category-icon"></i>
+                                <span id="category-header1">Electrodomésticos de Cocina</span>
+                            </span>
+                            <i class="fas fa-chevron-down category-arrow"></i>
+                        </div>
+                        <div class="category-content">
+                            <div class="category-links">
+                                <a href="https://www.amazon.es/s?k=cafeteras&tag=donhogar-21" class="category-link" rel="nofollow noopener noreferrer" target="_blank" id="category-link1-1"><i class="fas fa-coffee"></i> Cafeteras</a>
+                                <a href="https://www.amazon.es/s?k=freidoras+aire&tag=donhogar-21" class="category-link" rel="nofollow noopener noreferrer" target="_blank" id="category-link1-2"><i class="fas fa-utensils"></i> Freidoras de Aire</a>
+                                <a href="https://www.amazon.es/s?k=batidoras&tag=donhogar-21" class="category-link" rel="nofollow noopener noreferrer" target="_blank" id="category-link1-3"><i class="fas fa-blender"></i> Batidoras</a>
+                                <a href="https://www.amazon.es/s?k=robot+cocina&tag=donhogar-21" class="category-link" rel="nofollow noopener noreferrer" target="_blank" id="category-link1-4"><i class="fas fa-robot"></i> Robots de Cocina</a>
+                                <a href="https://www.amazon.es/s?k=tostadoras&tag=donhogar-21" class="category-link" rel="nofollow noopener noreferrer" target="_blank" id="category-link1-5"><i class="fas fa-bread-slice"></i> Tostadoras</a>
+                                <a href="https://www.amazon.es/s?k=licuadoras&tag=donhogar-21" class="category-link" rel="nofollow noopener noreferrer" target="_blank" id="category-link1-6"><i class="fas fa-glass-whiskey"></i> Licuadoras</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Category 2 -->
+                    <div class="category-item">
+                        <div class="category-header">
+                            <span class="category-title">
+                                <i class="fas fa-broom category-icon"></i>
+                                <span id="category-header2">Limpieza del Hogar</span>
+                            </span>
+                            <i class="fas fa-chevron-down category-arrow"></i>
+                        </div>
+                        <div class="category-content">
+                            <div class="category-links">
+                                <a href="https://www.amazon.es/s?k=robot+aspirador&tag=donhogar-21" class="category-link" rel="nofollow noopener noreferrer" target="_blank" id="category-link2-1"><i class="fas fa-robot"></i> Robots Aspiradores</a>
+                                <a href="https://www.amazon.es/s?k=aspirador+sin+cable&tag=donhogar-21" class="category-link" rel="nofollow noopener noreferrer" target="_blank" id="category-link2-2"><i class="fas fa-wind"></i> Aspiradoras sin Cable</a>
+                                <a href="https://www.amazon.es/s?k=mopa+vapor&tag=donhogar-21" class="category-link" rel="nofollow noopener noreferrer" target="_blank" id="category-link2-3"><i class="fas fa-mop"></i> Mopas de Vapor</a>
+                                <a href="https://www.amazon.es/s?k=purificador+aire&tag=donhogar-21" class="category-link" rel="nofollow noopener noreferrer" target="_blank" id="category-link2-4"><i class="fas fa-wind"></i> Purificadores de Aire</a>
+                                <a href="https://www.amazon.es/s?k=deshumidificador&tag=donhogar-21" class="category-link" rel="nofollow noopener noreferrer" target="_blank" id="category-link2-5"><i class="fas fa-tint"></i> Deshumidificadores</a>
+                                <a href="https://www.amazon.es/s?k=limpiador+vapor&tag=donhogar-21" class="category-link" rel="nofollow noopener noreferrer" target="_blank" id="category-link2-6"><i class="fas fa-temperature-high"></i> Limpiadores a Vapor</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Category 3 -->
+                    <div class="category-item">
+                        <div class="category-header">
+                            <span class="category-title">
+                                <i class="fas fa-tv category-icon"></i>
+                                <span id="category-header3">Electrónica y Entretenimiento</span>
+                            </span>
+                            <i class="fas fa-chevron-down category-arrow"></i>
+                        </div>
+                        <div class="category-content">
+                            <div class="category-links">
+                                <a href="https://www.amazon.es/s?k=televisores&tag=donhogar-21" class="category-link" rel="nofollow noopener noreferrer" target="_blank" id="category-link3-1"><i class="fas fa-tv"></i> Televisores</a>
+                                <a href="https://www.amazon.es/s?k=auriculares+inalambricos&tag=donhogar-21" class="category-link" rel="nofollow noopener noreferrer" target="_blank" id="category-link3-2"><i class="fas fa-headphones"></i> Auriculares</a>
+                                <a href="https://www.amazon.es/s?k=altavoces+inteligentes&tag=donhogar-21" class="category-link" rel="nofollow noopener noreferrer" target="_blank" id="category-link3-3"><i class="fas fa-volume-up"></i> Altavoces Inteligentes</a>
+                                <a href="https://www.amazon.es/s?k=reloj+inteligente&tag=donhogar-21" class="category-link" rel="nofollow noopener noreferrer" target="_blank" id="category-link3-4"><i class="fas fa-clock"></i> Relojes Inteligentes</a>
+                                <a href="https://www.amazon.es/s?k=proyector&tag=donhogar-21" class="category-link" rel="nofollow noopener noreferrer" target="_blank" id="category-link3-5"><i class="fas fa-film"></i> Proyectores</a>
+                                <a href="https://www.amazon.es/s?k=consola+videojuegos&tag=donhogar-21" class="category-link" rel="nofollow noopener noreferrer" target="_blank" id="category-link3-6"><i class="fas fa-gamepad"></i> Consolas</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Category 4 -->
+                    <div class="category-item">
+                        <div class="category-header">
+                            <span class="category-title">
+                                <i class="fas fa-home category-icon"></i>
+                                <span id="category-header4">Hogar Inteligente</span>
+                            </span>
+                            <i class="fas fa-chevron-down category-arrow"></i>
+                        </div>
+                        <div class="category-content">
+                            <div class="category-links">
+                                <a href="https://www.amazon.es/s?k=termometro+inteligente&tag=donhogar-21" class="category-link" rel="nofollow noopener noreferrer" target="_blank" id="category-link4-1"><i class="fas fa-thermometer-half"></i> Termostatos</a>
+                                <a href="https://www.amazon.es/s?k=bombilla+inteligente&tag=donhogar-21" class="category-link" rel="nofollow noopener noreferrer" target="_blank" id="category-link4-2"><i class="fas fa-lightbulb"></i> Bombillas Inteligentes</a>
+                                <a href="https://www.amazon.es/s?k=camara+seguridad&tag=donhogar-21" class="category-link" rel="nofollow noopener noreferrer" target="_blank" id="category-link4-3"><i class="fas fa-camera"></i> Cámaras de Seguridad</a>
+                                <a href="https://www.amazon.es/s?k=enchufe+inteligente&tag=donhogar-21" class="category-link" rel="nofollow noopener noreferrer" target="_blank" id="category-link4-4"><i class="fas fa-plug"></i> Enchufes Inteligentes</a>
+                                <a href="https://www.amazon.es/s?k=cerradura+inteligente&tag=donhogar-21" class="category-link" rel="nofollow noopener noreferrer" target="_blank" id="category-link4-5"><i class="fas fa-lock"></i> Cerraduras Inteligentes</a>
+                                <a href="https://www.amazon.es/s?k=asistente+voz&tag=donhogar-21" class="category-link" rel="nofollow noopener noreferrer" target="_blank" id="category-link4-6"><i class="fas fa-microphone"></i> Asistentes de Voz</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <h2 id="newsletter-title">Suscríbete a Nuestro Boletín</h2>
+            <p id="newsletter-text">Recibe las últimas reviews, comparativas y ofertas exclusivas directamente en tu correo.</p>
+            <form class="newsletter-form">
+                <input type="email" class="newsletter-input" placeholder="Tu correo electrónico" required id="newsletter-email">
+                <button type="submit" class="newsletter-btn" id="newsletter-btn">Suscribirse</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <div class="footer-logo">Don Hogar</div>
+                    <p id="footer-about-text">Don Hogar es tu guía definitiva para la tecnología del hogar. Ofrecemos análisis imparciales y comparativas detalladas para ayudarte a tomar las mejores decisiones de compra.</p>
+                    <div class="social-links">
+                        <a href="https://www.youtube.com/@DonHogar" class="social-link" target="_blank" rel="noopener noreferrer" title="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/market_premiun_?igsh=NG9scGtvdDVjbnVp&utm_source=qr" class="social-link" target="_blank" rel="noopener noreferrer" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@market_premiun?is_from_webapp=1&sender_device=pc" class="social-link" target="_blank" rel="noopener noreferrer" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://es.pinterest.com/Donhogars/?actingBusinessId=1093530490679600103" class="social-link" target="_blank" rel="noopener noreferrer" title="Pinterest"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links-container">
+                    <h3 class="footer-title" id="footer-links-title1">Enlaces Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html" id="footer-link1-1"><i class="fas fa-chevron-right"></i> Inicio</a></li>
+                        <li><a href="analisis.html" id="footer-link1-2"><i class="fas fa-chevron-right"></i> Análisis</a></li>
+                        <li><a href="comparativas.html" id="footer-link1-3"><i class="fas fa-chevron-right"></i> Comparativas</a></li>
+                        <li><a href="ofertas.html" id="footer-link1-4"><i class="fas fa-chevron-right"></i> Ofertas</a></li>
+                        <li><a href="contacto.html" id="footer-link1-5"><i class="fas fa-chevron-right"></i> Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links-container">
+                    <h3 class="footer-title" id="footer-links-title2">Categorías</h3>
+                    <ul class="footer-links">
+                        <li><a href="categorias/cocina.html" id="footer-link2-1"><i class="fas fa-chevron-right"></i> Cocina</a></li>
+                        <li><a href="categorias/limpieza.html" id="footer-link2-2"><i class="fas fa-chevron-right"></i> Limpieza</a></li>
+                        <li><a href="categorias/electronica.html" id="footer-link2-3"><i class="fas fa-chevron-right"></i> Electrónica</a></li>
+                        <li><a href="categorias/smart-home.html" id="footer-link2-4"><i class="fas fa-chevron-right"></i> Smart Home</a></li>
+                        <li><a href="categorias/belleza.html" id="footer-link2-5"><i class="fas fa-chevron-right"></i> Belleza</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links-container">
+                    <h3 class="footer-title" id="footer-links-title3">Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="aviso-legal.html" id="footer-link3-1"><i class="fas fa-chevron-right"></i> Aviso Legal</a></li>
+                        <li><a href="politica-privacidad.html" id="footer-link3-2"><i class="fas fa-chevron-right"></i> Privacidad</a></li>
+                        <li><a href="cookies.html" id="footer-link3-3"><i class="fas fa-chevron-right"></i> Cookies</a></li>
+                        <li><a href="afiliacion.html" id="footer-link3-4"><i class="fas fa-chevron-right"></i> Afiliación</a></li>
+                        <li><a href="condiciones.html" id="footer-link3-5"><i class="fas fa-chevron-right"></i> Términos</a></li>
+                    </ul>
+                </div>
             </div>
             
-            <!-- Tarjeta de comparativa -->
-            <div class="highlight-card comparison-card">
-                <div class="meta">
-                    <span>📅 <span id="comparison-date">15 Marzo 2025</span></span>
-                    <span>⏱ <span id="comparison-reading-time">7 min lectura</span></span>
-                </div>
-                <h2 id="comparison-title">Comparativa Técnica</h2>
-                <h3 id="comparison-subtitle">Freidoras de Aire 2025</h3>
-                <img src="https://m.media-amazon.com/images/I/71-bVzbgWTL._AC_SL1500_.jpg" alt="Comparativa Freidoras de Aire 2025" loading="lazy" width="600" height="400">
-                <p id="comparison-description">Análisis exhaustivo de las 5 mejores freidoras de aire basado en pruebas de consumo, ruido y resultados de cocción. Descubre el modelo ganador.</p>
-                <a href="comparativa-freidora/index.html" class="highlight-button" id="comparison-button">Ver Comparativa</a>
+            <div class="footer-bottom">
+                <p id="footer-copyright">© 2025 Don Hogar. Todos los derechos reservados. <a href="politica-privacidad.html" id="footer-privacy">Política de Privacidad</a> | <a href="condiciones.html" id="footer-terms">Términos de Uso</a></p>
+                <p id="footer-disclaimer">Como Afiliado de Amazon, Don Hogar obtiene ingresos por las compras adscritas que cumplen los requisitos aplicables.</p>
             </div>
         </div>
+    </footer>
 
-        <!-- Sección de artículos -->
-        <div class="articles-section">
-            <h2 class="section-title" id="articles-title">Últimos Análisis y Reviews</h2>
-            <div class="articles-grid">
-                <div class="article-card">
-                    <img src="https://m.media-amazon.com/images/I/71Kv4VyPFtL._AC_SL1500_.jpg" alt="Robot aspirador" class="article-image" loading="lazy" width="600" height="400">
-                    <div class="article-content">
-                        <span class="article-tag" id="article-tag1">Novedad</span>
-                        <h3 id="article-title1">Los 5 Mejores Robots Aspiradores de 2025</h3>
-                        <p id="article-desc1">Pruebas reales de limpieza, autonomía y mapeo de los modelos más avanzados del mercado.</p>
-                        <div class="article-meta">
-                            <span id="article-date1">12 Marzo 2025</span>
-                            <span id="article-author1">Por Equipo Don Hogar</span>
-                        </div>
-                        <a href="robot-aspirador/index.html" class="article-link" id="article-link1">Leer más
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M5 12h14M12 5l7 7-7 7"></path>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="article-card">
-                    <img src="https://m.media-amazon.com/images/I/71uiF8cvgbL._AC_SL1500_.jpg" alt="Cafeteras superautomáticas" class="article-image" loading="lazy" width="600" height="400">
-                    <div class="article-content">
-                        <span class="article-tag" id="article-tag2">Análisis</span>
-                        <h3 id="article-title2">Guía Definitiva de Cafeteras Superautomáticas</h3>
-                        <p id="article-desc2">Comparativa de 8 modelos premium con pruebas de sabor, mantenimiento y durabilidad.</p>
-                        <div class="article-meta">
-                            <span id="article-date2">5 Marzo 2025</span>
-                            <span id="article-author2">Por María García</span>
-                        </div>
-                        <a href="cafeteras-superautomaticas/index.html" class="article-link" id="article-link2">Leer más
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M5 12h14M12 5l7 7-7 7"></path>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="article-card">
-                    <img src="https://m.media-amazon.com/images/I/71QutkthltL._AC_SL1500_.jpg" alt="Mopa de vapor" class="article-image" loading="lazy" width="600" height="400">
-                    <div class="article-content">
-                        <span class="article-tag" id="article-tag3">Prueba</span>
-                        <h3 id="article-title3">Mopas de Vapor: ¿Realmente Funcionan?</h3>
-                        <p id="article-desc3">Test de limpieza durante 30 días con los 3 modelos más vendidos. Resultados sorprendentes.</p>
-                        <div class="article-meta">
-                            <span id="article-date3">28 Febrero 2025</span>
-                            <span id="article-author3">Por Carlos Martínez</span>
-                        </div>
-                        <a href="mopas-vapor/index.html" class="article-link" id="article-link3">Leer más
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M5 12h14M12 5l7 7-7 7"></path>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Buscador inteligente -->
-        <div class="smart-search">
-            <div class="search-container">
-                <input type="text" id="searchInput" placeholder="Busca productos (cafetera, robot, televisor...)" aria-label="Buscar productos">
-                <div class="search-icon">🔍</div>
-            </div>
-        </div>
-
-        <!-- Todas las categorías -->
-        <div class="categories-section">
-            <h2 class="section-title" id="categories-title">Explora Nuestras Categorías</h2>
-            <div class="categories-grid" id="categoriesContainer">
-                <!-- Aspiradoras sin cable -->
-                <div class="category" data-keywords="aspiradora sin cable, aspirador inalámbrico, limpieza hogar, aspirador potente">
-                    <img src="https://m.media-amazon.com/images/I/61+5kY6O2IL._AC_UL320_.jpg" alt="Aspiradoras sin cable" loading="lazy">
-                    <h3 id="category-title1">Aspiradoras sin cable</h3>
-                    <a href="https://www.amazon.es/s?k=aspirador+sin+cable&tag=donhogar-21" class="category-link" id="category-link1" rel="nofollow noopener noreferrer" target="_blank">Ver productos</a>
-                </div>
-                
-                <!-- Auriculares -->
-                <div class="category" data-keywords="auriculares, headphones, sonido, audio, inalámbricos">
-                    <img src="https://m.media-amazon.com/images/I/61Bv5YIS3VL._AC_UL320_.jpg" alt="Auriculares" loading="lazy">
-                    <h3 id="category-title2">Auriculares</h3>
-                    <a href="https://www.amazon.es/s?k=auriculares&tag=donhogar-21" class="category-link" id="category-link2" rel="nofollow noopener noreferrer" target="_blank">Ver productos</a>
-                </div>
-                
-                <!-- Batidoras -->
-                <div class="category" data-keywords="batidora, cocina, electrodomésticos, amasadora, licuadora">
-                    <img src="https://m.media-amazon.com/images/I/71GtFeZfJIL._AC_UL320_.jpg" alt="Batidoras" loading="lazy">
-                    <h3 id="category-title3">Batidoras</h3>
-                    <a href="https://www.amazon.es/s?k=batidoras&tag=donhogar-21" class="category-link" id="category-link3" rel="nofollow noopener noreferrer" target="_blank">Ver productos</a>
-                </div>
-                
-                <!-- Cafeteras -->
-                <div class="category" data-keywords="cafetera, café, espresso, nespresso, máquina café">
-                    <img src="https://m.media-amazon.com/images/I/71uiF8cvgbL._AC_UL320_.jpg" alt="Cafeteras" loading="lazy">
-                    <h3 id="category-title4">Cafeteras</h3>
-                    <a href="https://www.amazon.es/s?k=cafeteras&tag=donhogar-21" class="category-link" id="category-link4" rel="nofollow noopener noreferrer" target="_blank">Ver productos</a>
-                </div>
-                
-                <!-- Cámaras de vigilancia -->
-                <div class="category" data-keywords="cámara vigilancia, seguridad, alarma, videovigilancia">
-                    <img src="https://m.media-amazon.com/images/I/61BGF6+YBAL._AC_UL320_.jpg" alt="Cámaras de vigilancia" loading="lazy">
-                    <h3 id="category-title5">Cámaras vigilancia</h3>
-                    <a href="https://www.amazon.es/s?k=camaras+vigilancia&tag=donhogar-21" class="category-link" id="category-link5" rel="nofollow noopener noreferrer" target="_blank">Ver productos</a>
-                </div>
-                
-                <!-- Cecotec Power Espresso -->
-                <div class="category" data-keywords="cecotec, power espresso, cafetera superautomática">
-                    <img src="https://m.media-amazon.com/images/I/51L+1dyZSDL._AC_UL320_.jpg" alt="Cecotec Power Espresso" loading="lazy">
-                    <h3 id="category-title6">Cecotec Power Espresso</h3>
-                    <a href="https://www.amazon.es/s?k=Cecotec+Power+Espresso&tag=donhogar-21" class="category-link" id="category-link6" rel="nofollow noopener noreferrer" target="_blank">Ver productos</a>
-                </div>
-                
-                <!-- Chimeneas eléctricas -->
-                <div class="category" data-keywords="chimenea eléctrica, calefacción, decoración">
-                    <img src="https://m.media-amazon.com/images/I/71QutkthltL._AC_UL320_.jpg" alt="Chimeneas eléctricas" loading="lazy">
-                    <h3 id="category-title7">Chimeneas eléctricas</h3>
-                    <a href="https://www.amazon.es/s?k=chimeneas+electricas&tag=donhogar-21" class="category-link" id="category-link7" rel="nofollow noopener noreferrer" target="_blank">Ver productos</a>
-                </div>
-                
-                <!-- Comparativa freidora -->
-                <div class="category" data-keywords="freidora aire, comparativa, análisis, cocina saludable">
-                    <img src="https://m.media-amazon.com/images/I/71-bVzbgWTL._AC_UL320_.jpg" alt="Comparativa freidoras" loading="lazy">
-                    <h3 id="category-title8">Comparativa freidoras</h3>
-                    <a href="comparativa-freidora/index.html" class="category-link" id="category-link8">Ver análisis</a>
-                </div>
-                
-                <!-- Deshumidificador -->
-                <div class="category" data-keywords="deshumidificador, humedad, aire, salud">
-                    <img src="https://m.media-amazon.com/images/I/71Kv4VyPFtL._AC_UL320_.jpg" alt="Deshumidificadores" loading="lazy">
-                    <h3 id="category-title9">Deshumidificadores</h3>
-                    <a href="https://www.amazon.es/s?k=deshumidificador&tag=donhogar-21" class="category-link" id="category-link9" rel="nofollow noopener noreferrer" target="_blank">Ver productos</a>
-                </div>
-                
-                <!-- Freidoras -->
-                <div class="category" data-keywords="freidora aire, air fryer, cocina saludable">
-                    <img src="https://m.media-amazon.com/images/I/71-bVzbgWTL._AC_UL320_.jpg" alt="Freidoras de aire" loading="lazy">
-                    <h3 id="category-title10">Freidoras de aire</h3>
-                    <a href="https://www.amazon.es/s?k=freidora+aire&tag=donhogar-21" class="category-link" id="category-link10" rel="nofollow noopener noreferrer" target="_blank">Ver productos</a>
-                </div>
-                
-                <!-- Lavadoras -->
-                <div class="category" data-keywords="lavadora, electrodomésticos, hogar, lavado">
-                    <img src="https://m.media-amazon.com/images/I/71QutkthltL._AC_UL320_.jpg" alt="Lavadoras" loading="lazy">
-                    <h3 id="category-title11">Lavadoras</h3>
-                    <a href="https://www.amazon.es/s?k=lavadoras&tag=donhogar-21" class="category-link" id="category-link11" rel="nofollow noopener noreferrer" target="_blank">Ver productos</a>
-                </div>
-                
-                <!-- Lavavajillas -->
-                <div class="category" data-keywords="lavavajillas, electrodomésticos, cocina">
-                    <img src="https://m.media-amazon.com/images/I/71Kv4VyPFtL._AC_UL320_.jpg" alt="Lavavajillas" loading="lazy">
-                    <h3 id="category-title12">Lavavajillas</h3>
-                    <a href="https://www.amazon.es/s?k=lavavajillas&tag=donhogar-21" class="category-link" id="category-link12" rel="nofollow noopener noreferrer" target="_blank">Ver productos</a>
-                </div>
-                
-                <!-- Microondas -->
-                <div class="category" data-keywords="microondas, horno, cocina, electrodomésticos">
-                    <img src="https://m.media-amazon.com/images/I/71uiF8cvgbL._AC_UL320_.jpg" alt="Microondas" loading="lazy">
-                    <h3 id="category-title13">Microondas</h3>
-                    <a href="https://www.amazon.es/s?k=microondas&tag=donhogar-21" class="category-link" id="category-link13" rel="nofollow noopener noreferrer" target="_blank">Ver productos</a>
-                </div>
-                
-                <!-- Mopa a vapor -->
-                <div class="category" data-keywords="mopa vapor, limpieza, suelos, fregona">
-                    <img src="https://m.media-amazon.com/images/I/71QutkthltL._AC_UL320_.jpg" alt="Mopas de vapor" loading="lazy">
-                    <h3 id="category-title14">Mopas de vapor</h3>
-                    <a href="mopas-vapor/index.html" class="category-link" id="category-link14">Ver análisis</a>
-                </div>
-                
-                <!-- Ofertas -->
-                <div class="category" data-keywords="ofertas, descuentos, promociones, rebajas">
-                    <img src="https://m.media-amazon.com/images/I/71Kv4VyPFtL._AC_UL320_.jpg" alt="Ofertas" loading="lazy">
-                    <h3 id="category-title15">Ofertas especiales</h3>
-                    <a href="ofertas/index.html" class="category-link" id="category-link15">Ver ofertas</a>
-                </div>
-                
-                <!-- Reloj inteligente -->
-                <div class="category" data-keywords="reloj inteligente, smartwatch, wearable, salud">
-                    <img src="https://m.media-amazon.com/images/I/71uiF8cvgbL._AC_UL320_.jpg" alt="Relojes inteligentes" loading="lazy">
-                    <h3 id="category-title16">Relojes inteligentes</h3>
-                    <a href="https://www.amazon.es/s?k=reloj+inteligente&tag=donhogar-21" class="category-link" id="category-link16" rel="nofollow noopener noreferrer" target="_blank">Ver productos</a>
-                </div>
-                
-                <!-- Robot aspirador -->
-                <div class="category" data-keywords="robot aspirador, roomba, limpieza automática">
-                    <img src="https://m.media-amazon.com/images/I/71Kv4VyPFtL._AC_UL320_.jpg" alt="Robots aspiradores" loading="lazy">
-                    <h3 id="category-title17">Robots aspiradores</h3>
-                    <a href="robot-aspirador/index.html" class="category-link" id="category-link17">Ver análisis</a>
-                </div>
-                
-                <!-- Secador -->
-                <div class="category" data-keywords="secador, pelo, peluquería, belleza">
-                    <img src="https://m.media-amazon.com/images/I/71QutkthltL._AC_UL320_.jpg" alt="Secadores" loading="lazy">
-                    <h3 id="category-title18">Secadores</h3>
-                    <a href="https://www.amazon.es/s?k=secador+pelo&tag=donhogar-21" class="category-link" id="category-link18" rel="nofollow noopener noreferrer" target="_blank">Ver productos</a>
-                </div>
-                
-                <!-- Televisores -->
-                <div class="category" data-keywords="televisor, tv, smart tv, oled">
-                    <img src="https://m.media-amazon.com/images/I/71uiF8cvgbL._AC_UL320_.jpg" alt="Televisores" loading="lazy">
-                    <h3 id="category-title19">Televisores</h3>
-                    <a href="https://www.amazon.es/s?k=televisores&tag=donhogar-21" class="category-link" id="category-link19" rel="nofollow noopener noreferrer" target="_blank">Ver productos</a>
-                </div>
-                
-                <!-- Tostadoras -->
-                <div class="category" data-keywords="tostadora, pan, desayuno, cocina">
-                    <img src="https://m.media-amazon.com/images/I/71Kv4VyPFtL._AC_UL320_.jpg" alt="Tostadoras" loading="lazy">
-                    <h3 id="category-title20">Tostadoras</h3>
-                    <a href="https://www.amazon.es/s?k=tostadoras&tag=donhogar-21" class="category-link" id="category-link20" rel="nofollow noopener noreferrer" target="_blank">Ver productos</a>
-                </div>
-            </div>
-        </div>
-
-        <footer>
-            <p>© 2025 Don Hogar - Tecnología para tu hogar</p>
-            <p><a href="licencia.html" id="terms-link">Términos y condiciones</a> | <a href="contacto.html" id="contact-link">Contacto</a></p>
-            
-            <div class="social-links">
-                <a href="https://www.tiktok.com/@market_premiun?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer" title="TikTok">🎵</a>
-                <a href="https://www.instagram.com/market_premiun_?igsh=NG9scGtvdDVjbnVp&utm_source=qr" target="_blank" rel="noopener noreferrer" title="Instagram">📷</a>
-                <a href="https://www.youtube.com/@DonHogar" target="_blank" rel="noopener noreferrer" title="YouTube">▶️</a>
-                <a href="https://es.pinterest.com/Donhogars/?actingBusinessId=1093530490679600103" target="_blank" rel="noopener noreferrer" title="Pinterest">📌</a>
-            </div>
-        </footer>
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
     </div>
 
     <script>
         // Traducciones para el sistema de idiomas
         const translations = {
             es: {
-                "main-title": "Don Hogar 2025",
-                "main-subtitle": "Tecnología inteligente para tu hogar",
-                "test-date": "20 Marzo 2025",
-                "test-reading-time": "5 min lectura",
-                "test-title": "Análisis en Profundidad",
-                "test-subtitle": "Cafetera Cecotec Power Espresso 20 Cream",
-                "test-description": "Prueba exclusiva de 15 días con la cafetera superautomática más avanzada de Cecotec. Descubre nuestros hallazgos tras un mes de uso intensivo.",
-                "test-button": "Leer Análisis Completo",
-                "comparison-date": "15 Marzo 2025",
-                "comparison-reading-time": "7 min lectura",
-                "comparison-title": "Comparativa Técnica",
-                "comparison-subtitle": "Freidoras de Aire 2025",
-                "comparison-description": "Análisis exhaustivo de las 5 mejores freidoras de aire basado en pruebas de consumo, ruido y resultados de cocción. Descubre el modelo ganador.",
-                "comparison-button": "Ver Comparativa",
-                "articles-title": "Últimos Análisis y Reviews",
-                "article-tag1": "Novedad",
-                "article-title1": "Los 5 Mejores Robots Aspiradores de 2025",
-                "article-desc1": "Pruebas reales de limpieza, autonomía y mapeo de los modelos más avanzados del mercado.",
-                "article-date1": "12 Marzo 2025",
-                "article-author1": "Por Equipo Don Hogar",
-                "article-link1": "Leer más",
-                "article-tag2": "Análisis",
-                "article-title2": "Guía Definitiva de Cafeteras Superautomáticas",
-                "article-desc2": "Comparativa de 8 modelos premium con pruebas de sabor, mantenimiento y durabilidad.",
-                "article-date2": "5 Marzo 2025",
-                "article-author2": "Por María García",
-                "article-link2": "Leer más",
-                "article-tag3": "Prueba",
-                "article-title3": "Mopas de Vapor: ¿Realmente Funcionan?",
-                "article-desc3": "Test de limpieza durante 30 días con los 3 modelos más vendidos. Resultados sorprendentes.",
-                "article-date3": "28 Febrero 2025",
-                "article-author3": "Por Carlos Martínez",
-                "article-link3": "Leer más",
-                "categories-title": "Explora Nuestras Categorías",
-                "category-title1": "Aspiradoras sin cable",
-                "category-link1": "Ver productos",
-                "category-title2": "Auriculares",
-                "category-link2": "Ver productos",
-                "category-title3": "Batidoras",
-                "category-link3": "Ver productos",
-                "category-title4": "Cafeteras",
-                "category-link4": "Ver productos",
-                "category-title5": "Cámaras vigilancia",
-                "category-link5": "Ver productos",
-                "category-title6": "Cecotec Power Espresso",
-                "category-link6": "Ver productos",
-                "category-title7": "Chimeneas eléctricas",
-                "category-link7": "Ver productos",
-                "category-title8": "Comparativa freidoras",
-                "category-link8": "Ver análisis",
-                "category-title9": "Deshumidificadores",
-                "category-link9": "Ver productos",
-                "category-title10": "Freidoras de aire",
-                "category-link10": "Ver productos",
-                "category-title11": "Lavadoras",
-                "category-link11": "Ver productos",
-                "category-title12": "Lavavajillas",
-                "category-link12": "Ver productos",
-                "category-title13": "Microondas",
-                "category-link13": "Ver productos",
-                "category-title14": "Mopas de vapor",
-                "category-link14": "Ver análisis",
-                "category-title15": "Ofertas especiales",
-                "category-link15": "Ver ofertas",
-                "category-title16": "Relojes inteligentes",
-                "category-link16": "Ver productos",
-                "category-title17": "Robots aspiradores",
-                "category-link17": "Ver análisis",
-                "category-title18": "Secadores",
-                "category-link18": "Ver productos",
-                "category-title19": "Televisores",
-                "category-link19": "Ver productos",
-                "category-title20": "Tostadoras",
-                "category-link20": "Ver productos",
-                "terms-link": "Términos y condiciones",
-                "contact-link": "Contacto"
+                "hero-title": "Tecnología Inteligente para tu Hogar",
+                "hero-subtitle": "Descubre los mejores productos para tu hogar con análisis expertos y pruebas reales",
+                "hero-btn-primary": "Ver Análisis",
+                "hero-btn-secondary": "Explorar Categorías",
+                "featured-title": "Análisis Destacados",
+                "featured-badge1": "Nuevo",
+                "featured-title1": "Cafetera Cecotec Power Espresso",
+                "featured-text1": "Análisis completo de la cafetera superautomática con sistema de crema profesional y 20 ajustes de molienda.",
+                "featured-date1": "20 Marzo 2025",
+                "featured-author1": "Por María García",
+                "featured-link1": "Leer análisis",
+                "featured-badge2": "Comparativa",
+                "featured-title2": "Top 5 Freidoras de Aire 2025",
+                "featured-text2": "Comparativa técnica de las mejores freidoras de aire basada en pruebas de consumo y resultados.",
+                "featured-date2": "15 Marzo 2025",
+                "featured-author2": "Por Carlos Martínez",
+                "featured-link2": "Ver comparativa",
+                "featured-badge3": "Prueba",
+                "featured-title3": "Robot Aspirador X800 Pro",
+                "featured-text3": "Prueba de 30 días con el robot aspirador más avanzado del mercado. Resultados reales de limpieza.",
+                "featured-date3": "10 Marzo 2025",
+                "featured-author3": "Por Equipo Don Hogar",
+                "featured-link3": "Ver resultados",
+                "categories-title": "Categorías Populares",
+                "categories-intro": "Explora nuestras categorías principales y encuentra los mejores productos para tu hogar. Haz clic en cada categoría para ver los análisis y recomendaciones.",
+                "category-header1": "Electrodomésticos de Cocina",
+                "category-link1-1": "Cafeteras",
+                "category-link1-2": "Freidoras de Aire",
+                "category-link1-3": "Batidoras",
+                "category-link1-4": "Robots de Cocina",
+                "category-link1-5": "Tostadoras",
+                "category-link1-6": "Licuadoras",
+                "category-header2": "Limpieza del Hogar",
+                "category-link2-1": "Robots Aspiradores",
+                "category-link2-2": "Aspiradoras sin Cable",
+                "category-link2-3": "Mopas de Vapor",
+                "category-link2-4": "Purificadores de Aire",
+                "category-link2-5": "Deshumidificadores",
+                "category-link2-6": "Limpiadores a Vapor",
+                "category-header3": "Electrónica y Entretenimiento",
+                "category-link3-1": "Televisores",
+                "category-link3-2": "Auriculares",
+                "category-link3-3": "Altavoces Inteligentes",
+                "category-link3-4": "Relojes Inteligentes",
+                "category-link3-5": "Proyectores",
+                "category-link3-6": "Consolas",
+                "category-header4": "Hogar Inteligente",
+                "category-link4-1": "Termostatos",
+                "category-link4-2": "Bombillas Inteligentes",
+                "category-link4-3": "Cámaras de Seguridad",
+                "category-link4-4": "Enchufes Inteligentes",
+                "category-link4-5": "Cerraduras Inteligentes",
+                "category-link4-6": "Asistentes de Voz",
+                "newsletter-title": "Suscríbete a Nuestro Boletín",
+                "newsletter-text": "Recibe las últimas reviews, comparativas y ofertas exclusivas directamente en tu correo.",
+                "newsletter-email": "Tu correo electrónico",
+                "newsletter-btn": "Suscribirse",
+                "footer-about-text": "Don Hogar es tu guía definitiva para la tecnología del hogar. Ofrecemos análisis imparciales y comparativas detalladas para ayudarte a tomar las mejores decisiones de compra.",
+                "footer-links-title1": "Enlaces Rápidos",
+                "footer-link1-1": "Inicio",
+                "footer-link1-2": "Análisis",
+                "footer-link1-3": "Comparativas",
+                "footer-link1-4": "Ofertas",
+                "footer-link1-5": "Contacto",
+                "footer-links-title2": "Categorías",
+                "footer-link2-1": "Cocina",
+                "footer-link2-2": "Limpieza",
+                "footer-link2-3": "Electrónica",
+                "footer-link2-4": "Smart Home",
+                "footer-link2-5": "Belleza",
+                "footer-links-title3": "Legal",
+                "footer-link3-1": "Aviso Legal",
+                "footer-link3-2": "Privacidad",
+                "footer-link3-3": "Cookies",
+                "footer-link3-4": "Afiliación",
+                "footer-link3-5": "Términos",
+                "footer-copyright": "© 2025 Don Hogar. Todos los derechos reservados.",
+                "footer-privacy": "Política de Privacidad",
+                "footer-terms": "Términos de Uso",
+                "footer-disclaimer": "Como Afiliado de Amazon, Don Hogar obtiene ingresos por las compras adscritas que cumplen los requisitos aplicables.",
+                "nav-home": "Inicio",
+                "nav-reviews": "Análisis",
+                "nav-comparisons": "Comparativas",
+                "nav-categories": "Categorías",
+                "nav-deals": "Ofertas",
+                "nav-contact": "Contacto"
             },
             en: {
-                "main-title": "Don Hogar 2025",
-                "main-subtitle": "Smart technology for your home",
-                "test-date": "March 20, 2025",
-                "test-reading-time": "5 min read",
-                "test-title": "In-Depth Review",
-                "test-subtitle": "Cecotec Power Espresso 20 Cream Coffee Machine",
-                "test-description": "Exclusive 15-day test with Cecotec's most advanced superautomatic coffee machine. Discover our findings after a month of intensive use.",
-                "test-button": "Read Full Review",
-                "comparison-date": "March 15, 2025",
-                "comparison-reading-time": "7 min read",
-                "comparison-title": "Technical Comparison",
-                "comparison-subtitle": "2025 Air Fryers",
-                "comparison-description": "Comprehensive analysis of the top 5 air fryers based on consumption, noise and cooking results tests. Discover the winning model.",
-                "comparison-button": "View Comparison",
-                "articles-title": "Latest Reviews & Analysis",
-                "article-tag1": "New",
-                "article-title1": "Top 5 Robot Vacuums of 2025",
-                "article-desc1": "Real-world cleaning tests, battery life and mapping of the most advanced models.",
-                "article-date1": "March 12, 2025",
-                "article-author1": "By Don Hogar Team",
-                "article-link1": "Read more",
-                "article-tag2": "Analysis",
-                "article-title2": "Ultimate Superautomatic Coffee Machines Guide",
-                "article-desc2": "Comparison of 8 premium models with taste, maintenance and durability tests.",
-                "article-date2": "March 5, 2025",
-                "article-author2": "By Maria Garcia",
-                "article-link2": "Read more",
-                "article-tag3": "Test",
-                "article-title3": "Steam Mops: Do They Really Work?",
-                "article-desc3": "30-day cleaning test with the 3 best-selling models. Surprising results.",
-                "article-date3": "February 28, 2025",
-                "article-author3": "By Carlos Martinez",
-                "article-link3": "Read more",
-                "categories-title": "Explore Our Categories",
-                "category-title1": "Cordless Vacuums",
-                "category-link1": "View products",
-                "category-title2": "Headphones",
-                "category-link2": "View products",
-                "category-title3": "Blenders",
-                "category-link3": "View products",
-                "category-title4": "Coffee Machines",
-                "category-link4": "View products",
-                "category-title5": "Security Cameras",
-                "category-link5": "View products",
-                "category-title6": "Cecotec Power Espresso",
-                "category-link6": "View products",
-                "category-title7": "Electric Fireplaces",
-                "category-link7": "View products",
-                "category-title8": "Air Fryer Comparison",
-                "category-link8": "View analysis",
-                "category-title9": "Dehumidifiers",
-                "category-link9": "View products",
-                "category-title10": "Air Fryers",
-                "category-link10": "View products",
-                "category-title11": "Washing Machines",
-                "category-link11": "View products",
-                "category-title12": "Dishwashers",
-                "category-link12": "View products",
-                "category-title13": "Microwaves",
-                "category-link13": "View products",
-                "category-title14": "Steam Mops",
-                "category-link14": "View analysis",
-                "category-title15": "Special Offers",
-                "category-link15": "View offers",
-                "category-title16": "Smart Watches",
-                "category-link16": "View products",
-                "category-title17": "Robot Vacuums",
-                "category-link17": "View analysis",
-                "category-title18": "Hair Dryers",
-                "category-link18": "View products",
-                "category-title19": "TVs",
-                "category-link19": "View products",
-                "category-title20": "Toasters",
-                "category-link20": "View products",
-                "terms-link": "Terms & Conditions",
-                "contact-link": "Contact Us"
+                "hero-title": "Smart Technology for Your Home",
+                "hero-subtitle": "Discover the best products for your home with expert reviews and real tests",
+                "hero-btn-primary": "View Reviews",
+                "hero-btn-secondary": "Explore Categories",
+                "featured-title": "Featured Reviews",
+                "featured-badge1": "New",
+                "featured-title1": "Cecotec Power Espresso Coffee Machine",
+                "featured-text1": "Complete analysis of the superautomatic coffee machine with professional cream system and 20 grind settings.",
+                "featured-date1": "March 20, 2025",
+                "featured-author1": "By Maria Garcia",
+                "featured-link1": "Read review",
+                "featured-badge2": "Comparison",
+                "featured-title2": "Top 5 Air Fryers 2025",
+                "featured-text2": "Technical comparison of the best air fryers based on consumption and performance tests.",
+                "featured-date2": "March 15, 2025",
+                "featured-author2": "By Carlos Martinez",
+                "featured-link2": "View comparison",
+                "featured-badge3": "Test",
+                "featured-title3": "Robot Vacuum X800 Pro",
+                "featured-text3": "30-day test with the most advanced robot vacuum on the market. Real cleaning results.",
+                "featured-date3": "March 10, 2025",
+                "featured-author3": "By Don Hogar Team",
+                "featured-link3": "View results",
+                "categories-title": "Popular Categories",
+                "categories-intro": "Explore our main categories and find the best products for your home. Click on each category to see reviews and recommendations.",
+                "category-header1": "Kitchen Appliances",
+                "category-link1-1": "Coffee Machines",
+                "category-link1-2": "Air Fryers",
+                "category-link1-3": "Blenders",
+                "category-link1-4": "Food Processors",
+                "category-link1-5": "Toasters",
+                "category-link1-6": "Juicers",
+                "category-header2": "Home Cleaning",
+                "category-link2-1": "Robot Vacuums",
+                "category-link2-2": "Cordless Vacuums",
+                "category-link2-3": "Steam Mops",
+                "category-link2-4": "Air Purifiers",
+                "category-link2-5": "Dehumidifiers",
+                "category-link2-6": "Steam Cleaners",
+                "category-header3": "Electronics & Entertainment",
+                "category-link3-1": "TVs",
+                "category-link3-2": "Headphones",
+                "category-link3-3": "Smart Speakers",
+                "category-link3-4": "Smart Watches",
+                "category-link3-5": "Projectors",
+                "category-link3-6": "Gaming Consoles",
+                "category-header4": "Smart Home",
+                "category-link4-1": "Thermostats",
+                "category-link4-2": "Smart Bulbs",
+                "category-link4-3": "Security Cameras",
+                "category-link4-4": "Smart Plugs",
+                "category-link4-5": "Smart Locks",
+                "category-link4-6": "Voice Assistants",
+                "newsletter-title": "Subscribe to Our Newsletter",
+                "newsletter-text": "Receive the latest reviews, comparisons and exclusive offers directly to your email.",
+                "newsletter-email": "Your email address",
+                "newsletter-btn": "Subscribe",
+                "footer-about-text": "Don Hogar is your ultimate guide to home technology. We provide unbiased reviews and detailed comparisons to help you make the best purchasing decisions.",
+                "footer-links-title1": "Quick Links",
+                "footer-link1-1": "Home",
+                "footer-link1-2": "Reviews",
+                "footer-link1-3": "Comparisons",
+                "footer-link1-4": "Deals",
+                "footer-link1-5": "Contact",
+                "footer-links-title2": "Categories",
+                "footer-link2-1": "Kitchen",
+                "footer-link2-2": "Cleaning",
+                "footer-link2-3": "Electronics",
+                "footer-link2-4": "Smart Home",
+                "footer-link2-5": "Beauty",
+                "footer-links-title3": "Legal",
+                "footer-link3-1": "Legal Notice",
+                "footer-link3-2": "Privacy",
+                "footer-link3-3": "Cookies",
+                "footer-link3-4": "Affiliation",
+                "footer-link3-5": "Terms",
+                "footer-copyright": "© 2025 Don Hogar. All rights reserved.",
+                "footer-privacy": "Privacy Policy",
+                "footer-terms": "Terms of Use",
+                "footer-disclaimer": "As an Amazon Associate, Don Hogar earns from qualifying purchases.",
+                "nav-home": "Home",
+                "nav-reviews": "Reviews",
+                "nav-comparisons": "Comparisons",
+                "nav-categories": "Categories",
+                "nav-deals": "Deals",
+                "nav-contact": "Contact"
             }
         };
 
@@ -1107,6 +1320,7 @@
                 if (element) {
                     if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
                         element.value = value;
+                        element.placeholder = value; // Para placeholders
                     } else if (element.tagName === 'IMG' && element.alt) {
                         // No traducir atributos alt para SEO
                         continue;
@@ -1191,6 +1405,57 @@
             });
         }
         
+        // Acordeón de categorías
+        function initCategoryAccordion() {
+            const categoryHeaders = document.querySelectorAll('.category-header');
+            
+            categoryHeaders.forEach(header => {
+                header.addEventListener('click', () => {
+                    const categoryItem = header.parentElement;
+                    categoryItem.classList.toggle('active');
+                    
+                    const content = header.nextElementSibling;
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                    }
+                });
+            });
+        }
+        
+        // Botón de volver arriba
+        function initBackToTop() {
+            const backToTopBtn = document.getElementById('backToTop');
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTopBtn.classList.add('visible');
+                } else {
+                    backToTopBtn.classList.remove('visible');
+                }
+            });
+            
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+        
+        // Menú móvil
+        function initMobileMenu() {
+            const toggleBtn = document.getElementById('mobileMenuToggle');
+            const mainNav = document.getElementById('mainNav');
+            
+            toggleBtn.addEventListener('click', () => {
+                mainNav.classList.toggle('active');
+                toggleBtn.innerHTML = mainNav.classList.contains('active') ? 
+                    '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+            });
+        }
+        
         // Cambiar idioma al seleccionar
         document.getElementById('languageSelect').addEventListener('change', function() {
             changeLanguage(this.value);
@@ -1208,48 +1473,11 @@
             
             changeLanguage(langToUse);
             
-            // Inicializar buscador
-            initSearch();
+            // Inicializar componentes
+            initCategoryAccordion();
+            initBackToTop();
+            initMobileMenu();
         });
-        
-        // Buscador inteligente
-        function initSearch() {
-            const searchInput = document.getElementById('searchInput');
-            const categoriesContainer = document.getElementById('categoriesContainer');
-            
-            if (searchInput && categoriesContainer) {
-                searchInput.addEventListener('input', function() {
-                    const searchTerm = this.value.toLowerCase();
-                    const categories = categoriesContainer.querySelectorAll('.category');
-                    let hasResults = false;
-                    
-                    categories.forEach(category => {
-                        category.style.display = 'none';
-                        const keywords = category.getAttribute('data-keywords').toLowerCase();
-                        const title = category.textContent.toLowerCase();
-                        
-                        if (keywords.includes(searchTerm) || title.includes(searchTerm)) {
-                            category.style.display = 'block';
-                            hasResults = true;
-                        }
-                    });
-                    
-                    let noResultsMsg = categoriesContainer.querySelector('.no-results');
-                    const currentLang = document.documentElement.lang;
-                    
-                    if (!hasResults && !noResultsMsg) {
-                        noResultsMsg = document.createElement('div');
-                        noResultsMsg.className = 'no-results';
-                        noResultsMsg.textContent = currentLang === 'es' ? 
-                            'No se encontraron productos. Prueba con: cafetera, robot, televisor...' :
-                            'No products found. Try: coffee machine, robot, TV...';
-                        categoriesContainer.appendChild(noResultsMsg);
-                    } else if (hasResults && noResultsMsg) {
-                        categoriesContainer.removeChild(noResultsMsg);
-                    }
-                });
-            }
-        }
     </script>
 </body>
 </html>
