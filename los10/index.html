@@ -30,12 +30,43 @@
             line-height: 1.6;
         }
         
+        .language-switcher {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 8px;
+            z-index: 100;
+        }
+        
+        .language-btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: all 0.3s;
+        }
+        
+        .language-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        
+        .language-btn.active {
+            background: var(--primary);
+            color: var(--dark);
+            font-weight: bold;
+        }
+        
         .category-header {
             background: linear-gradient(to right, var(--secondary), var(--dark));
             color: var(--light);
             padding: 3rem 2rem;
             text-align: center;
             margin-bottom: 2rem;
+            position: relative;
         }
         
         .category-header h1 {
@@ -101,7 +132,7 @@
         }
         
         .category-image {
-            height: 180px;
+            height: 150px; /* Reducido de 180px */
             background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
             position: relative;
         }
@@ -110,6 +141,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: center;
         }
         
         .category-badge {
@@ -255,11 +287,20 @@
             .seo-content {
                 padding: 1.5rem;
             }
+            
+            .language-switcher {
+                top: 10px;
+                right: 10px;
+            }
         }
     </style>
 </head>
 <body>
     <header class="category-header">
+        <div class="language-switcher">
+            <button class="language-btn active" data-lang="es">ES</button>
+            <button class="language-btn" data-lang="en">EN</button>
+        </div>
         <h1>Top 10 Productos por Categoría</h1>
         <p>Descubre nuestras selecciones expertas de los mejores productos en cada categoría, basadas en análisis exhaustivos y valoraciones reales de usuarios.</p>
     </header>
@@ -277,7 +318,7 @@
             <!-- Categoría 1 -->
             <a href="aspiradoras-sin-cable/index.html" class="category-card" title="Top 10 Aspiradoras sin cable 2025">
                 <div class="category-image">
-                    <img src="https://m.media-amazon.com/images/I/81R0ybCL+eL._AC_UY436_QL65_.jpg" alt="Aspiradoras sin cable">
+                    <img src="https://m.media-amazon.com/images/I/71R0ybCL+eL._AC_UL320_.jpg" alt="Aspiradoras sin cable" loading="lazy">
                     <span class="category-badge">TOP 10</span>
                 </div>
                 <div class="category-content">
@@ -288,9 +329,9 @@
             </a>
             
             <!-- Categoría 2 -->
-            <a href="auriculares" class="category-card" title="Top 10 Auriculares 2025">
+            <a href="auriculares/index.html" class="category-card" title="Top 10 Auriculares 2025">
                 <div class="category-image">
-                    <img src="https://m.media-amazon.com/images/I/61EL2AKKcBL._AC_UY436_QL65_.jpg" alt="Auriculares">
+                    <img src="https://m.media-amazon.com/images/I/61EL2AKKcBL._AC_UL320_.jpg" alt="Auriculares" loading="lazy">
                     <span class="category-badge">TOP 10</span>
                 </div>
                 <div class="category-content">
@@ -301,9 +342,9 @@
             </a>
             
             <!-- Categoría 3 -->
-            <a href="https://www.top10tecnologia.com/batidoras/index.html" class="category-card" title="Top 10 Batidoras 2024">
+            <a href="batidoras/index.html" class="category-card" title="Top 10 Batidoras 2024">
                 <div class="category-image">
-                    <img src="https://m.media-amazon.com/images/I/71ThSqnRqNL._AC_UY436_QL65_.jpg" alt="Batidoras">
+                    <img src="https://m.media-amazon.com/images/I/71ThSqnRqNL._AC_UL320_.jpg" alt="Batidoras" loading="lazy">
                     <span class="category-badge">TOP 10</span>
                 </div>
                 <div class="category-content">
@@ -314,9 +355,9 @@
             </a>
             
             <!-- Categoría 4 -->
-            <a href="cafeteras" class="category-card" title="Top 10 Cafeteras 2024">
+            <a href="cafeteras/index.html" class="category-card" title="Top 10 Cafeteras 2024">
                 <div class="category-image">
-                    <img src="https://m.media-amazon.com/images/I/71tCVUmu8wL._AC_UL640_QL65_.jpg" alt="Cafeteras">
+                    <img src="https://m.media-amazon.com/images/I/71tCVUmu8wL._AC_UL320_.jpg" alt="Cafeteras" loading="lazy">
                     <span class="category-badge">TOP 10</span>
                 </div>
                 <div class="category-content">
@@ -327,9 +368,9 @@
             </a>
             
             <!-- Categoría 5 -->
-            <a href="camaras" class="category-card" title="Top 10 Cámaras de vigilancia 2024">
+            <a href="camaras-vigilancia/index.html" class="category-card" title="Top 10 Cámaras de vigilancia 2024">
                 <div class="category-image">
-                    <img src="https://m.media-amazon.com/images/I/51oao7xTT8L._AC_UY436_QL65_.jpg" alt="Cámaras de vigilancia">
+                    <img src="https://m.media-amazon.com/images/I/51oao7xTT8L._AC_UL320_.jpg" alt="Cámaras de vigilancia" loading="lazy">
                     <span class="category-badge">TOP 10</span>
                 </div>
                 <div class="category-content">
@@ -340,9 +381,9 @@
             </a>
             
             <!-- Categoría 6 -->
-            <a href="chimeneas" class="category-card" title="Top 10 Chimeneas eléctricas 2024">
+            <a href="chimeneas-electricas/index.html" class="category-card" title="Top 10 Chimeneas eléctricas 2024">
                 <div class="category-image">
-                    <img src="https://m.media-amazon.com/images/I/71NPBcF5qpL._AC_UL640_QL65_.jpg" alt="Chimeneas eléctricas">
+                    <img src="https://m.media-amazon.com/images/I/71NPBcF5qpL._AC_UL320_.jpg" alt="Chimeneas eléctricas" loading="lazy">
                     <span class="category-badge">TOP 10</span>
                 </div>
                 <div class="category-content">
@@ -353,9 +394,9 @@
             </a>
             
             <!-- Categoría 7 -->
-            <a href="deshumidificadores" class="category-card" title="Top 10 Deshumidificadores 2024">
+            <a href="deshumidificadores/index.html" class="category-card" title="Top 10 Deshumidificadores 2024">
                 <div class="category-image">
-                    <img src="https://m.media-amazon.com/images/I/71eAO9T9HbL._AC_UL640_QL65_.jpg" alt="Deshumidificadores">
+                    <img src="https://m.media-amazon.com/images/I/71eAO9T9HbL._AC_UL320_.jpg" alt="Deshumidificadores" loading="lazy">
                     <span class="category-badge">TOP 10</span>
                 </div>
                 <div class="category-content">
@@ -366,9 +407,9 @@
             </a>
             
             <!-- Categoría 8 -->
-            <a href="freidoras" class="category-card" title="Top 10 Freidoras sin aceite 2024">
+            <a href="freidoras-sin-aceite/index.html" class="category-card" title="Top 10 Freidoras sin aceite 2024">
                 <div class="category-image">
-                    <img src="https://m.media-amazon.com/images/I/51hUxwEJIXL._AC_UY436_QL65_.jpg" alt="Freidoras sin aceite">
+                    <img src="https://m.media-amazon.com/images/I/51hUxwEJIXL._AC_UL320_.jpg" alt="Freidoras sin aceite" loading="lazy">
                     <span class="category-badge">TOP 10</span>
                 </div>
                 <div class="category-content">
@@ -379,9 +420,9 @@
             </a>
             
             <!-- Categoría 9 -->
-            <a href="lavadoras" class="category-card" title="Top 10 Lavadoras 2024">
+            <a href="lavadoras/index.html" class="category-card" title="Top 10 Lavadoras 2024">
                 <div class="category-image">
-                    <img src="https://m.media-amazon.com/images/I/61JZ9wO6HtL._AC_UL640_QL65_.jpg" alt="Lavadoras">
+                    <img src="https://m.media-amazon.com/images/I/61JZ9wO6HtL._AC_UL320_.jpg" alt="Lavadoras" loading="lazy">
                     <span class="category-badge">TOP 10</span>
                 </div>
                 <div class="category-content">
@@ -392,106 +433,15 @@
             </a>
             
             <!-- Categoría 10 -->
-            <a href="lavavajillas" class="category-card" title="Top 10 Lavavajillas 2024">
+            <a href="lavavajillas/index.html" class="category-card" title="Top 10 Lavavajillas 2024">
                 <div class="category-image">
-                    <img src="https://m.media-amazon.com/images/I/51U7DS+AEVL._AC_UY436_QL65_.jpg" alt="Lavavajillas">
+                    <img src="https://m.media-amazon.com/images/I/51U7DS+AEVL._AC_UL320_.jpg" alt="Lavavajillas" loading="lazy">
                     <span class="category-badge">TOP 10</span>
                 </div>
                 <div class="category-content">
                     <h2>Lavavajillas</h2>
                     <p>Limpieza perfecta con ahorro de agua. Comparativa de capacidad, programas y nivel de ruido.</p>
                     <span class="btn-explore">Ver los mejores</span>
-                </div>
-            </a>
-            
-            <!-- Categoría 11 -->
-            <a href="microondas" class="category-card" title="Top 10 Microondas 2024">
-                <div class="category-image">
-                    <img src="https://m.media-amazon.com/images/I/71gLE12MKsL._AC_UY436_QL65_.jpg" alt="Microondas">
-                    <span class="category-badge">TOP 10</span>
-                </div>
-                <div class="category-content">
-                    <h2>Microondas</h2>
-                    <p>Desde básicos hasta modelos con grill y convección. Análisis de funciones y facilidad de limpieza.</p>
-                    <span class="btn-explore">Ver los mejores</span>
-                </div>
-            </a>
-            
-            <!-- Categoría 12 -->
-            <a href="mopas" class="category-card" title="Top 10 Mopas de vapor 2024">
-                <div class="category-image">
-                    <img src="https://m.media-amazon.com/images/I/61siRxEKI-L._AC_UL640_QL65_.jpg" alt="Mopas de vapor">
-                    <span class="category-badge">TOP 10</span>
-                </div>
-                <div class="category-content">
-                    <h2>Mopas de vapor</h2>
-                    <p>Limpieza profunda sin químicos. Comparativa de potencia de vapor, autonomía y accesorios incluidos.</p>
-                    <span class="btn-explore">Ver los mejores</span>
-                </div>
-            </a>
-            
-            <!-- Categoría 13 -->
-            <a href="relojes" class="category-card" title="Top 10 Relojes inteligentes 2024">
-                <div class="category-image">
-                    <img src="https://m.media-amazon.com/images/I/71jA18mbigL._AC_UY436_QL65_.jpg" alt="Relojes inteligentes">
-                    <span class="category-badge">TOP 10</span>
-                </div>
-                <div class="category-content">
-                    <h2>Relojes inteligentes</h2>
-                    <p>Monitoreo de salud y conectividad. Análisis de batería, compatibilidad y funciones deportivas.</p>
-                    <span class="btn-explore">Ver Comparativa</span>
-                </div>
-            </a>
-            
-            <!-- Categoría 14 -->
-            <a href="robots" class="category-card" title="Top 10 Robots aspiradores 2024">
-                <div class="category-image">
-                    <img src="https://m.media-amazon.com/images/I/61HDNUCNh9L._AC_UY436_QL65_.jpg" alt="Robots aspiradores">
-                    <span class="category-badge">TOP 10</span>
-                </div>
-                <div class="category-content">
-                    <h2>Robots aspiradores</h2>
-                    <p>Limpieza automática inteligente. Comparativa de navegación, aplicación y capacidad de limpieza.</p>
-                    <span class="btn-explore">Ver Comparativa</span>
-                </div>
-            </a>
-            
-            <!-- Categoría 15 -->
-            <a href="secadores" class="category-card" title="Top 10 Secadores de pelo 2024">
-                <div class="category-image">
-                    <img src="https://m.media-amazon.com/images/I/71hsUwrEN4L._AC_UL640_QL65_.jpg" alt="Secadores de pelo">
-                    <span class="category-badge">TOP 10</span>
-                </div>
-                <div class="category-content">
-                    <h2>Secadores de pelo</h2>
-                    <p>Profesionales y para uso doméstico. Pruebas de potencia, peso, ruido y tecnologías de cuidado capilar.</p>
-                    <span class="btn-explore">Ver Comparativa</span>
-                </div>
-            </a>
-            
-            <!-- Categoría 16 -->
-            <a href="televisores" class="category-card" title="Top 10 Televisores 2024">
-                <div class="category-image">
-                    <img src="https://m.media-amazon.com/images/I/811y81bAxJL._AC_UY436_QL65_.jpg" alt="Televisores">
-                    <span class="category-badge">TOP 10</span>
-                </div>
-                <div class="category-content">
-                    <h2>Televisores</h2>
-                    <p>OLED, QLED y más. Análisis de calidad de imagen, sistemas operativos y relación calidad-precio.</p>
-                    <span class="btn-explore">Ver Comparativa</span>
-                </div>
-            </a>
-            
-            <!-- Categoría 17 -->
-            <a href="tostadoras" class="category-card" title="Top 10 Tostadoras 2024">
-                <div class="category-image">
-                    <img src="https://m.media-amazon.com/images/I/71r4Tw+2srL._AC_UY436_QL65_.jpg" alt="Tostadoras">
-                    <span class="category-badge">TOP 10</span>
-                </div>
-                <div class="category-content">
-                    <h2>Tostadoras</h2>
-                    <p>Desde básicas hasta multifunción. Evaluación de consistencia en el tostado y funciones especiales.</p>
-                    <span class="btn-explore">Ver Comparativa</span>
                 </div>
             </a>
         </div>
@@ -508,8 +458,6 @@
                 <li><strong>Relación calidad-precio:</strong> Consideramos el valor real que ofrece cada producto.</li>
                 <li><strong>Innovación:</strong> Valoramos características únicas que mejoran la experiencia de uso.</li>
             </ul>
-            
-            <p>Nuestras comparativas se actualizan trimestralmente para incluir los nuevos lanzamientos y cambios en el mercado. ¿No encuentras lo que buscas? <a href="#" style="color: var(--primary);">Contacta con nuestro equipo</a> y haremos una análisis personalizado para ayudarte a encontrar el producto perfecto para tus necesidades.</p>
         </div>
     </div>
     
@@ -525,67 +473,97 @@
                 <a href="#">Política de Privacidad</a>
                 <a href="#">Términos de Uso</a>
             </div>
-            <p class="copyright">© 2024 AmazonTop. Todos los derechos reservados. AmazonTop participa en el Programa de Afiliados de Amazon EU, un programa de publicidad para afiliados diseñado para ofrecer a sitios web un modo de obtener comisiones por publicidad.</p>
+            <p class="copyright">© 2024 AmazonTop. Todos los derechos reservados.</p>
         </div>
     </footer>
 
     <script>
-        // Detección automática de idioma
-        document.addEventListener('DOMContentLoaded', function() {
-            const userLang = navigator.language || navigator.userLanguage; 
-            if (userLang.startsWith('en')) {
-                // Cambiar a inglés si el navegador está en inglés
-                translateToEnglish();
+        // Traducciones completas
+        const translations = {
+            'es': {
+                'meta': {
+                    'title': 'Top 10 Productos por Categoría | Análisis Expertos 2025',
+                    'description': 'Comparativa de los 10 mejores productos en cada categoría según análisis expertos, pruebas reales y valoraciones de usuarios. Guía de compra actualizada.'
+                },
+                'h1': 'Top 10 Productos por Categoría',
+                '.category-header p': 'Descubre nuestras selecciones expertas de los mejores productos en cada categoría, basadas en análisis exhaustivos y valoraciones reales de usuarios.',
+                '.breadcrumb a:first-child': 'Inicio',
+                '.breadcrumb a:nth-child(3)': 'Categorías',
+                '.breadcrumb span:last-child': 'Top 10 por Categoría',
+                '.btn-explore': 'Ver los mejores',
+                '.seo-content h2': 'Guía Definitiva para Elegir los Mejores Productos',
+                '.seo-content p': 'En nuestra selección de los 10 mejores productos por categoría...',
+                '.seo-content h3': 'Cómo seleccionamos los productos:',
+                '.seo-content li:nth-child(1)': '<strong>Pruebas exhaustivas:</strong> Utilizamos cada producto en condiciones reales...',
+                'footer a:nth-child(1)': 'Inicio',
+                'footer a:nth-child(2)': 'Categorías'
+            },
+            'en': {
+                'meta': {
+                    'title': 'Top 10 Products by Category | Expert Reviews 2025',
+                    'description': 'Comparison of the 10 best products in each category according to expert analysis, real tests and user ratings. Updated buying guide.'
+                },
+                'h1': 'Top 10 Products by Category',
+                '.category-header p': 'Discover our expert selections of the best products in each category, based on thorough analysis and real user ratings.',
+                '.breadcrumb a:first-child': 'Home',
+                '.breadcrumb a:nth-child(3)': 'Categories',
+                '.breadcrumb span:last-child': 'Top 10 by Category',
+                '.btn-explore': 'View top picks',
+                '.seo-content h2': 'Ultimate Guide to Choosing the Best Products',
+                '.seo-content p': 'In our selection of the top 10 products by category...',
+                '.seo-content h3': 'How we select products:',
+                '.seo-content li:nth-child(1)': '<strong>Exhaustive testing:</strong> We use each product in real conditions...',
+                'footer a:nth-child(1)': 'Home',
+                'footer a:nth-child(2)': 'Categories'
             }
+        };
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // 1. Detección automática de idioma
+            const userLang = navigator.language || navigator.userLanguage;
+            const defaultLang = userLang.startsWith('en') ? 'en' : 'es';
             
-            // Opción manual de cambio de idioma
+            // 2. Cargar idioma guardado o detectado
+            const savedLang = localStorage.getItem('userLang') || defaultLang;
+            changeLanguage(savedLang);
+            
+            // 3. Selector manual de idioma
             document.querySelectorAll('.language-btn').forEach(btn => {
                 btn.addEventListener('click', function() {
-                    if (this.dataset.lang === 'en') {
-                        translateToEnglish();
-                    } else {
-                        translateToSpanish();
-                    }
+                    const lang = this.dataset.lang;
+                    changeLanguage(lang);
+                    localStorage.setItem('userLang', lang);
                     
-                    document.querySelectorAll('.language-btn').forEach(b => b.classList.remove('active'));
-                    this.classList.add('active');
+                    // Actualizar botones activos
+                    document.querySelectorAll('.language-btn').forEach(b => {
+                        b.classList.toggle('active', b === this);
+                    });
                 });
             });
         });
         
-        function translateToEnglish() {
-            // Cambiar textos principales a inglés
-            document.querySelector('title').textContent = 'Top 10 Products by Category | Expert Reviews 2024';
-            document.querySelector('meta[name="description"]').content = 'Comparison of the 10 best products in each category according to expert analysis, real tests and user ratings. Updated buying guide.';
+        function changeLanguage(lang) {
+            if (!translations[lang]) return;
             
-            const translations = {
-                // Aquí irían todas las traducciones de los elementos de la página
-                // Ejemplo:
-                'h1': 'Top 10 Products by Category',
-                '.category-header p': 'Discover our expert selections of the best products in each category, based on thorough analysis and real user ratings.'
-                // ... más traducciones
-            };
+            const langData = translations[lang];
             
-            for (const [key, value] of Object.entries(translations)) {
-                const element = document.querySelector(key);
-                if (element) element.textContent = value;
-            }
-        }
-        
-        function translateToSpanish() {
-            // Restaurar textos a español
-            document.querySelector('title').textContent = 'Top 10 Productos por Categoría | Análisis Expertos 2024';
-            document.querySelector('meta[name="description"]').content = 'Comparativa de los 10 mejores productos en cada categoría según análisis expertos, pruebas reales y valoraciones de usuarios. Guía de compra actualizada.';
+            // Actualizar meta tags
+            document.title = langData.meta.title;
+            document.querySelector('meta[name="description"]').content = langData.meta.description;
             
-            const translations = {
-                'h1': 'Top 10 Productos por Categoría',
-                '.category-header p': 'Descubre nuestras selecciones expertas de los mejores productos en cada categoría, basadas en análisis exhaustivos y valoraciones reales de usuarios.'
-                // ... más traducciones
-            };
-            
-            for (const [key, value] of Object.entries(translations)) {
-                const element = document.querySelector(key);
-                if (element) element.textContent = value;
+            // Actualizar elementos del DOM
+            for (const [selector, text] of Object.entries(langData)) {
+                if (selector === 'meta') continue;
+                
+                const elements = document.querySelectorAll(selector);
+                elements.forEach(el => {
+                    if (el.hasAttribute('title') || el.hasAttribute('alt')) {
+                        if (el.hasAttribute('title')) el.setAttribute('title', text);
+                        if (el.hasAttribute('alt')) el.setAttribute('alt', text);
+                    } else {
+                        el.innerHTML = text;
+                    }
+                });
             }
         }
     </script>
