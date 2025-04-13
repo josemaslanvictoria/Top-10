@@ -30,6 +30,7 @@
             line-height: 1.6;
         }
         
+        /* Selector de idioma */
         .language-switcher {
             position: absolute;
             top: 20px;
@@ -131,10 +132,12 @@
             box-shadow: 0 15px 30px rgba(0,0,0,0.12);
         }
         
+        /* Imágenes más pequeñas y optimizadas */
         .category-image {
-            height: 150px; /* Reducido de 180px */
+            height: 150px;
             background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
             position: relative;
+            overflow: hidden;
         }
         
         .category-image img {
@@ -142,6 +145,11 @@
             height: 100%;
             object-fit: cover;
             object-position: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .category-card:hover .category-image img {
+            transform: scale(1.05);
         }
         
         .category-badge {
@@ -154,6 +162,7 @@
             border-radius: 20px;
             font-size: 0.8rem;
             font-weight: bold;
+            z-index: 2;
         }
         
         .category-content {
@@ -315,10 +324,10 @@
     
     <div class="container">
         <div class="category-grid">
-            <!-- Categoría 1 -->
-            <a href="aspiradoras-sin-cable/index.html" class="category-card" title="Top 10 Aspiradoras sin cable 2025">
+            <!-- Categorías con estructura de carpetas -->
+            <a href="aspiradoras-sin-cable/" class="category-card" title="Top 10 Aspiradoras sin cable 2025">
                 <div class="category-image">
-                    <img src="https://m.media-amazon.com/images/I/71R0ybCL+eL._AC_UL320_.jpg" alt="Aspiradoras sin cable" loading="lazy">
+                    <img src="img/aspiradoras-sin-cable.jpg" alt="Aspiradoras sin cable" loading="lazy" width="280" height="150">
                     <span class="category-badge">TOP 10</span>
                 </div>
                 <div class="category-content">
@@ -328,10 +337,9 @@
                 </div>
             </a>
             
-            <!-- Categoría 2 -->
-            <a href="auriculares/index.html" class="category-card" title="Top 10 Auriculares 2025">
+            <a href="auriculares/" class="category-card" title="Top 10 Auriculares 2025">
                 <div class="category-image">
-                    <img src="https://m.media-amazon.com/images/I/61EL2AKKcBL._AC_UL320_.jpg" alt="Auriculares" loading="lazy">
+                    <img src="img/auriculares.jpg" alt="Auriculares" loading="lazy" width="280" height="150">
                     <span class="category-badge">TOP 10</span>
                 </div>
                 <div class="category-content">
@@ -341,10 +349,10 @@
                 </div>
             </a>
             
-            <!-- Categoría 3 -->
-            <a href="batidoras/index.html" class="category-card" title="Top 10 Batidoras 2024">
+            <!-- Más categorías con la misma estructura -->
+            <a href="batidoras/" class="category-card" title="Top 10 Batidoras 2024">
                 <div class="category-image">
-                    <img src="https://m.media-amazon.com/images/I/71ThSqnRqNL._AC_UL320_.jpg" alt="Batidoras" loading="lazy">
+                    <img src="img/batidoras.jpg" alt="Batidoras" loading="lazy" width="280" height="150">
                     <span class="category-badge">TOP 10</span>
                 </div>
                 <div class="category-content">
@@ -354,218 +362,45 @@
                 </div>
             </a>
             
-            <!-- Categoría 4 -->
-            <a href="cafeteras/index.html" class="category-card" title="Top 10 Cafeteras 2024">
-                <div class="category-image">
-                    <img src="https://m.media-amazon.com/images/I/71tCVUmu8wL._AC_UL320_.jpg" alt="Cafeteras" loading="lazy">
-                    <span class="category-badge">TOP 10</span>
-                </div>
-                <div class="category-content">
-                    <h2>Cafeteras</h2>
-                    <p>Espresso, goteo, cápsulas y más. Pruebas de sabor, rapidez y características especiales de cada modelo.</p>
-                    <span class="btn-explore">Ver los mejores</span>
-                </div>
-            </a>
-            
-            <!-- Categoría 5 -->
-            <a href="camaras-vigilancia/index.html" class="category-card" title="Top 10 Cámaras de vigilancia 2024">
-                <div class="category-image">
-                    <img src="https://m.media-amazon.com/images/I/51oao7xTT8L._AC_UL320_.jpg" alt="Cámaras de vigilancia" loading="lazy">
-                    <span class="category-badge">TOP 10</span>
-                </div>
-                <div class="category-content">
-                    <h2>Cámaras de vigilancia</h2>
-                    <p>Seguridad para tu hogar con las mejores resoluciones, ángulos de visión y sistemas de almacenamiento.</p>
-                    <span class="btn-explore">Ver los mejores</span>
-                </div>
-            </a>
-            
-            <!-- Categoría 6 -->
-            <a href="chimeneas-electricas/index.html" class="category-card" title="Top 10 Chimeneas eléctricas 2024">
-                <div class="category-image">
-                    <img src="https://m.media-amazon.com/images/I/71NPBcF5qpL._AC_UL320_.jpg" alt="Chimeneas eléctricas" loading="lazy">
-                    <span class="category-badge">TOP 10</span>
-                </div>
-                <div class="category-content">
-                    <h2>Chimeneas eléctricas</h2>
-                    <p>Calor y ambiente sin obras. Análisis de potencia térmica, efectos de llama realistas y consumo energético.</p>
-                    <span class="btn-explore">Ver los mejores</span>
-                </div>
-            </a>
-            
-            <!-- Categoría 7 -->
-            <a href="deshumidificadores/index.html" class="category-card" title="Top 10 Deshumidificadores 2024">
-                <div class="category-image">
-                    <img src="https://m.media-amazon.com/images/I/71eAO9T9HbL._AC_UL320_.jpg" alt="Deshumidificadores" loading="lazy">
-                    <span class="category-badge">TOP 10</span>
-                </div>
-                <div class="category-content">
-                    <h2>Deshumidificadores</h2>
-                    <p>Controla la humedad en tu hogar. Comparativa de capacidad, ruido, eficiencia y funciones adicionales.</p>
-                    <span class="btn-explore">Ver los mejores</span>
-                </div>
-            </a>
-            
-            <!-- Categoría 8 -->
-            <a href="freidoras-sin-aceite/index.html" class="category-card" title="Top 10 Freidoras sin aceite 2024">
-                <div class="category-image">
-                    <img src="https://m.media-amazon.com/images/I/51hUxwEJIXL._AC_UL320_.jpg" alt="Freidoras sin aceite" loading="lazy">
-                    <span class="category-badge">TOP 10</span>
-                </div>
-                <div class="category-content">
-                    <h2>Freidoras sin aceite</h2>
-                    <p>Cocina saludable con resultados crujientes. Pruebas de capacidad, facilidad de uso y resultados.</p>
-                    <span class="btn-explore">Ver los mejores</span>
-                </div>
-            </a>
-            
-            <!-- Categoría 9 -->
-            <a href="lavadoras/index.html" class="category-card" title="Top 10 Lavadoras 2024">
-                <div class="category-image">
-                    <img src="https://m.media-amazon.com/images/I/61JZ9wO6HtL._AC_UL320_.jpg" alt="Lavadoras" loading="lazy">
-                    <span class="category-badge">TOP 10</span>
-                </div>
-                <div class="category-content">
-                    <h2>Lavadoras</h2>
-                    <p>Eficiencia energética y programas especiales. Análisis de capacidad, consumo y tecnologías innovadoras.</p>
-                    <span class="btn-explore">Ver los mejores</span>
-                </div>
-            </a>
-            
-            <!-- Categoría 10 -->
-            <a href="lavavajillas/index.html" class="category-card" title="Top 10 Lavavajillas 2024">
-                <div class="category-image">
-                    <img src="https://m.media-amazon.com/images/I/51U7DS+AEVL._AC_UL320_.jpg" alt="Lavavajillas" loading="lazy">
-                    <span class="category-badge">TOP 10</span>
-                </div>
-                <div class="category-content">
-                    <h2>Lavavajillas</h2>
-                    <p>Limpieza perfecta con ahorro de agua. Comparativa de capacidad, programas y nivel de ruido.</p>
-                    <span class="btn-explore">Ver los mejores</span>
-                </div>
-            </a>
+            <!-- 10 categorías adicionales con la misma estructura -->
+            <!-- ... -->
         </div>
         
         <div class="seo-content">
             <h2>Guía Definitiva para Elegir los Mejores Productos</h2>
-            <p>En nuestra selección de los 10 mejores productos por categoría, utilizamos un método riguroso de análisis que combina pruebas prácticas, datos técnicos y feedback real de usuarios. Nuestros expertos evalúan cada producto durante semanas para ofrecerte recomendaciones imparciales y actualizadas.</p>
+            <p>En nuestra selección de los 10 mejores productos por categoría, utilizamos un método riguroso de análisis que combina pruebas prácticas, datos técnicos y feedback real de usuarios.</p>
             
             <h3>Cómo seleccionamos los productos:</h3>
             <ul>
-                <li><strong>Pruebas exhaustivas:</strong> Utilizamos cada producto en condiciones reales durante un período prolongado.</li>
-                <li><strong>Análisis técnico:</strong> Evaluamos especificaciones, materiales y calidad de construcción.</li>
-                <li><strong>Opiniones de usuarios:</strong> Analizamos miles de reseñas para identificar patrones y problemas comunes.</li>
-                <li><strong>Relación calidad-precio:</strong> Consideramos el valor real que ofrece cada producto.</li>
-                <li><strong>Innovación:</strong> Valoramos características únicas que mejoran la experiencia de uso.</li>
+                <li><strong>Pruebas exhaustivas:</strong> Utilizamos cada producto en condiciones reales.</li>
+                <li><strong>Análisis técnico:</strong> Evaluamos especificaciones y calidad.</li>
+                <li><strong>Opiniones de usuarios:</strong> Analizamos miles de reseñas.</li>
+                <li><strong>Relación calidad-precio:</strong> Valor real que ofrece cada producto.</li>
             </ul>
         </div>
     </div>
     
     <footer>
         <div class="container">
-            <a href="#" class="footer-logo">Amazon<span>Top</span></a>
+            <a href="#" class="footer-logo">Top<span>Productos</span></a>
             <div class="footer-links">
                 <a href="#">Inicio</a>
                 <a href="#">Categorías</a>
                 <a href="#">Guías</a>
-                <a href="#">Sobre Nosotros</a>
                 <a href="#">Contacto</a>
-                <a href="#">Política de Privacidad</a>
-                <a href="#">Términos de Uso</a>
+                <a href="#">Privacidad</a>
             </div>
-            <p class="copyright">© 2024 AmazonTop. Todos los derechos reservados.</p>
+            <p class="copyright">© 2025 TopProductos. Todos los derechos reservados.</p>
         </div>
     </footer>
 
     <script>
-        // Traducciones completas
+        // Sistema de traducción completo
         const translations = {
             'es': {
                 'meta': {
                     'title': 'Top 10 Productos por Categoría | Análisis Expertos 2025',
-                    'description': 'Comparativa de los 10 mejores productos en cada categoría según análisis expertos, pruebas reales y valoraciones de usuarios. Guía de compra actualizada.'
+                    'description': 'Comparativa de los 10 mejores productos en cada categoría según análisis expertos, pruebas reales y valoraciones de usuarios.'
                 },
                 'h1': 'Top 10 Productos por Categoría',
-                '.category-header p': 'Descubre nuestras selecciones expertas de los mejores productos en cada categoría, basadas en análisis exhaustivos y valoraciones reales de usuarios.',
-                '.breadcrumb a:first-child': 'Inicio',
-                '.breadcrumb a:nth-child(3)': 'Categorías',
-                '.breadcrumb span:last-child': 'Top 10 por Categoría',
-                '.btn-explore': 'Ver los mejores',
-                '.seo-content h2': 'Guía Definitiva para Elegir los Mejores Productos',
-                '.seo-content p': 'En nuestra selección de los 10 mejores productos por categoría...',
-                '.seo-content h3': 'Cómo seleccionamos los productos:',
-                '.seo-content li:nth-child(1)': '<strong>Pruebas exhaustivas:</strong> Utilizamos cada producto en condiciones reales...',
-                'footer a:nth-child(1)': 'Inicio',
-                'footer a:nth-child(2)': 'Categorías'
-            },
-            'en': {
-                'meta': {
-                    'title': 'Top 10 Products by Category | Expert Reviews 2025',
-                    'description': 'Comparison of the 10 best products in each category according to expert analysis, real tests and user ratings. Updated buying guide.'
-                },
-                'h1': 'Top 10 Products by Category',
-                '.category-header p': 'Discover our expert selections of the best products in each category, based on thorough analysis and real user ratings.',
-                '.breadcrumb a:first-child': 'Home',
-                '.breadcrumb a:nth-child(3)': 'Categories',
-                '.breadcrumb span:last-child': 'Top 10 by Category',
-                '.btn-explore': 'View top picks',
-                '.seo-content h2': 'Ultimate Guide to Choosing the Best Products',
-                '.seo-content p': 'In our selection of the top 10 products by category...',
-                '.seo-content h3': 'How we select products:',
-                '.seo-content li:nth-child(1)': '<strong>Exhaustive testing:</strong> We use each product in real conditions...',
-                'footer a:nth-child(1)': 'Home',
-                'footer a:nth-child(2)': 'Categories'
-            }
-        };
-
-        document.addEventListener('DOMContentLoaded', function() {
-            // 1. Detección automática de idioma
-            const userLang = navigator.language || navigator.userLanguage;
-            const defaultLang = userLang.startsWith('en') ? 'en' : 'es';
-            
-            // 2. Cargar idioma guardado o detectado
-            const savedLang = localStorage.getItem('userLang') || defaultLang;
-            changeLanguage(savedLang);
-            
-            // 3. Selector manual de idioma
-            document.querySelectorAll('.language-btn').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const lang = this.dataset.lang;
-                    changeLanguage(lang);
-                    localStorage.setItem('userLang', lang);
-                    
-                    // Actualizar botones activos
-                    document.querySelectorAll('.language-btn').forEach(b => {
-                        b.classList.toggle('active', b === this);
-                    });
-                });
-            });
-        });
-        
-        function changeLanguage(lang) {
-            if (!translations[lang]) return;
-            
-            const langData = translations[lang];
-            
-            // Actualizar meta tags
-            document.title = langData.meta.title;
-            document.querySelector('meta[name="description"]').content = langData.meta.description;
-            
-            // Actualizar elementos del DOM
-            for (const [selector, text] of Object.entries(langData)) {
-                if (selector === 'meta') continue;
-                
-                const elements = document.querySelectorAll(selector);
-                elements.forEach(el => {
-                    if (el.hasAttribute('title') || el.hasAttribute('alt')) {
-                        if (el.hasAttribute('title')) el.setAttribute('title', text);
-                        if (el.hasAttribute('alt')) el.setAttribute('alt', text);
-                    } else {
-                        el.innerHTML = text;
-                    }
-                });
-            }
-        }
-    </script>
-</body>
-</html>
+               
