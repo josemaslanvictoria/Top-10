@@ -30,7 +30,6 @@
             line-height: 1.6;
         }
         
-        /* Selector de idioma */
         .language-switcher {
             position: absolute;
             top: 20px;
@@ -132,7 +131,6 @@
             box-shadow: 0 15px 30px rgba(0,0,0,0.12);
         }
         
-        /* Imágenes mejor dimensionadas */
         .category-image {
             height: 200px;
             background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
@@ -239,6 +237,47 @@
             margin-bottom: 0.8rem;
         }
         
+        .featured-categories {
+            background: var(--light);
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+        }
+        
+        .featured-categories h2 {
+            color: var(--secondary);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+        
+        .featured-card {
+            background: var(--gray);
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .featured-card:hover {
+            background: var(--primary);
+            color: var(--dark);
+            transform: translateY(-5px);
+        }
+        
+        .featured-card a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
         footer {
             background: var(--dark);
             color: var(--light);
@@ -275,6 +314,28 @@
             color: var(--primary);
         }
         
+        .footer-categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-categories a {
+            background: rgba(255,255,255,0.1);
+            color: var(--light);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .footer-categories a:hover {
+            background: var(--primary);
+            color: var(--dark);
+        }
+        
         .copyright {
             font-size: 0.9rem;
             opacity: 0.8;
@@ -294,7 +355,7 @@
                 gap: 1.5rem;
             }
             
-            .seo-content {
+            .seo-content, .featured-categories {
                 padding: 1.5rem;
             }
             
@@ -305,6 +366,10 @@
             
             .category-image {
                 height: 180px;
+            }
+            
+            .featured-grid {
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
             }
         }
     </style>
@@ -329,15 +394,15 @@
     
     <div class="container">
         <div class="category-grid">
-            <!-- Categoría 1 - Aspiradoras sin cable -->
-                    <a href="aspiradoras-sin-cable/index.html" class="category-card" title="Top 10 Aspiradoras sin cable 2025">
+            <!-- Categoría 1 -->
+            <a href="aspiradoras-sin-cable/index.html" class="category-card" title="Top 10 Aspiradoras sin cable 2025">
                 <div class="category-image">
-                    <img src="https://m.media-amazon.com/images/I/61-gdlyd-QL._AC_UY436_QL65_.jpg" alt="Auriculares" loading="lazy">
+                    <img src="https://m.media-amazon.com/images/I/71iS-sWLrNL._AC_UY436_QL65_.jpg" alt="Aspiradoras sin cable" loading="lazy">
                     <span class="category-badge">TOP 10</span>
                 </div>
                 <div class="category-content">
-                    <h2>Auriculares</h2>
-                    <p>Inalámbricos, con cancelación de ruido y calidad de sonido premium. Análisis de comodidad, batería y conectividad.</p>
+                    <h2>Aspiradoras sin cable</h2>
+                    <p>Los modelos más potentes y eficientes para una limpieza sin esfuerzo. Comparativa de autonomía, potencia y accesorios.</p>
                     <span class="btn-explore">Ver los mejores</span>
                 </div>
             </a>
@@ -356,7 +421,7 @@
             </a>
             
             <!-- Categoría 3 -->
-            <a href="batidoras/índex.html" class="category-card" title="Top 10 Batidoras 2024">
+            <a href="batidoras/index.html" class="category-card" title="Top 10 Batidoras 2024">
                 <div class="category-image">
                     <img src="https://m.media-amazon.com/images/I/61j+OHOSJ6L._AC_UY436_QL65_.jpg" alt="Batidoras" loading="lazy">
                     <span class="category-badge">TOP 10</span>
@@ -369,7 +434,7 @@
             </a>
             
             <!-- Categoría 4 -->
-            <a href="cafeteras/índex.html" class="category-card" title="Top 10 Cafeteras 2024">
+            <a href="cafeteras/index.html" class="category-card" title="Top 10 Cafeteras 2024">
                 <div class="category-image">
                     <img src="img/cafeteras.jpg" alt="Cafeteras" loading="lazy">
                     <span class="category-badge">TOP 10</span>
@@ -382,7 +447,7 @@
             </a>
             
             <!-- Categoría 5 -->
-            <a href="camaras-vigilancia/" class="category-card" title="Top 10 Cámaras de vigilancia 2024">
+            <a href="camaras-vigilancia/index.html" class="category-card" title="Top 10 Cámaras de vigilancia 2024">
                 <div class="category-image">
                     <img src="img/camaras-vigilancia.jpg" alt="Cámaras de vigilancia" loading="lazy">
                     <span class="category-badge">TOP 10</span>
@@ -395,7 +460,7 @@
             </a>
             
             <!-- Categoría 6 -->
-            <a href="chimeneas-electricas/" class="category-card" title="Top 10 Chimeneas eléctricas 2024">
+            <a href="chimeneas-electricas/index.html" class="category-card" title="Top 10 Chimeneas eléctricas 2024">
                 <div class="category-image">
                     <img src="img/chimeneas-electricas.jpg" alt="Chimeneas eléctricas" loading="lazy">
                     <span class="category-badge">TOP 10</span>
@@ -408,7 +473,7 @@
             </a>
             
             <!-- Categoría 7 -->
-            <a href="deshumidificadores/" class="category-card" title="Top 10 Deshumidificadores 2024">
+            <a href="deshumidificadores/index.html" class="category-card" title="Top 10 Deshumidificadores 2024">
                 <div class="category-image">
                     <img src="img/deshumidificadores.jpg" alt="Deshumidificadores" loading="lazy">
                     <span class="category-badge">TOP 10</span>
@@ -421,7 +486,7 @@
             </a>
             
             <!-- Categoría 8 -->
-            <a href="freidoras-sin-aceite/" class="category-card" title="Top 10 Freidoras sin aceite 2024">
+            <a href="freidoras-sin-aceite/index.html" class="category-card" title="Top 10 Freidoras sin aceite 2024">
                 <div class="category-image">
                     <img src="img/freidoras-sin-aceite.jpg" alt="Freidoras sin aceite" loading="lazy">
                     <span class="category-badge">TOP 10</span>
@@ -434,7 +499,7 @@
             </a>
             
             <!-- Categoría 9 -->
-            <a href="lavadoras/" class="category-card" title="Top 10 Lavadoras 2024">
+            <a href="lavadoras/index.html" class="category-card" title="Top 10 Lavadoras 2024">
                 <div class="category-image">
                     <img src="img/lavadoras.jpg" alt="Lavadoras" loading="lazy">
                     <span class="category-badge">TOP 10</span>
@@ -447,7 +512,7 @@
             </a>
             
             <!-- Categoría 10 -->
-            <a href="lavavajillas/" class="category-card" title="Top 10 Lavavajillas 2024">
+            <a href="lavavajillas/index.html" class="category-card" title="Top 10 Lavavajillas 2024">
                 <div class="category-image">
                     <img src="img/lavavajillas.jpg" alt="Lavavajillas" loading="lazy">
                     <span class="category-badge">TOP 10</span>
@@ -460,7 +525,7 @@
             </a>
             
             <!-- Categoría 11 -->
-            <a href="microondas/" class="category-card" title="Top 10 Microondas 2024">
+            <a href="microondas/index.html" class="category-card" title="Top 10 Microondas 2024">
                 <div class="category-image">
                     <img src="img/microondas.jpg" alt="Microondas" loading="lazy">
                     <span class="category-badge">TOP 10</span>
@@ -473,7 +538,7 @@
             </a>
             
             <!-- Categoría 12 -->
-            <a href="mopas-vapor/" class="category-card" title="Top 10 Mopas de vapor 2024">
+            <a href="mopas-vapor/index.html" class="category-card" title="Top 10 Mopas de vapor 2024">
                 <div class="category-image">
                     <img src="img/mopas-vapor.jpg" alt="Mopas de vapor" loading="lazy">
                     <span class="category-badge">TOP 10</span>
@@ -486,7 +551,7 @@
             </a>
             
             <!-- Categoría 13 -->
-            <a href="relojes-inteligentes/" class="category-card" title="Top 10 Relojes inteligentes 2024">
+            <a href="relojes-inteligentes/index.html" class="category-card" title="Top 10 Relojes inteligentes 2024">
                 <div class="category-image">
                     <img src="img/relojes-inteligentes.jpg" alt="Relojes inteligentes" loading="lazy">
                     <span class="category-badge">TOP 10</span>
@@ -499,7 +564,7 @@
             </a>
             
             <!-- Categoría 14 -->
-            <a href="robots-aspiradores/" class="category-card" title="Top 10 Robots aspiradores 2024">
+            <a href="robots-aspiradores/index.html" class="category-card" title="Top 10 Robots aspiradores 2024">
                 <div class="category-image">
                     <img src="img/robots-aspiradores.jpg" alt="Robots aspiradores" loading="lazy">
                     <span class="category-badge">TOP 10</span>
@@ -512,7 +577,7 @@
             </a>
             
             <!-- Categoría 15 -->
-            <a href="secadores-pelo/" class="category-card" title="Top 10 Secadores de pelo 2024">
+            <a href="secadores-pelo/index.html" class="category-card" title="Top 10 Secadores de pelo 2024">
                 <div class="category-image">
                     <img src="img/secadores-pelo.jpg" alt="Secadores de pelo" loading="lazy">
                     <span class="category-badge">TOP 10</span>
@@ -525,7 +590,7 @@
             </a>
             
             <!-- Categoría 16 -->
-            <a href="televisores/" class="category-card" title="Top 10 Televisores 2024">
+            <a href="televisores/index.html" class="category-card" title="Top 10 Televisores 2024">
                 <div class="category-image">
                     <img src="img/televisores.jpg" alt="Televisores" loading="lazy">
                     <span class="category-badge">TOP 10</span>
@@ -538,7 +603,7 @@
             </a>
             
             <!-- Categoría 17 -->
-            <a href="tostadoras/" class="category-card" title="Top 10 Tostadoras 2024">
+            <a href="tostadoras/index.html" class="category-card" title="Top 10 Tostadoras 2024">
                 <div class="category-image">
                     <img src="img/tostadoras.jpg" alt="Tostadoras" loading="lazy">
                     <span class="category-badge">TOP 10</span>
@@ -551,7 +616,7 @@
             </a>
             
             <!-- Categoría 18 -->
-            <a href="portatiles/" class="category-card" title="Top 10 Portátiles 2024">
+            <a href="portatiles/index.html" class="category-card" title="Top 10 Portátiles 2024">
                 <div class="category-image">
                     <img src="img/portatiles.jpg" alt="Portátiles" loading="lazy">
                     <span class="category-badge">TOP 10</span>
@@ -564,7 +629,7 @@
             </a>
             
             <!-- Categoría 19 -->
-            <a href="smartphones/" class="category-card" title="Top 10 Smartphones 2024">
+            <a href="smartphones/index.html" class="category-card" title="Top 10 Smartphones 2024">
                 <div class="category-image">
                     <img src="img/smartphones.jpg" alt="Smartphones" loading="lazy">
                     <span class="category-badge">TOP 10</span>
@@ -577,7 +642,7 @@
             </a>
             
             <!-- Categoría 20 -->
-            <a href="tablets/" class="category-card" title="Top 10 Tablets 2024">
+            <a href="tablets/index.html" class="category-card" title="Top 10 Tablets 2024">
                 <div class="category-image">
                     <img src="img/tablets.jpg" alt="Tablets" loading="lazy">
                     <span class="category-badge">TOP 10</span>
@@ -605,11 +670,54 @@
             
             <p>Nuestras comparativas se actualizan trimestralmente para incluir los nuevos lanzamientos y cambios en el mercado.</p>
         </div>
+        
+        <!-- ===== NUEVA SECCIÓN: CATEGORÍAS DESTACADAS ===== -->
+        <div class="featured-categories">
+            <h2>Acceso Rápido a Categorías Populares</h2>
+            <div class="featured-grid">
+                <div class="featured-card">
+                    <a href="aspiradoras-sin-cable/index.html">Aspiradoras</a>
+                </div>
+                <div class="featured-card">
+                    <a href="auriculares/index.html">Auriculares</a>
+                </div>
+                <div class="featured-card">
+                    <a href="televisores/index.html">Televisores</a>
+                </div>
+                <div class="featured-card">
+                    <a href="smartphones/index.html">Smartphones</a>
+                </div>
+                <div class="featured-card">
+                    <a href="portatiles/index.html">Portátiles</a>
+                </div>
+                <div class="featured-card">
+                    <a href="robots-aspiradores/index.html">Robots</a>
+                </div>
+                <div class="featured-card">
+                    <a href="lavadoras/index.html">Lavadoras</a>
+                </div>
+                <div class="featured-card">
+                    <a href="freidoras-sin-aceite/index.html">Freidoras</a>
+                </div>
+            </div>
+        </div>
     </div>
     
     <footer>
         <div class="container">
             <a href="#" class="footer-logo">Top<span>Productos</span></a>
+            
+            <div class="footer-categories">
+                <a href="aspiradoras-sin-cable/index.html">Aspiradoras</a>
+                <a href="auriculares/index.html">Auriculares</a>
+                <a href="televisores/index.html">Televisores</a>
+                <a href="smartphones/index.html">Smartphones</a>
+                <a href="portatiles/index.html">Portátiles</a>
+                <a href="robots-aspiradores/index.html">Robots</a>
+                <a href="lavadoras/index.html">Lavadoras</a>
+                <a href="freidoras-sin-aceite/index.html">Freidoras</a>
+            </div>
+            
             <div class="footer-links">
                 <a href="#">Inicio</a>
                 <a href="#">Categorías</a>
@@ -638,6 +746,7 @@
                 '.breadcrumb span:last-child': 'Top 10 por Categoría',
                 '.btn-explore': 'Ver los mejores',
                 '.seo-content h2': 'Guía Definitiva para Elegir los Mejores Productos',
+                '.featured-categories h2': 'Acceso Rápido a Categorías Populares',
                 'footer a:nth-child(1)': 'Inicio',
                 'footer a:nth-child(2)': 'Categorías'
             },
@@ -653,6 +762,7 @@
                 '.breadcrumb span:last-child': 'Top 10 by Category',
                 '.btn-explore': 'View top picks',
                 '.seo-content h2': 'Ultimate Guide to Choosing the Best Products',
+                '.featured-categories h2': 'Quick Access to Popular Categories',
                 'footer a:nth-child(1)': 'Home',
                 'footer a:nth-child(2)': 'Categories'
             }
