@@ -117,15 +117,16 @@
             background-color: var(--dark-color);
             color: white;
             padding: 3rem 0;
-            margin-top: 3rem;
         }
         
         .disclaimer {
             background-color: #fff8e1;
             border-left: 4px solid #ffc107;
             padding: 15px;
-            margin: 20px 0;
+            margin: 30px auto;
             font-size: 0.9rem;
+            max-width: 1200px;
+            border-radius: 4px;
         }
         
         @media (max-width: 768px) {
@@ -135,6 +136,10 @@
             
             .category-img {
                 height: 120px;
+            }
+            
+            .disclaimer {
+                margin: 20px 15px;
             }
         }
     </style>
@@ -207,13 +212,6 @@
         </div>
     </section>
 
-    <!-- Aviso de afiliados -->
-    <div class="container">
-        <div class="disclaimer">
-            <p><strong>Aviso importante:</strong> Este sitio contiene enlaces de afiliados. Esto significa que si realizas una compra a través de estos enlaces, podemos recibir una pequeña comisión sin costo adicional para ti. Esto nos ayuda a mantener el sitio y seguir creando contenido útil. ¡Gracias por tu apoyo!</p>
-        </div>
-    </div>
-
     <!-- Categorías principales -->
     <section class="container mb-5" id="destacados">
         <h2 class="text-center mb-4">Explora Nuestras Categorías Principales</h2>
@@ -249,7 +247,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Robot aspirador</h5>
                         <p class="card-text">Tecnología inteligente para tu hogar.</p>
-                        <a href="robot-aspirador/index.html" class="btn btn-primary">Descubrir</a>
+                        <a href="#robot-aspirador" class="btn btn-primary">Descubrir</a>
                     </div>
                 </div>
             </div>
@@ -261,7 +259,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Cafeteras</h5>
                         <p class="card-text">El café perfecto en casa.</p>
-                        <a href="cafeteras/index.html" class="btn btn-primary">Ver análisis</a>
+                        <a href="#cafeteras" class="btn btn-primary">Ver análisis</a>
                     </div>
                 </div>
             </div>
@@ -273,7 +271,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Freidoras sin aceite</h5>
                         <p class="card-text">Cocina saludable sin renunciar al sabor.</p>
-                        <a href="freidoras/index.html" class="btn btn-primary">Comparativa</a>
+                        <a href="#freidoras" class="btn btn-primary">Comparativa</a>
                     </div>
                 </div>
             </div>
@@ -431,6 +429,13 @@
             </div>
         </div>
     </section>
+
+    <!-- Aviso de afiliados (al final de la página) -->
+    <div class="container">
+        <div class="disclaimer">
+            <p><strong>Aviso importante:</strong> Este sitio contiene enlaces de afiliados. Esto significa que si realizas una compra a través de estos enlaces, podemos recibir una pequeña comisión sin costo adicional para ti. Esto nos ayuda a mantener el sitio y seguir creando contenido útil. ¡Gracias por tu apoyo!</p>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer>
